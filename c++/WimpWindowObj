@@ -1,0 +1,214 @@
+#include "WimpWindowObj.h"
+#include "WimpObj.h"
+#include "kernel.h"
+#include "swis.h"
+#include <libc.h>
+#include <string.h>
+#include "wimplib.h"
+
+unsigned int *WimpWindowObj::workspace = NULL;
+
+WimpWindowObj::WimpWindowObj() {
+  if (WimpWindowObj::workspace == NULL) {
+    WimpWindowObj::workspace = new unsigned int[64];
+  }
+  handle = 0;
+  windDefStr = new WimpObj::WindDefStr();
+  title = NULL;
+  titleBufLen = 0;
+  flags.windDefExt = 0;
+}
+
+WimpWindowObj::WimpWindowObj(WimpObj::WindDefStr *windDefStr) {
+  if (WimpWindowObj::workspace == NULL) {
+    WimpWindowObj::workspace = new unsigned int[64];
+  }
+  this->windDefStr = windDefStr;
+  title = NULL;
+  titleBufLen = 0;
+  flags.windDefExt = 1;
+}
+
+WimpWindowObj::~WimpWindowObj() {
+  deleteWindow();
+  if (windDefStr != NULL && flags.windDefExt == 0) {
+    delete windDefStr;
+  }
+  if (title != NULL) {
+    delete title;
+  }
+}
+
+void WimpWindowObj::setWindDefStr(WimpObj::WindDefStr *windDefStr) {
+  this->windDefStr = windDefStr;
+  flags.windDefExt = 1;
+}
+
+void WimpWindowObj::removeWindDefStr() {
+  if (this->windDefStr != NULL) {
+    delete this->windDefStr;
+    this->windDefStr = NULL;
+  }
+}
+
+WimpObj::WindDefStr *WimpWindowObj::getWindDefStr() {
+  return windDefStr;
+}
+
+int WimpWindowObj::createWindow() {
+  WimpObj::setLastError(wimp_create_window((WimpWindow *) windDefStr, &handle), __LINE__);
+  delete windDefStr;
+  return handle;
+}
+
+void WimpWindowObj::openWindow() {
+  _kernel_swi_regs in, out;
+  getWindowState();
+  in.r[1] = (int) workspace;
+  WimpObj::setLastError(_kernel_swi(Wimp_OpenWindow, &in, &out), __LINE__);
+}
+
+void WimpWindowObj::openWindow(WimpOpenWindowBlock *openWindStr) {
+  _kernel_swi_regs in, out;
+  in.r[1] = (int) openWindStr;
+  WimpObj::setLastError(_kernel_swi(Wimp_OpenWindow, &in, &out), __LINE__);
+}
+
+void WimpWindowObj::closeWindow() {
+  WimpObj::setLastError(wimp_close_window((int *) &handle), __LINE__);
+}
+
+void WimpWindowObj::closeWindow(WimpCloseWindowBlock *block) {
+  WimpObj::setLastError(wimp_close_window((int *) block), __LINE__);
+}
+
+unsigned WimpWindowObj::redrawWindow() {
+  int more;
+  WimpObj::setLastError(wimp_redraw_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more), __LINE__);
+  return (unsigned) more;
+}
+
+unsigned WimpWindowObj::updateWindow() {
+  int more;
+  WimpObj::setLastError(wimp_update_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more), __LINE__);
+  return (unsigned) more;
+}
+
+unsigned WimpWindowObj::updateWindow(int minX, int minY, int maxX, int maxY) {
+  _kernel_swi_regs in, out;
+  unsigned *block = WimpObj::getPollBlock();
+  block[0] = (unsigned) handle;
+  block[1] = minX;
+  block[2] = minY;
+  block[3] = maxX;
+  block[4] = maxY;
+  in.r[1] = (int) block;
+  WimpObj::setLastError(_kernel_swi(Wimp_UpdateWindow, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+unsigned WimpWindowObj::getRectangle() {
+  _kernel_swi_regs in, out;
+  in.r[1] = (int) WimpObj::getPollBlock();
+  WimpObj::setLastError(_kernel_swi(Wimp_GetRectangle, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+void WimpWindowObj::deleteWindow() {
+  _kernel_swi_regs in, out;
+  in.r[1] = (int) &handle;
+  WimpObj::setLastError(_kernel_swi(Wimp_DeleteWindow, &in, &out), __LINE__);
+}
+
+void WimpWindowObj::deleteWindow(void *block) {
+  _kernel_swi_regs in, out;
+  in.r[1] = (int) block;
+  WimpObj::setLastError(_kernel_swi(Wimp_DeleteWindow, &in, &out), __LINE__);
+}
+
+int WimpWindowObj::getWindowHandle() {
+  return handle;
+}
+
+void WimpWindowObj::setWindowHandle(int handle) {
+  this->handle = handle;
+}
+
+void WimpWindowObj::getWindowState() {
+  WimpOpenWindowBlock *openWindStr = (WimpOpenWindowBlock *) workspace;
+  openWindStr->window_handle = handle;
+  _kernel_swi_regs in, out;
+  in.r[1] = (int) openWindStr;
+  WimpObj::setLastError(_kernel_swi(Wimp_GetWindowState, &in, &out), __LINE__);
+}
+
+void WimpWindowObj::setRedirectTitle(char *title, int titleBufLen) {
+  WimpObj::WindDefStr *windDef = this->windDefStr;
+  if (this->title != NULL) {
+    delete title;
+  }
+  this->title = new char[titleBufLen];
+  for (int i = 0; i < titleBufLen; i++) {
+    this->title[i] = 0;
+  }
+  unsigned int *flags = &(windDef->window.title_flags);
+  (*flags) |= WimpIcon_Text;
+  (*flags) &= ~WimpIcon_Sprite;
+  (*flags) |= WimpIcon_Indirected;
+
+  WimpIconData  *title_data = &(windDef->window.title_data);
+  title_data->ist.buffer = this->title;
+  title_data->ist.validation = (char *) -1;
+  title_data->ist.buffer_size = titleBufLen;
+
+  //this->windDefStr->title.indirectText.buffer = this->title;
+  //this->windDefStr->title.indirectText.validString = (char *) -1;
+  //this->windDefStr->title.indirectText.buffLen = titleBufLen;
+  strncpy(this->title, title, titleBufLen - 1);
+  //this->windDefStr->numIcons = 0;
+  this->titleBufLen = titleBufLen;
+}
+
+void WimpWindowObj::updateTitle(char *title) {
+  if (this->title != NULL) {
+    strncpy(this->title, title, titleBufLen - 1);
+  }
+}
+
+char *WimpWindowObj::getTitle() {
+  return title;
+}
+
+void WimpWindowObj::forceRedraw() {
+  WimpGetWindowOutlineBlock *windBox = getWindowOutline();
+  WimpObj::setLastError(wimp_force_redraw(windBox->window_handle, windBox->outline.xmin, windBox->outline.ymin, windBox->outline.xmax, windBox->outline.ymax), __LINE__);
+}
+
+void WimpWindowObj::forceRedraw(int xmin, int ymin, int xmax, int ymax) {
+  WimpObj::setLastError(wimp_force_redraw(handle, xmin, ymin, xmax, ymax), __LINE__);
+}
+
+WimpGetWindowOutlineBlock *WimpWindowObj::getWindowOutline() {
+  WimpObj::setLastError(wimp_get_window_outline((WimpGetWindowOutlineBlock *) workspace), __LINE__);
+  return (WimpGetWindowOutlineBlock *) workspace;
+}
+
+unsigned int *WimpWindowObj::getWorkspace() {
+  int line = __LINE__;
+  return workspace;
+}
+
+void WimpWindowObj::redrawTitle() {
+  WimpObj::setLastError(wimp_force_title_redraw(handle), __LINE__);
+}
+
+void WimpWindowObj::wimpToToolbox(int icon_handle, int *toolbox_window_handle, int *toolbox_component_id) {
+  _kernel_swi_regs in, out;
+  unsigned int flags = 0;
+  in.r[0] = flags;
+  in.r[1] = handle;
+  in.r[2] = icon_handle;
+  WimpObj::setLastError(_kernel_swi(Window_WimpToToolbox, &in, &out), __LINE__);
+  *toolbox_window_handle = out.r[0];
+  *toolbox_component_id = out.r[1];
+}

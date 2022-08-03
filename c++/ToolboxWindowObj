@@ -1,0 +1,327 @@
+#include "kernel.h"
+#include <string.h>
+#include "ToolboxWindowObj.h"
+
+ToolboxWindowObj::ToolboxWindowObj() {
+}
+
+ToolboxWindowObj::ToolboxWindowObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ToolboxWindowObj::~ToolboxWindowObj() {
+}
+
+int ToolboxWindowObj::getWimpHandle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetWimpHandle;
+  this->objectMiscOp(&regs);
+  wimpHandle = regs.r[0];
+  return regs.r[0];
+}
+
+int ToolboxWindowObj::readWimpHandle() {
+  return wimpHandle;
+}
+
+int ToolboxWindowObj::addGadget(Gadget *gadget) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_AddGadget;
+  regs.r[3] = (int) gadget;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::removeGadget(ComponentId gadget) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_RemoveGadget;
+  regs.r[3] = gadget;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setMenu(ObjectId menu_id) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetMenu;
+  regs.r[3] = menu_id;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::removeMenu() {
+  setMenu((ObjectId) 0);
+  return *this;
+}
+
+ObjectId ToolboxWindowObj::getMenu() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetMenu;
+  this->objectMiscOp(&regs);
+  return (ObjectId) regs.r[0];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setPointer(char *sprite_name, int x_hot_spot, int y_hot_spot) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetPointer;
+  regs.r[3] = (int) sprite_name;
+  regs.r[4] = x_hot_spot;
+  regs.r[5] = y_hot_spot;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::detachPointer() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetPointer;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxWindowObj::getPointer() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetPointer;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxWindowObj::getPointer(char *buffer, int buff_size, int *nbytes, int *x_hot_spot, int *y_hot_spot) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetPointer;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = buff_size;
+  this->objectMiscOp(&regs);
+  *nbytes = regs.r[4];
+  *x_hot_spot = regs.r[5];
+  *y_hot_spot = regs.r[6];
+  return regs.r[4];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setHelpMessage(char *message_text) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetHelpMessage;
+  regs.r[3] = (int) message_text;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::removeHelpMessage() {
+  setHelpMessage((char *) 0);
+  return *this;
+}
+
+int ToolboxWindowObj::getHelpMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetHelpMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxWindowObj::getHelpMessage(char *buffer, int buff_len, int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetHelpMessage;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = buff_len;
+  this->objectMiscOp(&regs);
+  *nbytes = regs.r[4];
+  return regs.r[4];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::addKeyboardShortcuts(int num_shortcuts, KeyboardShortcut *shortcuts) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_AddKeyboardShortcuts;
+  regs.r[3] = num_shortcuts;
+  regs.r[4] = (int) shortcuts;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::removeKeyboardShortcuts(int num_shortcuts, KeyboardShortcut *shortcuts) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_RemoveKeyboardShortcuts;
+  regs.r[3] = num_shortcuts;
+  regs.r[4] = (int) shortcuts;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::removeAllKeyboardShortcuts() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_RemoveKeyboardShortcuts;
+  regs.r[3] = -1;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxWindowObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxWindowObj::getTitle(char *buffer, int buff_size, int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = buff_size;
+  this->objectMiscOp(&regs);
+  *nbytes = regs.r[4];
+  return regs.r[4];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setDefaultFocus(ComponentId focus) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetDefaultFocus;
+  regs.r[3] = (int) focus;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::clearDefaultFocus() {
+  setDefaultFocus((ComponentId) -1);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setDefaultFocusToWindow() {
+  setDefaultFocus((ComponentId) -2);
+  return *this;
+}
+
+ComponentId ToolboxWindowObj::getDefaultFocus(ComponentId *focus) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetDefaultFocus;
+  this->objectMiscOp(&regs);
+  *focus = (ComponentId) regs.r[0];
+  return *focus;
+}
+
+ComponentId ToolboxWindowObj::getDefaultFocus() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetDefaultFocus;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setExtent(BBox *extent) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetExtent;
+  regs.r[3] = (int) extent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+void ToolboxWindowObj::getExtent(BBox *extent) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetExtent;
+  regs.r[3] = (int) extent;
+  this->objectMiscOp(&regs);
+}
+
+ToolboxWindowObj& ToolboxWindowObj::forceRedraw(BBox *redraw_box) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_ForceRedraw;
+  regs.r[3] = (int) redraw_box;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setToolbar(int location, ObjectId toolbar_id) {
+  unsigned int flags;
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetToolBars;
+  switch(location) {
+    case 0:
+      regs.r[3] = toolbar_id;
+      flags = 1 << location;
+      break;
+    case 1:
+      regs.r[4] = toolbar_id;
+      flags = 1 << location;
+      break;
+    case 2:
+      regs.r[5] = toolbar_id;
+      flags = 1 << location;
+      break;
+    case 3:
+      regs.r[6] = toolbar_id;
+      flags = 1 << location;
+      break;
+    default:
+      break;
+  }
+  if (location<4 && location>=0) {
+    this->setFlags(flags).objectMiscOp(&regs);
+  }
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setToolbar(int mask, ObjectId toolbar_ibl_id, ObjectId toolbar_itl_id, ObjectId toolbar_ebl_id, ObjectId toolbar_etl_id) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_SetToolBars;
+  regs.r[3] = (int) toolbar_ibl_id;
+  regs.r[4] = (int) toolbar_itl_id;
+  regs.r[5] = (int) toolbar_ebl_id;
+  regs.r[6] = (int) toolbar_etl_id;
+  this->setFlags(mask).objectMiscOp(&regs);
+  return *this;
+}
+
+ObjectId ToolboxWindowObj::getToolbar(int location) {
+  unsigned int flags;
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetToolBars;
+  flags = 1 << location;
+  this->setFlags(flags).objectMiscOp(&regs);
+  return regs.r[location];
+}
+
+void ToolboxWindowObj::getToolbar(int mask, ObjectId *toolbar_ibl_id, ObjectId *toolbar_itl_id, ObjectId *toolbar_ebl_id, ObjectId *toolbar_etl_id) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Window_GetToolBars;
+  this->setFlags(mask).objectMiscOp(&regs);
+  *toolbar_ibl_id = regs.r[0];
+  *toolbar_itl_id = regs.r[1];
+  *toolbar_ebl_id = regs.r[2];
+  *toolbar_etl_id = regs.r[3];
+}
+
+/*void wimpToToolbox(ObjectId *object, ComponentId *component) {
+  _kernel_swi_regs in, out;
+  unsigned int flags = 0;
+  in.r[0] = flags;
+  //in.r[1] = this.get
+}*/
+
+int ToolboxWindowObj::isWindow(char *title) {
+  char buffer[256];
+  int size = 256;
+  this->getTitle(buffer, 256, &size);
+  return (strcmp(buffer, title) == 0?1:0);
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxWindowObj& ToolboxWindowObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

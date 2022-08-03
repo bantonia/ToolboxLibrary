@@ -1,0 +1,114 @@
+#include "ErrorReport.h"
+#include "kernel.h"
+#include <setjmp.h>
+#include <libc.h>
+#include <stdbool.h>
+#include <iostream.h>
+
+_kernel_oserror *ErrorReport::lastError = 0;
+
+unsigned int ErrorReport::flags = 0;
+
+ErrorReport::errorEnv ErrorReport::env = ErrorReport::CONSOLE;
+
+char *ErrorReport::taskname = "";
+
+char *ErrorReport::location = "";
+
+char *ErrorReport::sprite = "";
+
+void *ErrorReport::area = 0;
+
+char *ErrorReport::buttons = "";
+
+int ErrorReport::trapCount = 0;
+
+int *ErrorReport::trapList = NULL;
+
+unsigned int ErrorReport::line = 0;
+
+void ErrorReport::setLastError(_kernel_oserror *err, unsigned int line)  {
+  if (err != NULL && errBuf != NULL) {
+    if (trapCount != 0) {
+      int f = false;
+      for(int p = 0; p < ErrorReport::trapCount; p++) {
+        if(ErrorReport::trapList[p] == err->errnum) {
+          ErrorReport::lastError = err;
+          ErrorReport::line = line;
+          longjmp(errBuf, 1);
+        }
+      }
+      // Error number not listed
+      cout << "Error: " << err->errnum << " " << err->errmess << endl;
+      exit(EXIT_FAILURE);
+    } else {
+      ErrorReport::lastError = err;
+      ErrorReport::line = line;
+      longjmp(errBuf, 1);
+    }
+  } else {
+    if (errBuf == NULL) {
+      cout << "Error: No location set to jump to" << endl;
+        exit(EXIT_FAILURE);
+    }
+  }
+}
+
+void ErrorReport::setLastError(_kernel_oserror *err, unsigned int line, char *location) {
+  ErrorReport::lastError = err;
+  ErrorReport::location = location;
+  ErrorReport::line = line;
+}
+
+_kernel_oserror *ErrorReport::getLastError() {
+  return ErrorReport::lastError;
+}
+
+void ErrorReport::setErrFlags(unsigned int flags) {
+  ErrorReport::flags = flags;
+}
+
+unsigned int ErrorReport::getErrFlags() {
+  return ErrorReport::flags;
+}
+
+void ErrorReport::setAsWimpTask(char *taskname) {
+  env = ErrorReport::WIMP;
+  ErrorReport::taskname = taskname;
+}
+
+void ErrorReport::setAsConsoleTask() {
+  env = ErrorReport::CONSOLE;
+}
+
+char *ErrorReport::getTaskName() {
+  return taskname;
+}
+
+void ErrorReport::setLocation(char *location) {
+  ErrorReport::location = location;
+}
+
+
+char *ErrorReport::getLocation() {
+  return ErrorReport::location;
+}
+
+void ErrorReport::clearError() {
+  lastError = 0;
+}
+
+int ErrorReport::getEnvironment() {
+  return env;
+}
+
+void ErrorReport::setTrap(int trapCount, int *trapList) {
+  ErrorReport::trapCount = trapCount;
+  ErrorReport::trapList = trapList;
+}
+
+void ErrorReport::clearTrap() {
+  ErrorReport::trapCount = 0;
+  ErrorReport::trapList = NULL;
+}
+

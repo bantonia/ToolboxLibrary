@@ -1,0 +1,34 @@
+#ifndef __cplusplus
+#error Header file "ToolboxButton.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxButton_h
+#define __ToolboxButton_h
+
+#include "ToolboxGadget.h"
+
+class ToolboxButton : public ToolboxGadget {
+  public:
+    int getGadgetFlags();
+    ToolboxButton& setGadgetFlags(int clearWord, int eorWord);
+    ToolboxButton& setValue(char *value);
+    ToolboxButton& setValue(int value);
+    int getValue();
+    int getValue(char *buffer, int bufSize);
+    ToolboxButton& setValidation(char *value);
+    int getValidation();
+    int getValidation(char *buffer, int bufSize);
+    ToolboxButton& setFont(char *fontName, int width, int height);
+    ToolboxButton& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
+    ToolboxButton& setFocus();
+    ToolboxButton& setFlags(unsigned int flags);
+    ToolboxButton& setObjectId(ObjectId windowId);
+    ToolboxButton& setComponentId(ComponentId gadgetId);
+    ToolboxButton& setGadgetFlags(unsigned int flags);
+    ToolboxButton& setHelpMessage(char *message);
+    ToolboxButton& moveGadget(BBox *newBbox);
+};
+
+#endif

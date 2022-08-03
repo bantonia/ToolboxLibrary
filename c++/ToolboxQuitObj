@@ -1,0 +1,77 @@
+#include "ToolboxQuitObj.h"
+
+ToolboxQuitObj::ToolboxQuitObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ObjectId ToolboxQuitObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxQuitObj& ToolboxQuitObj::setMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_SetMessage;
+  regs.r[3] = (int) message;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxQuitObj::getMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_GetMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxQuitObj::getMessage(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_GetMessage;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxQuitObj& ToolboxQuitObj::setTitle(int title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxQuitObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxQuitObj::getTitle(char * buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Quit_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxQuitObj& ToolboxQuitObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxQuitObj& ToolboxQuitObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxQuitObj& ToolboxQuitObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

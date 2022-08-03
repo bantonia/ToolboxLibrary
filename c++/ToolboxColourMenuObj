@@ -1,0 +1,76 @@
+#include "kernel.h"
+#include "ToolboxColourMenuObj.h"
+
+ToolboxColourMenuObj::ToolboxColourMenuObj() {}
+
+ToolboxColourMenuObj::~ToolboxColourMenuObj() {}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::setColour(int colour) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_SetColour;
+  regs.r[3] = colour;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxColourMenuObj::getColour() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_GetColour;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::setNoneAvailable(int none) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_SetNoneAvailable;
+  regs.r[3] = none;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxColourMenuObj::getNoneAvailable() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_GetNoneAvailable;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxColourMenuObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxColourMenuObj::getTitle(char *titleBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourMenu_GetTitle;
+  regs.r[3] = (int) titleBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxColourMenuObj& ToolboxColourMenuObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

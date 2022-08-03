@@ -1,0 +1,108 @@
+#include "ToolboxScaleObj.h"
+
+ToolboxScaleObj::ToolboxScaleObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ObjectId ToolboxScaleObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxScaleObj& ToolboxScaleObj::setValue(int value) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_SetValue;
+  regs.r[3] = value;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxScaleObj::getValue() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_GetValue;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxScaleObj& ToolboxScaleObj::setBounds(int lowerBound, int upperBound, int stepSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_SetBounds;
+  regs.r[3] = lowerBound;
+  regs.r[4] = upperBound;
+  regs.r[5] = stepSize;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+void ToolboxScaleObj::getBounds(int *lowerBound, int *upperBound, int *stepSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_GetBounds;
+  this->objectMiscOp(&regs);
+  *lowerBound = regs.r[0];
+  *upperBound = regs.r[1];
+  *stepSize = regs.r[2];
+}
+
+int ToolboxScaleObj::getLowerBound() {
+  int value;
+  this->setFlags(1);
+  getBounds(&value, NULL, NULL);
+  return value;
+}
+
+int ToolboxScaleObj::getUpperBound() {
+  int value;
+  this->setFlags(2);
+  getBounds(NULL, &value, NULL);
+  return value;
+}
+
+int ToolboxScaleObj::getStepSize() {
+  int value;
+  this->setFlags(4);
+  getBounds(NULL, NULL, &value);
+  return value;
+}
+
+ToolboxScaleObj& ToolboxScaleObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxScaleObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxScaleObj::getTitle(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Scale_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+
+ToolboxScaleObj& ToolboxScaleObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxScaleObj& ToolboxScaleObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxScaleObj& ToolboxScaleObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

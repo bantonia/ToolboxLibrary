@@ -1,0 +1,116 @@
+#include "ToolboxRadioButton.h"
+
+ToolboxRadioButton& ToolboxRadioButton::setLabel(char *label) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) label;
+  this->gadgetMethod(RadioButton_SetLabel, &regs);
+  return *this;
+}
+
+int ToolboxRadioButton::getLabel() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(RadioButton_GetLabel, &regs);
+  return regs.r[5];
+}
+
+int ToolboxRadioButton::getLabel(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(RadioButton_GetLabel, &regs);
+  return regs.r[5];
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setEvent(int event) {
+  _kernel_swi_regs regs;
+  regs.r[4] = event;
+  this->gadgetMethod(RadioButton_SetEvent, &regs);
+  return *this;
+}
+
+int ToolboxRadioButton::getEvent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(RadioButton_GetEvent, &regs);
+  return regs.r[0];
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setState(int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(RadioButton_SetState, &regs);
+  return *this;
+}
+
+int ToolboxRadioButton::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(RadioButton_GetState, &regs);
+  return regs.r[0];
+}
+
+ComponentId ToolboxRadioButton::getOnButton() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(RadioButton_GetState, &regs);
+  return regs.r[1];
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setFont(char *fontName, int width, int height) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) fontName;
+  regs.r[5] = width;
+  regs.r[6] = height;
+  this->gadgetMethod(RadioButton_SetFont, &regs);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxRadioButton::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxRadioButton& ToolboxRadioButton::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

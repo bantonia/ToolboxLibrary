@@ -1,0 +1,155 @@
+#include "kernel.h"
+#include "ToolboxFileInfoDlogObj.h"
+
+ToolboxFileInfoObj::ToolboxFileInfoObj() {}
+
+ToolboxFileInfoObj::~ToolboxFileInfoObj() {}
+
+int ToolboxFileInfoObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setModified() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetModified;
+  regs.r[3] = 1;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setModified(int modified) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetModified;
+  regs.r[3] = modified;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setNotModified() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetModified;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFileInfoObj::isModified() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetModified;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileType(int fileType) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetFileType;
+  regs.r[3] = fileType;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFileInfoObj::getFileType() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetFileType;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileName(char *fileName) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetFileName;
+  regs.r[3] = (int) fileName;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFileInfoObj::getFileName() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetFileName;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFileInfoObj::getFileName(char *fileNameBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetFileName;
+  regs.r[3] = (int) fileNameBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileSize(int fileSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetFileSize;
+  regs.r[3] = fileSize;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFileInfoObj::getFileSize() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetFileSize;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setDate(int *UTC) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetDate;
+  regs.r[3] = (int) UTC;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::getDate(int *UTC) {
+ _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetDate;
+  regs.r[3] = (int) UTC;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFileInfoObj::getTitleSize() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFileInfoObj::getTitle(char *titleBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FileInfo_GetTitle;
+  regs.r[3] = (int) titleBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxFileInfoObj& ToolboxFileInfoObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

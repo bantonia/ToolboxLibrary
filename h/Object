@@ -1,0 +1,17 @@
+#ifndef __cplusplus
+#error Header file "Object.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef OBJECT_H
+#define OBJECT_H
+
+class Object {
+  public:
+    Object();
+    virtual ~Object();
+    virtual void showProperties() = 0;
+};
+
+#endif

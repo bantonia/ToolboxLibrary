@@ -1,0 +1,9 @@
+class OS {
+  public:
+    OS(){};
+    ~OS(){};
+    static unsigned int readMonotonicTime();
+    static unsigned int readModeVariable(int, int);
+    static char *binaryToDecimal(int, char *, int *);
+  private:
+};

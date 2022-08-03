@@ -1,0 +1,32 @@
+#ifndef __cplusplus
+#error Header file "ToolboxScaleObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxScaleObj_h
+#define __ToolboxScaleObj_h
+
+#include "ToolboxObj.h"
+#include "scale.h"
+
+class ToolboxScaleObj : public ToolboxObj {
+  public:
+    ToolboxScaleObj(ObjectId objectId);
+    ObjectId getWindowId();
+    ToolboxScaleObj& setValue(int value);
+    int getValue();
+    ToolboxScaleObj& setBounds(int lowerBound, int upperBound, int stepSize);
+    void getBounds(int *lowerBound, int *upperBound, int *stepSize);
+    int getLowerBound();
+    int getUpperBound();
+    int getStepSize();
+    ToolboxScaleObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *buffer, int bufSize);
+    ToolboxScaleObj& setObjectId(ObjectId objectId);
+    ToolboxScaleObj& setFlags(unsigned int flags);
+    ToolboxScaleObj& clearFlags();
+};
+
+#endif

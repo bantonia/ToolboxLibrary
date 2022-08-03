@@ -1,0 +1,60 @@
+#include "kernel.h"
+#include <setjmp.h>
+#ifndef __cplusplus
+#error Header file "ErrorReport.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ErrorReport_h
+#define __ErrorReport_h
+
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+jmp_buf errBuf;
+
+#ifdef __cplusplus
+}
+#endif
+
+class ErrorReport {
+  public:
+    enum errorEnv {
+      CONSOLE,
+      WIMP
+    };
+    ErrorReport(){};
+    ~ErrorReport(){};
+    static void setLastError(_kernel_oserror *, unsigned int);
+    static void setLastError(_kernel_oserror *, unsigned int, char *location);
+    static _kernel_oserror *getLastError();
+    static void setErrFlags(unsigned int);
+    static unsigned int getErrFlags();
+    static void setAsWimpTask(char *);
+    static void setAsConsoleTask();
+    static void setLocation(char *);
+    static char *getLocation();
+    static char *getTaskName();
+    static void clearError();
+    static int getEnvironment();
+    static void setTrap(int, int *);
+    static void clearTrap();
+  private:
+    static _kernel_oserror *lastError;
+    static unsigned int flags;
+    static errorEnv env;
+    static char *taskname;
+    static char *location;
+    static char *sprite;
+    static void *area;
+    static char *buttons;
+    static unsigned int line;
+    static int *trapList;
+    static int trapCount;
+};
+
+#endif

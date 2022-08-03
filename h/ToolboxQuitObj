@@ -1,0 +1,28 @@
+#ifndef __cplusplus
+#error Header file "ToolboxQuitObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxQuitObj_h
+#define __ToolboxQuitObj_h
+
+#include "ToolboxObj.h"
+#include "quit.h"
+
+class ToolboxQuitObj : public ToolboxObj {
+  public:
+    ToolboxQuitObj(ObjectId objectId);
+    ObjectId getWindowId();
+    ToolboxQuitObj& setMessage(char *message);
+    int getMessage();
+    int getMessage(char *buffer, int bufSize);
+    ToolboxQuitObj& setTitle(int title);
+    int getTitle();
+    int getTitle(char * buffer, int bufSize);
+    ToolboxQuitObj& setObjectId(ObjectId objectId);
+    ToolboxQuitObj& setFlags(unsigned int flags);
+    ToolboxQuitObj& clearFlags();
+};
+
+#endif

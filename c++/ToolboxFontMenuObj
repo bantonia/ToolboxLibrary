@@ -1,0 +1,45 @@
+#include "ToolboxFontMenuObj.h"
+
+ToolboxFontMenuObj::ToolboxFontMenuObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ToolboxFontMenuObj& ToolboxFontMenuObj::setFont(char *fontId) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontMenu_SetFont;
+  regs.r[3] = (int) fontId;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFontMenuObj::getFont() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontMenu_GetFont;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFontMenuObj::getFont(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontMenu_GetFont;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFontMenuObj& ToolboxFontMenuObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxFontMenuObj& ToolboxFontMenuObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxFontMenuObj& ToolboxFontMenuObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

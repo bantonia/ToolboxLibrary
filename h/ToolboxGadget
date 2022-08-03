@@ -1,0 +1,46 @@
+#ifndef __cplusplus
+#error Header file "ToolboxGadget.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxGadget_h
+#define __ToolboxGadget_h
+
+#include "kernel.h"
+#include "ErrorReport.h"
+#include "toolbox.h"
+#include "gadgets.h"
+
+class ToolboxGadget : public ErrorReport {
+  public:
+    ToolboxGadget();
+    ~ToolboxGadget(){};
+    int getGadgetFlags();
+    int getHelpMessage();
+    int getHelpMessage(char *buffer, int bufSize);
+    int getIconList();
+    int getIconList(int *buffer, int bufSize);
+    int getType();
+    void getBbox(BBox *box);
+    unsigned int getFlags();
+    int getObjectId();
+    int getComponentId();
+
+    ToolboxGadget& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
+    ToolboxGadget& setFocus();
+    ToolboxGadget& setFlags(unsigned int flags);
+    ToolboxGadget& setObjectId(ObjectId windowId);
+    ToolboxGadget& setComponentId(ComponentId gadgetId);
+    ToolboxGadget& setGadgetFlags(unsigned int flags);
+    ToolboxGadget& setHelpMessage(char *message);
+    ToolboxGadget& moveGadget(BBox *newBbox);
+
+  private:
+    ObjectId windowId;
+    ComponentId gadgetId;
+    unsigned int flags;
+};
+
+#endif
+

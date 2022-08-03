@@ -1,0 +1,105 @@
+#include "kernel.h"
+#ifndef __cplusplus
+#error Header file "WimpObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __WimpObj_h
+#define __WimpObj_h
+
+#include "ErrorReport.h"
+
+#include <libc.h>
+#include "kernel.h"
+#include "Object.h"
+#include "wimp.h"
+//#include "ToolboxCoreObj.h"
+#include <stdbool.h>
+
+class WimpObj : public Object, public ErrorReport {
+  public:
+    
+    typedef struct WindDefStr {
+      WindDefStr();
+      ~WindDefStr();
+      void *operator new(size_t);
+      void* operator new(size_t, int);
+      void *operator new( size_t, int, int);
+      void operator delete(void* ptr);
+      WimpWindow window;
+    } WindDefStr;
+
+    WimpObj();
+    ~WimpObj();
+    void showProperties(){};
+    unsigned int init();
+    void closeDown();
+    unsigned int pollIdle();
+    unsigned int poll();
+    int runIdle();
+    int run();
+    void setTaskname(char *);
+    void setMask(unsigned int);
+    void addMessages(int *);
+    void removeMessages(int *);
+    virtual void nullReason(){};
+    virtual void redrawWindowRequest(){};
+    virtual void openWindowRequest(){ openWindow();};
+    virtual void closeWindowRequest(){ closeWindow();};
+    virtual void pointerLeavingWindow(){};
+    virtual void pointerEnteringWindow(){};
+    virtual void mouseClick(){};
+    virtual void userDragBox(){};
+    virtual void keyPressed(){};
+    virtual void menuSelection(){};
+    virtual void scrollRequest(){};
+    virtual void loseCaret(){};
+    virtual void gainCaret(){};
+    virtual void pollWordNonZero(){};
+    virtual void userMessage(){};
+    virtual void userMessageRecorded(){};
+    virtual void userMessageAcknowledge(){};
+    virtual void eToolboxEvent(){};
+    virtual void preCloseDown(){};
+    virtual void unknownWimpEvent(){};
+    virtual int errorHandler();
+    static unsigned int *getPollBlock();
+    static void setHandle(unsigned int);
+    static unsigned int getHandle();
+    static unsigned int getEvent();
+    static void setPollIdleInterval(unsigned int);
+    static unsigned int getPollIdleInterval();
+    static void setPollWord(int *);
+    static int *getPollWord();
+    static unsigned int *getWorkspace();
+    static void redrawIconBar();
+    static void redrawScreen();
+    static void openWindow();
+    static void closeWindow();
+    static void closeWindow(int);
+    static void openTemplate(char *);
+    static void closeTemplate();
+    //static void loadTemplate(char *);
+    static int quit;
+  private:
+    static int handle;
+    static unsigned int *messages;
+    static char *taskname;
+    static unsigned int version;
+    static int event;
+    
+    static unsigned int *pollBlock;
+    //static WimpMask mask;
+    static unsigned int mask;
+    static unsigned int earliest;
+    static int *pollWord;
+    static unsigned int idleInterval;
+    static unsigned int newTime;
+    static unsigned int oldTime;
+    static unsigned int *workspace;
+    static int templateSpace;
+    
+};
+
+#endif

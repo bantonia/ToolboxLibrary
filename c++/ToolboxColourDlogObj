@@ -1,0 +1,129 @@
+#include "ToolboxColourDlogObj.h"
+
+ToolboxColourDlogObj::ToolboxColourDlogObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+int ToolboxColourDlogObj::getWimpHandle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetWimpHandle;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+int ToolboxColourDlogObj::getDialogueHandle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetDialogueHandle;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setColour(int *colourBlock) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_SetColour;
+  regs.r[3] = (int) colourBlock;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxColourDlogObj::getColourBlock() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetColour;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxColourDlogObj::getColourBlock(int *colourBlock, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetColour;
+  regs.r[3] = (int) colourBlock;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setColourModel(int model) {
+  int block[2];
+  block[0] = 4;
+  block[1] = model;
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_SetColourModel;
+  regs.r[3] = (int) block;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setColourModel(ToolboxColourDlogObj::ColourModel model) {
+  int block[2];
+  block[0] = 4;
+  block[1] = (int) model;
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_SetColourModel;
+  regs.r[3] = (int) block;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setColourModel(int *colourModelBlock) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_SetColourModel;
+  regs.r[3] = (int) colourModelBlock;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxColourDlogObj::getColourModel() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetColourModel;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxColourDlogObj::getColourModel(int *colourBlockModel, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetColourModel;
+  regs.r[3] = (int) colourBlockModel;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setNoneAvailable(int none) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_SetNoneAvailable;
+  regs.r[3] = none;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::hideNoneAvailable() {
+  return setNoneAvailable(0);
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::showNoneAvailable() {
+  return setNoneAvailable(1);
+}
+
+int ToolboxColourDlogObj::isNoneAvailable() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ColourDbox_GetNoneAvailable;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxColourDlogObj& ToolboxColourDlogObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

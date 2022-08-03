@@ -1,0 +1,36 @@
+#ifndef __cplusplus
+#error Header file "ToolboxSaveAsObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxSaveAsObj_h
+#define __ToolboxSaveAsObj_h
+
+#include "ToolboxObj.h"
+#include "saveas.h"
+
+class ToolboxSaveAsObj : public ToolboxObj {
+  public:
+    ToolboxSaveAsObj(ObjectId objectId);
+    ObjectId getWindowId();
+    ToolboxSaveAsObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char * buffer, int bufSize);
+    ToolboxSaveAsObj& setFileName(char *fileName);
+    int getFileName();
+    int getFileName(char * buffer, int bufSize);
+    ToolboxSaveAsObj& setFileType(int fileType);
+    int getFileType();
+    ToolboxSaveAsObj& setFileSize(int size);
+    int getFileSize();
+    ToolboxSaveAsObj& selectionAvailable(int selection);
+    ToolboxSaveAsObj& setDataAddress(void *data, int dataSize, void *selection, int selectionSize);
+    ToolboxSaveAsObj& bufferFilled(void *buffer, int bytesWritten);
+    ToolboxSaveAsObj& fileSaveCompleted(char *fileName);
+    ToolboxSaveAsObj& setObjectId(ObjectId objectId);
+    ToolboxSaveAsObj& setFlags(unsigned int flags);
+    ToolboxSaveAsObj& clearFlags();
+};
+
+#endif

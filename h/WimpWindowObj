@@ -1,0 +1,64 @@
+#ifndef __cplusplus
+#error Header file "WimpWindowObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __WimpWindowObj_h
+#define __WimpWindowObj_h
+
+#include "Object.h"
+
+#include <libc.h>
+#include "WimpObj.h"
+#include "wimp.h"
+
+#define Window_WimpToToolbox 0x82884
+
+class WimpWindowObj : public Object {
+  public:
+
+    typedef struct WindowObjFlags {
+      unsigned int windDefExt :1;
+    } WindowObjFlags;
+
+    WimpWindowObj();
+    WimpWindowObj(WimpObj::WindDefStr *);
+    ~WimpWindowObj();
+    void showProperties(){};
+    void setWindDefStr(WimpObj::WindDefStr *);
+    void removeWindDefStr();
+    WimpObj::WindDefStr *getWindDefStr();
+    int createWindow();
+    void openWindow();
+    static void openWindow(WimpOpenWindowBlock *);
+    void closeWindow();
+    static unsigned redrawWindow();
+    static unsigned updateWindow();
+    unsigned updateWindow(int, int, int, int);
+    static unsigned getRectangle();
+    static void closeWindow(WimpCloseWindowBlock *);
+    void deleteWindow();
+    void deleteWindow(void *);
+    void setWindowHandle(int);
+    int getWindowHandle();
+    void getWindowState();
+    void setRedirectTitle(char *, int);
+    void updateTitle(char *);
+    char *getTitle();
+    void forceRedraw();
+    void forceRedraw(int, int, int, int);
+    WimpGetWindowOutlineBlock *getWindowOutline();
+    unsigned int *getWorkspace();
+    void redrawTitle();
+    void wimpToToolbox(int icon_handle, int *toolbox_window_handle, int *toolbox_component_id);
+  private:
+    int handle;
+    WimpObj::WindDefStr *windDefStr;
+    char *title;
+    int titleBufLen;
+    static unsigned int *workspace;
+    WindowObjFlags flags;
+};
+
+#endif

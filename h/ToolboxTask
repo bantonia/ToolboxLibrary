@@ -1,0 +1,19 @@
+#ifndef __cplusplus
+#error Header file "ToolboxTask.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxTask_h
+#define __ToolboxTask_h
+
+#include "ToolboxCoreObj.h"
+#include "WimpObj.h"
+
+class ToolboxTask : public WimpObj, public ToolboxCoreObj {
+  public:
+    void showProperties(){};
+    void eToolboxEvent();
+};
+
+#endif

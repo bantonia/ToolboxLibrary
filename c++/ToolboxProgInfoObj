@@ -1,0 +1,133 @@
+#include "ToolboxProgInfoObj.h"
+
+ToolboxProgInfoObj::ToolboxProgInfoObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ObjectId ToolboxProgInfoObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setVersion(char *versionString) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_SetVersion;
+  regs.r[3] = (int) versionString;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxProgInfoObj::getVersion() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetVersion;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxProgInfoObj::getVersion(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetVersion;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setLicenceType(int licenceType) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_SetLicenceType;
+  regs.r[3] = licenceType;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxProgInfoObj::getLicenceType() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetLicenceType;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxProgInfoObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxProgInfoObj::getTitle(char * buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setUri(char *uri) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_SetUri;
+  regs.r[3] = (int) uri;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxProgInfoObj::getUri() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetUri;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxProgInfoObj::getUri(char * buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetUri;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setWebEvent(int event) {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_SetLicenceType;
+  regs.r[3] = event;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxProgInfoObj::getWebEvent() {
+  _kernel_swi_regs regs;
+  regs.r[2] = ProgInfo_GetWebEvent;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxProgInfoObj& ToolboxProgInfoObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

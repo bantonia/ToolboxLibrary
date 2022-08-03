@@ -1,0 +1,110 @@
+#include "ToolboxDraggable.h"
+
+ToolboxDraggable& ToolboxDraggable::setSprite(char *spriteName) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) spriteName;
+  this->gadgetMethod(Draggable_SetSprite, &regs);
+  return *this;
+}
+
+int ToolboxDraggable::getSprite() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Draggable_GetSprite, &regs);
+  return regs.r[5];
+}
+
+int ToolboxDraggable::getSprite(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Draggable_GetSprite, &regs);
+  return regs.r[5];
+}
+
+ToolboxDraggable& ToolboxDraggable::setText(char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  this->gadgetMethod(Draggable_SetText, &regs);
+  return *this;
+}
+
+int ToolboxDraggable::getText() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Draggable_GetText, &regs);
+  return regs.r[5];
+}
+
+int ToolboxDraggable::getText(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Draggable_GetSprite, &regs);
+  return regs.r[5];
+}
+
+ToolboxDraggable& ToolboxDraggable::setState(int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(Draggable_SetState, &regs);
+  return *this;
+}
+
+int ToolboxDraggable::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Draggable_GetState, &regs);
+  return regs.r[0];
+}
+
+ToolboxDraggable& ToolboxDraggable::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxDraggable::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxDraggable& ToolboxDraggable::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

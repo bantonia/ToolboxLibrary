@@ -1,0 +1,128 @@
+#include "ToolboxFontDlogObj.h"
+
+ToolboxFontDlogObj::ToolboxFontDlogObj() {}
+
+ToolboxFontDlogObj::~ToolboxFontDlogObj() {}
+
+int ToolboxFontDlogObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::clearFont() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_SetFont;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setFont(char *fontId) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_SetFont;
+  regs.r[3] = (int) fontId;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFontDlogObj::getFont() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetFont;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFontDlogObj::getFont(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetFont;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setSize(int height, int aspectRatio) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_SetSize;
+  regs.r[3] = height;
+  regs.r[4] = aspectRatio;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::getSize(int *height, int *aspectRatio) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetSize;
+  this->objectMiscOp(&regs);
+  *height = regs.r[0];
+  *aspectRatio = regs.r[1];
+  return *this;
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setTryString(char *tryString) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_SetTryString;
+  regs.r[3] = (int) tryString;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFontDlogObj::getTryString() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetTryString;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFontDlogObj::getTryString(char *tryStringBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetTryString;
+  regs.r[3] = (int) tryStringBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxFontDlogObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxFontDlogObj::getTitle(char *titleBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = FontDbox_GetTitle;
+  regs.r[3] = (int) titleBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxFontDlogObj& ToolboxFontDlogObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

@@ -1,0 +1,144 @@
+#include "ToolboxSaveAsObj.h"
+
+ToolboxSaveAsObj::ToolboxSaveAsObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ObjectId ToolboxSaveAsObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetWindowId;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxSaveAsObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxSaveAsObj::getTitle(char * buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setFileName(char *fileName) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SetFileName;
+  regs.r[3] = (int) fileName;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxSaveAsObj::getFileName() {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetFileName;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxSaveAsObj::getFileName(char * buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetFileName;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setFileType(int fileType) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SetFileType;
+  regs.r[3] = fileType;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxSaveAsObj::getFileType() {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetFileType;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setFileSize(int size) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SetFileSize;
+  regs.r[3] = size;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxSaveAsObj::getFileSize() {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_GetFileSize;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::selectionAvailable(int selection) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SelectionAvailable;
+  regs.r[3] = selection;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setDataAddress(void *data, int dataSize, void *selection, int selectionSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_SetDataAddress;
+  regs.r[3] = (int) data;
+  regs.r[4] = dataSize;
+  regs.r[5] = (int) selection;
+  regs.r[6] = selectionSize;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::bufferFilled(void *buffer, int bytesWritten) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_BufferFilled;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bytesWritten;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::fileSaveCompleted(char *fileName) {
+  _kernel_swi_regs regs;
+  regs.r[2] = SaveAs_FileSaveCompleted;
+  regs.r[3] = (int) fileName;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxSaveAsObj& ToolboxSaveAsObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

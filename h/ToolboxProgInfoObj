@@ -1,0 +1,35 @@
+#ifndef __cplusplus
+#error Header file "ToolboxProgInfoObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxProgInfoObj_h
+#define __ToolboxProgInfoObj_h
+
+#include "ToolboxObj.h"
+#include "proginfo.h"
+
+class ToolboxProgInfoObj : public ToolboxObj {
+  public:
+    ToolboxProgInfoObj(ObjectId objectId);
+    ObjectId getWindowId();
+    ToolboxProgInfoObj& setVersion(char *versionString);
+    int getVersion();
+    int getVersion(char *buffer, int bufSize);
+    ToolboxProgInfoObj& setLicenceType(int licenceType);
+    int getLicenceType();
+    ToolboxProgInfoObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *buffer, int bufSize);
+    ToolboxProgInfoObj& setUri(char *uri);
+    int getUri();
+    int getUri(char *buffer, int bufSize);
+    ToolboxProgInfoObj& setWebEvent(int event);
+    int getWebEvent();
+    ToolboxProgInfoObj& setObjectId(ObjectId objectId);
+    ToolboxProgInfoObj& setFlags(unsigned int flags);
+    ToolboxProgInfoObj& clearFlags();
+};
+
+#endif

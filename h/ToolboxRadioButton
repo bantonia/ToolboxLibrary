@@ -1,0 +1,33 @@
+#ifndef __cplusplus
+#error Header file "ToolboxRadioButton.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxRadioButton_h
+#define __ToolboxRadioButton_h
+
+#include "ToolboxGadget.h"
+
+class ToolboxRadioButton : public ToolboxGadget {
+  public:
+    ToolboxRadioButton& setLabel(char *label);
+    int getLabel();
+    int getLabel(char *buffer, int bufSize);
+    ToolboxRadioButton& setEvent(int event);
+    int getEvent();
+    ToolboxRadioButton& setState(int state);
+    int getState();
+    ComponentId getOnButton();
+    ToolboxRadioButton& setFont(char *fontName, int width, int height);
+    ToolboxRadioButton& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
+    ToolboxRadioButton& setFocus();
+    ToolboxRadioButton& setFlags(unsigned int flags);
+    ToolboxRadioButton& setObjectId(ObjectId windowId);
+    ToolboxRadioButton& setComponentId(ComponentId gadgetId);
+    ToolboxRadioButton& setGadgetFlags(unsigned int flags);
+    ToolboxRadioButton& setHelpMessage(char *message);
+    ToolboxRadioButton& moveGadget(BBox *newBbox);
+};
+
+#endif

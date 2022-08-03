@@ -1,0 +1,113 @@
+#include "ToolboxActionButton.h"
+
+ToolboxActionButton& ToolboxActionButton::setText(char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  this->gadgetMethod(ActionButton_SetText, &regs);
+  return *this;
+}
+
+int ToolboxActionButton::getText() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(ActionButton_GetText, &regs);
+  return regs.r[5];
+}
+
+int ToolboxActionButton::getText(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(ActionButton_GetText, &regs);
+  return regs.r[5];
+}
+
+ToolboxActionButton& ToolboxActionButton::setEvent(int eventCode) {
+  _kernel_swi_regs regs;
+  regs.r[4] = eventCode;
+  this->gadgetMethod(ActionButton_SetEvent, &regs);
+  return *this;
+}
+
+int ToolboxActionButton::getEvent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ActionButton_GetEvent, &regs);
+  return regs.r[0];
+}
+
+ToolboxActionButton& ToolboxActionButton::setClickShow(ObjectId id, unsigned int showFlags) {
+  _kernel_swi_regs regs;
+  regs.r[4] = id;
+  regs.r[5] = showFlags;
+  this->gadgetMethod(ActionButton_SetClickShow, &regs);
+  return *this;
+}
+
+void ToolboxActionButton::getClickShow(ObjectId *id, unsigned int *showFlags) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ActionButton_GetClickShow, &regs);
+  *id = regs.r[0];
+  *showFlags = regs.r[1];
+}
+
+ToolboxActionButton& ToolboxActionButton::setFont(const char *fontName, unsigned int width, unsigned int height) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) fontName;
+  regs.r[5] = width;
+  regs.r[6] = height;
+  this->gadgetMethod(ActionButton_SetFont, &regs);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxActionButton::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxActionButton& ToolboxActionButton::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}
+

@@ -1,0 +1,47 @@
+#ifndef __cplusplus
+#error Header file "ToolboxIconbarObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxIconbarObj_h
+#define __ToolboxIconbarObj_h
+
+#include "iconbar.h"
+#include "ToolboxObj.h"
+
+class ToolboxIconbarObj : public ToolboxObj {
+  public:
+    ToolboxIconbarObj();
+    ~ToolboxIconbarObj();
+    int getIconHandle();
+    ToolboxIconbarObj& setMenu(ObjectId menuId);
+    ObjectId getMenu();
+    ToolboxIconbarObj& setEvent(int selectEvent, int adjustEvent);
+    ToolboxIconbarObj& setSelectEvent(int selectEvent);
+    ToolboxIconbarObj& setAdjustEvent(int adjustEvent);
+    ToolboxIconbarObj& getEvent(int *selectEvent, int *adjustEvent);
+    int getSelectEvent();
+    int getAdjustEvent();
+    ToolboxIconbarObj& setShow(ObjectId select, ObjectId adjust);
+    ToolboxIconbarObj& setSelectShow(ObjectId select);
+    ToolboxIconbarObj& setAdjustShow(ObjectId adjust);
+    ToolboxIconbarObj& getShow(ObjectId *select, ObjectId *adjust);
+    ObjectId getSelectShow();
+    ObjectId getAdjustShow();
+    ToolboxIconbarObj& setHelpMessage(char *message);
+    ToolboxIconbarObj& detachHelpMessage();
+    int getHelpMessage();
+    int getHelpMessage(char *messageBuffer, int bufSize);
+    ToolboxIconbarObj& setText(char *text);
+    int getText();
+    int getText(char *textBuffer, int bufSize);
+    ToolboxIconbarObj& setSprite(char *spriteName);
+    int getSpriteName();
+    int getSpriteName(char *spriteNameBuffer, int bufSize);
+    ToolboxIconbarObj& setObjectId(ObjectId objectId);
+    ToolboxIconbarObj& setFlags(unsigned int flags);
+    ToolboxIconbarObj& clearFlags();
+};
+
+#endif

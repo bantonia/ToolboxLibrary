@@ -1,0 +1,101 @@
+#include "ToolboxOptionButton.h"
+
+ToolboxOptionButton& ToolboxOptionButton::setLabel(char *label) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) label;
+  this->gadgetMethod(OptionButton_SetLabel, &regs);
+  return *this;
+}
+
+int ToolboxOptionButton::getLabel() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(OptionButton_GetLabel, &regs);
+  return regs.r[5];
+}
+
+int ToolboxOptionButton::getLabel(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(OptionButton_GetLabel, &regs);
+  return regs.r[5];
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setEvent(int event) {
+  _kernel_swi_regs regs;
+  regs.r[4] = event;
+  this->gadgetMethod(OptionButton_SetEvent, &regs);
+  return *this;
+}
+
+int ToolboxOptionButton::getEvent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(OptionButton_GetEvent, &regs);
+  return regs.r[0];
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setState(int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(OptionButton_SetState, &regs);
+  return *this;
+}
+
+int ToolboxOptionButton::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(OptionButton_GetState, &regs);
+  return regs.r[0];
+}
+
+ToolboxOptionButton& ToolboxOptionButton::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxOptionButton::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxOptionButton& ToolboxOptionButton::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

@@ -1,0 +1,39 @@
+#ifndef __cplusplus
+#error Header file "ToolboxFileInfoObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxFileInfoObj_h
+#define __ToolboxFileInfoObj_h
+
+#include "fileinfo.h"
+#include "ToolboxObj.h"
+
+class ToolboxFileInfoObj : public ToolboxObj {
+  public:
+    ToolboxFileInfoObj();
+    ~ToolboxFileInfoObj();
+    int getWindowId();
+    ToolboxFileInfoObj& setModified();
+    ToolboxFileInfoObj& setModified(int modified);
+    ToolboxFileInfoObj& setNotModified();
+    int isModified();
+    ToolboxFileInfoObj& setFileType(int fileType);
+    int getFileType();
+    ToolboxFileInfoObj& setFileName(char *fileName);
+    int getFileName();
+    int getFileName(char *fileNameBuffer, int bufSize);
+    ToolboxFileInfoObj& setFileSize(int fileSize);
+    int getFileSize();
+    ToolboxFileInfoObj& setDate(int *UTC);
+    ToolboxFileInfoObj& getDate(int *UTC);
+    ToolboxFileInfoObj& setTitle(char *title);
+    int getTitleSize();
+    int getTitle(char *titleBuffer, int bufSize);
+    ToolboxFileInfoObj& setObjectId(ObjectId objectId);
+    ToolboxFileInfoObj& setFlags(unsigned int flags);
+    ToolboxFileInfoObj& clearFlags();
+};
+
+#endif

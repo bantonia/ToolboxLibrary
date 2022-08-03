@@ -1,0 +1,57 @@
+#ifndef __cplusplus
+#error Header file "ToolboxObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxObj_h
+#define __ToolboxObj_h
+
+#include "Object.h"
+#include "toolbox.h"
+#include "ErrorReport.h"
+
+#ifndef UNUSED
+#define UNUSED(x) (void)(x)
+#endif
+
+class ToolboxObj : public Object, public ErrorReport {
+  public:
+    ToolboxObj();
+    ToolboxObj(ObjectId id);
+    ToolboxObj(unsigned int flags, void *name_or_template);
+    ~ToolboxObj();
+    void getTemplateName(char *buffer, int  buff_size, int *nbytes);
+    virtual ToolboxObj& showObject(int show_type, void *type, ObjectId parent, ComponentId parent_component);
+    virtual ToolboxObj& hideObject();
+    unsigned int getObjectState(unsigned int *state);
+    virtual ToolboxObj& setClientHandle(void *client_handle);
+    unsigned int getClientHandle(void *client_handle);
+    ObjectId getParent();
+    ObjectId getAncestor();
+    virtual ToolboxObj& raiseToolboxEvent(ComponentId component, ToolboxEvent *event);
+    ObjectClass getObjectClass();
+    ObjectClass readObjectClass();
+    virtual ToolboxObj& objectMiscOp(_kernel_swi_regs *regs);
+    ObjectId readObjectId();
+    ObjectId readParentObjectId();
+    ObjectId readAncestorObjectId();
+    ToolboxObj& setFlags(unsigned int flags);
+    ToolboxObj& clearFlags();
+    unsigned int getFlags();
+    ToolboxObj& setObjectId(ObjectId id);
+    static _kernel_oserror ToolboxObjectIdNotSet;
+  private:
+    virtual ObjectId createObject(void *name_or_template);
+    void deleteObject();
+    ObjectId id;
+    ObjectId parent;
+    ComponentId parentComponent;
+    ObjectId ancestor;
+    ComponentId ancestorComponent;
+    unsigned int deleteFlag;
+    unsigned int flags;
+    ObjectClass objClass;
+};
+
+#endif

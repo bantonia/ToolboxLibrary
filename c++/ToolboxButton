@@ -1,0 +1,131 @@
+#include "ToolboxButton.h"
+#include "OS.h"
+
+int ToolboxButton::getGadgetFlags() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Button_GetFlags, &regs);
+  return regs.r[0];
+}
+
+ToolboxButton& ToolboxButton::setGadgetFlags(int clearWord, int eorWord) {
+  _kernel_swi_regs regs;
+  regs.r[4] = clearWord;
+  regs.r[5] = eorWord;
+  this->gadgetMethod(Button_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setValue(char *value) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) value;
+  this->gadgetMethod(Button_SetValue, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setValue(int value) {
+  _kernel_swi_regs regs;
+  char buffer[256];
+  int size = 256;
+  OS::binaryToDecimal(value, buffer, &size);
+  regs.r[4] = (int)buffer;
+  this->gadgetMethod(Button_SetValue, &regs);
+  return *this;
+}
+
+int ToolboxButton::getValue() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Button_GetValue, &regs);
+  return regs.r[5];
+}
+
+int ToolboxButton::getValue(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Button_GetValue, &regs);
+  return regs.r[5];
+}
+
+ToolboxButton& ToolboxButton::setValidation(char *value) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) value;
+  this->gadgetMethod(Button_SetValidation, &regs);
+  return *this;
+}
+
+int ToolboxButton::getValidation() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Button_GetValidation, &regs);
+  return regs.r[5];
+}
+
+int ToolboxButton::getValidation(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Button_GetValidation, &regs);
+  return regs.r[5];
+}
+
+ToolboxButton& ToolboxButton::setFont(char *fontName, int width, int height) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) fontName;
+  regs.r[5] = width;
+  regs.r[6] = height;
+  this->gadgetMethod(Button_SetFont, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxButton::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxButton& ToolboxButton::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

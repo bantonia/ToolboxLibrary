@@ -1,0 +1,89 @@
+#include "kernel.h"
+#include "ToolboxDCSObj.h"
+
+ToolboxDCSObj::ToolboxDCSObj() {
+  windowId = -1;
+}
+
+ToolboxDCSObj::~ToolboxDCSObj() {}
+
+int ToolboxDCSObj::getWindowId() {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_GetWindowId;
+  this->objectMiscOp(&regs);
+  windowId = regs.r[0];
+  return regs.r[0];
+}
+
+int ToolboxDCSObj::readWindowId() {
+  if (windowId == -1) {
+    return this->getWindowId();
+  }
+  return windowId;
+}
+
+ToolboxDCSObj& ToolboxDCSObj::setMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_SetMessage;
+  regs.r[3] = (int) message;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxDCSObj::getMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_GetMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxDCSObj::getMessage(char *messageBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_GetMessage;
+  regs.r[3] = (int) messageBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxDCSObj& ToolboxDCSObj::setTitle(char *title) {
+  unsigned int flags = 0;
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxDCSObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxDCSObj::getTitle(char *titleBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = DCS_GetTitle;
+  regs.r[3] = (int) titleBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxDCSObj& ToolboxDCSObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxDCSObj& ToolboxDCSObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxDCSObj& ToolboxDCSObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

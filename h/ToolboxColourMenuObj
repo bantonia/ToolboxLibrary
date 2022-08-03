@@ -1,0 +1,29 @@
+#ifndef __cplusplus
+#error Header file "ToolboxColourMenuObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxColourMenuObj_h
+#define __ToolboxColourMenuObj_h
+
+#include "colourmenu.h"
+#include "ToolboxObj.h"
+
+class ToolboxColourMenuObj : public ToolboxObj {
+  public:
+    ToolboxColourMenuObj();
+    ~ToolboxColourMenuObj();
+    ToolboxColourMenuObj& setColour(int colour);
+    int getColour();
+    ToolboxColourMenuObj& setNoneAvailable(int none);
+    int getNoneAvailable();
+    ToolboxColourMenuObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *titleBuffer, int bufSize);
+    ToolboxColourMenuObj& setObjectId(ObjectId objectId);
+    ToolboxColourMenuObj& setFlags(unsigned int flags);
+    ToolboxColourMenuObj& clearFlags();
+};
+
+#endif

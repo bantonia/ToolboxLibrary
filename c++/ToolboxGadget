@@ -1,0 +1,121 @@
+#include "ToolboxGadget.h"
+
+ToolboxGadget& ToolboxGadget::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = windowId;
+  regs->r[2] = methodCode;
+  regs->r[3] = gadgetId;
+  ToolboxGadget::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxGadget::ToolboxGadget() {
+  windowId = 0;
+  gadgetId = 0;
+  flags = 0;
+}
+
+int ToolboxGadget::getGadgetFlags() {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  this->gadgetMethod(Gadget_GetFlags, &regs);
+  return regs.r[0];
+}
+
+ToolboxGadget& ToolboxGadget::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxGadget& ToolboxGadget::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+int ToolboxGadget::getHelpMessage() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Gadget_GetHelpMessage, &regs);
+  return regs.r[5];
+}
+
+int ToolboxGadget::getHelpMessage(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Gadget_GetHelpMessage, &regs);
+  return regs.r[5];
+}
+
+int ToolboxGadget::getIconList() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(Gadget_GetIconList, &regs);
+  return regs.r[5];
+}
+
+int ToolboxGadget::getIconList(int *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(Gadget_GetIconList, &regs);
+  return regs.r[5];
+}
+
+ToolboxGadget& ToolboxGadget::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+int ToolboxGadget::getType() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_GetType, &regs);
+  return regs.r[0];
+}
+
+ToolboxGadget& ToolboxGadget::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+void ToolboxGadget::getBbox(BBox *box) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) box;
+  this->gadgetMethod(Gadget_GetBBox, &regs);
+}
+
+ToolboxGadget& ToolboxGadget::setFlags(unsigned int flags) {
+  this->flags = flags;
+  return *this;
+}
+
+ToolboxGadget& ToolboxGadget::setObjectId(ObjectId windowId) {
+  this->windowId = windowId;
+  return *this;
+}
+
+ToolboxGadget& ToolboxGadget::setComponentId(ComponentId gadgetId) {
+  this->gadgetId = gadgetId;
+  return *this;
+}
+
+unsigned int ToolboxGadget::getFlags() {
+  return flags;
+}
+
+int ToolboxGadget::getObjectId() {
+  return windowId;
+}
+
+int ToolboxGadget::getComponentId() {
+  return gadgetId;
+}
+

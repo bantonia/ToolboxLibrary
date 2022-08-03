@@ -1,0 +1,27 @@
+#include "kernel.h"
+#include "swis.h"
+#include "OS.h"
+
+unsigned int OS::readMonotonicTime() {
+  _kernel_swi_regs in, out;
+  _kernel_swi(OS_ReadMonotonicTime, &in, &out);
+  return out.r[0];
+}
+
+unsigned int OS::readModeVariable(int mode, int var) {
+  _kernel_swi_regs in, out;
+  in.r[0] = mode;
+  in.r[1] = var;
+  _kernel_swi(OS_ReadModeVariable, &in, &out);
+  return out.r[2];
+}
+
+char *OS::binaryToDecimal(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  _kernel_swi(OS_BinaryToDecimal, &in, &out);
+  *bufSize = out.r[2];
+  return buffer;
+}

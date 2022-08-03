@@ -1,0 +1,61 @@
+#ifndef __cplusplus
+#error Header file "ToolboxWindowObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxWindowObj_h
+#define __ToolboxWindowObj_h
+
+#include "window.h"
+#include "ToolboxObj.h"
+
+class ToolboxWindowObj : public ToolboxObj {
+  public:
+    ToolboxWindowObj();
+    ToolboxWindowObj(ObjectId objectId);
+    ~ToolboxWindowObj();
+    void showProperties() {};
+    int getWimpHandle();
+    int readWimpHandle();
+    int addGadget(Gadget *gadget);
+    ToolboxWindowObj& removeGadget(ComponentId gadget);
+    ToolboxWindowObj& setMenu(ObjectId menu_id);
+    ToolboxWindowObj& removeMenu();
+    ObjectId getMenu();
+    ToolboxWindowObj& setPointer(char *sprite_name, int x_hot_spot, int y_hot_spot);
+    ToolboxWindowObj& detachPointer();
+    int getPointer();
+    int getPointer(char *buffer, int buff_size, int *nbytes, int *x_hot_spot, int *y_hot_spot);
+    ToolboxWindowObj& setHelpMessage(char *message_text);
+    ToolboxWindowObj& removeHelpMessage();
+    int getHelpMessage();
+    int getHelpMessage(char *buffer, int buff_size, int *nbytes);
+    ToolboxWindowObj& addKeyboardShortcuts(int num_shortcuts, KeyboardShortcut *shortcuts);
+    ToolboxWindowObj& removeKeyboardShortcuts(int num_shortcuts, KeyboardShortcut *shortcuts);
+    ToolboxWindowObj& removeAllKeyboardShortcuts();
+    ToolboxWindowObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *buffer, int buff_size, int *nbytes);
+    ToolboxWindowObj& clearDefaultFocus();
+    ToolboxWindowObj& setDefaultFocus(ComponentId focus);
+    ToolboxWindowObj& setDefaultFocusToWindow();
+    ComponentId getDefaultFocus();
+    ComponentId getDefaultFocus(ComponentId *focus);
+    ToolboxWindowObj& setExtent(BBox *extent);
+    void getExtent(BBox *extent);
+    ToolboxWindowObj& forceRedraw(BBox *redraw_box);
+    ToolboxWindowObj& setToolbar(int location, ObjectId toolbar_id);
+    ToolboxWindowObj& setToolbar(int mask, ObjectId toolbar_ibl_id, ObjectId toolbar_itl_id, ObjectId toolbar_ebl_id, ObjectId toolbar_etl_id);
+    ObjectId getToolbar(int location);
+    void getToolbar(int mask, ObjectId *toolbar_ibl_id, ObjectId *toolbar_itl_id, ObjectId *toolbar_ebl_id, ObjectId *toolbar_etl_id);
+    //void wimpToToolbox(ObjectId *object, ComponentId *component);
+    int isWindow(char *title);
+    ToolboxWindowObj& setObjectId(ObjectId objectId);
+    ToolboxWindowObj& setFlags(unsigned int flags);
+    ToolboxWindowObj& clearFlags();
+  private:
+    int wimpHandle;
+};
+
+#endif

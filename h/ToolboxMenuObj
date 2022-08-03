@@ -1,0 +1,53 @@
+#ifndef __cplusplus
+#error Header file "ToolboxMenuObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxMenuObj_h
+#define __ToolboxMenuObj_h
+
+#include "menu.h"
+#include "ToolboxObj.h"
+
+class ToolboxMenuObj : public ToolboxObj {
+  public:
+    ToolboxMenuObj(ObjectId objectId);
+    ToolboxMenuObj& setTick(ComponentId entry);
+    int getTick(ComponentId entry);
+    ToolboxMenuObj& setFade(ComponentId entry, int fade);
+    int getFade(ComponentId entry);
+    ToolboxMenuObj& setEntryText(ComponentId entry, char *text);
+    int getEntryText(ComponentId entry);
+    int getEntryText(ComponentId entry, char *buffer, int bufSize);
+    ToolboxMenuObj& setEntrySprite(ComponentId entry, char *spriteName);
+    int getEntrySprite(ComponentId entry);
+    int getEntrySprite(ComponentId entry, char *buffer, int bufSize);
+    ToolboxMenuObj& setSubMenuShow(ComponentId entry, ObjectId subMenu);
+    ObjectId getSubMenuShow(ComponentId entry);
+    ToolboxMenuObj& setSubMenuEvent(ComponentId entry, int toolboxEvent);
+    int getSubMenuEvent(ComponentId entry);
+    ToolboxMenuObj& setClickShow(ComponentId entry, ObjectId object, int showFlags);
+    int getClickShowObjectId(ComponentId entry);
+    int getClickShowFlags(ComponentId entry);
+    ToolboxMenuObj& setClickEvent(ComponentId entry, int toolboxEvent);
+    int getClickEvent(ComponentId entry);
+    ToolboxMenuObj& setHelpMessage(char *helpMessage);
+    int getHelpMessage();
+    int getHelpMessage(char *buffer, int bufSize);
+    ToolboxMenuObj& setEntryHelpMessage(ComponentId entry, char *helpMessage);
+    int getEntryHelpMessage(ComponentId entry);
+    int getEntryHelpMessage(ComponentId entry, char *buffer, int bufSize);
+    ComponentId addEntry(ComponentId entryId, char *entryDescription);
+    ToolboxMenuObj& removeEntry(ComponentId entry);
+    int getHeight();
+    int getWidth();
+    ToolboxMenuObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *buffer, int bufSize);
+    ToolboxMenuObj& setObjectId(ObjectId objectId);
+    ToolboxMenuObj& setFlags(unsigned int flags);
+    ToolboxMenuObj& clearFlags();
+};
+
+#endif

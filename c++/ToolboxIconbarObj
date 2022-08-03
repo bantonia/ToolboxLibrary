@@ -1,0 +1,233 @@
+#include "ToolboxIconbarObj.h"
+
+ToolboxIconbarObj::ToolboxIconbarObj() {}
+
+ToolboxIconbarObj::~ToolboxIconbarObj() {}
+
+int ToolboxIconbarObj::getIconHandle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetIconHandle;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setMenu(ObjectId menuId) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_SetMenu;
+  regs.r[3] = (int) menuId;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ObjectId ToolboxIconbarObj::getMenu() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetMenu;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setEvent(int selectEvent, int adjustEvent) {
+  _kernel_swi_regs regs;
+  setFlags(3);
+  regs.r[2] = Iconbar_SetEvent;
+  regs.r[3] = selectEvent;
+  regs.r[4] = adjustEvent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setSelectEvent(int selectEvent) {
+  _kernel_swi_regs regs;
+  setFlags(1);
+  regs.r[2] = Iconbar_SetEvent;
+  regs.r[3] = selectEvent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setAdjustEvent(int adjustEvent) {
+  _kernel_swi_regs regs;
+  setFlags(2);
+  regs.r[2] = Iconbar_SetEvent;
+  regs.r[4] = adjustEvent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::getEvent(int *selectEvent, int *adjustEvent) {
+  _kernel_swi_regs regs;
+  setFlags(3);
+  regs.r[2] = Iconbar_GetEvent;
+  this->objectMiscOp(&regs);
+  *selectEvent = regs.r[0];
+  *adjustEvent = regs.r[1];
+  return *this;
+}
+
+int ToolboxIconbarObj::getSelectEvent() {
+  _kernel_swi_regs regs;
+  setFlags(1);
+  regs.r[2] = Iconbar_GetEvent;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+int ToolboxIconbarObj::getAdjustEvent() {
+  _kernel_swi_regs regs;
+  setFlags(2);
+  regs.r[2] = Iconbar_GetEvent;
+  this->objectMiscOp(&regs);
+  return regs.r[1];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setShow(ObjectId select, ObjectId adjust) {
+  _kernel_swi_regs regs;
+  setFlags(3);
+  regs.r[2] = Iconbar_SetShow;
+  regs.r[3] = select;
+  regs.r[4] = adjust;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setSelectShow(ObjectId select) {
+  _kernel_swi_regs regs;
+  setFlags(1);
+  regs.r[2] = Iconbar_SetShow;
+  regs.r[3] = select;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setAdjustShow(ObjectId adjust) {
+  _kernel_swi_regs regs;
+  setFlags(2);
+  regs.r[2] = Iconbar_SetShow;
+  regs.r[4] = adjust;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::getShow(ObjectId *select, ObjectId *adjust) {
+  _kernel_swi_regs regs;
+  setFlags(3);
+  regs.r[2] = Iconbar_GetShow;
+  this->objectMiscOp(&regs);
+  *select = regs.r[0];
+  *adjust = regs.r[1];
+  return *this;
+}
+
+ObjectId ToolboxIconbarObj::getSelectShow() {
+  _kernel_swi_regs regs;
+  setFlags(1);
+  regs.r[2] = Iconbar_GetShow;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ObjectId ToolboxIconbarObj::getAdjustShow() {
+  _kernel_swi_regs regs;
+  setFlags(2);
+  regs.r[2] = Iconbar_GetShow;
+  this->objectMiscOp(&regs);
+  return regs.r[1];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_SetHelpMessage;
+  regs.r[3] = (int) message;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::detachHelpMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_SetHelpMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxIconbarObj::getHelpMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetHelpMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxIconbarObj::getHelpMessage(char *messageBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetHelpMessage;
+  regs.r[3] = (int) messageBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setText(char *text) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_SetText;
+  regs.r[3] = (int) text;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxIconbarObj::getText() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetText;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxIconbarObj::getText(char *textBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetText;
+  regs.r[3] = (int) textBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setSprite(char *spriteName) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_SetSprite;
+  regs.r[3] = (int) spriteName;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxIconbarObj::getSpriteName() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetSprite;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxIconbarObj::getSpriteName(char *spriteNameBuffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Iconbar_GetSprite;
+  regs.r[3] = (int) spriteNameBuffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxIconbarObj& ToolboxIconbarObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

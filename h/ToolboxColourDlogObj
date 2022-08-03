@@ -1,0 +1,58 @@
+#ifndef __cplusplus
+#error Header file "ToolboxColourDlogObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxColourDlogObj_h
+#define __ToolboxColourDlogObj_h
+
+#include "colourdbox.h"
+#include "ToolboxObj.h"
+
+class ToolboxColourDlogObj : public ToolboxObj {
+  public:
+
+    typedef struct {
+      union {
+        unsigned int w;
+        struct {
+          unsigned : 8;
+          unsigned blue : 8;
+          unsigned green : 8;
+          unsigned red : 8;
+        } b; 
+      } colour;
+      unsigned size;
+      unsigned model;
+    } colourBlockHdr;
+
+    typedef enum {
+      RGB = 1,
+      CMYK,
+      HSV
+    } ColourModel;
+    
+    ToolboxColourDlogObj(ObjectId id);
+    ~ToolboxColourDlogObj(){};
+    int getWimpHandle();
+    int readWimpHandle();
+    int getDialogueHandle();
+    ToolboxColourDlogObj& setColour(int *colourBlock);
+    int getColourBlock();
+    int getColourBlock(int *colourBlock, int bufsize);
+    ToolboxColourDlogObj& setColourModel(int model);
+    ToolboxColourDlogObj& setColourModel(ToolboxColourDlogObj::ColourModel model);
+    ToolboxColourDlogObj& setColourModel(int *colourModelBlock);
+    int getColourModel();
+    int getColourModel(int *colourBlockModel, int bufSize);
+    ToolboxColourDlogObj& setNoneAvailable(int none);
+    ToolboxColourDlogObj& hideNoneAvailable();
+    ToolboxColourDlogObj& showNoneAvailable();
+    int isNoneAvailable();
+    ToolboxColourDlogObj& setObjectId(ObjectId objectId);
+    ToolboxColourDlogObj& setFlags(unsigned int flags);
+    ToolboxColourDlogObj& clearFlags();
+};
+
+#endif

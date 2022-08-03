@@ -1,0 +1,98 @@
+#include "ToolboxSlider.h"
+
+ToolboxSlider& ToolboxSlider::setValue(int value) {
+  _kernel_swi_regs regs;
+  regs.r[4] = value;
+  this->gadgetMethod(Slider_SetValue, &regs);
+  return *this;
+}
+
+int ToolboxSlider::getValue() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Slider_GetValue, &regs);
+  return regs.r[0];
+}
+
+ToolboxSlider& ToolboxSlider::setBounds(int lowerBound, int upperBound, int stepSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = lowerBound;
+  regs.r[5] = upperBound;
+  regs.r[6] = stepSize;
+  this->gadgetMethod(Slider_SetBounds, &regs);
+  return *this;
+}
+
+void ToolboxSlider::getBounds(int *lowerBound, int *upperBound, int *stepSize) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Slider_GetBounds, &regs);
+  *lowerBound = regs.r[0];
+  *upperBound = regs.r[1];
+  *stepSize = regs.r[2];
+}
+
+ToolboxSlider& ToolboxSlider::setColour(int barColour, int backColour) {
+  _kernel_swi_regs regs;
+  regs.r[4] = barColour;
+  regs.r[5] = backColour;
+  this->gadgetMethod(Slider_SetColour, &regs);
+  return *this;
+}
+
+void ToolboxSlider::getColour(int *barColour, int *backColour) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Slider_GetColour, &regs);
+  *barColour = regs.r[0];
+  *backColour = regs.r[1];
+}
+
+ToolboxSlider& ToolboxSlider::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxSlider::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxSlider& ToolboxSlider::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

@@ -1,0 +1,36 @@
+#ifndef __cplusplus
+#error Header file "ToolboxPrintDlogObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxPrintDlogObj_h
+#define __ToolboxPrintDlogObj_h
+
+#include "printdbox.h"
+#include "ToolboxObj.h"
+
+class ToolboxPrintDlogObj : public ToolboxObj {
+  public:
+    ToolboxPrintDlogObj(ObjectId objectId);
+    ObjectId getWindowId();
+    ToolboxPrintDlogObj& setPageRange(int start, int end);
+    void getPageRange(int *start, int *end);
+    int getPageRangeStart();
+    int getPageRangeEnd();
+    ToolboxPrintDlogObj& setCopies(int copies);
+    int getCopies();
+    ToolboxPrintDlogObj& setScale(int scaleFactor);
+    int getScale();
+    ToolboxPrintDlogObj& setOrientation(int orientation);
+    int getOrientation();
+    int getTitle();
+    int getTitle(char *buffer, int bufSize);
+    ToolboxPrintDlogObj& setDraft(int draft);
+    int getDraft();
+    ToolboxPrintDlogObj& setObjectId(ObjectId objectId);
+    ToolboxPrintDlogObj& setFlags(unsigned int flags);
+    ToolboxPrintDlogObj& clearFlags();
+};
+
+#endif

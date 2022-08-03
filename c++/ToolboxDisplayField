@@ -1,0 +1,95 @@
+#include "ToolboxDisplayField.h"
+#include "OS.h"
+
+ToolboxDisplayField& ToolboxDisplayField::setValue(char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  this->gadgetMethod(DisplayField_SetValue, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setValue(int value) {
+  _kernel_swi_regs regs;
+  char buffer[256];
+  int size = 256;
+  OS::binaryToDecimal(value, buffer, &size);
+  regs.r[4] = (int)buffer;
+  this->gadgetMethod(DisplayField_SetValue, &regs);
+  return *this;
+}
+
+int ToolboxDisplayField::getValue() {
+  _kernel_swi_regs regs;
+  regs.r[4] = 0;
+  this->gadgetMethod(DisplayField_GetValue, &regs);
+  return regs.r[5];
+}
+
+int ToolboxDisplayField::getValue(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->gadgetMethod(DisplayField_GetValue, &regs);
+  return regs.r[5];
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setFont(char *fontName, int width, int height) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) fontName;
+  regs.r[5] = width;
+  regs.r[6] = height;
+  this->gadgetMethod(DisplayField_SetFont, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxDisplayField::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxDisplayField& ToolboxDisplayField::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}

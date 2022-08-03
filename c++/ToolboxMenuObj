@@ -1,0 +1,295 @@
+#include "ToolboxMenuObj.h"
+
+ToolboxMenuObj::ToolboxMenuObj(ObjectId objectId) {
+  this->setObjectId(objectId);
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setTick(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetTick;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getTick(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetTick;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setFade(ComponentId entry, int fade) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetFade;
+  regs.r[3] = entry;
+  regs.r[4] = fade;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getFade(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetFade;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setEntryText(ComponentId entry, char *text) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetEntryText;
+  regs.r[3] = entry;
+  regs.r[4] = (int) text;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getEntryText(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntryText;
+  regs.r[3] = entry;
+  regs.r[4] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+int ToolboxMenuObj::getEntryText(ComponentId entry, char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntryText;
+  regs.r[3] = entry;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setEntrySprite(ComponentId entry, char *spriteName) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetEntrySprite;
+  regs.r[3] = entry;
+  regs.r[4] = (int) spriteName;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getEntrySprite(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntrySprite;
+  regs.r[3] = entry;
+  regs.r[4] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+int ToolboxMenuObj::getEntrySprite(ComponentId entry, char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntrySprite;
+  regs.r[3] = entry;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setSubMenuShow(ComponentId entry, ObjectId subMenu) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetSubMenuShow;
+  regs.r[3] = entry;
+  regs.r[4] = subMenu;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+ObjectId ToolboxMenuObj::getSubMenuShow(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetSubMenuShow;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setSubMenuEvent(ComponentId entry, int toolboxEvent) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetSubMenuEvent;
+  regs.r[3] = entry;
+  regs.r[4] = toolboxEvent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getSubMenuEvent(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetSubMenuEvent;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setClickShow(ComponentId entry, ObjectId object, int showFlags) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetClickShow;
+  regs.r[3] = entry;
+  regs.r[4] = object;
+  regs.r[5] = showFlags;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getClickShowObjectId(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetClickShow;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+int ToolboxMenuObj::getClickShowFlags(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetClickShow;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[1];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setClickEvent(ComponentId entry, int toolboxEvent) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetClickEvent;
+  regs.r[3] = entry;
+  regs.r[4] = toolboxEvent;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getClickEvent(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetClickEvent;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setHelpMessage(char *helpMessage) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetHelpMessage;
+  regs.r[3] = (int) helpMessage;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getHelpMessage() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetHelpMessage;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxMenuObj::getHelpMessage(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetHelpMessage;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setEntryHelpMessage(ComponentId entry, char *helpMessage) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetEntryHelpMessage;
+  regs.r[3] = entry;
+  regs.r[4] = (int) helpMessage;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getEntryHelpMessage(ComponentId entry, char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntryHelpMessage;
+  regs.r[3] = entry;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+int ToolboxMenuObj::getEntryHelpMessage(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetEntryHelpMessage;
+  regs.r[3] = entry;
+  regs.r[4] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[5];
+}
+
+ComponentId ToolboxMenuObj::addEntry(ComponentId atEntry, char *entryDescription) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_AddEntry;
+  regs.r[3] = atEntry;
+  regs.r[4] = (int) entryDescription;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::removeEntry(ComponentId entry) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_RemoveEntry;
+  regs.r[3] = entry;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getHeight() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetHeight;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+int ToolboxMenuObj::getWidth() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetWidth;
+  this->objectMiscOp(&regs);
+  return regs.r[0];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setTitle(char *title) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_SetTitle;
+  regs.r[3] = (int) title;
+  this->objectMiscOp(&regs);
+  return *this;
+}
+
+int ToolboxMenuObj::getTitle() {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetTitle;
+  regs.r[3] = 0;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+int ToolboxMenuObj::getTitle(char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[2] = Menu_GetTitle;
+  regs.r[3] = (int) buffer;
+  regs.r[4] = bufSize;
+  this->objectMiscOp(&regs);
+  return regs.r[4];
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setObjectId(ObjectId objectId) {
+  this->ToolboxObj::setObjectId(objectId);
+  return *this;
+}
+
+ToolboxMenuObj& ToolboxMenuObj::setFlags(unsigned int flags) {
+  this->ToolboxObj::setFlags(flags);
+  return *this;
+}
+
+ToolboxMenuObj& ToolboxMenuObj::clearFlags() {
+  this->ToolboxObj::clearFlags();
+  return *this;
+}

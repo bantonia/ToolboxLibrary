@@ -1,0 +1,445 @@
+#include "WimpObj.h"
+#include "swis.h"
+#include "OS.h"
+#include "wimp.h"
+#include "wimplib.h"
+#include <stdlib.h>
+#include <stdbool.h>
+#include <setjmp.h>
+#include "ErrorReport.h"
+
+int WimpObj::handle;
+unsigned int *WimpObj::messages;
+char *WimpObj::taskname;
+unsigned int WimpObj::version;
+int WimpObj::event;
+unsigned int *WimpObj::pollBlock;
+//WimpMask WimpObj::mask;
+unsigned int WimpObj::mask;
+unsigned int WimpObj::earliest;
+int *WimpObj::pollWord;
+unsigned int WimpObj::idleInterval;
+unsigned int WimpObj::newTime;
+unsigned int WimpObj::oldTime;
+unsigned int *WimpObj::workspace;
+int WimpObj::templateSpace;
+int WimpObj::quit = 1;
+
+//_kernel_oserror err = {1233, "My Error"};
+
+WimpObj::WimpObj() {
+  WimpObj::taskname = "Task";
+  WimpObj::version = 310;
+  WimpObj::messages = new unsigned int[1];
+  WimpObj::messages[0] = 0;
+  WimpObj::pollBlock = new unsigned int[64];
+  for (int i = 0; i < 64; i++) {
+    WimpObj::pollBlock[i] = 0;
+  }
+  //WimpObj::mask.w = 0;
+  WimpObj::mask = 0;
+  WimpObj::earliest = 0;
+  WimpObj::pollWord = 0;
+  WimpObj::idleInterval = 0;
+  WimpObj::oldTime = 0;
+  WimpObj::workspace = new unsigned int[64];
+}
+
+WimpObj::~WimpObj() {
+  delete WimpObj::messages;
+  delete WimpObj::pollBlock;
+  delete WimpObj::workspace;
+}
+
+//_kernel_oserror *WimpObj::wimpInitialise(WimpObj::version, WimpObj::taskname, (int *)WimpObj::messages, (int *)&WimpObj::version, &WimpObj::handle) {
+/*_kernel_oserror *WimpObj::wimpInitialise(wimp_msgaction *messages) {
+  _kernel_regs in,out;
+  _kernel_oserror *err = NULL;
+  in.r[0] = WimpObj::version;
+  in.r[1] = &4B534154;
+  in.r[2] = WimpObj::taskname;
+  in.r[3] = (int) WimpObj::messages;
+  err = _kernel_swi(Wimp_Initialise, &in, &out);
+  WimpObj::version = out.r[0];
+  WimpObj::handle = out.r[1];
+  return err;
+}*/
+
+unsigned int WimpObj::init() {
+  //WimpObj::setLastError(&err, __LINE__);
+  WimpObj::setLastError(wimp_initialise(WimpObj::version, WimpObj::taskname, (int *)WimpObj::messages, (int *)&WimpObj::version, &WimpObj::handle), __LINE__);
+  //WimpObj::setLastError(wimpInitialise(int *)WimpObj::messages), __LINE__);
+  WimpObj::setAsWimpTask(WimpObj::taskname);
+  //WimpObj::setLastError(&err, __LINE__);
+  return WimpObj::handle;
+}
+
+void WimpObj::closeDown() {
+  WimpObj::setLastError(wimp_close_down(WimpObj::handle), __LINE__);
+  WimpObj::quit = 0;
+}
+
+int WimpObj::errorHandler() {
+  int response = 0;
+  switch(WimpObj::getEnvironment()) {
+    case ErrorReport::CONSOLE:
+      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), WimpObj::getTaskName());
+      WimpObj::clearError();
+      break;
+    case ErrorReport::WIMP:
+      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), WimpObj::getTaskName());
+      WimpObj::clearError();
+/*
+ * On 3.50 onwards we can have additional parameters:
+ *                                      char *sprite
+ *                                      void *area
+ *                                      char *buttons*/
+      break;
+  }
+  return response;
+}
+
+unsigned int WimpObj::pollIdle() {
+  WimpObj::setLastError(wimp_pollidle(WimpObj::mask, (WimpPollBlock *) WimpObj::pollBlock, WimpObj::earliest, WimpObj::pollWord, &WimpObj::event), __LINE__);
+  return WimpObj::event;
+}
+
+int WimpObj::runIdle() {
+  if (!setjmp(errBuf)) {
+    WimpObj::event = pollIdle(); 
+    switch(WimpObj::event) {
+      case Wimp_ENull:
+        nullReason();
+        /*if (idleInterval != 0) {
+            WimpObj::newTime = OS::readMonotonicTime();
+            if (newTime < oldTime) {
+            // MonotonicTime has been wrapped
+              WimpObj::oldTime = WimpObj::newTime;
+            }
+            while (newTime >= oldTime) {
+              WimpObj::oldTime += WimpObj::idleInterval;
+            }
+            WimpObj::earliest = WimpObj::oldTime;
+          }*/
+        break;
+      case Wimp_ERedrawWindow:
+        redrawWindowRequest();
+        break;
+      case Wimp_EOpenWindow:
+        openWindowRequest();
+        break;
+      case Wimp_ECloseWindow:
+        closeWindowRequest();
+        break;
+      case Wimp_EPointerLeavingWindow:
+        pointerLeavingWindow();
+        break;
+      case Wimp_EPointerEnteringWindow:
+        pointerEnteringWindow();
+        break;
+      case Wimp_EMouseClick:
+        mouseClick();
+        break;
+      case Wimp_EUserDrag:
+        userDragBox();
+        break;
+      case Wimp_EKeyPressed:
+        keyPressed();
+        break;
+      case Wimp_EMenuSelection:
+        menuSelection();
+        break;
+      case Wimp_EScrollRequest:
+        scrollRequest();
+        break;
+      case Wimp_ELoseCaret:
+        loseCaret();
+        break;
+      case Wimp_EGainCaret:
+        gainCaret();
+        break;
+      case Wimp_EPollWordNonZero:
+        pollWordNonZero();
+        break;
+      case Wimp_EUserMessage: {
+          if (WimpObj::pollBlock[4] == 0) {
+            preCloseDown();
+            closeDown();
+            return 0;
+          }
+          userMessage();
+        }
+        break;
+      case Wimp_EUserMessageRecorded: {
+          if (WimpObj::pollBlock[4] == 0) {
+            preCloseDown();
+            closeDown();
+            return 0;
+          }
+          userMessageRecorded();
+        }
+        break;
+      case Wimp_EUserMessageAcknowledge:
+        userMessageAcknowledge();
+        break;
+      case Wimp_EToolboxEvent:
+        eToolboxEvent();
+        break;
+      default:
+        unknownWimpEvent();
+        break;
+    }
+  } else {
+    errorHandler();
+  }
+  return event;
+}
+
+unsigned int WimpObj::poll() {
+  int event;
+  WimpObj::setLastError(wimp_poll(WimpObj::mask, (WimpPollBlock *)WimpObj::pollBlock, (int *)WimpObj::pollWord, (int *)&WimpObj::event), __LINE__);
+  event = WimpObj::event;
+  return WimpObj::event;
+}
+
+int WimpObj::run() {
+  if (!setjmp(errBuf)) {
+    WimpObj::event = poll(); 
+    switch(WimpObj::event) {
+      case Wimp_ENull:
+        nullReason();
+        break;
+      case Wimp_ERedrawWindow:
+        redrawWindowRequest();
+        break;
+      case Wimp_EOpenWindow:
+        openWindowRequest();
+        break;
+      case Wimp_ECloseWindow:
+        closeWindowRequest();
+        break;
+      case Wimp_EPointerLeavingWindow:
+        pointerLeavingWindow();
+        break;
+      case Wimp_EPointerEnteringWindow:
+        pointerEnteringWindow();
+        break;
+      case Wimp_EMouseClick:
+        mouseClick();
+        break;
+      case Wimp_EUserDrag:
+        userDragBox();
+        break;
+      case Wimp_EKeyPressed:
+        keyPressed();
+        break;
+      case Wimp_EMenuSelection:
+        menuSelection();
+        break;
+      case Wimp_EScrollRequest:
+        scrollRequest();
+        break;
+      case Wimp_ELoseCaret:
+        loseCaret();
+        break;
+      case Wimp_EGainCaret:
+        gainCaret();
+        break;
+      case Wimp_EPollWordNonZero:
+        pollWordNonZero();
+        break;
+      case Wimp_EUserMessage: {
+          int quitX = WimpObj::pollBlock[4];
+          if (WimpObj::pollBlock[4] == 0) {
+            preCloseDown();
+            closeDown();
+            return 0;
+          }
+          userMessage();
+        }
+        break;
+      case Wimp_EUserMessageRecorded: {
+          int quitX = WimpObj::pollBlock[4];
+          if (WimpObj::pollBlock[4] == 0) {
+            preCloseDown();
+            closeDown();
+            return 0;
+          }
+          userMessageRecorded();
+        }
+        break;
+      case Wimp_EUserMessageAcknowledge:
+        userMessageAcknowledge();
+        break;
+      case Wimp_EToolboxEvent:
+        eToolboxEvent();
+        break;
+      default:
+        unknownWimpEvent();
+        break;
+    }
+  } else {
+    errorHandler();
+  }
+  return WimpObj::event;
+}
+
+void WimpObj::setTaskname(char *taskname) {
+  WimpObj::taskname = taskname;
+}
+
+void WimpObj::setMask(/*WimpMask*/ unsigned int mask) {
+  WimpObj::mask = mask;
+}
+
+unsigned int *WimpObj::getPollBlock() {
+  return WimpObj::pollBlock;
+}
+
+void WimpObj::setHandle(unsigned int handle) {
+  WimpObj::handle = handle;
+}
+
+unsigned int WimpObj::getHandle() {
+  return WimpObj::handle;
+}
+
+unsigned int WimpObj::getEvent() {
+  return WimpObj::event;
+}
+
+void WimpObj::addMessages(int *messages) {
+  WimpObj::setLastError(wimp_add_messages(messages), __LINE__);
+}
+
+void WimpObj::removeMessages(int *messages) {
+  WimpObj::setLastError(wimp_remove_messages(messages), __LINE__);
+}
+
+void WimpObj::setPollIdleInterval(unsigned int idleInterval) {
+  WimpObj::idleInterval = idleInterval;
+  if (WimpObj::idleInterval == 0) {
+    WimpObj::earliest = 0;
+  }
+}
+
+unsigned int WimpObj::getPollIdleInterval() {
+  return WimpObj::idleInterval;
+}
+ 
+void WimpObj::setPollWord(int *pollWord) {
+  WimpObj::pollWord = pollWord;
+}
+
+int *WimpObj::getPollWord() {
+  return WimpObj::pollWord;
+}
+
+WimpObj::WindDefStr::WindDefStr() {
+  unsigned *words = (unsigned *)this;
+  words[0] = 0x00000598;
+  words[1] = 0x0000018C;
+  words[2] = 0x0000094C;
+  words[3] = 0x000003D2;
+  words[4] = 0x00000000;
+  words[5] = 0x00000000;
+  words[6] = 0xFFFFFFFF;
+  words[7] = 0xFF000012;
+  words[8] = 0x01070207;
+  words[9] = 0x000C0103;
+  words[10] = 0x00000000;
+  words[11] = 0xFFFFFC00;
+  words[12] = 0x00000500;
+  words[13] = 0x00000000;
+  words[14] = 0x0000003D;
+  words[15] = 0x00003000;
+  words[16] = 0x00000001;
+  words[17] = 0x00000001;
+  words[18] = 0x746E553C;
+  words[19] = 0x656C7469;
+  words[20] = 0x650D3E64;
+  words[21] = 0x00000000;
+};
+
+WimpObj::WindDefStr::~WindDefStr() {};
+
+void *WimpObj::WindDefStr::operator new(size_t size) {
+  return malloc(size);
+}
+
+void *WimpObj::WindDefStr::operator new(size_t size, int icons) {
+  return malloc(size + icons * 32);
+}
+
+void *WimpObj::WindDefStr::operator new( size_t size, int icons, int iconBlockSize) {
+  return malloc(size + icons * iconBlockSize);
+}
+
+void WimpObj::WindDefStr::operator delete(void* ptr) {
+  free((char *)ptr);
+}
+
+unsigned int *WimpObj::getWorkspace() {
+  return workspace;
+}
+
+void WimpObj::redrawIconBar() {
+  _kernel_swi_regs in, out;
+  in.r[0] = -2;
+  WimpObj::setLastError(_kernel_swi(Wimp_ForceRedraw, &in, &out), __LINE__);
+}
+
+void WimpObj::redrawScreen() {
+  _kernel_swi_regs in, out;
+  in.r[0] = -1;
+  in.r[1] = 0;
+  in.r[2] = 0;
+  in.r[3] = OS::readModeVariable(-1, 11);
+  in.r[4] = OS::readModeVariable(-1, 12);
+  WimpObj::setLastError(_kernel_swi(Wimp_ForceRedraw, &in, &out), __LINE__);
+}
+
+void WimpObj::openWindow() {
+  WimpObj::setLastError(wimp_open_window((WimpOpenWindowBlock *)pollBlock), __LINE__);
+}
+
+void WimpObj::closeWindow() {
+  WimpObj::setLastError(wimp_close_window((int *)pollBlock), __LINE__);
+}
+
+void WimpObj::closeWindow(int handle) {
+  WimpObj::setLastError(wimp_close_window(&handle), __LINE__);
+}
+
+void WimpObj::openTemplate(char *filename) {
+  WimpObj::setLastError(wimp_open_template(filename), __LINE__);
+}
+
+void WimpObj::closeTemplate() {
+  WimpObj::setLastError(wimp_close_template(), __LINE__);
+}
+
+/*WimpObj::loadTemplate(char *template) {
+  int bufferRequired = 0;
+  int workspaceRequired = 0;
+  char *actualName = NULL;
+  int searchPos = 0;
+  _kernel_swi_regs regs;
+  regs.r[1] = bufferRequired;
+  regs.r[2] = workspaceRequired;
+  regs.r[3] = 0;
+  regs.r[4] = -1;
+  regs.r[5] = (int) template;
+  regs.r[6] = searchPos;
+  WimpObj::setLastError(wimp_load_template(&regs), __LINE__);
+  bufferRequired = regs.r[1];
+  workspaceRequired = regs.r[2];
+  actualName = (char *) regs.r[5];
+  //searchPos = regs.r[6];
+
+  // 
+}*/
+
+
+
+

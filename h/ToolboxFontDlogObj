@@ -1,0 +1,35 @@
+#ifndef __cplusplus
+#error Header file "ToolboxFontDlogObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxFontDlogObj_h
+#define __ToolboxFontDlogObj_h
+
+#include "fontdbox.h"
+#include "ToolboxObj.h"
+
+class ToolboxFontDlogObj : public ToolboxObj {
+  public:
+    ToolboxFontDlogObj();
+    ~ToolboxFontDlogObj();
+    int getWindowId();
+    ToolboxFontDlogObj& clearFont();
+    ToolboxFontDlogObj& setFont(char *fontId);
+    int getFont();
+    int getFont(char *buffer, int bufSize);
+    ToolboxFontDlogObj& setSize(int height, int aspectRatio);
+    ToolboxFontDlogObj& getSize(int *height, int *aspectRatio);
+    ToolboxFontDlogObj& setTryString(char *tryString);
+    int getTryString();
+    int getTryString(char *tryStringBuffer, int bufSize);
+    ToolboxFontDlogObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *titleBuffer, int bufSize);
+    ToolboxFontDlogObj& setObjectId(ObjectId objectId);
+    ToolboxFontDlogObj& setFlags(unsigned int flags);
+    ToolboxFontDlogObj& clearFlags();
+};
+
+#endif

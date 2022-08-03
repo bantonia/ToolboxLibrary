@@ -1,0 +1,94 @@
+#include "ToolboxNumberRange.h"
+
+ToolboxNumberRange& ToolboxNumberRange::setValue(int value) {
+  _kernel_swi_regs regs;
+  regs.r[4] = value;
+  this->gadgetMethod(NumberRange_SetValue, &regs);
+  return *this;
+}
+
+int ToolboxNumberRange::getValue() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(NumberRange_GetValue, &regs);
+  return regs.r[0];
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setBounds(int lowerBound, int upperBound, int stepSize, int precision) {
+  _kernel_swi_regs regs;
+  regs.r[4] = lowerBound;
+  regs.r[5] = upperBound;
+  regs.r[6] = stepSize;
+  regs.r[7] = precision;
+  this->gadgetMethod(NumberRange_SetBounds, &regs);
+  return *this;
+}
+
+void ToolboxNumberRange::getBounds(int *lowerBound, int *upperBound, int *stepSize, int *precision) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(NumberRange_GetBounds, &regs);
+  *lowerBound = regs.r[0];
+  *upperBound = regs.r[1];
+  *stepSize = regs.r[2];
+  *precision = regs.r[3];
+}
+
+void ToolboxNumberRange::getComponents(ComponentId *numericField, ComponentId *leftAdjuster, ComponentId *rightAdjuster, ComponentId *slider) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(NumberRange_GetComponents, &regs);
+  *numericField = regs.r[0];
+  *leftAdjuster = regs.r[1];
+  *rightAdjuster = regs.r[2];
+  *slider = regs.r[3];
+}
+
+ToolboxNumberRange& ToolboxNumberRange::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxNumberRange::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxNumberRange& ToolboxNumberRange::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}
