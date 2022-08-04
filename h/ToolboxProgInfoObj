@@ -12,6 +12,7 @@
 
 class ToolboxProgInfoObj : public ToolboxObj {
   public:
+    ToolboxProgInfoObj();
     ToolboxProgInfoObj(ObjectId objectId);
     ObjectId getWindowId();
     ToolboxProgInfoObj& setVersion(char *versionString);

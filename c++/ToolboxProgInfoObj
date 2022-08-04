@@ -1,5 +1,7 @@
 #include "ToolboxProgInfoObj.h"
 
+ToolboxProgInfoObj::ToolboxProgInfoObj(){}
+
 ToolboxProgInfoObj::ToolboxProgInfoObj(ObjectId objectId) {
   this->setObjectId(objectId);
 }

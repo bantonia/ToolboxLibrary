@@ -32,7 +32,8 @@ class ToolboxColourDlogObj : public ToolboxObj {
       CMYK,
       HSV
     } ColourModel;
-    
+
+    ToolboxColourDlogObj(){};
     ToolboxColourDlogObj(ObjectId id);
     ~ToolboxColourDlogObj(){};
     int getWimpHandle();

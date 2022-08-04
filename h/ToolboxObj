@@ -43,6 +43,7 @@ class ToolboxObj : public Object, public ErrorReport {
     ToolboxObj& setObjectId(ObjectId id);
     int isTemplate(char *templateName);
     static _kernel_oserror ToolboxObjectIdNotSet;
+    void showProperties(){};
   private:
     virtual ObjectId createObject(void *name_or_template);
     void deleteObject();
