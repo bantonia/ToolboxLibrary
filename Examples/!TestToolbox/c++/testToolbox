@@ -1,0 +1,119 @@
+#include "ToolboxTask.h"
+#include "ToolboxWindowObj.h"
+#include "ToolboxDisplayField.h"
+#include "ToolboxActionButton.h"
+
+typedef enum {
+  Quit         = 0x01,
+  ButtonAction1 = 0x10,
+  ButtonAction2 = 0x20
+} userEvents;
+
+class MainWindow {
+  public:
+    MainWindow();
+    MainWindow(ToolboxWindowObj *windowObj);
+    ~MainWindow();
+    ToolboxWindowObj *w;
+    ToolboxDisplayField *df;
+    ToolboxActionButton *ab1;
+    ToolboxActionButton *ab2;  
+};
+
+MainWindow::MainWindow() {
+  this->w = NULL;
+  this->df = NULL;
+  this->ab1 = NULL;
+  this->ab2 = NULL;
+}
+
+MainWindow::MainWindow(ToolboxWindowObj *windowObj) {
+  this->w = windowObj;
+  this->df = new ToolboxDisplayField();
+  this->df->setObjectId(windowObj->readObjectId()).setComponentId(1);
+  this->ab1 = new ToolboxActionButton();
+  this->ab1->setObjectId(windowObj->readObjectId()).setComponentId(0);
+  this->ab2 = new ToolboxActionButton();
+  this->ab2->setObjectId(windowObj->readObjectId()).setComponentId(2);
+}
+
+MainWindow::~MainWindow() {
+  if (this->w != NULL) delete this->w;
+  if (this->df != NULL) delete this->df;
+  if (this->ab1 != NULL) delete this->ab1;
+  if (this->ab2 != NULL) delete this->ab2;
+}
+
+
+class Prog : public ToolboxTask {
+  public:
+    Prog();
+    ~Prog();
+    void showProperties() {};
+    void windowObjectAutoCreated();
+    void toolboxUserEvent();
+    MainWindow *mainWindow;
+    ToolboxWindowObj *w;
+};
+
+Prog::Prog() {
+  this->mainWindow = NULL;
+  this->w = NULL;
+};
+
+Prog::~Prog() {
+  if (this->mainWindow != NULL) delete this->mainWindow;
+  if (this->w != NULL) delete this->w;
+}
+
+static Prog *tools;
+
+void Prog::windowObjectAutoCreated() {
+  char buffer[256];
+  int size = 256;
+  ToolboxWindowObj *w = new ToolboxWindowObj();
+  w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
+  w->getTitle(buffer, 256, &size);
+  if (w->isWindow("MainWindow")) {
+    tools->mainWindow = new MainWindow(w);
+    tools->mainWindow->w->setTitle("w2");
+  }
+  if (w->isWindow("SideWindow")) {
+    tools->w = w;
+    tools->w->setTitle("w1");
+  }
+}
+
+void Prog::toolboxUserEvent() {
+  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
+  switch(tboxHdr->event_code) {
+    case Quit: {
+        this->closeDown();
+      }
+      break;
+    case ButtonAction1: {
+        tools->w->setTitle("Rhubarb");
+        tools->mainWindow->w->setTitle("Hello");
+        tools->mainWindow->df->setValue(tools->mainWindow->df->getType());
+      }
+      break;
+    case ButtonAction2: {
+        tools->w->setTitle("Hello");
+        tools->mainWindow->w->setTitle("Rhubarb");
+        tools->mainWindow->df->setValue(tools->mainWindow->ab2->getType());
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+int main() {
+  tools = new Prog();
+  tools->setHandle(ToolboxCoreObj::init(0, &ToolboxCoreObj::wimpMessages, &ToolboxCoreObj::toolboxEvents, "<TestToolbox$Dir>", &ToolboxCoreObj::mfd, &ToolboxCoreObj::idBlock));
+  tools->setMask(256+1);
+  while (tools->quit) {
+    tools->run();
+  }
+  return 0;
+}
