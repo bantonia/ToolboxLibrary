@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include "ToolboxObj.h"
+#include <string.h>
 
 _kernel_oserror ToolboxObj::ToolboxObjectIdNotSet = {0x8888,"Toolbox ObjectId not set"};
 
@@ -211,4 +212,13 @@ ToolboxObj& ToolboxObj::setObjectId(ObjectId id) {
     objClass = setFlags(0).getObjectClass();
   }
   return *this;
+}
+
+int ToolboxObj::isTemplate(char *templateName) {
+  int size = this->getTemplateName() + 1;
+  char *buffer = new char(size);
+  this->getTemplateName(buffer, size, &size);
+  int b = strcmp(buffer, templateName) == 0?1:0;
+  delete buffer;
+  return b;
 }

@@ -23,5 +23,6 @@ char *OS::binaryToDecimal(int n, char *buffer, int *bufSize) {
   in.r[2] = *bufSize;
   _kernel_swi(OS_BinaryToDecimal, &in, &out);
   *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
   return buffer;
 }

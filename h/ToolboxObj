@@ -41,6 +41,7 @@ class ToolboxObj : public Object, public ErrorReport {
     ToolboxObj& clearFlags();
     unsigned int getFlags();
     ToolboxObj& setObjectId(ObjectId id);
+    int isTemplate(char *templateName);
     static _kernel_oserror ToolboxObjectIdNotSet;
   private:
     virtual ObjectId createObject(void *name_or_template);
