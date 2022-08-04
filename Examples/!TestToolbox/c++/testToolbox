@@ -69,11 +69,8 @@ Prog::~Prog() {
 static Prog *tools;
 
 void Prog::windowObjectAutoCreated() {
-  char buffer[256];
-  int size = 256;
   ToolboxWindowObj *w = new ToolboxWindowObj();
   w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
-  w->getTitle(buffer, 256, &size);
   if (w->isWindow("MainWindow")) {
     tools->mainWindow = new MainWindow(w);
     tools->mainWindow->w->setTitle("w2");
