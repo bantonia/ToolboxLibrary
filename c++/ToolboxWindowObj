@@ -305,10 +305,12 @@ void ToolboxWindowObj::getToolbar(int mask, ObjectId *toolbar_ibl_id, ObjectId *
 }*/
 
 int ToolboxWindowObj::isWindow(char *title) {
-  char buffer[256];
-  int size = 256;
-  this->getTitle(buffer, 256, &size);
-  return (strcmp(buffer, title) == 0?1:0);
+  int size = this->getTitle() + 1;
+  char *buffer = new char(size);
+  this->getTitle(buffer, size, &size);
+  int b = strcmp(buffer, title) == 0?1:0;
+  delete buffer;
+  return b;
 }
 
 ToolboxWindowObj& ToolboxWindowObj::setObjectId(ObjectId objectId) {
