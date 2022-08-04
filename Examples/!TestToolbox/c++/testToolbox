@@ -71,11 +71,11 @@ static Prog *tools;
 void Prog::windowObjectAutoCreated() {
   ToolboxWindowObj *w = new ToolboxWindowObj();
   w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
-  if (w->isWindow("MainWindow")) {
+  if (w->isTemplate("Window")) {
     tools->mainWindow = new MainWindow(w);
     tools->mainWindow->w->setTitle("w2");
   }
-  if (w->isWindow("SideWindow")) {
+  if (w->isTemplate("Window_1")) {
     tools->w = w;
     tools->w->setTitle("w1");
   }
