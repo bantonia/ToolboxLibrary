@@ -27,6 +27,15 @@ ToolboxObj::~ToolboxObj() {
   deleteObject();
 }
 
+int ToolboxObj::getTemplateName() {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int) getFlags();
+  in.r[1] = id;
+  in.r[2] = 0;
+  ToolboxObj::setLastError(_kernel_swi(Toolbox_GetTemplateName, &in, &out), __LINE__);
+  return out.r[3];
+}
+
 void ToolboxObj::getTemplateName(char *buffer, int  buff_size, int *nbytes) {
   _kernel_swi_regs in, out;
   in.r[0] = (int) getFlags();

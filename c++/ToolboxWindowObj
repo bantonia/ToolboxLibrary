@@ -304,11 +304,11 @@ void ToolboxWindowObj::getToolbar(int mask, ObjectId *toolbar_ibl_id, ObjectId *
   //in.r[1] = this.get
 }*/
 
-int ToolboxWindowObj::isWindow(char *title) {
-  int size = this->getTitle() + 1;
+int ToolboxWindowObj::isWindowTemplate(char *templateName) {
+  int size = this->getTemplateName() + 1;
   char *buffer = new char(size);
-  this->getTitle(buffer, size, &size);
-  int b = strcmp(buffer, title) == 0?1:0;
+  this->getTemplateName(buffer, size, &size);
+  int b = strcmp(buffer, templateName) == 0?1:0;
   delete buffer;
   return b;
 }

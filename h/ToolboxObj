@@ -21,6 +21,7 @@ class ToolboxObj : public Object, public ErrorReport {
     ToolboxObj(ObjectId id);
     ToolboxObj(unsigned int flags, void *name_or_template);
     ~ToolboxObj();
+    int getTemplateName();
     void getTemplateName(char *buffer, int  buff_size, int *nbytes);
     virtual ToolboxObj& showObject(int show_type, void *type, ObjectId parent, ComponentId parent_component);
     virtual ToolboxObj& hideObject();

@@ -51,6 +51,7 @@ class ToolboxWindowObj : public ToolboxObj {
     void getToolbar(int mask, ObjectId *toolbar_ibl_id, ObjectId *toolbar_itl_id, ObjectId *toolbar_ebl_id, ObjectId *toolbar_etl_id);
     //void wimpToToolbox(ObjectId *object, ComponentId *component);
     int isWindow(char *title);
+    int isWindowTemplate(char *templateName);
     ToolboxWindowObj& setObjectId(ObjectId objectId);
     ToolboxWindowObj& setFlags(unsigned int flags);
     ToolboxWindowObj& clearFlags();
