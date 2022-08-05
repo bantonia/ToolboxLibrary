@@ -12,6 +12,7 @@
 
 class ToolboxSaveAsObj : public ToolboxObj {
   public:
+    ToolboxSaveAsObj(){};
     ToolboxSaveAsObj(ObjectId objectId);
     ObjectId getWindowId();
     ToolboxSaveAsObj& setTitle(char *title);

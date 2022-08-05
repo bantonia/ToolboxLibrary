@@ -12,6 +12,7 @@
 
 class ToolboxPrintDlogObj : public ToolboxObj {
   public:
+    ToolboxPrintDlogObj(){};
     ToolboxPrintDlogObj(ObjectId objectId);
     ObjectId getWindowId();
     ToolboxPrintDlogObj& setPageRange(int start, int end);

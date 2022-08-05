@@ -12,6 +12,7 @@
 
 class ToolboxScaleObj : public ToolboxObj {
   public:
+    ToolboxScaleObj(){};
     ToolboxScaleObj(ObjectId objectId);
     ObjectId getWindowId();
     ToolboxScaleObj& setValue(int value);

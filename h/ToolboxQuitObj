@@ -12,6 +12,7 @@
 
 class ToolboxQuitObj : public ToolboxObj {
   public:
+    ToolboxQuitObj(){};
     ToolboxQuitObj(ObjectId objectId);
     ObjectId getWindowId();
     ToolboxQuitObj& setMessage(char *message);

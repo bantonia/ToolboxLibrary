@@ -12,6 +12,7 @@
 
 class ToolboxMenuObj : public ToolboxObj {
   public:
+    ToolboxMenuObj(){};
     ToolboxMenuObj(ObjectId objectId);
     ToolboxMenuObj& setTick(ComponentId entry);
     int getTick(ComponentId entry);

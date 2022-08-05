@@ -12,6 +12,7 @@
 
 class ToolboxFontMenuObj : public ToolboxObj {
   public:
+    ToolboxFontMenuObj(){};
     ToolboxFontMenuObj(ObjectId objectId);
     ToolboxFontMenuObj& setFont(char *fontId);
     int getFont();

@@ -1,39 +1,39 @@
 #ifndef __cplusplus
-#error Header file "ToolboxFileInfoObj.h" may only be used from C++
+#error Header file "ToolboxFileInfoDlogObj.h" may only be used from C++
 #endif
 #pragma force_top_level
 #pragma include_only_once
 
-#ifndef __ToolboxFileInfoObj_h
-#define __ToolboxFileInfoObj_h
+#ifndef __ToolboxFileInfoDlogObj_h
+#define __ToolboxFileInfoDlogObj_h
 
 #include "fileinfo.h"
 #include "ToolboxObj.h"
 
-class ToolboxFileInfoObj : public ToolboxObj {
+class ToolboxFileInfoDlogObj : public ToolboxObj {
   public:
-    ToolboxFileInfoObj();
-    ~ToolboxFileInfoObj();
+    ToolboxFileInfoDlogObj();
+    ~ToolboxFileInfoDlogObj();
     int getWindowId();
-    ToolboxFileInfoObj& setModified();
-    ToolboxFileInfoObj& setModified(int modified);
-    ToolboxFileInfoObj& setNotModified();
+    ToolboxFileInfoDlogObj& setModified();
+    ToolboxFileInfoDlogObj& setModified(int modified);
+    ToolboxFileInfoDlogObj& setNotModified();
     int isModified();
-    ToolboxFileInfoObj& setFileType(int fileType);
+    ToolboxFileInfoDlogObj& setFileType(int fileType);
     int getFileType();
-    ToolboxFileInfoObj& setFileName(char *fileName);
+    ToolboxFileInfoDlogObj& setFileName(char *fileName);
     int getFileName();
     int getFileName(char *fileNameBuffer, int bufSize);
-    ToolboxFileInfoObj& setFileSize(int fileSize);
+    ToolboxFileInfoDlogObj& setFileSize(int fileSize);
     int getFileSize();
-    ToolboxFileInfoObj& setDate(int *UTC);
-    ToolboxFileInfoObj& getDate(int *UTC);
-    ToolboxFileInfoObj& setTitle(char *title);
+    ToolboxFileInfoDlogObj& setDate(int *UTC);
+    ToolboxFileInfoDlogObj& getDate(int *UTC);
+    ToolboxFileInfoDlogObj& setTitle(char *title);
     int getTitleSize();
     int getTitle(char *titleBuffer, int bufSize);
-    ToolboxFileInfoObj& setObjectId(ObjectId objectId);
-    ToolboxFileInfoObj& setFlags(unsigned int flags);
-    ToolboxFileInfoObj& clearFlags();
+    ToolboxFileInfoDlogObj& setObjectId(ObjectId objectId);
+    ToolboxFileInfoDlogObj& setFlags(unsigned int flags);
+    ToolboxFileInfoDlogObj& clearFlags();
 };
 
 #endif
