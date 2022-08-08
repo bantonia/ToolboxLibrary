@@ -2,6 +2,10 @@
 #include "ToolboxWindowObj.h"
 #include "ToolboxDisplayField.h"
 #include "ToolboxActionButton.h"
+#include "ToolboxIconbarObj.h"
+#include "ToolboxSlider.h"
+#include "ToolboxRadioButton.h"
+#include "ToolboxPopUp.h"
 
 typedef enum {
   Quit         = 0x01,
@@ -9,39 +13,88 @@ typedef enum {
   ButtonAction2 = 0x20
 } userEvents;
 
+typedef enum {
+  MWActionButton1 = 0,
+  MWDisplayField1,
+  MWActionButton2,
+  MWRadioButton1,
+  MWRadioButton2,
+  MWLabelledBox,
+  MWAdjusterRight = 7,
+  MWSlider,
+  MWAdjusterLeft,
+  MWDisplayField2,
+  MWPopUp,
+  MWDisplayField3,
+  MWRadioButton3
+} MWComponents;
+
 class MainWindow {
   public:
     MainWindow();
     MainWindow(ToolboxWindowObj *windowObj);
     ~MainWindow();
     ToolboxWindowObj *w;
-    ToolboxDisplayField *df;
+    ToolboxDisplayField *df1;
+    ToolboxDisplayField *df2;
+    ToolboxDisplayField *df3;
     ToolboxActionButton *ab1;
-    ToolboxActionButton *ab2;  
+    ToolboxActionButton *ab2;
+    ToolboxSlider *slider;
+    ToolboxPopUp *popUp;
+    ToolboxRadioButton *rb1;
+    ToolboxRadioButton *rb2;
+    ToolboxRadioButton *rb3;
 };
 
 MainWindow::MainWindow() {
   this->w = NULL;
-  this->df = NULL;
+  this->df1 = NULL;
+  this->df2 = NULL;
   this->ab1 = NULL;
   this->ab2 = NULL;
+  this->slider = NULL;
+  this->rb1 = NULL;
+  this->rb2 = NULL;
+  this->rb3 = NULL;
 }
 
 MainWindow::MainWindow(ToolboxWindowObj *windowObj) {
   this->w = windowObj;
-  this->df = new ToolboxDisplayField();
-  this->df->setObjectId(windowObj->readObjectId()).setComponentId(1);
+  this->df1 = new ToolboxDisplayField();
+  this->df1->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField1);
+  this->df2 = new ToolboxDisplayField();
+  this->df2->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField2);
+  this->df3 = new ToolboxDisplayField();
+  this->df3->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField3);
   this->ab1 = new ToolboxActionButton();
-  this->ab1->setObjectId(windowObj->readObjectId()).setComponentId(0);
+  this->ab1->setObjectId(windowObj->readObjectId()).setComponentId(MWActionButton1);
   this->ab2 = new ToolboxActionButton();
-  this->ab2->setObjectId(windowObj->readObjectId()).setComponentId(2);
+  this->ab2->setObjectId(windowObj->readObjectId()).setComponentId(MWActionButton2);
+  this->slider = new ToolboxSlider();
+  this->slider->setObjectId(windowObj->readObjectId()).setComponentId(MWSlider);
+  this->popUp = new ToolboxPopUp();
+  this->popUp->setObjectId(windowObj->readObjectId()).setComponentId(MWPopUp);
+  this->rb1 = new ToolboxRadioButton();
+  this->rb1->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton1);
+  this->rb2 = new ToolboxRadioButton();
+  this->rb2->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton2);
+  this->rb3 = new ToolboxRadioButton();
+  this->rb3->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton3);
 }
 
 MainWindow::~MainWindow() {
   if (this->w != NULL) delete this->w;
-  if (this->df != NULL) delete this->df;
+  if (this->df1 != NULL) delete this->df1;
+  if (this->df2 != NULL) delete this->df2;
+  if (this->df3 != NULL) delete this->df3;
   if (this->ab1 != NULL) delete this->ab1;
   if (this->ab2 != NULL) delete this->ab2;
+  if (this->slider != NULL) delete this->slider;
+  if (this->popUp != NULL) delete this->popUp;
+  if (this->rb1 != NULL) delete this->rb1;
+  if (this->rb2 != NULL) delete this->rb2;
+  if (this->rb3 != NULL) delete this->rb3;
 }
 
 
@@ -52,8 +105,12 @@ class Prog : public ToolboxTask {
     void showProperties() {};
     void windowObjectAutoCreated();
     void toolboxUserEvent();
+    void adjusterClicked();
+    void sliderValueChanged();
+    void iconbarObjectAutoCreated();
     MainWindow *mainWindow;
     ToolboxWindowObj *w;
+    ToolboxIconbarObj *iconbar;
 };
 
 Prog::Prog() {
@@ -81,6 +138,35 @@ void Prog::windowObjectAutoCreated() {
   }
 }
 
+void Prog::adjusterClicked() {
+  if (ToolboxCoreObj::idBlock.self_id == tools->mainWindow->w->readObjectId()) {
+    switch(ToolboxCoreObj::idBlock.self_component) {
+      case MWAdjusterRight: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() + 1);
+        }
+        break;
+      case MWAdjusterLeft: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() - 1);
+        }
+        break;
+      default:
+        break;
+    }
+    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+  }
+}
+
+void Prog::sliderValueChanged() {
+  if (ToolboxCoreObj::idBlock.self_id == tools->mainWindow->w->readObjectId()) {
+    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+  }
+}
+
+void Prog::iconbarObjectAutoCreated() {
+  iconbar = new ToolboxIconbarObj();
+  iconbar->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id).setText("Worked");
+}
+
 void Prog::toolboxUserEvent() {
   ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
   switch(tboxHdr->event_code) {
@@ -89,15 +175,19 @@ void Prog::toolboxUserEvent() {
       }
       break;
     case ButtonAction1: {
-        tools->w->setTitle("Rhubarb");
-        tools->mainWindow->w->setTitle("Hello");
-        tools->mainWindow->df->setValue(tools->mainWindow->df->getType());
+        w->setTitle("Rhubarb");
+        mainWindow->w->setTitle("Hello");
+        mainWindow->df1->setValue(tools->mainWindow->df1->getType());
+        iconbar->setText("AB1");
+        mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
       }
       break;
     case ButtonAction2: {
-        tools->w->setTitle("Hello");
-        tools->mainWindow->w->setTitle("Rhubarb");
-        tools->mainWindow->df->setValue(tools->mainWindow->ab2->getType());
+        w->setTitle("Hello");
+        mainWindow->w->setTitle("Rhubarb");
+        mainWindow->df1->setValue(tools->mainWindow->ab2->getType());
+        iconbar->setText("AB2");
+        mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
       }
       break;
     default:
@@ -107,7 +197,7 @@ void Prog::toolboxUserEvent() {
 
 int main() {
   tools = new Prog();
-  tools->setHandle(ToolboxCoreObj::init(0, &ToolboxCoreObj::wimpMessages, &ToolboxCoreObj::toolboxEvents, "<TestToolbox$Dir>", &ToolboxCoreObj::mfd, &ToolboxCoreObj::idBlock));
+  tools->setHandle(tools->initTask("<TestToolbox$Dir>"));
   tools->setMask(256+1);
   while (tools->quit) {
     tools->run();

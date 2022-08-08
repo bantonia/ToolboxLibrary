@@ -14,6 +14,7 @@ class ToolboxTask : public WimpObj, public ToolboxCoreObj {
   public:
     void showProperties(){};
     void eToolboxEvent();
+    int initTask(char *resourcePath);
 };
 
 #endif

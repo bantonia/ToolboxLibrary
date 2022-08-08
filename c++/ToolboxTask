@@ -3,3 +3,7 @@
 void ToolboxTask::eToolboxEvent() {
   eToolboxEventHandler((void *)this->getPollBlock());
 }
+
+int ToolboxTask::initTask(char *resourcePath) {
+  return ToolboxCoreObj::init(0, &ToolboxCoreObj::wimpMessages, &ToolboxCoreObj::toolboxEvents, resourcePath, &ToolboxCoreObj::mfd, &ToolboxCoreObj::idBlock);
+}

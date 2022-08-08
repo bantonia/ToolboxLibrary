@@ -11,8 +11,9 @@
 #include "ErrorReport.h"
 #include "toolbox.h"
 #include "gadgets.h"
+#include "Object.h"
 
-class ToolboxGadget : public ErrorReport {
+class ToolboxGadget : public ErrorReport, public Object {
   public:
     ToolboxGadget();
     ~ToolboxGadget(){};
@@ -26,6 +27,7 @@ class ToolboxGadget : public ErrorReport {
     unsigned int getFlags();
     int getObjectId();
     int getComponentId();
+    void showProperties(){};
 
     ToolboxGadget& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
     ToolboxGadget& setFocus();

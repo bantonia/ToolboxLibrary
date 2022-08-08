@@ -1,4 +1,6 @@
-class OS {
+#include "ErrorReport.h"
+
+class OS : public ErrorReport {
   public:
     OS(){};
     ~OS(){};

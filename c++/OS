@@ -4,7 +4,7 @@
 
 unsigned int OS::readMonotonicTime() {
   _kernel_swi_regs in, out;
-  _kernel_swi(OS_ReadMonotonicTime, &in, &out);
+  ErrorReport::setLastError(_kernel_swi(OS_ReadMonotonicTime, &in, &out), __LINE__);
   return out.r[0];
 }
 
@@ -12,7 +12,7 @@ unsigned int OS::readModeVariable(int mode, int var) {
   _kernel_swi_regs in, out;
   in.r[0] = mode;
   in.r[1] = var;
-  _kernel_swi(OS_ReadModeVariable, &in, &out);
+  ErrorReport::setLastError(_kernel_swi(OS_ReadModeVariable, &in, &out), __LINE__);
   return out.r[2];
 }
 
@@ -21,7 +21,7 @@ char *OS::binaryToDecimal(int n, char *buffer, int *bufSize) {
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  _kernel_swi(OS_BinaryToDecimal, &in, &out);
+  ErrorReport::setLastError(_kernel_swi(OS_BinaryToDecimal, &in, &out), __LINE__);
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
