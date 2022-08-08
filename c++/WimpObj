@@ -23,7 +23,7 @@ unsigned int WimpObj::newTime;
 unsigned int WimpObj::oldTime;
 unsigned int *WimpObj::workspace;
 int WimpObj::templateSpace;
-int WimpObj::quit = 1;
+int WimpObj::quit = 0;
 
 //_kernel_oserror err = {1233, "My Error"};
 
@@ -76,7 +76,7 @@ unsigned int WimpObj::init() {
 
 void WimpObj::closeDown() {
   WimpObj::setLastError(wimp_close_down(WimpObj::handle), __LINE__);
-  WimpObj::quit = 0;
+  WimpObj::quit = 1;
 }
 
 int WimpObj::errorHandler() {
@@ -249,7 +249,6 @@ int WimpObj::run() {
         pollWordNonZero();
         break;
       case Wimp_EUserMessage: {
-          int quitX = WimpObj::pollBlock[4];
           if (WimpObj::pollBlock[4] == 0) {
             preCloseDown();
             closeDown();
@@ -259,7 +258,6 @@ int WimpObj::run() {
         }
         break;
       case Wimp_EUserMessageRecorded: {
-          int quitX = WimpObj::pollBlock[4];
           if (WimpObj::pollBlock[4] == 0) {
             preCloseDown();
             closeDown();
