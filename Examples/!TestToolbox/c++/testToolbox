@@ -6,6 +6,7 @@
 #include "ToolboxSlider.h"
 #include "ToolboxRadioButton.h"
 #include "ToolboxPopUp.h"
+#include "menu.h"
 
 typedef enum {
   Quit         = 0x01,
@@ -108,6 +109,7 @@ class Prog : public ToolboxTask {
     void adjusterClicked();
     void sliderValueChanged();
     void iconbarObjectAutoCreated();
+    void menuAboutToBeShown();
     MainWindow *mainWindow;
     ToolboxWindowObj *w;
     ToolboxIconbarObj *iconbar;
@@ -125,7 +127,13 @@ Prog::~Prog() {
 
 static Prog *tools;
 
+void Prog::menuAboutToBeShown() {
+  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) this->getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock; 
+}
+
 void Prog::windowObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
   ToolboxWindowObj *w = new ToolboxWindowObj();
   w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
   if (w->isTemplate("Window")) {
@@ -139,14 +147,15 @@ void Prog::windowObjectAutoCreated() {
 }
 
 void Prog::adjusterClicked() {
-  if (ToolboxCoreObj::idBlock.self_id == tools->mainWindow->w->readObjectId()) {
-    switch(ToolboxCoreObj::idBlock.self_component) {
-      case MWAdjusterRight: {
-          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() + 1);
+  AdjusterClickedEvent *pollEvent = (AdjusterClickedEvent *) this->getPollBlock();
+  if (ToolboxCoreObj::idBlock.self_id == tools->mainWindow->w->readObjectId() && (ToolboxCoreObj::idBlock.self_component ==MWAdjusterRight || ToolboxCoreObj::idBlock.self_component == MWAdjusterLeft)) {
+    switch(pollEvent->direction) {
+      case Adjuster_Decrement: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() - 1);
         }
         break;
-      case MWAdjusterLeft: {
-          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() - 1);
+      case Adjuster_Increment: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() + 1);
         }
         break;
       default:
@@ -163,6 +172,7 @@ void Prog::sliderValueChanged() {
 }
 
 void Prog::iconbarObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
   iconbar = new ToolboxIconbarObj();
   iconbar->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id).setText("Worked");
 }
