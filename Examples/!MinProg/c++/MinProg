@@ -1,0 +1,46 @@
+#include "ToolboxTask.h"
+#include "menu.h"
+
+typedef enum {
+  Quit         = 0x01
+} userEvents;
+
+class MinProg : public ToolboxTask {
+  public:
+    MinProg() {};
+    ~MinProg() {};
+    void showProperties() {};
+    void toolboxUserEvent();
+    void menuAboutToBeShown();
+};
+
+static MinProg *tools;
+
+void MinProg::toolboxUserEvent() {
+  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
+  switch(tboxHdr->event_code) {
+    case Quit: {
+        this->closeDown();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void MinProg::menuAboutToBeShown() {
+  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) this->getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock; 
+}
+
+int main() {
+  tools = new MinProg();
+  tools->setHandle(tools->initTask("<ImagProc$Dir>"));
+  tools->setMask(256+1);
+  while (!tools->quit) {
+    tools->run();
+  }
+  return 0;
+}
+
+
