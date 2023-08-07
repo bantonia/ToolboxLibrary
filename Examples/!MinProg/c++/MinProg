@@ -11,7 +11,6 @@ class MinProg : public ToolboxTask {
     ~MinProg() {};
     void showProperties() {};
     void toolboxUserEvent();
-    void menuAboutToBeShown();
 };
 
 static MinProg *tools;
@@ -28,14 +27,9 @@ void MinProg::toolboxUserEvent() {
   }
 }
 
-void MinProg::menuAboutToBeShown() {
-  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) this->getPollBlock();
-  IdBlock *idBlock = &ToolboxCoreObj::idBlock; 
-}
-
 int main() {
   tools = new MinProg();
-  tools->setHandle(tools->initTask("<ImagProc$Dir>"));
+  tools->setHandle(tools->initTask("<MinProg$Dir>"));
   tools->setMask(256+1);
   while (!tools->quit) {
     tools->run();
