@@ -1,5 +1,4 @@
 #include "ToolboxTask.h"
-#include "menu.h"
 
 typedef enum {
   Quit         = 0x01
