@@ -19,6 +19,13 @@ WimpWindowObj::WimpWindowObj() {
   flags.windDefExt = 0;
 }
 
+WimpWindowObj::WimpWindowObj(int handle) {
+  if (WimpWindowObj::workspace == NULL) {
+    WimpWindowObj::workspace = new unsigned int[64];
+  }
+  this->handle = handle;
+}
+
 WimpWindowObj::WimpWindowObj(WimpObj::WindDefStr *windDefStr) {
   if (WimpWindowObj::workspace == NULL) {
     WimpWindowObj::workspace = new unsigned int[64];
@@ -36,6 +43,9 @@ WimpWindowObj::~WimpWindowObj() {
   }
   if (title != NULL) {
     delete title;
+  }
+  if (WimpWindowObj::workspace != NULL) {
+    delete WimpWindowObj::workspace;
   }
 }
 
@@ -57,7 +67,9 @@ WimpObj::WindDefStr *WimpWindowObj::getWindDefStr() {
 
 int WimpWindowObj::createWindow() {
   WimpObj::setLastError(wimp_create_window((WimpWindow *) windDefStr, &handle), __LINE__);
+  #if 0
   delete windDefStr;
+  #endif
   return handle;
 }
 
@@ -189,6 +201,7 @@ void WimpWindowObj::forceRedraw(int xmin, int ymin, int xmax, int ymax) {
 }
 
 WimpGetWindowOutlineBlock *WimpWindowObj::getWindowOutline() {
+  workspace[0] = handle;
   WimpObj::setLastError(wimp_get_window_outline((WimpGetWindowOutlineBlock *) workspace), __LINE__);
   return (WimpGetWindowOutlineBlock *) workspace;
 }
