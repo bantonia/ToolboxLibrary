@@ -1,0 +1,647 @@
+# Project:   ToolboxLib
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.WimpWindowObj:   @.o.WimpWindowObj 
+        C++ $(C++flags) @.o.WimpWindowObj 
+@.WimpObj:   @.o.WimpObj 
+        C++ $(C++flags) @.o.WimpObj 
+@.ToolboxWritableField:   @.o.ToolboxWritableField 
+        C++ $(C++flags) @.o.ToolboxWritableField 
+@.ToolboxWindowObj:   @.o.ToolboxWindowObj 
+        C++ $(C++flags) @.o.ToolboxWindowObj 
+@.ToolboxTask:   @.o.ToolboxTask 
+        C++ $(C++flags) @.o.ToolboxTask 
+@.ToolboxTabs:   @.o.ToolboxTabs 
+        C++ $(C++flags) @.o.ToolboxTabs 
+@.ToolboxStringSet:   @.o.ToolboxStringSet 
+        C++ $(C++flags) @.o.ToolboxStringSet 
+@.ToolboxSlider:   @.o.ToolboxSlider 
+        C++ $(C++flags) @.o.ToolboxSlider 
+@.ToolboxScaleObj:   @.o.ToolboxScaleObj 
+        C++ $(C++flags) @.o.ToolboxScaleObj 
+@.ToolboxSaveAsObj:   @.o.ToolboxSaveAsObj 
+        C++ $(C++flags) @.o.ToolboxSaveAsObj 
+@.ToolboxRadioButton:   @.o.ToolboxRadioButton 
+        C++ $(C++flags) @.o.ToolboxRadioButton 
+@.ToolboxQuitObj:   @.o.ToolboxQuitObj 
+        C++ $(C++flags) @.o.ToolboxQuitObj 
+@.ToolboxProgInfoObj:   @.o.ToolboxProgInfoObj 
+        C++ $(C++flags) @.o.ToolboxProgInfoObj 
+@.ToolboxPrintDlogObj:   @.o.ToolboxPrintDlogObj 
+        C++ $(C++flags) @.o.ToolboxPrintDlogObj 
+@.ToolboxPopUp:   @.o.ToolboxPopUp 
+        C++ $(C++flags) @.o.ToolboxPopUp 
+@.ToolboxOptionButton:   @.o.ToolboxOptionButton 
+        C++ $(C++flags) @.o.ToolboxOptionButton 
+@.ToolboxObjectList:   @.o.ToolboxObjectList 
+        C++ $(C++flags) @.o.ToolboxObjectList 
+@.ToolboxObj:   @.o.ToolboxObj 
+        C++ $(C++flags) @.o.ToolboxObj 
+@.ToolboxNumberRange:   @.o.ToolboxNumberRange 
+        C++ $(C++flags) @.o.ToolboxNumberRange 
+@.ToolboxMenuObj:   @.o.ToolboxMenuObj 
+        C++ $(C++flags) @.o.ToolboxMenuObj 
+@.ToolboxIconbarObj:   @.o.ToolboxIconbarObj 
+        C++ $(C++flags) @.o.ToolboxIconbarObj 
+@.ToolboxGadget:   @.o.ToolboxGadget 
+        C++ $(C++flags) @.o.ToolboxGadget 
+@.ToolboxFontMenuObj:   @.o.ToolboxFontMenuObj 
+        C++ $(C++flags) @.o.ToolboxFontMenuObj 
+@.ToolboxFontDlogObj:   @.o.ToolboxFontDlogObj 
+        C++ $(C++flags) @.o.ToolboxFontDlogObj 
+@.ToolboxFileInfoDlogObj:   @.o.ToolboxFileInfoDlogObj 
+        C++ $(C++flags) @.o.ToolboxFileInfoDlogObj 
+@.ToolboxEventObj:   @.o.ToolboxEventObj 
+        C++ $(C++flags) @.o.ToolboxEventObj 
+@.ToolboxDraggable:   @.o.ToolboxDraggable 
+        C++ $(C++flags) @.o.ToolboxDraggable 
+@.ToolboxDisplayField:   @.o.ToolboxDisplayField 
+        C++ $(C++flags) @.o.ToolboxDisplayField 
+@.ToolboxDSCObj:   @.o.ToolboxDCSObj 
+        C++ $(C++flags) @.o.ToolboxDCSObj 
+@.ToolboxCoreObj:   @.o.ToolboxCoreObj 
+        C++ $(C++flags) @.o.ToolboxCoreObj 
+@.ToolboxColourDlogObj:   @.o.ToolboxColourDlogObj 
+        C++ $(C++flags) @.o.ToolboxColourDlogObj 
+@.ToolboxButton:   @.o.ToolboxButton 
+        C++ $(C++flags) @.o.ToolboxButton 
+@.ToolboxActionButton:   @.o.ToolboxActionButton 
+        C++ $(C++flags) @.o.ToolboxActionButton 
+@.SpriteAreaObj:   @.o.SpriteAreaObj 
+        C++ $(C++flags) @.o.SpriteAreaObj 
+@.SpriteObj:   @.o.SpriteObj 
+        C++ $(C++flags) @.o.SpriteObj 
+@.ToolboxC++Lib:   @.o.SpriteObj @.o.ToolboxActionButton @.o.ToolboxButton \
+        @.o.SpriteAreaObj @.o.ToolboxColourDlogObj @.o.ToolboxColourMenuObj @.o.ToolboxCoreObj \
+        @.o.ToolboxDCSObj @.o.ToolboxDisplayField @.o.ToolboxDraggable @.o.ToolboxEventObj \
+        @.o.ToolboxFileInfoDlogObj @.o.ToolboxFontDlogObj @.o.ToolboxFontMenuObj @.o.ToolboxGadget \
+        @.o.ToolboxIconbarObj @.o.ToolboxMenuObj @.o.ToolboxNumberRange @.o.ToolboxObj \
+        @.o.ToolboxObjectList @.o.ToolboxOptionButton @.o.ToolboxPopUp @.o.ToolboxPrintDlogObj \
+        @.o.ToolboxProgInfoObj @.o.ToolboxQuitObj @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj \
+        @.o.ToolboxScaleObj @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask \
+        @.o.ToolboxWindowObj @.o.ToolboxWritableField @.o.WimpObj @.o.WimpWindowObj 
+        LibFile $(LibFileflags) @.o.SpriteObj @.o.ToolboxActionButton \
+        @.o.ToolboxButton @.o.SpriteAreaObj @.o.ToolboxColourDlogObj @.o.ToolboxColourMenuObj \
+        @.o.ToolboxCoreObj @.o.ToolboxDCSObj @.o.ToolboxDisplayField @.o.ToolboxDraggable \
+        @.o.ToolboxEventObj @.o.ToolboxFileInfoDlogObj @.o.ToolboxFontDlogObj @.o.ToolboxFontMenuObj \
+        @.o.ToolboxGadget @.o.ToolboxIconbarObj @.o.ToolboxMenuObj @.o.ToolboxNumberRange \
+        @.o.ToolboxObj @.o.ToolboxObjectList @.o.ToolboxOptionButton @.o.ToolboxPopUp \
+        @.o.ToolboxPrintDlogObj @.o.ToolboxProgInfoObj @.o.ToolboxQuitObj @.o.ToolboxRadioButton \
+        @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs \
+        @.o.ToolboxTask @.o.ToolboxWindowObj @.o.ToolboxWritableField @.o.WimpObj @.o.WimpWindowObj 
+
+
+# User-editable dependencies:
+
+
+# Static dependencies:
+@.o.SpriteObj:   @.c++.SpriteObj
+        c++ $(c++flags) -o @.o.SpriteObj @.c++.SpriteObj 
+@.o.SpriteAreaObj:   @.c++.SpriteAreaObj
+        c++ $(c++flags) -o @.o.SpriteAreaObj @.c++.SpriteAreaObj 
+@.o.ToolboxActionButton:   @.c++.ToolboxActionButton
+        c++ $(c++flags) -o @.o.ToolboxActionButton @.c++.ToolboxActionButton 
+@.o.ToolboxButton:   @.c++.ToolboxButton
+        c++ $(c++flags) -o @.o.ToolboxButton @.c++.ToolboxButton 
+@.o.ToolboxColourDlogObj:   @.c++.ToolboxColourDlogObj
+        c++ $(c++flags) -o @.o.ToolboxColourDlogObj @.c++.ToolboxColourDlogObj 
+@.o.ToolboxCoreObj:   @.c++.ToolboxCoreObj
+        c++ $(c++flags) -o @.o.ToolboxCoreObj @.c++.ToolboxCoreObj 
+@.o.ToolboxDCSObj:   @.c++.ToolboxDCSObj
+        c++ $(c++flags) -o @.o.ToolboxDCSObj @.c++.ToolboxDCSObj 
+@.o.ToolboxDisplayField:   @.c++.ToolboxDisplayField
+        c++ $(c++flags) -o @.o.ToolboxDisplayField @.c++.ToolboxDisplayField 
+@.o.ToolboxDraggable:   @.c++.ToolboxDraggable
+        c++ $(c++flags) -o @.o.ToolboxDraggable @.c++.ToolboxDraggable 
+@.o.ToolboxEventObj:   @.c++.ToolboxEventObj
+        c++ $(c++flags) -o @.o.ToolboxEventObj @.c++.ToolboxEventObj 
+@.o.ToolboxFileInfoDlogObj:   @.c++.ToolboxFileInfoDlogObj
+        c++ $(c++flags) -o @.o.ToolboxFileInfoDlogObj @.c++.ToolboxFileInfoDlogObj 
+@.o.ToolboxFontDlogObj:   @.c++.ToolboxFontDlogObj
+        c++ $(c++flags) -o @.o.ToolboxFontDlogObj @.c++.ToolboxFontDlogObj 
+@.o.ToolboxFontMenuObj:   @.c++.ToolboxFontMenuObj
+        c++ $(c++flags) -o @.o.ToolboxFontMenuObj @.c++.ToolboxFontMenuObj 
+@.o.ToolboxGadget:   @.c++.ToolboxGadget
+        c++ $(c++flags) -o @.o.ToolboxGadget @.c++.ToolboxGadget 
+@.o.ToolboxIconbarObj:   @.c++.ToolboxIconbarObj
+        c++ $(c++flags) -o @.o.ToolboxIconbarObj @.c++.ToolboxIconbarObj 
+@.o.ToolboxMenuObj:   @.c++.ToolboxMenuObj
+        c++ $(c++flags) -o @.o.ToolboxMenuObj @.c++.ToolboxMenuObj 
+@.o.ToolboxNumberRange:   @.c++.ToolboxNumberRange
+        c++ $(c++flags) -o @.o.ToolboxNumberRange @.c++.ToolboxNumberRange 
+@.o.ToolboxObj:   @.c++.ToolboxObj
+        c++ $(c++flags) -o @.o.ToolboxObj @.c++.ToolboxObj 
+@.o.ToolboxObjectList:   @.c++.ToolboxObjectList
+        c++ $(c++flags) -o @.o.ToolboxObjectList @.c++.ToolboxObjectList 
+@.o.ToolboxOptionButton:   @.c++.ToolboxOptionButton
+        c++ $(c++flags) -o @.o.ToolboxOptionButton @.c++.ToolboxOptionButton 
+@.o.ToolboxPopUp:   @.c++.ToolboxPopUp
+        c++ $(c++flags) -o @.o.ToolboxPopUp @.c++.ToolboxPopUp 
+@.o.ToolboxPrintDlogObj:   @.c++.ToolboxPrintDlogObj
+        c++ $(c++flags) -o @.o.ToolboxPrintDlogObj @.c++.ToolboxPrintDlogObj 
+@.o.ToolboxProgInfoObj:   @.c++.ToolboxProgInfoObj
+        c++ $(c++flags) -o @.o.ToolboxProgInfoObj @.c++.ToolboxProgInfoObj 
+@.o.ToolboxQuitObj:   @.c++.ToolboxQuitObj
+        c++ $(c++flags) -o @.o.ToolboxQuitObj @.c++.ToolboxQuitObj 
+@.o.ToolboxRadioButton:   @.c++.ToolboxRadioButton
+        c++ $(c++flags) -o @.o.ToolboxRadioButton @.c++.ToolboxRadioButton 
+@.o.ToolboxSaveAsObj:   @.c++.ToolboxSaveAsObj
+        c++ $(c++flags) -o @.o.ToolboxSaveAsObj @.c++.ToolboxSaveAsObj 
+@.o.ToolboxScaleObj:   @.c++.ToolboxScaleObj
+        c++ $(c++flags) -o @.o.ToolboxScaleObj @.c++.ToolboxScaleObj 
+@.o.ToolboxSlider:   @.c++.ToolboxSlider
+        c++ $(c++flags) -o @.o.ToolboxSlider @.c++.ToolboxSlider 
+@.o.ToolboxStringSet:   @.c++.ToolboxStringSet
+        c++ $(c++flags) -o @.o.ToolboxStringSet @.c++.ToolboxStringSet 
+@.o.ToolboxTabs:   @.c++.ToolboxTabs
+        c++ $(c++flags) -o @.o.ToolboxTabs @.c++.ToolboxTabs 
+@.o.ToolboxTask:   @.c++.ToolboxTask
+        c++ $(c++flags) -o @.o.ToolboxTask @.c++.ToolboxTask 
+@.o.ToolboxWindowObj:   @.c++.ToolboxWindowObj
+        c++ $(c++flags) -o @.o.ToolboxWindowObj @.c++.ToolboxWindowObj 
+@.o.ToolboxWritableField:   @.c++.ToolboxWritableField
+        c++ $(c++flags) -o @.o.ToolboxWritableField @.c++.ToolboxWritableField 
+@.o.WimpObj:   @.c++.WimpObj
+        c++ $(c++flags) -o @.o.WimpObj @.c++.WimpObj 
+@.o.WimpWindowObj:   @.c++.WimpWindowObj
+        c++ $(c++flags) -o @.o.WimpWindowObj @.c++.WimpWindowObj 
+
+
+# Dynamic dependencies:
+o.ToolboxGadget:	c++.ToolboxGadget
+o.ToolboxGadget:	h.ToolboxGadget
+o.ToolboxGadget:	C:h.kernel
+o.ToolboxGadget:	h.ErrorReport
+o.ToolboxGadget:	C:h.kernel
+o.ToolboxGadget:	C:h.toolbox
+o.ToolboxGadget:	C:h.wimp
+o.ToolboxGadget:	C:h.gadgets
+o.ToolboxGadget:	h.Object
+o.ToolboxGadget:	h.ClassType
+o.ToolboxNumberRange:	c++.ToolboxNumberRange
+o.ToolboxNumberRange:	h.ToolboxNumberRange
+o.ToolboxNumberRange:	h.ClassType
+o.ToolboxNumberRange:	h.ToolboxGadget
+o.ToolboxNumberRange:	C:h.kernel
+o.ToolboxNumberRange:	h.ErrorReport
+o.ToolboxNumberRange:	C:h.kernel
+o.ToolboxNumberRange:	C:h.toolbox
+o.ToolboxNumberRange:	C:h.wimp
+o.ToolboxNumberRange:	C:h.gadgets
+o.ToolboxNumberRange:	h.Object
+o.ToolboxNumberRange:	h.ClassType
+o.ToolboxOptionButton:	c++.ToolboxOptionButton
+o.ToolboxOptionButton:	h.ToolboxOptionButton
+o.ToolboxOptionButton:	h.ClassType
+o.ToolboxOptionButton:	h.ToolboxGadget
+o.ToolboxOptionButton:	C:h.kernel
+o.ToolboxOptionButton:	h.ErrorReport
+o.ToolboxOptionButton:	C:h.kernel
+o.ToolboxOptionButton:	C:h.toolbox
+o.ToolboxOptionButton:	C:h.wimp
+o.ToolboxOptionButton:	C:h.gadgets
+o.ToolboxOptionButton:	h.Object
+o.ToolboxOptionButton:	h.ClassType
+o.ToolboxPopUp:	c++.ToolboxPopUp
+o.ToolboxPopUp:	h.ToolboxPopUp
+o.ToolboxPopUp:	h.ClassType
+o.ToolboxPopUp:	h.ToolboxGadget
+o.ToolboxPopUp:	C:h.kernel
+o.ToolboxPopUp:	h.ErrorReport
+o.ToolboxPopUp:	C:h.kernel
+o.ToolboxPopUp:	C:h.toolbox
+o.ToolboxPopUp:	C:h.wimp
+o.ToolboxPopUp:	C:h.gadgets
+o.ToolboxPopUp:	h.Object
+o.ToolboxPopUp:	h.ClassType
+o.ToolboxRadioButton:	c++.ToolboxRadioButton
+o.ToolboxRadioButton:	h.ToolboxRadioButton
+o.ToolboxRadioButton:	h.ClassType
+o.ToolboxRadioButton:	h.ToolboxGadget
+o.ToolboxRadioButton:	C:h.kernel
+o.ToolboxRadioButton:	h.ErrorReport
+o.ToolboxRadioButton:	C:h.kernel
+o.ToolboxRadioButton:	C:h.toolbox
+o.ToolboxRadioButton:	C:h.wimp
+o.ToolboxRadioButton:	C:h.gadgets
+o.ToolboxRadioButton:	h.Object
+o.ToolboxRadioButton:	h.ClassType
+o.ToolboxSlider:	c++.ToolboxSlider
+o.ToolboxSlider:	h.ToolboxSlider
+o.ToolboxSlider:	h.ClassType
+o.ToolboxSlider:	h.ToolboxGadget
+o.ToolboxSlider:	C:h.kernel
+o.ToolboxSlider:	h.ErrorReport
+o.ToolboxSlider:	C:h.kernel
+o.ToolboxSlider:	C:h.toolbox
+o.ToolboxSlider:	C:h.wimp
+o.ToolboxSlider:	C:h.gadgets
+o.ToolboxSlider:	h.Object
+o.ToolboxSlider:	h.ClassType
+o.ToolboxStringSet:	c++.ToolboxStringSet
+o.ToolboxStringSet:	h.ToolboxStringSet
+o.ToolboxStringSet:	h.ClassType
+o.ToolboxStringSet:	h.ToolboxGadget
+o.ToolboxStringSet:	C:h.kernel
+o.ToolboxStringSet:	h.ErrorReport
+o.ToolboxStringSet:	C:h.kernel
+o.ToolboxStringSet:	C:h.toolbox
+o.ToolboxStringSet:	C:h.wimp
+o.ToolboxStringSet:	C:h.gadgets
+o.ToolboxStringSet:	h.Object
+o.ToolboxStringSet:	h.ClassType
+o.ToolboxTabs:	c++.ToolboxTabs
+o.ToolboxTabs:	h.ToolboxTabs
+o.ToolboxTabs:	h.ClassType
+o.ToolboxTabs:	h.ToolboxGadget
+o.ToolboxTabs:	C:h.kernel
+o.ToolboxTabs:	h.ErrorReport
+o.ToolboxTabs:	C:h.kernel
+o.ToolboxTabs:	C:h.toolbox
+o.ToolboxTabs:	C:h.wimp
+o.ToolboxTabs:	C:h.gadgets
+o.ToolboxTabs:	h.Object
+o.ToolboxTabs:	h.ClassType
+o.ToolboxTabs:	C:h.tabs
+o.ToolboxTabs:	C:h.window
+o.ToolboxTask:	c++.ToolboxTask
+o.ToolboxTask:	h.ToolboxTask
+o.ToolboxTask:	h.ClassType
+o.ToolboxTask:	h.ToolboxCoreObj
+o.ToolboxTask:	h.Object
+o.ToolboxTask:	C:h.toolbox
+o.ToolboxTask:	C:h.kernel
+o.ToolboxTask:	C:h.wimp
+o.ToolboxTask:	h.ErrorReport
+o.ToolboxTask:	C:h.kernel
+o.ToolboxTask:	h.ClassType
+o.ToolboxTask:	h.WimpObj
+o.ToolboxTask:	C:h.kernel
+o.ToolboxTask:	h.ErrorReport
+o.ToolboxTask:	C:h.libc
+o.ToolboxTask:	C:h.kernel
+o.ToolboxTask:	h.Object
+o.ToolboxTask:	C:h.wimp
+o.ToolboxTask:	h.ClassType
+o.ToolboxWritableField:	c++.ToolboxWritableField
+o.ToolboxWritableField:	h.ToolboxWritableField
+o.ToolboxWritableField:	h.ClassType
+o.ToolboxWritableField:	h.ToolboxGadget
+o.ToolboxWritableField:	C:h.kernel
+o.ToolboxWritableField:	h.ErrorReport
+o.ToolboxWritableField:	C:h.kernel
+o.ToolboxWritableField:	C:h.toolbox
+o.ToolboxWritableField:	C:h.wimp
+o.ToolboxWritableField:	C:h.gadgets
+o.ToolboxWritableField:	h.Object
+o.ToolboxWritableField:	h.ClassType
+o.SpriteObj:	c++.SpriteObj
+o.SpriteObj:	h.SpriteObj
+o.SpriteObj:	h.sprite
+o.SpriteObj:	h.ClassType
+o.SpriteObj:	h.Object
+o.SpriteAreaObj:	c++.SpriteAreaObj
+o.SpriteAreaObj:	h.SpriteAreaObj
+o.SpriteAreaObj:	C:h.iostream
+o.SpriteAreaObj:	C:h.memory
+o.SpriteAreaObj:	h.Object
+o.SpriteAreaObj:	h.ErrorReport
+o.SpriteAreaObj:	C:h.kernel
+o.SpriteAreaObj:	C:h.swis
+o.SpriteAreaObj:	C:h.kernel
+o.SpriteAreaObj:	h.sprite
+o.SpriteAreaObj:	h.SpriteObj
+o.SpriteAreaObj:	h.sprite
+o.SpriteAreaObj:	h.ClassType
+o.SpriteAreaObj:	h.Object
+o.SpriteAreaObj:	h.ClassType
+o.SpriteAreaObj:	h.errorLibrary
+o.SpriteAreaObj:	C:h.kernel
+o.ToolboxCoreObj:	c++.ToolboxCoreObj
+o.ToolboxCoreObj:	C:h.kernel
+o.ToolboxCoreObj:	h.ToolboxCoreObj
+o.ToolboxCoreObj:	h.Object
+o.ToolboxCoreObj:	C:h.toolbox
+o.ToolboxCoreObj:	C:h.wimp
+o.ToolboxCoreObj:	h.ErrorReport
+o.ToolboxCoreObj:	C:h.kernel
+o.ToolboxCoreObj:	h.ClassType
+o.ToolboxCoreObj:	C:h.window
+o.ToolboxCoreObj:	C:h.gadgets
+o.ToolboxDraggable:	c++.ToolboxDraggable
+o.ToolboxDraggable:	h.ToolboxDraggable
+o.ToolboxDraggable:	h.ClassType
+o.ToolboxDraggable:	h.ToolboxGadget
+o.ToolboxDraggable:	C:h.kernel
+o.ToolboxDraggable:	h.ErrorReport
+o.ToolboxDraggable:	C:h.kernel
+o.ToolboxDraggable:	C:h.toolbox
+o.ToolboxDraggable:	C:h.wimp
+o.ToolboxDraggable:	C:h.gadgets
+o.ToolboxDraggable:	h.Object
+o.ToolboxDraggable:	h.ClassType
+o.ToolboxEventObj:	c++.ToolboxEventObj
+o.ToolboxEventObj:	h.ToolboxCoreObj
+o.ToolboxEventObj:	h.Object
+o.ToolboxEventObj:	C:h.toolbox
+o.ToolboxEventObj:	C:h.kernel
+o.ToolboxEventObj:	C:h.wimp
+o.ToolboxEventObj:	h.ErrorReport
+o.ToolboxEventObj:	C:h.kernel
+o.ToolboxEventObj:	h.ClassType
+o.ToolboxEventObj:	h.ToolboxEventObj
+o.ToolboxEventObj:	C:h.toolbox
+o.ToolboxEventObj:	C:h.event
+o.ToolboxEventObj:	h.ClassType
+o.ToolboxActionButton:	c++.ToolboxActionButton
+o.ToolboxActionButton:	h.ToolboxActionButton
+o.ToolboxActionButton:	h.ClassType
+o.ToolboxActionButton:	h.ToolboxGadget
+o.ToolboxActionButton:	C:h.kernel
+o.ToolboxActionButton:	h.ErrorReport
+o.ToolboxActionButton:	C:h.kernel
+o.ToolboxActionButton:	C:h.toolbox
+o.ToolboxActionButton:	C:h.wimp
+o.ToolboxActionButton:	C:h.gadgets
+o.ToolboxActionButton:	h.Object
+o.ToolboxActionButton:	h.ClassType
+o.ToolboxButton:	c++.ToolboxButton
+o.ToolboxButton:	h.ToolboxButton
+o.ToolboxButton:	h.ClassType
+o.ToolboxButton:	h.ToolboxGadget
+o.ToolboxButton:	C:h.kernel
+o.ToolboxButton:	h.ErrorReport
+o.ToolboxButton:	C:h.kernel
+o.ToolboxButton:	C:h.toolbox
+o.ToolboxButton:	C:h.wimp
+o.ToolboxButton:	C:h.gadgets
+o.ToolboxButton:	h.Object
+o.ToolboxButton:	h.ClassType
+o.ToolboxButton:	h.OS
+o.ToolboxButton:	h.ErrorReport
+o.ToolboxColourDlogObj:	c++.ToolboxColourDlogObj
+o.ToolboxColourDlogObj:	h.ToolboxColourDlogObj
+o.ToolboxColourDlogObj:	C:h.colourdbox
+o.ToolboxColourDlogObj:	C:h.kernel
+o.ToolboxColourDlogObj:	C:h.toolbox
+o.ToolboxColourDlogObj:	C:h.wimp
+o.ToolboxColourDlogObj:	C:h.window
+o.ToolboxColourDlogObj:	C:h.gadgets
+o.ToolboxColourDlogObj:	h.ClassType
+o.ToolboxColourDlogObj:	h.ToolboxObj
+o.ToolboxColourDlogObj:	h.Object
+o.ToolboxColourDlogObj:	C:h.toolbox
+o.ToolboxColourDlogObj:	h.ErrorReport
+o.ToolboxColourDlogObj:	C:h.kernel
+o.ToolboxColourDlogObj:	h.ClassType
+o.ToolboxDCSObj:	c++.ToolboxDCSObj
+o.ToolboxDCSObj:	C:h.kernel
+o.ToolboxDCSObj:	h.ToolboxDCSObj
+o.ToolboxDCSObj:	C:h.toolbox
+o.ToolboxDCSObj:	C:h.wimp
+o.ToolboxDCSObj:	C:h.dcs
+o.ToolboxDCSObj:	C:h.window
+o.ToolboxDCSObj:	C:h.gadgets
+o.ToolboxDCSObj:	h.ClassType
+o.ToolboxDCSObj:	h.ToolboxObj
+o.ToolboxDCSObj:	h.Object
+o.ToolboxDCSObj:	C:h.toolbox
+o.ToolboxDCSObj:	h.ErrorReport
+o.ToolboxDCSObj:	C:h.kernel
+o.ToolboxDCSObj:	h.ClassType
+o.ToolboxDisplayField:	c++.ToolboxDisplayField
+o.ToolboxDisplayField:	h.ToolboxDisplayField
+o.ToolboxDisplayField:	h.ClassType
+o.ToolboxDisplayField:	h.ToolboxGadget
+o.ToolboxDisplayField:	C:h.kernel
+o.ToolboxDisplayField:	h.ErrorReport
+o.ToolboxDisplayField:	C:h.kernel
+o.ToolboxDisplayField:	C:h.toolbox
+o.ToolboxDisplayField:	C:h.wimp
+o.ToolboxDisplayField:	C:h.gadgets
+o.ToolboxDisplayField:	h.Object
+o.ToolboxDisplayField:	h.ClassType
+o.ToolboxDisplayField:	h.OS
+o.ToolboxDisplayField:	h.ErrorReport
+o.ToolboxFileInfoDlogObj:	c++.ToolboxFileInfoDlogObj
+o.ToolboxFileInfoDlogObj:	C:h.kernel
+o.ToolboxFileInfoDlogObj:	h.ToolboxFileInfoDlogObj
+o.ToolboxFileInfoDlogObj:	C:h.fileinfo
+o.ToolboxFileInfoDlogObj:	C:h.toolbox
+o.ToolboxFileInfoDlogObj:	C:h.wimp
+o.ToolboxFileInfoDlogObj:	C:h.window
+o.ToolboxFileInfoDlogObj:	C:h.gadgets
+o.ToolboxFileInfoDlogObj:	h.ClassType
+o.ToolboxFileInfoDlogObj:	h.ToolboxObj
+o.ToolboxFileInfoDlogObj:	h.Object
+o.ToolboxFileInfoDlogObj:	C:h.toolbox
+o.ToolboxFileInfoDlogObj:	h.ErrorReport
+o.ToolboxFileInfoDlogObj:	C:h.kernel
+o.ToolboxFileInfoDlogObj:	h.ClassType
+o.ToolboxFontDlogObj:	c++.ToolboxFontDlogObj
+o.ToolboxFontDlogObj:	h.ToolboxFontDlogObj
+o.ToolboxFontDlogObj:	C:h.fontdbox
+o.ToolboxFontDlogObj:	C:h.kernel
+o.ToolboxFontDlogObj:	C:h.toolbox
+o.ToolboxFontDlogObj:	C:h.wimp
+o.ToolboxFontDlogObj:	C:h.window
+o.ToolboxFontDlogObj:	C:h.gadgets
+o.ToolboxFontDlogObj:	h.ClassType
+o.ToolboxFontDlogObj:	h.ToolboxObj
+o.ToolboxFontDlogObj:	h.Object
+o.ToolboxFontDlogObj:	C:h.toolbox
+o.ToolboxFontDlogObj:	h.ErrorReport
+o.ToolboxFontDlogObj:	C:h.kernel
+o.ToolboxFontDlogObj:	h.ClassType
+o.ToolboxFontMenuObj:	c++.ToolboxFontMenuObj
+o.ToolboxFontMenuObj:	h.ToolboxFontMenuObj
+o.ToolboxFontMenuObj:	C:h.fontmenu
+o.ToolboxFontMenuObj:	C:h.kernel
+o.ToolboxFontMenuObj:	C:h.toolbox
+o.ToolboxFontMenuObj:	C:h.wimp
+o.ToolboxFontMenuObj:	h.ClassType
+o.ToolboxFontMenuObj:	h.ToolboxObj
+o.ToolboxFontMenuObj:	h.Object
+o.ToolboxFontMenuObj:	C:h.toolbox
+o.ToolboxFontMenuObj:	h.ErrorReport
+o.ToolboxFontMenuObj:	C:h.kernel
+o.ToolboxFontMenuObj:	h.ClassType
+o.ToolboxIconbarObj:	c++.ToolboxIconbarObj
+o.ToolboxIconbarObj:	h.ToolboxIconbarObj
+o.ToolboxIconbarObj:	C:h.iconbar
+o.ToolboxIconbarObj:	C:h.kernel
+o.ToolboxIconbarObj:	C:h.toolbox
+o.ToolboxIconbarObj:	C:h.wimp
+o.ToolboxIconbarObj:	h.ClassType
+o.ToolboxIconbarObj:	h.ToolboxObj
+o.ToolboxIconbarObj:	h.Object
+o.ToolboxIconbarObj:	C:h.toolbox
+o.ToolboxIconbarObj:	h.ErrorReport
+o.ToolboxIconbarObj:	C:h.kernel
+o.ToolboxIconbarObj:	h.ClassType
+o.ToolboxMenuObj:	c++.ToolboxMenuObj
+o.ToolboxMenuObj:	h.ToolboxMenuObj
+o.ToolboxMenuObj:	C:h.menu
+o.ToolboxMenuObj:	C:h.kernel
+o.ToolboxMenuObj:	C:h.toolbox
+o.ToolboxMenuObj:	C:h.wimp
+o.ToolboxMenuObj:	h.ClassType
+o.ToolboxMenuObj:	h.ToolboxObj
+o.ToolboxMenuObj:	h.Object
+o.ToolboxMenuObj:	C:h.toolbox
+o.ToolboxMenuObj:	h.ErrorReport
+o.ToolboxMenuObj:	C:h.kernel
+o.ToolboxMenuObj:	h.ClassType
+o.ToolboxObj:	c++.ToolboxObj
+o.ToolboxObj:	C:h.kernel
+o.ToolboxObj:	h.ToolboxObj
+o.ToolboxObj:	h.Object
+o.ToolboxObj:	C:h.toolbox
+o.ToolboxObj:	C:h.wimp
+o.ToolboxObj:	h.ErrorReport
+o.ToolboxObj:	C:h.kernel
+o.ToolboxObj:	h.ClassType
+o.ToolboxObjectList:	c++.ToolboxObjectList
+o.ToolboxObjectList:	h.ToolboxObjectList
+o.ToolboxObjectList:	h.ClassType
+o.ToolboxObjectList:	h.ToolboxObj
+o.ToolboxObjectList:	h.Object
+o.ToolboxObjectList:	C:h.toolbox
+o.ToolboxObjectList:	C:h.kernel
+o.ToolboxObjectList:	C:h.wimp
+o.ToolboxObjectList:	h.ErrorReport
+o.ToolboxObjectList:	C:h.kernel
+o.ToolboxObjectList:	h.ClassType
+o.ToolboxPrintDlogObj:	c++.ToolboxPrintDlogObj
+o.ToolboxPrintDlogObj:	h.ToolboxPrintDlogObj
+o.ToolboxPrintDlogObj:	C:h.printdbox
+o.ToolboxPrintDlogObj:	C:h.kernel
+o.ToolboxPrintDlogObj:	C:h.toolbox
+o.ToolboxPrintDlogObj:	C:h.wimp
+o.ToolboxPrintDlogObj:	C:h.window
+o.ToolboxPrintDlogObj:	C:h.gadgets
+o.ToolboxPrintDlogObj:	h.ClassType
+o.ToolboxPrintDlogObj:	h.ToolboxObj
+o.ToolboxPrintDlogObj:	h.Object
+o.ToolboxPrintDlogObj:	C:h.toolbox
+o.ToolboxPrintDlogObj:	h.ErrorReport
+o.ToolboxPrintDlogObj:	C:h.kernel
+o.ToolboxPrintDlogObj:	h.ClassType
+o.ToolboxProgInfoObj:	c++.ToolboxProgInfoObj
+o.ToolboxProgInfoObj:	h.ToolboxProgInfoObj
+o.ToolboxProgInfoObj:	h.ClassType
+o.ToolboxProgInfoObj:	h.ToolboxObj
+o.ToolboxProgInfoObj:	h.Object
+o.ToolboxProgInfoObj:	C:h.toolbox
+o.ToolboxProgInfoObj:	C:h.kernel
+o.ToolboxProgInfoObj:	C:h.wimp
+o.ToolboxProgInfoObj:	h.ErrorReport
+o.ToolboxProgInfoObj:	C:h.kernel
+o.ToolboxProgInfoObj:	h.ClassType
+o.ToolboxProgInfoObj:	C:h.proginfo
+o.ToolboxProgInfoObj:	C:h.window
+o.ToolboxProgInfoObj:	C:h.gadgets
+o.ToolboxQuitObj:	c++.ToolboxQuitObj
+o.ToolboxQuitObj:	h.ToolboxQuitObj
+o.ToolboxQuitObj:	h.ClassType
+o.ToolboxQuitObj:	h.ToolboxObj
+o.ToolboxQuitObj:	h.Object
+o.ToolboxQuitObj:	C:h.toolbox
+o.ToolboxQuitObj:	C:h.kernel
+o.ToolboxQuitObj:	C:h.wimp
+o.ToolboxQuitObj:	h.ErrorReport
+o.ToolboxQuitObj:	C:h.kernel
+o.ToolboxQuitObj:	h.ClassType
+o.ToolboxQuitObj:	C:h.quit
+o.ToolboxQuitObj:	C:h.window
+o.ToolboxQuitObj:	C:h.gadgets
+o.ToolboxSaveAsObj:	c++.ToolboxSaveAsObj
+o.ToolboxSaveAsObj:	h.ToolboxSaveAsObj
+o.ToolboxSaveAsObj:	h.ClassType
+o.ToolboxSaveAsObj:	h.ToolboxObj
+o.ToolboxSaveAsObj:	h.Object
+o.ToolboxSaveAsObj:	C:h.toolbox
+o.ToolboxSaveAsObj:	C:h.kernel
+o.ToolboxSaveAsObj:	C:h.wimp
+o.ToolboxSaveAsObj:	h.ErrorReport
+o.ToolboxSaveAsObj:	C:h.kernel
+o.ToolboxSaveAsObj:	h.ClassType
+o.ToolboxSaveAsObj:	C:h.saveas
+o.ToolboxSaveAsObj:	C:h.window
+o.ToolboxSaveAsObj:	C:h.gadgets
+o.ToolboxScaleObj:	c++.ToolboxScaleObj
+o.ToolboxScaleObj:	h.ToolboxScaleObj
+o.ToolboxScaleObj:	h.ClassType
+o.ToolboxScaleObj:	h.ToolboxObj
+o.ToolboxScaleObj:	h.Object
+o.ToolboxScaleObj:	C:h.toolbox
+o.ToolboxScaleObj:	C:h.kernel
+o.ToolboxScaleObj:	C:h.wimp
+o.ToolboxScaleObj:	h.ErrorReport
+o.ToolboxScaleObj:	C:h.kernel
+o.ToolboxScaleObj:	h.ClassType
+o.ToolboxScaleObj:	C:h.scale
+o.ToolboxScaleObj:	C:h.window
+o.ToolboxScaleObj:	C:h.gadgets
+o.WimpObj:	c++.WimpObj
+o.WimpObj:	h.WimpObj
+o.WimpObj:	C:h.kernel
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.libc
+o.WimpObj:	C:h.kernel
+o.WimpObj:	h.Object
+o.WimpObj:	C:h.wimp
+o.WimpObj:	h.ClassType
+o.WimpObj:	C:h.swis
+o.WimpObj:	h.OS
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.wimp
+o.WimpObj:	C:h.wimplib
+o.WimpObj:	h.ErrorReport
+o.ToolboxWindowObj:	c++.ToolboxWindowObj
+o.ToolboxWindowObj:	C:h.kernel
+o.ToolboxWindowObj:	h.ToolboxWindowObj
+o.ToolboxWindowObj:	C:h.window
+o.ToolboxWindowObj:	C:h.toolbox
+o.ToolboxWindowObj:	C:h.wimp
+o.ToolboxWindowObj:	C:h.gadgets
+o.ToolboxWindowObj:	h.ClassType
+o.ToolboxWindowObj:	h.ToolboxObj
+o.ToolboxWindowObj:	h.Object
+o.ToolboxWindowObj:	C:h.toolbox
+o.ToolboxWindowObj:	h.ErrorReport
+o.ToolboxWindowObj:	C:h.kernel
+o.ToolboxWindowObj:	h.ClassType
+o.WimpWindowObj:	c++.WimpWindowObj
+o.WimpWindowObj:	h.WimpWindowObj
+o.WimpWindowObj:	h.Object
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	h.ClassType
+o.WimpWindowObj:	h.WimpObj
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	h.ErrorReport
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	h.Object
+o.WimpWindowObj:	C:h.wimp
+o.WimpWindowObj:	h.ClassType
+o.WimpWindowObj:	C:h.wimp
+o.WimpWindowObj:	h.WimpObj
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	C:h.swis
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	C:h.wimplib
