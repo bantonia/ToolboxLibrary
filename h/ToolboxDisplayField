@@ -7,6 +7,7 @@
 #ifndef __ToolboxDisplayField_h
 #define __ToolboxDisplayField_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxDisplayField : public ToolboxGadget {
@@ -14,6 +15,7 @@ class ToolboxDisplayField : public ToolboxGadget {
     ToolboxDisplayField& setValue(char *text);
     ToolboxDisplayField& setValue(int value);
     int getValue();
+    int getIntValue();
     int getValue(char *buffer, int bufSize);
     ToolboxDisplayField& setFont(char *fontName, int width, int height);
     ToolboxDisplayField& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
@@ -24,6 +26,10 @@ class ToolboxDisplayField : public ToolboxGadget {
     ToolboxDisplayField& setGadgetFlags(unsigned int flags);
     ToolboxDisplayField& setHelpMessage(char *message);
     ToolboxDisplayField& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxDisplayField";};
+    int getClassType() { return ClassType_ToolboxDisplayField;};
 };
 
 #endif

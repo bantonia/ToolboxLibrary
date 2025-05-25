@@ -10,10 +10,13 @@
 #include "Object.h"
 
 #include <libc.h>
+#include "ClassType.h"
 #include "WimpObj.h"
 #include "wimp.h"
 
+#ifndef Window_WimpToToolbox
 #define Window_WimpToToolbox 0x82884
+#endif
 
 class WimpWindowObj : public Object {
   public:
@@ -23,9 +26,9 @@ class WimpWindowObj : public Object {
     } WindowObjFlags;
 
     WimpWindowObj();
+    WimpWindowObj(int);
     WimpWindowObj(WimpObj::WindDefStr *);
     ~WimpWindowObj();
-    void showProperties(){};
     void setWindDefStr(WimpObj::WindDefStr *);
     void removeWindDefStr();
     WimpObj::WindDefStr *getWindDefStr();
@@ -52,6 +55,10 @@ class WimpWindowObj : public Object {
     unsigned int *getWorkspace();
     void redrawTitle();
     void wimpToToolbox(int icon_handle, int *toolbox_window_handle, int *toolbox_component_id);
+
+    void showProperties() {};
+    char* getClassName() { return "WimpWindowObj";};
+    int getClassType() { return ClassType_WimpWindowObj;};
   private:
     int handle;
     WimpObj::WindDefStr *windDefStr;

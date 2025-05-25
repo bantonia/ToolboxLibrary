@@ -8,6 +8,7 @@
 #define __ToolboxWindowObj_h
 
 #include "window.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxWindowObj : public ToolboxObj {
@@ -15,7 +16,6 @@ class ToolboxWindowObj : public ToolboxObj {
     ToolboxWindowObj();
     ToolboxWindowObj(ObjectId objectId);
     ~ToolboxWindowObj();
-    void showProperties() {};
     int getWimpHandle();
     int readWimpHandle();
     int addGadget(Gadget *gadget);
@@ -55,6 +55,10 @@ class ToolboxWindowObj : public ToolboxObj {
     ToolboxWindowObj& setObjectId(ObjectId objectId);
     ToolboxWindowObj& setFlags(unsigned int flags);
     ToolboxWindowObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxWindowObj";};
+    int getClassType() { return ClassType_ToolboxWindowObj;};
   private:
     int wimpHandle;
 };

@@ -1,0 +1,693 @@
+#include <string.h>
+#include "SpriteAreaObj.h"
+#include "errorLibrary.h"
+
+SpriteAreaObj::SpriteAreaObj() {
+  area = SpriteMainArea;
+  this->flags.flag.spriteName = 0;
+  this->flags.flag.spritePtr = 0;
+  flags.word = 0;
+}
+
+SpriteAreaObj::SpriteAreaObj(int size) {
+  flags.word = 0;
+  if ((area = (SpriteArea_t *)new unsigned char[size]) != NULL) {
+    area->size = size;
+    area->number = 0;
+    area->sproff = 16;
+    area->freeoff = 0;
+    this->useSpritePtr();
+    this->spriteAreaInitialise();
+  } else {
+    ErrorReport::setLastError(&spriteAreaMemoryAllocationFailed, __LINE__);
+  }
+}
+
+SpriteAreaObj::SpriteAreaObj(int size, int offset) {
+  flags.word = 0;
+  if ((area = (SpriteArea_t *)new unsigned char[size]) != NULL) {
+    area->size = size;
+    area->sproff = offset;
+    this->useSpritePtr();
+    this->spriteAreaInitialise();
+  } else {
+    ErrorReport::setLastError(&spriteAreaMemoryAllocationFailed, __LINE__);
+  }
+}
+
+SpriteAreaObj::~SpriteAreaObj() {
+  if (area != SpriteMainArea) {
+    delete area;
+  }
+}
+
+SpriteAreaObj& SpriteAreaObj::useSpriteName() {
+  if (area != SpriteMainArea) {
+    this->flags.flag.spriteName = 1;
+    this->flags.flag.spritePtr = 0;
+    //commonParams = 256;
+  }
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::useSpritePtr() {
+  if (area != SpriteMainArea) {
+    this->flags.flag.spriteName = 0;
+    this->flags.flag.spritePtr = 1;
+    //commonParams = 512;
+  }
+  return *this;
+}
+
+void SpriteAreaObj::screenSave(char *pathname, int flag) {
+  _kernel_swi_regs in, out;
+  in.r[0] = SCREEN_SAVE;
+  in.r[2] = (int)pathname;
+  in.r[3] = flag;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+}
+
+void SpriteAreaObj::screenLoad(char *pathname) {
+  _kernel_swi_regs in, out;
+  in.r[0] = SCREEN_LOAD;
+  in.r[2] = (int)pathname;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+}
+
+SpriteAreaObj& SpriteAreaObj::getAreaSize(int *value) {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  *value = out.r[2];
+  return *this;
+}
+
+int SpriteAreaObj::getAreaSize() {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return out.r[2];
+}
+
+SpriteAreaObj& SpriteAreaObj::getSpriteCount(int *value) {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  *value =  out.r[3];
+  return *this;
+}
+
+int SpriteAreaObj::getSpriteCount() {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return out.r[3];
+}
+
+SpriteAreaObj& SpriteAreaObj::getFirstSpriteOffset(int *value) {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  *value =  out.r[4];
+  return *this;
+}
+
+int SpriteAreaObj::getFirstSpriteOffset() {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return out.r[4];
+}
+
+SpriteAreaObj& SpriteAreaObj::getFreeSpaceOffset(int *value) {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  *value =  out.r[5];
+  return *this;
+}
+
+int SpriteAreaObj::getFreeSpaceOffset() {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_AREA_CONTROL_BLOCK | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return out.r[5];
+}
+
+SpriteAreaObj& SpriteAreaObj::spriteAreaInitialise() {
+  _kernel_swi_regs in, out;
+  in.r[0] = INITIALISE_SPRITE_AREA | (this->flags.word & 768);
+  in.r[1] = (int)area;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  if (ErrorReport::getLastError() == NULL) {
+    flags.flag.initialised = 1;
+  }
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::loadSpriteFile(char *pathname) {
+  _kernel_swi_regs in, out;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[0] = LOAD_SPRITE_FILE | (this->flags.word & 768);
+    in.r[1] = (int)area;
+  } else {
+    in.r[0] = LOAD_SPRITE_FILE;
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)pathname;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::mergeSpriteFile(char *pathname) {
+  _kernel_swi_regs in, out;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[0] = MERGE_SPRITE_FILE | (this->flags.word & 768);
+    in.r[1] = (int)area;
+  } else {
+    in.r[0] = MERGE_SPRITE_FILE;
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)pathname;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::saveSpriteFile(char *pathname) {
+  _kernel_swi_regs in, out;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[0] = SAVE_SPRITE_FILE | (this->flags.word & 768);
+    in.r[1] = (int)area;
+  } else {
+    in.r[0] = SAVE_SPRITE_FILE;
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)pathname;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::getSpriteName(int number, int bufSize, char *buffer) {
+  _kernel_swi_regs in, out;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[0] = RETURN_SPRITE_NAME | (this->flags.word & 768);
+    in.r[1] = (int)area;
+  } else {
+    in.r[0] = RETURN_SPRITE_NAME;
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)buffer;
+  in.r[3] = bufSize;
+  in.r[4] = number;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::getSprite(char *name, int paletteFlag, SpriteObj& ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = GET_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = paletteFlag;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  ptr.setSpritePtr((SpritePtr_t *)out.r[2]);
+  return *this;
+}
+
+SpritePtr_t SpriteAreaObj::getSprite(char *name, int paletteFlag) {
+  _kernel_swi_regs in, out;
+  in.r[0] = GET_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = paletteFlag;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return (SpritePtr_t)out.r[2];
+}
+
+SpriteAreaObj& SpriteAreaObj::createSprite(char *name, int paletteFlag, int width, int height, int mode) {
+  _kernel_swi_regs in, out;
+  in.r[0] = CREATE_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = paletteFlag;
+  in.r[4] = width;
+  in.r[5] = height;
+  in.r[6] = mode;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+#if 0
+SpriteAreaObj& SpriteAreaObj::getSpriteFromCoords(char *name, int paletteFlag, int left, int bottom, int right, int top, SpriteObj& ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = GET_SPRITE_FROM_USER_COORDS | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = paletteFlag;
+  in.r[4] = left;
+  in.r[5] = bottom;
+  in.r[6] = right;
+  in.r[7] = top;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  //ptr = (SpritePtr_t)out.r[2];
+  ptr = new SpriteObj((SpritePtr_t *)out.r[2]);
+  return *this;
+}
+#endif
+
+SpriteObj *SpriteAreaObj::getSpriteFromCoords(char *name, int paletteFlag, int left, int bottom, int right, int top) {
+  _kernel_swi_regs in, out;
+  in.r[0] = GET_SPRITE_FROM_USER_COORDS | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = paletteFlag;
+  in.r[4] = left;
+  in.r[5] = bottom;
+  in.r[6] = right;
+  in.r[7] = top;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return new SpriteObj((SpritePtr_t *)out.r[2]);
+}
+
+SpriteAreaObj& SpriteAreaObj::selectSprite(SpriteObj& ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = SELECT_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr.getSpritePtr();
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::selectSprite(char *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = SELECT_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::deleteSprite(SpriteObj& ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = DELETE_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr.getSpritePtr();
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::deleteSprite(char *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = DELETE_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::renameSprite(SpriteObj& ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = RENAME_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr.getSpritePtr();
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::renameSprite(char *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = RENAME_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::copySprite(SpriteObj *ptr, char *copyName) {
+  _kernel_swi_regs in, out;
+  in.r[0] = COPY_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr->getSpritePtr();
+  in.r[3] = (int)copyName;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::copySprite(char *sourceName, char *copyName) {
+  _kernel_swi_regs in, out;
+  in.r[0] = COPY_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)sourceName;
+  in.r[3] = (int)copyName;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::createMask(SpriteObj *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = CREATE_MASK | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr->getSpritePtr();
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::createMask(char *name) {
+  _kernel_swi_regs in, out;
+  in.r[0] = CREATE_MASK | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::removeMask(SpriteObj *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = REMOVE_MASK | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr->getSpritePtr();
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::removeMask(char *name) {
+  _kernel_swi_regs in, out;
+  in.r[0] = REMOVE_MASK | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::insertRow(SpriteObj *ptr, int row) {
+  _kernel_swi_regs in, out;
+  in.r[0] = INSERT_ROW | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr->getSpritePtr();
+  in.r[3] = row;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::insertRow(char *name, int row) {
+  _kernel_swi_regs in, out;
+  in.r[0] = INSERT_ROW | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = row;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::deleteRow(SpriteObj *ptr, int row) {
+  _kernel_swi_regs in, out;
+  in.r[0] = DELETE_ROW | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr->getSpritePtr();
+  in.r[3] = row;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::deleteRow(char *name, int row) {
+  _kernel_swi_regs in, out;
+  in.r[0] = DELETE_ROW | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = row;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::flipXAxis(SpriteObj *ptr) {
+  _kernel_swi_regs in, out;
+  in.r[0] = FLIP_X_AXIS | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+int x = (int)ptr->getSpritePtr();
+  in.r[2] = x;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::flipXAxis(char *name) {
+  _kernel_swi_regs in, out;
+  in.r[0] = FLIP_X_AXIS | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpritePtr_t *SpriteAreaObj::getSpritePtr(char *name) {
+  SpritePtr_t *ptr = NULL;
+  if (area->number > 0) {
+    int areaAddr = (int)area;
+    int offset = area->sproff;
+    sprite_header *header = (sprite_header *)(areaAddr + offset);
+    for (int i = 1; i <= area->number; i++) {
+      if (strncmp(name, header->name, 12) == 0) {
+        ptr = (SpritePtr_t *) header;
+        break;
+      } else {
+        offset = header->next;
+        header = (sprite_header *)(((int)header) + ((int)offset));
+      }
+    }
+  }
+  if (ptr == NULL) {
+    ErrorReport::setLastError(&spriteNotFound, __LINE__);
+  }
+  return ptr;
+}
+
+SpriteAreaObj& SpriteAreaObj::getSpritePtr(char *name, SpritePtr_t& spritePtr) {
+  name = name;
+  spritePtr = spritePtr;
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(char *name, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(char *name, int x, int y, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE_AT_COORDS | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = x;
+  in.r[4] = y;
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(SpritePtr_t *ptr, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr;
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(SpritePtr_t *ptr, int x, int y, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE_AT_COORDS | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)ptr;
+  in.r[3] = x;
+  in.r[4] = y;
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(SpriteObj *spriteObj, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)spriteObj->getSpritePtr();
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSprite(SpriteObj *spriteObj, int x, int y, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE_AT_COORDS | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)spriteObj->getSpritePtr();
+  in.r[3] = x;
+  in.r[4] = y;
+  in.r[5] = action;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+
+SpriteAreaObj& SpriteAreaObj::getSpriteInfo(char *name, spriteInfo_t *infoBlock) {
+  _kernel_swi_regs in, out;
+  in.r[0] = READ_SPRITE_INFORMATION | SPRITE_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)getSpritePtr(name);
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  infoBlock->width = out.r[3];
+  infoBlock->height  = out.r[4];
+  infoBlock->maskStatus  = out.r[5];
+  infoBlock->mode  = out.r[6];
+  return *this;
+}
+
+SpriteAreaObj&  SpriteAreaObj::putSpriteScaled(char *name, int x, int y, int action, sprite_factors *factors, sprite_pixtrans *trans) {
+_kernel_swi_regs in, out;
+  in.r[0] = PUT_SPRITE_SCALED | SPRITE_NAME_PTR;
+  if (area != SpriteMainArea && flags.flag.initialised == 1) {
+    in.r[1] = (int)area;
+  } else {
+    in.r[1] = (int)SpriteMainArea;
+  }
+  in.r[2] = (int)name;
+  in.r[3] = x;
+  in.r[4] = y;
+  in.r[5] = action;
+  in.r[6] = (int)factors;
+  in.r[7] = (int)trans;
+  ErrorReport::setLastError(_kernel_swi(OS_SpriteOp, &in, &out), __LINE__);
+  return *this;
+}
+

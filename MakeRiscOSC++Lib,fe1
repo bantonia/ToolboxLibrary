@@ -1,0 +1,115 @@
+# Project:   RiscOSCppL
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.RiscOSC++Lib:   @.o.OS @.o.SpriteAreaObj @.o.SpriteObj @.o.ColourTransObj \
+        @.o.WimpObj @.o.WimpWindowObj @.o.ErrorReport 
+        LibFile $(LibFileflags) @.o.OS @.o.SpriteAreaObj @.o.SpriteObj \
+        @.o.ColourTransObj @.o.WimpObj @.o.WimpWindowObj @.o.ErrorReport 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.OS:   @.c++.OS
+        c++ $(c++flags) -o @.o.OS @.c++.OS 
+@.o.SpriteAreaObj:   @.c++.SpriteAreaObj
+        c++ $(c++flags) -o @.o.SpriteAreaObj @.c++.SpriteAreaObj 
+@.o.SpriteObj:   @.c++.SpriteObj
+        c++ $(c++flags) -o @.o.SpriteObj @.c++.SpriteObj 
+@.o.ColourTransObj:   @.c++.ColourTransObj
+        c++ $(c++flags) -o @.o.ColourTransObj @.c++.ColourTransObj 
+@.o.WimpObj:   @.c++.WimpObj
+        c++ $(c++flags) -o @.o.WimpObj @.c++.WimpObj 
+@.o.WimpWindowObj:   @.c++.WimpWindowObj
+        c++ $(c++flags) -o @.o.WimpWindowObj @.c++.WimpWindowObj 
+@.o.ErrorReport:   @.c++.ErrorReport
+        c++ $(c++flags) -o @.o.ErrorReport @.c++.ErrorReport 
+
+
+# Dynamic dependencies:
+o.OS:	c++.OS
+o.OS:	C:h.kernel
+o.OS:	C:h.swis
+o.OS:	h.OS
+o.OS:	h.ErrorReport
+o.OS:	C:h.kernel
+o.SpriteAreaObj:	c++.SpriteAreaObj
+o.SpriteAreaObj:	h.SpriteAreaObj
+o.SpriteAreaObj:	C:h.iostream
+o.SpriteAreaObj:	C:h.memory
+o.SpriteAreaObj:	h.Object
+o.SpriteAreaObj:	h.ErrorReport
+o.SpriteAreaObj:	C:h.kernel
+o.SpriteAreaObj:	C:h.swis
+o.SpriteAreaObj:	C:h.kernel
+o.SpriteAreaObj:	h.sprite
+o.SpriteAreaObj:	h.SpriteObj
+o.SpriteAreaObj:	h.sprite
+o.SpriteAreaObj:	h.ClassType
+o.SpriteAreaObj:	h.Object
+o.SpriteAreaObj:	h.ClassType
+o.SpriteAreaObj:	h.errorLibrary
+o.SpriteAreaObj:	C:h.kernel
+o.SpriteObj:	c++.SpriteObj
+o.SpriteObj:	h.SpriteObj
+o.SpriteObj:	h.sprite
+o.SpriteObj:	h.ClassType
+o.SpriteObj:	h.Object
+o.ColourTransObj:	c++.ColourTransObj
+o.ColourTransObj:	h.ColourTransObj
+o.ColourTransObj:	h.Object
+o.ColourTransObj:	h.ClassType
+o.ColourTransObj:	C:h.swis
+o.ColourTransObj:	C:h.kernel
+o.ColourTransObj:	h.ErrorReport
+o.ColourTransObj:	C:h.kernel
+o.ColourTransObj:	C:h.kernel
+o.ColourTransObj:	h.sprite
+o.WimpObj:	c++.WimpObj
+o.WimpObj:	h.WimpObj
+o.WimpObj:	C:h.kernel
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.libc
+o.WimpObj:	C:h.kernel
+o.WimpObj:	h.Object
+o.WimpObj:	C:h.wimp
+o.WimpObj:	h.ClassType
+o.WimpObj:	C:h.swis
+o.WimpObj:	h.OS
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.wimp
+o.WimpObj:	C:h.wimplib
+o.WimpObj:	h.ErrorReport
+o.WimpWindowObj:	c++.WimpWindowObj
+o.WimpWindowObj:	h.WimpWindowObj
+o.WimpWindowObj:	h.Object
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	h.ClassType
+o.WimpWindowObj:	h.WimpObj
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	h.ErrorReport
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	h.Object
+o.WimpWindowObj:	C:h.wimp
+o.WimpWindowObj:	h.ClassType
+o.WimpWindowObj:	C:h.wimp
+o.WimpWindowObj:	h.WimpObj
+o.WimpWindowObj:	C:h.kernel
+o.WimpWindowObj:	C:h.swis
+o.WimpWindowObj:	C:h.libc
+o.WimpWindowObj:	C:h.wimplib

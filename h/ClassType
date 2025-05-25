@@ -1,0 +1,51 @@
+#ifndef __cplusplus
+#error Header file "ClassType.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef CLASSTYPE_H
+#define CLASSTYPE_H
+
+enum {
+  ClassType_SpriteAreaObj = 1,
+  ClassType_SpriteObj,
+  ClassType_ToolboxColourDlogObj,
+  ClassType_ToolboxDCSObj,
+  ClassType_ToolboxEventObj,
+  ClassType_ToolboxFontMenuObj,
+  ClassType_ToolboxMenuObj,
+  ClassType_ToolboxPrintDlogObj,
+  ClassType_ToolboxColourMenuObj,
+  ClassType_ToolboxFileInfoDlogObj,
+  ClassType_ToolboxProgInfoObj,
+  ClassType_ToolboxSaveAsObj,
+  ClassType_ToolboxWindowObj,
+  ClassType_ToolboxCoreObj,
+  ClassType_ToolboxFontDlogObj,
+  ClassType_ToolboxIconbarObj,
+  ClassType_ToolboxObj,
+  ClassType_ToolboxQuitObj,
+  ClassType_ToolboxScaleObj,
+  ClassType_ToolboxObjectList,
+  ClassType_ToolboxRadioButton,
+  ClassType_ToolboxSlider,
+  ClassType_ToolboxTask,
+  ClassType_ToolboxActionButton,
+  ClassType_ToolboxDisplayField,
+  ClassType_ToolboxGadget,
+  ClassType_ToolboxNumberRange,
+  ClassType_ToolboxOptionButton,
+  ClassType_ToolboxStringSet,
+  ClassType_ToolboxButton,
+  ClassType_ToolboxDraggable,
+  ClassType_ToolboxPopUp,
+  ClassType_ToolboxTabs,
+  ClassType_ToolboxWritableField,
+  ClassType_WimpObj,
+  ClassType_WimpWindowObj,
+  ClassType_StringObj,
+  ClassType_ColourTransObj
+};
+
+#endif

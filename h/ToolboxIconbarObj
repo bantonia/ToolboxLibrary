@@ -8,6 +8,7 @@
 #define __ToolboxIconbarObj_h
 
 #include "iconbar.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxIconbarObj : public ToolboxObj {
@@ -42,6 +43,10 @@ class ToolboxIconbarObj : public ToolboxObj {
     ToolboxIconbarObj& setObjectId(ObjectId objectId);
     ToolboxIconbarObj& setFlags(unsigned int flags);
     ToolboxIconbarObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxIconbarObj";};
+    int getClassType() { return ClassType_ToolboxIconbarObj;};
 };
 
 #endif

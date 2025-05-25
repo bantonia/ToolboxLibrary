@@ -7,6 +7,7 @@
 #ifndef __ToolboxDraggable_h
 #define __ToolboxDraggable_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxDraggable : public ToolboxGadget {
@@ -27,6 +28,10 @@ class ToolboxDraggable : public ToolboxGadget {
     ToolboxDraggable& setGadgetFlags(unsigned int flags);
     ToolboxDraggable& setHelpMessage(char *message);
     ToolboxDraggable& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxDraggable";};
+    int getClassType() { return ClassType_ToolboxDraggable;};
 };
 
 #endif

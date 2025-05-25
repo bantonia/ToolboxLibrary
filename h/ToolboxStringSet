@@ -7,6 +7,7 @@
 #ifndef __ToolboxStringSet_h
 #define __ToolboxStringSet_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxStringSet : public ToolboxGadget {
@@ -29,6 +30,10 @@ class ToolboxStringSet : public ToolboxGadget {
     ToolboxStringSet& setGadgetFlags(unsigned int flags);
     ToolboxStringSet& setHelpMessage(char *message);
     ToolboxStringSet& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxStringSet";};
+    int getClassType() { return ClassType_ToolboxStringSet;};
 };
 
 #endif

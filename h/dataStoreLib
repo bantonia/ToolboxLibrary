@@ -1,0 +1,26 @@
+#pragma force_top_level
+#pragma include_only_once
+
+#include "kernel.h"
+
+#ifndef __datastore_h
+#define __datastore_h
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern _kernel_oserror *saveADC(int panel, int channel, int adc);
+extern _kernel_oserror *readADC(int panel, int channel, int *value);
+extern _kernel_oserror *saveTargetADC(int panel, int channel, int target);
+extern _kernel_oserror *readTargetADC(int panel, int channel, int *value);
+extern _kernel_oserror *setSearch(int panel, int channel);
+extern _kernel_oserror *clearSearch(int panel, int channel);
+extern _kernel_oserror *isSearch(int panel, int channel, int *value);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

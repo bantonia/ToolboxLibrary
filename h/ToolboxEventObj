@@ -1,0 +1,18 @@
+#include "toolbox.h"
+#include "event.h"
+#include "ClassType.h"
+
+class ToolboxEventObj {
+  public:
+    void initEvents();
+    int toolboxErrorEvent(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+    int toolboxObjectAutoCreatedEvent(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+    int toolboxObjectDeletedEvent(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+    /*virtual*/ int toolboxErrorHandler(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+    /*virtual*/ int toolboxObjectAutoCreatedHandler(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+    /*virtual*/ int toolboxObjectDeletedHandler(int event_code, ToolboxEvent *event, IdBlock *id_block, void *handle);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxEventObj";};
+    int getClassType() { return ClassType_ToolboxEventObj;};
+};

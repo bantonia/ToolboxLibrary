@@ -7,6 +7,7 @@
 #ifndef __ToolboxScaleObj_h
 #define __ToolboxScaleObj_h
 
+#include "ClassType.h"
 #include "ToolboxObj.h"
 #include "scale.h"
 
@@ -28,6 +29,10 @@ class ToolboxScaleObj : public ToolboxObj {
     ToolboxScaleObj& setObjectId(ObjectId objectId);
     ToolboxScaleObj& setFlags(unsigned int flags);
     ToolboxScaleObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxScaleObj";};
+    int getClassType() { return ClassType_ToolboxScaleObj;};
 };
 
 #endif

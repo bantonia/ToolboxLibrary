@@ -1,0 +1,265 @@
+//#include "stdbool.h"
+
+#pragma include_only_once
+
+typedef unsigned Handle;
+
+    typedef enum {                 /* button state bits */
+      BRIGHT       = 0x001,
+      BMID         = 0x002,
+      BLEFT        = 0x004,
+      BDRAGRIGHT   = 0x010,
+      BDRAGLEFT    = 0x040,
+      BCLICKRIGHT  = 0x100,
+      BCLICKLEFT   = 0x400
+    } ButtonState;
+
+    typedef struct Box {
+      unsigned minX;
+      unsigned minY;
+      unsigned maxX;
+      unsigned maxY;
+    } Box;
+
+    typedef struct ScrollOffset {
+      unsigned x;
+      unsigned y;
+    } ScrollOffset;
+
+enum WimpEvent {
+      NullReasonCode = 0,
+      RedrawWindowRequest,
+      OpenWindowRequest,
+      CloseWindowRequest,
+      PointerLeavingWindow,
+      PointerEnteringWindow,
+      MouseClick,
+      UserDragBox,
+      KeyPressed,
+      MenuSelection,
+      ScrollRequest,
+      LoseCaret,
+      GainCaret,
+      PollWordNonZero,
+      UserMessage = 17,
+      UserMessageRecorded,
+      UserMessageAcnowledged
+    };
+
+    typedef union WimpMask {
+      unsigned int w;
+      struct {
+        unsigned nullReasonCode         :1;
+        unsigned redrawWindowRequest    :1;
+        unsigned                        :2;
+        unsigned pointerLeavingWindow   :1;
+        unsigned pointerEnteringWindow  :1;
+        unsigned mouseClick             :1;
+        unsigned keyPressed             :1;
+        unsigned                        :2;
+        unsigned loseCaret              :1;
+        unsigned gainCaret              :1;
+        unsigned pollWordNonZero        :1;
+        unsigned                        :2;
+        unsigned userMessage            :1;
+        unsigned userMessageRecorded    :1;
+        unsigned userMessageAcknowledge :1;
+        unsigned                        :2;
+        unsigned scanPollWord           :1;
+        unsigned floatingPointRegisters :1;
+        unsigned                        :7;
+      } b;
+    } WimpMask;
+
+    typedef struct RedrawWindowRequestBlock {
+      Handle w;
+      Box box;
+    } RedrawWindowRequestBlock;
+
+    typedef struct OpenWindowRequestBlock {
+      Handle w;
+      Box box;
+      ScrollOffset offset;
+      Handle behind;
+    } OpenWindowRequestBlock;
+
+    typedef struct PointerLeavingWindowBlock {
+      Handle w;
+    } PointerLeavingWindowBlock;
+
+    typedef struct PointerEnteringWindowBlock {
+      Handle w;
+    } PointerEnteringWindowBlock;
+
+    typedef struct MouseClickBlock {
+      unsigned x;
+      unsigned y;
+      ButtonState b;
+      Handle w;
+      Handle i;
+    } MouseClickBlock;
+
+    typedef Box UserDragBoxBlock;
+
+
+    typedef struct KeyPressedBlock {
+      Handle w;
+      Handle i;
+      unsigned xOffset;
+      unsigned yOffset;
+      unsigned caretHeight; // Another structure?
+      unsigned caretIndex;
+      unsigned charCode;
+    } KeyPressedBlock;
+
+    typedef struct ScrollRequestBlock {
+      Handle w;
+      Box box;
+      ScrollOffset offset;
+      Handle behind;
+      unsigned scrollX;
+      unsigned scrollY;
+    } ScrollRequestBlock;
+
+    typedef union {           /* the data field in an icon */
+      char text[12];          /* up to 12 bytes of text */
+      char sprite_name[12];   /* up to 12 bytes of sprite name */
+      struct {
+        char *name;
+        void *spritearea;     /* 0->use the common sprite area */
+                              /* 1->use the wimp sprite area */
+        bool nameisname;      /* if FALSE, name is in fact a sprite pointer. */
+      } indirectSprite;
+      struct {                /* if indirect */
+        char *buffer;         /* pointer to text buffer */
+        char *validString;    /* pointer to validation string */
+        int buffLen;          /* length of text buffer */
+      } indirectText;
+    } IconDataStr;
+
+    typedef union {
+      unsigned int w;
+      struct {
+        unsigned titleBar           :1;
+        unsigned moveable           :1;
+        unsigned hasVScrollBar      :1;
+        unsigned hasHScrollBar      :1;
+        unsigned wimpRedrawable     :1;
+        unsigned isPane             :1;
+        unsigned dragOutside        :1;
+        unsigned noBackCloseIcons   :1;
+        unsigned allowScrollRequest :1;
+        unsigned noAutoRepeat       :1;
+        unsigned useGcolNums        :1;
+        unsigned alwaysBelow        :1;
+        unsigned generateHotKeys    :1;
+        unsigned stayOnScreen       :1;
+        unsigned ignoreRHExtent     :1;
+        unsigned ignoreLowerExtent  :1;
+        unsigned windowOpen         :1;
+        unsigned windowFullyVisable :1;
+        unsigned windowFullSize     :1;
+        unsigned windowToggled      :1;
+        unsigned windowHasFocus     :1;
+        unsigned windowForced       :1;
+        unsigned                    :2;
+        unsigned hasBackIcon        :1;
+        unsigned hasCloseIcon       :1;
+        unsigned hasTitleBar        :1;
+        unsigned hasToggleIcon      :1;
+        unsigned hasVScroll         :1;
+        unsigned hasAdjustIcon      :1;
+        unsigned hasHScroll         :1;
+        unsigned useNewStyle        :1;
+      } b;
+    } WindowFlags;
+
+    typedef union {
+      unsigned int w;
+      struct {
+        unsigned containsText :1;
+        unsigned isSprite :1;
+        unsigned hasBorder :1;
+        unsigned centredHorizontally :1;
+        unsigned centredVertically :1;
+        unsigned filledBackground :1;
+        unsigned textAntialiased :1;
+        unsigned requiresRedrawHelp :1;
+        unsigned dataIndirected :1;
+        unsigned textRightJustified :1;
+        unsigned dontCancelWithAdjust :1;
+        unsigned displaySpritHalfSize :1;
+        unsigned buttonType :4;
+        unsigned esg :5;
+        unsigned isSelelectedInverted :1;
+        unsigned cannotSelect :1;
+        unsigned deleted :1;
+        union {
+          unsigned char fontHandle;
+          struct {
+            unsigned foreground :4;
+            unsigned background :4;
+          } colour;
+        } colours;
+      } b;
+    } IconFlags;
+
+    typedef struct WindDefStr {
+      WindDefStr();
+      ~WindDefStr();
+      void *operator new(size_t);
+      void* operator new(size_t, int);
+      void *operator new( size_t, int, int);
+      void operator delete(void* ptr);
+      Box visibleArea;
+      ScrollOffset offset;
+      int behind;
+      WindowFlags windowFlags;
+      union {
+        char c[8];
+        struct {
+          unsigned char titleForeground;
+          unsigned char titleBackground;
+          unsigned char workForeground;
+          unsigned char workBackground;
+          unsigned char scrollOuterColour;
+          unsigned char scrollInnerColour;
+          unsigned char titleBackgroundHighlight;
+          unsigned char reserved;
+        } s;
+      } colours;
+      Box workArea;
+      //IconFlags titleFlags;
+      unsigned titleFlags;
+      //IconFlags workFlags;
+      unsigned workFlags;
+      void *spriteArea;
+      union {
+        int w;
+        struct {
+          short width;
+          short height;
+        } s;
+      } minsize;
+      IconDataStr title;
+      int numIcons;
+    } WindDefStr;
+
+
+
+    typedef struct OpenWindowStr {
+      Handle handle;          /* window handle */
+      Box box;                /* position on screen of visible work area */
+      ScrollOffset offset;      /* 'real' coordinates of visible work area */
+      int behind;             /* handle of window to go behind (-1 = top,                           * -2 = bottom, -3 = iconised) */
+    } OpenWindStr;
+
+    typedef union {
+      struct {char gcol; char red; char green; char blue;} bytes;
+      int word;
+    } WimpPaletteWord;
+
+    typedef struct {
+      WimpPaletteWord c[16];              /* wimp colours 0..15 */
+      WimpPaletteWord screenborder, mouse1, mouse2, mouse3;
+    } WimpPaletteStr;

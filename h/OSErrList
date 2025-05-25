@@ -1,0 +1,35 @@
+#ifndef __cplusplus
+#error Header file "OSErrList.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef OSErrList_H
+#define OSErrList_H
+
+#include "kernel.h"
+#include "Object.h"
+
+class OSErrList : public Object {
+  public:
+    OSErrList();
+    OSErrList(_kernel_oserror *, unsigned int);
+    ~OSErrList();
+    void addError(_kernel_oserror *, unsigned int, unsigned int);
+    //WimpErrList *getNext();
+    OSErrList *getNext();
+    void reportErrors();
+    void showProperties(){};
+    char* getClassName() { return "";};
+    int getClassType() { return 0;};
+  private:
+    OSErrList *next;
+    _kernel_oserror *err;
+    unsigned int flags;
+    char *sprite;
+    void *area;
+    char *buttons;
+    unsigned int line;
+};
+
+#endif

@@ -8,6 +8,7 @@
 #define __ToolboxColourDlogObj_h
 
 #include "colourdbox.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxColourDlogObj : public ToolboxObj {
@@ -54,6 +55,10 @@ class ToolboxColourDlogObj : public ToolboxObj {
     ToolboxColourDlogObj& setObjectId(ObjectId objectId);
     ToolboxColourDlogObj& setFlags(unsigned int flags);
     ToolboxColourDlogObj& clearFlags();
+
+    void showProperties(){};
+    char* getClassName() { return "ToolboxColourDlogObj";};
+    int getClassType() { return ClassType_ToolboxColourDlogObj;};
 };
 
 #endif

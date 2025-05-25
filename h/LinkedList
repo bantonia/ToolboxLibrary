@@ -1,0 +1,26 @@
+#include <stdlib.h>
+
+template<class T>
+
+class LinkedList {
+  private:
+    T *p;
+    LinkedList *next;
+  public:
+    LinkedList() {
+      *p = NULL;
+      *next = NULL;
+    };
+    LinkedList(T *p) {
+      this->p = p;
+      this->next = NULL; 
+    };
+    LinkedList *push(T *p) {
+      LinkedList *q = new LinkedList(p);
+      q->next = this;
+      return q;
+    };
+    T *top() {
+      return p;
+    };
+};

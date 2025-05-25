@@ -1,0 +1,130 @@
+#include "ToolboxTabs.h"
+#include "tabs.h"
+
+ToolboxTabs& ToolboxTabs::setState(unsigned int  state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(Tabs_SetState, &regs);
+  return *this;
+}
+
+unsigned int ToolboxTabs::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Tabs_GetState, &regs);
+  return (unsigned int) regs.r[0];
+}
+
+ToolboxTabs& ToolboxTabs::setSelected(int tabIndex, int *previousIndex) {
+  _kernel_swi_regs regs;
+  regs.r[4] = tabIndex;
+  regs.r[5] = (int) previousIndex;
+  this->gadgetMethod(Tabs_SetSelected, &regs);
+  return *this;
+}
+
+int *ToolboxTabs::getSelected() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Tabs_GetSelected, &regs);
+  return (int *) regs.r[0];
+}
+
+int *ToolboxTabs::tabFromWindow(ObjectId nestedWindow) {
+  _kernel_swi_regs regs;
+  regs.r[4] = nestedWindow;
+  this->gadgetMethod(Tabs_TabFromWindow, &regs);
+  return (int *) regs.r[0];
+}
+
+ObjectId *ToolboxTabs::windowFromTab(int tabIndex) {
+  _kernel_swi_regs regs;
+  regs.r[4] = tabIndex;
+  this->gadgetMethod(Tabs_WindowFromTab, &regs);
+  return (int *) regs.r[0];
+}
+
+ToolboxTabs& ToolboxTabs::setLabel(int index, char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  regs.r[5] = (int) text;
+  this->gadgetMethod(Tabs_SetLabel, &regs);
+  return *this;
+}
+
+int ToolboxTabs::getLabel(int index) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  regs.r[5] = 0;
+  this->gadgetMethod(Tabs_GetLabel, &regs);
+  return regs.r[5];
+}
+
+int ToolboxTabs::getLabel(int index, char *buffer, int bufSize) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  regs.r[5] = (int) buffer;
+  regs.r[6] = bufSize;
+  this->gadgetMethod(Tabs_GetLabel, &regs);
+  return regs.r[6];
+}
+
+ToolboxTabs& ToolboxTabs::hideTab(int index, int hide) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  regs.r[5] = hide;
+  this->gadgetMethod(Tabs_HideTab, &regs);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  regs->r[0] = (int) getFlags();
+  regs->r[1] = this->getObjectId();
+  regs->r[2] = methodCode;
+  regs->r[3] = this->getComponentId();
+  ToolboxTabs::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setGadgetFlags(unsigned int flags) {
+  _kernel_swi_regs regs;
+  this->setFlags(0);
+  regs.r[4] = (int) flags;
+  this->gadgetMethod(Gadget_SetFlags, &regs);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setHelpMessage(char *message) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) message;
+  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setFocus() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(Gadget_SetFocus, &regs);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::moveGadget(BBox *newBbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) newBbox;
+  this->gadgetMethod(Gadget_MoveGadget, &regs);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setComponentId(ComponentId gadgetId) {
+  this->ToolboxGadget::setComponentId(gadgetId);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setFlags(unsigned int flags) {
+  this->ToolboxGadget::setFlags(flags);
+  return *this;
+}
+
+ToolboxTabs& ToolboxTabs::setObjectId(ObjectId windowId) {
+  this->ToolboxGadget::setObjectId(windowId);
+  return *this;
+}
+
+

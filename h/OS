@@ -1,3 +1,12 @@
+#ifndef __cplusplus
+#error Header file "OS.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __OS_h
+#define __OS_h
+
 #include "ErrorReport.h"
 
 class OS : public ErrorReport {
@@ -7,5 +16,8 @@ class OS : public ErrorReport {
     static unsigned int readMonotonicTime();
     static unsigned int readModeVariable(int, int);
     static char *binaryToDecimal(int, char *, int *);
+    static int evaluateExpression(char *, char *, int *);
   private:
 };
+
+#endif

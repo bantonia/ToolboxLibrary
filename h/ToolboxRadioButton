@@ -7,6 +7,7 @@
 #ifndef __ToolboxRadioButton_h
 #define __ToolboxRadioButton_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxRadioButton : public ToolboxGadget {
@@ -28,6 +29,10 @@ class ToolboxRadioButton : public ToolboxGadget {
     ToolboxRadioButton& setGadgetFlags(unsigned int flags);
     ToolboxRadioButton& setHelpMessage(char *message);
     ToolboxRadioButton& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxRadioButton";};
+    int getClassType() { return ClassType_ToolboxRadioButton;};
 };
 
 #endif

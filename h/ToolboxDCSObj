@@ -9,6 +9,7 @@
 
 #include "toolbox.h"
 #include "dcs.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxDCSObj : public ToolboxObj {
@@ -26,6 +27,11 @@ class ToolboxDCSObj : public ToolboxObj {
     ToolboxDCSObj& setObjectId(ObjectId objectId);
     ToolboxDCSObj& setFlags(unsigned int flags);
     ToolboxDCSObj& clearFlags();
+
+    void showProperties(){};
+    char* getClassName() { return "ToolboxDCSObj";};
+    int getClassType() { return ClassType_ToolboxDCSObj;};
+
   private:
     int windowId;
 };

@@ -1,0 +1,77 @@
+#ifndef __cplusplus
+#error Header file "ColourTransObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef COLOURTRANSOBJ_H
+#define COLOURTRANSOBJ_H
+
+#include "Object.h"
+#include "ClassType.h"
+#include "swis.h"
+#include "ErrorReport.h"
+#include "kernel.h"
+#include "sprite.h"
+
+    typedef union {
+      struct {char gcol; char red; char green; char blue;} bytes;
+      int word;
+    } WimpPaletteWord;
+
+    typedef struct {
+      WimpPaletteWord c[16];              /* wimp colours 0..15 */
+      WimpPaletteWord screenborder, mouse1, mouse2, mouse3;
+    } WimpPaletteStr;
+
+class ColourTransObj : public Object {
+  public:
+    ColourTransObj();
+    ~ColourTransObj();
+
+    enum {
+      SetForeground = 0,
+      SetBackground = 0x80,
+      UseECF        = 0x100
+    } Flags;
+
+    static int selectTable (int, WimpPaletteWord *, int, WimpPaletteWord *, void *);
+    static void selectGCOLTable (int, WimpPaletteWord *, int, WimpPaletteWord *, void *);
+    static int returnGCOL (WimpPaletteWord);
+    static int setGCOL (WimpPaletteWord, int, int);
+    static int returnColourNumber (WimpPaletteWord);
+    static int returnGCOLForMode (WimpPaletteWord, int, WimpPaletteWord *);
+    static int returnColourForMode (WimpPaletteWord, int, WimpPaletteWord *);
+    static int returnOppGCOL (WimpPaletteWord);
+    static int setOppGCOL (WimpPaletteWord, int, int);
+    static int returnOppColourNumber (WimpPaletteWord);
+    static int returnOppGCOLForMode (WimpPaletteWord, int, WimpPaletteWord *);
+    static int returnOppColourForMode (WimpPaletteWord, int, WimpPaletteWord *);
+    static int GCOLToColourNumber (int);
+    static int colourNumberToGCOL (int);
+    static void returnFontColours (/*font handle*/ void *, WimpPaletteWord *, WimpPaletteWord *, int *);
+    static void setFontColours (/*font handle*/ void *, WimpPaletteWord *, WimpPaletteWord *, int *);
+    static void invalidateCache (void);
+    static void setCalibration (void *);
+    static int readCalibration (void *);
+    static WimpPaletteWord convertDeviceColour (WimpPaletteWord, WimpPaletteWord *);
+
+
+    static void convertDevicePalette (int, void *, void *, void *);
+
+    static int readPalette(int, void *, void *, int &, int);
+    static int readPalette(sprite_area *, char *, void *, int &, int);
+
+    static void writePalette(void *);
+    static void writePalette(sprite_area *, char *,void *, int);
+    static void setColour(int, int, int);
+    static int setTextColour(int, int);
+    static int setOppTextColour(int, int);
+    static int generateTable(int, WimpPaletteWord *, int, WimpPaletteWord *, void *);
+
+    void showProperties() {};
+    char* getClassName() { return "ColourTransObj";};
+    int getClassType() { return ClassType_ColourTransObj;};
+};
+
+#endif

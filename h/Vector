@@ -1,0 +1,114 @@
+#include "stdlib.h"
+#include "stdbool.h"
+#include "string.h"
+
+#ifndef Vector_h
+#define Vector_h
+
+template<class T>
+class Vector {
+  public:
+    Vector() {
+      (void)&Vector::contains;
+      (void)&Vector::indexOf;
+      this->size = 0;
+      nextLoc = 0;
+      storage = NULL;
+      pos = 0;
+    };
+    ~Vector() {
+      free(storage);
+    };
+    T get(int p) {
+      return this->storage[p];
+    };
+    void put(int p, T val) {
+      this->storage[p] = val;
+    };
+    void push(T val) {
+      adjust(size + 1);
+      this->storage[nextLoc++] = val;
+    };
+    T pop() {
+      T t = this->storage[nextLoc--];
+      adjust(this->capacity() - 1);
+      return t;
+    };
+    int capacity() {
+      return size;
+    };
+    void reset() {
+      pos = 0;
+    };
+    T next() {
+      T t = NULL;
+      if (this->hasNext()) {
+        // Test if at end of the vector data
+        t = this->storage[pos++];
+      }
+      return t;
+    };
+    T prev() {
+      // Test if already at the beginning of the vector
+      return this->storage[--pos];
+    };
+    int hasNext() {
+      int result = false;
+      if (pos < this->capacity()) {
+        result = true;
+      }
+      return result;
+    };
+    int hasPrevious() {
+      int result = false;
+      if ((pos > 0) && (this->capacity() != 0)) {
+        result = true;
+      }
+      return result;
+    };
+    void clear() {
+      while (this->capacity() > 0) {
+        this->pop();
+      }
+    };
+    int contains(T obj) {
+      int result = false;
+      int ptr = 0;
+      while (ptr != this->capacity()) {
+        if (memcmp(obj, this->storage[ptr], sizeof(T)) == 0) {
+          result = true;
+          break;
+        }
+        ptr++;
+      }
+      return result;
+    };
+    int indexOf(T obj) {
+      int result = -1;
+      int ptr = 0;
+      while (ptr != this->capacity()) {
+        if (memcmp(obj, this->storage[ptr], sizeof(T)) == 0) {
+          result = ptr;
+          break;
+        }
+        ptr++;
+      }
+      return result;
+    };
+    int objSize() {
+      return sizeof(this->storage[0]);
+    };
+  private:
+    int size;
+    int nextLoc;
+    int pos;
+    T *storage;
+    int adjust(int size) {
+      storage = (T*)realloc(storage, sizeof(T) * size);
+      this->size = size;
+      return this->size;
+    };
+};
+
+#endif
+

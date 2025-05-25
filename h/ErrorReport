@@ -43,6 +43,7 @@ class ErrorReport {
     static int getEnvironment();
     static void setTrap(int, int *);
     static void clearTrap();
+
   private:
     static _kernel_oserror *lastError;
     static unsigned int flags;

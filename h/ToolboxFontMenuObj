@@ -8,6 +8,7 @@
 #define __ToolboxFontMenuObj_h
 
 #include "fontmenu.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxFontMenuObj : public ToolboxObj {
@@ -20,6 +21,10 @@ class ToolboxFontMenuObj : public ToolboxObj {
     ToolboxFontMenuObj& setObjectId(ObjectId objectId);
     ToolboxFontMenuObj& setFlags(unsigned int flags);
     ToolboxFontMenuObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxFontMenuObj";};
+    int getClassType() { return ClassType_ToolboxFontMenuObj;};
 };
 
 #endif

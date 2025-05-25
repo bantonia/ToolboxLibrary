@@ -3,7 +3,7 @@
 
 ToolboxColourMenuObj::ToolboxColourMenuObj() {}
 
-ToolboxColourMenuObj::~ToolboxColourMenuObj() {}
+ToolboxColourMenuObj::~ ToolboxColourMenuObj() {}
 
 ToolboxColourMenuObj& ToolboxColourMenuObj::setColour(int colour) {
   _kernel_swi_regs regs;

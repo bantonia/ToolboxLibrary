@@ -1,0 +1,15 @@
+#ifndef __cplusplus
+#error Header file "SpriteAreaObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef ERRORLIBRARY_H
+#define ERRORLIBRARY_H
+
+#include "kernel.h"
+
+static _kernel_oserror spriteNotFound = { 0, "Unknown sprite"};
+static _kernel_oserror spriteAreaMemoryAllocationFailed = { 1, "Malloc failed for Sprite Area"};
+
+#endif

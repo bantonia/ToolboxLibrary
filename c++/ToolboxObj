@@ -52,6 +52,7 @@ ObjectId ToolboxObj::createObject(void *name_or_template) {
   in.r[0] = (int) getFlags();
   in.r[1] = (int) name_or_template;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_CreateObject, &in, &out), __LINE__);
+  id = out.r[0];
   return out.r[0];
 }
 

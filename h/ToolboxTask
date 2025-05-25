@@ -7,14 +7,20 @@
 #ifndef __ToolboxTask_h
 #define __ToolboxTask_h
 
+#include "ClassType.h"
 #include "ToolboxCoreObj.h"
 #include "WimpObj.h"
 
 class ToolboxTask : public WimpObj, public ToolboxCoreObj {
   public:
-    void showProperties(){};
+    ToolboxTask () {};
+    ~ToolboxTask() {};
     void eToolboxEvent();
     int initTask(char *resourcePath);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxTask";};
+    int getClassType() { return ClassType_ToolboxTask;};
 };
 
 #endif

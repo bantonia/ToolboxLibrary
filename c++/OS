@@ -26,3 +26,14 @@ char *OS::binaryToDecimal(int n, char *buffer, int *bufSize) {
   buffer[*bufSize] = 0;
   return buffer;
 }
+
+int OS::evaluateExpression(char *str, char *buf, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = (int) str;
+  in.r[1] = (int) buf;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_EvaluateExpression, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  //buffer[*bufSize] = 0;
+  return out.r[2];
+}

@@ -8,6 +8,7 @@
 #define __ToolboxMenuObj_h
 
 #include "menu.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxMenuObj : public ToolboxObj {
@@ -49,6 +50,10 @@ class ToolboxMenuObj : public ToolboxObj {
     ToolboxMenuObj& setObjectId(ObjectId objectId);
     ToolboxMenuObj& setFlags(unsigned int flags);
     ToolboxMenuObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxMenuObj";};
+    int getClassType() { return ClassType_ToolboxMenuObj;};
 };
 
 #endif

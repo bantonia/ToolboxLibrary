@@ -1,0 +1,39 @@
+#ifndef __cplusplus
+#error Header file "ToolboxTabs.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxTabs_h
+#define __ToolboxTabs_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+
+class ToolboxTabs : public ToolboxGadget {
+  public:
+    ToolboxTabs& setState(unsigned int  state);
+    unsigned int getState();
+    ToolboxTabs& setSelected(int tabIndex, int *previousIndex);
+    int *getSelected();
+    int *tabFromWindow(ObjectId nestedWindow);
+    ObjectId *windowFromTab(int tabIndex);
+    ToolboxTabs& setLabel(int index, char *text);
+    int getLabel(int index);
+    int getLabel(int index, char *buffer, int bufSize);
+    ToolboxTabs& hideTab(int index, int hide);
+    ToolboxTabs& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
+    ToolboxTabs& setFocus();
+    ToolboxTabs& setFlags(unsigned int flags);
+    ToolboxTabs& setObjectId(ObjectId windowId);
+    ToolboxTabs& setComponentId(ComponentId gadgetId);
+    ToolboxTabs& setGadgetFlags(unsigned int flags);
+    ToolboxTabs& setHelpMessage(char *message);
+    ToolboxTabs& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxTabs";};
+    int getClassType() { return ClassType_ToolboxTabs;};
+};
+
+#endif

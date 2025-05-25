@@ -7,6 +7,7 @@
 #ifndef __ToolboxWritableField_h
 #define __ToolboxWritableField_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxWritableField : public ToolboxGadget {
@@ -24,6 +25,10 @@ class ToolboxWritableField : public ToolboxGadget {
     ToolboxWritableField& setGadgetFlags(unsigned int flags);
     ToolboxWritableField& setHelpMessage(char *message);
     ToolboxWritableField& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxWritableField";};
+    int getClassType() { return ClassType_ToolboxWritableField;};
 };
 
 #endif

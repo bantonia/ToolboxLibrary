@@ -8,6 +8,7 @@
 #define __ToolboxFontDlogObj_h
 
 #include "fontdbox.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxFontDlogObj : public ToolboxObj {
@@ -30,6 +31,10 @@ class ToolboxFontDlogObj : public ToolboxObj {
     ToolboxFontDlogObj& setObjectId(ObjectId objectId);
     ToolboxFontDlogObj& setFlags(unsigned int flags);
     ToolboxFontDlogObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxFontDlogObj";};
+    int getClassType() { return ClassType_ToolboxFontDlogObj;};
 };
 
 #endif

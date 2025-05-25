@@ -8,12 +8,13 @@
 #define __ToolboxColourMenuObj_h
 
 #include "colourmenu.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxColourMenuObj : public ToolboxObj {
   public:
     ToolboxColourMenuObj();
-    ~ToolboxColourMenuObj();
+    ~ ToolboxColourMenuObj();
     ToolboxColourMenuObj& setColour(int colour);
     int getColour();
     ToolboxColourMenuObj& setNoneAvailable(int none);
@@ -24,6 +25,10 @@ class ToolboxColourMenuObj : public ToolboxObj {
     ToolboxColourMenuObj& setObjectId(ObjectId objectId);
     ToolboxColourMenuObj& setFlags(unsigned int flags);
     ToolboxColourMenuObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxColourMenuObj";};
+    int getClassType() { return ClassType_ToolboxColourMenuObj;};
 };
 
 #endif

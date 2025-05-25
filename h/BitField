@@ -1,0 +1,28 @@
+#ifndef __cplusplus
+#error Header file "BitField.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#include "Object.h"
+
+class BitField : public Object {
+  public:
+    BitField(void);
+    ~BitField(void);
+    BitField(int);
+    void setBit(int);
+    void clearBit(int);
+    int isSet(int);
+    int isClear(int);
+    void invert(void);
+    void clear(void);
+    void set(void);
+    unsigned int numBits(void);
+    void showProperties(){};
+    char* getClassName() { return "BitField";};
+    int getClassType(){return 0;};
+  private:
+    unsigned int bits;
+    unsigned char *data;
+};

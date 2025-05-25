@@ -1,0 +1,42 @@
+#include "SpriteObj.h"
+
+SpriteObj::SpriteObj() {
+  spritePtr = NULL;
+  scaleFactors = NULL;
+};
+
+SpriteObj::SpriteObj(SpritePtr_t *ptr) {
+  spritePtr = ptr;
+  scaleFactors = NULL;
+};
+
+SpriteObj::~SpriteObj() {
+  if (scaleFactors != NULL) {
+    delete scaleFactors;
+  }
+};
+
+SpritePtr_t *SpriteObj::getSpritePtr() {
+  return spritePtr;
+}
+
+SpriteObj& SpriteObj::setSpritePtr(SpritePtr_t *ptr) {
+  spritePtr = ptr;
+  return *this;
+}
+
+SpriteObj& SpriteObj::setScaleFactors(int xMag, int yMag, int xDiv, int yDiv) {
+  if (scaleFactors == NULL) {
+    scaleFactors = new sprite_factors();
+  }
+  scaleFactors->xmag = xMag;
+  scaleFactors->ymag = yMag;
+  scaleFactors->xdiv = xDiv;
+  scaleFactors->ydiv = yDiv;
+  return *this;
+}
+
+sprite_factors *SpriteObj::getScaleFactors() {
+  return scaleFactors;
+}
+

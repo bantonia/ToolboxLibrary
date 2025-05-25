@@ -7,6 +7,7 @@
 #ifndef __ToolboxSaveAsObj_h
 #define __ToolboxSaveAsObj_h
 
+#include "ClassType.h"
 #include "ToolboxObj.h"
 #include "saveas.h"
 
@@ -32,6 +33,10 @@ class ToolboxSaveAsObj : public ToolboxObj {
     ToolboxSaveAsObj& setObjectId(ObjectId objectId);
     ToolboxSaveAsObj& setFlags(unsigned int flags);
     ToolboxSaveAsObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxSaveAsObj";};
+    int getClassType() { return ClassType_ToolboxSaveAsObj;};
 };
 
 #endif

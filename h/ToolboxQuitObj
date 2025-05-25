@@ -7,6 +7,7 @@
 #ifndef __ToolboxQuitObj_h
 #define __ToolboxQuitObj_h
 
+#include "ClassType.h"
 #include "ToolboxObj.h"
 #include "quit.h"
 
@@ -24,6 +25,10 @@ class ToolboxQuitObj : public ToolboxObj {
     ToolboxQuitObj& setObjectId(ObjectId objectId);
     ToolboxQuitObj& setFlags(unsigned int flags);
     ToolboxQuitObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxQuitObj";};
+    int getClassType() { return ClassType_ToolboxQuitObj;};
 };
 
 #endif

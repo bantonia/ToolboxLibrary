@@ -1,0 +1,31 @@
+#include "ToolboxObjectList.h"
+
+ToolboxObjectList::ToolboxObjectList() {
+  value = NULL;
+  next = NULL;
+}
+
+ToolboxObjectList::~ToolboxObjectList() {};
+
+ToolboxObjectList *ToolboxObjectList::addValue(ToolboxObj *value) {
+  ToolboxObjectList *tmp = new ToolboxObjectList();
+  tmp->setValue(value);
+  tmp->setNext(this);
+  return tmp;
+}
+
+void ToolboxObjectList::setValue(ToolboxObj *value) {
+  this->value = value;
+}
+
+ToolboxObj *ToolboxObjectList::getValue() {
+  return value;
+}
+
+void ToolboxObjectList::setNext(ToolboxObjectList *next) {
+  this->next = next;
+}
+
+ToolboxObjectList *ToolboxObjectList::getNext() {
+  return next;
+}

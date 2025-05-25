@@ -7,6 +7,7 @@
 #ifndef __ToolboxProgInfoObj_h
 #define __ToolboxProgInfoObj_h
 
+#include "ClassType.h"
 #include "ToolboxObj.h"
 #include "proginfo.h"
 
@@ -31,6 +32,10 @@ class ToolboxProgInfoObj : public ToolboxObj {
     ToolboxProgInfoObj& setObjectId(ObjectId objectId);
     ToolboxProgInfoObj& setFlags(unsigned int flags);
     ToolboxProgInfoObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxProgInfoObj";};
+    int getClassType() { return ClassType_ToolboxProgInfoObj;};
 };
 
 #endif

@@ -1,0 +1,5 @@
+class Constants {
+  public:
+    const static char *days[];
+    const static char *months[];
+};

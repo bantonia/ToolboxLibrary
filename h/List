@@ -1,0 +1,18 @@
+#ifndef NULL
+#define NULL 0
+#endif
+
+template<class T>
+class List {
+  public:
+    List<T>();
+    ~List<T>();
+    List *addValue(T *value);
+    void setValue(T *value);
+    T *getValue();
+    void setNext(List *next);
+    List *getNext();
+  private:
+    T *value;
+    List *next;
+};

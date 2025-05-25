@@ -1,0 +1,28 @@
+#include "OSErrList.h"
+
+#define NULL 0
+
+OSErrList::OSErrList() {
+ next = NULL;
+}
+
+OSErrList::OSErrList(_kernel_oserror *, unsigned int) {
+
+}
+
+OSErrList::~OSErrList() {
+}
+
+void OSErrList::addError(_kernel_oserror *err, unsigned int, unsigned int) {
+  OSErrList *p = new OSErrList();
+  p->next = next;
+  p->err = err;
+
+}
+
+OSErrList *OSErrList::getNext() {
+  return next;
+}
+
+void OSErrList::reportErrors() {
+}

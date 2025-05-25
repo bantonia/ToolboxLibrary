@@ -1,0 +1,85 @@
+#include "Object.h"
+#include "BitField.h"
+
+BitField::BitField(void) {
+  bits = 8;
+  data = new unsigned char[1];
+  data[0] = 0;
+};
+
+BitField::~BitField(void) {
+  delete data;
+};
+
+BitField::BitField(int i) {
+  if ((i % 8) == 0) {
+    bits = ((i / 8)) * 8;
+    data = new unsigned char[i / 8];
+    for (int j=0; j<i / 8; j++) {
+      data[j] = 0;
+    }
+  } // else {
+  if ((i % 8) != 0) {
+    bits = (((i / 8)) + 1) * 8;
+    data = new unsigned char[(i / 8) + 1];
+    for (int j=0; j<(i / 8) + 1; j++) {
+      data[j] = 0;
+    }
+  }
+};
+
+void BitField::setBit(int i) {
+  if (i < bits) {
+    int field = i / 8;
+    int bit = i % 8;
+    data[field]|=1<<bit;
+  }
+};
+
+void BitField::clearBit(int i) {
+  if (i < bits) {
+    int field = i / 8;
+    int bit = i % 8;
+    data[field]&=~(1<<bit);
+  }
+};
+
+int BitField::isSet(int i) {
+  if (i < bits) {
+    int field = i / 8;
+    int bit = i % 8;
+    return (data[field] & (1 << bit))>0?1:0;
+  }
+  return -1;
+};
+
+int BitField::isClear(int i) {
+  if (i < bits) {
+    int field = i / 8;
+    int bit = i % 8;
+    return (data[field] & (1 << bit))==0?1:0;
+  }
+  return -1;
+};
+
+void BitField::invert() {
+  for (int i=0; i < bits/8 ; i++) {
+    data[i]=~data[i];
+  }
+};
+
+void BitField::clear() {
+  for (int j=0; j<bits / 8; j++) {
+    data[j] = 0;
+  }
+}
+
+void BitField::set() {
+  for (int j=0; j<bits / 8; j++) {
+    data[j] = ~0;
+  }
+};
+
+unsigned int BitField::numBits(void) {
+  return bits;
+};

@@ -4,7 +4,6 @@
 #include "wimp.h"
 #include "wimplib.h"
 #include <stdlib.h>
-#include <stdbool.h>
 #include <setjmp.h>
 #include "ErrorReport.h"
 
@@ -415,6 +414,12 @@ void WimpObj::openTemplate(char *filename) {
 
 void WimpObj::closeTemplate() {
   WimpObj::setLastError(wimp_close_template(), __LINE__);
+}
+
+WimpRedrawWindowBlock *WimpObj::updateWindow(WimpRedrawWindowBlock *block) {
+  int more;
+  WimpObj::setLastError(wimp_update_window(block, &more), __LINE__);
+  return (WimpRedrawWindowBlock *) more;
 }
 
 /*WimpObj::loadTemplate(char *template) {

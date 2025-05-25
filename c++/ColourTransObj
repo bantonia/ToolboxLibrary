@@ -1,0 +1,347 @@
+#include "ColourTransObj.h"
+
+
+
+
+#undef ColourTrans_ReturnFontColours
+#define ColourTrans_ReturnFontColours 0x0004074E
+#undef ColourTrans_SetFontColours
+#define ColourTrans_SetFontColours 0x0004074F
+
+#undef ColourTrans_SetCalibration
+#define ColourTrans_SetCalibration 0x00040751
+#undef ColourTrans_ReadCalibration
+#define ColourTrans_ReadCalibration 0x00040752
+
+#undef ColourTrans_ConvertRGBToCIE
+#define ColourTrans_ConvertRGBToCIE 0x00040755
+#undef ColourTrans_ConvertCIEToRGB
+#define ColourTrans_ConvertCIEToRGB 0x00040756
+#undef ColourTrans_WriteCalibrationToFile
+#define ColourTrans_WriteCalibrationToFile 0x00040757
+#undef ColourTrans_ConvertRGBToHSV
+#define ColourTrans_ConvertRGBToHSV 0x00040758
+#undef ColourTrans_ConvertHSVToRGB
+#define ColourTrans_ConvertHSVToRGB 0x00040759
+#undef ColourTrans_ConvertRGBToCMYK
+#define ColourTrans_ConvertRGBToCMYK 0x0004075A
+#undef ColourTrans_ConvertCMYKToRGB
+#define ColourTrans_ConvertCMYKToRGB 0x0004075B
+#undef ColourTrans_ReadPalette
+#define ColourTrans_ReadPalette 0x0004075C
+#undef ColourTrans_WritePalette
+#define ColourTrans_WritePalette 0x0004075D
+#undef ColourTrans_SetColour
+#define ColourTrans_SetColour 0x0004075E
+#undef ColourTrans_WriteLoadingsToFile
+#define ColourTrans_WriteLoadingsToFile 0x00040760
+#undef ColourTrans_SetTextColour
+#define ColourTrans_SetTextColour 0x00040761
+#undef ColourTrans_SetOppTextColour
+#define ColourTrans_SetOppTextColour 0x00040762
+
+
+int ColourTransObj::selectTable (int sourceMode, 
+                                 WimpPaletteWord *sourcePalette,
+                                 int destMode,
+                                 WimpPaletteWord *destPalette,
+                                 void *buffer) {
+  _kernel_swi_regs in, out;
+  in.r[0] = sourceMode & 0x255;
+  in.r[1] = (int)sourcePalette;
+  in.r[2] = destMode;
+  in.r[3] = (int)destPalette;
+  in.r[4] = (int)buffer;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SelectTable, &in, &out), __LINE__);
+  return out.r[4];
+}
+
+void ColourTransObj::selectGCOLTable (int sourceMode, 
+                                      WimpPaletteWord *sourcePalette,
+                                      int destMode,
+                                      WimpPaletteWord *destPalette,
+                                      void *buffer) {
+  _kernel_swi_regs in, out;
+  in.r[0] = sourceMode & 0x255;
+  in.r[1] = (int)sourcePalette;
+  in.r[2] = destMode;
+  in.r[3] = (int)destPalette;
+  in.r[4] = (int)buffer;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SelectGCOLTable, &in, &out), __LINE__);
+}
+
+int ColourTransObj::returnGCOL (WimpPaletteWord entry) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnGCOL, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::setGCOL (WimpPaletteWord entry, int flags,
+                             int gcolAction) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[3] = flags;
+  in.r[4] = gcolAction;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetGCOL, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnColourNumber (WimpPaletteWord entry) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnColourNumber, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+
+int ColourTransObj::returnGCOLForMode (WimpPaletteWord entry,
+                                       int destMode,
+                                       WimpPaletteWord *destPalette) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[1] = destMode;
+  in.r[2] = (int)destPalette;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnGCOLForMode, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnColourForMode (WimpPaletteWord entry,
+                                         int destMode,
+                                         WimpPaletteWord *destPalette) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[1] = destMode;
+  in.r[2] = (int)destPalette;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnColourNumberForMode, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnOppGCOL (WimpPaletteWord entry) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnOppGCOL, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::setOppGCOL (WimpPaletteWord entry, int flags,
+                                int gcolAction) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[3] = flags;
+  in.r[4] = gcolAction;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetOppGCOL, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnOppColourNumber (WimpPaletteWord entry) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnOppColourNumber, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnOppGCOLForMode (WimpPaletteWord entry,
+                                          int destMode,
+                                          WimpPaletteWord *destPalette) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[1] = destMode;
+  in.r[2] = (int)destPalette;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnOppGCOLForMode, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::returnOppColourForMode (WimpPaletteWord entry,
+                                            int destMode,
+                                            WimpPaletteWord *destPalette) {
+  _kernel_swi_regs in, out;
+  in.r[0] = entry.word;
+  in.r[1] = destMode;
+  in.r[2] = (int)destPalette;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnOppColourNumberForMode, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::GCOLToColourNumber (int gcol) {
+  _kernel_swi_regs in, out;
+  in.r[0] = gcol;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_GCOLToColourNumber, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::colourNumberToGCOL (int col) {
+  _kernel_swi_regs in, out;
+  in.r[0] = col;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ColourNumberToGCOL, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+void ColourTransObj::returnFontColours (void *handle, 
+                                          WimpPaletteWord *backgnd,
+                                          WimpPaletteWord *foregnd,
+                                          int *maxOffset) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)handle;
+  in.r[1] = backgnd->word;
+  in.r[2] = foregnd->word;
+  in.r[3] = (int)*maxOffset;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReturnFontColours, &in, &out), __LINE__);
+  backgnd->word = out.r[1];
+  foregnd->word = out.r[2];
+  *maxOffset = out.r[3];
+}
+
+void ColourTransObj::setFontColours (void *handle,
+                                       WimpPaletteWord *backgnd,
+                                       WimpPaletteWord *foregnd,
+                                       int *maxOffset) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)handle;
+  in.r[1] = backgnd->word;
+  in.r[2] = foregnd->word;
+  in.r[3] = (int)*maxOffset;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetFontColours, &in, &out), __LINE__);
+  backgnd->word = out.r[1];
+  foregnd->word = out.r[2];
+  *maxOffset = out.r[3];
+}
+
+void ColourTransObj::invalidateCache (void) {
+  _kernel_swi_regs in, out;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_InvalidateCache, &in, &out), __LINE__);
+}
+
+void ColourTransObj::setCalibration (void *calibrationTable) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)calibrationTable;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetCalibration, &in, &out), __LINE__);
+}
+
+int ColourTransObj::readCalibration (void *calibrationTable) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)calibrationTable;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReadCalibration, &in, &out), __LINE__);
+  return out.r[1];
+}
+
+WimpPaletteWord ColourTransObj::convertDeviceColour ( WimpPaletteWord device,
+                                                      WimpPaletteWord *table) {
+  WimpPaletteWord w;
+  _kernel_swi_regs in, out;
+  in.r[1] = device.word;
+  in.r[3] = (int)table;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ConvertDeviceColour, &in, &out), __LINE__);
+  w.word = out.r[2];
+  return w;
+}
+
+
+void ColourTransObj::convertDevicePalette (int numColours,
+                                           void *deviceColourTable,
+                                           void *standardColourTable,
+                                           void *calibration) {
+  _kernel_swi_regs in, out;
+  in.r[0] = numColours;
+  in.r[1] = (int)deviceColourTable;
+  in.r[2] = (int)standardColourTable;
+  in.r[3] = (int)calibration;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ConvertDevicePalette, &in, &out), __LINE__);
+}
+
+int ColourTransObj::readPalette(sprite_area *area, char *name, void *buffer, int &size, int flash) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)area;
+  in.r[1] = (int)name;
+  in.r[2] = (int)buffer;
+  in.r[3] = size;
+  in.r[4] = 0;
+  if (flash != 0) {
+    in.r[4] = 2;
+  }
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReadPalette, &in, &out), __LINE__);
+  size = out.r[3];
+  return out.r[2];
+}
+
+int ColourTransObj::readPalette(int mode, void *source, void *buffer, int &size, int flash) {
+  _kernel_swi_regs in, out;
+  in.r[0] = mode;
+  in.r[1] = (int)source;
+  in.r[2] = (int)buffer;
+  in.r[3] = size;
+  in.r[4] = 0;
+  if (flash != 0) {
+    in.r[4] = 2;
+  }
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_ReadPalette, &in, &out), __LINE__);
+  size = out.r[3];
+  return out.r[2];
+}
+
+
+void ColourTransObj::writePalette(sprite_area *area, char *name, void *palette, int flash) {
+  _kernel_swi_regs in, out;
+  in.r[0] = (int)area;
+  in.r[1] = (int)name;
+  in.r[2] = (int)palette;
+  in.r[3] = 0;
+  in.r[4] = 0;
+  if (flash != 0) {
+    in.r[4] = 2;
+  }
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_WritePalette, &in, &out), __LINE__);
+}
+
+void ColourTransObj::writePalette(void *palette) {
+  _kernel_swi_regs in, out;
+  in.r[0] = -1;
+  in.r[1] = -1;
+  in.r[2] = (int)palette;
+  in.r[3] = 0;
+  in.r[4] = 0;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_WritePalette, &in, &out), __LINE__);
+}
+
+void ColourTransObj::setColour(int gcol, int flags, int action) {
+  _kernel_swi_regs in, out;
+  in.r[0] = gcol;
+  in.r[3] = flags;
+  in.r[4] = action;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetTextColour, &in, &out), __LINE__);
+}
+
+int ColourTransObj::setTextColour(int paletteEntry, int flags) {
+  _kernel_swi_regs in, out;
+  in.r[0] = paletteEntry;
+  in.r[3] = flags;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetTextColour, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::setOppTextColour(int paletteEntry, int flags) {
+  _kernel_swi_regs in, out;
+  in.r[0] = paletteEntry;
+  in.r[3] = flags;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_SetOppTextColour, &in, &out), __LINE__);
+  return out.r[0];
+}
+
+int ColourTransObj::generateTable(int sourceMode, 
+                                  WimpPaletteWord *sourcePalette,
+                                  int destMode,
+                                  WimpPaletteWord *destPalette,
+                                  void *buffer) {
+  _kernel_swi_regs in, out;
+  in.r[0] = sourceMode & 0xFF;
+  in.r[1] = (int)sourcePalette;
+  in.r[2] = destMode;
+  in.r[3] = (int)destPalette;
+  in.r[4] = (int)buffer;
+  in.r[5] = 0;
+  in.r[6] = 0;
+  in.r[7] = 0;
+  ErrorReport::setLastError(_kernel_swi(ColourTrans_GenerateTable, &in, &out), __LINE__);
+  return out.r[4];
+}
+

@@ -7,6 +7,7 @@
 #ifndef __ToolboxSlider_h
 #define __ToolboxSlider_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxSlider : public ToolboxGadget {
@@ -25,6 +26,10 @@ class ToolboxSlider : public ToolboxGadget {
     ToolboxSlider& setGadgetFlags(unsigned int flags);
     ToolboxSlider& setHelpMessage(char *message);
     ToolboxSlider& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxSlider";};
+    int getClassType() { return ClassType_ToolboxSlider;};
 };
 
 #endif

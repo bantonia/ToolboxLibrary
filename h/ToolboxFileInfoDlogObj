@@ -8,6 +8,7 @@
 #define __ToolboxFileInfoDlogObj_h
 
 #include "fileinfo.h"
+#include "ClassType.h"
 #include "ToolboxObj.h"
 
 class ToolboxFileInfoDlogObj : public ToolboxObj {
@@ -34,6 +35,10 @@ class ToolboxFileInfoDlogObj : public ToolboxObj {
     ToolboxFileInfoDlogObj& setObjectId(ObjectId objectId);
     ToolboxFileInfoDlogObj& setFlags(unsigned int flags);
     ToolboxFileInfoDlogObj& clearFlags();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxFileInfoDlogObj";};
+    int getClassType() { return ClassType_ToolboxFileInfoDlogObj;};
 };
 
 #endif

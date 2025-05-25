@@ -1,0 +1,173 @@
+#ifndef __cplusplus
+#error Header file "SpriteAreaObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef SPRITEAREAOBJ_H
+#define SPRITEAREAOBJ_H
+
+#define nullptr 0
+
+#include <stdlib.h>
+#include <iostream.h>
+#include "Object.h"
+#include "ErrorReport.h"
+#include "swis.h"
+#include "kernel.h"
+#include "sprite.h"
+#include "SpriteObj.h"
+#include "ClassType.h"
+
+#define SpriteMainArea ((SpriteArea_t *) 0)
+
+class SpriteAreaObj : public Object {
+  public:
+
+    typedef sprite_area SpriteArea_t;
+    typedef struct {
+      int width;
+      int height;
+      int maskStatus;
+      int mode;
+    } spriteInfo_t;
+
+    SpriteAreaObj();
+    SpriteAreaObj(int size);
+    SpriteAreaObj(int size, int offset);
+    ~SpriteAreaObj();
+    SpriteAreaObj& useSpriteName();
+    SpriteAreaObj& useSpritePtr();
+    static void screenSave(char *, int);
+    static void screenLoad(char *);
+    SpriteAreaObj& getAreaSize(int *);
+    int getAreaSize();
+    SpriteAreaObj& getSpriteCount(int *);
+    int getSpriteCount();
+    SpriteAreaObj& getFirstSpriteOffset(int *);
+    int getFirstSpriteOffset();
+    SpriteAreaObj& getFreeSpaceOffset(int *);
+    int getFreeSpaceOffset();
+    SpriteAreaObj& spriteAreaInitialise();
+    SpriteAreaObj& loadSpriteFile(char *);
+    SpriteAreaObj& mergeSpriteFile(char *);
+    SpriteAreaObj& saveSpriteFile(char *);
+    SpriteAreaObj& getSpriteName(int, int, char *);
+    SpriteAreaObj& getSprite(char *, int, SpriteObj&);
+    SpritePtr_t getSprite(char *, int);
+    SpriteAreaObj& createSprite(char *, int, int, int, int);
+    //SpriteAreaObj& getSpriteFromCoords(char *, int, int, int, int, int, SpriteObj&);
+    SpriteObj *getSpriteFromCoords(char *, int, int, int, int, int);
+    SpriteAreaObj& selectSprite(SpriteObj&);
+    SpriteAreaObj& selectSprite(char *);
+    SpriteAreaObj& deleteSprite(SpriteObj&);
+    SpriteAreaObj& deleteSprite(char *);
+    SpriteAreaObj& renameSprite(SpriteObj&);
+    SpriteAreaObj& renameSprite(char *);
+    SpriteAreaObj& copySprite(SpriteObj *, char *);
+    SpriteAreaObj& copySprite(char *, char *);
+
+    SpriteAreaObj& createMask(SpriteObj *);
+    SpriteAreaObj& createMask(char *);
+    SpriteAreaObj& removeMask(SpriteObj *);
+    SpriteAreaObj& removeMask(char *);
+    SpriteAreaObj& insertRow(SpriteObj *, int);
+    SpriteAreaObj& insertRow(char *, int);
+    SpriteAreaObj& deleteRow(SpriteObj *, int);
+    SpriteAreaObj& deleteRow(char *, int);
+    SpriteAreaObj& flipXAxis(SpriteObj *);
+    SpriteAreaObj& flipXAxis(char *);
+
+    SpritePtr_t *getSpritePtr(char *);
+    SpriteAreaObj& getSpritePtr(char *, SpritePtr_t&);
+
+    SpriteAreaObj&  putSprite(char *, int);
+    SpriteAreaObj&  putSprite(char *, int, int, int);
+
+    SpriteAreaObj&  putSprite(SpritePtr_t *, int);
+    SpriteAreaObj&  putSprite(SpritePtr_t *, int, int, int);
+
+    SpriteAreaObj&  putSprite(SpriteObj *, int);
+    SpriteAreaObj&  putSprite(SpriteObj *, int, int, int);
+
+    SpriteAreaObj& getSpriteInfo(char *, spriteInfo_t *);
+
+    SpriteAreaObj&  putSpriteScaled(char *, int, int, int, sprite_factors *, sprite_pixtrans *);
+
+    void showProperties() {};
+    char* getClassName() { return "SpriteAreaObj";};
+    int getClassType() { return ClassType_SpriteAreaObj;};
+
+  private:
+
+  enum {
+    SPRITE_NAME_PTR = 256,
+    SPRITE_PTR = 512
+  };
+
+  enum {
+    SCREEN_SAVE = 2,
+    SCREEN_LOAD,
+    READ_AREA_CONTROL_BLOCK = 8,
+    INITIALISE_SPRITE_AREA,
+    LOAD_SPRITE_FILE,
+    MERGE_SPRITE_FILE,
+    SAVE_SPRITE_FILE,
+    RETURN_SPRITE_NAME,
+    GET_SPRITE,
+    CREATE_SPRITE,
+    GET_SPRITE_FROM_USER_COORDS,
+    SELECT_SPRITE = 24,
+    DELETE_SPRITE,
+    RENAME_SPRITE,
+    COPY_SPRITE,
+    PUT_SPRITE,
+    CREATE_MASK,
+    REMOVE_MASK,
+    INSERT_ROW,
+    DELETE_ROW,
+    FLIP_X_AXIS,
+    PUT_SPRITE_AT_COORDS,
+    APPEND_SPRITE,
+    SET_POINTER_SHAPE,
+    MANAGE_PALETTE,
+    READ_SPRITE_INFORMATION = 40,
+    READ_PIXEL_COLOUR,
+    WRITE_PIXEL_COLOUR,
+    READ_PIXEL_MASK,
+    WRITE_PIXEL_MASK,
+    INSERT_COLUMN,
+    DELETE_COLUMN,
+    FLIP_Y_AXIS,
+    PLOT_SPRITE_MASK,
+    PLOT_MASK_AT_USER_COORDS,
+    PLOT_MASK_SCALED,
+    PAINT_CHARACTER_SCALED,
+    PUT_SPRITE_SCALED,
+    PUT_SPRITE_GREY_SCALED,
+    REMOVE_LEFTHAND_WASTAGE,
+    PLOT_MASK_TRANSFORMED,
+    PUT_SPRITE_TRANSFORMED,
+    MANAGE_ROWS,
+    MANAGE_COLUMNS,
+    SWITCH_OUTPUT_TO_SPRITE,
+    SWITCH_OUTPUT_TO_MASK,
+    READ_SAVE_AREA_SIZE
+  } SpriteAction;
+
+    typedef union {
+      unsigned int word;
+      struct {
+        unsigned int initialised : 1;
+        unsigned int             : 7;
+        unsigned int spriteName  : 1;
+        unsigned int spritePtr   : 1;
+        unsigned int             : 22;
+      } flag;
+    } SpriteAreaFlags_t;
+
+    SpriteArea_t *area;
+    SpriteAreaFlags_t flags;
+};
+
+#endif

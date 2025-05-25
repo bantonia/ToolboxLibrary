@@ -1,0 +1,27 @@
+#include "sprite.h"
+#include "ClassType.h"
+#include "Object.h"
+#include <stdlib.h>
+
+typedef sprite_ptr SpritePtr_t;
+
+class SpriteObj : public Object {
+
+  public:
+
+    SpriteObj();
+    SpriteObj(SpritePtr_t *);
+    ~SpriteObj();
+    SpritePtr_t *getSpritePtr();
+    SpriteObj& setSpritePtr(SpritePtr_t *);
+    SpriteObj& setScaleFactors(int, int, int, int);
+    sprite_factors *getScaleFactors();
+
+    void showProperties() {};
+    char* getClassName() { return "SpriteObj";};
+    int getClassType() { return ClassType_SpriteObj;};
+
+  private:
+       SpritePtr_t *spritePtr;
+       sprite_factors *scaleFactors;
+};

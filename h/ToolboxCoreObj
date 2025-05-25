@@ -11,6 +11,7 @@
 #include "Object.h"
 #include "toolbox.h"
 #include "ErrorReport.h"
+#include "ClassType.h"
 
 #ifndef UNUSED
 #define UNUSED(x) ((x)=(x))
@@ -138,6 +139,10 @@ class ToolboxCoreObj : public Object, public ErrorReport {
     virtual void reservedToolboxInterApplicationProtocol(){};
     virtual void reservedToolboxModuleEvent(){};
     virtual void unknownToolboxEvent(){};
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxCoreObj";};
+    int getClassType() { return ClassType_ToolboxCoreObj;};
   private:
     static int wimpVersion;
     static int taskHandle;

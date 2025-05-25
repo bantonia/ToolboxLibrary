@@ -14,12 +14,13 @@
 #include "kernel.h"
 #include "Object.h"
 #include "wimp.h"
+#include "ClassType.h"
 //#include "ToolboxCoreObj.h"
-#include <stdbool.h>
+//#include "WimpWindowObj.h"
 
 class WimpObj : public Object, public ErrorReport {
   public:
-    
+
     typedef struct WindDefStr {
       WindDefStr();
       ~WindDefStr();
@@ -32,7 +33,6 @@ class WimpObj : public Object, public ErrorReport {
 
     WimpObj();
     ~WimpObj();
-    void showProperties(){};
     unsigned int init();
     void closeDown();
     unsigned int pollIdle();
@@ -77,11 +77,16 @@ class WimpObj : public Object, public ErrorReport {
     static void redrawScreen();
     static void openWindow();
     static void closeWindow();
+    static WimpRedrawWindowBlock *updateWindow(WimpRedrawWindowBlock *);
     static void closeWindow(int);
     static void openTemplate(char *);
     static void closeTemplate();
     //static void loadTemplate(char *);
     static int quit;
+
+    void showProperties() {};
+    char* getClassName() { return "WimpObj";};
+    int getClassType() { return ClassType_WimpObj;};
   private:
     static int handle;
     static unsigned int *messages;

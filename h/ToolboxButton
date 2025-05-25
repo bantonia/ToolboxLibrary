@@ -7,6 +7,7 @@
 #ifndef __ToolboxButton_h
 #define __ToolboxButton_h
 
+#include "ClassType.h"
 #include "ToolboxGadget.h"
 
 class ToolboxButton : public ToolboxGadget {
@@ -29,6 +30,10 @@ class ToolboxButton : public ToolboxGadget {
     ToolboxButton& setGadgetFlags(unsigned int flags);
     ToolboxButton& setHelpMessage(char *message);
     ToolboxButton& moveGadget(BBox *newBbox);
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxButton";};
+    int getClassType() { return ClassType_ToolboxButton;};
 };
 
 #endif

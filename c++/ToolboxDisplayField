@@ -25,6 +25,14 @@ int ToolboxDisplayField::getValue() {
   return regs.r[5];
 }
 
+int ToolboxDisplayField::getIntValue() {
+  char *buffer;
+  int size = this->getValue();
+  buffer = new char[size];
+  this->getValue(buffer, size);
+  return OS::evaluateExpression(buffer, 0, 0);
+}
+
 int ToolboxDisplayField::getValue(char *buffer, int bufSize) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) buffer;
