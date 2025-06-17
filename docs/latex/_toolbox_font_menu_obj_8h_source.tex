@@ -1,0 +1,36 @@
+\doxysection{Toolbox\+Font\+Menu\+Obj.\+h}
+\hypertarget{_toolbox_font_menu_obj_8h_source}{}\label{_toolbox_font_menu_obj_8h_source}\index{h/ToolboxFontMenuObj.h@{h/ToolboxFontMenuObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxFontMenuObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxFontMenuObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxFontMenuObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}fontmenu.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxFontMenuObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxFontMenuObj()\{\};}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxFontMenuObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ ToolboxFontMenuObj\&\ setFont(\textcolor{keywordtype}{char}\ *fontId);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getFont();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ getFont(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00021\ \ \ \ \ ToolboxFontMenuObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxFontMenuObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00023\ \ \ \ \ ToolboxFontMenuObj\&\ clearFlags();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxFontMenuObj"{}};\};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxFontMenuObj;\};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

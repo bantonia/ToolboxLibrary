@@ -1,0 +1,24 @@
+\doxysection{List.\+h}
+\hypertarget{_list_8h_source}{}\label{_list_8h_source}\index{h/List.h@{h/List.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NULL\ 0}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_list}{List}}\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ List<T>();}
+\DoxyCodeLine{00009\ \ \ \ \ \string~List<T>();}
+\DoxyCodeLine{00010\ \ \ \ \ List\ *addValue(T\ *value);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ setValue(T\ *value);}
+\DoxyCodeLine{00012\ \ \ \ \ T\ *getValue();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ setNext(List\ *next);}
+\DoxyCodeLine{00014\ \ \ \ \ List\ *getNext();}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ T\ *value;}
+\DoxyCodeLine{00017\ \ \ \ \ List\ *next;}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

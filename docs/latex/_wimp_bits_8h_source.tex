@@ -1,0 +1,271 @@
+\doxysection{Wimp\+Bits.\+h}
+\hypertarget{_wimp_bits_8h_source}{}\label{_wimp_bits_8h_source}\index{h/WimpBits.h@{h/WimpBits.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\#include\ "{}stdbool.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ Handle;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ button\ state\ bits\ */}}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ BRIGHT\ \ \ \ \ \ \ =\ 0x001,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ BMID\ \ \ \ \ \ \ \ \ =\ 0x002,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ BLEFT\ \ \ \ \ \ \ \ =\ 0x004,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ BDRAGRIGHT\ \ \ =\ 0x010,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ BDRAGLEFT\ \ \ \ =\ 0x040,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ BCLICKRIGHT\ \ =\ 0x100,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ BCLICKLEFT\ \ \ =\ 0x400}
+\DoxyCodeLine{00015\ \ \ \ \ \}\ ButtonState;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_box}{Box}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ minX;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ minY;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ maxX;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ maxY;}
+\DoxyCodeLine{00022\ \ \ \ \ \}\ \mbox{\hyperlink{struct_box}{Box}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ x;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ y;}
+\DoxyCodeLine{00027\ \ \ \ \ \}\ \mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum}\ WimpEvent\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ NullReasonCode\ =\ 0,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ RedrawWindowRequest,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ OpenWindowRequest,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ CloseWindowRequest,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ PointerLeavingWindow,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ PointerEnteringWindow,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ MouseClick,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ UserDragBox,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ KeyPressed,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ MenuSelection,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ ScrollRequest,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ LoseCaret,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ GainCaret,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ PollWordNonZero,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ UserMessage\ =\ 17,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ UserMessageRecorded,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ UserMessageAcnowledged}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\mbox{\hyperlink{union_wimp_mask}{WimpMask}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ w;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ nullReasonCode\ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ redrawWindowRequest\ \ \ \ :1;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :2;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ pointerLeavingWindow\ \ \ :1;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ pointerEnteringWindow\ \ :1;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ mouseClick\ \ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ keyPressed\ \ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :2;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ loseCaret\ \ \ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ gainCaret\ \ \ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ pollWordNonZero\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :2;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ userMessage\ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ userMessageRecorded\ \ \ \ :1;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ userMessageAcknowledge\ :1;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :2;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ scanPollWord\ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ floatingPointRegisters\ :1;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :7;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \}\ b;}
+\DoxyCodeLine{00072\ \ \ \ \ \}\ \mbox{\hyperlink{union_wimp_mask}{WimpMask}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_redraw_window_request_block}{RedrawWindowRequestBlock}}\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ box;}
+\DoxyCodeLine{00077\ \ \ \ \ \}\ \mbox{\hyperlink{struct_redraw_window_request_block}{RedrawWindowRequestBlock}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_open_window_request_block}{OpenWindowRequestBlock}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ box;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}}\ offset;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ Handle\ behind;}
+\DoxyCodeLine{00084\ \ \ \ \ \}\ \mbox{\hyperlink{struct_open_window_request_block}{OpenWindowRequestBlock}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pointer_leaving_window_block}{PointerLeavingWindowBlock}}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00088\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pointer_leaving_window_block}{PointerLeavingWindowBlock}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pointer_entering_window_block}{PointerEnteringWindowBlock}}\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00092\ \ \ \ \ \}\ \mbox{\hyperlink{struct_pointer_entering_window_block}{PointerEnteringWindowBlock}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_mouse_click_block}{MouseClickBlock}}\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ x;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ y;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ ButtonState\ b;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ Handle\ i;}
+\DoxyCodeLine{00100\ \ \ \ \ \}\ \mbox{\hyperlink{struct_mouse_click_block}{MouseClickBlock}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_box}{Box}}\ UserDragBoxBlock;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_key_pressed_block}{KeyPressedBlock}}\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ Handle\ i;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ xOffset;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ yOffset;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ caretHeight;\ \textcolor{comment}{//\ Another\ structure?}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ caretIndex;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ charCode;}
+\DoxyCodeLine{00113\ \ \ \ \ \}\ \mbox{\hyperlink{struct_key_pressed_block}{KeyPressedBlock}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_scroll_request_block}{ScrollRequestBlock}}\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ Handle\ w;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ box;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}}\ offset;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ Handle\ behind;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ scrollX;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ scrollY;}
+\DoxyCodeLine{00122\ \ \ \ \ \}\ \mbox{\hyperlink{struct_scroll_request_block}{ScrollRequestBlock}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ the\ data\ field\ in\ an\ icon\ */}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ text[12];\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ up\ to\ 12\ bytes\ of\ text\ */}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ sprite\_name[12];\ \ \ \textcolor{comment}{/*\ up\ to\ 12\ bytes\ of\ sprite\ name\ */}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *name;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *spritearea;\ \ \ \ \ \textcolor{comment}{/*\ 0-\/>use\ the\ common\ sprite\ area\ */}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1-\/>use\ the\ wimp\ sprite\ area\ */}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ nameisname;\ \ \ \ \ \ \textcolor{comment}{/*\ if\ FALSE,\ name\ is\ in\ fact\ a\ sprite\ pointer.\ */}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \}\ indirectSprite;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ if\ indirect\ */}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *buffer;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ pointer\ to\ text\ buffer\ */}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *validString;\ \ \ \ \textcolor{comment}{/*\ pointer\ to\ validation\ string\ */}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ buffLen;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ length\ of\ text\ buffer\ */}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \}\ indirectText;}
+\DoxyCodeLine{00138\ \ \ \ \ \}\ \mbox{\hyperlink{union_icon_data_str}{IconDataStr}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ w;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ titleBar\ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ moveable\ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasVScrollBar\ \ \ \ \ \ :1;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasHScrollBar\ \ \ \ \ \ :1;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ wimpRedrawable\ \ \ \ \ :1;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ isPane\ \ \ \ \ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ dragOutside\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ noBackCloseIcons\ \ \ :1;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ allowScrollRequest\ :1;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ noAutoRepeat\ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ useGcolNums\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ alwaysBelow\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ generateHotKeys\ \ \ \ :1;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ stayOnScreen\ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ ignoreRHExtent\ \ \ \ \ :1;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ ignoreLowerExtent\ \ :1;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowOpen\ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowFullyVisable\ :1;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowFullSize\ \ \ \ \ :1;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowToggled\ \ \ \ \ \ :1;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowHasFocus\ \ \ \ \ :1;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ windowForced\ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ unsigned\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :2;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasBackIcon\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasCloseIcon\ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasTitleBar\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasToggleIcon\ \ \ \ \ \ :1;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasVScroll\ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasAdjustIcon\ \ \ \ \ \ :1;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasHScroll\ \ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ useNewStyle\ \ \ \ \ \ \ \ :1;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \}\ b;}
+\DoxyCodeLine{00175\ \ \ \ \ \}\ \mbox{\hyperlink{union_window_flags}{WindowFlags}};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ w;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ containsText\ :1;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ isSprite\ :1;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ hasBorder\ :1;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ centredHorizontally\ :1;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ centredVertically\ :1;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ filledBackground\ :1;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ textAntialiased\ :1;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ requiresRedrawHelp\ :1;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ dataIndirected\ :1;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ textRightJustified\ :1;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ dontCancelWithAdjust\ :1;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ displaySpritHalfSize\ :1;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ buttonType\ :4;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ esg\ :5;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ isSelelectedInverted\ :1;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ cannotSelect\ :1;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ deleted\ :1;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ fontHandle;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ foreground\ :4;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ background\ :4;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \}\ colour;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}\ colours;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \}\ b;}
+\DoxyCodeLine{00205\ \ \ \ \ \}\ \mbox{\hyperlink{union_icon_flags}{IconFlags}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }WindDefStr\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ WindDefStr();}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \string~WindDefStr();}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\textcolor{keyword}{operator}\ \textcolor{keyword}{new}(size\_t);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{operator}\ \textcolor{keyword}{new}(size\_t,\ int);}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\textcolor{keyword}{operator}\ \textcolor{keyword}{new}(\ size\_t,\ int,\ int);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{operator}\ \textcolor{keyword}{delete}(\textcolor{keywordtype}{void}*\ ptr);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ visibleArea;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}}\ offset;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ behind;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \mbox{\hyperlink{union_window_flags}{WindowFlags}}\ windowFlags;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c[8];}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ titleForeground;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ titleBackground;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ workForeground;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ workBackground;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ scrollOuterColour;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ scrollInnerColour;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ titleBackgroundHighlight;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ reserved;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}\ s;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \}\ colours;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ workArea;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \textcolor{comment}{//IconFlags\ titleFlags;}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ titleFlags;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{comment}{//IconFlags\ workFlags;}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ workFlags;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *spriteArea;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ width;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ height;}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}\ s;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \}\ minsize;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \mbox{\hyperlink{union_icon_data_str}{IconDataStr}}\ title;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numIcons;}
+\DoxyCodeLine{00246\ \ \ \ \ \}\ \mbox{\hyperlink{struct_wind_def_str}{WindDefStr}};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_open_window_str}{OpenWindowStr}}\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ Handle\ handle;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ window\ handle\ */}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \mbox{\hyperlink{struct_box}{Box}}\ box;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ position\ on\ screen\ of\ visible\ work\ area\ */}}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \mbox{\hyperlink{struct_scroll_offset}{ScrollOffset}}\ offset;\ \ \ \ \ \ \textcolor{comment}{/*\ 'real'\ coordinates\ of\ visible\ work\ area\ */}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ behind;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ handle\ of\ window\ to\ go\ behind\ (-\/1\ =\ top,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ -\/2\ =\ bottom,\ -\/3\ =\ iconised)\ */}}
+\DoxyCodeLine{00255\ \ \ \ \ \}\ OpenWindStr;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{\textcolor{keywordtype}{char}\ gcol;\ \textcolor{keywordtype}{char}\ red;\ \textcolor{keywordtype}{char}\ green;\ \textcolor{keywordtype}{char}\ blue;\}\ bytes;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ word;}
+\DoxyCodeLine{00260\ \ \ \ \ \}\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}};}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ c[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ wimp\ colours\ 0..15\ */}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ screenborder,\ mouse1,\ mouse2,\ mouse3;}
+\DoxyCodeLine{00265\ \ \ \ \ \}\ \mbox{\hyperlink{struct_wimp_palette_str}{WimpPaletteStr}};}
+
+\end{DoxyCode}

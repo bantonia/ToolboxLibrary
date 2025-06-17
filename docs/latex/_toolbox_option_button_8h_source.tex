@@ -1,0 +1,42 @@
+\doxysection{Toolbox\+Option\+Button.\+h}
+\hypertarget{_toolbox_option_button_8h_source}{}\label{_toolbox_option_button_8h_source}\index{h/ToolboxOptionButton.h@{h/ToolboxOptionButton.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxOptionButton.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxOptionButton\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxOptionButton\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ToolboxGadget.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\ :\ \textcolor{keyword}{public}\ ToolboxGadget\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setLabel(\textcolor{keywordtype}{char}\ *label);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ getLabel();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ getLabel(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setEvent(\textcolor{keywordtype}{int}\ event);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getEvent();}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setState(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getState();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ gadgetMethod(\textcolor{keywordtype}{int}\ methodCode,\ \_kernel\_swi\_regs\ *regs);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setFocus();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setObjectId(ObjectId\ windowId);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setComponentId(ComponentId\ gadgetId);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setGadgetFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ setHelpMessage(\textcolor{keywordtype}{char}\ *message);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_toolbox_option_button}{ToolboxOptionButton}}\&\ moveGadget(BBox\ *newBbox);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxOptionButton"{}};\};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxOptionButton;\};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

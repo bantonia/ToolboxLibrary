@@ -1,0 +1,179 @@
+\doxysection{Sprite\+Area\+Obj.\+h}
+\hypertarget{_sprite_area_obj_8h_source}{}\label{_sprite_area_obj_8h_source}\index{h/SpriteAreaObj.h@{h/SpriteAreaObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}SpriteAreaObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ SPRITEAREAOBJ\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SPRITEAREAOBJ\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ nullptr\ 0}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}ErrorReport.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}swis.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}kernel.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}sprite.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}SpriteObj.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ SpriteMainArea\ ((SpriteArea\_t\ *)\ 0)}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }SpriteAreaObj\ :\ \textcolor{keyword}{public}\ Object\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structsprite__area}{sprite\_area}}\ SpriteArea\_t;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maskStatus;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mode;}
+\DoxyCodeLine{00033\ \ \ \ \ \}\ \mbox{\hyperlink{struct_sprite_area_obj_1_1sprite_info__t}{spriteInfo\_t}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ SpriteAreaObj();}
+\DoxyCodeLine{00036\ \ \ \ \ SpriteAreaObj(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00037\ \ \ \ \ SpriteAreaObj(\textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ offset);}
+\DoxyCodeLine{00038\ \ \ \ \ \string~SpriteAreaObj();}
+\DoxyCodeLine{00039\ \ \ \ \ SpriteAreaObj\&\ useSpriteName();}
+\DoxyCodeLine{00040\ \ \ \ \ SpriteAreaObj\&\ useSpritePtr();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ screenSave(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ screenLoad(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00043\ \ \ \ \ SpriteAreaObj\&\ getAreaSize(\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ getAreaSize();}
+\DoxyCodeLine{00045\ \ \ \ \ SpriteAreaObj\&\ getSpriteCount(\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getSpriteCount();}
+\DoxyCodeLine{00047\ \ \ \ \ SpriteAreaObj\&\ getFirstSpriteOffset(\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ getFirstSpriteOffset();}
+\DoxyCodeLine{00049\ \ \ \ \ SpriteAreaObj\&\ getFreeSpaceOffset(\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ getFreeSpaceOffset();}
+\DoxyCodeLine{00051\ \ \ \ \ SpriteAreaObj\&\ spriteAreaInitialise();}
+\DoxyCodeLine{00052\ \ \ \ \ SpriteAreaObj\&\ loadSpriteFile(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00053\ \ \ \ \ SpriteAreaObj\&\ mergeSpriteFile(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00054\ \ \ \ \ SpriteAreaObj\&\ saveSpriteFile(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00055\ \ \ \ \ SpriteAreaObj\&\ getSpriteName(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00056\ \ \ \ \ SpriteAreaObj\&\ getSprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\&);}
+\DoxyCodeLine{00057\ \ \ \ \ SpritePtr\_t\ getSprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00058\ \ \ \ \ SpriteAreaObj\&\ createSprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//SpriteAreaObj\&\ getSpriteFromCoords(char\ *,\ int,\ int,\ int,\ int,\ int,\ SpriteObj\&);}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *getSpriteFromCoords(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00061\ \ \ \ \ SpriteAreaObj\&\ selectSprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\&);}
+\DoxyCodeLine{00062\ \ \ \ \ SpriteAreaObj\&\ selectSprite(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00063\ \ \ \ \ SpriteAreaObj\&\ deleteSprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\&);}
+\DoxyCodeLine{00064\ \ \ \ \ SpriteAreaObj\&\ deleteSprite(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00065\ \ \ \ \ SpriteAreaObj\&\ renameSprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\&);}
+\DoxyCodeLine{00066\ \ \ \ \ SpriteAreaObj\&\ renameSprite(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00067\ \ \ \ \ SpriteAreaObj\&\ copySprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *,\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00068\ \ \ \ \ SpriteAreaObj\&\ copySprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ SpriteAreaObj\&\ createMask(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *);}
+\DoxyCodeLine{00071\ \ \ \ \ SpriteAreaObj\&\ createMask(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00072\ \ \ \ \ SpriteAreaObj\&\ removeMask(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *);}
+\DoxyCodeLine{00073\ \ \ \ \ SpriteAreaObj\&\ removeMask(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00074\ \ \ \ \ SpriteAreaObj\&\ insertRow(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00075\ \ \ \ \ SpriteAreaObj\&\ insertRow(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00076\ \ \ \ \ SpriteAreaObj\&\ deleteRow(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00077\ \ \ \ \ SpriteAreaObj\&\ deleteRow(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00078\ \ \ \ \ SpriteAreaObj\&\ flipXAxis(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *);}
+\DoxyCodeLine{00079\ \ \ \ \ SpriteAreaObj\&\ flipXAxis(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ SpritePtr\_t\ *getSpritePtr(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00082\ \ \ \ \ SpriteAreaObj\&\ getSpritePtr(\textcolor{keywordtype}{char}\ *,\ SpritePtr\_t\&);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00085\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(SpritePtr\_t\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00088\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(SpritePtr\_t\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00091\ \ \ \ \ SpriteAreaObj\&\ \ putSprite(\mbox{\hyperlink{class_sprite_obj}{SpriteObj}}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ SpriteAreaObj\&\ getSpriteInfo(\textcolor{keywordtype}{char}\ *,\ \mbox{\hyperlink{struct_sprite_area_obj_1_1sprite_info__t}{spriteInfo\_t}}\ *);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ SpriteAreaObj\&\ \ putSpriteScaled(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{structsprite__factors}{sprite\_factors}}\ *,\ sprite\_pixtrans\ *);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}SpriteAreaObj"{}};\};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_SpriteAreaObj;\};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ SPRITE\_NAME\_PTR\ =\ 256,}
+\DoxyCodeLine{00105\ \ \ \ \ SPRITE\_PTR\ =\ 512}
+\DoxyCodeLine{00106\ \ \ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ SCREEN\_SAVE\ =\ 2,}
+\DoxyCodeLine{00110\ \ \ \ \ SCREEN\_LOAD,}
+\DoxyCodeLine{00111\ \ \ \ \ READ\_AREA\_CONTROL\_BLOCK\ =\ 8,}
+\DoxyCodeLine{00112\ \ \ \ \ INITIALISE\_SPRITE\_AREA,}
+\DoxyCodeLine{00113\ \ \ \ \ LOAD\_SPRITE\_FILE,}
+\DoxyCodeLine{00114\ \ \ \ \ MERGE\_SPRITE\_FILE,}
+\DoxyCodeLine{00115\ \ \ \ \ SAVE\_SPRITE\_FILE,}
+\DoxyCodeLine{00116\ \ \ \ \ RETURN\_SPRITE\_NAME,}
+\DoxyCodeLine{00117\ \ \ \ \ GET\_SPRITE,}
+\DoxyCodeLine{00118\ \ \ \ \ CREATE\_SPRITE,}
+\DoxyCodeLine{00119\ \ \ \ \ GET\_SPRITE\_FROM\_USER\_COORDS,}
+\DoxyCodeLine{00120\ \ \ \ \ SELECT\_SPRITE\ =\ 24,}
+\DoxyCodeLine{00121\ \ \ \ \ DELETE\_SPRITE,}
+\DoxyCodeLine{00122\ \ \ \ \ RENAME\_SPRITE,}
+\DoxyCodeLine{00123\ \ \ \ \ COPY\_SPRITE,}
+\DoxyCodeLine{00124\ \ \ \ \ PUT\_SPRITE,}
+\DoxyCodeLine{00125\ \ \ \ \ CREATE\_MASK,}
+\DoxyCodeLine{00126\ \ \ \ \ REMOVE\_MASK,}
+\DoxyCodeLine{00127\ \ \ \ \ INSERT\_ROW,}
+\DoxyCodeLine{00128\ \ \ \ \ DELETE\_ROW,}
+\DoxyCodeLine{00129\ \ \ \ \ FLIP\_X\_AXIS,}
+\DoxyCodeLine{00130\ \ \ \ \ PUT\_SPRITE\_AT\_COORDS,}
+\DoxyCodeLine{00131\ \ \ \ \ APPEND\_SPRITE,}
+\DoxyCodeLine{00132\ \ \ \ \ SET\_POINTER\_SHAPE,}
+\DoxyCodeLine{00133\ \ \ \ \ MANAGE\_PALETTE,}
+\DoxyCodeLine{00134\ \ \ \ \ READ\_SPRITE\_INFORMATION\ =\ 40,}
+\DoxyCodeLine{00135\ \ \ \ \ READ\_PIXEL\_COLOUR,}
+\DoxyCodeLine{00136\ \ \ \ \ WRITE\_PIXEL\_COLOUR,}
+\DoxyCodeLine{00137\ \ \ \ \ READ\_PIXEL\_MASK,}
+\DoxyCodeLine{00138\ \ \ \ \ WRITE\_PIXEL\_MASK,}
+\DoxyCodeLine{00139\ \ \ \ \ INSERT\_COLUMN,}
+\DoxyCodeLine{00140\ \ \ \ \ DELETE\_COLUMN,}
+\DoxyCodeLine{00141\ \ \ \ \ FLIP\_Y\_AXIS,}
+\DoxyCodeLine{00142\ \ \ \ \ PLOT\_SPRITE\_MASK,}
+\DoxyCodeLine{00143\ \ \ \ \ PLOT\_MASK\_AT\_USER\_COORDS,}
+\DoxyCodeLine{00144\ \ \ \ \ PLOT\_MASK\_SCALED,}
+\DoxyCodeLine{00145\ \ \ \ \ PAINT\_CHARACTER\_SCALED,}
+\DoxyCodeLine{00146\ \ \ \ \ PUT\_SPRITE\_SCALED,}
+\DoxyCodeLine{00147\ \ \ \ \ PUT\_SPRITE\_GREY\_SCALED,}
+\DoxyCodeLine{00148\ \ \ \ \ REMOVE\_LEFTHAND\_WASTAGE,}
+\DoxyCodeLine{00149\ \ \ \ \ PLOT\_MASK\_TRANSFORMED,}
+\DoxyCodeLine{00150\ \ \ \ \ PUT\_SPRITE\_TRANSFORMED,}
+\DoxyCodeLine{00151\ \ \ \ \ MANAGE\_ROWS,}
+\DoxyCodeLine{00152\ \ \ \ \ MANAGE\_COLUMNS,}
+\DoxyCodeLine{00153\ \ \ \ \ SWITCH\_OUTPUT\_TO\_SPRITE,}
+\DoxyCodeLine{00154\ \ \ \ \ SWITCH\_OUTPUT\_TO\_MASK,}
+\DoxyCodeLine{00155\ \ \ \ \ READ\_SAVE\_AREA\_SIZE}
+\DoxyCodeLine{00156\ \ \ \}\ SpriteAction;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ word;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ initialised\ :\ 1;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ int\ \ \ \ \ \ \ \ \ \ \ \ \ :\ 7;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ spriteName\ \ :\ 1;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ spritePtr\ \ \ :\ 1;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ int\ \ \ \ \ \ \ \ \ \ \ \ \ :\ 22;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \}\ flag;}
+\DoxyCodeLine{00167\ \ \ \ \ \}\ SpriteAreaFlags\_t;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ SpriteArea\_t\ *area;}
+\DoxyCodeLine{00170\ \ \ \ \ SpriteAreaFlags\_t\ flags;}
+\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

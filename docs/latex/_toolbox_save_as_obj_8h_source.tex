@@ -1,0 +1,48 @@
+\doxysection{Toolbox\+Save\+As\+Obj.\+h}
+\hypertarget{_toolbox_save_as_obj_8h_source}{}\label{_toolbox_save_as_obj_8h_source}\index{h/ToolboxSaveAsObj.h@{h/ToolboxSaveAsObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxSaveAsObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxSaveAsObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxSaveAsObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}saveas.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxSaveAsObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxSaveAsObj()\{\};}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxSaveAsObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ ObjectId\ getWindowId();}
+\DoxyCodeLine{00019\ \ \ \ \ ToolboxSaveAsObj\&\ setTitle(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *\ buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxSaveAsObj\&\ setFileName(\textcolor{keywordtype}{char}\ *fileName);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ getFileName();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getFileName(\textcolor{keywordtype}{char}\ *\ buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00025\ \ \ \ \ ToolboxSaveAsObj\&\ setFileType(\textcolor{keywordtype}{int}\ fileType);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getFileType();}
+\DoxyCodeLine{00027\ \ \ \ \ ToolboxSaveAsObj\&\ setFileSize(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getFileSize();}
+\DoxyCodeLine{00029\ \ \ \ \ ToolboxSaveAsObj\&\ selectionAvailable(\textcolor{keywordtype}{int}\ selection);}
+\DoxyCodeLine{00030\ \ \ \ \ ToolboxSaveAsObj\&\ setDataAddress(\textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{int}\ dataSize,\ \textcolor{keywordtype}{void}\ *selection,\ \textcolor{keywordtype}{int}\ selectionSize);}
+\DoxyCodeLine{00031\ \ \ \ \ ToolboxSaveAsObj\&\ bufferFilled(\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{int}\ bytesWritten);}
+\DoxyCodeLine{00032\ \ \ \ \ ToolboxSaveAsObj\&\ fileSaveCompleted(\textcolor{keywordtype}{char}\ *fileName);}
+\DoxyCodeLine{00033\ \ \ \ \ ToolboxSaveAsObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00034\ \ \ \ \ ToolboxSaveAsObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00035\ \ \ \ \ ToolboxSaveAsObj\&\ clearFlags();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxSaveAsObj"{}};\};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxSaveAsObj;\};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

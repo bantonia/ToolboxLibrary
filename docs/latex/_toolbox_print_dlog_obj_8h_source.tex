@@ -1,0 +1,48 @@
+\doxysection{Toolbox\+Print\+Dlog\+Obj.\+h}
+\hypertarget{_toolbox_print_dlog_obj_8h_source}{}\label{_toolbox_print_dlog_obj_8h_source}\index{h/ToolboxPrintDlogObj.h@{h/ToolboxPrintDlogObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxPrintDlogObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxPrintDlogObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxPrintDlogObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}printdbox.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxPrintDlogObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxPrintDlogObj()\{\};}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxPrintDlogObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ ObjectId\ getWindowId();}
+\DoxyCodeLine{00019\ \ \ \ \ ToolboxPrintDlogObj\&\ setPageRange(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ end);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ getPageRange(\textcolor{keywordtype}{int}\ *start,\ \textcolor{keywordtype}{int}\ *end);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getPageRangeStart();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ getPageRangeEnd();}
+\DoxyCodeLine{00023\ \ \ \ \ ToolboxPrintDlogObj\&\ setCopies(\textcolor{keywordtype}{int}\ copies);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getCopies();}
+\DoxyCodeLine{00025\ \ \ \ \ ToolboxPrintDlogObj\&\ setScale(\textcolor{keywordtype}{int}\ scaleFactor);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getScale();}
+\DoxyCodeLine{00027\ \ \ \ \ ToolboxPrintDlogObj\&\ setOrientation(\textcolor{keywordtype}{int}\ orientation);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getOrientation();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00031\ \ \ \ \ ToolboxPrintDlogObj\&\ setDraft(\textcolor{keywordtype}{int}\ draft);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ getDraft();}
+\DoxyCodeLine{00033\ \ \ \ \ ToolboxPrintDlogObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00034\ \ \ \ \ ToolboxPrintDlogObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00035\ \ \ \ \ ToolboxPrintDlogObj\&\ clearFlags();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxPrintDlogObj"{}};\};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxPrintDlogObj;\};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

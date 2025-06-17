@@ -1,0 +1,32 @@
+\doxysection{.h}
+\hypertarget{_8h_source}{}\label{_8h_source}\index{h/.h@{h/.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}kernel.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ \_\_datastore\_h}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \_\_datastore\_h}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *saveADC(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ adc);}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *readADC(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ *value);}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *saveTargetADC(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ target);}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *readTargetADC(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ *value);}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *setSearch(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel);}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *clearSearch(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel);}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \_kernel\_oserror\ *isSearch(\textcolor{keywordtype}{int}\ panel,\ \textcolor{keywordtype}{int}\ channel,\ \textcolor{keywordtype}{int}\ *value);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

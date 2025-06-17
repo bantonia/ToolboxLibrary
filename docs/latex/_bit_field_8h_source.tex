@@ -1,0 +1,35 @@
+\doxysection{Bit\+Field.\+h}
+\hypertarget{_bit_field_8h_source}{}\label{_bit_field_8h_source}\index{h/BitField.h@{h/BitField.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}BitField.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }BitField\ :\ \textcolor{keyword}{public}\ Object\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ BitField(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00016\ \ \ \ \ \string~BitField(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00017\ \ \ \ \ BitField(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ setBit(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ clearBit(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ isSet(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ isClear(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ invert(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ clear(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numBits(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\{\};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BitField"{}};\};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\{\textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bits;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data;}
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

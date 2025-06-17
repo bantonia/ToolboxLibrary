@@ -1,0 +1,33 @@
+\doxysection{Sprite\+Obj.\+h}
+\hypertarget{_sprite_obj_8h_source}{}\label{_sprite_obj_8h_source}\index{h/SpriteObj.h@{h/SpriteObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}sprite.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ sprite\_ptr\ SpritePtr\_t;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }SpriteObj\ :\ \textcolor{keyword}{public}\ Object\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ SpriteObj();}
+\DoxyCodeLine{00013\ \ \ \ \ SpriteObj(SpritePtr\_t\ *);}
+\DoxyCodeLine{00014\ \ \ \ \ \string~SpriteObj();}
+\DoxyCodeLine{00015\ \ \ \ \ SpritePtr\_t\ *getSpritePtr();}
+\DoxyCodeLine{00016\ \ \ \ \ SpriteObj\&\ setSpritePtr(SpritePtr\_t\ *);}
+\DoxyCodeLine{00017\ \ \ \ \ SpriteObj\&\ setScaleFactors(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{structsprite__factors}{sprite\_factors}}\ *getScaleFactors();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}SpriteObj"{}};\};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_SpriteObj;\};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ SpritePtr\_t\ *spritePtr;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \mbox{\hyperlink{structsprite__factors}{sprite\_factors}}\ *scaleFactors;}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

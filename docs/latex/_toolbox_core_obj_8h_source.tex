@@ -1,0 +1,158 @@
+\doxysection{Toolbox\+Core\+Obj.\+h}
+\hypertarget{_toolbox_core_obj_8h_source}{}\label{_toolbox_core_obj_8h_source}\index{h/ToolboxCoreObj.h@{h/ToolboxCoreObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxCoreObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxCoreObj\_h}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_ToolboxCoreObj\_h}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}toolbox.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ErrorReport.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ UNUSED}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ UNUSED(x)\ ((x)=(x))}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toolbox_core_obj}{ToolboxCoreObj}}\ :\ \textcolor{keyword}{public}\ Object,\ \textcolor{keyword}{public}\ ErrorReport\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ getSysInfo(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ reason\_code,\ \_kernel\_swi\_regs\ *regs);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ ObjectId\ createObject(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{void}\ *name\_or\_template);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ deleteObject(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ showObject(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ show\_type,\ \textcolor{keywordtype}{void}\ *type,\ ObjectId\ parent,\ ComponentId\ parent\_component);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ hideObject(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getObjectState(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *state);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setClientHandle(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{void}\ *client\_handle);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getClientHandle(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{void}\ *client\_handle);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ ObjectClass\ getObjectClass(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ ObjectClass\ getObjectClass(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ ObjectClass\ *object\_class);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ getParent(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ ObjectId\ *parent,\ ComponentId\ *parent\_component);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ getAncestor(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ ObjectId\ *parent,\ ComponentId\ *ancestor\_component);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ raiseToolboxEvent(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ ObjectId\ \textcolor{keywordtype}{id},\ ComponentId\ component,\ ToolboxEvent\ *event);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ toolboxLoadResources(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{char}\ *resources);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *templateLookup(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ init(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{int}\ *wimpMessages,\ \textcolor{keywordtype}{int}\ *toolboxEvents,\ \textcolor{keywordtype}{char}\ *directory,\ MessagesFD\ *mfd,\ IdBlock\ *idb);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getWimpVersion();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setWimpVersion(\textcolor{keywordtype}{int}\ version);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getTaskHandle();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *getSpriteAreaPtr();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ getPointerInfo(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{int}\&\ x\_pos,\ \textcolor{keywordtype}{int}\&\ y\_pos,\ \textcolor{keywordtype}{int}\&\ buttons,\ ObjectId\&\ window,\ ComponentId\&\ component);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//static\ ToolboxObjectList\ *toolboxAutoGeneratedIds;}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ IdBlock\ idBlock;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ wimpMessages;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ toolboxEvents;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ MessagesFD\ mfd;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ WimpPollBlock\ pollBlock;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ eventCode;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Toolbox\ Events}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ eToolboxEventHandler(\textcolor{keywordtype}{void}\ *pollBlock);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ toolboxError()\{\};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//virtual\ void\ toolboxObjectAutoCreated();}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourDboxObjectAutoCreated()\{\};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourMenuObjectAutoCreated()\{\};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsObjectAutoCreated()\{\};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fileInfoObjectAutoCreated()\{\};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontDboxObjectAutoCreated()\{\};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontMenuObjectAutoCreated()\{\};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ iconbarObjectAutoCreated()\{\};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ menuObjectAutoCreated()\{\};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxObjectAutoCreated()\{\};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ progInfoObjectAutoCreated()\{\};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ quitObjectAutoCreated()\{\};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsObjectAutoCreated()\{\};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scaleObjectAutoCreated()\{\};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ windowObjectAutoCreated()\{\};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ unknownClassObjectAutoCreated()\{\};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ toolboxObjectDeleted()\{\};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ toolboxUserEvent()\{\};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourDboxAboutToBeShown()\{\};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourDboxDialogueCompleted()\{\};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourDboxColourSelected()\{\};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourMenuAboutToBeShown()\{\};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourMenuHasBeenHidden()\{\};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ colourMenuSelection()\{\};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsAboutToBeShown()\{\};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsDiscard()\{\};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsSave()\{\};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsDialogueCompleted()\{\};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ dcsCancel()\{\};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fileInfoAboutToBeShown()\{\};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fileInfoDialogueCompleted()\{\};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontDboxAboutToBeShown()\{\};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontDboxDialogueCompleted()\{\};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontDboxApplyFont()\{\};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontMenuAboutToBeShown()\{\};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontMenuHasBeenHidden()\{\};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ fontMenuFontSelection()\{\};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ iconbarClicked()\{\};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ iconbarSelectAboutToBeShown()\{\};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ iconbarAdjustAboutToBeShown()\{\};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ menuAboutToBeShown()\{\};}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ menuHasBeenHidden()\{\};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ menuSubMenu()\{\};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ menuSelection()\{\};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxAboutToBeShown()\{\};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxDialogueCompleted()\{\};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxSetUpAboutToBeShown()\{\};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxSave()\{\};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxSetUp()\{\};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printDboxPrint()\{\};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ progInfoAboutToBeShown()\{\};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ progInfoDialogueCompleted()\{\};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ quitAboutToBeShown()\{\};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ quitQuit()\{\};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ quitDialogueCompleted()\{\};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ quitCancel()\{\};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsAboutToBeShown()\{\};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsDialogueCompleted()\{\};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsSaveToFile()\{\};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsFillBuffer()\{\};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ saveAsSaveCompleted()\{\};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scaleAboutToBeShown()\{\};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scaleDialogueCompleted()\{\};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ scaleApplyFactor()\{\};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ windowAboutToBeShown()\{\};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ windowHasBeenHidden()\{\};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ actionButtonSelected()\{\};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ adjusterClicked()\{\};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draggableDragStarted()\{\};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draggableDragEnded()\{\};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ numberRangeValueChanged()\{\};}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ optionButtonStateChanged()\{\};}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ popUpAboutToBeShown()\{\};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ radioButtonStateChanged()\{\};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ sliderValueChanged()\{\};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ stringSetValueChanged()\{\};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ stringSetAboutToBeShown()\{\};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writableFieldValueChanged()\{\};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ tabsSelection()\{\};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewNodeSelected()\{\};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewNodeExpanded()\{\};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewNodeRenamed()\{\};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewNodeClicked()\{\};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewNodeDragged()\{\};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ treeViewScroll()\{\};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ reservedToolboxInterApplicationProtocol()\{\};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ reservedToolboxModuleEvent()\{\};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ unknownToolboxEvent()\{\};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxCoreObj"{}};\};}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxCoreObj;\};}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ wimpVersion;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ taskHandle;}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ *spriteAreaPtr;}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

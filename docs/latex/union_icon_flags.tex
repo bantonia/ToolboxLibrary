@@ -1,0 +1,44 @@
+\doxysection{Icon\+Flags Union Reference}
+\hypertarget{union_icon_flags}{}\label{union_icon_flags}\index{IconFlags@{IconFlags}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{union_icon_flags_a71bcc4db59755739cbbe4ad9b5e83c4e}\label{union_icon_flags_a71bcc4db59755739cbbe4ad9b5e83c4e} 
+unsigned int {\bfseries w}
+\item 
+\Hypertarget{union_icon_flags_ab87069bd8b15c6b039c0c8a0ab136b76}\label{union_icon_flags_ab87069bd8b15c6b039c0c8a0ab136b76} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned {\bfseries containsText}:1\\
+\>unsigned {\bfseries isSprite}:1\\
+\>unsigned {\bfseries hasBorder}:1\\
+\>unsigned {\bfseries centredHorizontally}:1\\
+\>unsigned {\bfseries centredVertically}:1\\
+\>unsigned {\bfseries filledBackground}:1\\
+\>unsigned {\bfseries textAntialiased}:1\\
+\>unsigned {\bfseries requiresRedrawHelp}:1\\
+\>unsigned {\bfseries dataIndirected}:1\\
+\>unsigned {\bfseries textRightJustified}:1\\
+\>unsigned {\bfseries dontCancelWithAdjust}:1\\
+\>unsigned {\bfseries displaySpritHalfSize}:1\\
+\>unsigned {\bfseries buttonType}:4\\
+\>unsigned {\bfseries esg}:5\\
+\>unsigned {\bfseries isSelelectedInverted}:1\\
+\>unsigned {\bfseries cannotSelect}:1\\
+\>unsigned {\bfseries deleted}:1\\
+\>union \{\\
+\>\>unsigned char {\bfseries fontHandle}\\
+\>\>struct \{\\
+\>\>\>unsigned {\bfseries foreground}:4\\
+\>\>\>unsigned {\bfseries background}:4\\
+\>\>\} {\bfseries colour}\\
+\>\} {\bfseries colours}\\
+\} {\bfseries b}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+h/Wimp\+Bits.\+h\end{DoxyCompactItemize}

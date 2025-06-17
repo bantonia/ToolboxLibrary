@@ -1,0 +1,72 @@
+\doxysection{Toolbox\+Window\+Obj.\+h}
+\hypertarget{_toolbox_window_obj_8h_source}{}\label{_toolbox_window_obj_8h_source}\index{h/ToolboxWindowObj.h@{h/ToolboxWindowObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxWindowObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxWindowObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxWindowObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}window.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxWindowObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxWindowObj();}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxWindowObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ \string~ToolboxWindowObj();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getWimpHandle();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ readWimpHandle();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ addGadget(Gadget\ *gadget);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxWindowObj\&\ removeGadget(ComponentId\ gadget);}
+\DoxyCodeLine{00023\ \ \ \ \ ToolboxWindowObj\&\ setMenu(ObjectId\ menu\_id);}
+\DoxyCodeLine{00024\ \ \ \ \ ToolboxWindowObj\&\ removeMenu();}
+\DoxyCodeLine{00025\ \ \ \ \ ObjectId\ getMenu();}
+\DoxyCodeLine{00026\ \ \ \ \ ToolboxWindowObj\&\ setPointer(\textcolor{keywordtype}{char}\ *sprite\_name,\ \textcolor{keywordtype}{int}\ x\_hot\_spot,\ \textcolor{keywordtype}{int}\ y\_hot\_spot);}
+\DoxyCodeLine{00027\ \ \ \ \ ToolboxWindowObj\&\ detachPointer();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getPointer();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ getPointer(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ buff\_size,\ \textcolor{keywordtype}{int}\ *nbytes,\ \textcolor{keywordtype}{int}\ *x\_hot\_spot,\ \textcolor{keywordtype}{int}\ *y\_hot\_spot);}
+\DoxyCodeLine{00030\ \ \ \ \ ToolboxWindowObj\&\ setHelpMessage(\textcolor{keywordtype}{char}\ *message\_text);}
+\DoxyCodeLine{00031\ \ \ \ \ ToolboxWindowObj\&\ removeHelpMessage();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ buff\_size,\ \textcolor{keywordtype}{int}\ *nbytes);}
+\DoxyCodeLine{00034\ \ \ \ \ ToolboxWindowObj\&\ addKeyboardShortcuts(\textcolor{keywordtype}{int}\ num\_shortcuts,\ KeyboardShortcut\ *shortcuts);}
+\DoxyCodeLine{00035\ \ \ \ \ ToolboxWindowObj\&\ removeKeyboardShortcuts(\textcolor{keywordtype}{int}\ num\_shortcuts,\ KeyboardShortcut\ *shortcuts);}
+\DoxyCodeLine{00036\ \ \ \ \ ToolboxWindowObj\&\ removeAllKeyboardShortcuts();}
+\DoxyCodeLine{00037\ \ \ \ \ ToolboxWindowObj\&\ setTitle(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ buff\_size,\ \textcolor{keywordtype}{int}\ *nbytes);}
+\DoxyCodeLine{00040\ \ \ \ \ ToolboxWindowObj\&\ clearDefaultFocus();}
+\DoxyCodeLine{00041\ \ \ \ \ ToolboxWindowObj\&\ setDefaultFocus(ComponentId\ focus);}
+\DoxyCodeLine{00042\ \ \ \ \ ToolboxWindowObj\&\ setDefaultFocusToWindow();}
+\DoxyCodeLine{00043\ \ \ \ \ ComponentId\ getDefaultFocus();}
+\DoxyCodeLine{00044\ \ \ \ \ ComponentId\ getDefaultFocus(ComponentId\ *focus);}
+\DoxyCodeLine{00045\ \ \ \ \ ToolboxWindowObj\&\ setExtent(BBox\ *extent);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ getExtent(BBox\ *extent);}
+\DoxyCodeLine{00047\ \ \ \ \ ToolboxWindowObj\&\ forceRedraw(BBox\ *redraw\_box);}
+\DoxyCodeLine{00048\ \ \ \ \ ToolboxWindowObj\&\ setToolbar(\textcolor{keywordtype}{int}\ location,\ ObjectId\ toolbar\_id);}
+\DoxyCodeLine{00049\ \ \ \ \ ToolboxWindowObj\&\ setToolbar(\textcolor{keywordtype}{int}\ mask,\ ObjectId\ toolbar\_ibl\_id,\ ObjectId\ toolbar\_itl\_id,\ ObjectId\ toolbar\_ebl\_id,\ ObjectId\ toolbar\_etl\_id);}
+\DoxyCodeLine{00050\ \ \ \ \ ObjectId\ getToolbar(\textcolor{keywordtype}{int}\ location);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ getToolbar(\textcolor{keywordtype}{int}\ mask,\ ObjectId\ *toolbar\_ibl\_id,\ ObjectId\ *toolbar\_itl\_id,\ ObjectId\ *toolbar\_ebl\_id,\ ObjectId\ *toolbar\_etl\_id);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//void\ wimpToToolbox(ObjectId\ *object,\ ComponentId\ *component);}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ isWindow(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ isWindowTemplate(\textcolor{keywordtype}{char}\ *templateName);}
+\DoxyCodeLine{00055\ \ \ \ \ ToolboxWindowObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00056\ \ \ \ \ ToolboxWindowObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00057\ \ \ \ \ ToolboxWindowObj\&\ clearFlags();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxWindowObj"{}};\};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxWindowObj;\};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ wimpHandle;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

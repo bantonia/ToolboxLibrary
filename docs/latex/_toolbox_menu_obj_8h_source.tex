@@ -1,0 +1,65 @@
+\doxysection{Toolbox\+Menu\+Obj.\+h}
+\hypertarget{_toolbox_menu_obj_8h_source}{}\label{_toolbox_menu_obj_8h_source}\index{h/ToolboxMenuObj.h@{h/ToolboxMenuObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxMenuObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxMenuObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxMenuObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}menu.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxMenuObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxMenuObj()\{\};}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxMenuObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ ToolboxMenuObj\&\ setTick(ComponentId\ entry);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getTick(ComponentId\ entry);}
+\DoxyCodeLine{00020\ \ \ \ \ ToolboxMenuObj\&\ setFade(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ fade);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getFade(ComponentId\ entry);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxMenuObj\&\ setEntryText(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *text);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryText(ComponentId\ entry);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryText(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00025\ \ \ \ \ ToolboxMenuObj\&\ setEntrySprite(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *spriteName);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntrySprite(ComponentId\ entry);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntrySprite(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00028\ \ \ \ \ ToolboxMenuObj\&\ setSubMenuShow(ComponentId\ entry,\ ObjectId\ subMenu);}
+\DoxyCodeLine{00029\ \ \ \ \ ObjectId\ getSubMenuShow(ComponentId\ entry);}
+\DoxyCodeLine{00030\ \ \ \ \ ToolboxMenuObj\&\ setSubMenuEvent(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ getSubMenuEvent(ComponentId\ entry);}
+\DoxyCodeLine{00032\ \ \ \ \ ToolboxMenuObj\&\ setClickShow(ComponentId\ entry,\ ObjectId\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{int}\ showFlags);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickShowObjectId(ComponentId\ entry);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickShowFlags(ComponentId\ entry);}
+\DoxyCodeLine{00035\ \ \ \ \ ToolboxMenuObj\&\ setClickEvent(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickEvent(ComponentId\ entry);}
+\DoxyCodeLine{00037\ \ \ \ \ ToolboxMenuObj\&\ setHelpMessage(\textcolor{keywordtype}{char}\ *helpMessage);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00040\ \ \ \ \ ToolboxMenuObj\&\ setEntryHelpMessage(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *helpMessage);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryHelpMessage(ComponentId\ entry);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryHelpMessage(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00043\ \ \ \ \ ComponentId\ addEntry(ComponentId\ entryId,\ \textcolor{keywordtype}{char}\ *entryDescription);}
+\DoxyCodeLine{00044\ \ \ \ \ ToolboxMenuObj\&\ removeEntry(ComponentId\ entry);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth();}
+\DoxyCodeLine{00047\ \ \ \ \ ToolboxMenuObj\&\ setTitle(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00050\ \ \ \ \ ToolboxMenuObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00051\ \ \ \ \ ToolboxMenuObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00052\ \ \ \ \ ToolboxMenuObj\&\ clearFlags();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxMenuObj"{}};\};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxMenuObj;\};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,69 @@
+\doxysection{OS Class Reference}
+\hypertarget{class_o_s}{}\label{class_o_s}\index{OS@{OS}}
+Inheritance diagram for OS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_s}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_o_s_a52b5817f5d8044cffd1993e443b27547}\label{class_o_s_a52b5817f5d8044cffd1993e443b27547} 
+static unsigned int {\bfseries read\+Monotonic\+Time} ()
+\item 
+\Hypertarget{class_o_s_a88650092bf1306ba20e5a22c20abd316}\label{class_o_s_a88650092bf1306ba20e5a22c20abd316} 
+static unsigned int {\bfseries read\+Mode\+Variable} (int, int)
+\item 
+\Hypertarget{class_o_s_a78521b9b87446e69662c39908b654b9d}\label{class_o_s_a78521b9b87446e69662c39908b654b9d} 
+static char \texorpdfstring{$\ast$}{*} {\bfseries binary\+To\+Decimal} (int, char \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{class_o_s_a5e07e6b5ec6488aead64935f758526cb}\label{class_o_s_a5e07e6b5ec6488aead64935f758526cb} 
+static int {\bfseries evaluate\+Expression} (char \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_error_report}{Error\+Report}}}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries set\+Last\+Error} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int)
+\item 
+static void {\bfseries set\+Last\+Error} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int, char \texorpdfstring{$\ast$}{*}location)
+\item 
+static \+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} {\bfseries get\+Last\+Error} ()
+\item 
+static void {\bfseries set\+Err\+Flags} (unsigned int)
+\item 
+static unsigned int {\bfseries get\+Err\+Flags} ()
+\item 
+static void {\bfseries set\+As\+Wimp\+Task} (char \texorpdfstring{$\ast$}{*})
+\item 
+static void {\bfseries set\+As\+Console\+Task} ()
+\item 
+static void {\bfseries set\+Location} (char \texorpdfstring{$\ast$}{*})
+\item 
+static char \texorpdfstring{$\ast$}{*} {\bfseries get\+Location} ()
+\item 
+static char \texorpdfstring{$\ast$}{*} {\bfseries get\+Task\+Name} ()
+\item 
+static void {\bfseries clear\+Error} ()
+\item 
+static int {\bfseries get\+Environment} ()
+\item 
+static void {\bfseries set\+Trap} (int, int \texorpdfstring{$\ast$}{*})
+\item 
+static void {\bfseries clear\+Trap} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_error_report}{Error\+Report}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_error_report_a8ce273bb4b177794aa5abcfb823ed0ac}\label{class_error_report_a8ce273bb4b177794aa5abcfb823ed0ac} 
+enum {\bfseries error\+Env} \{ {\bfseries CONSOLE}
+, {\bfseries WIMP}
+ \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+h/OS.\+h\item 
+c++/OS.\+c++\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+\doxysection{Toolbox\+Event\+Obj.\+h}
+\hypertarget{_toolbox_event_obj_8h_source}{}\label{_toolbox_event_obj_8h_source}\index{h/ToolboxEventObj.h@{h/ToolboxEventObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}toolbox.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}event.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toolbox_event_obj}{ToolboxEventObj}}\ \{}
+\DoxyCodeLine{00006\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{void}\ initEvents();}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ toolboxErrorEvent(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ toolboxObjectAutoCreatedEvent(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ toolboxObjectDeletedEvent(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{/*virtual*/}\ \textcolor{keywordtype}{int}\ toolboxErrorHandler(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{/*virtual*/}\ \textcolor{keywordtype}{int}\ toolboxObjectAutoCreatedHandler(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{/*virtual*/}\ \textcolor{keywordtype}{int}\ toolboxObjectDeletedHandler(\textcolor{keywordtype}{int}\ event\_code,\ ToolboxEvent\ *event,\ IdBlock\ *id\_block,\ \textcolor{keywordtype}{void}\ *handle);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxEventObj"{}};\};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxEventObj;\};}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

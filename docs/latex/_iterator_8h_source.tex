@@ -1,0 +1,26 @@
+\doxysection{Iterator.\+h}
+\hypertarget{_iterator_8h_source}{}\label{_iterator_8h_source}\index{h/Iterator.h@{h/Iterator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Vector.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Vector<T>\ >}
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }Iterator\ \{}
+\DoxyCodeLine{00005\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00006\ \ \ \ \ Iterator(\mbox{\hyperlink{class_vector}{Vector<T>}}\ v)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ this.v\ =\ v;}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \};}
+\DoxyCodeLine{00010\ \ \ \ \ \string~Iterator()\ \{\};}
+\DoxyCodeLine{00011\ \ \ \ \ T\ next()\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.capacity()\ >\ 0\ \&\&\ v.capacity()\ <\ index)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v.get(++index);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00016\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector<T>}}\ v;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

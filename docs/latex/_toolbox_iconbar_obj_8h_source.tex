@@ -1,0 +1,58 @@
+\doxysection{Toolbox\+Iconbar\+Obj.\+h}
+\hypertarget{_toolbox_iconbar_obj_8h_source}{}\label{_toolbox_iconbar_obj_8h_source}\index{h/ToolboxIconbarObj.h@{h/ToolboxIconbarObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxIconbarObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxIconbarObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxIconbarObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}iconbar.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxIconbarObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxIconbarObj();}
+\DoxyCodeLine{00017\ \ \ \ \ \string~ToolboxIconbarObj();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ getIconHandle();}
+\DoxyCodeLine{00019\ \ \ \ \ ToolboxIconbarObj\&\ setMenu(ObjectId\ menuId);}
+\DoxyCodeLine{00020\ \ \ \ \ ObjectId\ getMenu();}
+\DoxyCodeLine{00021\ \ \ \ \ ToolboxIconbarObj\&\ setEvent(\textcolor{keywordtype}{int}\ selectEvent,\ \textcolor{keywordtype}{int}\ adjustEvent);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxIconbarObj\&\ setSelectEvent(\textcolor{keywordtype}{int}\ selectEvent);}
+\DoxyCodeLine{00023\ \ \ \ \ ToolboxIconbarObj\&\ setAdjustEvent(\textcolor{keywordtype}{int}\ adjustEvent);}
+\DoxyCodeLine{00024\ \ \ \ \ ToolboxIconbarObj\&\ getEvent(\textcolor{keywordtype}{int}\ *selectEvent,\ \textcolor{keywordtype}{int}\ *adjustEvent);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectEvent();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getAdjustEvent();}
+\DoxyCodeLine{00027\ \ \ \ \ ToolboxIconbarObj\&\ setShow(ObjectId\ select,\ ObjectId\ adjust);}
+\DoxyCodeLine{00028\ \ \ \ \ ToolboxIconbarObj\&\ setSelectShow(ObjectId\ select);}
+\DoxyCodeLine{00029\ \ \ \ \ ToolboxIconbarObj\&\ setAdjustShow(ObjectId\ adjust);}
+\DoxyCodeLine{00030\ \ \ \ \ ToolboxIconbarObj\&\ getShow(ObjectId\ *select,\ ObjectId\ *adjust);}
+\DoxyCodeLine{00031\ \ \ \ \ ObjectId\ getSelectShow();}
+\DoxyCodeLine{00032\ \ \ \ \ ObjectId\ getAdjustShow();}
+\DoxyCodeLine{00033\ \ \ \ \ ToolboxIconbarObj\&\ setHelpMessage(\textcolor{keywordtype}{char}\ *message);}
+\DoxyCodeLine{00034\ \ \ \ \ ToolboxIconbarObj\&\ detachHelpMessage();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage(\textcolor{keywordtype}{char}\ *messageBuffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00037\ \ \ \ \ ToolboxIconbarObj\&\ setText(\textcolor{keywordtype}{char}\ *text);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getText();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getText(\textcolor{keywordtype}{char}\ *textBuffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00040\ \ \ \ \ ToolboxIconbarObj\&\ setSprite(\textcolor{keywordtype}{char}\ *spriteName);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getSpriteName();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getSpriteName(\textcolor{keywordtype}{char}\ *spriteNameBuffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00043\ \ \ \ \ ToolboxIconbarObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00044\ \ \ \ \ ToolboxIconbarObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00045\ \ \ \ \ ToolboxIconbarObj\&\ clearFlags();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxIconbarObj"{}};\};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxIconbarObj;\};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

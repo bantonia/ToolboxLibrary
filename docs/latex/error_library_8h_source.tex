@@ -1,0 +1,21 @@
+\doxysection{error\+Library.\+h}
+\hypertarget{error_library_8h_source}{}\label{error_library_8h_source}\index{h/errorLibrary.h@{h/errorLibrary.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}SpriteAreaObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ ERRORLIBRARY\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ERRORLIBRARY\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}kernel.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{static}\ \_kernel\_oserror\ spriteNotFound\ =\ \{\ 0,\ \textcolor{stringliteral}{"{}Unknown\ sprite"{}}\};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{static}\ \_kernel\_oserror\ spriteAreaMemoryAllocationFailed\ =\ \{\ 1,\ \textcolor{stringliteral}{"{}Malloc\ failed\ for\ Sprite\ Area"{}}\};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

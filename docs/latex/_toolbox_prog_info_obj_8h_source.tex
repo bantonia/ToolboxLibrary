@@ -1,0 +1,47 @@
+\doxysection{Toolbox\+Prog\+Info\+Obj.\+h}
+\hypertarget{_toolbox_prog_info_obj_8h_source}{}\label{_toolbox_prog_info_obj_8h_source}\index{h/ToolboxProgInfoObj.h@{h/ToolboxProgInfoObj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxProgInfoObj.h"{}\ may\ only\ be\ used\ from\ C++}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ force\_top\_level}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ include\_only\_once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxProgInfoObj\_h}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxProgInfoObj\_h}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}proginfo.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxProgInfoObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ ToolboxProgInfoObj();}
+\DoxyCodeLine{00017\ \ \ \ \ ToolboxProgInfoObj(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ ObjectId\ getWindowId();}
+\DoxyCodeLine{00019\ \ \ \ \ ToolboxProgInfoObj\&\ setVersion(\textcolor{keywordtype}{char}\ *versionString);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ getVersion();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getVersion(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00022\ \ \ \ \ ToolboxProgInfoObj\&\ setLicenceType(\textcolor{keywordtype}{int}\ licenceType);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ getLicenceType();}
+\DoxyCodeLine{00024\ \ \ \ \ ToolboxProgInfoObj\&\ setTitle(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00027\ \ \ \ \ ToolboxProgInfoObj\&\ setUri(\textcolor{keywordtype}{char}\ *uri);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ getUri();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ getUri(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00030\ \ \ \ \ ToolboxProgInfoObj\&\ setWebEvent(\textcolor{keywordtype}{int}\ event);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ getWebEvent();}
+\DoxyCodeLine{00032\ \ \ \ \ ToolboxProgInfoObj\&\ setObjectId(ObjectId\ objectId);}
+\DoxyCodeLine{00033\ \ \ \ \ ToolboxProgInfoObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00034\ \ \ \ \ ToolboxProgInfoObj\&\ clearFlags();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxProgInfoObj"{}};\};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxProgInfoObj;\};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
