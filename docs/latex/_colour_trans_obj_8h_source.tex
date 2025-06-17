@@ -1,6 +1,6 @@
 \doxysection{Colour\+Trans\+Obj.\+h}
 \hypertarget{_colour_trans_obj_8h_source}{}\label{_colour_trans_obj_8h_source}\index{h/ColourTransObj.h@{h/ColourTransObj.h}}
-
+\mbox{\hyperlink{_colour_trans_obj_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ColourTransObj.h"{}\ may\ only\ be\ used\ from\ C++}}
@@ -11,71 +11,71 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ COLOURTRANSOBJ\_H}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ COLOURTRANSOBJ\_H}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_class_type_8h}{ClassType.h}}"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}swis.h"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ErrorReport.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_error_report_8h}{ErrorReport.h}}"{}}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}kernel.h"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}sprite.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sprite_8h}{sprite.h}}"{}}}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{\textcolor{keywordtype}{char}\ gcol;\ \textcolor{keywordtype}{char}\ red;\ \textcolor{keywordtype}{char}\ green;\ \textcolor{keywordtype}{char}\ blue;\}\ bytes;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ word;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{\textcolor{keywordtype}{char}\ \mbox{\hyperlink{union_wimp_palette_word_a88ef930c0509ec10ac7055648bd607d6}{gcol}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{union_wimp_palette_word_aa39ef484af37a344c50c5564665c5bcb}{red}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{union_wimp_palette_word_acec534a71cc60d37b1f85d8f6da6c5d9}{green}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{union_wimp_palette_word_a7494ae3a231535adf4a2f4cf1af0f6c7}{blue}};\}\ bytes;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{union_wimp_palette_word_aef50c57414d2756040d5e60a2e068a52}{word}};}
 \DoxyCodeLine{00020\ \ \ \ \ \}\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}};}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ c[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ wimp\ colours\ 0..15\ */}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ screenborder,\ mouse1,\ mouse2,\ mouse3;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ \mbox{\hyperlink{struct_wimp_palette_str_aecd397a5c4cdb5dd0e24fcd79936d51f}{c}}[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ wimp\ colours\ 0..15\ */}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ \mbox{\hyperlink{struct_wimp_palette_str_a2b7822ed2675aeb03b68f78c3d47367d}{screenborder}},\ \mbox{\hyperlink{struct_wimp_palette_str_a98a096ab5c149d3968d436f14b5ed90a}{mouse1}},\ \mbox{\hyperlink{struct_wimp_palette_str_a0dc58ca17edca40d6d1d768fe37e5885}{mouse2}},\ \mbox{\hyperlink{struct_wimp_palette_str_a2a1ed4ffa4d21d1fc189b81af5ab3728}{mouse3}};}
 \DoxyCodeLine{00025\ \ \ \ \ \}\ \mbox{\hyperlink{struct_wimp_palette_str}{WimpPaletteStr}};}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }ColourTransObj\ :\ \textcolor{keyword}{public}\ Object\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_colour_trans_obj_a543d8491879556d67145ccb02329c7b6}{ColourTransObj}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}\ \{}
 \DoxyCodeLine{00028\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00029\ \ \ \ \ ColourTransObj();}
-\DoxyCodeLine{00030\ \ \ \ \ \string~ColourTransObj();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_colour_trans_obj_a543d8491879556d67145ccb02329c7b6}{ColourTransObj}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_colour_trans_obj_a4cd5fc61c6de73e4075f8df432833521}{\string~ColourTransObj}}();}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ SetForeground\ =\ 0,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ SetBackground\ =\ 0x80,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ UseECF\ \ \ \ \ \ \ \ =\ 0x100}
-\DoxyCodeLine{00036\ \ \ \ \ \}\ Flags;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{class_colour_trans_obj_aa90180501612b668c2ac0797a5205574a9a70996fc678bdc807d94d08e404248b}{SetForeground}}\ =\ 0,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{class_colour_trans_obj_aa90180501612b668c2ac0797a5205574afcfc54a50c187d20d78449422a729119}{SetBackground}}\ =\ 0x80,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \mbox{\hyperlink{class_colour_trans_obj_aa90180501612b668c2ac0797a5205574ab591e564d44dfdb4e4dc01cf635bb17f}{UseECF}}\ \ \ \ \ \ \ \ =\ 0x100}
+\DoxyCodeLine{00036\ \ \ \ \ \}\ \mbox{\hyperlink{class_colour_trans_obj_aed4832ed1df17c9f95c5ee82aa7550f9}{Flags}};}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ selectTable\ (\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ selectGCOLTable\ (\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnGCOL\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ setGCOL\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnColourNumber\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnGCOLForMode\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnColourForMode\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnOppGCOL\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ setOppGCOL\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnOppColourNumber\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnOppGCOLForMode\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ returnOppColourForMode\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ GCOLToColourNumber\ (\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ colourNumberToGCOL\ (\textcolor{keywordtype}{int});}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ returnFontColours\ (\textcolor{comment}{/*font\ handle*/}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int}\ *);}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setFontColours\ (\textcolor{comment}{/*font\ handle*/}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int}\ *);}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ invalidateCache\ (\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setCalibration\ (\textcolor{keywordtype}{void}\ *);}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ readCalibration\ (\textcolor{keywordtype}{void}\ *);}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ convertDeviceColour\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a82067620169d2a7d749caade37ef99d5}{selectTable}}\ (\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a52da62dd8153da59ee6f1f253240a29c}{selectGCOLTable}}\ (\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a49c68d5fb61d111b5a1a7899c642fc25}{returnGCOL}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_af4c2d85cff5edc08fc5eb79fec646c8f}{setGCOL}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a544a522f63511321eb2302e1411f701a}{returnColourNumber}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_afcdee138dc938475709f04cfa6dc5f5d}{returnGCOLForMode}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a47598d2573e1516ab77c9e921c6f143f}{returnColourForMode}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_af1c7cf33b759cd334d729b750f733495}{returnOppGCOL}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_af6b60d91c970381bb201870d5c192199}{setOppGCOL}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_adf1e427351b096bc3989a66c0fc2be5b}{returnOppColourNumber}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}});}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_ad62e0354684be7699d6e47dbce57a532}{returnOppGCOLForMode}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a403ec58f11cd98055d31cc0c23653e34}{returnOppColourForMode}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_aeebc7f85046770a6637c27b4a88a5194}{GCOLToColourNumber}}\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a0eb17eb4efb13c04dba41799b91d22ad}{colourNumberToGCOL}}\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_afb1daf7c2eb72a9a1a908661af5069a7}{returnFontColours}}\ (\textcolor{comment}{/*font\ handle*/}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_af0045c2d19ea6815adb484fd79c72c56}{setFontColours}}\ (\textcolor{comment}{/*font\ handle*/}\ \textcolor{keywordtype}{void}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_aefd3f373927a456d0d56e937ce3aecf2}{invalidateCache}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_ad8776f20fe28a20dcfd50a3e882bd2ce}{setCalibration}}\ (\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a885962d4e37d76cee3219c5d60641559}{readCalibration}}\ (\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ \mbox{\hyperlink{class_colour_trans_obj_a4f22eeb8674f5a05e8703918185c75d8}{convertDeviceColour}}\ (\mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *);}
 \DoxyCodeLine{00058\ }
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ convertDevicePalette\ (\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a99e50e5193ac2dd0db3c3ebf8c565bd7}{convertDevicePalette}}\ (\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *);}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ readPalette(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int}\ \&,\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ readPalette(\mbox{\hyperlink{structsprite__area}{sprite\_area}}\ *,\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int}\ \&,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a7dcd0d5918ae151e1af73cbc693bcd7e}{readPalette}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int}\ \&,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a7dcd0d5918ae151e1af73cbc693bcd7e}{readPalette}}(\mbox{\hyperlink{structsprite__area}{sprite\_area}}\ *,\ \textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int}\ \&,\ \textcolor{keywordtype}{int});}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ writePalette(\textcolor{keywordtype}{void}\ *);}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ writePalette(\mbox{\hyperlink{structsprite__area}{sprite\_area}}\ *,\ \textcolor{keywordtype}{char}\ *,\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setColour(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ setTextColour(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ setOppTextColour(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ generateTable(\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a6ad349708f2202d4a77a9c5f90cc2c59}{writePalette}}(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a6ad349708f2202d4a77a9c5f90cc2c59}{writePalette}}(\mbox{\hyperlink{structsprite__area}{sprite\_area}}\ *,\ \textcolor{keywordtype}{char}\ *,\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a8bcefd735e66b71ddf5176cefd1e333d}{setColour}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_ab7969b2149191facf063033307570a2e}{setTextColour}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a484d70c06c34d0852339ada6378024d9}{setOppTextColour}}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a6804ca26ef77ccdfb27625d3135b256c}{generateTable}}(\textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{int},\ \mbox{\hyperlink{union_wimp_palette_word}{WimpPaletteWord}}\ *,\ \textcolor{keywordtype}{void}\ *);}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ColourTransObj"{}};\};}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ColourTransObj;\};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_colour_trans_obj_a2d2a40d1b151d0d46e6cdc744cd0d8b9}{showProperties}}()\ \{\};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_colour_trans_obj_a2dbb1bb8017e96684583868c0f61f155}{getClassName}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ColourTransObj"{}};\};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_colour_trans_obj_a740675f7705c6df0a906c954af0e423d}{getClassType}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_class_type_8h_a466273e186141eae5985cd1b0c471b79a49abab1a4477635081de1f66af6eb5a9}{ClassType\_ColourTransObj}};\};}
 \DoxyCodeLine{00075\ \};}
 \DoxyCodeLine{00076\ }
 \DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}

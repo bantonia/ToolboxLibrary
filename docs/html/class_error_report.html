@@ -92,6 +92,8 @@ $(function(){initNavTree('class_error_report.html','','class_error_report-member
   <div class="headertitle"><div class="title">ErrorReport Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_error_report_8h_source.html">ErrorReport.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ErrorReport:</div>
 <div class="dyncontent">
@@ -136,44 +138,473 @@ Inheritance diagram for ErrorReport:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a8ce273bb4b177794aa5abcfb823ed0ac" id="r_a8ce273bb4b177794aa5abcfb823ed0ac"><td class="memItemLeft" align="right" valign="top"><a id="a8ce273bb4b177794aa5abcfb823ed0ac" name="a8ce273bb4b177794aa5abcfb823ed0ac"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>errorEnv</b> { <b>CONSOLE</b>
-, <b>WIMP</b>
+<tr class="memitem:a8ce273bb4b177794aa5abcfb823ed0ac" id="r_a8ce273bb4b177794aa5abcfb823ed0ac"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce273bb4b177794aa5abcfb823ed0ac">errorEnv</a> { <a class="el" href="#a8ce273bb4b177794aa5abcfb823ed0acaf6a7f34d6764b3055346c1403933617f">CONSOLE</a>
+, <a class="el" href="#a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8">WIMP</a>
  }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a1ce036050ec4617283eff875995ca27a" id="r_a1ce036050ec4617283eff875995ca27a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce036050ec4617283eff875995ca27a">ErrorReport</a> ()</td></tr>
+<tr class="memitem:a6ec853c4b91e7cf38aa67e269131f06d" id="r_a6ec853c4b91e7cf38aa67e269131f06d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ec853c4b91e7cf38aa67e269131f06d">~ErrorReport</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a469f387085165c0f6df06525725ab878" id="r_a469f387085165c0f6df06525725ab878"><td class="memItemLeft" align="right" valign="top"><a id="a469f387085165c0f6df06525725ab878" name="a469f387085165c0f6df06525725ab878"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLastError</b> (_kernel_oserror *, unsigned int)</td></tr>
-<tr class="memitem:a94c78d09c659bf5ba73f8d1383009be1" id="r_a94c78d09c659bf5ba73f8d1383009be1"><td class="memItemLeft" align="right" valign="top"><a id="a94c78d09c659bf5ba73f8d1383009be1" name="a94c78d09c659bf5ba73f8d1383009be1"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLastError</b> (_kernel_oserror *, unsigned int, char *location)</td></tr>
-<tr class="memitem:ab8bc2c78af58e7d223896ac46a4e0df3" id="r_ab8bc2c78af58e7d223896ac46a4e0df3"><td class="memItemLeft" align="right" valign="top"><a id="ab8bc2c78af58e7d223896ac46a4e0df3" name="ab8bc2c78af58e7d223896ac46a4e0df3"></a>
-static _kernel_oserror *&#160;</td><td class="memItemRight" valign="bottom"><b>getLastError</b> ()</td></tr>
-<tr class="memitem:ae4026f1a48e4496d7c3331fceddec901" id="r_ae4026f1a48e4496d7c3331fceddec901"><td class="memItemLeft" align="right" valign="top"><a id="ae4026f1a48e4496d7c3331fceddec901" name="ae4026f1a48e4496d7c3331fceddec901"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setErrFlags</b> (unsigned int)</td></tr>
-<tr class="memitem:a6449a72100e005da24d207bbe15b16d8" id="r_a6449a72100e005da24d207bbe15b16d8"><td class="memItemLeft" align="right" valign="top"><a id="a6449a72100e005da24d207bbe15b16d8" name="a6449a72100e005da24d207bbe15b16d8"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getErrFlags</b> ()</td></tr>
-<tr class="memitem:a7725635b24aa9fcea460988d08efaff5" id="r_a7725635b24aa9fcea460988d08efaff5"><td class="memItemLeft" align="right" valign="top"><a id="a7725635b24aa9fcea460988d08efaff5" name="a7725635b24aa9fcea460988d08efaff5"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setAsWimpTask</b> (char *)</td></tr>
-<tr class="memitem:a48fe6fc4c03e67aade497e369b8d2943" id="r_a48fe6fc4c03e67aade497e369b8d2943"><td class="memItemLeft" align="right" valign="top"><a id="a48fe6fc4c03e67aade497e369b8d2943" name="a48fe6fc4c03e67aade497e369b8d2943"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setAsConsoleTask</b> ()</td></tr>
-<tr class="memitem:ab4e570f0237234e4950960ec9df70309" id="r_ab4e570f0237234e4950960ec9df70309"><td class="memItemLeft" align="right" valign="top"><a id="ab4e570f0237234e4950960ec9df70309" name="ab4e570f0237234e4950960ec9df70309"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLocation</b> (char *)</td></tr>
-<tr class="memitem:a4cf9d03722bff77388d971012f583b40" id="r_a4cf9d03722bff77388d971012f583b40"><td class="memItemLeft" align="right" valign="top"><a id="a4cf9d03722bff77388d971012f583b40" name="a4cf9d03722bff77388d971012f583b40"></a>
-static char *&#160;</td><td class="memItemRight" valign="bottom"><b>getLocation</b> ()</td></tr>
-<tr class="memitem:a8ec80e6a3370b076299e8995851a7215" id="r_a8ec80e6a3370b076299e8995851a7215"><td class="memItemLeft" align="right" valign="top"><a id="a8ec80e6a3370b076299e8995851a7215" name="a8ec80e6a3370b076299e8995851a7215"></a>
-static char *&#160;</td><td class="memItemRight" valign="bottom"><b>getTaskName</b> ()</td></tr>
-<tr class="memitem:a115b25a8202d1c1712648b91a03bdcfd" id="r_a115b25a8202d1c1712648b91a03bdcfd"><td class="memItemLeft" align="right" valign="top"><a id="a115b25a8202d1c1712648b91a03bdcfd" name="a115b25a8202d1c1712648b91a03bdcfd"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clearError</b> ()</td></tr>
-<tr class="memitem:ae5f56c7cc16830f890495e2668aab5c2" id="r_ae5f56c7cc16830f890495e2668aab5c2"><td class="memItemLeft" align="right" valign="top"><a id="ae5f56c7cc16830f890495e2668aab5c2" name="ae5f56c7cc16830f890495e2668aab5c2"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getEnvironment</b> ()</td></tr>
-<tr class="memitem:a6760a46a31a5abd9e14c5b57d78ee92e" id="r_a6760a46a31a5abd9e14c5b57d78ee92e"><td class="memItemLeft" align="right" valign="top"><a id="a6760a46a31a5abd9e14c5b57d78ee92e" name="a6760a46a31a5abd9e14c5b57d78ee92e"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setTrap</b> (int, int *)</td></tr>
-<tr class="memitem:a95117d52a650c9e18550d630dfacb852" id="r_a95117d52a650c9e18550d630dfacb852"><td class="memItemLeft" align="right" valign="top"><a id="a95117d52a650c9e18550d630dfacb852" name="a95117d52a650c9e18550d630dfacb852"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clearTrap</b> ()</td></tr>
+<tr class="memitem:a469f387085165c0f6df06525725ab878" id="r_a469f387085165c0f6df06525725ab878"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a469f387085165c0f6df06525725ab878">setLastError</a> (_kernel_oserror *, unsigned int)</td></tr>
+<tr class="memitem:a94c78d09c659bf5ba73f8d1383009be1" id="r_a94c78d09c659bf5ba73f8d1383009be1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c78d09c659bf5ba73f8d1383009be1">setLastError</a> (_kernel_oserror *, unsigned int, char *location)</td></tr>
+<tr class="memitem:ab8bc2c78af58e7d223896ac46a4e0df3" id="r_ab8bc2c78af58e7d223896ac46a4e0df3"><td class="memItemLeft" align="right" valign="top">static _kernel_oserror *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8bc2c78af58e7d223896ac46a4e0df3">getLastError</a> ()</td></tr>
+<tr class="memitem:ae4026f1a48e4496d7c3331fceddec901" id="r_ae4026f1a48e4496d7c3331fceddec901"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4026f1a48e4496d7c3331fceddec901">setErrFlags</a> (unsigned int)</td></tr>
+<tr class="memitem:a6449a72100e005da24d207bbe15b16d8" id="r_a6449a72100e005da24d207bbe15b16d8"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6449a72100e005da24d207bbe15b16d8">getErrFlags</a> ()</td></tr>
+<tr class="memitem:a7725635b24aa9fcea460988d08efaff5" id="r_a7725635b24aa9fcea460988d08efaff5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7725635b24aa9fcea460988d08efaff5">setAsWimpTask</a> (char *)</td></tr>
+<tr class="memitem:a48fe6fc4c03e67aade497e369b8d2943" id="r_a48fe6fc4c03e67aade497e369b8d2943"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48fe6fc4c03e67aade497e369b8d2943">setAsConsoleTask</a> ()</td></tr>
+<tr class="memitem:ab4e570f0237234e4950960ec9df70309" id="r_ab4e570f0237234e4950960ec9df70309"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4e570f0237234e4950960ec9df70309">setLocation</a> (char *)</td></tr>
+<tr class="memitem:a4cf9d03722bff77388d971012f583b40" id="r_a4cf9d03722bff77388d971012f583b40"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cf9d03722bff77388d971012f583b40">getLocation</a> ()</td></tr>
+<tr class="memitem:a8ec80e6a3370b076299e8995851a7215" id="r_a8ec80e6a3370b076299e8995851a7215"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec80e6a3370b076299e8995851a7215">getTaskName</a> ()</td></tr>
+<tr class="memitem:a115b25a8202d1c1712648b91a03bdcfd" id="r_a115b25a8202d1c1712648b91a03bdcfd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a115b25a8202d1c1712648b91a03bdcfd">clearError</a> ()</td></tr>
+<tr class="memitem:ae5f56c7cc16830f890495e2668aab5c2" id="r_ae5f56c7cc16830f890495e2668aab5c2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5f56c7cc16830f890495e2668aab5c2">getEnvironment</a> ()</td></tr>
+<tr class="memitem:a6760a46a31a5abd9e14c5b57d78ee92e" id="r_a6760a46a31a5abd9e14c5b57d78ee92e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6760a46a31a5abd9e14c5b57d78ee92e">setTrap</a> (int, int *)</td></tr>
+<tr class="memitem:a95117d52a650c9e18550d630dfacb852" id="r_a95117d52a650c9e18550d630dfacb852"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95117d52a650c9e18550d630dfacb852">clearTrap</a> ()</td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a8ce273bb4b177794aa5abcfb823ed0ac" name="a8ce273bb4b177794aa5abcfb823ed0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce273bb4b177794aa5abcfb823ed0ac">&#9670;&#160;</a></span>errorEnv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a8ce273bb4b177794aa5abcfb823ed0ac">ErrorReport::errorEnv</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8ce273bb4b177794aa5abcfb823ed0acaf6a7f34d6764b3055346c1403933617f" name="a8ce273bb4b177794aa5abcfb823ed0acaf6a7f34d6764b3055346c1403933617f"></a>CONSOLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8" name="a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8"></a>WIMP&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1ce036050ec4617283eff875995ca27a" name="a1ce036050ec4617283eff875995ca27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce036050ec4617283eff875995ca27a">&#9670;&#160;</a></span>ErrorReport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ErrorReport::ErrorReport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ec853c4b91e7cf38aa67e269131f06d" name="a6ec853c4b91e7cf38aa67e269131f06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec853c4b91e7cf38aa67e269131f06d">&#9670;&#160;</a></span>~ErrorReport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ErrorReport::~ErrorReport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a115b25a8202d1c1712648b91a03bdcfd" name="a115b25a8202d1c1712648b91a03bdcfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a115b25a8202d1c1712648b91a03bdcfd">&#9670;&#160;</a></span>clearError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::clearError </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95117d52a650c9e18550d630dfacb852" name="a95117d52a650c9e18550d630dfacb852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95117d52a650c9e18550d630dfacb852">&#9670;&#160;</a></span>clearTrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::clearTrap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5f56c7cc16830f890495e2668aab5c2" name="ae5f56c7cc16830f890495e2668aab5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f56c7cc16830f890495e2668aab5c2">&#9670;&#160;</a></span>getEnvironment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ErrorReport::getEnvironment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6449a72100e005da24d207bbe15b16d8" name="a6449a72100e005da24d207bbe15b16d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6449a72100e005da24d207bbe15b16d8">&#9670;&#160;</a></span>getErrFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ErrorReport::getErrFlags </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8bc2c78af58e7d223896ac46a4e0df3" name="ab8bc2c78af58e7d223896ac46a4e0df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bc2c78af58e7d223896ac46a4e0df3">&#9670;&#160;</a></span>getLastError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">_kernel_oserror * ErrorReport::getLastError </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cf9d03722bff77388d971012f583b40" name="a4cf9d03722bff77388d971012f583b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf9d03722bff77388d971012f583b40">&#9670;&#160;</a></span>getLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * ErrorReport::getLocation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ec80e6a3370b076299e8995851a7215" name="a8ec80e6a3370b076299e8995851a7215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec80e6a3370b076299e8995851a7215">&#9670;&#160;</a></span>getTaskName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * ErrorReport::getTaskName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48fe6fc4c03e67aade497e369b8d2943" name="a48fe6fc4c03e67aade497e369b8d2943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48fe6fc4c03e67aade497e369b8d2943">&#9670;&#160;</a></span>setAsConsoleTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setAsConsoleTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7725635b24aa9fcea460988d08efaff5" name="a7725635b24aa9fcea460988d08efaff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7725635b24aa9fcea460988d08efaff5">&#9670;&#160;</a></span>setAsWimpTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setAsWimpTask </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>taskname</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4026f1a48e4496d7c3331fceddec901" name="ae4026f1a48e4496d7c3331fceddec901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4026f1a48e4496d7c3331fceddec901">&#9670;&#160;</a></span>setErrFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setErrFlags </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a469f387085165c0f6df06525725ab878" name="a469f387085165c0f6df06525725ab878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469f387085165c0f6df06525725ab878">&#9670;&#160;</a></span>setLastError() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setLastError </td>
+          <td>(</td>
+          <td class="paramtype">_kernel_oserror *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94c78d09c659bf5ba73f8d1383009be1" name="a94c78d09c659bf5ba73f8d1383009be1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c78d09c659bf5ba73f8d1383009be1">&#9670;&#160;</a></span>setLastError() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setLastError </td>
+          <td>(</td>
+          <td class="paramtype">_kernel_oserror *</td>          <td class="paramname"><span class="paramname"><em>err</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>location</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4e570f0237234e4950960ec9df70309" name="ab4e570f0237234e4950960ec9df70309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e570f0237234e4950960ec9df70309">&#9670;&#160;</a></span>setLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setLocation </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6760a46a31a5abd9e14c5b57d78ee92e" name="a6760a46a31a5abd9e14c5b57d78ee92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6760a46a31a5abd9e14c5b57d78ee92e">&#9670;&#160;</a></span>setTrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorReport::setTrap </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>trapCount</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>trapList</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>h/<a class="el" href="_error_report_8h_source.html">ErrorReport.h</a></li>
-<li>c++/<b>ErrorReport.c++</b></li>
+<li>c++/<a class="el" href="_error_report_8c_09_09.html">ErrorReport.c++</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

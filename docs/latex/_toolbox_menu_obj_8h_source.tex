@@ -1,6 +1,6 @@
 \doxysection{Toolbox\+Menu\+Obj.\+h}
 \hypertarget{_toolbox_menu_obj_8h_source}{}\label{_toolbox_menu_obj_8h_source}\index{h/ToolboxMenuObj.h@{h/ToolboxMenuObj.h}}
-
+\mbox{\hyperlink{_toolbox_menu_obj_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxMenuObj.h"{}\ may\ only\ be\ used\ from\ C++}}
@@ -12,52 +12,52 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxMenuObj\_h}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}menu.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ToolboxObj.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_class_type_8h}{ClassType.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_toolbox_obj_8h}{ToolboxObj.h}}"{}}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }ToolboxMenuObj\ :\ \textcolor{keyword}{public}\ ToolboxObj\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toolbox_menu_obj_a1f6c7a5c0bbf1e4f9b3e703cf4550da9}{ToolboxMenuObj}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\ \{}
 \DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ ToolboxMenuObj()\{\};}
-\DoxyCodeLine{00017\ \ \ \ \ ToolboxMenuObj(ObjectId\ objectId);}
-\DoxyCodeLine{00018\ \ \ \ \ ToolboxMenuObj\&\ setTick(ComponentId\ entry);}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getTick(ComponentId\ entry);}
-\DoxyCodeLine{00020\ \ \ \ \ ToolboxMenuObj\&\ setFade(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ fade);}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ getFade(ComponentId\ entry);}
-\DoxyCodeLine{00022\ \ \ \ \ ToolboxMenuObj\&\ setEntryText(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *text);}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryText(ComponentId\ entry);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryText(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
-\DoxyCodeLine{00025\ \ \ \ \ ToolboxMenuObj\&\ setEntrySprite(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *spriteName);}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntrySprite(ComponentId\ entry);}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntrySprite(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
-\DoxyCodeLine{00028\ \ \ \ \ ToolboxMenuObj\&\ setSubMenuShow(ComponentId\ entry,\ ObjectId\ subMenu);}
-\DoxyCodeLine{00029\ \ \ \ \ ObjectId\ getSubMenuShow(ComponentId\ entry);}
-\DoxyCodeLine{00030\ \ \ \ \ ToolboxMenuObj\&\ setSubMenuEvent(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ getSubMenuEvent(ComponentId\ entry);}
-\DoxyCodeLine{00032\ \ \ \ \ ToolboxMenuObj\&\ setClickShow(ComponentId\ entry,\ ObjectId\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{int}\ showFlags);}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickShowObjectId(ComponentId\ entry);}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickShowFlags(ComponentId\ entry);}
-\DoxyCodeLine{00035\ \ \ \ \ ToolboxMenuObj\&\ setClickEvent(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ getClickEvent(ComponentId\ entry);}
-\DoxyCodeLine{00037\ \ \ \ \ ToolboxMenuObj\&\ setHelpMessage(\textcolor{keywordtype}{char}\ *helpMessage);}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage();}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ getHelpMessage(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
-\DoxyCodeLine{00040\ \ \ \ \ ToolboxMenuObj\&\ setEntryHelpMessage(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *helpMessage);}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryHelpMessage(ComponentId\ entry);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getEntryHelpMessage(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
-\DoxyCodeLine{00043\ \ \ \ \ ComponentId\ addEntry(ComponentId\ entryId,\ \textcolor{keywordtype}{char}\ *entryDescription);}
-\DoxyCodeLine{00044\ \ \ \ \ ToolboxMenuObj\&\ removeEntry(ComponentId\ entry);}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight();}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth();}
-\DoxyCodeLine{00047\ \ \ \ \ ToolboxMenuObj\&\ setTitle(\textcolor{keywordtype}{char}\ *title);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle();}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ getTitle(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
-\DoxyCodeLine{00050\ \ \ \ \ ToolboxMenuObj\&\ setObjectId(ObjectId\ objectId);}
-\DoxyCodeLine{00051\ \ \ \ \ ToolboxMenuObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
-\DoxyCodeLine{00052\ \ \ \ \ ToolboxMenuObj\&\ clearFlags();}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj_a1f6c7a5c0bbf1e4f9b3e703cf4550da9}{ToolboxMenuObj}}()\{\};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj_a1f6c7a5c0bbf1e4f9b3e703cf4550da9}{ToolboxMenuObj}}(ObjectId\ objectId);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_aff8a7227ecd71b66d29523d4bb3f3ccb}{setTick}}(ComponentId\ entry);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a57bd0d63c9c3967d6a35af7f2dad1991}{getTick}}(ComponentId\ entry);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_ab44b91f0cd64c9bd2d0a0897e6c42b36}{setFade}}(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ fade);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_aad0d90a76209a00f290046eafa8b6f29}{getFade}}(ComponentId\ entry);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a742c70c9aa3ac7c036d5c7e18123616a}{setEntryText}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *text);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_af4789ef1ff76f0f3b2336796f8697aac}{getEntryText}}(ComponentId\ entry);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_af4789ef1ff76f0f3b2336796f8697aac}{getEntryText}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a5bb26f8f5948ec6c2d00275ab7903a22}{setEntrySprite}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *spriteName);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_ab13c1fcf65a466de3540ebc02c6f6742}{getEntrySprite}}(ComponentId\ entry);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_ab13c1fcf65a466de3540ebc02c6f6742}{getEntrySprite}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_abde29c41bb3b1d13fb44c98e7a4db636}{setSubMenuShow}}(ComponentId\ entry,\ ObjectId\ subMenu);}
+\DoxyCodeLine{00029\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_menu_obj_ab2b6b90916ef92acf87eb2ee35d7582a}{getSubMenuShow}}(ComponentId\ entry);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_aa979c88a35c908459081b853a3ff9718}{setSubMenuEvent}}(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a48f50546fc040a0bf152233b4be08fcc}{getSubMenuEvent}}(ComponentId\ entry);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a6a9248d1cd415ad94799052b1d3915fb}{setClickShow}}(ComponentId\ entry,\ ObjectId\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{int}\ showFlags);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a0a2822b36e826a509b8234d640c4e062}{getClickShowObjectId}}(ComponentId\ entry);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a053093e2846c7988924e72e680f8da93}{getClickShowFlags}}(ComponentId\ entry);}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a4ebce5c7a98aa0f8e040dbb36df20a00}{setClickEvent}}(ComponentId\ entry,\ \textcolor{keywordtype}{int}\ toolboxEvent);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_abbb1f69aae8ba8364066721b3b4b49bc}{getClickEvent}}(ComponentId\ entry);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_ab6b5dbe7f5a852fe7ea66cfe61f95719}{setHelpMessage}}(\textcolor{keywordtype}{char}\ *helpMessage);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_aed14c18c6ccca3436c4da067b2ebc5ed}{getHelpMessage}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_aed14c18c6ccca3436c4da067b2ebc5ed}{getHelpMessage}}(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a7838d9cab4638eae420e5a2d11d62cfb}{setEntryHelpMessage}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *helpMessage);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a9af0f7babacc9dd50613b718a98c3c29}{getEntryHelpMessage}}(ComponentId\ entry);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a9af0f7babacc9dd50613b718a98c3c29}{getEntryHelpMessage}}(ComponentId\ entry,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00043\ \ \ \ \ ComponentId\ \mbox{\hyperlink{class_toolbox_menu_obj_af34fd5a99d1f20829770b2a683594cb7}{addEntry}}(ComponentId\ entryId,\ \textcolor{keywordtype}{char}\ *entryDescription);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_adb53102e5d724a583fd1970620eb7c0f}{removeEntry}}(ComponentId\ entry);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_ad557e41cbed06f2826791563ba526d9d}{getHeight}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a2029e0be07425840a46794eea88c1a1b}{getWidth}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a2af56e6913a5b12e05682caa81a5c58f}{setTitle}}(\textcolor{keywordtype}{char}\ *title);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a2006099c994526056a3c90143794609d}{getTitle}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a2006099c994526056a3c90143794609d}{getTitle}}(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ bufSize);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_ad87de063fd48cbb8a14a8c2bb587b272}{setObjectId}}(ObjectId\ objectId);}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a45592c5449d3f4fdb6545398afef6229}{setFlags}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_toolbox_menu_obj}{ToolboxMenuObj}}\&\ \mbox{\hyperlink{class_toolbox_menu_obj_a3c83b600bda39909ad34e08bd49ce8a3}{clearFlags}}();}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\ \{\};}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxMenuObj"{}};\};}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxMenuObj;\};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toolbox_menu_obj_a34334ddd6e9229f00515ffe12834228c}{showProperties}}()\ \{\};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_toolbox_menu_obj_ad1068cb3a7f7cd5d47f781e39647f076}{getClassName}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxMenuObj"{}};\};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_menu_obj_a7b92106f609b28e2bf8791b299ae2b10}{getClassType}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_class_type_8h_a466273e186141eae5985cd1b0c471b79af036820cce584235d3a75964462d5ef0}{ClassType\_ToolboxMenuObj}};\};}
 \DoxyCodeLine{00057\ \};}
 \DoxyCodeLine{00058\ }
 \DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}

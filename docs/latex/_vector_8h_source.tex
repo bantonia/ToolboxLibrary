@@ -1,6 +1,6 @@
 \doxysection{Vector.\+h}
 \hypertarget{_vector_8h_source}{}\label{_vector_8h_source}\index{h/Vector.h@{h/Vector.h}}
-
+\mbox{\hyperlink{_vector_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}stdlib.h"{}}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}stdbool.h"{}}}
@@ -10,75 +10,75 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ Vector\_h}}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Vector\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}}\ \{}
 \DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ Vector()\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ (void)\&Vector::contains;}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ (void)\&Vector::indexOf;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}}()\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ (void)\&\mbox{\hyperlink{class_vector_a4e94f503fda43035c5f7f82acb4cf2e1}{Vector::contains}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ (void)\&\mbox{\hyperlink{class_vector_a48c2676899b1fea62af61dd491eafd68}{Vector::indexOf}};}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ this-\/>size\ =\ 0;}
 \DoxyCodeLine{00015\ \ \ \ \ \ \ nextLoc\ =\ 0;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ storage\ =\ NULL;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ storage\ =\ \mbox{\hyperlink{_o_s_err_list_8c_09_09_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ pos\ =\ 0;}
 \DoxyCodeLine{00018\ \ \ \ \ \};}
-\DoxyCodeLine{00019\ \ \ \ \ \string~Vector()\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_vector_afd524fac19e6d3d69db5198ffe2952b0}{\string~Vector}}()\ \{}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ free(storage);}
 \DoxyCodeLine{00021\ \ \ \ \ \};}
-\DoxyCodeLine{00022\ \ \ \ \ T\ get(\textcolor{keywordtype}{int}\ p)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ T\ \mbox{\hyperlink{class_vector_a2b211b3064234c1b187abd45d3cbc5d6}{get}}(\textcolor{keywordtype}{int}\ p)\ \{}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>storage[p];}
 \DoxyCodeLine{00024\ \ \ \ \ \};}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ put(\textcolor{keywordtype}{int}\ p,\ T\ val)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8eb28c942c5e52dbf3117e93412a68aa}{put}}(\textcolor{keywordtype}{int}\ p,\ T\ val)\ \{}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ this-\/>storage[p]\ =\ val;}
 \DoxyCodeLine{00027\ \ \ \ \ \};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ push(T\ val)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ad9bd79ebb9b43038e0a7dd462f4467d2}{push}}(T\ val)\ \{}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ adjust(size\ +\ 1);}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ this-\/>storage[nextLoc++]\ =\ val;}
 \DoxyCodeLine{00031\ \ \ \ \ \};}
-\DoxyCodeLine{00032\ \ \ \ \ T\ pop()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ T\ \mbox{\hyperlink{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}{pop}}()\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ T\ t\ =\ this-\/>storage[nextLoc-\/-\/];}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ adjust(this-\/>capacity()\ -\/\ 1);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ adjust(this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}()\ -\/\ 1);}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
 \DoxyCodeLine{00036\ \ \ \ \ \};}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ capacity()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}()\ \{}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ size;}
 \DoxyCodeLine{00039\ \ \ \ \ \};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ reset()\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_aecbdf33f934d6f2803e08c65d9c2fd1d}{reset}}()\ \{}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ pos\ =\ 0;}
 \DoxyCodeLine{00042\ \ \ \ \ \};}
-\DoxyCodeLine{00043\ \ \ \ \ T\ next()\ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ T\ t\ =\ NULL;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>hasNext())\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ T\ \mbox{\hyperlink{class_vector_a7595223c031756173e44e3811e49b34f}{next}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ T\ t\ =\ \mbox{\hyperlink{_o_s_err_list_8c_09_09_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{class_vector_a4347af4237596c589edc57e6bae05d2b}{hasNext}}())\ \{}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ if\ at\ end\ of\ the\ vector\ data}}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ t\ =\ this-\/>storage[pos++];}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
 \DoxyCodeLine{00050\ \ \ \ \ \};}
-\DoxyCodeLine{00051\ \ \ \ \ T\ prev()\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ T\ \mbox{\hyperlink{class_vector_ae27c0a6cb21672b117405200c93772cc}{prev}}()\ \{}
 \DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ if\ already\ at\ the\ beginning\ of\ the\ vector}}
 \DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>storage[-\/-\/pos];}
 \DoxyCodeLine{00054\ \ \ \ \ \};}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ hasNext()\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_a4347af4237596c589edc57e6bae05d2b}{hasNext}}()\ \{}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ <\ this-\/>capacity())\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ <\ this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}())\ \{}
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{00061\ \ \ \ \ \};}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ hasPrevious()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_a33924fec0115128b075c348ff1db2416}{hasPrevious}}()\ \{}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pos\ >\ 0)\ \&\&\ (this-\/>capacity()\ !=\ 0))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pos\ >\ 0)\ \&\&\ (this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}()\ !=\ 0))\ \{}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{00068\ \ \ \ \ \};}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ clear()\ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (this-\/>capacity()\ >\ 0)\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ this-\/>pop();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085}{clear}}()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}()\ >\ 0)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}{pop}}();}
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00073\ \ \ \ \ \};}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ contains(T\ obj)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_a4e94f503fda43035c5f7f82acb4cf2e1}{contains}}(T\ obj)\ \{}
 \DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptr\ =\ 0;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ptr\ !=\ this-\/>capacity())\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ptr\ !=\ this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}())\ \{}
 \DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (memcmp(obj,\ this-\/>storage[ptr],\ \textcolor{keyword}{sizeof}(T))\ ==\ 0)\ \{}
 \DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ result\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
@@ -87,10 +87,10 @@
 \DoxyCodeLine{00083\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{00085\ \ \ \ \ \};}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ indexOf(T\ obj)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_a48c2676899b1fea62af61dd491eafd68}{indexOf}}(T\ obj)\ \{}
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ -\/1;}
 \DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptr\ =\ 0;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ptr\ !=\ this-\/>capacity())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ptr\ !=\ this-\/>\mbox{\hyperlink{class_vector_aaabcab16c7653c13fcc267bcae48287d}{capacity}}())\ \{}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (memcmp(obj,\ this-\/>storage[ptr],\ \textcolor{keyword}{sizeof}(T))\ ==\ 0)\ \{}
 \DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ result\ =\ ptr;}
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
@@ -99,7 +99,7 @@
 \DoxyCodeLine{00095\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{00097\ \ \ \ \ \};}
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ objSize()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vector_afba232502c07f3acb722f6ce44134c86}{objSize}}()\ \{}
 \DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(this-\/>storage[0]);}
 \DoxyCodeLine{00100\ \ \ \ \ \};}
 \DoxyCodeLine{00101\ \ \ \textcolor{keyword}{private}:}

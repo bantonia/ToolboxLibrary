@@ -92,6 +92,8 @@ $(function(){initNavTree('class_wimp_obj.html','','class_wimp_obj-members'); });
   <div class="headertitle"><div class="title">WimpObj Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_wimp_obj_8h_source.html">WimpObj.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for WimpObj:</div>
 <div class="dyncontent">
@@ -110,153 +112,358 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4e784376e8f1ea97bdc62802903cfbcc" id="r_a4e784376e8f1ea97bdc62802903cfbcc"><td class="memItemLeft" align="right" valign="top"><a id="a4e784376e8f1ea97bdc62802903cfbcc" name="a4e784376e8f1ea97bdc62802903cfbcc"></a>
-typedef struct WimpObj::WindDefStr&#160;</td><td class="memItemRight" valign="bottom"><b>WindDefStr</b></td></tr>
+<tr class="memitem:a4e784376e8f1ea97bdc62802903cfbcc" id="r_a4e784376e8f1ea97bdc62802903cfbcc"><td class="memItemLeft" align="right" valign="top">typedef struct WimpObj::WindDefStr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e784376e8f1ea97bdc62802903cfbcc">WindDefStr</a></td></tr>
 <tr class="inherit_header pub_types_class_error_report"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_class_error_report')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="class_error_report.html">ErrorReport</a></td></tr>
-<tr class="memitem:a8ce273bb4b177794aa5abcfb823ed0ac inherit pub_types_class_error_report" id="r_a8ce273bb4b177794aa5abcfb823ed0ac"><td class="memItemLeft" align="right" valign="top"><a id="a8ce273bb4b177794aa5abcfb823ed0ac" name="a8ce273bb4b177794aa5abcfb823ed0ac"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>errorEnv</b> { <b>CONSOLE</b>
-, <b>WIMP</b>
+<tr class="memitem:a8ce273bb4b177794aa5abcfb823ed0ac inherit pub_types_class_error_report" id="r_a8ce273bb4b177794aa5abcfb823ed0ac"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a8ce273bb4b177794aa5abcfb823ed0ac">errorEnv</a> { <a class="el" href="class_error_report.html#a8ce273bb4b177794aa5abcfb823ed0acaf6a7f34d6764b3055346c1403933617f">CONSOLE</a>
+, <a class="el" href="class_error_report.html#a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8">WIMP</a>
  }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af234930b427da97daa07fe24c0a372f7" id="r_af234930b427da97daa07fe24c0a372f7"><td class="memItemLeft" align="right" valign="top"><a id="af234930b427da97daa07fe24c0a372f7" name="af234930b427da97daa07fe24c0a372f7"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
-<tr class="memitem:afcd2f1c285d51b8cded776089e539873" id="r_afcd2f1c285d51b8cded776089e539873"><td class="memItemLeft" align="right" valign="top"><a id="afcd2f1c285d51b8cded776089e539873" name="afcd2f1c285d51b8cded776089e539873"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>closeDown</b> ()</td></tr>
-<tr class="memitem:a1b44838826031c2c21157135d9dc0e8e" id="r_a1b44838826031c2c21157135d9dc0e8e"><td class="memItemLeft" align="right" valign="top"><a id="a1b44838826031c2c21157135d9dc0e8e" name="a1b44838826031c2c21157135d9dc0e8e"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>pollIdle</b> ()</td></tr>
-<tr class="memitem:a37f010ec6b70eeb22c030a46562fbc9d" id="r_a37f010ec6b70eeb22c030a46562fbc9d"><td class="memItemLeft" align="right" valign="top"><a id="a37f010ec6b70eeb22c030a46562fbc9d" name="a37f010ec6b70eeb22c030a46562fbc9d"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>poll</b> ()</td></tr>
-<tr class="memitem:a1d063958e1a8bccca1a4101c1e582e7f" id="r_a1d063958e1a8bccca1a4101c1e582e7f"><td class="memItemLeft" align="right" valign="top"><a id="a1d063958e1a8bccca1a4101c1e582e7f" name="a1d063958e1a8bccca1a4101c1e582e7f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>runIdle</b> ()</td></tr>
-<tr class="memitem:adfd766abe341615b863633e6e8a1eaa4" id="r_adfd766abe341615b863633e6e8a1eaa4"><td class="memItemLeft" align="right" valign="top"><a id="adfd766abe341615b863633e6e8a1eaa4" name="adfd766abe341615b863633e6e8a1eaa4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="memitem:a726cf2b3643a2201d21f084734b7accc" id="r_a726cf2b3643a2201d21f084734b7accc"><td class="memItemLeft" align="right" valign="top"><a id="a726cf2b3643a2201d21f084734b7accc" name="a726cf2b3643a2201d21f084734b7accc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTaskname</b> (char *)</td></tr>
-<tr class="memitem:a1cae4f6721c95c8b07b0d1a9e3d89a4a" id="r_a1cae4f6721c95c8b07b0d1a9e3d89a4a"><td class="memItemLeft" align="right" valign="top"><a id="a1cae4f6721c95c8b07b0d1a9e3d89a4a" name="a1cae4f6721c95c8b07b0d1a9e3d89a4a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMask</b> (unsigned int)</td></tr>
-<tr class="memitem:a8f968f2f76f83da6738323d02bc60da1" id="r_a8f968f2f76f83da6738323d02bc60da1"><td class="memItemLeft" align="right" valign="top"><a id="a8f968f2f76f83da6738323d02bc60da1" name="a8f968f2f76f83da6738323d02bc60da1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addMessages</b> (int *)</td></tr>
-<tr class="memitem:ae1e8c5b56afa6e95987f4897b299414b" id="r_ae1e8c5b56afa6e95987f4897b299414b"><td class="memItemLeft" align="right" valign="top"><a id="ae1e8c5b56afa6e95987f4897b299414b" name="ae1e8c5b56afa6e95987f4897b299414b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeMessages</b> (int *)</td></tr>
-<tr class="memitem:a9c3034e495e0b32102afec03c3f70e30" id="r_a9c3034e495e0b32102afec03c3f70e30"><td class="memItemLeft" align="right" valign="top"><a id="a9c3034e495e0b32102afec03c3f70e30" name="a9c3034e495e0b32102afec03c3f70e30"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>nullReason</b> ()</td></tr>
-<tr class="memitem:aa995934e0fdf34eba9311aaa68493892" id="r_aa995934e0fdf34eba9311aaa68493892"><td class="memItemLeft" align="right" valign="top"><a id="aa995934e0fdf34eba9311aaa68493892" name="aa995934e0fdf34eba9311aaa68493892"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>redrawWindowRequest</b> ()</td></tr>
-<tr class="memitem:a6724c6bf75456e20a9287c8dc8cf8710" id="r_a6724c6bf75456e20a9287c8dc8cf8710"><td class="memItemLeft" align="right" valign="top"><a id="a6724c6bf75456e20a9287c8dc8cf8710" name="a6724c6bf75456e20a9287c8dc8cf8710"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>openWindowRequest</b> ()</td></tr>
-<tr class="memitem:aad632b8166c5a0604db4559b68b2c881" id="r_aad632b8166c5a0604db4559b68b2c881"><td class="memItemLeft" align="right" valign="top"><a id="aad632b8166c5a0604db4559b68b2c881" name="aad632b8166c5a0604db4559b68b2c881"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>closeWindowRequest</b> ()</td></tr>
-<tr class="memitem:ad1e46f23bea07febd3537b36c51c2b3b" id="r_ad1e46f23bea07febd3537b36c51c2b3b"><td class="memItemLeft" align="right" valign="top"><a id="ad1e46f23bea07febd3537b36c51c2b3b" name="ad1e46f23bea07febd3537b36c51c2b3b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerLeavingWindow</b> ()</td></tr>
-<tr class="memitem:a3a9f40078c7128708b02c00e40aea17d" id="r_a3a9f40078c7128708b02c00e40aea17d"><td class="memItemLeft" align="right" valign="top"><a id="a3a9f40078c7128708b02c00e40aea17d" name="a3a9f40078c7128708b02c00e40aea17d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerEnteringWindow</b> ()</td></tr>
-<tr class="memitem:aa4a02d0519588d71e41a7f85a7cc3053" id="r_aa4a02d0519588d71e41a7f85a7cc3053"><td class="memItemLeft" align="right" valign="top"><a id="aa4a02d0519588d71e41a7f85a7cc3053" name="aa4a02d0519588d71e41a7f85a7cc3053"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>mouseClick</b> ()</td></tr>
-<tr class="memitem:aca466ae5dbef929d4dc977abf95d2991" id="r_aca466ae5dbef929d4dc977abf95d2991"><td class="memItemLeft" align="right" valign="top"><a id="aca466ae5dbef929d4dc977abf95d2991" name="aca466ae5dbef929d4dc977abf95d2991"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>userDragBox</b> ()</td></tr>
-<tr class="memitem:a07017d233a79a7d286a4bdfa46414725" id="r_a07017d233a79a7d286a4bdfa46414725"><td class="memItemLeft" align="right" valign="top"><a id="a07017d233a79a7d286a4bdfa46414725" name="a07017d233a79a7d286a4bdfa46414725"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressed</b> ()</td></tr>
-<tr class="memitem:adc43cd17184b531fa8f2dc4bd323992b" id="r_adc43cd17184b531fa8f2dc4bd323992b"><td class="memItemLeft" align="right" valign="top"><a id="adc43cd17184b531fa8f2dc4bd323992b" name="adc43cd17184b531fa8f2dc4bd323992b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>menuSelection</b> ()</td></tr>
-<tr class="memitem:a661bb5bf4b61c884b4a318a180be01b4" id="r_a661bb5bf4b61c884b4a318a180be01b4"><td class="memItemLeft" align="right" valign="top"><a id="a661bb5bf4b61c884b4a318a180be01b4" name="a661bb5bf4b61c884b4a318a180be01b4"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>scrollRequest</b> ()</td></tr>
-<tr class="memitem:a66a65b76537eca36f6e1ea5fc4ccb984" id="r_a66a65b76537eca36f6e1ea5fc4ccb984"><td class="memItemLeft" align="right" valign="top"><a id="a66a65b76537eca36f6e1ea5fc4ccb984" name="a66a65b76537eca36f6e1ea5fc4ccb984"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>loseCaret</b> ()</td></tr>
-<tr class="memitem:a70847cffd066d8c0a738e5c4417720bc" id="r_a70847cffd066d8c0a738e5c4417720bc"><td class="memItemLeft" align="right" valign="top"><a id="a70847cffd066d8c0a738e5c4417720bc" name="a70847cffd066d8c0a738e5c4417720bc"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>gainCaret</b> ()</td></tr>
-<tr class="memitem:a5827bdbef4dcbc3b88669e470d3f1ba5" id="r_a5827bdbef4dcbc3b88669e470d3f1ba5"><td class="memItemLeft" align="right" valign="top"><a id="a5827bdbef4dcbc3b88669e470d3f1ba5" name="a5827bdbef4dcbc3b88669e470d3f1ba5"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pollWordNonZero</b> ()</td></tr>
-<tr class="memitem:aa4ae488260bbdd582f0dadb4942e8f0e" id="r_aa4ae488260bbdd582f0dadb4942e8f0e"><td class="memItemLeft" align="right" valign="top"><a id="aa4ae488260bbdd582f0dadb4942e8f0e" name="aa4ae488260bbdd582f0dadb4942e8f0e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>userMessage</b> ()</td></tr>
-<tr class="memitem:a64051a5d15d8fe8a4783b5791c90c3bc" id="r_a64051a5d15d8fe8a4783b5791c90c3bc"><td class="memItemLeft" align="right" valign="top"><a id="a64051a5d15d8fe8a4783b5791c90c3bc" name="a64051a5d15d8fe8a4783b5791c90c3bc"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>userMessageRecorded</b> ()</td></tr>
-<tr class="memitem:a33bed7267ce56f75ad8e8c224b96a923" id="r_a33bed7267ce56f75ad8e8c224b96a923"><td class="memItemLeft" align="right" valign="top"><a id="a33bed7267ce56f75ad8e8c224b96a923" name="a33bed7267ce56f75ad8e8c224b96a923"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>userMessageAcknowledge</b> ()</td></tr>
-<tr class="memitem:a3a2fa74e4c15e8b5527d75a6cbb00848" id="r_a3a2fa74e4c15e8b5527d75a6cbb00848"><td class="memItemLeft" align="right" valign="top"><a id="a3a2fa74e4c15e8b5527d75a6cbb00848" name="a3a2fa74e4c15e8b5527d75a6cbb00848"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>eToolboxEvent</b> ()</td></tr>
-<tr class="memitem:a6bba9f1400a58268c9f1da1722fc2036" id="r_a6bba9f1400a58268c9f1da1722fc2036"><td class="memItemLeft" align="right" valign="top"><a id="a6bba9f1400a58268c9f1da1722fc2036" name="a6bba9f1400a58268c9f1da1722fc2036"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>preCloseDown</b> ()</td></tr>
-<tr class="memitem:a0eb7e1604ab4b908a7a6b53e1dd621f2" id="r_a0eb7e1604ab4b908a7a6b53e1dd621f2"><td class="memItemLeft" align="right" valign="top"><a id="a0eb7e1604ab4b908a7a6b53e1dd621f2" name="a0eb7e1604ab4b908a7a6b53e1dd621f2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>unknownWimpEvent</b> ()</td></tr>
-<tr class="memitem:a846b1661907f0228fc4ff01d0a55d4ab" id="r_a846b1661907f0228fc4ff01d0a55d4ab"><td class="memItemLeft" align="right" valign="top"><a id="a846b1661907f0228fc4ff01d0a55d4ab" name="a846b1661907f0228fc4ff01d0a55d4ab"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>errorHandler</b> ()</td></tr>
+<tr class="memitem:a950132e4c6b573e50abd6f9f5cbc089e" id="r_a950132e4c6b573e50abd6f9f5cbc089e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a950132e4c6b573e50abd6f9f5cbc089e">WimpObj</a> ()</td></tr>
+<tr class="memitem:a679bab0fc4df002692c05f6a992edd27" id="r_a679bab0fc4df002692c05f6a992edd27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679bab0fc4df002692c05f6a992edd27">~WimpObj</a> ()</td></tr>
+<tr class="memitem:af234930b427da97daa07fe24c0a372f7" id="r_af234930b427da97daa07fe24c0a372f7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af234930b427da97daa07fe24c0a372f7">init</a> ()</td></tr>
+<tr class="memitem:afcd2f1c285d51b8cded776089e539873" id="r_afcd2f1c285d51b8cded776089e539873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcd2f1c285d51b8cded776089e539873">closeDown</a> ()</td></tr>
+<tr class="memitem:a1b44838826031c2c21157135d9dc0e8e" id="r_a1b44838826031c2c21157135d9dc0e8e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b44838826031c2c21157135d9dc0e8e">pollIdle</a> ()</td></tr>
+<tr class="memitem:a37f010ec6b70eeb22c030a46562fbc9d" id="r_a37f010ec6b70eeb22c030a46562fbc9d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f010ec6b70eeb22c030a46562fbc9d">poll</a> ()</td></tr>
+<tr class="memitem:a1d063958e1a8bccca1a4101c1e582e7f" id="r_a1d063958e1a8bccca1a4101c1e582e7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d063958e1a8bccca1a4101c1e582e7f">runIdle</a> ()</td></tr>
+<tr class="memitem:adfd766abe341615b863633e6e8a1eaa4" id="r_adfd766abe341615b863633e6e8a1eaa4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfd766abe341615b863633e6e8a1eaa4">run</a> ()</td></tr>
+<tr class="memitem:a726cf2b3643a2201d21f084734b7accc" id="r_a726cf2b3643a2201d21f084734b7accc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a726cf2b3643a2201d21f084734b7accc">setTaskname</a> (char *)</td></tr>
+<tr class="memitem:a1cae4f6721c95c8b07b0d1a9e3d89a4a" id="r_a1cae4f6721c95c8b07b0d1a9e3d89a4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cae4f6721c95c8b07b0d1a9e3d89a4a">setMask</a> (unsigned int)</td></tr>
+<tr class="memitem:a8f968f2f76f83da6738323d02bc60da1" id="r_a8f968f2f76f83da6738323d02bc60da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f968f2f76f83da6738323d02bc60da1">addMessages</a> (int *)</td></tr>
+<tr class="memitem:ae1e8c5b56afa6e95987f4897b299414b" id="r_ae1e8c5b56afa6e95987f4897b299414b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e8c5b56afa6e95987f4897b299414b">removeMessages</a> (int *)</td></tr>
+<tr class="memitem:a9c3034e495e0b32102afec03c3f70e30" id="r_a9c3034e495e0b32102afec03c3f70e30"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3034e495e0b32102afec03c3f70e30">nullReason</a> ()</td></tr>
+<tr class="memitem:aa995934e0fdf34eba9311aaa68493892" id="r_aa995934e0fdf34eba9311aaa68493892"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa995934e0fdf34eba9311aaa68493892">redrawWindowRequest</a> ()</td></tr>
+<tr class="memitem:a6724c6bf75456e20a9287c8dc8cf8710" id="r_a6724c6bf75456e20a9287c8dc8cf8710"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6724c6bf75456e20a9287c8dc8cf8710">openWindowRequest</a> ()</td></tr>
+<tr class="memitem:aad632b8166c5a0604db4559b68b2c881" id="r_aad632b8166c5a0604db4559b68b2c881"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad632b8166c5a0604db4559b68b2c881">closeWindowRequest</a> ()</td></tr>
+<tr class="memitem:ad1e46f23bea07febd3537b36c51c2b3b" id="r_ad1e46f23bea07febd3537b36c51c2b3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1e46f23bea07febd3537b36c51c2b3b">pointerLeavingWindow</a> ()</td></tr>
+<tr class="memitem:a3a9f40078c7128708b02c00e40aea17d" id="r_a3a9f40078c7128708b02c00e40aea17d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a9f40078c7128708b02c00e40aea17d">pointerEnteringWindow</a> ()</td></tr>
+<tr class="memitem:aa4a02d0519588d71e41a7f85a7cc3053" id="r_aa4a02d0519588d71e41a7f85a7cc3053"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4a02d0519588d71e41a7f85a7cc3053">mouseClick</a> ()</td></tr>
+<tr class="memitem:aca466ae5dbef929d4dc977abf95d2991" id="r_aca466ae5dbef929d4dc977abf95d2991"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca466ae5dbef929d4dc977abf95d2991">userDragBox</a> ()</td></tr>
+<tr class="memitem:a07017d233a79a7d286a4bdfa46414725" id="r_a07017d233a79a7d286a4bdfa46414725"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07017d233a79a7d286a4bdfa46414725">keyPressed</a> ()</td></tr>
+<tr class="memitem:adc43cd17184b531fa8f2dc4bd323992b" id="r_adc43cd17184b531fa8f2dc4bd323992b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc43cd17184b531fa8f2dc4bd323992b">menuSelection</a> ()</td></tr>
+<tr class="memitem:a661bb5bf4b61c884b4a318a180be01b4" id="r_a661bb5bf4b61c884b4a318a180be01b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a661bb5bf4b61c884b4a318a180be01b4">scrollRequest</a> ()</td></tr>
+<tr class="memitem:a66a65b76537eca36f6e1ea5fc4ccb984" id="r_a66a65b76537eca36f6e1ea5fc4ccb984"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66a65b76537eca36f6e1ea5fc4ccb984">loseCaret</a> ()</td></tr>
+<tr class="memitem:a70847cffd066d8c0a738e5c4417720bc" id="r_a70847cffd066d8c0a738e5c4417720bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70847cffd066d8c0a738e5c4417720bc">gainCaret</a> ()</td></tr>
+<tr class="memitem:a5827bdbef4dcbc3b88669e470d3f1ba5" id="r_a5827bdbef4dcbc3b88669e470d3f1ba5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5827bdbef4dcbc3b88669e470d3f1ba5">pollWordNonZero</a> ()</td></tr>
+<tr class="memitem:aa4ae488260bbdd582f0dadb4942e8f0e" id="r_aa4ae488260bbdd582f0dadb4942e8f0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4ae488260bbdd582f0dadb4942e8f0e">userMessage</a> ()</td></tr>
+<tr class="memitem:a64051a5d15d8fe8a4783b5791c90c3bc" id="r_a64051a5d15d8fe8a4783b5791c90c3bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64051a5d15d8fe8a4783b5791c90c3bc">userMessageRecorded</a> ()</td></tr>
+<tr class="memitem:a33bed7267ce56f75ad8e8c224b96a923" id="r_a33bed7267ce56f75ad8e8c224b96a923"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33bed7267ce56f75ad8e8c224b96a923">userMessageAcknowledge</a> ()</td></tr>
+<tr class="memitem:a3a2fa74e4c15e8b5527d75a6cbb00848" id="r_a3a2fa74e4c15e8b5527d75a6cbb00848"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2fa74e4c15e8b5527d75a6cbb00848">eToolboxEvent</a> ()</td></tr>
+<tr class="memitem:a6bba9f1400a58268c9f1da1722fc2036" id="r_a6bba9f1400a58268c9f1da1722fc2036"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bba9f1400a58268c9f1da1722fc2036">preCloseDown</a> ()</td></tr>
+<tr class="memitem:a0eb7e1604ab4b908a7a6b53e1dd621f2" id="r_a0eb7e1604ab4b908a7a6b53e1dd621f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eb7e1604ab4b908a7a6b53e1dd621f2">unknownWimpEvent</a> ()</td></tr>
+<tr class="memitem:a846b1661907f0228fc4ff01d0a55d4ab" id="r_a846b1661907f0228fc4ff01d0a55d4ab"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a846b1661907f0228fc4ff01d0a55d4ab">errorHandler</a> ()</td></tr>
 <tr class="memitem:a01a74610851ad142a26e6016282f3d53" id="r_a01a74610851ad142a26e6016282f3d53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01a74610851ad142a26e6016282f3d53">showProperties</a> ()</td></tr>
 <tr class="memitem:ac57476c8c4ce618ae4ae676d673d04aa" id="r_ac57476c8c4ce618ae4ae676d673d04aa"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57476c8c4ce618ae4ae676d673d04aa">getClassName</a> ()</td></tr>
 <tr class="memitem:adc3a2a6f8721dba9de404ef591607f1a" id="r_adc3a2a6f8721dba9de404ef591607f1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc3a2a6f8721dba9de404ef591607f1a">getClassType</a> ()</td></tr>
+<tr class="inherit_header pub_methods_class_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_object')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_object.html">Object</a></td></tr>
+<tr class="memitem:a40860402e64d8008fb42329df7097cdb inherit pub_methods_class_object" id="r_a40860402e64d8008fb42329df7097cdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a40860402e64d8008fb42329df7097cdb">Object</a> ()</td></tr>
+<tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3 inherit pub_methods_class_object" id="r_ae8f5483f459e46687bd01e6f9977afd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
+<tr class="inherit_header pub_methods_class_error_report"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_error_report')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_error_report.html">ErrorReport</a></td></tr>
+<tr class="memitem:a1ce036050ec4617283eff875995ca27a inherit pub_methods_class_error_report" id="r_a1ce036050ec4617283eff875995ca27a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a1ce036050ec4617283eff875995ca27a">ErrorReport</a> ()</td></tr>
+<tr class="memitem:a6ec853c4b91e7cf38aa67e269131f06d inherit pub_methods_class_error_report" id="r_a6ec853c4b91e7cf38aa67e269131f06d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a6ec853c4b91e7cf38aa67e269131f06d">~ErrorReport</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1cac8acf231e282f65b47ad683830b94" id="r_a1cac8acf231e282f65b47ad683830b94"><td class="memItemLeft" align="right" valign="top"><a id="a1cac8acf231e282f65b47ad683830b94" name="a1cac8acf231e282f65b47ad683830b94"></a>
-static unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><b>getPollBlock</b> ()</td></tr>
-<tr class="memitem:ad5b007840baae2898eafc787a5f6ee4c" id="r_ad5b007840baae2898eafc787a5f6ee4c"><td class="memItemLeft" align="right" valign="top"><a id="ad5b007840baae2898eafc787a5f6ee4c" name="ad5b007840baae2898eafc787a5f6ee4c"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setHandle</b> (unsigned int)</td></tr>
-<tr class="memitem:aa1bde6d8f750c3a5c24e2e849664b6fc" id="r_aa1bde6d8f750c3a5c24e2e849664b6fc"><td class="memItemLeft" align="right" valign="top"><a id="aa1bde6d8f750c3a5c24e2e849664b6fc" name="aa1bde6d8f750c3a5c24e2e849664b6fc"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getHandle</b> ()</td></tr>
-<tr class="memitem:a94e93f92a8563dc3a29a729c6ff8c92f" id="r_a94e93f92a8563dc3a29a729c6ff8c92f"><td class="memItemLeft" align="right" valign="top"><a id="a94e93f92a8563dc3a29a729c6ff8c92f" name="a94e93f92a8563dc3a29a729c6ff8c92f"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getEvent</b> ()</td></tr>
-<tr class="memitem:a9188f35408a3e5badc3219d9d228577d" id="r_a9188f35408a3e5badc3219d9d228577d"><td class="memItemLeft" align="right" valign="top"><a id="a9188f35408a3e5badc3219d9d228577d" name="a9188f35408a3e5badc3219d9d228577d"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setPollIdleInterval</b> (unsigned int)</td></tr>
-<tr class="memitem:ade2d89d924b05f5645caeca229942a24" id="r_ade2d89d924b05f5645caeca229942a24"><td class="memItemLeft" align="right" valign="top"><a id="ade2d89d924b05f5645caeca229942a24" name="ade2d89d924b05f5645caeca229942a24"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getPollIdleInterval</b> ()</td></tr>
-<tr class="memitem:a7969a9d2011cc102cb6bcd05b55d8dfd" id="r_a7969a9d2011cc102cb6bcd05b55d8dfd"><td class="memItemLeft" align="right" valign="top"><a id="a7969a9d2011cc102cb6bcd05b55d8dfd" name="a7969a9d2011cc102cb6bcd05b55d8dfd"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setPollWord</b> (int *)</td></tr>
-<tr class="memitem:a3c5612f5fcc62b636cc2c6788b8fab7b" id="r_a3c5612f5fcc62b636cc2c6788b8fab7b"><td class="memItemLeft" align="right" valign="top"><a id="a3c5612f5fcc62b636cc2c6788b8fab7b" name="a3c5612f5fcc62b636cc2c6788b8fab7b"></a>
-static int *&#160;</td><td class="memItemRight" valign="bottom"><b>getPollWord</b> ()</td></tr>
-<tr class="memitem:a4446bbe91dc43db07a3d2283b759f45e" id="r_a4446bbe91dc43db07a3d2283b759f45e"><td class="memItemLeft" align="right" valign="top"><a id="a4446bbe91dc43db07a3d2283b759f45e" name="a4446bbe91dc43db07a3d2283b759f45e"></a>
-static unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><b>getWorkspace</b> ()</td></tr>
-<tr class="memitem:a73c7dcf5df36cf308b094496bab104a4" id="r_a73c7dcf5df36cf308b094496bab104a4"><td class="memItemLeft" align="right" valign="top"><a id="a73c7dcf5df36cf308b094496bab104a4" name="a73c7dcf5df36cf308b094496bab104a4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>redrawIconBar</b> ()</td></tr>
-<tr class="memitem:a7b311b40204d0374a25be63bea34cdc4" id="r_a7b311b40204d0374a25be63bea34cdc4"><td class="memItemLeft" align="right" valign="top"><a id="a7b311b40204d0374a25be63bea34cdc4" name="a7b311b40204d0374a25be63bea34cdc4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>redrawScreen</b> ()</td></tr>
-<tr class="memitem:aa28f08c6447b393bcec66b8e3799406c" id="r_aa28f08c6447b393bcec66b8e3799406c"><td class="memItemLeft" align="right" valign="top"><a id="aa28f08c6447b393bcec66b8e3799406c" name="aa28f08c6447b393bcec66b8e3799406c"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>openWindow</b> ()</td></tr>
-<tr class="memitem:aa8be1712fefe57048c2215e009f4c6dc" id="r_aa8be1712fefe57048c2215e009f4c6dc"><td class="memItemLeft" align="right" valign="top"><a id="aa8be1712fefe57048c2215e009f4c6dc" name="aa8be1712fefe57048c2215e009f4c6dc"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>closeWindow</b> ()</td></tr>
-<tr class="memitem:a4c11d96b104ddc3e43889e1e9b7dfb8b" id="r_a4c11d96b104ddc3e43889e1e9b7dfb8b"><td class="memItemLeft" align="right" valign="top"><a id="a4c11d96b104ddc3e43889e1e9b7dfb8b" name="a4c11d96b104ddc3e43889e1e9b7dfb8b"></a>
-static WimpRedrawWindowBlock *&#160;</td><td class="memItemRight" valign="bottom"><b>updateWindow</b> (WimpRedrawWindowBlock *)</td></tr>
-<tr class="memitem:a2c0e2876e185a3e6859fbb2b8e0ab5f1" id="r_a2c0e2876e185a3e6859fbb2b8e0ab5f1"><td class="memItemLeft" align="right" valign="top"><a id="a2c0e2876e185a3e6859fbb2b8e0ab5f1" name="a2c0e2876e185a3e6859fbb2b8e0ab5f1"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>closeWindow</b> (int)</td></tr>
-<tr class="memitem:a8f1fa80cec23b9b97c9f189cce6a493a" id="r_a8f1fa80cec23b9b97c9f189cce6a493a"><td class="memItemLeft" align="right" valign="top"><a id="a8f1fa80cec23b9b97c9f189cce6a493a" name="a8f1fa80cec23b9b97c9f189cce6a493a"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>openTemplate</b> (char *)</td></tr>
-<tr class="memitem:a3b7663be95a3422f33bba204fa33436d" id="r_a3b7663be95a3422f33bba204fa33436d"><td class="memItemLeft" align="right" valign="top"><a id="a3b7663be95a3422f33bba204fa33436d" name="a3b7663be95a3422f33bba204fa33436d"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>closeTemplate</b> ()</td></tr>
+<tr class="memitem:a1cac8acf231e282f65b47ad683830b94" id="r_a1cac8acf231e282f65b47ad683830b94"><td class="memItemLeft" align="right" valign="top">static unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cac8acf231e282f65b47ad683830b94">getPollBlock</a> ()</td></tr>
+<tr class="memitem:ad5b007840baae2898eafc787a5f6ee4c" id="r_ad5b007840baae2898eafc787a5f6ee4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b007840baae2898eafc787a5f6ee4c">setHandle</a> (unsigned int)</td></tr>
+<tr class="memitem:aa1bde6d8f750c3a5c24e2e849664b6fc" id="r_aa1bde6d8f750c3a5c24e2e849664b6fc"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1bde6d8f750c3a5c24e2e849664b6fc">getHandle</a> ()</td></tr>
+<tr class="memitem:a94e93f92a8563dc3a29a729c6ff8c92f" id="r_a94e93f92a8563dc3a29a729c6ff8c92f"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94e93f92a8563dc3a29a729c6ff8c92f">getEvent</a> ()</td></tr>
+<tr class="memitem:a9188f35408a3e5badc3219d9d228577d" id="r_a9188f35408a3e5badc3219d9d228577d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9188f35408a3e5badc3219d9d228577d">setPollIdleInterval</a> (unsigned int)</td></tr>
+<tr class="memitem:ade2d89d924b05f5645caeca229942a24" id="r_ade2d89d924b05f5645caeca229942a24"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade2d89d924b05f5645caeca229942a24">getPollIdleInterval</a> ()</td></tr>
+<tr class="memitem:a7969a9d2011cc102cb6bcd05b55d8dfd" id="r_a7969a9d2011cc102cb6bcd05b55d8dfd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7969a9d2011cc102cb6bcd05b55d8dfd">setPollWord</a> (int *)</td></tr>
+<tr class="memitem:a3c5612f5fcc62b636cc2c6788b8fab7b" id="r_a3c5612f5fcc62b636cc2c6788b8fab7b"><td class="memItemLeft" align="right" valign="top">static int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c5612f5fcc62b636cc2c6788b8fab7b">getPollWord</a> ()</td></tr>
+<tr class="memitem:a4446bbe91dc43db07a3d2283b759f45e" id="r_a4446bbe91dc43db07a3d2283b759f45e"><td class="memItemLeft" align="right" valign="top">static unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4446bbe91dc43db07a3d2283b759f45e">getWorkspace</a> ()</td></tr>
+<tr class="memitem:a73c7dcf5df36cf308b094496bab104a4" id="r_a73c7dcf5df36cf308b094496bab104a4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c7dcf5df36cf308b094496bab104a4">redrawIconBar</a> ()</td></tr>
+<tr class="memitem:a7b311b40204d0374a25be63bea34cdc4" id="r_a7b311b40204d0374a25be63bea34cdc4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b311b40204d0374a25be63bea34cdc4">redrawScreen</a> ()</td></tr>
+<tr class="memitem:aa28f08c6447b393bcec66b8e3799406c" id="r_aa28f08c6447b393bcec66b8e3799406c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa28f08c6447b393bcec66b8e3799406c">openWindow</a> ()</td></tr>
+<tr class="memitem:aa8be1712fefe57048c2215e009f4c6dc" id="r_aa8be1712fefe57048c2215e009f4c6dc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8be1712fefe57048c2215e009f4c6dc">closeWindow</a> ()</td></tr>
+<tr class="memitem:a4c11d96b104ddc3e43889e1e9b7dfb8b" id="r_a4c11d96b104ddc3e43889e1e9b7dfb8b"><td class="memItemLeft" align="right" valign="top">static WimpRedrawWindowBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c11d96b104ddc3e43889e1e9b7dfb8b">updateWindow</a> (WimpRedrawWindowBlock *)</td></tr>
+<tr class="memitem:a2c0e2876e185a3e6859fbb2b8e0ab5f1" id="r_a2c0e2876e185a3e6859fbb2b8e0ab5f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c0e2876e185a3e6859fbb2b8e0ab5f1">closeWindow</a> (int)</td></tr>
+<tr class="memitem:a8f1fa80cec23b9b97c9f189cce6a493a" id="r_a8f1fa80cec23b9b97c9f189cce6a493a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f1fa80cec23b9b97c9f189cce6a493a">openTemplate</a> (char *)</td></tr>
+<tr class="memitem:a3b7663be95a3422f33bba204fa33436d" id="r_a3b7663be95a3422f33bba204fa33436d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b7663be95a3422f33bba204fa33436d">closeTemplate</a> ()</td></tr>
 <tr class="inherit_header pub_static_methods_class_error_report"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_error_report')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="class_error_report.html">ErrorReport</a></td></tr>
-<tr class="memitem:a469f387085165c0f6df06525725ab878 inherit pub_static_methods_class_error_report" id="r_a469f387085165c0f6df06525725ab878"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLastError</b> (_kernel_oserror *, unsigned int)</td></tr>
-<tr class="memitem:a94c78d09c659bf5ba73f8d1383009be1 inherit pub_static_methods_class_error_report" id="r_a94c78d09c659bf5ba73f8d1383009be1"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLastError</b> (_kernel_oserror *, unsigned int, char *location)</td></tr>
-<tr class="memitem:ab8bc2c78af58e7d223896ac46a4e0df3 inherit pub_static_methods_class_error_report" id="r_ab8bc2c78af58e7d223896ac46a4e0df3"><td class="memItemLeft" align="right" valign="top">
-static _kernel_oserror *&#160;</td><td class="memItemRight" valign="bottom"><b>getLastError</b> ()</td></tr>
-<tr class="memitem:ae4026f1a48e4496d7c3331fceddec901 inherit pub_static_methods_class_error_report" id="r_ae4026f1a48e4496d7c3331fceddec901"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setErrFlags</b> (unsigned int)</td></tr>
-<tr class="memitem:a6449a72100e005da24d207bbe15b16d8 inherit pub_static_methods_class_error_report" id="r_a6449a72100e005da24d207bbe15b16d8"><td class="memItemLeft" align="right" valign="top">
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getErrFlags</b> ()</td></tr>
-<tr class="memitem:a7725635b24aa9fcea460988d08efaff5 inherit pub_static_methods_class_error_report" id="r_a7725635b24aa9fcea460988d08efaff5"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setAsWimpTask</b> (char *)</td></tr>
-<tr class="memitem:a48fe6fc4c03e67aade497e369b8d2943 inherit pub_static_methods_class_error_report" id="r_a48fe6fc4c03e67aade497e369b8d2943"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setAsConsoleTask</b> ()</td></tr>
-<tr class="memitem:ab4e570f0237234e4950960ec9df70309 inherit pub_static_methods_class_error_report" id="r_ab4e570f0237234e4950960ec9df70309"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setLocation</b> (char *)</td></tr>
-<tr class="memitem:a4cf9d03722bff77388d971012f583b40 inherit pub_static_methods_class_error_report" id="r_a4cf9d03722bff77388d971012f583b40"><td class="memItemLeft" align="right" valign="top">
-static char *&#160;</td><td class="memItemRight" valign="bottom"><b>getLocation</b> ()</td></tr>
-<tr class="memitem:a8ec80e6a3370b076299e8995851a7215 inherit pub_static_methods_class_error_report" id="r_a8ec80e6a3370b076299e8995851a7215"><td class="memItemLeft" align="right" valign="top">
-static char *&#160;</td><td class="memItemRight" valign="bottom"><b>getTaskName</b> ()</td></tr>
-<tr class="memitem:a115b25a8202d1c1712648b91a03bdcfd inherit pub_static_methods_class_error_report" id="r_a115b25a8202d1c1712648b91a03bdcfd"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clearError</b> ()</td></tr>
-<tr class="memitem:ae5f56c7cc16830f890495e2668aab5c2 inherit pub_static_methods_class_error_report" id="r_ae5f56c7cc16830f890495e2668aab5c2"><td class="memItemLeft" align="right" valign="top">
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getEnvironment</b> ()</td></tr>
-<tr class="memitem:a6760a46a31a5abd9e14c5b57d78ee92e inherit pub_static_methods_class_error_report" id="r_a6760a46a31a5abd9e14c5b57d78ee92e"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setTrap</b> (int, int *)</td></tr>
-<tr class="memitem:a95117d52a650c9e18550d630dfacb852 inherit pub_static_methods_class_error_report" id="r_a95117d52a650c9e18550d630dfacb852"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clearTrap</b> ()</td></tr>
+<tr class="memitem:a469f387085165c0f6df06525725ab878 inherit pub_static_methods_class_error_report" id="r_a469f387085165c0f6df06525725ab878"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a469f387085165c0f6df06525725ab878">setLastError</a> (_kernel_oserror *, unsigned int)</td></tr>
+<tr class="memitem:a94c78d09c659bf5ba73f8d1383009be1 inherit pub_static_methods_class_error_report" id="r_a94c78d09c659bf5ba73f8d1383009be1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a94c78d09c659bf5ba73f8d1383009be1">setLastError</a> (_kernel_oserror *, unsigned int, char *location)</td></tr>
+<tr class="memitem:ab8bc2c78af58e7d223896ac46a4e0df3 inherit pub_static_methods_class_error_report" id="r_ab8bc2c78af58e7d223896ac46a4e0df3"><td class="memItemLeft" align="right" valign="top">static _kernel_oserror *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#ab8bc2c78af58e7d223896ac46a4e0df3">getLastError</a> ()</td></tr>
+<tr class="memitem:ae4026f1a48e4496d7c3331fceddec901 inherit pub_static_methods_class_error_report" id="r_ae4026f1a48e4496d7c3331fceddec901"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#ae4026f1a48e4496d7c3331fceddec901">setErrFlags</a> (unsigned int)</td></tr>
+<tr class="memitem:a6449a72100e005da24d207bbe15b16d8 inherit pub_static_methods_class_error_report" id="r_a6449a72100e005da24d207bbe15b16d8"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a6449a72100e005da24d207bbe15b16d8">getErrFlags</a> ()</td></tr>
+<tr class="memitem:a7725635b24aa9fcea460988d08efaff5 inherit pub_static_methods_class_error_report" id="r_a7725635b24aa9fcea460988d08efaff5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a7725635b24aa9fcea460988d08efaff5">setAsWimpTask</a> (char *)</td></tr>
+<tr class="memitem:a48fe6fc4c03e67aade497e369b8d2943 inherit pub_static_methods_class_error_report" id="r_a48fe6fc4c03e67aade497e369b8d2943"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a48fe6fc4c03e67aade497e369b8d2943">setAsConsoleTask</a> ()</td></tr>
+<tr class="memitem:ab4e570f0237234e4950960ec9df70309 inherit pub_static_methods_class_error_report" id="r_ab4e570f0237234e4950960ec9df70309"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#ab4e570f0237234e4950960ec9df70309">setLocation</a> (char *)</td></tr>
+<tr class="memitem:a4cf9d03722bff77388d971012f583b40 inherit pub_static_methods_class_error_report" id="r_a4cf9d03722bff77388d971012f583b40"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a4cf9d03722bff77388d971012f583b40">getLocation</a> ()</td></tr>
+<tr class="memitem:a8ec80e6a3370b076299e8995851a7215 inherit pub_static_methods_class_error_report" id="r_a8ec80e6a3370b076299e8995851a7215"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a8ec80e6a3370b076299e8995851a7215">getTaskName</a> ()</td></tr>
+<tr class="memitem:a115b25a8202d1c1712648b91a03bdcfd inherit pub_static_methods_class_error_report" id="r_a115b25a8202d1c1712648b91a03bdcfd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a115b25a8202d1c1712648b91a03bdcfd">clearError</a> ()</td></tr>
+<tr class="memitem:ae5f56c7cc16830f890495e2668aab5c2 inherit pub_static_methods_class_error_report" id="r_ae5f56c7cc16830f890495e2668aab5c2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#ae5f56c7cc16830f890495e2668aab5c2">getEnvironment</a> ()</td></tr>
+<tr class="memitem:a6760a46a31a5abd9e14c5b57d78ee92e inherit pub_static_methods_class_error_report" id="r_a6760a46a31a5abd9e14c5b57d78ee92e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a6760a46a31a5abd9e14c5b57d78ee92e">setTrap</a> (int, int *)</td></tr>
+<tr class="memitem:a95117d52a650c9e18550d630dfacb852 inherit pub_static_methods_class_error_report" id="r_a95117d52a650c9e18550d630dfacb852"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a95117d52a650c9e18550d630dfacb852">clearTrap</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ae1d97f0182501f6c696937c92a65f2c7" id="r_ae1d97f0182501f6c696937c92a65f2c7"><td class="memItemLeft" align="right" valign="top"><a id="ae1d97f0182501f6c696937c92a65f2c7" name="ae1d97f0182501f6c696937c92a65f2c7"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>quit</b></td></tr>
+<tr class="memitem:ae1d97f0182501f6c696937c92a65f2c7" id="r_ae1d97f0182501f6c696937c92a65f2c7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1d97f0182501f6c696937c92a65f2c7">quit</a></td></tr>
 </table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="a4e784376e8f1ea97bdc62802903cfbcc" name="a4e784376e8f1ea97bdc62802903cfbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e784376e8f1ea97bdc62802903cfbcc">&#9670;&#160;</a></span>WindDefStr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct WimpObj::WindDefStr WimpObj::WindDefStr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a950132e4c6b573e50abd6f9f5cbc089e" name="a950132e4c6b573e50abd6f9f5cbc089e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a950132e4c6b573e50abd6f9f5cbc089e">&#9670;&#160;</a></span>WimpObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WimpObj::WimpObj </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a679bab0fc4df002692c05f6a992edd27" name="a679bab0fc4df002692c05f6a992edd27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679bab0fc4df002692c05f6a992edd27">&#9670;&#160;</a></span>~WimpObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WimpObj::~WimpObj </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a8f968f2f76f83da6738323d02bc60da1" name="a8f968f2f76f83da6738323d02bc60da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f968f2f76f83da6738323d02bc60da1">&#9670;&#160;</a></span>addMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::addMessages </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcd2f1c285d51b8cded776089e539873" name="afcd2f1c285d51b8cded776089e539873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd2f1c285d51b8cded776089e539873">&#9670;&#160;</a></span>closeDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::closeDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b7663be95a3422f33bba204fa33436d" name="a3b7663be95a3422f33bba204fa33436d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7663be95a3422f33bba204fa33436d">&#9670;&#160;</a></span>closeTemplate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::closeTemplate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8be1712fefe57048c2215e009f4c6dc" name="aa8be1712fefe57048c2215e009f4c6dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8be1712fefe57048c2215e009f4c6dc">&#9670;&#160;</a></span>closeWindow() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::closeWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c0e2876e185a3e6859fbb2b8e0ab5f1" name="a2c0e2876e185a3e6859fbb2b8e0ab5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c0e2876e185a3e6859fbb2b8e0ab5f1">&#9670;&#160;</a></span>closeWindow() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::closeWindow </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad632b8166c5a0604db4559b68b2c881" name="aad632b8166c5a0604db4559b68b2c881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad632b8166c5a0604db4559b68b2c881">&#9670;&#160;</a></span>closeWindowRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::closeWindowRequest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a846b1661907f0228fc4ff01d0a55d4ab" name="a846b1661907f0228fc4ff01d0a55d4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846b1661907f0228fc4ff01d0a55d4ab">&#9670;&#160;</a></span>errorHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int WimpObj::errorHandler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a2fa74e4c15e8b5527d75a6cbb00848" name="a3a2fa74e4c15e8b5527d75a6cbb00848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2fa74e4c15e8b5527d75a6cbb00848">&#9670;&#160;</a></span>eToolboxEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::eToolboxEvent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_toolbox_task.html#a9dd411ff701053fd580ec564f5b95f68">ToolboxTask</a>.</p>
+
+</div>
+</div>
+<a id="a70847cffd066d8c0a738e5c4417720bc" name="a70847cffd066d8c0a738e5c4417720bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70847cffd066d8c0a738e5c4417720bc">&#9670;&#160;</a></span>gainCaret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::gainCaret </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac57476c8c4ce618ae4ae676d673d04aa" name="ac57476c8c4ce618ae4ae676d673d04aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac57476c8c4ce618ae4ae676d673d04aa">&#9670;&#160;</a></span>getClassName()</h2>
 
@@ -280,7 +487,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>quit</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_object.html">Object</a>.</p>
+<p>Implements <a class="el" href="class_object.html#a0017577aa3349d6e361e0f171adecd35">Object</a>.</p>
 
 </div>
 </div>
@@ -307,7 +514,768 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>quit</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_object.html">Object</a>.</p>
+<p>Implements <a class="el" href="class_object.html#a0f0f76a055d69bd2550311608745e104">Object</a>.</p>
+
+</div>
+</div>
+<a id="a94e93f92a8563dc3a29a729c6ff8c92f" name="a94e93f92a8563dc3a29a729c6ff8c92f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94e93f92a8563dc3a29a729c6ff8c92f">&#9670;&#160;</a></span>getEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::getEvent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1bde6d8f750c3a5c24e2e849664b6fc" name="aa1bde6d8f750c3a5c24e2e849664b6fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1bde6d8f750c3a5c24e2e849664b6fc">&#9670;&#160;</a></span>getHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::getHandle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1cac8acf231e282f65b47ad683830b94" name="a1cac8acf231e282f65b47ad683830b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cac8acf231e282f65b47ad683830b94">&#9670;&#160;</a></span>getPollBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int * WimpObj::getPollBlock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade2d89d924b05f5645caeca229942a24" name="ade2d89d924b05f5645caeca229942a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2d89d924b05f5645caeca229942a24">&#9670;&#160;</a></span>getPollIdleInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::getPollIdleInterval </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c5612f5fcc62b636cc2c6788b8fab7b" name="a3c5612f5fcc62b636cc2c6788b8fab7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c5612f5fcc62b636cc2c6788b8fab7b">&#9670;&#160;</a></span>getPollWord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * WimpObj::getPollWord </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4446bbe91dc43db07a3d2283b759f45e" name="a4446bbe91dc43db07a3d2283b759f45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4446bbe91dc43db07a3d2283b759f45e">&#9670;&#160;</a></span>getWorkspace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int * WimpObj::getWorkspace </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af234930b427da97daa07fe24c0a372f7" name="af234930b427da97daa07fe24c0a372f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af234930b427da97daa07fe24c0a372f7">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07017d233a79a7d286a4bdfa46414725" name="a07017d233a79a7d286a4bdfa46414725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07017d233a79a7d286a4bdfa46414725">&#9670;&#160;</a></span>keyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::keyPressed </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66a65b76537eca36f6e1ea5fc4ccb984" name="a66a65b76537eca36f6e1ea5fc4ccb984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a65b76537eca36f6e1ea5fc4ccb984">&#9670;&#160;</a></span>loseCaret()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::loseCaret </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc43cd17184b531fa8f2dc4bd323992b" name="adc43cd17184b531fa8f2dc4bd323992b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc43cd17184b531fa8f2dc4bd323992b">&#9670;&#160;</a></span>menuSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::menuSelection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4a02d0519588d71e41a7f85a7cc3053" name="aa4a02d0519588d71e41a7f85a7cc3053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a02d0519588d71e41a7f85a7cc3053">&#9670;&#160;</a></span>mouseClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::mouseClick </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c3034e495e0b32102afec03c3f70e30" name="a9c3034e495e0b32102afec03c3f70e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3034e495e0b32102afec03c3f70e30">&#9670;&#160;</a></span>nullReason()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::nullReason </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f1fa80cec23b9b97c9f189cce6a493a" name="a8f1fa80cec23b9b97c9f189cce6a493a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1fa80cec23b9b97c9f189cce6a493a">&#9670;&#160;</a></span>openTemplate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::openTemplate </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa28f08c6447b393bcec66b8e3799406c" name="aa28f08c6447b393bcec66b8e3799406c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28f08c6447b393bcec66b8e3799406c">&#9670;&#160;</a></span>openWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::openWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6724c6bf75456e20a9287c8dc8cf8710" name="a6724c6bf75456e20a9287c8dc8cf8710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6724c6bf75456e20a9287c8dc8cf8710">&#9670;&#160;</a></span>openWindowRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::openWindowRequest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a9f40078c7128708b02c00e40aea17d" name="a3a9f40078c7128708b02c00e40aea17d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9f40078c7128708b02c00e40aea17d">&#9670;&#160;</a></span>pointerEnteringWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::pointerEnteringWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1e46f23bea07febd3537b36c51c2b3b" name="ad1e46f23bea07febd3537b36c51c2b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e46f23bea07febd3537b36c51c2b3b">&#9670;&#160;</a></span>pointerLeavingWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::pointerLeavingWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37f010ec6b70eeb22c030a46562fbc9d" name="a37f010ec6b70eeb22c030a46562fbc9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f010ec6b70eeb22c030a46562fbc9d">&#9670;&#160;</a></span>poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::poll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b44838826031c2c21157135d9dc0e8e" name="a1b44838826031c2c21157135d9dc0e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b44838826031c2c21157135d9dc0e8e">&#9670;&#160;</a></span>pollIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int WimpObj::pollIdle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5827bdbef4dcbc3b88669e470d3f1ba5" name="a5827bdbef4dcbc3b88669e470d3f1ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5827bdbef4dcbc3b88669e470d3f1ba5">&#9670;&#160;</a></span>pollWordNonZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::pollWordNonZero </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bba9f1400a58268c9f1da1722fc2036" name="a6bba9f1400a58268c9f1da1722fc2036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bba9f1400a58268c9f1da1722fc2036">&#9670;&#160;</a></span>preCloseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::preCloseDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73c7dcf5df36cf308b094496bab104a4" name="a73c7dcf5df36cf308b094496bab104a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c7dcf5df36cf308b094496bab104a4">&#9670;&#160;</a></span>redrawIconBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::redrawIconBar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b311b40204d0374a25be63bea34cdc4" name="a7b311b40204d0374a25be63bea34cdc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b311b40204d0374a25be63bea34cdc4">&#9670;&#160;</a></span>redrawScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::redrawScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa995934e0fdf34eba9311aaa68493892" name="aa995934e0fdf34eba9311aaa68493892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa995934e0fdf34eba9311aaa68493892">&#9670;&#160;</a></span>redrawWindowRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::redrawWindowRequest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1e8c5b56afa6e95987f4897b299414b" name="ae1e8c5b56afa6e95987f4897b299414b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e8c5b56afa6e95987f4897b299414b">&#9670;&#160;</a></span>removeMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::removeMessages </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfd766abe341615b863633e6e8a1eaa4" name="adfd766abe341615b863633e6e8a1eaa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd766abe341615b863633e6e8a1eaa4">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WimpObj::run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d063958e1a8bccca1a4101c1e582e7f" name="a1d063958e1a8bccca1a4101c1e582e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d063958e1a8bccca1a4101c1e582e7f">&#9670;&#160;</a></span>runIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WimpObj::runIdle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a661bb5bf4b61c884b4a318a180be01b4" name="a661bb5bf4b61c884b4a318a180be01b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661bb5bf4b61c884b4a318a180be01b4">&#9670;&#160;</a></span>scrollRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::scrollRequest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5b007840baae2898eafc787a5f6ee4c" name="ad5b007840baae2898eafc787a5f6ee4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b007840baae2898eafc787a5f6ee4c">&#9670;&#160;</a></span>setHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::setHandle </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1cae4f6721c95c8b07b0d1a9e3d89a4a" name="a1cae4f6721c95c8b07b0d1a9e3d89a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cae4f6721c95c8b07b0d1a9e3d89a4a">&#9670;&#160;</a></span>setMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::setMask </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9188f35408a3e5badc3219d9d228577d" name="a9188f35408a3e5badc3219d9d228577d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9188f35408a3e5badc3219d9d228577d">&#9670;&#160;</a></span>setPollIdleInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::setPollIdleInterval </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7969a9d2011cc102cb6bcd05b55d8dfd" name="a7969a9d2011cc102cb6bcd05b55d8dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7969a9d2011cc102cb6bcd05b55d8dfd">&#9670;&#160;</a></span>setPollWord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::setPollWord </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a726cf2b3643a2201d21f084734b7accc" name="a726cf2b3643a2201d21f084734b7accc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726cf2b3643a2201d21f084734b7accc">&#9670;&#160;</a></span>setTaskname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WimpObj::setTaskname </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -334,7 +1302,180 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>quit</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_object.html">Object</a>.</p>
+<p>Implements <a class="el" href="class_object.html#ab93aa73d7ba17027c5d83b1c6198a0cd">Object</a>.</p>
+
+</div>
+</div>
+<a id="a0eb7e1604ab4b908a7a6b53e1dd621f2" name="a0eb7e1604ab4b908a7a6b53e1dd621f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb7e1604ab4b908a7a6b53e1dd621f2">&#9670;&#160;</a></span>unknownWimpEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::unknownWimpEvent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c11d96b104ddc3e43889e1e9b7dfb8b" name="a4c11d96b104ddc3e43889e1e9b7dfb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c11d96b104ddc3e43889e1e9b7dfb8b">&#9670;&#160;</a></span>updateWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WimpRedrawWindowBlock * WimpObj::updateWindow </td>
+          <td>(</td>
+          <td class="paramtype">WimpRedrawWindowBlock *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca466ae5dbef929d4dc977abf95d2991" name="aca466ae5dbef929d4dc977abf95d2991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca466ae5dbef929d4dc977abf95d2991">&#9670;&#160;</a></span>userDragBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::userDragBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4ae488260bbdd582f0dadb4942e8f0e" name="aa4ae488260bbdd582f0dadb4942e8f0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ae488260bbdd582f0dadb4942e8f0e">&#9670;&#160;</a></span>userMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::userMessage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33bed7267ce56f75ad8e8c224b96a923" name="a33bed7267ce56f75ad8e8c224b96a923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bed7267ce56f75ad8e8c224b96a923">&#9670;&#160;</a></span>userMessageAcknowledge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::userMessageAcknowledge </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64051a5d15d8fe8a4783b5791c90c3bc" name="a64051a5d15d8fe8a4783b5791c90c3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64051a5d15d8fe8a4783b5791c90c3bc">&#9670;&#160;</a></span>userMessageRecorded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WimpObj::userMessageRecorded </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ae1d97f0182501f6c696937c92a65f2c7" name="ae1d97f0182501f6c696937c92a65f2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d97f0182501f6c696937c92a65f2c7">&#9670;&#160;</a></span>quit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WimpObj::quit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

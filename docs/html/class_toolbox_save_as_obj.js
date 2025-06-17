@@ -1,0 +1,26 @@
+var class_toolbox_save_as_obj =
+[
+    [ "ToolboxSaveAsObj", "class_toolbox_save_as_obj.html#a6377338d01c424c08962b255e03489a4", null ],
+    [ "ToolboxSaveAsObj", "class_toolbox_save_as_obj.html#af7636239fe1fd6d77eda3f50687cee6f", null ],
+    [ "bufferFilled", "class_toolbox_save_as_obj.html#a5d05ef8d0b710f588e451c437bb19fc6", null ],
+    [ "clearFlags", "class_toolbox_save_as_obj.html#acabbc8d42fc8b24ef8d0fd7dfd229d98", null ],
+    [ "fileSaveCompleted", "class_toolbox_save_as_obj.html#a787100a4c4456b7c63b300dedd2631d6", null ],
+    [ "getClassName", "class_toolbox_save_as_obj.html#a2de9db19d02e641beb5f1a1601947234", null ],
+    [ "getClassType", "class_toolbox_save_as_obj.html#ae63ce2f6f68d14a09fe7d1c2bf1779bf", null ],
+    [ "getFileName", "class_toolbox_save_as_obj.html#ab2a778814498fe6ed95c61ec7ab034f4", null ],
+    [ "getFileName", "class_toolbox_save_as_obj.html#a50938f71a57c947c03292eaa7ba0579c", null ],
+    [ "getFileSize", "class_toolbox_save_as_obj.html#af19cc8c585d02f8a4c991898e7f0fe99", null ],
+    [ "getFileType", "class_toolbox_save_as_obj.html#a12284b5b5b513fb52888cb62a50c7976", null ],
+    [ "getTitle", "class_toolbox_save_as_obj.html#aa6da01f512d86d190f9192a60aaf9438", null ],
+    [ "getTitle", "class_toolbox_save_as_obj.html#a9b64eb90be75e9669223d8f9304aa9b9", null ],
+    [ "getWindowId", "class_toolbox_save_as_obj.html#ad8b3a92da00a74ef235c1c7f1c1ecac8", null ],
+    [ "selectionAvailable", "class_toolbox_save_as_obj.html#af94fb2bf51c6feefcc24c63a7d518e7d", null ],
+    [ "setDataAddress", "class_toolbox_save_as_obj.html#a76480c9af87a705f7913a7112fafd19e", null ],
+    [ "setFileName", "class_toolbox_save_as_obj.html#aa642908e46c680b136a723aae467f42a", null ],
+    [ "setFileSize", "class_toolbox_save_as_obj.html#a7a81cfbd78d1a191b72fd0ab9a6e8a25", null ],
+    [ "setFileType", "class_toolbox_save_as_obj.html#adafa78797eb87c4b9e307ce87044b131", null ],
+    [ "setFlags", "class_toolbox_save_as_obj.html#a2a7ea06b476ff1a63c74f7868b719bd4", null ],
+    [ "setObjectId", "class_toolbox_save_as_obj.html#ac0934ad0e3c4777c26d259b332435e4f", null ],
+    [ "setTitle", "class_toolbox_save_as_obj.html#a5a4ee5f0536487202ad1b519032ea065", null ],
+    [ "showProperties", "class_toolbox_save_as_obj.html#a9eefdd161b13a9f258b8605f3f48b4f9", null ]
+];

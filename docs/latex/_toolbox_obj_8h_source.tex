@@ -1,6 +1,6 @@
 \doxysection{Toolbox\+Obj.\+h}
 \hypertarget{_toolbox_obj_8h_source}{}\label{_toolbox_obj_8h_source}\index{h/ToolboxObj.h@{h/ToolboxObj.h}}
-
+\mbox{\hyperlink{_toolbox_obj_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_cplusplus}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#error\ Header\ file\ "{}ToolboxObj.h"{}\ may\ only\ be\ used\ from\ C++}}
@@ -11,49 +11,49 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_ToolboxObj\_h}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_ToolboxObj\_h}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Object.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}toolbox.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ErrorReport.h"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ClassType.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_error_report_8h}{ErrorReport.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_class_type_8h}{ClassType.h}}"{}}}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ UNUSED}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ UNUSED(x)\ (void)(x)}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }ToolboxObj\ :\ \textcolor{keyword}{public}\ Object,\ \textcolor{keyword}{public}\ ErrorReport\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_error_report_a1ce036050ec4617283eff875995ca27a}{ErrorReport}}\ \{}
 \DoxyCodeLine{00020\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ ToolboxObj();}
-\DoxyCodeLine{00022\ \ \ \ \ ToolboxObj(ObjectId\ \textcolor{keywordtype}{id});}
-\DoxyCodeLine{00023\ \ \ \ \ ToolboxObj(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{void}\ *name\_or\_template);}
-\DoxyCodeLine{00024\ \ \ \ \ \string~ToolboxObj();}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ getTemplateName();}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ getTemplateName(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ \ buff\_size,\ \textcolor{keywordtype}{int}\ *nbytes);}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ ToolboxObj\&\ showObject(\textcolor{keywordtype}{int}\ show\_type,\ \textcolor{keywordtype}{void}\ *type,\ ObjectId\ parent,\ ComponentId\ parent\_component);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ ToolboxObj\&\ hideObject();}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getObjectState(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *state);}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ ToolboxObj\&\ setClientHandle(\textcolor{keywordtype}{void}\ *client\_handle);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getClientHandle(\textcolor{keywordtype}{void}\ *client\_handle);}
-\DoxyCodeLine{00032\ \ \ \ \ ObjectId\ getParent();}
-\DoxyCodeLine{00033\ \ \ \ \ ObjectId\ getAncestor();}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ ToolboxObj\&\ raiseToolboxEvent(ComponentId\ component,\ ToolboxEvent\ *event);}
-\DoxyCodeLine{00035\ \ \ \ \ ObjectClass\ getObjectClass();}
-\DoxyCodeLine{00036\ \ \ \ \ ObjectClass\ readObjectClass();}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ ToolboxObj\&\ objectMiscOp(\_kernel\_swi\_regs\ *regs);}
-\DoxyCodeLine{00038\ \ \ \ \ ObjectId\ readObjectId();}
-\DoxyCodeLine{00039\ \ \ \ \ ObjectId\ readParentObjectId();}
-\DoxyCodeLine{00040\ \ \ \ \ ObjectId\ readAncestorObjectId();}
-\DoxyCodeLine{00041\ \ \ \ \ ToolboxObj\&\ setFlags(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
-\DoxyCodeLine{00042\ \ \ \ \ ToolboxObj\&\ clearFlags();}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getFlags();}
-\DoxyCodeLine{00044\ \ \ \ \ ToolboxObj\&\ setObjectId(ObjectId\ \textcolor{keywordtype}{id});}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ deleteObject();}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ isTemplate(\textcolor{keywordtype}{char}\ *templateName);}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \_kernel\_oserror\ ToolboxObjectIdNotSet;}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ ObjectId\ createObject(\textcolor{keywordtype}{void}\ *name\_or\_template);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}(ObjectId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{void}\ *name\_or\_template);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_ac5eecbc464d07abb8fb700ab96bd5763}{\string~ToolboxObj}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_a5bdf976842286c6939c484b3f29bde95}{getTemplateName}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toolbox_obj_a5bdf976842286c6939c484b3f29bde95}{getTemplateName}}(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{int}\ \ buff\_size,\ \textcolor{keywordtype}{int}\ *nbytes);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_a035121ddb1894d044b18ae75a30ba91f}{showObject}}(\textcolor{keywordtype}{int}\ show\_type,\ \textcolor{keywordtype}{void}\ *type,\ ObjectId\ parent,\ ComponentId\ parent\_component);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_a3be39b30aa9a184b534fbad3f4bf9555}{hideObject}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_aaf109118117674faececb6507c46c22f}{getObjectState}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *state);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_ab52be84448229080123f6c5e27a8bce5}{setClientHandle}}(\textcolor{keywordtype}{void}\ *client\_handle);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_ae65b163d829a5fda01419d75f97023ea}{getClientHandle}}(\textcolor{keywordtype}{void}\ *client\_handle);}
+\DoxyCodeLine{00032\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_aec1e14e54456243fb5a15585913003f0}{getParent}}();}
+\DoxyCodeLine{00033\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_a57619cbb006193854bacef9d9693071e}{getAncestor}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_a3ee78efc52ebf8106adae16e222068b5}{raiseToolboxEvent}}(ComponentId\ component,\ ToolboxEvent\ *event);}
+\DoxyCodeLine{00035\ \ \ \ \ ObjectClass\ \mbox{\hyperlink{class_toolbox_obj_ac640299447343635faadcf67bc9668b9}{getObjectClass}}();}
+\DoxyCodeLine{00036\ \ \ \ \ ObjectClass\ \mbox{\hyperlink{class_toolbox_obj_ace4830c3a56bd6fa01aa469953d3a9a5}{readObjectClass}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_aff7e7a238038b88cd15f0a5c0b154120}{objectMiscOp}}(\_kernel\_swi\_regs\ *regs);}
+\DoxyCodeLine{00038\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_a6d44d00c3d60458bc2c85967b2e11e65}{readObjectId}}();}
+\DoxyCodeLine{00039\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_a78b11e2bfba37301ab50910117beb364}{readParentObjectId}}();}
+\DoxyCodeLine{00040\ \ \ \ \ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_a1e9fed25f725f510bfaa13c4bdf3914b}{readAncestorObjectId}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_ac1b7d9a78d5c37fc57b06bf3358b5ea2}{setFlags}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_a7b4a24c58b1a89ad2273f8d52e7cf08e}{clearFlags}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_a921ecb8ad1c20f551feb08cbc4d94372}{getFlags}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_toolbox_obj_a9718168c330191a94e881278126b6149}{ToolboxObj}}\&\ \mbox{\hyperlink{class_toolbox_obj_ab01ae17edf7a7032a4ce811b5dd4ec1b}{setObjectId}}(ObjectId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toolbox_obj_a8c4bd68d9bdb78ded9831c2037dac523}{deleteObject}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_ac1917823e570c94cb16e326218ba5746}{isTemplate}}(\textcolor{keywordtype}{char}\ *templateName);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \_kernel\_oserror\ \mbox{\hyperlink{class_toolbox_obj_a611de39a48dc8062a5606a3772b3154e}{ToolboxObjectIdNotSet}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ ObjectId\ \mbox{\hyperlink{class_toolbox_obj_a27b13ed61eefe30372978d9b1ef87029}{createObject}}(\textcolor{keywordtype}{void}\ *name\_or\_template);}
 \DoxyCodeLine{00049\ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ showProperties()\{\};}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}*\ getClassName()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxObj"{}};\};}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassType()\ \{\ \textcolor{keywordflow}{return}\ ClassType\_ToolboxObj;\};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toolbox_obj_a91dcfab7ddb6473ce5fd26967784611a}{showProperties}}()\{\};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_toolbox_obj_a5ef4a687826da60204483972495b21f5}{getClassName}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ToolboxObj"{}};\};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_toolbox_obj_a82274a8c8cfbd87e3d6439831893d136}{getClassType}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_class_type_8h_a466273e186141eae5985cd1b0c471b79a0fec71289e3e2990750928a659ba72fd}{ClassType\_ToolboxObj}};\};}
 \DoxyCodeLine{00053\ }
 \DoxyCodeLine{00054\ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//virtual\ ObjectId\ createObject(void\ *name\_or\_template);}}

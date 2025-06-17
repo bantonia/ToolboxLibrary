@@ -1,5 +1,9 @@
 \doxysection{Wimp\+Obj Class Reference}
 \hypertarget{class_wimp_obj}{}\label{class_wimp_obj}\index{WimpObj@{WimpObj}}
+
+
+{\ttfamily \#include $<$Wimp\+Obj.\+h$>$}
+
 Inheritance diagram for Wimp\+Obj\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,112 +18,83 @@ struct \mbox{\hyperlink{struct_wimp_obj_1_1_wind_def_str}{Wind\+Def\+Str}}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wimp_obj_a4e784376e8f1ea97bdc62802903cfbcc}\label{class_wimp_obj_a4e784376e8f1ea97bdc62802903cfbcc} 
-typedef struct Wimp\+Obj\+::\+Wind\+Def\+Str {\bfseries Wind\+Def\+Str}
+typedef struct Wimp\+Obj\+::\+Wind\+Def\+Str \mbox{\hyperlink{class_wimp_obj_a4e784376e8f1ea97bdc62802903cfbcc}{Wind\+Def\+Str}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_error_report}{Error\+Report}}}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_error_report_a8ce273bb4b177794aa5abcfb823ed0ac}\label{class_error_report_a8ce273bb4b177794aa5abcfb823ed0ac} 
-enum {\bfseries error\+Env} \{ {\bfseries CONSOLE}
-, {\bfseries WIMP}
+enum \mbox{\hyperlink{class_error_report_a8ce273bb4b177794aa5abcfb823ed0ac}{error\+Env}} \{ \mbox{\hyperlink{class_error_report_a8ce273bb4b177794aa5abcfb823ed0acaf6a7f34d6764b3055346c1403933617f}{CONSOLE}}
+, \mbox{\hyperlink{class_error_report_a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8}{WIMP}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wimp_obj_af234930b427da97daa07fe24c0a372f7}\label{class_wimp_obj_af234930b427da97daa07fe24c0a372f7} 
-unsigned int {\bfseries init} ()
+\mbox{\hyperlink{class_wimp_obj_a950132e4c6b573e50abd6f9f5cbc089e}{Wimp\+Obj}} ()
 \item 
-\Hypertarget{class_wimp_obj_afcd2f1c285d51b8cded776089e539873}\label{class_wimp_obj_afcd2f1c285d51b8cded776089e539873} 
-void {\bfseries close\+Down} ()
+\mbox{\hyperlink{class_wimp_obj_a679bab0fc4df002692c05f6a992edd27}{\texorpdfstring{$\sim$}{\string~}\+Wimp\+Obj}} ()
 \item 
-\Hypertarget{class_wimp_obj_a1b44838826031c2c21157135d9dc0e8e}\label{class_wimp_obj_a1b44838826031c2c21157135d9dc0e8e} 
-unsigned int {\bfseries poll\+Idle} ()
+unsigned int \mbox{\hyperlink{class_wimp_obj_af234930b427da97daa07fe24c0a372f7}{init}} ()
 \item 
-\Hypertarget{class_wimp_obj_a37f010ec6b70eeb22c030a46562fbc9d}\label{class_wimp_obj_a37f010ec6b70eeb22c030a46562fbc9d} 
-unsigned int {\bfseries poll} ()
+void \mbox{\hyperlink{class_wimp_obj_afcd2f1c285d51b8cded776089e539873}{close\+Down}} ()
 \item 
-\Hypertarget{class_wimp_obj_a1d063958e1a8bccca1a4101c1e582e7f}\label{class_wimp_obj_a1d063958e1a8bccca1a4101c1e582e7f} 
-int {\bfseries run\+Idle} ()
+unsigned int \mbox{\hyperlink{class_wimp_obj_a1b44838826031c2c21157135d9dc0e8e}{poll\+Idle}} ()
 \item 
-\Hypertarget{class_wimp_obj_adfd766abe341615b863633e6e8a1eaa4}\label{class_wimp_obj_adfd766abe341615b863633e6e8a1eaa4} 
-int {\bfseries run} ()
+unsigned int \mbox{\hyperlink{class_wimp_obj_a37f010ec6b70eeb22c030a46562fbc9d}{poll}} ()
 \item 
-\Hypertarget{class_wimp_obj_a726cf2b3643a2201d21f084734b7accc}\label{class_wimp_obj_a726cf2b3643a2201d21f084734b7accc} 
-void {\bfseries set\+Taskname} (char \texorpdfstring{$\ast$}{*})
+int \mbox{\hyperlink{class_wimp_obj_a1d063958e1a8bccca1a4101c1e582e7f}{run\+Idle}} ()
 \item 
-\Hypertarget{class_wimp_obj_a1cae4f6721c95c8b07b0d1a9e3d89a4a}\label{class_wimp_obj_a1cae4f6721c95c8b07b0d1a9e3d89a4a} 
-void {\bfseries set\+Mask} (unsigned int)
+int \mbox{\hyperlink{class_wimp_obj_adfd766abe341615b863633e6e8a1eaa4}{run}} ()
 \item 
-\Hypertarget{class_wimp_obj_a8f968f2f76f83da6738323d02bc60da1}\label{class_wimp_obj_a8f968f2f76f83da6738323d02bc60da1} 
-void {\bfseries add\+Messages} (int \texorpdfstring{$\ast$}{*})
+void \mbox{\hyperlink{class_wimp_obj_a726cf2b3643a2201d21f084734b7accc}{set\+Taskname}} (char \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_ae1e8c5b56afa6e95987f4897b299414b}\label{class_wimp_obj_ae1e8c5b56afa6e95987f4897b299414b} 
-void {\bfseries remove\+Messages} (int \texorpdfstring{$\ast$}{*})
+void \mbox{\hyperlink{class_wimp_obj_a1cae4f6721c95c8b07b0d1a9e3d89a4a}{set\+Mask}} (unsigned int)
 \item 
-\Hypertarget{class_wimp_obj_a9c3034e495e0b32102afec03c3f70e30}\label{class_wimp_obj_a9c3034e495e0b32102afec03c3f70e30} 
-virtual void {\bfseries null\+Reason} ()
+void \mbox{\hyperlink{class_wimp_obj_a8f968f2f76f83da6738323d02bc60da1}{add\+Messages}} (int \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_aa995934e0fdf34eba9311aaa68493892}\label{class_wimp_obj_aa995934e0fdf34eba9311aaa68493892} 
-virtual void {\bfseries redraw\+Window\+Request} ()
+void \mbox{\hyperlink{class_wimp_obj_ae1e8c5b56afa6e95987f4897b299414b}{remove\+Messages}} (int \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_a6724c6bf75456e20a9287c8dc8cf8710}\label{class_wimp_obj_a6724c6bf75456e20a9287c8dc8cf8710} 
-virtual void {\bfseries open\+Window\+Request} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a9c3034e495e0b32102afec03c3f70e30}{null\+Reason}} ()
 \item 
-\Hypertarget{class_wimp_obj_aad632b8166c5a0604db4559b68b2c881}\label{class_wimp_obj_aad632b8166c5a0604db4559b68b2c881} 
-virtual void {\bfseries close\+Window\+Request} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_aa995934e0fdf34eba9311aaa68493892}{redraw\+Window\+Request}} ()
 \item 
-\Hypertarget{class_wimp_obj_ad1e46f23bea07febd3537b36c51c2b3b}\label{class_wimp_obj_ad1e46f23bea07febd3537b36c51c2b3b} 
-virtual void {\bfseries pointer\+Leaving\+Window} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a6724c6bf75456e20a9287c8dc8cf8710}{open\+Window\+Request}} ()
 \item 
-\Hypertarget{class_wimp_obj_a3a9f40078c7128708b02c00e40aea17d}\label{class_wimp_obj_a3a9f40078c7128708b02c00e40aea17d} 
-virtual void {\bfseries pointer\+Entering\+Window} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_aad632b8166c5a0604db4559b68b2c881}{close\+Window\+Request}} ()
 \item 
-\Hypertarget{class_wimp_obj_aa4a02d0519588d71e41a7f85a7cc3053}\label{class_wimp_obj_aa4a02d0519588d71e41a7f85a7cc3053} 
-virtual void {\bfseries mouse\+Click} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_ad1e46f23bea07febd3537b36c51c2b3b}{pointer\+Leaving\+Window}} ()
 \item 
-\Hypertarget{class_wimp_obj_aca466ae5dbef929d4dc977abf95d2991}\label{class_wimp_obj_aca466ae5dbef929d4dc977abf95d2991} 
-virtual void {\bfseries user\+Drag\+Box} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a3a9f40078c7128708b02c00e40aea17d}{pointer\+Entering\+Window}} ()
 \item 
-\Hypertarget{class_wimp_obj_a07017d233a79a7d286a4bdfa46414725}\label{class_wimp_obj_a07017d233a79a7d286a4bdfa46414725} 
-virtual void {\bfseries key\+Pressed} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_aa4a02d0519588d71e41a7f85a7cc3053}{mouse\+Click}} ()
 \item 
-\Hypertarget{class_wimp_obj_adc43cd17184b531fa8f2dc4bd323992b}\label{class_wimp_obj_adc43cd17184b531fa8f2dc4bd323992b} 
-virtual void {\bfseries menu\+Selection} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_aca466ae5dbef929d4dc977abf95d2991}{user\+Drag\+Box}} ()
 \item 
-\Hypertarget{class_wimp_obj_a661bb5bf4b61c884b4a318a180be01b4}\label{class_wimp_obj_a661bb5bf4b61c884b4a318a180be01b4} 
-virtual void {\bfseries scroll\+Request} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a07017d233a79a7d286a4bdfa46414725}{key\+Pressed}} ()
 \item 
-\Hypertarget{class_wimp_obj_a66a65b76537eca36f6e1ea5fc4ccb984}\label{class_wimp_obj_a66a65b76537eca36f6e1ea5fc4ccb984} 
-virtual void {\bfseries lose\+Caret} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_adc43cd17184b531fa8f2dc4bd323992b}{menu\+Selection}} ()
 \item 
-\Hypertarget{class_wimp_obj_a70847cffd066d8c0a738e5c4417720bc}\label{class_wimp_obj_a70847cffd066d8c0a738e5c4417720bc} 
-virtual void {\bfseries gain\+Caret} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a661bb5bf4b61c884b4a318a180be01b4}{scroll\+Request}} ()
 \item 
-\Hypertarget{class_wimp_obj_a5827bdbef4dcbc3b88669e470d3f1ba5}\label{class_wimp_obj_a5827bdbef4dcbc3b88669e470d3f1ba5} 
-virtual void {\bfseries poll\+Word\+Non\+Zero} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a66a65b76537eca36f6e1ea5fc4ccb984}{lose\+Caret}} ()
 \item 
-\Hypertarget{class_wimp_obj_aa4ae488260bbdd582f0dadb4942e8f0e}\label{class_wimp_obj_aa4ae488260bbdd582f0dadb4942e8f0e} 
-virtual void {\bfseries user\+Message} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a70847cffd066d8c0a738e5c4417720bc}{gain\+Caret}} ()
 \item 
-\Hypertarget{class_wimp_obj_a64051a5d15d8fe8a4783b5791c90c3bc}\label{class_wimp_obj_a64051a5d15d8fe8a4783b5791c90c3bc} 
-virtual void {\bfseries user\+Message\+Recorded} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a5827bdbef4dcbc3b88669e470d3f1ba5}{poll\+Word\+Non\+Zero}} ()
 \item 
-\Hypertarget{class_wimp_obj_a33bed7267ce56f75ad8e8c224b96a923}\label{class_wimp_obj_a33bed7267ce56f75ad8e8c224b96a923} 
-virtual void {\bfseries user\+Message\+Acknowledge} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_aa4ae488260bbdd582f0dadb4942e8f0e}{user\+Message}} ()
 \item 
-\Hypertarget{class_wimp_obj_a3a2fa74e4c15e8b5527d75a6cbb00848}\label{class_wimp_obj_a3a2fa74e4c15e8b5527d75a6cbb00848} 
-virtual void {\bfseries e\+Toolbox\+Event} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a64051a5d15d8fe8a4783b5791c90c3bc}{user\+Message\+Recorded}} ()
 \item 
-\Hypertarget{class_wimp_obj_a6bba9f1400a58268c9f1da1722fc2036}\label{class_wimp_obj_a6bba9f1400a58268c9f1da1722fc2036} 
-virtual void {\bfseries pre\+Close\+Down} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a33bed7267ce56f75ad8e8c224b96a923}{user\+Message\+Acknowledge}} ()
 \item 
-\Hypertarget{class_wimp_obj_a0eb7e1604ab4b908a7a6b53e1dd621f2}\label{class_wimp_obj_a0eb7e1604ab4b908a7a6b53e1dd621f2} 
-virtual void {\bfseries unknown\+Wimp\+Event} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a3a2fa74e4c15e8b5527d75a6cbb00848}{e\+Toolbox\+Event}} ()
 \item 
-\Hypertarget{class_wimp_obj_a846b1661907f0228fc4ff01d0a55d4ab}\label{class_wimp_obj_a846b1661907f0228fc4ff01d0a55d4ab} 
-virtual int {\bfseries error\+Handler} ()
+virtual void \mbox{\hyperlink{class_wimp_obj_a6bba9f1400a58268c9f1da1722fc2036}{pre\+Close\+Down}} ()
+\item 
+virtual void \mbox{\hyperlink{class_wimp_obj_a0eb7e1604ab4b908a7a6b53e1dd621f2}{unknown\+Wimp\+Event}} ()
+\item 
+virtual int \mbox{\hyperlink{class_wimp_obj_a846b1661907f0228fc4ff01d0a55d4ab}{error\+Handler}} ()
 \item 
 void \mbox{\hyperlink{class_wimp_obj_a01a74610851ad142a26e6016282f3d53}{show\+Properties}} ()
 \item 
@@ -127,102 +102,184 @@ char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wimp_obj_ac57476c8c4ce618
 \item 
 int \mbox{\hyperlink{class_wimp_obj_adc3a2a6f8721dba9de404ef591607f1a}{get\+Class\+Type}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}} ()
+\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_error_report}{Error\+Report}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_error_report_a1ce036050ec4617283eff875995ca27a}{Error\+Report}} ()
+\item 
+\mbox{\hyperlink{class_error_report_a6ec853c4b91e7cf38aa67e269131f06d}{\texorpdfstring{$\sim$}{\string~}\+Error\+Report}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wimp_obj_a1cac8acf231e282f65b47ad683830b94}\label{class_wimp_obj_a1cac8acf231e282f65b47ad683830b94} 
-static unsigned int \texorpdfstring{$\ast$}{*} {\bfseries get\+Poll\+Block} ()
+static unsigned int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wimp_obj_a1cac8acf231e282f65b47ad683830b94}{get\+Poll\+Block}} ()
 \item 
-\Hypertarget{class_wimp_obj_ad5b007840baae2898eafc787a5f6ee4c}\label{class_wimp_obj_ad5b007840baae2898eafc787a5f6ee4c} 
-static void {\bfseries set\+Handle} (unsigned int)
+static void \mbox{\hyperlink{class_wimp_obj_ad5b007840baae2898eafc787a5f6ee4c}{set\+Handle}} (unsigned int)
 \item 
-\Hypertarget{class_wimp_obj_aa1bde6d8f750c3a5c24e2e849664b6fc}\label{class_wimp_obj_aa1bde6d8f750c3a5c24e2e849664b6fc} 
-static unsigned int {\bfseries get\+Handle} ()
+static unsigned int \mbox{\hyperlink{class_wimp_obj_aa1bde6d8f750c3a5c24e2e849664b6fc}{get\+Handle}} ()
 \item 
-\Hypertarget{class_wimp_obj_a94e93f92a8563dc3a29a729c6ff8c92f}\label{class_wimp_obj_a94e93f92a8563dc3a29a729c6ff8c92f} 
-static unsigned int {\bfseries get\+Event} ()
+static unsigned int \mbox{\hyperlink{class_wimp_obj_a94e93f92a8563dc3a29a729c6ff8c92f}{get\+Event}} ()
 \item 
-\Hypertarget{class_wimp_obj_a9188f35408a3e5badc3219d9d228577d}\label{class_wimp_obj_a9188f35408a3e5badc3219d9d228577d} 
-static void {\bfseries set\+Poll\+Idle\+Interval} (unsigned int)
+static void \mbox{\hyperlink{class_wimp_obj_a9188f35408a3e5badc3219d9d228577d}{set\+Poll\+Idle\+Interval}} (unsigned int)
 \item 
-\Hypertarget{class_wimp_obj_ade2d89d924b05f5645caeca229942a24}\label{class_wimp_obj_ade2d89d924b05f5645caeca229942a24} 
-static unsigned int {\bfseries get\+Poll\+Idle\+Interval} ()
+static unsigned int \mbox{\hyperlink{class_wimp_obj_ade2d89d924b05f5645caeca229942a24}{get\+Poll\+Idle\+Interval}} ()
 \item 
-\Hypertarget{class_wimp_obj_a7969a9d2011cc102cb6bcd05b55d8dfd}\label{class_wimp_obj_a7969a9d2011cc102cb6bcd05b55d8dfd} 
-static void {\bfseries set\+Poll\+Word} (int \texorpdfstring{$\ast$}{*})
+static void \mbox{\hyperlink{class_wimp_obj_a7969a9d2011cc102cb6bcd05b55d8dfd}{set\+Poll\+Word}} (int \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_a3c5612f5fcc62b636cc2c6788b8fab7b}\label{class_wimp_obj_a3c5612f5fcc62b636cc2c6788b8fab7b} 
-static int \texorpdfstring{$\ast$}{*} {\bfseries get\+Poll\+Word} ()
+static int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wimp_obj_a3c5612f5fcc62b636cc2c6788b8fab7b}{get\+Poll\+Word}} ()
 \item 
-\Hypertarget{class_wimp_obj_a4446bbe91dc43db07a3d2283b759f45e}\label{class_wimp_obj_a4446bbe91dc43db07a3d2283b759f45e} 
-static unsigned int \texorpdfstring{$\ast$}{*} {\bfseries get\+Workspace} ()
+static unsigned int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wimp_obj_a4446bbe91dc43db07a3d2283b759f45e}{get\+Workspace}} ()
 \item 
-\Hypertarget{class_wimp_obj_a73c7dcf5df36cf308b094496bab104a4}\label{class_wimp_obj_a73c7dcf5df36cf308b094496bab104a4} 
-static void {\bfseries redraw\+Icon\+Bar} ()
+static void \mbox{\hyperlink{class_wimp_obj_a73c7dcf5df36cf308b094496bab104a4}{redraw\+Icon\+Bar}} ()
 \item 
-\Hypertarget{class_wimp_obj_a7b311b40204d0374a25be63bea34cdc4}\label{class_wimp_obj_a7b311b40204d0374a25be63bea34cdc4} 
-static void {\bfseries redraw\+Screen} ()
+static void \mbox{\hyperlink{class_wimp_obj_a7b311b40204d0374a25be63bea34cdc4}{redraw\+Screen}} ()
 \item 
-\Hypertarget{class_wimp_obj_aa28f08c6447b393bcec66b8e3799406c}\label{class_wimp_obj_aa28f08c6447b393bcec66b8e3799406c} 
-static void {\bfseries open\+Window} ()
+static void \mbox{\hyperlink{class_wimp_obj_aa28f08c6447b393bcec66b8e3799406c}{open\+Window}} ()
 \item 
-\Hypertarget{class_wimp_obj_aa8be1712fefe57048c2215e009f4c6dc}\label{class_wimp_obj_aa8be1712fefe57048c2215e009f4c6dc} 
-static void {\bfseries close\+Window} ()
+static void \mbox{\hyperlink{class_wimp_obj_aa8be1712fefe57048c2215e009f4c6dc}{close\+Window}} ()
 \item 
-\Hypertarget{class_wimp_obj_a4c11d96b104ddc3e43889e1e9b7dfb8b}\label{class_wimp_obj_a4c11d96b104ddc3e43889e1e9b7dfb8b} 
-static Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*} {\bfseries update\+Window} (Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*})
+static Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wimp_obj_a4c11d96b104ddc3e43889e1e9b7dfb8b}{update\+Window}} (Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_a2c0e2876e185a3e6859fbb2b8e0ab5f1}\label{class_wimp_obj_a2c0e2876e185a3e6859fbb2b8e0ab5f1} 
-static void {\bfseries close\+Window} (int)
+static void \mbox{\hyperlink{class_wimp_obj_a2c0e2876e185a3e6859fbb2b8e0ab5f1}{close\+Window}} (int)
 \item 
-\Hypertarget{class_wimp_obj_a8f1fa80cec23b9b97c9f189cce6a493a}\label{class_wimp_obj_a8f1fa80cec23b9b97c9f189cce6a493a} 
-static void {\bfseries open\+Template} (char \texorpdfstring{$\ast$}{*})
+static void \mbox{\hyperlink{class_wimp_obj_a8f1fa80cec23b9b97c9f189cce6a493a}{open\+Template}} (char \texorpdfstring{$\ast$}{*})
 \item 
-\Hypertarget{class_wimp_obj_a3b7663be95a3422f33bba204fa33436d}\label{class_wimp_obj_a3b7663be95a3422f33bba204fa33436d} 
-static void {\bfseries close\+Template} ()
+static void \mbox{\hyperlink{class_wimp_obj_a3b7663be95a3422f33bba204fa33436d}{close\+Template}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_error_report}{Error\+Report}}}
 \begin{DoxyCompactItemize}
 \item 
-static void {\bfseries set\+Last\+Error} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int)
+static void \mbox{\hyperlink{class_error_report_a469f387085165c0f6df06525725ab878}{set\+Last\+Error}} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int)
 \item 
-static void {\bfseries set\+Last\+Error} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int, char \texorpdfstring{$\ast$}{*}location)
+static void \mbox{\hyperlink{class_error_report_a94c78d09c659bf5ba73f8d1383009be1}{set\+Last\+Error}} (\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*}, unsigned int, char \texorpdfstring{$\ast$}{*}location)
 \item 
-static \+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} {\bfseries get\+Last\+Error} ()
+static \+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_error_report_ab8bc2c78af58e7d223896ac46a4e0df3}{get\+Last\+Error}} ()
 \item 
-static void {\bfseries set\+Err\+Flags} (unsigned int)
+static void \mbox{\hyperlink{class_error_report_ae4026f1a48e4496d7c3331fceddec901}{set\+Err\+Flags}} (unsigned int)
 \item 
-static unsigned int {\bfseries get\+Err\+Flags} ()
+static unsigned int \mbox{\hyperlink{class_error_report_a6449a72100e005da24d207bbe15b16d8}{get\+Err\+Flags}} ()
 \item 
-static void {\bfseries set\+As\+Wimp\+Task} (char \texorpdfstring{$\ast$}{*})
+static void \mbox{\hyperlink{class_error_report_a7725635b24aa9fcea460988d08efaff5}{set\+As\+Wimp\+Task}} (char \texorpdfstring{$\ast$}{*})
 \item 
-static void {\bfseries set\+As\+Console\+Task} ()
+static void \mbox{\hyperlink{class_error_report_a48fe6fc4c03e67aade497e369b8d2943}{set\+As\+Console\+Task}} ()
 \item 
-static void {\bfseries set\+Location} (char \texorpdfstring{$\ast$}{*})
+static void \mbox{\hyperlink{class_error_report_ab4e570f0237234e4950960ec9df70309}{set\+Location}} (char \texorpdfstring{$\ast$}{*})
 \item 
-static char \texorpdfstring{$\ast$}{*} {\bfseries get\+Location} ()
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_error_report_a4cf9d03722bff77388d971012f583b40}{get\+Location}} ()
 \item 
-static char \texorpdfstring{$\ast$}{*} {\bfseries get\+Task\+Name} ()
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_error_report_a8ec80e6a3370b076299e8995851a7215}{get\+Task\+Name}} ()
 \item 
-static void {\bfseries clear\+Error} ()
+static void \mbox{\hyperlink{class_error_report_a115b25a8202d1c1712648b91a03bdcfd}{clear\+Error}} ()
 \item 
-static int {\bfseries get\+Environment} ()
+static int \mbox{\hyperlink{class_error_report_ae5f56c7cc16830f890495e2668aab5c2}{get\+Environment}} ()
 \item 
-static void {\bfseries set\+Trap} (int, int \texorpdfstring{$\ast$}{*})
+static void \mbox{\hyperlink{class_error_report_a6760a46a31a5abd9e14c5b57d78ee92e}{set\+Trap}} (int, int \texorpdfstring{$\ast$}{*})
 \item 
-static void {\bfseries clear\+Trap} ()
+static void \mbox{\hyperlink{class_error_report_a95117d52a650c9e18550d630dfacb852}{clear\+Trap}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wimp_obj_ae1d97f0182501f6c696937c92a65f2c7}\label{class_wimp_obj_ae1d97f0182501f6c696937c92a65f2c7} 
-static int {\bfseries quit}
+static int \mbox{\hyperlink{class_wimp_obj_ae1d97f0182501f6c696937c92a65f2c7}{quit}}
 \end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{class_wimp_obj_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_wimp_obj_a4e784376e8f1ea97bdc62802903cfbcc}\index{WimpObj@{WimpObj}!WindDefStr@{WindDefStr}}
+\index{WindDefStr@{WindDefStr}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{WindDefStr}{WindDefStr}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a4e784376e8f1ea97bdc62802903cfbcc} 
+typedef struct Wimp\+Obj\+::\+Wind\+Def\+Str Wimp\+Obj\+::\+Wind\+Def\+Str}
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_wimp_obj_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wimp_obj_a950132e4c6b573e50abd6f9f5cbc089e}\index{WimpObj@{WimpObj}!WimpObj@{WimpObj}}
+\index{WimpObj@{WimpObj}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{WimpObj()}{WimpObj()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a950132e4c6b573e50abd6f9f5cbc089e} 
+Wimp\+Obj\+::\+Wimp\+Obj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a679bab0fc4df002692c05f6a992edd27}\index{WimpObj@{WimpObj}!````~WimpObj@{\texorpdfstring{$\sim$}{\string~}WimpObj}}
+\index{````~WimpObj@{\texorpdfstring{$\sim$}{\string~}WimpObj}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WimpObj()}{\string~WimpObj()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a679bab0fc4df002692c05f6a992edd27} 
+Wimp\+Obj\+::\texorpdfstring{$\sim$}{\string~}\+Wimp\+Obj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 
 
 \label{doc-func-members}
 \Hypertarget{class_wimp_obj_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_wimp_obj_a8f968f2f76f83da6738323d02bc60da1}\index{WimpObj@{WimpObj}!addMessages@{addMessages}}
+\index{addMessages@{addMessages}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{addMessages()}{addMessages()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a8f968f2f76f83da6738323d02bc60da1} 
+void Wimp\+Obj\+::add\+Messages (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_afcd2f1c285d51b8cded776089e539873}\index{WimpObj@{WimpObj}!closeDown@{closeDown}}
+\index{closeDown@{closeDown}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{closeDown()}{closeDown()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_afcd2f1c285d51b8cded776089e539873} 
+void Wimp\+Obj\+::close\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a3b7663be95a3422f33bba204fa33436d}\index{WimpObj@{WimpObj}!closeTemplate@{closeTemplate}}
+\index{closeTemplate@{closeTemplate}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{closeTemplate()}{closeTemplate()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a3b7663be95a3422f33bba204fa33436d} 
+void Wimp\+Obj\+::close\+Template (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aa8be1712fefe57048c2215e009f4c6dc}\index{WimpObj@{WimpObj}!closeWindow@{closeWindow}}
+\index{closeWindow@{closeWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{closeWindow()}{closeWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa8be1712fefe57048c2215e009f4c6dc} 
+void Wimp\+Obj\+::close\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a2c0e2876e185a3e6859fbb2b8e0ab5f1}\index{WimpObj@{WimpObj}!closeWindow@{closeWindow}}
+\index{closeWindow@{closeWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{closeWindow()}{closeWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a2c0e2876e185a3e6859fbb2b8e0ab5f1} 
+void Wimp\+Obj\+::close\+Window (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aad632b8166c5a0604db4559b68b2c881}\index{WimpObj@{WimpObj}!closeWindowRequest@{closeWindowRequest}}
+\index{closeWindowRequest@{closeWindowRequest}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{closeWindowRequest()}{closeWindowRequest()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aad632b8166c5a0604db4559b68b2c881} 
+virtual void Wimp\+Obj\+::close\+Window\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a846b1661907f0228fc4ff01d0a55d4ab}\index{WimpObj@{WimpObj}!errorHandler@{errorHandler}}
+\index{errorHandler@{errorHandler}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{errorHandler()}{errorHandler()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a846b1661907f0228fc4ff01d0a55d4ab} 
+virtual int Wimp\+Obj\+::error\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a3a2fa74e4c15e8b5527d75a6cbb00848}\index{WimpObj@{WimpObj}!eToolboxEvent@{eToolboxEvent}}
+\index{eToolboxEvent@{eToolboxEvent}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{eToolboxEvent()}{eToolboxEvent()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a3a2fa74e4c15e8b5527d75a6cbb00848} 
+virtual void Wimp\+Obj\+::e\+Toolbox\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_toolbox_task_a9dd411ff701053fd580ec564f5b95f68}{Toolbox\+Task}}.
+
+\Hypertarget{class_wimp_obj_a70847cffd066d8c0a738e5c4417720bc}\index{WimpObj@{WimpObj}!gainCaret@{gainCaret}}
+\index{gainCaret@{gainCaret}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{gainCaret()}{gainCaret()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a70847cffd066d8c0a738e5c4417720bc} 
+virtual void Wimp\+Obj\+::gain\+Caret (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
 \Hypertarget{class_wimp_obj_ac57476c8c4ce618ae4ae676d673d04aa}\index{WimpObj@{WimpObj}!getClassName@{getClassName}}
 \index{getClassName@{getClassName}!WimpObj@{WimpObj}}
 \doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
@@ -231,7 +288,7 @@ char \texorpdfstring{$\ast$}{*} Wimp\+Obj\+::get\+Class\+Name (\begin{DoxyParamC
 
 
 
-Implements \mbox{\hyperlink{class_object}{Object}}.
+Implements \mbox{\hyperlink{class_object_a0017577aa3349d6e361e0f171adecd35}{Object}}.
 
 \Hypertarget{class_wimp_obj_adc3a2a6f8721dba9de404ef591607f1a}\index{WimpObj@{WimpObj}!getClassType@{getClassType}}
 \index{getClassType@{getClassType}!WimpObj@{WimpObj}}
@@ -241,7 +298,205 @@ int Wimp\+Obj\+::get\+Class\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCap
 
 
 
-Implements \mbox{\hyperlink{class_object}{Object}}.
+Implements \mbox{\hyperlink{class_object_a0f0f76a055d69bd2550311608745e104}{Object}}.
+
+\Hypertarget{class_wimp_obj_a94e93f92a8563dc3a29a729c6ff8c92f}\index{WimpObj@{WimpObj}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a94e93f92a8563dc3a29a729c6ff8c92f} 
+unsigned int Wimp\+Obj\+::get\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aa1bde6d8f750c3a5c24e2e849664b6fc}\index{WimpObj@{WimpObj}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa1bde6d8f750c3a5c24e2e849664b6fc} 
+unsigned int Wimp\+Obj\+::get\+Handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a1cac8acf231e282f65b47ad683830b94}\index{WimpObj@{WimpObj}!getPollBlock@{getPollBlock}}
+\index{getPollBlock@{getPollBlock}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getPollBlock()}{getPollBlock()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a1cac8acf231e282f65b47ad683830b94} 
+unsigned int \texorpdfstring{$\ast$}{*} Wimp\+Obj\+::get\+Poll\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_ade2d89d924b05f5645caeca229942a24}\index{WimpObj@{WimpObj}!getPollIdleInterval@{getPollIdleInterval}}
+\index{getPollIdleInterval@{getPollIdleInterval}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getPollIdleInterval()}{getPollIdleInterval()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_ade2d89d924b05f5645caeca229942a24} 
+unsigned int Wimp\+Obj\+::get\+Poll\+Idle\+Interval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a3c5612f5fcc62b636cc2c6788b8fab7b}\index{WimpObj@{WimpObj}!getPollWord@{getPollWord}}
+\index{getPollWord@{getPollWord}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getPollWord()}{getPollWord()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a3c5612f5fcc62b636cc2c6788b8fab7b} 
+int \texorpdfstring{$\ast$}{*} Wimp\+Obj\+::get\+Poll\+Word (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a4446bbe91dc43db07a3d2283b759f45e}\index{WimpObj@{WimpObj}!getWorkspace@{getWorkspace}}
+\index{getWorkspace@{getWorkspace}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{getWorkspace()}{getWorkspace()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a4446bbe91dc43db07a3d2283b759f45e} 
+unsigned int \texorpdfstring{$\ast$}{*} Wimp\+Obj\+::get\+Workspace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_af234930b427da97daa07fe24c0a372f7}\index{WimpObj@{WimpObj}!init@{init}}
+\index{init@{init}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_af234930b427da97daa07fe24c0a372f7} 
+unsigned int Wimp\+Obj\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a07017d233a79a7d286a4bdfa46414725}\index{WimpObj@{WimpObj}!keyPressed@{keyPressed}}
+\index{keyPressed@{keyPressed}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{keyPressed()}{keyPressed()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a07017d233a79a7d286a4bdfa46414725} 
+virtual void Wimp\+Obj\+::key\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a66a65b76537eca36f6e1ea5fc4ccb984}\index{WimpObj@{WimpObj}!loseCaret@{loseCaret}}
+\index{loseCaret@{loseCaret}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{loseCaret()}{loseCaret()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a66a65b76537eca36f6e1ea5fc4ccb984} 
+virtual void Wimp\+Obj\+::lose\+Caret (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_adc43cd17184b531fa8f2dc4bd323992b}\index{WimpObj@{WimpObj}!menuSelection@{menuSelection}}
+\index{menuSelection@{menuSelection}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{menuSelection()}{menuSelection()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_adc43cd17184b531fa8f2dc4bd323992b} 
+virtual void Wimp\+Obj\+::menu\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_aa4a02d0519588d71e41a7f85a7cc3053}\index{WimpObj@{WimpObj}!mouseClick@{mouseClick}}
+\index{mouseClick@{mouseClick}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{mouseClick()}{mouseClick()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa4a02d0519588d71e41a7f85a7cc3053} 
+virtual void Wimp\+Obj\+::mouse\+Click (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a9c3034e495e0b32102afec03c3f70e30}\index{WimpObj@{WimpObj}!nullReason@{nullReason}}
+\index{nullReason@{nullReason}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{nullReason()}{nullReason()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a9c3034e495e0b32102afec03c3f70e30} 
+virtual void Wimp\+Obj\+::null\+Reason (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a8f1fa80cec23b9b97c9f189cce6a493a}\index{WimpObj@{WimpObj}!openTemplate@{openTemplate}}
+\index{openTemplate@{openTemplate}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{openTemplate()}{openTemplate()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a8f1fa80cec23b9b97c9f189cce6a493a} 
+void Wimp\+Obj\+::open\+Template (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aa28f08c6447b393bcec66b8e3799406c}\index{WimpObj@{WimpObj}!openWindow@{openWindow}}
+\index{openWindow@{openWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{openWindow()}{openWindow()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa28f08c6447b393bcec66b8e3799406c} 
+void Wimp\+Obj\+::open\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a6724c6bf75456e20a9287c8dc8cf8710}\index{WimpObj@{WimpObj}!openWindowRequest@{openWindowRequest}}
+\index{openWindowRequest@{openWindowRequest}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{openWindowRequest()}{openWindowRequest()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a6724c6bf75456e20a9287c8dc8cf8710} 
+virtual void Wimp\+Obj\+::open\+Window\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a3a9f40078c7128708b02c00e40aea17d}\index{WimpObj@{WimpObj}!pointerEnteringWindow@{pointerEnteringWindow}}
+\index{pointerEnteringWindow@{pointerEnteringWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{pointerEnteringWindow()}{pointerEnteringWindow()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a3a9f40078c7128708b02c00e40aea17d} 
+virtual void Wimp\+Obj\+::pointer\+Entering\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_ad1e46f23bea07febd3537b36c51c2b3b}\index{WimpObj@{WimpObj}!pointerLeavingWindow@{pointerLeavingWindow}}
+\index{pointerLeavingWindow@{pointerLeavingWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{pointerLeavingWindow()}{pointerLeavingWindow()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_ad1e46f23bea07febd3537b36c51c2b3b} 
+virtual void Wimp\+Obj\+::pointer\+Leaving\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a37f010ec6b70eeb22c030a46562fbc9d}\index{WimpObj@{WimpObj}!poll@{poll}}
+\index{poll@{poll}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a37f010ec6b70eeb22c030a46562fbc9d} 
+unsigned int Wimp\+Obj\+::poll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a1b44838826031c2c21157135d9dc0e8e}\index{WimpObj@{WimpObj}!pollIdle@{pollIdle}}
+\index{pollIdle@{pollIdle}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{pollIdle()}{pollIdle()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a1b44838826031c2c21157135d9dc0e8e} 
+unsigned int Wimp\+Obj\+::poll\+Idle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a5827bdbef4dcbc3b88669e470d3f1ba5}\index{WimpObj@{WimpObj}!pollWordNonZero@{pollWordNonZero}}
+\index{pollWordNonZero@{pollWordNonZero}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{pollWordNonZero()}{pollWordNonZero()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a5827bdbef4dcbc3b88669e470d3f1ba5} 
+virtual void Wimp\+Obj\+::poll\+Word\+Non\+Zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a6bba9f1400a58268c9f1da1722fc2036}\index{WimpObj@{WimpObj}!preCloseDown@{preCloseDown}}
+\index{preCloseDown@{preCloseDown}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{preCloseDown()}{preCloseDown()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a6bba9f1400a58268c9f1da1722fc2036} 
+virtual void Wimp\+Obj\+::pre\+Close\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a73c7dcf5df36cf308b094496bab104a4}\index{WimpObj@{WimpObj}!redrawIconBar@{redrawIconBar}}
+\index{redrawIconBar@{redrawIconBar}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{redrawIconBar()}{redrawIconBar()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a73c7dcf5df36cf308b094496bab104a4} 
+void Wimp\+Obj\+::redraw\+Icon\+Bar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a7b311b40204d0374a25be63bea34cdc4}\index{WimpObj@{WimpObj}!redrawScreen@{redrawScreen}}
+\index{redrawScreen@{redrawScreen}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{redrawScreen()}{redrawScreen()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a7b311b40204d0374a25be63bea34cdc4} 
+void Wimp\+Obj\+::redraw\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aa995934e0fdf34eba9311aaa68493892}\index{WimpObj@{WimpObj}!redrawWindowRequest@{redrawWindowRequest}}
+\index{redrawWindowRequest@{redrawWindowRequest}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{redrawWindowRequest()}{redrawWindowRequest()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa995934e0fdf34eba9311aaa68493892} 
+virtual void Wimp\+Obj\+::redraw\+Window\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_ae1e8c5b56afa6e95987f4897b299414b}\index{WimpObj@{WimpObj}!removeMessages@{removeMessages}}
+\index{removeMessages@{removeMessages}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{removeMessages()}{removeMessages()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_ae1e8c5b56afa6e95987f4897b299414b} 
+void Wimp\+Obj\+::remove\+Messages (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_adfd766abe341615b863633e6e8a1eaa4}\index{WimpObj@{WimpObj}!run@{run}}
+\index{run@{run}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_adfd766abe341615b863633e6e8a1eaa4} 
+int Wimp\+Obj\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a1d063958e1a8bccca1a4101c1e582e7f}\index{WimpObj@{WimpObj}!runIdle@{runIdle}}
+\index{runIdle@{runIdle}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{runIdle()}{runIdle()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a1d063958e1a8bccca1a4101c1e582e7f} 
+int Wimp\+Obj\+::run\+Idle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a661bb5bf4b61c884b4a318a180be01b4}\index{WimpObj@{WimpObj}!scrollRequest@{scrollRequest}}
+\index{scrollRequest@{scrollRequest}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{scrollRequest()}{scrollRequest()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a661bb5bf4b61c884b4a318a180be01b4} 
+virtual void Wimp\+Obj\+::scroll\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_ad5b007840baae2898eafc787a5f6ee4c}\index{WimpObj@{WimpObj}!setHandle@{setHandle}}
+\index{setHandle@{setHandle}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{setHandle()}{setHandle()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_ad5b007840baae2898eafc787a5f6ee4c} 
+void Wimp\+Obj\+::set\+Handle (\begin{DoxyParamCaption}\item[{unsigned int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a1cae4f6721c95c8b07b0d1a9e3d89a4a}\index{WimpObj@{WimpObj}!setMask@{setMask}}
+\index{setMask@{setMask}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{setMask()}{setMask()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a1cae4f6721c95c8b07b0d1a9e3d89a4a} 
+void Wimp\+Obj\+::set\+Mask (\begin{DoxyParamCaption}\item[{unsigned int}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_wimp_obj_a9188f35408a3e5badc3219d9d228577d}\index{WimpObj@{WimpObj}!setPollIdleInterval@{setPollIdleInterval}}
+\index{setPollIdleInterval@{setPollIdleInterval}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{setPollIdleInterval()}{setPollIdleInterval()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a9188f35408a3e5badc3219d9d228577d} 
+void Wimp\+Obj\+::set\+Poll\+Idle\+Interval (\begin{DoxyParamCaption}\item[{unsigned int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a7969a9d2011cc102cb6bcd05b55d8dfd}\index{WimpObj@{WimpObj}!setPollWord@{setPollWord}}
+\index{setPollWord@{setPollWord}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{setPollWord()}{setPollWord()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a7969a9d2011cc102cb6bcd05b55d8dfd} 
+void Wimp\+Obj\+::set\+Poll\+Word (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_a726cf2b3643a2201d21f084734b7accc}\index{WimpObj@{WimpObj}!setTaskname@{setTaskname}}
+\index{setTaskname@{setTaskname}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{setTaskname()}{setTaskname()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a726cf2b3643a2201d21f084734b7accc} 
+void Wimp\+Obj\+::set\+Taskname (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{class_wimp_obj_a01a74610851ad142a26e6016282f3d53}\index{WimpObj@{WimpObj}!showProperties@{showProperties}}
 \index{showProperties@{showProperties}!WimpObj@{WimpObj}}
@@ -251,10 +506,57 @@ void Wimp\+Obj\+::show\+Properties (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 
 
 
-Implements \mbox{\hyperlink{class_object}{Object}}.
+Implements \mbox{\hyperlink{class_object_ab93aa73d7ba17027c5d83b1c6198a0cd}{Object}}.
+
+\Hypertarget{class_wimp_obj_a0eb7e1604ab4b908a7a6b53e1dd621f2}\index{WimpObj@{WimpObj}!unknownWimpEvent@{unknownWimpEvent}}
+\index{unknownWimpEvent@{unknownWimpEvent}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{unknownWimpEvent()}{unknownWimpEvent()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a0eb7e1604ab4b908a7a6b53e1dd621f2} 
+virtual void Wimp\+Obj\+::unknown\+Wimp\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a4c11d96b104ddc3e43889e1e9b7dfb8b}\index{WimpObj@{WimpObj}!updateWindow@{updateWindow}}
+\index{updateWindow@{updateWindow}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{updateWindow()}{updateWindow()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a4c11d96b104ddc3e43889e1e9b7dfb8b} 
+Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*} Wimp\+Obj\+::update\+Window (\begin{DoxyParamCaption}\item[{Wimp\+Redraw\+Window\+Block \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_wimp_obj_aca466ae5dbef929d4dc977abf95d2991}\index{WimpObj@{WimpObj}!userDragBox@{userDragBox}}
+\index{userDragBox@{userDragBox}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{userDragBox()}{userDragBox()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aca466ae5dbef929d4dc977abf95d2991} 
+virtual void Wimp\+Obj\+::user\+Drag\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_aa4ae488260bbdd582f0dadb4942e8f0e}\index{WimpObj@{WimpObj}!userMessage@{userMessage}}
+\index{userMessage@{userMessage}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{userMessage()}{userMessage()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_aa4ae488260bbdd582f0dadb4942e8f0e} 
+virtual void Wimp\+Obj\+::user\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a33bed7267ce56f75ad8e8c224b96a923}\index{WimpObj@{WimpObj}!userMessageAcknowledge@{userMessageAcknowledge}}
+\index{userMessageAcknowledge@{userMessageAcknowledge}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{userMessageAcknowledge()}{userMessageAcknowledge()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a33bed7267ce56f75ad8e8c224b96a923} 
+virtual void Wimp\+Obj\+::user\+Message\+Acknowledge (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_wimp_obj_a64051a5d15d8fe8a4783b5791c90c3bc}\index{WimpObj@{WimpObj}!userMessageRecorded@{userMessageRecorded}}
+\index{userMessageRecorded@{userMessageRecorded}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{userMessageRecorded()}{userMessageRecorded()}}
+{\footnotesize\ttfamily \label{class_wimp_obj_a64051a5d15d8fe8a4783b5791c90c3bc} 
+virtual void Wimp\+Obj\+::user\+Message\+Recorded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_wimp_obj_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_wimp_obj_ae1d97f0182501f6c696937c92a65f2c7}\index{WimpObj@{WimpObj}!quit@{quit}}
+\index{quit@{quit}!WimpObj@{WimpObj}}
+\doxysubsubsection{\texorpdfstring{quit}{quit}}
+{\footnotesize\ttfamily \label{class_wimp_obj_ae1d97f0182501f6c696937c92a65f2c7} 
+int Wimp\+Obj\+::quit\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-h/Wimp\+Obj.\+h\end{DoxyCompactItemize}
+h/\mbox{\hyperlink{_wimp_obj_8h}{Wimp\+Obj.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,314 @@
+\doxysection{h/\+Wimp\+Bits.h File Reference}
+\hypertarget{_wimp_bits_8h}{}\label{_wimp_bits_8h}\index{h/WimpBits.h@{h/WimpBits.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_box}{Box}}
+\item 
+struct \mbox{\hyperlink{struct_scroll_offset}{Scroll\+Offset}}
+\item 
+union \mbox{\hyperlink{union_wimp_mask}{Wimp\+Mask}}
+\item 
+struct \mbox{\hyperlink{struct_redraw_window_request_block}{Redraw\+Window\+Request\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_open_window_request_block}{Open\+Window\+Request\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_pointer_leaving_window_block}{Pointer\+Leaving\+Window\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_pointer_entering_window_block}{Pointer\+Entering\+Window\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_mouse_click_block}{Mouse\+Click\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_key_pressed_block}{Key\+Pressed\+Block}}
+\item 
+struct \mbox{\hyperlink{struct_scroll_request_block}{Scroll\+Request\+Block}}
+\item 
+union \mbox{\hyperlink{union_icon_data_str}{Icon\+Data\+Str}}
+\item 
+union \mbox{\hyperlink{union_window_flags}{Window\+Flags}}
+\item 
+union \mbox{\hyperlink{union_icon_flags}{Icon\+Flags}}
+\item 
+struct \mbox{\hyperlink{struct_wind_def_str}{Wind\+Def\+Str}}
+\item 
+struct \mbox{\hyperlink{struct_open_window_str}{Open\+Window\+Str}}
+\item 
+union \mbox{\hyperlink{union_wimp_palette_word}{Wimp\+Palette\+Word}}
+\item 
+struct \mbox{\hyperlink{struct_wimp_palette_str}{Wimp\+Palette\+Str}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned \mbox{\hyperlink{_wimp_bits_8h_a629a49c6279593d6ef4bb04f03cee2ac}{Handle}}
+\item 
+typedef struct Box \mbox{\hyperlink{_wimp_bits_8h_a404df2f4804da4d90f1dd3a0954dc6bf}{Box}}
+\item 
+typedef struct Scroll\+Offset \mbox{\hyperlink{_wimp_bits_8h_a520c8654792ae0e081157318e6337bac}{Scroll\+Offset}}
+\item 
+typedef union Wimp\+Mask \mbox{\hyperlink{_wimp_bits_8h_aa793a43960955e0fa2fe2885a619950f}{Wimp\+Mask}}
+\item 
+typedef struct Redraw\+Window\+Request\+Block \mbox{\hyperlink{_wimp_bits_8h_a58022f5487a6d1d3f3c79896396554b6}{Redraw\+Window\+Request\+Block}}
+\item 
+typedef struct Open\+Window\+Request\+Block \mbox{\hyperlink{_wimp_bits_8h_aef17c8a3a5cd3546cd95f0a413ab064d}{Open\+Window\+Request\+Block}}
+\item 
+typedef struct Pointer\+Leaving\+Window\+Block \mbox{\hyperlink{_wimp_bits_8h_a6ead12bf47b5b89af6faf69fd290c86f}{Pointer\+Leaving\+Window\+Block}}
+\item 
+typedef struct Pointer\+Entering\+Window\+Block \mbox{\hyperlink{_wimp_bits_8h_adc9fd1933e43ac980396e7d7fe499d05}{Pointer\+Entering\+Window\+Block}}
+\item 
+typedef struct Mouse\+Click\+Block \mbox{\hyperlink{_wimp_bits_8h_a465d4320dee8c70fded742c586dac3e8}{Mouse\+Click\+Block}}
+\item 
+typedef \mbox{\hyperlink{struct_box}{Box}} \mbox{\hyperlink{_wimp_bits_8h_a11892708ae87a43ba8c7256592a192be}{User\+Drag\+Box\+Block}}
+\item 
+typedef struct Key\+Pressed\+Block \mbox{\hyperlink{_wimp_bits_8h_ac064700e27ade5172e81386b24706ab9}{Key\+Pressed\+Block}}
+\item 
+typedef struct Scroll\+Request\+Block \mbox{\hyperlink{_wimp_bits_8h_a52351e74f579e42789658b25b1e4367a}{Scroll\+Request\+Block}}
+\item 
+typedef struct Wind\+Def\+Str \mbox{\hyperlink{_wimp_bits_8h_af916cb9ab393520a9786ad56890c2d71}{Wind\+Def\+Str}}
+\item 
+typedef struct \mbox{\hyperlink{struct_open_window_str}{Open\+Window\+Str}} \mbox{\hyperlink{_wimp_bits_8h_a1f384a995ed2b324e03ed5c92dc012bf}{Open\+Wind\+Str}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657}{Button\+State}} \{ \newline
+\mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a9e804722270243cbe874a5aa6785cb85}{BRIGHT}} = 0x001
+, \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aee378bdc77003068400b12921f8453f7}{BMID}} = 0x002
+, \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a4ff899fd5b81911ff0b69ca4cc924064}{BLEFT}} = 0x004
+, \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a5f001c18e33a9e8ac9c75a55a3c64e33}{BDRAGRIGHT}} = 0x010
+, \newline
+\mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aef7ec022675a69e640203e1958d64394}{BDRAGLEFT}} = 0x040
+, \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a2a155bd21bdaf4cd4d64972e51482337}{BCLICKRIGHT}} = 0x100
+, \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a64c674619531843534b9697e91d35b41}{BCLICKLEFT}} = 0x400
+ \}
+\item 
+enum \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12}{Wimp\+Event}} \{ \newline
+\mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ab7234e3d16b3e0560878fea609f6d531}{Null\+Reason\+Code}} = 0
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a3c60e0c8818813c438c9a929526cea98}{Redraw\+Window\+Request}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af571eb2b62885549ba5ec1acee07a094}{Open\+Window\+Request}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a849a27919f816342194bc29983e91b32}{Close\+Window\+Request}}
+, \newline
+\mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6468349912181c953d1a9c572a7d1412}{Pointer\+Leaving\+Window}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a621e291f55c85b325f4a47eb326b2b30}{Pointer\+Entering\+Window}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a906565b8fc56792c9b576ae5e2b93729}{Mouse\+Click}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ac7a9bd84ee15a6dc26df480eb6d3d2d5}{User\+Drag\+Box}}
+, \newline
+\mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a005fad55c29e390c81a8b8b9f5034a49}{Key\+Pressed}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a55fb870fe298e0e0c827655241287dc8}{Menu\+Selection}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af0fee0d559d4da67c0048a769b8926da}{Scroll\+Request}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6ab6065f0233d57034eb8248f5e5ad49}{Lose\+Caret}}
+, \newline
+\mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af730131d46e25314f03a7a6c116dc9e9}{Gain\+Caret}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a399912c56b286999aa8fe5bf1623b373}{Poll\+Word\+Non\+Zero}}
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a50c18f3fde29a1cf3c356e164fdd5f7e}{User\+Message}} = 17
+, \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a38346564e770fa74d00a8e34bfd13a40}{User\+Message\+Recorded}}
+, \newline
+\mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12afd45a55bc2d35394d933cac0c7482b8a}{User\+Message\+Acnowledged}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{_wimp_bits_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_wimp_bits_8h_a404df2f4804da4d90f1dd3a0954dc6bf}\index{WimpBits.h@{WimpBits.h}!Box@{Box}}
+\index{Box@{Box}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{Box}{Box}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a404df2f4804da4d90f1dd3a0954dc6bf} 
+typedef struct Box Box}
+
+\Hypertarget{_wimp_bits_8h_a629a49c6279593d6ef4bb04f03cee2ac}\index{WimpBits.h@{WimpBits.h}!Handle@{Handle}}
+\index{Handle@{Handle}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{Handle}{Handle}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a629a49c6279593d6ef4bb04f03cee2ac} 
+typedef unsigned \mbox{\hyperlink{_wimp_bits_8h_a629a49c6279593d6ef4bb04f03cee2ac}{Handle}}}
+
+\Hypertarget{_wimp_bits_8h_ac064700e27ade5172e81386b24706ab9}\index{WimpBits.h@{WimpBits.h}!KeyPressedBlock@{KeyPressedBlock}}
+\index{KeyPressedBlock@{KeyPressedBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{KeyPressedBlock}{KeyPressedBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_ac064700e27ade5172e81386b24706ab9} 
+typedef struct Key\+Pressed\+Block Key\+Pressed\+Block}
+
+\Hypertarget{_wimp_bits_8h_a465d4320dee8c70fded742c586dac3e8}\index{WimpBits.h@{WimpBits.h}!MouseClickBlock@{MouseClickBlock}}
+\index{MouseClickBlock@{MouseClickBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{MouseClickBlock}{MouseClickBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a465d4320dee8c70fded742c586dac3e8} 
+typedef struct Mouse\+Click\+Block Mouse\+Click\+Block}
+
+\Hypertarget{_wimp_bits_8h_aef17c8a3a5cd3546cd95f0a413ab064d}\index{WimpBits.h@{WimpBits.h}!OpenWindowRequestBlock@{OpenWindowRequestBlock}}
+\index{OpenWindowRequestBlock@{OpenWindowRequestBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{OpenWindowRequestBlock}{OpenWindowRequestBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_aef17c8a3a5cd3546cd95f0a413ab064d} 
+typedef struct Open\+Window\+Request\+Block Open\+Window\+Request\+Block}
+
+\Hypertarget{_wimp_bits_8h_a1f384a995ed2b324e03ed5c92dc012bf}\index{WimpBits.h@{WimpBits.h}!OpenWindStr@{OpenWindStr}}
+\index{OpenWindStr@{OpenWindStr}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{OpenWindStr}{OpenWindStr}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a1f384a995ed2b324e03ed5c92dc012bf} 
+typedef struct \mbox{\hyperlink{struct_open_window_str}{Open\+Window\+Str}} \mbox{\hyperlink{_wimp_bits_8h_a1f384a995ed2b324e03ed5c92dc012bf}{Open\+Wind\+Str}}}
+
+\Hypertarget{_wimp_bits_8h_adc9fd1933e43ac980396e7d7fe499d05}\index{WimpBits.h@{WimpBits.h}!PointerEnteringWindowBlock@{PointerEnteringWindowBlock}}
+\index{PointerEnteringWindowBlock@{PointerEnteringWindowBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{PointerEnteringWindowBlock}{PointerEnteringWindowBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_adc9fd1933e43ac980396e7d7fe499d05} 
+typedef struct Pointer\+Entering\+Window\+Block Pointer\+Entering\+Window\+Block}
+
+\Hypertarget{_wimp_bits_8h_a6ead12bf47b5b89af6faf69fd290c86f}\index{WimpBits.h@{WimpBits.h}!PointerLeavingWindowBlock@{PointerLeavingWindowBlock}}
+\index{PointerLeavingWindowBlock@{PointerLeavingWindowBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{PointerLeavingWindowBlock}{PointerLeavingWindowBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a6ead12bf47b5b89af6faf69fd290c86f} 
+typedef struct Pointer\+Leaving\+Window\+Block Pointer\+Leaving\+Window\+Block}
+
+\Hypertarget{_wimp_bits_8h_a58022f5487a6d1d3f3c79896396554b6}\index{WimpBits.h@{WimpBits.h}!RedrawWindowRequestBlock@{RedrawWindowRequestBlock}}
+\index{RedrawWindowRequestBlock@{RedrawWindowRequestBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{RedrawWindowRequestBlock}{RedrawWindowRequestBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a58022f5487a6d1d3f3c79896396554b6} 
+typedef struct Redraw\+Window\+Request\+Block Redraw\+Window\+Request\+Block}
+
+\Hypertarget{_wimp_bits_8h_a520c8654792ae0e081157318e6337bac}\index{WimpBits.h@{WimpBits.h}!ScrollOffset@{ScrollOffset}}
+\index{ScrollOffset@{ScrollOffset}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{ScrollOffset}{ScrollOffset}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a520c8654792ae0e081157318e6337bac} 
+typedef struct Scroll\+Offset Scroll\+Offset}
+
+\Hypertarget{_wimp_bits_8h_a52351e74f579e42789658b25b1e4367a}\index{WimpBits.h@{WimpBits.h}!ScrollRequestBlock@{ScrollRequestBlock}}
+\index{ScrollRequestBlock@{ScrollRequestBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{ScrollRequestBlock}{ScrollRequestBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a52351e74f579e42789658b25b1e4367a} 
+typedef struct Scroll\+Request\+Block Scroll\+Request\+Block}
+
+\Hypertarget{_wimp_bits_8h_a11892708ae87a43ba8c7256592a192be}\index{WimpBits.h@{WimpBits.h}!UserDragBoxBlock@{UserDragBoxBlock}}
+\index{UserDragBoxBlock@{UserDragBoxBlock}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{UserDragBoxBlock}{UserDragBoxBlock}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_a11892708ae87a43ba8c7256592a192be} 
+typedef \mbox{\hyperlink{struct_box}{Box}} \mbox{\hyperlink{_wimp_bits_8h_a11892708ae87a43ba8c7256592a192be}{User\+Drag\+Box\+Block}}}
+
+\Hypertarget{_wimp_bits_8h_aa793a43960955e0fa2fe2885a619950f}\index{WimpBits.h@{WimpBits.h}!WimpMask@{WimpMask}}
+\index{WimpMask@{WimpMask}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{WimpMask}{WimpMask}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_aa793a43960955e0fa2fe2885a619950f} 
+typedef union Wimp\+Mask Wimp\+Mask}
+
+\Hypertarget{_wimp_bits_8h_af916cb9ab393520a9786ad56890c2d71}\index{WimpBits.h@{WimpBits.h}!WindDefStr@{WindDefStr}}
+\index{WindDefStr@{WindDefStr}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{WindDefStr}{WindDefStr}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_af916cb9ab393520a9786ad56890c2d71} 
+typedef struct Wind\+Def\+Str Wind\+Def\+Str}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{_wimp_bits_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657}\index{WimpBits.h@{WimpBits.h}!ButtonState@{ButtonState}}
+\index{ButtonState@{ButtonState}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{ButtonState}{ButtonState}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657} 
+enum \mbox{\hyperlink{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657}{Button\+State}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRIGHT@{BRIGHT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BRIGHT@{BRIGHT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a9e804722270243cbe874a5aa6785cb85}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a9e804722270243cbe874a5aa6785cb85} 
+BRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMID@{BMID}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BMID@{BMID}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aee378bdc77003068400b12921f8453f7}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aee378bdc77003068400b12921f8453f7} 
+BMID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLEFT@{BLEFT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BLEFT@{BLEFT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a4ff899fd5b81911ff0b69ca4cc924064}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a4ff899fd5b81911ff0b69ca4cc924064} 
+BLEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BDRAGRIGHT@{BDRAGRIGHT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BDRAGRIGHT@{BDRAGRIGHT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a5f001c18e33a9e8ac9c75a55a3c64e33}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a5f001c18e33a9e8ac9c75a55a3c64e33} 
+BDRAGRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BDRAGLEFT@{BDRAGLEFT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BDRAGLEFT@{BDRAGLEFT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aef7ec022675a69e640203e1958d64394}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657aef7ec022675a69e640203e1958d64394} 
+BDRAGLEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BCLICKRIGHT@{BCLICKRIGHT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BCLICKRIGHT@{BCLICKRIGHT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a2a155bd21bdaf4cd4d64972e51482337}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a2a155bd21bdaf4cd4d64972e51482337} 
+BCLICKRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BCLICKLEFT@{BCLICKLEFT}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!BCLICKLEFT@{BCLICKLEFT}}}\Hypertarget{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a64c674619531843534b9697e91d35b41}\label{_wimp_bits_8h_aa46074d34fe2d6631c6bd9dc74633657a64c674619531843534b9697e91d35b41} 
+BCLICKLEFT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12}\index{WimpBits.h@{WimpBits.h}!WimpEvent@{WimpEvent}}
+\index{WimpEvent@{WimpEvent}!WimpBits.h@{WimpBits.h}}
+\doxysubsubsection{\texorpdfstring{WimpEvent}{WimpEvent}}
+{\footnotesize\ttfamily \label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12} 
+enum \mbox{\hyperlink{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12}{Wimp\+Event}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NullReasonCode@{NullReasonCode}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!NullReasonCode@{NullReasonCode}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ab7234e3d16b3e0560878fea609f6d531}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ab7234e3d16b3e0560878fea609f6d531} 
+Null\+Reason\+Code&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RedrawWindowRequest@{RedrawWindowRequest}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!RedrawWindowRequest@{RedrawWindowRequest}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a3c60e0c8818813c438c9a929526cea98}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a3c60e0c8818813c438c9a929526cea98} 
+Redraw\+Window\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OpenWindowRequest@{OpenWindowRequest}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!OpenWindowRequest@{OpenWindowRequest}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af571eb2b62885549ba5ec1acee07a094}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af571eb2b62885549ba5ec1acee07a094} 
+Open\+Window\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CloseWindowRequest@{CloseWindowRequest}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!CloseWindowRequest@{CloseWindowRequest}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a849a27919f816342194bc29983e91b32}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a849a27919f816342194bc29983e91b32} 
+Close\+Window\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointerLeavingWindow@{PointerLeavingWindow}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!PointerLeavingWindow@{PointerLeavingWindow}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6468349912181c953d1a9c572a7d1412}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6468349912181c953d1a9c572a7d1412} 
+Pointer\+Leaving\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointerEnteringWindow@{PointerEnteringWindow}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!PointerEnteringWindow@{PointerEnteringWindow}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a621e291f55c85b325f4a47eb326b2b30}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a621e291f55c85b325f4a47eb326b2b30} 
+Pointer\+Entering\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseClick@{MouseClick}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!MouseClick@{MouseClick}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a906565b8fc56792c9b576ae5e2b93729}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a906565b8fc56792c9b576ae5e2b93729} 
+Mouse\+Click&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserDragBox@{UserDragBox}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!UserDragBox@{UserDragBox}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ac7a9bd84ee15a6dc26df480eb6d3d2d5}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12ac7a9bd84ee15a6dc26df480eb6d3d2d5} 
+User\+Drag\+Box&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KeyPressed@{KeyPressed}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!KeyPressed@{KeyPressed}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a005fad55c29e390c81a8b8b9f5034a49}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a005fad55c29e390c81a8b8b9f5034a49} 
+Key\+Pressed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MenuSelection@{MenuSelection}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!MenuSelection@{MenuSelection}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a55fb870fe298e0e0c827655241287dc8}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a55fb870fe298e0e0c827655241287dc8} 
+Menu\+Selection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScrollRequest@{ScrollRequest}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!ScrollRequest@{ScrollRequest}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af0fee0d559d4da67c0048a769b8926da}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af0fee0d559d4da67c0048a769b8926da} 
+Scroll\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LoseCaret@{LoseCaret}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!LoseCaret@{LoseCaret}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6ab6065f0233d57034eb8248f5e5ad49}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a6ab6065f0233d57034eb8248f5e5ad49} 
+Lose\+Caret&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GainCaret@{GainCaret}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!GainCaret@{GainCaret}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af730131d46e25314f03a7a6c116dc9e9}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12af730131d46e25314f03a7a6c116dc9e9} 
+Gain\+Caret&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PollWordNonZero@{PollWordNonZero}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!PollWordNonZero@{PollWordNonZero}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a399912c56b286999aa8fe5bf1623b373}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a399912c56b286999aa8fe5bf1623b373} 
+Poll\+Word\+Non\+Zero&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserMessage@{UserMessage}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!UserMessage@{UserMessage}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a50c18f3fde29a1cf3c356e164fdd5f7e}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a50c18f3fde29a1cf3c356e164fdd5f7e} 
+User\+Message&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserMessageRecorded@{UserMessageRecorded}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!UserMessageRecorded@{UserMessageRecorded}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a38346564e770fa74d00a8e34bfd13a40}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12a38346564e770fa74d00a8e34bfd13a40} 
+User\+Message\+Recorded&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserMessageAcnowledged@{UserMessageAcnowledged}!WimpBits.h@{WimpBits.h}}\index{WimpBits.h@{WimpBits.h}!UserMessageAcnowledged@{UserMessageAcnowledged}}}\Hypertarget{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12afd45a55bc2d35394d933cac0c7482b8a}\label{_wimp_bits_8h_ae606a3b95afa338a2b4d803ae94d9a12afd45a55bc2d35394d933cac0c7482b8a} 
+User\+Message\+Acnowledged&\\
+\hline
+
+\end{DoxyEnumFields}
