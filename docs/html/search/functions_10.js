@@ -2,7 +2,7 @@ var searchData=
 [
   ['radiobuttonstatechanged_0',['radioButtonStateChanged',['../class_toolbox_core_obj.html#a736c765445b12bd0e99720697f28e570',1,'ToolboxCoreObj']]],
   ['raisetoolboxevent_1',['raiseToolboxEvent',['../class_toolbox_core_obj.html#a3bef42c05b0ad8eca5370e9b5291fced',1,'ToolboxCoreObj::raiseToolboxEvent()'],['../class_toolbox_obj.html#a3ee78efc52ebf8106adae16e222068b5',1,'ToolboxObj::raiseToolboxEvent()']]],
-  ['readadc_2',['readADC',['../_8h.html#a77909b32345f62ed88063899ec51de14',1,'.h']]],
+  ['readadc_2',['readADC',['../datastore_8h.html#a77909b32345f62ed88063899ec51de14',1,'datastore.h']]],
   ['readancestorobjectid_3',['readAncestorObjectId',['../class_toolbox_obj.html#a1e9fed25f725f510bfaa13c4bdf3914b',1,'ToolboxObj']]],
   ['readcalibration_4',['readCalibration',['../class_colour_trans_obj.html#a885962d4e37d76cee3219c5d60641559',1,'ColourTransObj']]],
   ['readmodevariable_5',['readModeVariable',['../class_o_s.html#a88650092bf1306ba20e5a22c20abd316',1,'OS']]],
@@ -11,7 +11,7 @@ var searchData=
   ['readobjectid_8',['readObjectId',['../class_toolbox_obj.html#a6d44d00c3d60458bc2c85967b2e11e65',1,'ToolboxObj']]],
   ['readpalette_9',['readPalette',['../class_colour_trans_obj.html#a7dcd0d5918ae151e1af73cbc693bcd7e',1,'ColourTransObj::readPalette(int, void *, void *, int &amp;, int)'],['../class_colour_trans_obj.html#a42b3e287eea8afdc91257c7e79c3a035',1,'ColourTransObj::readPalette(sprite_area *, char *, void *, int &amp;, int)']]],
   ['readparentobjectid_10',['readParentObjectId',['../class_toolbox_obj.html#a78b11e2bfba37301ab50910117beb364',1,'ToolboxObj']]],
-  ['readtargetadc_11',['readTargetADC',['../_8h.html#a06ad305dd53e2afdb77b327c6e7966ce',1,'.h']]],
+  ['readtargetadc_11',['readTargetADC',['../datastore_8h.html#a06ad305dd53e2afdb77b327c6e7966ce',1,'datastore.h']]],
   ['readwimphandle_12',['readWimpHandle',['../class_toolbox_colour_dlog_obj.html#ac31b05e8a8f1414c5913a20a88d19330',1,'ToolboxColourDlogObj::readWimpHandle()'],['../class_toolbox_window_obj.html#a2eac52a9ad1a5b5f87b1e94720178af4',1,'ToolboxWindowObj::readWimpHandle()']]],
   ['readwindowid_13',['readWindowId',['../class_toolbox_d_c_s_obj.html#adae3e6e5d0137750163c5cd544d89131',1,'ToolboxDCSObj']]],
   ['redrawiconbar_14',['redrawIconBar',['../class_wimp_obj.html#a73c7dcf5df36cf308b094496bab104a4',1,'WimpObj']]],

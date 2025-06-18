@@ -1,0 +1,67 @@
+\doxysection{h/datastore.h File Reference}
+\hypertarget{datastore_8h}{}\label{datastore_8h}\index{h/datastore.h@{h/datastore.h}}
+{\ttfamily \#include "{}kernel.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_afc5ac2fdc0de4d7fbaf0b2d1a9afef1c}{save\+ADC}} (int panel, int channel, int adc)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_a77909b32345f62ed88063899ec51de14}{read\+ADC}} (int panel, int channel, int \texorpdfstring{$\ast$}{*}value)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_adb3a90da31f904c7be1d8e6d9ec0919a}{save\+Target\+ADC}} (int panel, int channel, int target)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_a06ad305dd53e2afdb77b327c6e7966ce}{read\+Target\+ADC}} (int panel, int channel, int \texorpdfstring{$\ast$}{*}value)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_a23175ca398d2187e8e9ee8291d3cea80}{set\+Search}} (int panel, int channel)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_ab12eba4d2ebea315b73b53882f145364}{clear\+Search}} (int panel, int channel)
+\item 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{datastore_8h_abd57ed26eef6058c168a17114872c5a8}{is\+Search}} (int panel, int channel, int \texorpdfstring{$\ast$}{*}value)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{datastore_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{datastore_8h_ab12eba4d2ebea315b73b53882f145364}\index{datastore.h@{datastore.h}!clearSearch@{clearSearch}}
+\index{clearSearch@{clearSearch}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{clearSearch()}{clearSearch()}}
+{\footnotesize\ttfamily \label{datastore_8h_ab12eba4d2ebea315b73b53882f145364} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} clear\+Search (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_abd57ed26eef6058c168a17114872c5a8}\index{datastore.h@{datastore.h}!isSearch@{isSearch}}
+\index{isSearch@{isSearch}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{isSearch()}{isSearch()}}
+{\footnotesize\ttfamily \label{datastore_8h_abd57ed26eef6058c168a17114872c5a8} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} is\+Search (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_a77909b32345f62ed88063899ec51de14}\index{datastore.h@{datastore.h}!readADC@{readADC}}
+\index{readADC@{readADC}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
+{\footnotesize\ttfamily \label{datastore_8h_a77909b32345f62ed88063899ec51de14} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} read\+ADC (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_a06ad305dd53e2afdb77b327c6e7966ce}\index{datastore.h@{datastore.h}!readTargetADC@{readTargetADC}}
+\index{readTargetADC@{readTargetADC}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{readTargetADC()}{readTargetADC()}}
+{\footnotesize\ttfamily \label{datastore_8h_a06ad305dd53e2afdb77b327c6e7966ce} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} read\+Target\+ADC (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_afc5ac2fdc0de4d7fbaf0b2d1a9afef1c}\index{datastore.h@{datastore.h}!saveADC@{saveADC}}
+\index{saveADC@{saveADC}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{saveADC()}{saveADC()}}
+{\footnotesize\ttfamily \label{datastore_8h_afc5ac2fdc0de4d7fbaf0b2d1a9afef1c} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} save\+ADC (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{, }\item[{int}]{adc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_adb3a90da31f904c7be1d8e6d9ec0919a}\index{datastore.h@{datastore.h}!saveTargetADC@{saveTargetADC}}
+\index{saveTargetADC@{saveTargetADC}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{saveTargetADC()}{saveTargetADC()}}
+{\footnotesize\ttfamily \label{datastore_8h_adb3a90da31f904c7be1d8e6d9ec0919a} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} save\+Target\+ADC (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{, }\item[{int}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{datastore_8h_a23175ca398d2187e8e9ee8291d3cea80}\index{datastore.h@{datastore.h}!setSearch@{setSearch}}
+\index{setSearch@{setSearch}!datastore.h@{datastore.h}}
+\doxysubsubsection{\texorpdfstring{setSearch()}{setSearch()}}
+{\footnotesize\ttfamily \label{datastore_8h_a23175ca398d2187e8e9ee8291d3cea80} 
+\+\_\+kernel\+\_\+oserror \texorpdfstring{$\ast$}{*} set\+Search (\begin{DoxyParamCaption}\item[{int}]{panel}{, }\item[{int}]{channel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

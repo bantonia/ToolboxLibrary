@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_scroll_offset.html#a6b6012316fa7ec651713ca72ea7b58ac',1,'ScrollOffset::x'],['../struct_mouse_click_block.html#a30e76ad4d7bcff85df2f3645be574a91',1,'MouseClickBlock::x']]],
-  ['x0_1',['x0',['../structsprite__box.html#ac7fc838789ed8d952ca6d43d2654eb6f',1,'sprite_box']]],
-  ['x1_2',['x1',['../structsprite__box.html#ac107090547938e9b8951e29772bd7d8f',1,'sprite_box']]],
-  ['xdiv_3',['xdiv',['../structsprite__factors.html#a4308e455cdb9b4f980c8b98f48bdb448',1,'sprite_factors']]],
-  ['xmag_4',['xmag',['../structsprite__factors.html#a5bf8eaeebad4465afad15b25b69b2304',1,'sprite_factors']]],
-  ['xoffset_5',['xOffset',['../struct_key_pressed_block.html#a0054950afd9663fc0dd19a34de411e24',1,'KeyPressedBlock']]]
+  ['y_0',['y',['../struct_scroll_offset.html#aeea99f6f9d694d41322524dfab8d885a',1,'ScrollOffset::y'],['../struct_mouse_click_block.html#aab54adb9e308ae6a8ec02f75243fcf49',1,'MouseClickBlock::y']]],
+  ['y0_1',['y0',['../structsprite__box.html#ae1a0831b469684ab9c27bf961f24c207',1,'sprite_box']]],
+  ['y1_2',['y1',['../structsprite__box.html#aa819f3b990d687abf0e32d1f56fce33b',1,'sprite_box']]],
+  ['ydiv_3',['ydiv',['../structsprite__factors.html#a33b8a1a0f0fde6ec81f739dbb7ace7b4',1,'sprite_factors']]],
+  ['ymag_4',['ymag',['../structsprite__factors.html#a74e2157a32d56e9beb0f4a632523406b',1,'sprite_factors']]],
+  ['yoffset_5',['yOffset',['../struct_key_pressed_block.html#a105606079f2706f4b03bae90026bd849',1,'KeyPressedBlock']]]
 ];
