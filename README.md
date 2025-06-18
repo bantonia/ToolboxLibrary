@@ -1,7 +1,7 @@
 # ToolboxLibrary
 RiscOS DDE C++ Toolbox Library<br/>
 <p>Three libraries are included in this Repository, CommonC++Lib, RiscOSC++Lib and ToolboxC++Lib. CommonC++Lib contains a few general utilities, some of which are used by the other two libraries.
- RiscOSC++Lib contains some classes which relate to the RiscOS operating system, currently this library is very limited and could be extended to include more features of RiscOS.
+ RiscOSC++Lib contains classes which relate to the RiscOS operating system, currently this library is very limited and could be extended to include more features of RiscOS.
  ToolboxC++Lib relies on the other two libraries and contains all the classes required to create Toolbox driven applications.
 Applications need the o.wimplib from the tboxlibs, otherwise just link applications with the three libraries in this Repository together with o.c++lib and o.stubs.
 The libraries o.events and o.toolboxlib are not needed to create a Toolbox application.
