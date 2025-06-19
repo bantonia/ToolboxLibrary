@@ -1,0 +1,24 @@
+var class_toolbox_string_set =
+[
+    [ "gadgetMethod", "class_toolbox_string_set.html#ab3aceab66b9728c8107b719163e2c53c", null ],
+    [ "getAlphanumericFieldId", "class_toolbox_string_set.html#aade9e5327aa83114dc9ebca78c24022a", null ],
+    [ "getClassName", "class_toolbox_string_set.html#af0246cb315834a8424e180a4e95c1d0f", null ],
+    [ "getClassType", "class_toolbox_string_set.html#a3278b1c2af3cc2a7849c9f0247bd7ade", null ],
+    [ "getPopUpMenuId", "class_toolbox_string_set.html#afa1afa963bfae8e731fabc934422f23b", null ],
+    [ "getSelected", "class_toolbox_string_set.html#aebab8bafbc98da91d90a9aab3c31b4c7", null ],
+    [ "getSelected", "class_toolbox_string_set.html#a8a5697d35f99e1ffd1adfa2e7a153530", null ],
+    [ "getSelectedIndex", "class_toolbox_string_set.html#abb00c9abcf19a57aac9a704d05b1c3d0", null ],
+    [ "moveGadget", "class_toolbox_string_set.html#a31f8b64ce3e4a0dea06be6e136987b10", null ],
+    [ "setAllowable", "class_toolbox_string_set.html#af9c0f0a4c005635f748659e15d00ffd1", null ],
+    [ "setAvailable", "class_toolbox_string_set.html#aa7ff1c18c0b029d3dc87db129c95de6b", null ],
+    [ "setComponentId", "class_toolbox_string_set.html#a8d38b2ea596fa7abe6ab26e445c6de89", null ],
+    [ "setFlags", "class_toolbox_string_set.html#a3c31a2959e703dfbd382ebaf74674147", null ],
+    [ "setFocus", "class_toolbox_string_set.html#a225f827606258e02eabaa7923988e809", null ],
+    [ "setFont", "class_toolbox_string_set.html#a5bd64bb99ee37d0872aea77a919cffd8", null ],
+    [ "setGadgetFlags", "class_toolbox_string_set.html#a776ba7afb9fee5f66e84189870749639", null ],
+    [ "setHelpMessage", "class_toolbox_string_set.html#a0f32e9f5b5baebf59dbfa814965926b2", null ],
+    [ "setObjectId", "class_toolbox_string_set.html#a1faa7a685a4181f7d3ee6ec2e4ce01f6", null ],
+    [ "setSelected", "class_toolbox_string_set.html#ae9467b00a3acf6b479b790276a02bbe2", null ],
+    [ "setSelected", "class_toolbox_string_set.html#aedb22c05c74546c4d42d305b96ddeb25", null ],
+    [ "showProperties", "class_toolbox_string_set.html#a13cadd63a023727dffabbbc3d80015a8", null ]
+];

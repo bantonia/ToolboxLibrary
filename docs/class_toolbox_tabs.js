@@ -1,0 +1,24 @@
+var class_toolbox_tabs =
+[
+    [ "gadgetMethod", "class_toolbox_tabs.html#aabc9366e4c066ec16b8a4cbd410ecdae", null ],
+    [ "getClassName", "class_toolbox_tabs.html#a6147481827d04ba988101aa7f68b69ba", null ],
+    [ "getClassType", "class_toolbox_tabs.html#a229a4fbab7ed441ea79b3f31e5f12734", null ],
+    [ "getLabel", "class_toolbox_tabs.html#afe1988af7eeaaba6e61912b91dc55916", null ],
+    [ "getLabel", "class_toolbox_tabs.html#a0cb31fc0f57ffe04a2edb0b1433d654d", null ],
+    [ "getSelected", "class_toolbox_tabs.html#a935eaf2858557448a79bae131573eb8e", null ],
+    [ "getState", "class_toolbox_tabs.html#af71b8d77daf85e9a455c2ba9cec11049", null ],
+    [ "hideTab", "class_toolbox_tabs.html#a7d3f874066b78e41e3899d06977d1e47", null ],
+    [ "moveGadget", "class_toolbox_tabs.html#a2bd1519ad26907e5b2c5470ef9d12c4b", null ],
+    [ "setComponentId", "class_toolbox_tabs.html#a6bfb25438cfe18032416929425cd417d", null ],
+    [ "setFlags", "class_toolbox_tabs.html#a760c6edc158618c75c2f72d0779c1089", null ],
+    [ "setFocus", "class_toolbox_tabs.html#a7af92c9f7898018233a8e5169d9feed2", null ],
+    [ "setGadgetFlags", "class_toolbox_tabs.html#a264b06a94207f5799ca052b686ba627c", null ],
+    [ "setHelpMessage", "class_toolbox_tabs.html#ad878e60b3a4b75454943c91ba66a68ad", null ],
+    [ "setLabel", "class_toolbox_tabs.html#a5fca5294f191ad40cf24a3f6a1c8d248", null ],
+    [ "setObjectId", "class_toolbox_tabs.html#a9d758ea59efa6e498866f6f2e690b9c7", null ],
+    [ "setSelected", "class_toolbox_tabs.html#a9f6afd1b6416a5cb6b26bd5513968838", null ],
+    [ "setState", "class_toolbox_tabs.html#a1b40ddddd903046ab3df6d844b5054d0", null ],
+    [ "showProperties", "class_toolbox_tabs.html#aa949306e2e40668b8ba5e927613887d0", null ],
+    [ "tabFromWindow", "class_toolbox_tabs.html#a4b5808321cbee8d6af526b3078965b1e", null ],
+    [ "windowFromTab", "class_toolbox_tabs.html#a7e507f62e042ffc7acc49c2a42b2308b", null ]
+];

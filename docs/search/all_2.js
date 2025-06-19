@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['b_0',['b',['../struct_toolbox_colour_dlog_obj_1_1colour_block_hdr.html#a265ddad6a8c3b55163ce45b0e4daa6e8',1,'ToolboxColourDlogObj::colourBlockHdr::b'],['../union_wimp_mask.html#ad82dd7f8d620157b5d11d24e6c8ecd35',1,'WimpMask::b'],['../struct_mouse_click_block.html#a2f093ce281be365fe0c24d0a077e8ab7',1,'MouseClickBlock::b'],['../union_window_flags.html#aec894a3d56a962f98accb05331c2637b',1,'WindowFlags::b'],['../union_icon_flags.html#ab87069bd8b15c6b039c0c8a0ab136b76',1,'IconFlags::b']]],
+  ['back_1',['back',['../class_string_obj.html#a415824abfe5dece28b0e30bd82ab3d4b',1,'StringObj']]],
+  ['background_2',['background',['../union_icon_flags.html#ad23e6e33076ebd2c9bf9b25ee2b8ec2b',1,'IconFlags']]],
+  ['bclickleft_3',['BCLICKLEFT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657a64c674619531843534b9697e91d35b41',1,'WimpBits.h']]],
+  ['bclickright_4',['BCLICKRIGHT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657a2a155bd21bdaf4cd4d64972e51482337',1,'WimpBits.h']]],
+  ['bdragleft_5',['BDRAGLEFT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657aef7ec022675a69e640203e1958d64394',1,'WimpBits.h']]],
+  ['bdragright_6',['BDRAGRIGHT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657a5f001c18e33a9e8ac9c75a55a3c64e33',1,'WimpBits.h']]],
+  ['behind_7',['behind',['../struct_open_window_request_block.html#a54a5b5d04f061b910ec46b5357d49cdb',1,'OpenWindowRequestBlock::behind'],['../struct_scroll_request_block.html#a55520a04907cac0d0afc4ffc2275039b',1,'ScrollRequestBlock::behind'],['../struct_wind_def_str.html#ad5127a9b0d50dacd4378f76e7c64cd12',1,'WindDefStr::behind'],['../struct_open_window_str.html#ad0eff76bf6cf097b45c41dbd06b44966',1,'OpenWindowStr::behind']]],
+  ['binarytodecimal_8',['binaryToDecimal',['../class_o_s.html#a78521b9b87446e69662c39908b654b9d',1,'OS']]],
+  ['bitfield_9',['BitField',['../class_bit_field.html',1,'BitField'],['../class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d',1,'BitField::BitField(void)'],['../class_bit_field.html#afb1be5c67bc755f7760c2abcc345cda0',1,'BitField::BitField(int bits)']]],
+  ['bitfield_2ec_2b_2b_10',['BitField.c++',['../_bit_field_8c_09_09.html',1,'']]],
+  ['bitfield_2eh_11',['BitField.h',['../_bit_field_8h.html',1,'']]],
+  ['bleft_12',['BLEFT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657a4ff899fd5b81911ff0b69ca4cc924064',1,'WimpBits.h']]],
+  ['blue_13',['blue',['../union_wimp_palette_word.html#a7494ae3a231535adf4a2f4cf1af0f6c7',1,'WimpPaletteWord::blue'],['../struct_toolbox_colour_dlog_obj_1_1colour_block_hdr.html#ae2a3eee61b99496044b60afef7f8df16',1,'ToolboxColourDlogObj::colourBlockHdr::blue']]],
+  ['bmid_14',['BMID',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657aee378bdc77003068400b12921f8453f7',1,'WimpBits.h']]],
+  ['box_15',['Box',['../struct_box.html',1,'Box'],['../_wimp_bits_8h.html#a404df2f4804da4d90f1dd3a0954dc6bf',1,'Box:&#160;WimpBits.h']]],
+  ['box_16',['box',['../struct_redraw_window_request_block.html#a1453f8b1c4175793040b0670dec10674',1,'RedrawWindowRequestBlock::box'],['../struct_open_window_request_block.html#a02583ee479c2e19505a7b0a9fd3b4c1b',1,'OpenWindowRequestBlock::box'],['../struct_scroll_request_block.html#a09100654ddc7178021a649d3c0a51b1f',1,'ScrollRequestBlock::box'],['../struct_open_window_str.html#a7130e370e9ef0094738625cd28ccb181',1,'OpenWindowStr::box']]],
+  ['bright_17',['BRIGHT',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657a9e804722270243cbe874a5aa6785cb85',1,'WimpBits.h']]],
+  ['buffer_18',['buffer',['../union_icon_data_str.html#a0361d93d924d63df352808d9e47a38c6',1,'IconDataStr']]],
+  ['bufferfilled_19',['bufferFilled',['../class_toolbox_save_as_obj.html#a5d05ef8d0b710f588e451c437bb19fc6',1,'ToolboxSaveAsObj']]],
+  ['bufflen_20',['buffLen',['../union_icon_data_str.html#a2b0b5de5f8159449befe7ca7eea05e87',1,'IconDataStr']]],
+  ['buttonstate_21',['ButtonState',['../_wimp_bits_8h.html#aa46074d34fe2d6631c6bd9dc74633657',1,'WimpBits.h']]],
+  ['buttontype_22',['buttonType',['../union_icon_flags.html#a06e71434704c577e500cf60b618ab2aa',1,'IconFlags']]],
+  ['bytes_23',['bytes',['../union_wimp_palette_word.html#a6dbdc6ae8eb4ad149c695ac1134d68e6',1,'WimpPaletteWord::bytes'],['../union_wimp_palette_word.html#a46948895bd44d468436172721766637c',1,'WimpPaletteWord::bytes']]]
+];

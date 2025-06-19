@@ -1,0 +1,28 @@
+var class_toolbox_file_info_dlog_obj =
+[
+    [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a051345bb59dfc9b89521bf7f254e494f", null ],
+    [ "~ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a0a0b85c36ff026ddbafc895b7fbc1217", null ],
+    [ "clearFlags", "class_toolbox_file_info_dlog_obj.html#a15e1faf809dce7aedc80c49150993497", null ],
+    [ "getClassName", "class_toolbox_file_info_dlog_obj.html#a487d7e11c8d067e02254dbf340cd4c5d", null ],
+    [ "getClassType", "class_toolbox_file_info_dlog_obj.html#a264e53c68b1cfe590adf7f9bc81d8844", null ],
+    [ "getDate", "class_toolbox_file_info_dlog_obj.html#af7b7976672d3cbd900a330ed74610afc", null ],
+    [ "getFileName", "class_toolbox_file_info_dlog_obj.html#a7dcd90da7f6b0702a885be641cff0c44", null ],
+    [ "getFileName", "class_toolbox_file_info_dlog_obj.html#aa89fe6bd565cf0a0c409b1f5ef93ad62", null ],
+    [ "getFileSize", "class_toolbox_file_info_dlog_obj.html#a998ce24cd7976091db966808889b6a23", null ],
+    [ "getFileType", "class_toolbox_file_info_dlog_obj.html#abe37401b48b85ba16b69daf0749c971a", null ],
+    [ "getTitle", "class_toolbox_file_info_dlog_obj.html#a68f34cacba5ccb913ea209c1c042f4e4", null ],
+    [ "getTitleSize", "class_toolbox_file_info_dlog_obj.html#a6ae99ddce86c82974a60dc550d4d66ae", null ],
+    [ "getWindowId", "class_toolbox_file_info_dlog_obj.html#a88a7caa18a90e63074ae0e73ce0f9a57", null ],
+    [ "isModified", "class_toolbox_file_info_dlog_obj.html#a60c5c22fa3b9b42978ac0584592924e1", null ],
+    [ "setDate", "class_toolbox_file_info_dlog_obj.html#a3ef7a3c4d5a3d541be6725897f3b8fea", null ],
+    [ "setFileName", "class_toolbox_file_info_dlog_obj.html#ad0dd31aad162ea25e7588845c163554f", null ],
+    [ "setFileSize", "class_toolbox_file_info_dlog_obj.html#af66eb0e788bee450c1e553697e85351c", null ],
+    [ "setFileType", "class_toolbox_file_info_dlog_obj.html#a3462f431c698975146ce36e94099a8db", null ],
+    [ "setFlags", "class_toolbox_file_info_dlog_obj.html#aaecc3b08072fddae7fdb4b2bebbe19ba", null ],
+    [ "setModified", "class_toolbox_file_info_dlog_obj.html#ab3febac1012893c2c761a4ff6e0fa6d7", null ],
+    [ "setModified", "class_toolbox_file_info_dlog_obj.html#a72b65c515abb2910d98cdd0d4be341aa", null ],
+    [ "setNotModified", "class_toolbox_file_info_dlog_obj.html#a8b0c68824fbd35d257a04a8f3cd9b3da", null ],
+    [ "setObjectId", "class_toolbox_file_info_dlog_obj.html#a0f0432e30ea2b8079ba3b167330ee56a", null ],
+    [ "setTitle", "class_toolbox_file_info_dlog_obj.html#a40c98d93219fbf235e588b9185f349eb", null ],
+    [ "showProperties", "class_toolbox_file_info_dlog_obj.html#a48b01236af0ec98efff2bde397268977", null ]
+];

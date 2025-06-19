@@ -1,0 +1,25 @@
+var class_toolbox_prog_info_obj =
+[
+    [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html#add9d8b1ce39fef2b0a7172d9bf25905c", null ],
+    [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html#ab7b26b307e46ae6847fd87d2204dee57", null ],
+    [ "clearFlags", "class_toolbox_prog_info_obj.html#a2bc6dff87b0253822e82c0ff85b2cbe1", null ],
+    [ "getClassName", "class_toolbox_prog_info_obj.html#a5a547c3bdb39e0b40e7ba9bd6ccfffab", null ],
+    [ "getClassType", "class_toolbox_prog_info_obj.html#ae015d6328ab162c41ad1e088d534a90a", null ],
+    [ "getLicenceType", "class_toolbox_prog_info_obj.html#a836ad8b00dc12229a4be5283a7f8b9b4", null ],
+    [ "getTitle", "class_toolbox_prog_info_obj.html#a2722dc883938a62f4888047e47febbaf", null ],
+    [ "getTitle", "class_toolbox_prog_info_obj.html#a8d010f336269977438af7723d78bcc6b", null ],
+    [ "getUri", "class_toolbox_prog_info_obj.html#a5d8bf9dde3272dad7b8e856cecd1adc5", null ],
+    [ "getUri", "class_toolbox_prog_info_obj.html#ab8d87c23b2ad5ba512957ffe7cd745cb", null ],
+    [ "getVersion", "class_toolbox_prog_info_obj.html#a7dca6302c077d85c0fd1d4ffb173766c", null ],
+    [ "getVersion", "class_toolbox_prog_info_obj.html#a111164efb29c5e48c29bd62dcd09f505", null ],
+    [ "getWebEvent", "class_toolbox_prog_info_obj.html#af6805869ff91393126b4e8f62519345c", null ],
+    [ "getWindowId", "class_toolbox_prog_info_obj.html#a4e1158f282b9a41604184822cf47c529", null ],
+    [ "setFlags", "class_toolbox_prog_info_obj.html#a53da98104297594aa208eeae49186fe1", null ],
+    [ "setLicenceType", "class_toolbox_prog_info_obj.html#afa67a90394e8d7d6e10c8e293c9cd766", null ],
+    [ "setObjectId", "class_toolbox_prog_info_obj.html#ad0d3e7d69179c4bf1748a9bddb91c45b", null ],
+    [ "setTitle", "class_toolbox_prog_info_obj.html#a50bb2a41656c5c309523cf9e515a3822", null ],
+    [ "setUri", "class_toolbox_prog_info_obj.html#a0648732519f0fc7458b4dc57cfe6161e", null ],
+    [ "setVersion", "class_toolbox_prog_info_obj.html#ab444ee58e2fc34c15160b06f04bd466a", null ],
+    [ "setWebEvent", "class_toolbox_prog_info_obj.html#ac3989db44ccade60f9c3dfcc2fcc4f31", null ],
+    [ "showProperties", "class_toolbox_prog_info_obj.html#a527235cb81c25de0d8d58c65b8e4d32e", null ]
+];
