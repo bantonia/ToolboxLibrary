@@ -1,0 +1,96 @@
+#include "Prog.h"
+
+Prog::Prog() {
+  this->mainWindow = NULL;
+  this->w = NULL;
+};
+
+Prog::~Prog() {
+  if (this->mainWindow != NULL) delete this->mainWindow;
+  if (this->w != NULL) delete this->w;
+}
+
+void Prog::menuAboutToBeShown() {
+  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) this->getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock; 
+}
+
+void Prog::windowObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
+  ToolboxWindowObj *w = new ToolboxWindowObj();
+  w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
+  if (w->isTemplate("Window")) {
+    this->mainWindow = new MainWindow(w);
+    this->mainWindow->w->setTitle("w2");
+    mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
+  }
+  if (w->isTemplate("Window_1")) {
+    this->w = w;
+    this->w->setTitle("w1");
+  }
+}
+
+void Prog::adjusterClicked() {
+  AdjusterClickedEvent *pollEvent = (AdjusterClickedEvent *) this->getPollBlock();
+  if (ToolboxCoreObj::idBlock.self_id == this->mainWindow->w->readObjectId() && (ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterRight || ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterLeft)) {
+    int id = ToolboxCoreObj::idBlock.self_component;
+    switch(pollEvent->direction) {
+      case Adjuster_Decrement: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() - 1);
+        }
+        break;
+      case Adjuster_Increment: {
+          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() + 1);
+        }
+        break;
+      default:
+        break;
+    }
+    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+  }
+}
+
+void Prog::sliderValueChanged() {
+  if (ToolboxCoreObj::idBlock.self_id == this->mainWindow->w->readObjectId()) {
+    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+  }
+}
+
+void Prog::iconbarObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
+  iconbar = new ToolboxIconbarObj();
+  iconbar->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id).setText("Worked");
+}
+
+void Prog::toolboxUserEvent() {
+  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
+  switch(tboxHdr->event_code) {
+    case Quit: {
+        this->closeDown();
+      }
+      break;
+    case ButtonAction1: {
+        w->setTitle("Rhubarb");
+        mainWindow->w->setTitle("Hello");
+        mainWindow->df1->setValue(this->mainWindow->df1->getType());
+        iconbar->setText("AB1");
+      }
+      break;
+    case ButtonAction2: {
+        w->setTitle("Hello");
+        mainWindow->w->setTitle("Rhubarb");
+        mainWindow->df1->setValue(this->mainWindow->ab2->getType());
+        iconbar->setText("AB2");
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+
+void Prog::radioButtonStateChanged() {
+  mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
+}
+
+

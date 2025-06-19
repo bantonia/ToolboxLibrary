@@ -1,0 +1,52 @@
+#include "MainWindow.h"
+
+MainWindow::MainWindow() {
+  this->w = NULL;
+  this->df1 = NULL;
+  this->df2 = NULL;
+  this->ab1 = NULL;
+  this->ab2 = NULL;
+  this->slider = NULL;
+  this->rb1 = NULL;
+  this->rb2 = NULL;
+  this->rb3 = NULL;
+}
+
+MainWindow::MainWindow(ToolboxWindowObj *windowObj) {
+  this->w = windowObj;
+  this->df1 = new ToolboxDisplayField();
+  this->df1->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField1);
+  this->df2 = new ToolboxDisplayField();
+  this->df2->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField2);
+  this->df3 = new ToolboxDisplayField();
+  this->df3->setObjectId(windowObj->readObjectId()).setComponentId(MWDisplayField3);
+  this->ab1 = new ToolboxActionButton();
+  this->ab1->setObjectId(windowObj->readObjectId()).setComponentId(MWActionButton1);
+  this->ab2 = new ToolboxActionButton();
+  this->ab2->setObjectId(windowObj->readObjectId()).setComponentId(MWActionButton2);
+  this->slider = new ToolboxSlider();
+  this->slider->setObjectId(windowObj->readObjectId()).setComponentId(MWSlider);
+  this->popUp = new ToolboxPopUp();
+  this->popUp->setObjectId(windowObj->readObjectId()).setComponentId(MWPopUp);
+  this->rb1 = new ToolboxRadioButton();
+  this->rb1->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton1);
+  this->rb2 = new ToolboxRadioButton();
+  this->rb2->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton2);
+  this->rb3 = new ToolboxRadioButton();
+  this->rb3->setObjectId(windowObj->readObjectId()).setComponentId(MWRadioButton3);
+}
+
+MainWindow::~MainWindow() {
+  if (this->w != NULL) delete this->w;
+  if (this->df1 != NULL) delete this->df1;
+  if (this->df2 != NULL) delete this->df2;
+  if (this->df3 != NULL) delete this->df3;
+  if (this->ab1 != NULL) delete this->ab1;
+  if (this->ab2 != NULL) delete this->ab2;
+  if (this->slider != NULL) delete this->slider;
+  if (this->popUp != NULL) delete this->popUp;
+  if (this->rb1 != NULL) delete this->rb1;
+  if (this->rb2 != NULL) delete this->rb2;
+  if (this->rb3 != NULL) delete this->rb3;
+}
+

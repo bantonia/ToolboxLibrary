@@ -1,0 +1,11 @@
+#include "Prog.h"
+
+int main() {
+  Prog *tools = new Prog();
+  tools->initTask("<TestToolbox$Dir>");
+  tools->setMask(256+1);
+  while (!tools->quit) {
+    tools->run();
+  }
+  return 0;
+}

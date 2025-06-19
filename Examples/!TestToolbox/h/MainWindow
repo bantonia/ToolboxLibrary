@@ -1,0 +1,42 @@
+#include "ToolboxWindowObj.h"
+#include "ToolboxDisplayField.h"
+#include "ToolboxActionButton.h"
+#include "ToolboxIconbarObj.h"
+#include "ToolboxSlider.h"
+#include "ToolboxRadioButton.h"
+#include "ToolboxPopUp.h"
+
+class MainWindow {
+  public:
+
+    typedef enum {
+      MWActionButton1 = 0,
+      MWDisplayField1,
+      MWActionButton2,
+      MWRadioButton1,
+      MWRadioButton2,
+      MWLabelledBox,
+      MWAdjusterRight = 7,
+      MWSlider,
+      MWAdjusterLeft,
+      MWDisplayField2,
+      MWPopUp,
+      MWDisplayField3,
+      MWRadioButton3
+    } MWComponents;
+
+    MainWindow();
+    MainWindow(ToolboxWindowObj *windowObj);
+    ~MainWindow();
+    ToolboxWindowObj *w;
+    ToolboxDisplayField *df1;
+    ToolboxDisplayField *df2;
+    ToolboxDisplayField *df3;
+    ToolboxActionButton *ab1;
+    ToolboxActionButton *ab2;
+    ToolboxSlider *slider;
+    ToolboxPopUp *popUp;
+    ToolboxRadioButton *rb1;
+    ToolboxRadioButton *rb2;
+    ToolboxRadioButton *rb3;
+};
