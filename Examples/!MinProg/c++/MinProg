@@ -1,18 +1,4 @@
-#include "ToolboxTask.h"
-
-typedef enum {
-  Quit         = 0x01
-} userEvents;
-
-class MinProg : public ToolboxTask {
-  public:
-    MinProg() {};
-    ~MinProg() {};
-    void showProperties() {};
-    void toolboxUserEvent();
-};
-
-static MinProg *tools;
+#include "MinProg.h"
 
 void MinProg::toolboxUserEvent() {
   ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
@@ -25,15 +11,3 @@ void MinProg::toolboxUserEvent() {
       break;
   }
 }
-
-int main() {
-  tools = new MinProg();
-  tools->setHandle(tools->initTask("<MinProg$Dir>"));
-  tools->setMask(256+1);
-  while (!tools->quit) {
-    tools->run();
-  }
-  return 0;
-}
-
-

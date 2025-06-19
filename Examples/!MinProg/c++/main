@@ -1,0 +1,12 @@
+#include "MinProg.h"
+
+int main() {
+  MinProg *tools = new MinProg();
+  tools->initTask("<MinProg$Dir>");
+  tools->setMask(256+1);
+  while (!tools->quit) {
+    tools->run();
+  }
+  return 0;
+}
+

@@ -1,0 +1,12 @@
+#include "ToolboxTask.h"
+
+class MinProg : public ToolboxTask {
+  public:
+
+    typedef enum {
+      Quit         = 0x01
+    } userEvents;
+
+    void showProperties() {};
+    void toolboxUserEvent();
+};
