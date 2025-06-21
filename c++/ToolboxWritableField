@@ -1,5 +1,11 @@
 #include "ToolboxWritableField.h"
 
+ToolboxWritableField::ToolboxWritableField() {};
+
+ToolboxWritableField::ToolboxWritableField(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxWritableField::ToolboxWritableField(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxWritableField& ToolboxWritableField::setValue(char *value) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) value;

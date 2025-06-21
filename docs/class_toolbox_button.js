@@ -1,5 +1,8 @@
 var class_toolbox_button =
 [
+    [ "ToolboxButton", "class_toolbox_button.html#a7a0e06238416d39c41552dc70b9e15a5", null ],
+    [ "ToolboxButton", "class_toolbox_button.html#a2cb8cdba4a231266643000528f5183a0", null ],
+    [ "ToolboxButton", "class_toolbox_button.html#aafce08d530c5c3ef9e36fd014815f118", null ],
     [ "gadgetMethod", "class_toolbox_button.html#a9d356483e4a1b3a50f1f12fee160a5e7", null ],
     [ "getClassName", "class_toolbox_button.html#ab593487fbf87466c1c71081bc2295069", null ],
     [ "getClassType", "class_toolbox_button.html#a2455b0870f140012930c72f997df671b", null ],

@@ -1,5 +1,10 @@
 #include "ToolboxOptionButton.h"
 
+ToolboxOptionButton::ToolboxOptionButton() {};
+
+ToolboxOptionButton::ToolboxOptionButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+ToolboxOptionButton::ToolboxOptionButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxOptionButton& ToolboxOptionButton::setLabel(char *label) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) label;

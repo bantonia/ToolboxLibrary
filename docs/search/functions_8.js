@@ -14,10 +14,9 @@ var searchData=
   ['isclear_11',['isClear',['../class_bit_field.html#afc5c789ec568d8f4aaf82821d66d959b',1,'BitField']]],
   ['ismodified_12',['isModified',['../class_toolbox_file_info_dlog_obj.html#a60c5c22fa3b9b42978ac0584592924e1',1,'ToolboxFileInfoDlogObj']]],
   ['isnoneavailable_13',['isNoneAvailable',['../class_toolbox_colour_dlog_obj.html#ab0d7177f30022d5e541a231bcae419d6',1,'ToolboxColourDlogObj']]],
-  ['issearch_14',['isSearch',['../datastore_8h.html#abd57ed26eef6058c168a17114872c5a8',1,'datastore.h']]],
-  ['isset_15',['isSet',['../class_bit_field.html#a1c930618fe1e51c24d70d603edeef773',1,'BitField']]],
-  ['istemplate_16',['isTemplate',['../class_toolbox_obj.html#ac1917823e570c94cb16e326218ba5746',1,'ToolboxObj']]],
-  ['iswindow_17',['isWindow',['../class_toolbox_window_obj.html#a0fec3b7ed64e6579ba366e9407f76239',1,'ToolboxWindowObj']]],
-  ['iswindowtemplate_18',['isWindowTemplate',['../class_toolbox_window_obj.html#a0c0fc4541c341b4f7a98a85f3fb4b4c5',1,'ToolboxWindowObj']]],
-  ['iterator_19',['Iterator',['../class_iterator.html#a2623e71ec548000dd605e3398adc0dd0',1,'Iterator']]]
+  ['isset_14',['isSet',['../class_bit_field.html#a1c930618fe1e51c24d70d603edeef773',1,'BitField']]],
+  ['istemplate_15',['isTemplate',['../class_toolbox_obj.html#ac1917823e570c94cb16e326218ba5746',1,'ToolboxObj']]],
+  ['iswindow_16',['isWindow',['../class_toolbox_window_obj.html#a0fec3b7ed64e6579ba366e9407f76239',1,'ToolboxWindowObj']]],
+  ['iswindowtemplate_17',['isWindowTemplate',['../class_toolbox_window_obj.html#a0c0fc4541c341b4f7a98a85f3fb4b4c5',1,'ToolboxWindowObj']]],
+  ['iterator_18',['Iterator',['../class_iterator.html#a2623e71ec548000dd605e3398adc0dd0',1,'Iterator']]]
 ];

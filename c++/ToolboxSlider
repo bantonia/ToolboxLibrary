@@ -1,5 +1,11 @@
 #include "ToolboxSlider.h"
 
+ToolboxSlider::ToolboxSlider() {};
+
+ToolboxSlider::ToolboxSlider(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxSlider::ToolboxSlider(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxSlider& ToolboxSlider::setValue(int value) {
   _kernel_swi_regs regs;
   regs.r[4] = value;

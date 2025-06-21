@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['colourmodel_0',['ColourModel',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bd',1,'ToolboxColourDlogObj']]]
+  ['errorenv_0',['errorEnv',['../class_error_report.html#a8ce273bb4b177794aa5abcfb823ed0ac',1,'ErrorReport']]]
 ];

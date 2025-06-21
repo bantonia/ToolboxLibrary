@@ -1,5 +1,8 @@
 var class_toolbox_pop_up =
 [
+    [ "ToolboxPopUp", "class_toolbox_pop_up.html#af3b50794eb8c08be6283de16e67a9e74", null ],
+    [ "ToolboxPopUp", "class_toolbox_pop_up.html#aa87ff90a8fe3aa2149be09e04370f169", null ],
+    [ "ToolboxPopUp", "class_toolbox_pop_up.html#a8387661c7756dbfb5739ede675f4bc7c", null ],
     [ "gadgetMethod", "class_toolbox_pop_up.html#a99ec8f66384689f8079390aa96246927", null ],
     [ "getClassName", "class_toolbox_pop_up.html#a7980df88934ec7ba19f6d1a5b3dfe4c5", null ],
     [ "getClassType", "class_toolbox_pop_up.html#aa5585f6a387907a4ff54fc32b4f95e32", null ],

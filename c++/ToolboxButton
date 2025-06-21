@@ -1,6 +1,12 @@
 #include "ToolboxButton.h"
 #include "OS.h"
 
+ToolboxButton::ToolboxButton() {};
+
+ToolboxButton::ToolboxButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxButton::ToolboxButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 int ToolboxButton::getGadgetFlags() {
   _kernel_swi_regs regs;
   this->gadgetMethod(Button_GetFlags, &regs);

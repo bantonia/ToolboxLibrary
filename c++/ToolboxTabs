@@ -1,6 +1,12 @@
 #include "ToolboxTabs.h"
 #include "tabs.h"
 
+ToolboxTabs::ToolboxTabs() {};
+
+ToolboxTabs::ToolboxTabs(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxTabs::ToolboxTabs(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxTabs& ToolboxTabs::setState(unsigned int  state) {
   _kernel_swi_regs regs;
   regs.r[4] = state;

@@ -15,6 +15,18 @@ ToolboxGadget::ToolboxGadget() {
   flags = 0;
 }
 
+ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId) {
+  setObjectId(windowId);
+  setComponentId(gadgetId);
+  flags = 0;
+}
+
+ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId, unsigned int flags) {
+  setObjectId(windowId);
+  setComponentId(gadgetId);
+  setFlags(flags);
+}
+
 int ToolboxGadget::getGadgetFlags() {
   _kernel_swi_regs regs;
   this->setFlags(0);

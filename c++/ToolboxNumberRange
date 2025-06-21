@@ -1,5 +1,11 @@
 #include "ToolboxNumberRange.h"
 
+ToolboxNumberRange::ToolboxNumberRange() {};
+
+ToolboxNumberRange::ToolboxNumberRange(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxNumberRange::ToolboxNumberRange(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxNumberRange& ToolboxNumberRange::setValue(int value) {
   _kernel_swi_regs regs;
   regs.r[4] = value;

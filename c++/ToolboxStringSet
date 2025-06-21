@@ -1,5 +1,12 @@
 #include "ToolboxStringSet.h"
 
+
+ToolboxStringSet::ToolboxStringSet() {};
+
+ToolboxStringSet::ToolboxStringSet(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxStringSet::ToolboxStringSet(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxStringSet& ToolboxStringSet::setAvailable(char *strings) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) strings;

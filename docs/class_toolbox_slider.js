@@ -1,5 +1,8 @@
 var class_toolbox_slider =
 [
+    [ "ToolboxSlider", "class_toolbox_slider.html#a839479b309bf0b99b56f734935bc232b", null ],
+    [ "ToolboxSlider", "class_toolbox_slider.html#a958413dcd8c83c67a8baaa6fdf949242", null ],
+    [ "ToolboxSlider", "class_toolbox_slider.html#a18093ac6b5793257bd55f20a8e15cf66", null ],
     [ "gadgetMethod", "class_toolbox_slider.html#a7dadb2fe57f4544933ae7475d425ef49", null ],
     [ "getBounds", "class_toolbox_slider.html#a1f2420ba36b2f468a8b8b3a956ff3053", null ],
     [ "getClassName", "class_toolbox_slider.html#a7339c3af46e0eb2e90b5f89d28955b99", null ],

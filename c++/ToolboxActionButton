@@ -1,5 +1,11 @@
 #include "ToolboxActionButton.h"
 
+ToolboxActionButton::ToolboxActionButton() {};
+
+ToolboxActionButton::ToolboxActionButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxActionButton::ToolboxActionButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxActionButton& ToolboxActionButton::setText(char *text) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) text;

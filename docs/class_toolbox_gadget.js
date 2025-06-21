@@ -1,6 +1,8 @@
 var class_toolbox_gadget =
 [
     [ "ToolboxGadget", "class_toolbox_gadget.html#a48bf7886f3d586c1adc4e90392e2534d", null ],
+    [ "ToolboxGadget", "class_toolbox_gadget.html#a6983db87a46afa29aa3c20744e7e110d", null ],
+    [ "ToolboxGadget", "class_toolbox_gadget.html#a3c55d536694a14ef6ba58fc29bf1fe2e", null ],
     [ "~ToolboxGadget", "class_toolbox_gadget.html#ad7ba3a9a027da36f4c6be8ca4acf0206", null ],
     [ "gadgetMethod", "class_toolbox_gadget.html#a5fc50c258b8b8536eb01de19de8ea56e", null ],
     [ "getBbox", "class_toolbox_gadget.html#a49b842eb858e80368b0ad904abd4b31c", null ],

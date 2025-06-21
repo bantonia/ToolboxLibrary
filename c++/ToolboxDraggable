@@ -1,5 +1,11 @@
 #include "ToolboxDraggable.h"
 
+ToolboxDraggable::ToolboxDraggable() {};
+
+ToolboxDraggable::ToolboxDraggable(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxDraggable::ToolboxDraggable(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxDraggable& ToolboxDraggable::setSprite(char *spriteName) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) spriteName;

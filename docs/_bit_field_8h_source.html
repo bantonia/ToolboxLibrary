@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ToolboxC++Lib: h/BitField.h Source File</title>
+<title>CommonC++Lib RiscOSC++Lib ToolboxC++Lib: h/BitField.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ToolboxC++Lib
+   <div id="projectname">CommonC++Lib RiscOSC++Lib ToolboxC++Lib
    </div>
    <div id="projectbrief">Toolbox Library for use with the RiscOS DDE C++/CFront compiler</div>
   </td>
@@ -92,60 +92,60 @@ $(function(){initNavTree('_bit_field_8h_source.html','',''); });
   <div class="headertitle"><div class="title">BitField.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_bit_field_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __cplusplus</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __cplusplus</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#error Header file &quot;BitField.h&quot; may only be used from C++</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma force_top_level</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#pragma include_only_once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_object_8h.html">Object.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Object.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_bit_field.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_object.html#a40860402e64d8008fb42329df7097cdb">Object</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="class_bit_field.html#aaf8ddaddd217678e1b460bf4ccfa6355">~BitField</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a>(<span class="keywordtype">int</span> bits);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a654fb4ffd5348b4bb84f6a950ec0536f">setBit</a>(<span class="keywordtype">int</span> bit);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a6beb2aaa95d9398ece7df496a30a06fa">clearBit</a>(<span class="keywordtype">int</span> bit);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#a1c930618fe1e51c24d70d603edeef773">isSet</a>(<span class="keywordtype">int</span> bit);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#afc5c789ec568d8f4aaf82821d66d959b">isClear</a>(<span class="keywordtype">int</span> bit);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#aca8a622938199098a704ddae750f88ee">invert</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_bit_field.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_object.html#a40860402e64d8008fb42329df7097cdb">Object</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_bit_field.html#aaf8ddaddd217678e1b460bf4ccfa6355">~BitField</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField</a>(<span class="keywordtype">int</span> bits);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a654fb4ffd5348b4bb84f6a950ec0536f">setBit</a>(<span class="keywordtype">int</span> bit);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a6beb2aaa95d9398ece7df496a30a06fa">clearBit</a>(<span class="keywordtype">int</span> bit);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#a1c930618fe1e51c24d70d603edeef773">isSet</a>(<span class="keywordtype">int</span> bit);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#afc5c789ec568d8f4aaf82821d66d959b">isClear</a>(<span class="keywordtype">int</span> bit);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de">clear</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#aca8a622938199098a704ddae750f88ee">invert</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a5953686c90346139cf91cfa08bc21ac3">set</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de">clear</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#ac6bf8b8b3ca4ade272c894f59d43e148">numBits</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#a5953686c90346139cf91cfa08bc21ac3">set</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">   73</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">showProperties</a>(){};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#ac6bf8b8b3ca4ade272c894f59d43e148">numBits</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">   78</a></span>    <span class="keywordtype">char</span> *<a class="code hl_function" href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">getClassName</a>() { <span class="keywordflow">return</span> <span class="stringliteral">&quot;BitField&quot;</span>;};</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">   83</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">getClassType</a>(){<span class="keywordflow">return</span> 0;};</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bits;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">   77</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">showProperties</a>(){};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">   82</a></span>    <span class="keywordtype">char</span> *<a class="code hl_function" href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">getClassName</a>() { <span class="keywordflow">return</span> <span class="stringliteral">&quot;BitField&quot;</span>;};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">   87</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">getClassType</a>(){<span class="keywordflow">return</span> 0;};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bits;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
 </div>
-<div class="ttc" id="a_object_8h_html"><div class="ttname"><a href="_object_8h.html">Object.h</a></div></div>
 <div class="ttc" id="aclass_bit_field_html_a035371f3e0fb3773e18664bceb3ec9de"><div class="ttname"><a href="class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de">BitField::clear</a></div><div class="ttdeci">void clear(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:71</div></div>
 <div class="ttc" id="aclass_bit_field_html_a1c930618fe1e51c24d70d603edeef773"><div class="ttname"><a href="class_bit_field.html#a1c930618fe1e51c24d70d603edeef773">BitField::isSet</a></div><div class="ttdeci">int isSet(int bit)</div><div class="ttdef"><b>Definition</b> BitField.c++:47</div></div>
 <div class="ttc" id="aclass_bit_field_html_a292bd380cbf3fb6c5a1a53552894227d"><div class="ttname"><a href="class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d">BitField::BitField</a></div><div class="ttdeci">BitField(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:4</div></div>
-<div class="ttc" id="aclass_bit_field_html_a48e9002aa98e9f1cc71fb07806b9aff1"><div class="ttname"><a href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">BitField::getClassName</a></div><div class="ttdeci">char * getClassName()</div><div class="ttdef"><b>Definition</b> BitField.h:78</div></div>
+<div class="ttc" id="aclass_bit_field_html_a48e9002aa98e9f1cc71fb07806b9aff1"><div class="ttname"><a href="class_bit_field.html#a48e9002aa98e9f1cc71fb07806b9aff1">BitField::getClassName</a></div><div class="ttdeci">char * getClassName()</div><div class="ttdef"><b>Definition</b> BitField.h:82</div></div>
 <div class="ttc" id="aclass_bit_field_html_a5953686c90346139cf91cfa08bc21ac3"><div class="ttname"><a href="class_bit_field.html#a5953686c90346139cf91cfa08bc21ac3">BitField::set</a></div><div class="ttdeci">void set(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:77</div></div>
 <div class="ttc" id="aclass_bit_field_html_a654fb4ffd5348b4bb84f6a950ec0536f"><div class="ttname"><a href="class_bit_field.html#a654fb4ffd5348b4bb84f6a950ec0536f">BitField::setBit</a></div><div class="ttdeci">void setBit(int bit)</div><div class="ttdef"><b>Definition</b> BitField.c++:31</div></div>
 <div class="ttc" id="aclass_bit_field_html_a6beb2aaa95d9398ece7df496a30a06fa"><div class="ttname"><a href="class_bit_field.html#a6beb2aaa95d9398ece7df496a30a06fa">BitField::clearBit</a></div><div class="ttdeci">void clearBit(int bit)</div><div class="ttdef"><b>Definition</b> BitField.c++:39</div></div>
-<div class="ttc" id="aclass_bit_field_html_a82ae6d1919023b35c7e3f2904a9978f0"><div class="ttname"><a href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">BitField::getClassType</a></div><div class="ttdeci">int getClassType()</div><div class="ttdef"><b>Definition</b> BitField.h:83</div></div>
-<div class="ttc" id="aclass_bit_field_html_aaa7cc30fdcd94653c72a18ee1de92bae"><div class="ttname"><a href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">BitField::showProperties</a></div><div class="ttdeci">void showProperties()</div><div class="ttdef"><b>Definition</b> BitField.h:73</div></div>
+<div class="ttc" id="aclass_bit_field_html_a82ae6d1919023b35c7e3f2904a9978f0"><div class="ttname"><a href="class_bit_field.html#a82ae6d1919023b35c7e3f2904a9978f0">BitField::getClassType</a></div><div class="ttdeci">int getClassType()</div><div class="ttdef"><b>Definition</b> BitField.h:87</div></div>
+<div class="ttc" id="aclass_bit_field_html_aaa7cc30fdcd94653c72a18ee1de92bae"><div class="ttname"><a href="class_bit_field.html#aaa7cc30fdcd94653c72a18ee1de92bae">BitField::showProperties</a></div><div class="ttdeci">void showProperties()</div><div class="ttdef"><b>Definition</b> BitField.h:77</div></div>
 <div class="ttc" id="aclass_bit_field_html_aaf8ddaddd217678e1b460bf4ccfa6355"><div class="ttname"><a href="class_bit_field.html#aaf8ddaddd217678e1b460bf4ccfa6355">BitField::~BitField</a></div><div class="ttdeci">~BitField(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:10</div></div>
 <div class="ttc" id="aclass_bit_field_html_ac6bf8b8b3ca4ade272c894f59d43e148"><div class="ttname"><a href="class_bit_field.html#ac6bf8b8b3ca4ade272c894f59d43e148">BitField::numBits</a></div><div class="ttdeci">unsigned int numBits(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:83</div></div>
 <div class="ttc" id="aclass_bit_field_html_aca8a622938199098a704ddae750f88ee"><div class="ttname"><a href="class_bit_field.html#aca8a622938199098a704ddae750f88ee">BitField::invert</a></div><div class="ttdeci">void invert(void)</div><div class="ttdef"><b>Definition</b> BitField.c++:65</div></div>
@@ -157,7 +157,7 @@ $(function(){initNavTree('_bit_field_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><a href="_bit_field_8h.html">BitField.h</a></li>
+    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><b>BitField.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

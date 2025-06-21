@@ -1,5 +1,8 @@
 var class_toolbox_string_set =
 [
+    [ "ToolboxStringSet", "class_toolbox_string_set.html#ab2211dacea41927b32ca3c327a878fc9", null ],
+    [ "ToolboxStringSet", "class_toolbox_string_set.html#a011142c005c443be6094fcf80dbcc04f", null ],
+    [ "ToolboxStringSet", "class_toolbox_string_set.html#a2b3a7cf15e398fec187a952c2cdf2ecf", null ],
     [ "gadgetMethod", "class_toolbox_string_set.html#ab3aceab66b9728c8107b719163e2c53c", null ],
     [ "getAlphanumericFieldId", "class_toolbox_string_set.html#aade9e5327aa83114dc9ebca78c24022a", null ],
     [ "getClassName", "class_toolbox_string_set.html#af0246cb315834a8424e180a4e95c1d0f", null ],

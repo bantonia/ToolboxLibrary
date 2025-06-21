@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ToolboxC++Lib: h/sprite.h Source File</title>
+<title>CommonC++Lib RiscOSC++Lib ToolboxC++Lib: h/sprite.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ToolboxC++Lib
+   <div id="projectname">CommonC++Lib RiscOSC++Lib ToolboxC++Lib
    </div>
    <div id="projectbrief">Toolbox Library for use with the RiscOS DDE C++/CFront compiler</div>
   </td>
@@ -92,16 +92,14 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
   <div class="headertitle"><div class="title">sprite.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __sprite_h</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __sprite_h</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __sprite_h</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4">    4</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a0a38c4d624bc7172ea7019d9ccdfbc32">    6</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a0a38c4d624bc7172ea7019d9ccdfbc32">sprite_nopalette</a>  = 0,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a98b0ef44c3f31830c386028de5d3cc36">    7</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a98b0ef44c3f31830c386028de5d3cc36">sprite_haspalette</a> = 1</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>} <a class="code hl_enumeration" href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4">sprite_palflag</a>;</div>
-</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  sprite_nopalette  = 0,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  sprite_haspalette = 1</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>} sprite_palflag;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structsprite__factors.html">   10</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
@@ -110,7 +108,7 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>} <a class="code hl_struct" href="structsprite__factors.html">sprite_factors</a>;</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="sprite_8h.html#ad555857015b33b6e318ed5cf253de7bb">   15</a></span><span class="keyword">typedef</span> <span class="keywordtype">char</span> <a class="code hl_typedef" href="sprite_8h.html#ad555857015b33b6e318ed5cf253de7bb">sprite_pixtrans</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">typedef</span> <span class="keywordtype">char</span> sprite_pixtrans;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
@@ -141,19 +139,17 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>} <a class="code hl_struct" href="structsprite__header.html">sprite_header</a>;</div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="sprite_8h.html#a7de8c2398199253d0e0d76c0d48c7a7d">   42</a></span><span class="preprocessor">#define sprite_mainarea ((sprite_area *) 0)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define sprite_mainarea ((sprite_area *) 0)</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="sprite_8h.html#a603e154bcc768b4fbc37f0bacce3cb50">   44</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> * <a class="code hl_typedef" href="sprite_8h.html#a603e154bcc768b4fbc37f0bacce3cb50">sprite_ptr</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">typedef</span> <span class="keywordtype">void</span> * sprite_ptr;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59f">   48</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fa6a8915b4323a363f3cddce45895ebb63">   50</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fa6a8915b4323a363f3cddce45895ebb63">sprite_id_name</a> = 0,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fad0ceb76663cea6289faadb6af987c6c4">   51</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fad0ceb76663cea6289faadb6af987c6c4">sprite_id_addr</a> = 0x74527053 <span class="comment">/* &#39;Magic&#39; number (&quot;SpRt&quot;) to test against */</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <a class="code hl_enumeration" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59f">sprite_type</a>;</div>
-</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  sprite_id_name = 0,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  sprite_id_addr = 0x74527053 <span class="comment">/* &#39;Magic&#39; number (&quot;SpRt&quot;) to test against */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} sprite_type;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structsprite__id.html">   54</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
@@ -161,9 +157,9 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">union</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structsprite__id.html#abcc66e6783439338c5ed6fc7a5b463c9">   58</a></span>    <span class="keywordtype">char</span> *     <a class="code hl_variable" href="structsprite__id.html#abcc66e6783439338c5ed6fc7a5b463c9">name</a>; <span class="comment">/* Can use either name of sprite or address (faster) */</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structsprite__id.html#ac11dca3f9ca428bb62f1f4c008089ef3">   59</a></span>    <a class="code hl_typedef" href="sprite_8h.html#a603e154bcc768b4fbc37f0bacce3cb50">sprite_ptr</a> <a class="code hl_variable" href="structsprite__id.html#ac11dca3f9ca428bb62f1f4c008089ef3">addr</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structsprite__id.html#ac11dca3f9ca428bb62f1f4c008089ef3">   59</a></span>    sprite_ptr <a class="code hl_variable" href="structsprite__id.html#ac11dca3f9ca428bb62f1f4c008089ef3">addr</a>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structsprite__id.html#a402246810a6ea988c3aa81b475a4b1dc">   60</a></span>  } s;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structsprite__id.html#a42a9af8b288ffed27039c8181341ed09">   61</a></span>  <a class="code hl_enumeration" href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59f">sprite_type</a> <a class="code hl_variable" href="structsprite__id.html#a42a9af8b288ffed27039c8181341ed09">tag</a>;   <span class="comment">/* User must tag the use of this structure manually */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structsprite__id.html#a42a9af8b288ffed27039c8181341ed09">   61</a></span>  sprite_type <a class="code hl_variable" href="structsprite__id.html#a42a9af8b288ffed27039c8181341ed09">tag</a>;   <span class="comment">/* User must tag the use of this structure manually */</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>} <a class="code hl_struct" href="structsprite__id.html">sprite_id</a>;</div>
 </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
@@ -185,13 +181,11 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>} <a class="code hl_struct" href="structsprite__colour.html">sprite_colour</a>;</div>
 </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019c">   78</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019ca0d8c62a647802ac5008de7ba0b37824d">   80</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019ca0d8c62a647802ac5008de7ba0b37824d">sprite_masktransparent</a> = 0,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019cac8fe08a4b2adf72efd68bae399486b3b">   81</a></span>  <a class="code hl_enumvalue" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019cac8fe08a4b2adf72efd68bae399486b3b">sprite_masksolid</a>       = 1</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>} <a class="code hl_enumeration" href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019c">sprite_maskstate</a>;</div>
-</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  sprite_masktransparent = 0,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  sprite_masksolid       = 1</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>} sprite_maskstate;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="foldopen" id="foldopen00084" data-start="{" data-end="};">
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structsprite__state.html">   84</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
@@ -202,24 +196,12 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/* Typedefs and functions for rotating sprites. */</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structsprite__pgm.html#a21d406f1dfe6d11758d6f25305a6beaa">   90</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{<span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__pgm.html#a21d406f1dfe6d11758d6f25305a6beaa">p0</a> [2], <a class="code hl_variable" href="structsprite__pgm.html#ac489bed2f4dcb6b10f5dcb0176965be4">p1</a> [2], <a class="code hl_variable" href="structsprite__pgm.html#a4f328acc4bc8549a1532a0d4395de415">p2</a> [2], <a class="code hl_variable" href="structsprite__pgm.html#a7b0254de528668ff77356af359fc8908">p3</a> [2];} <a class="code hl_struct" href="structsprite__pgm.html">sprite_pgm</a>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="sprite_8h.html#a5350f3adbade7e899945de2b44489b58">   91</a></span><span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="sprite_8h.html#a5350f3adbade7e899945de2b44489b58">sprite_transmat</a> [6];</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">typedef</span> <span class="keywordtype">int</span> sprite_transmat [6];</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structsprite__box.html#ac7fc838789ed8d952ca6d43d2654eb6f">   92</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{<span class="keywordtype">int</span> <a class="code hl_variable" href="structsprite__box.html#ac7fc838789ed8d952ca6d43d2654eb6f">x0</a>, <a class="code hl_variable" href="structsprite__box.html#ae1a0831b469684ab9c27bf961f24c207">y0</a>, <a class="code hl_variable" href="structsprite__box.html#ac107090547938e9b8951e29772bd7d8f">x1</a>, <a class="code hl_variable" href="structsprite__box.html#aa819f3b990d687abf0e32d1f56fce33b">y1</a>;} <a class="code hl_struct" href="structsprite__box.html">sprite_box</a>;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/* end of sprite.h */</span></div>
-<div class="ttc" id="asprite_8h_html_a5350f3adbade7e899945de2b44489b58"><div class="ttname"><a href="sprite_8h.html#a5350f3adbade7e899945de2b44489b58">sprite_transmat</a></div><div class="ttdeci">int sprite_transmat[6]</div><div class="ttdef"><b>Definition</b> sprite.h:91</div></div>
-<div class="ttc" id="asprite_8h_html_a540f883d65f70c33ce95b960d0a01ba4"><div class="ttname"><a href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4">sprite_palflag</a></div><div class="ttdeci">sprite_palflag</div><div class="ttdef"><b>Definition</b> sprite.h:5</div></div>
-<div class="ttc" id="asprite_8h_html_a540f883d65f70c33ce95b960d0a01ba4a0a38c4d624bc7172ea7019d9ccdfbc32"><div class="ttname"><a href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a0a38c4d624bc7172ea7019d9ccdfbc32">sprite_nopalette</a></div><div class="ttdeci">@ sprite_nopalette</div><div class="ttdef"><b>Definition</b> sprite.h:6</div></div>
-<div class="ttc" id="asprite_8h_html_a540f883d65f70c33ce95b960d0a01ba4a98b0ef44c3f31830c386028de5d3cc36"><div class="ttname"><a href="sprite_8h.html#a540f883d65f70c33ce95b960d0a01ba4a98b0ef44c3f31830c386028de5d3cc36">sprite_haspalette</a></div><div class="ttdeci">@ sprite_haspalette</div><div class="ttdef"><b>Definition</b> sprite.h:7</div></div>
-<div class="ttc" id="asprite_8h_html_a5f29b54f9d98d43453efb72e3aa0019c"><div class="ttname"><a href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019c">sprite_maskstate</a></div><div class="ttdeci">sprite_maskstate</div><div class="ttdef"><b>Definition</b> sprite.h:79</div></div>
-<div class="ttc" id="asprite_8h_html_a5f29b54f9d98d43453efb72e3aa0019ca0d8c62a647802ac5008de7ba0b37824d"><div class="ttname"><a href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019ca0d8c62a647802ac5008de7ba0b37824d">sprite_masktransparent</a></div><div class="ttdeci">@ sprite_masktransparent</div><div class="ttdef"><b>Definition</b> sprite.h:80</div></div>
-<div class="ttc" id="asprite_8h_html_a5f29b54f9d98d43453efb72e3aa0019cac8fe08a4b2adf72efd68bae399486b3b"><div class="ttname"><a href="sprite_8h.html#a5f29b54f9d98d43453efb72e3aa0019cac8fe08a4b2adf72efd68bae399486b3b">sprite_masksolid</a></div><div class="ttdeci">@ sprite_masksolid</div><div class="ttdef"><b>Definition</b> sprite.h:81</div></div>
-<div class="ttc" id="asprite_8h_html_a603e154bcc768b4fbc37f0bacce3cb50"><div class="ttname"><a href="sprite_8h.html#a603e154bcc768b4fbc37f0bacce3cb50">sprite_ptr</a></div><div class="ttdeci">void * sprite_ptr</div><div class="ttdef"><b>Definition</b> sprite.h:44</div></div>
-<div class="ttc" id="asprite_8h_html_a7592c16d5c5a16b70ffb0fa129bdb59f"><div class="ttname"><a href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59f">sprite_type</a></div><div class="ttdeci">sprite_type</div><div class="ttdef"><b>Definition</b> sprite.h:49</div></div>
-<div class="ttc" id="asprite_8h_html_a7592c16d5c5a16b70ffb0fa129bdb59fa6a8915b4323a363f3cddce45895ebb63"><div class="ttname"><a href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fa6a8915b4323a363f3cddce45895ebb63">sprite_id_name</a></div><div class="ttdeci">@ sprite_id_name</div><div class="ttdef"><b>Definition</b> sprite.h:50</div></div>
-<div class="ttc" id="asprite_8h_html_a7592c16d5c5a16b70ffb0fa129bdb59fad0ceb76663cea6289faadb6af987c6c4"><div class="ttname"><a href="sprite_8h.html#a7592c16d5c5a16b70ffb0fa129bdb59fad0ceb76663cea6289faadb6af987c6c4">sprite_id_addr</a></div><div class="ttdeci">@ sprite_id_addr</div><div class="ttdef"><b>Definition</b> sprite.h:51</div></div>
-<div class="ttc" id="asprite_8h_html_ad555857015b33b6e318ed5cf253de7bb"><div class="ttname"><a href="sprite_8h.html#ad555857015b33b6e318ed5cf253de7bb">sprite_pixtrans</a></div><div class="ttdeci">char sprite_pixtrans</div><div class="ttdef"><b>Definition</b> sprite.h:15</div></div>
 <div class="ttc" id="astructsprite__area_html"><div class="ttname"><a href="structsprite__area.html">sprite_area</a></div><div class="ttdef"><b>Definition</b> sprite.h:20</div></div>
 <div class="ttc" id="astructsprite__area_html_a858acc2729431303ac0406ff1e0183ff"><div class="ttname"><a href="structsprite__area.html#a858acc2729431303ac0406ff1e0183ff">sprite_area::freeoff</a></div><div class="ttdeci">int freeoff</div><div class="ttdef"><b>Definition</b> sprite.h:24</div></div>
 <div class="ttc" id="astructsprite__area_html_a8f318b429d10cf4ca30b075f44189200"><div class="ttname"><a href="structsprite__area.html#a8f318b429d10cf4ca30b075f44189200">sprite_area::number</a></div><div class="ttdeci">int number</div><div class="ttdef"><b>Definition</b> sprite.h:22</div></div>
@@ -270,7 +252,7 @@ $(function(){initNavTree('sprite_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><a href="sprite_8h.html">sprite.h</a></li>
+    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><b>sprite.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

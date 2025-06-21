@@ -1,5 +1,11 @@
 #include "ToolboxRadioButton.h"
 
+ToolboxRadioButton::ToolboxRadioButton() {};
+
+ToolboxRadioButton::ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxRadioButton::ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxRadioButton& ToolboxRadioButton::setLabel(char *label) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) label;

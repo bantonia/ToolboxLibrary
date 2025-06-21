@@ -1,5 +1,8 @@
 var class_toolbox_number_range =
 [
+    [ "ToolboxNumberRange", "class_toolbox_number_range.html#a6216111c7b47b6349a0e67c9589f3fa4", null ],
+    [ "ToolboxNumberRange", "class_toolbox_number_range.html#ab8c05a32a7db6c5c1fdd36f4c06b4807", null ],
+    [ "ToolboxNumberRange", "class_toolbox_number_range.html#aa7d7f44409b8544b7d4c43141211cfe3", null ],
     [ "gadgetMethod", "class_toolbox_number_range.html#a2b435a6feb963affdb430c429029024b", null ],
     [ "getBounds", "class_toolbox_number_range.html#a1f36bf3feb37813c640398db3cf8efa7", null ],
     [ "getClassName", "class_toolbox_number_range.html#aa213dce5cf22452f12d61321a2dde2a5", null ],

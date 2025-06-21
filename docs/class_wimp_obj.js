@@ -7,7 +7,7 @@ var class_wimp_obj =
     [ "addMessages", "class_wimp_obj.html#a8f968f2f76f83da6738323d02bc60da1", null ],
     [ "closeDown", "class_wimp_obj.html#afcd2f1c285d51b8cded776089e539873", null ],
     [ "closeWindowRequest", "class_wimp_obj.html#aad632b8166c5a0604db4559b68b2c881", null ],
-    [ "errorHandler", "class_wimp_obj.html#a846b1661907f0228fc4ff01d0a55d4ab", null ],
+    [ "errorHandler", "class_wimp_obj.html#a99945db12b678688505795b43dee5ca0", null ],
     [ "eToolboxEvent", "class_wimp_obj.html#a3a2fa74e4c15e8b5527d75a6cbb00848", null ],
     [ "gainCaret", "class_wimp_obj.html#a70847cffd066d8c0a738e5c4417720bc", null ],
     [ "getClassName", "class_wimp_obj.html#ac57476c8c4ce618ae4ae676d673d04aa", null ],

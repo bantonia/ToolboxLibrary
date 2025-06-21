@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ToolboxC++Lib: h/datastore.h Source File</title>
+<title>CommonC++Lib RiscOSC++Lib ToolboxC++Lib: h/datastore.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ToolboxC++Lib
+   <div id="projectname">CommonC++Lib RiscOSC++Lib ToolboxC++Lib
    </div>
    <div id="projectbrief">Toolbox Library for use with the RiscOS DDE C++/CFront compiler</div>
   </td>
@@ -92,7 +92,7 @@ $(function(){initNavTree('datastore_8h_source.html','',''); });
   <div class="headertitle"><div class="title">datastore.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="datastore_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma force_top_level</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma force_top_level</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma include_only_once</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;kernel.h&quot;</span></div>
@@ -105,33 +105,26 @@ $(function(){initNavTree('datastore_8h_source.html','',''); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="datastore_8h.html#afc5ac2fdc0de4d7fbaf0b2d1a9afef1c">   14</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#afc5ac2fdc0de4d7fbaf0b2d1a9afef1c">saveADC</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> adc);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="datastore_8h.html#a77909b32345f62ed88063899ec51de14">   15</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#a77909b32345f62ed88063899ec51de14">readADC</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="datastore_8h.html#adb3a90da31f904c7be1d8e6d9ec0919a">   16</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#adb3a90da31f904c7be1d8e6d9ec0919a">saveTargetADC</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> target);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="datastore_8h.html#a06ad305dd53e2afdb77b327c6e7966ce">   17</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#a06ad305dd53e2afdb77b327c6e7966ce">readTargetADC</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="datastore_8h.html#a23175ca398d2187e8e9ee8291d3cea80">   18</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#a23175ca398d2187e8e9ee8291d3cea80">setSearch</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="datastore_8h.html#ab12eba4d2ebea315b73b53882f145364">   19</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#ab12eba4d2ebea315b73b53882f145364">clearSearch</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="datastore_8h.html#abd57ed26eef6058c168a17114872c5a8">   20</a></span><span class="keyword">extern</span> _kernel_oserror *<a class="code hl_function" href="datastore_8h.html#abd57ed26eef6058c168a17114872c5a8">isSearch</a>(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">extern</span> _kernel_oserror *saveADC(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> adc);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">extern</span> _kernel_oserror *readADC(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">extern</span> _kernel_oserror *saveTargetADC(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> target);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">extern</span> _kernel_oserror *readTargetADC(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> _kernel_oserror *setSearch(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">extern</span> _kernel_oserror *clearSearch(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> _kernel_oserror *isSearch(<span class="keywordtype">int</span> panel, <span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> *value);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adatastore_8h_html_a06ad305dd53e2afdb77b327c6e7966ce"><div class="ttname"><a href="datastore_8h.html#a06ad305dd53e2afdb77b327c6e7966ce">readTargetADC</a></div><div class="ttdeci">_kernel_oserror * readTargetADC(int panel, int channel, int *value)</div></div>
-<div class="ttc" id="adatastore_8h_html_a23175ca398d2187e8e9ee8291d3cea80"><div class="ttname"><a href="datastore_8h.html#a23175ca398d2187e8e9ee8291d3cea80">setSearch</a></div><div class="ttdeci">_kernel_oserror * setSearch(int panel, int channel)</div></div>
-<div class="ttc" id="adatastore_8h_html_a77909b32345f62ed88063899ec51de14"><div class="ttname"><a href="datastore_8h.html#a77909b32345f62ed88063899ec51de14">readADC</a></div><div class="ttdeci">_kernel_oserror * readADC(int panel, int channel, int *value)</div></div>
-<div class="ttc" id="adatastore_8h_html_ab12eba4d2ebea315b73b53882f145364"><div class="ttname"><a href="datastore_8h.html#ab12eba4d2ebea315b73b53882f145364">clearSearch</a></div><div class="ttdeci">_kernel_oserror * clearSearch(int panel, int channel)</div></div>
-<div class="ttc" id="adatastore_8h_html_abd57ed26eef6058c168a17114872c5a8"><div class="ttname"><a href="datastore_8h.html#abd57ed26eef6058c168a17114872c5a8">isSearch</a></div><div class="ttdeci">_kernel_oserror * isSearch(int panel, int channel, int *value)</div></div>
-<div class="ttc" id="adatastore_8h_html_adb3a90da31f904c7be1d8e6d9ec0919a"><div class="ttname"><a href="datastore_8h.html#adb3a90da31f904c7be1d8e6d9ec0919a">saveTargetADC</a></div><div class="ttdeci">_kernel_oserror * saveTargetADC(int panel, int channel, int target)</div></div>
-<div class="ttc" id="adatastore_8h_html_afc5ac2fdc0de4d7fbaf0b2d1a9afef1c"><div class="ttname"><a href="datastore_8h.html#afc5ac2fdc0de4d7fbaf0b2d1a9afef1c">saveADC</a></div><div class="ttdeci">_kernel_oserror * saveADC(int panel, int channel, int adc)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><a href="datastore_8h.html">datastore.h</a></li>
+    <li class="navelem"><a href="dir_c3a3ee36a1e03ad614258ece27f46d29.html">h</a></li><li class="navelem"><b>datastore.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

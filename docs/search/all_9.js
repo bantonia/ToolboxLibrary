@@ -24,13 +24,11 @@ var searchData=
   ['ismodified_21',['isModified',['../class_toolbox_file_info_dlog_obj.html#a60c5c22fa3b9b42978ac0584592924e1',1,'ToolboxFileInfoDlogObj']]],
   ['isnoneavailable_22',['isNoneAvailable',['../class_toolbox_colour_dlog_obj.html#ab0d7177f30022d5e541a231bcae419d6',1,'ToolboxColourDlogObj']]],
   ['ispane_23',['isPane',['../union_window_flags.html#a39189d593a257f143d810fb2bf6a58b0',1,'WindowFlags']]],
-  ['issearch_24',['isSearch',['../datastore_8h.html#abd57ed26eef6058c168a17114872c5a8',1,'datastore.h']]],
-  ['isselelectedinverted_25',['isSelelectedInverted',['../union_icon_flags.html#a8d0eb26f004935f6cf7ad33d5bd8d2b1',1,'IconFlags']]],
-  ['isset_26',['isSet',['../class_bit_field.html#a1c930618fe1e51c24d70d603edeef773',1,'BitField']]],
-  ['issprite_27',['isSprite',['../union_icon_flags.html#a5a38c1e6f4558d00e98d03d4c3a230bc',1,'IconFlags']]],
-  ['istemplate_28',['isTemplate',['../class_toolbox_obj.html#ac1917823e570c94cb16e326218ba5746',1,'ToolboxObj']]],
-  ['iswindow_29',['isWindow',['../class_toolbox_window_obj.html#a0fec3b7ed64e6579ba366e9407f76239',1,'ToolboxWindowObj']]],
-  ['iswindowtemplate_30',['isWindowTemplate',['../class_toolbox_window_obj.html#a0c0fc4541c341b4f7a98a85f3fb4b4c5',1,'ToolboxWindowObj']]],
-  ['iterator_31',['Iterator',['../class_iterator.html',1,'Iterator&lt;&gt;'],['../class_iterator.html#a2623e71ec548000dd605e3398adc0dd0',1,'Iterator::Iterator()']]],
-  ['iterator_2eh_32',['Iterator.h',['../_iterator_8h.html',1,'']]]
+  ['isselelectedinverted_24',['isSelelectedInverted',['../union_icon_flags.html#a8d0eb26f004935f6cf7ad33d5bd8d2b1',1,'IconFlags']]],
+  ['isset_25',['isSet',['../class_bit_field.html#a1c930618fe1e51c24d70d603edeef773',1,'BitField']]],
+  ['issprite_26',['isSprite',['../union_icon_flags.html#a5a38c1e6f4558d00e98d03d4c3a230bc',1,'IconFlags']]],
+  ['istemplate_27',['isTemplate',['../class_toolbox_obj.html#ac1917823e570c94cb16e326218ba5746',1,'ToolboxObj']]],
+  ['iswindow_28',['isWindow',['../class_toolbox_window_obj.html#a0fec3b7ed64e6579ba366e9407f76239',1,'ToolboxWindowObj']]],
+  ['iswindowtemplate_29',['isWindowTemplate',['../class_toolbox_window_obj.html#a0c0fc4541c341b4f7a98a85f3fb4b4c5',1,'ToolboxWindowObj']]],
+  ['iterator_30',['Iterator',['../class_iterator.html',1,'Iterator&lt;&gt;'],['../class_iterator.html#a2623e71ec548000dd605e3398adc0dd0',1,'Iterator::Iterator()']]]
 ];

@@ -8,7 +8,8 @@ class Prog : public ToolboxTask {
     typedef enum {
       Quit         = 0x01,
       ButtonAction1 = 0x10,
-      ButtonAction2 = 0x20
+      ButtonAction2 = 0x20,
+      PopupMenuReset = 0x30
     } userEvents;
 
     Prog();

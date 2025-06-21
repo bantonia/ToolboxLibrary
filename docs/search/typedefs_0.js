@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['box_0',['Box',['../_wimp_bits_8h.html#a404df2f4804da4d90f1dd3a0954dc6bf',1,'WimpBits.h']]]
+  ['spritearea_5ft_0',['SpriteArea_t',['../class_sprite_area_obj.html#a531dabd23a45bbf408fd09aeec1e65f4',1,'SpriteAreaObj']]]
 ];

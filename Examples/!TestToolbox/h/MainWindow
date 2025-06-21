@@ -27,6 +27,8 @@ class MainWindow {
 
     MainWindow();
     MainWindow(ToolboxWindowObj *windowObj);
+    void storeValues();
+    void restoreValues();
     ~MainWindow();
     ToolboxWindowObj *w;
     ToolboxDisplayField *df1;
@@ -39,4 +41,11 @@ class MainWindow {
     ToolboxRadioButton *rb1;
     ToolboxRadioButton *rb2;
     ToolboxRadioButton *rb3;
+  private:
+    char *title;
+    int df1s;
+    int df2s;
+    int df3s;
+    int sliders;
+    int rb1s;
 };

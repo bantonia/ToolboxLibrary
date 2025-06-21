@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "ToolboxC++Lib", "index.html", [
+  [ "CommonC++Lib RiscOSC++Lib ToolboxC++Lib", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -38,31 +38,18 @@ var NAVTREE =
         [ "Enumerator", "functions_eval.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_bit_field_8c_09_09.html",
-"class_list.html#a9948a50035a166e3184e4d5aaeefaf63",
-"class_toolbox_core_obj.html#a637b4705e63a486855848143ab22d382",
-"class_toolbox_menu_obj.html#a34334ddd6e9229f00515ffe12834228c",
-"class_toolbox_slider.html#a75ed64eac1a424194cdbd96fa491e4ac",
-"functions_func_n.html",
-"union_icon_flags.html#a06e71434704c577e500cf60b618ab2aa"
+"annotated.html",
+"class_toolbox_colour_dlog_obj.html#aaa374648b5368feb34ccade2b2e5eddf",
+"class_toolbox_gadget.html#a097ed999df9a073abed4acd2a4b2926c",
+"class_toolbox_quit_obj.html#ac2edfbc7b0487edbcf4d5ea117afea59",
+"class_wimp_obj.html#a70847cffd066d8c0a738e5c4417720bc",
+"structsprite__box.html#aa819f3b990d687abf0e32d1f56fce33b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

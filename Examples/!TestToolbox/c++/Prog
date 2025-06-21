@@ -23,6 +23,7 @@ void Prog::windowObjectAutoCreated() {
     this->mainWindow = new MainWindow(w);
     this->mainWindow->w->setTitle("w2");
     mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
+    this->mainWindow->storeValues();
   }
   if (w->isTemplate("Window_1")) {
     this->w = w;
@@ -81,6 +82,10 @@ void Prog::toolboxUserEvent() {
         mainWindow->w->setTitle("Rhubarb");
         mainWindow->df1->setValue(this->mainWindow->ab2->getType());
         iconbar->setText("AB2");
+      }
+      break;
+    case PopupMenuReset: {
+        mainWindow->restoreValues();
       }
       break;
     default:
