@@ -13,10 +13,9 @@ ModSqzflags = -o $@
 
 
 # Final targets:
-@.CommonC++Lib:   @.o.Object @.o.err_jmp_buf @.o.BitField @.o.List \
-        @.o.StringObj @.o.Constants 
+@.CommonC++Lib:   @.o.Object @.o.err_jmp_buf @.o.BitField @.o.Constants 
         LibFile $(LibFileflags) @.o.Object @.o.err_jmp_buf @.o.BitField \
-        @.o.List @.o.StringObj @.o.Constants 
+        @.o.Constants 
 
 
 # User-editable dependencies:
@@ -27,12 +26,8 @@ ModSqzflags = -o $@
         c++ $(c++flags) -o @.o.Object @.c++.Object 
 @.o.err_jmp_buf:   @.c.err_jmp_buf
         cc $(ccflags) -o @.o.err_jmp_buf @.c.err_jmp_buf 
-@.o.List:   @.c++.List
-        c++ $(c++flags) -o @.o.List @.c++.List 
 @.o.OSErrList:   @.c++.OSErrList
         c++ $(c++flags) -o @.o.OSErrList @.c++.OSErrList 
-@.o.StringObj:   @.c++.StringObj
-        c++ $(c++flags) -o @.o.StringObj @.c++.StringObj 
 @.o.BitField:   @.c++.BitField
         c++ $(c++flags) -o @.o.BitField @.c++.BitField 
 @.o.Constants:   @.c++.Constants
@@ -46,8 +41,6 @@ o.OS:	C:h.swis
 o.OS:	h.OS
 o.OS:	h.ErrorReport
 o.OS:	C:h.kernel
-o.Object:	c++.Object
-o.Object:	h.Object
 o.ErrorReport:	c++.ErrorReport
 o.ErrorReport:	h.ErrorReport
 o.ErrorReport:	C:h.kernel
@@ -56,10 +49,6 @@ o.ErrorReport:	C:h.libc
 o.ErrorReport:	C:h.iostream
 o.ErrorReport:	C:h.memory
 o.err_jmp_buf:	c.err_jmp_buf
-o.BitField:	c++.BitField
-o.BitField:	h.Object
-o.BitField:	h.BitField
-o.BitField:	h.Object
 o.List:	c++.List
 o.StringObj:	c++.StringObj
 o.StringObj:	h.StringObj
@@ -70,3 +59,9 @@ o.StringObj:	h.Object
 o.StringObj:	h.Object
 o.Constants:	c++.Constants
 o.Constants:	h.Constants
+o.Object:	c++.Object
+o.Object:	h.Object
+o.BitField:	c++.BitField
+o.BitField:	h.Object
+o.BitField:	h.BitField
+o.BitField:	h.Object
