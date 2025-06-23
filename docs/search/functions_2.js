@@ -1,8 +1,8 @@
 var searchData=
 [
   ['c_5fstr_0',['c_str',['../class_string_obj.html#aa44cd69dbe7cb125fdb385a09accc25b',1,'StringObj']]],
-  ['capacity_1',['capacity',['../class_string_obj.html#a69751f506769066a5cdd90cdc54fd6bf',1,'StringObj::capacity()'],['../class_vector.html#aaabcab16c7653c13fcc267bcae48287d',1,'Vector::capacity()']]],
-  ['clear_2',['clear',['../class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de',1,'BitField::clear()'],['../class_string_obj.html#ab25c698e34b6a00ac0c17d35aea43962',1,'StringObj::clear()'],['../class_vector.html#a32ad98b135472b0ebc5d6cb3ae5d0085',1,'Vector::clear()']]],
+  ['capacity_1',['capacity',['../class_string_obj.html#a69751f506769066a5cdd90cdc54fd6bf',1,'StringObj']]],
+  ['clear_2',['clear',['../class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de',1,'BitField::clear()'],['../class_string_obj.html#ab25c698e34b6a00ac0c17d35aea43962',1,'StringObj::clear()']]],
   ['clearbit_3',['clearBit',['../class_bit_field.html#a6beb2aaa95d9398ece7df496a30a06fa',1,'BitField']]],
   ['cleardefaultfocus_4',['clearDefaultFocus',['../class_toolbox_window_obj.html#a3978ccd6657fa42e70b652ee8685e9ce',1,'ToolboxWindowObj']]],
   ['clearerror_5',['clearError',['../class_error_report.html#a115b25a8202d1c1712648b91a03bdcfd',1,'ErrorReport']]],
@@ -22,14 +22,12 @@ var searchData=
   ['colourmenuobjectautocreated_19',['colourMenuObjectAutoCreated',['../class_toolbox_core_obj.html#a4c6e5098d8281431e6624465a9a83e27',1,'ToolboxCoreObj']]],
   ['colourmenuselection_20',['colourMenuSelection',['../class_toolbox_core_obj.html#ad0eee32bab72a2858de7703747b0a78b',1,'ToolboxCoreObj']]],
   ['colournumbertogcol_21',['colourNumberToGCOL',['../class_colour_trans_obj.html#a0eb17eb4efb13c04dba41799b91d22ad',1,'ColourTransObj']]],
-  ['colourselectedhandler_22',['colourSelectedHandler',['../class_my_colour_dlog.html#a32d02fd30c23e2b479190a938cbf79ef',1,'MyColourDlog']]],
-  ['colourtransobj_23',['ColourTransObj',['../class_colour_trans_obj.html#a543d8491879556d67145ccb02329c7b6',1,'ColourTransObj']]],
-  ['contains_24',['contains',['../class_vector.html#a4e94f503fda43035c5f7f82acb4cf2e1',1,'Vector']]],
-  ['convertdevicecolour_25',['convertDeviceColour',['../class_colour_trans_obj.html#a4f22eeb8674f5a05e8703918185c75d8',1,'ColourTransObj']]],
-  ['convertdevicepalette_26',['convertDevicePalette',['../class_colour_trans_obj.html#a99e50e5193ac2dd0db3c3ebf8c565bd7',1,'ColourTransObj']]],
-  ['copysprite_27',['copySprite',['../class_sprite_area_obj.html#a5d9b788bbd51bfde437ae79b3576a1b1',1,'SpriteAreaObj::copySprite(SpriteObj *, char *)'],['../class_sprite_area_obj.html#a96d54d93008bef20b1859a13a5996ad3',1,'SpriteAreaObj::copySprite(char *, char *)']]],
-  ['createmask_28',['createMask',['../class_sprite_area_obj.html#aa952113b3b3dd5f6e28e44036747c492',1,'SpriteAreaObj::createMask(SpriteObj *)'],['../class_sprite_area_obj.html#afec7640f4f5642e3e326f0129db5f1c9',1,'SpriteAreaObj::createMask(char *)']]],
-  ['createobject_29',['createObject',['../class_toolbox_core_obj.html#a3803e0adc38e5e13c60dd91cb43aeb72',1,'ToolboxCoreObj::createObject()'],['../class_toolbox_obj.html#a27b13ed61eefe30372978d9b1ef87029',1,'ToolboxObj::createObject()']]],
-  ['createsprite_30',['createSprite',['../class_sprite_area_obj.html#ab46822ef59bbcf81a8a4c4f187315d38',1,'SpriteAreaObj']]],
-  ['createwindow_31',['createWindow',['../class_wimp_window_obj.html#a2e77e69db146298efb805e14dd2f4bf3',1,'WimpWindowObj']]]
+  ['colourtransobj_22',['ColourTransObj',['../class_colour_trans_obj.html#a543d8491879556d67145ccb02329c7b6',1,'ColourTransObj']]],
+  ['convertdevicecolour_23',['convertDeviceColour',['../class_colour_trans_obj.html#a4f22eeb8674f5a05e8703918185c75d8',1,'ColourTransObj']]],
+  ['convertdevicepalette_24',['convertDevicePalette',['../class_colour_trans_obj.html#a99e50e5193ac2dd0db3c3ebf8c565bd7',1,'ColourTransObj']]],
+  ['copysprite_25',['copySprite',['../class_sprite_area_obj.html#a5d9b788bbd51bfde437ae79b3576a1b1',1,'SpriteAreaObj::copySprite(SpriteObj *, char *)'],['../class_sprite_area_obj.html#a96d54d93008bef20b1859a13a5996ad3',1,'SpriteAreaObj::copySprite(char *, char *)']]],
+  ['createmask_26',['createMask',['../class_sprite_area_obj.html#aa952113b3b3dd5f6e28e44036747c492',1,'SpriteAreaObj::createMask(SpriteObj *)'],['../class_sprite_area_obj.html#afec7640f4f5642e3e326f0129db5f1c9',1,'SpriteAreaObj::createMask(char *)']]],
+  ['createobject_27',['createObject',['../class_toolbox_core_obj.html#a3803e0adc38e5e13c60dd91cb43aeb72',1,'ToolboxCoreObj::createObject()'],['../class_toolbox_obj.html#a27b13ed61eefe30372978d9b1ef87029',1,'ToolboxObj::createObject()']]],
+  ['createsprite_28',['createSprite',['../class_sprite_area_obj.html#ab46822ef59bbcf81a8a4c4f187315d38',1,'SpriteAreaObj']]],
+  ['createwindow_29',['createWindow',['../class_wimp_window_obj.html#a2e77e69db146298efb805e14dd2f4bf3',1,'WimpWindowObj']]]
 ];

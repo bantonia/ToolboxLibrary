@@ -13,7 +13,6 @@ var searchData=
   ['deletewindow_10',['deleteWindow',['../class_wimp_window_obj.html#a08cb1879deaa1dad62e8717c0a777b60',1,'WimpWindowObj::deleteWindow()'],['../class_wimp_window_obj.html#a152d3e9fb140471f57a12b56dc191442',1,'WimpWindowObj::deleteWindow(void *)']]],
   ['detachhelpmessage_11',['detachHelpMessage',['../class_toolbox_iconbar_obj.html#a65602000e08553f9168a1849cc4cce70',1,'ToolboxIconbarObj']]],
   ['detachpointer_12',['detachPointer',['../class_toolbox_window_obj.html#a366ac8a8879d15845e11035ee8669fbb',1,'ToolboxWindowObj']]],
-  ['dialoguecompletedhandler_13',['dialogueCompletedHandler',['../class_my_colour_dlog.html#a5fb8345e6f88cc6c3ade8b20a980533c',1,'MyColourDlog']]],
-  ['draggabledragended_14',['draggableDragEnded',['../class_toolbox_core_obj.html#a84289c4e32ae669ecf9845afdee9c0de',1,'ToolboxCoreObj']]],
-  ['draggabledragstarted_15',['draggableDragStarted',['../class_toolbox_core_obj.html#a124cd6e525006ef457082b41b152d3a6',1,'ToolboxCoreObj']]]
+  ['draggabledragended_13',['draggableDragEnded',['../class_toolbox_core_obj.html#a84289c4e32ae669ecf9845afdee9c0de',1,'ToolboxCoreObj']]],
+  ['draggabledragstarted_14',['draggableDragStarted',['../class_toolbox_core_obj.html#a124cd6e525006ef457082b41b152d3a6',1,'ToolboxCoreObj']]]
 ];

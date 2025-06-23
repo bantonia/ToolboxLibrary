@@ -23,9 +23,7 @@ var hierarchy =
         [ "ToolboxWritableField", "class_toolbox_writable_field.html", null ]
       ] ],
       [ "ToolboxObj", "class_toolbox_obj.html", [
-        [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html", [
-          [ "MyColourDlog", "class_my_colour_dlog.html", null ]
-        ] ],
+        [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html", null ],
         [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html", null ],
         [ "ToolboxDCSObj", "class_toolbox_d_c_s_obj.html", null ],
         [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html", null ],
@@ -46,10 +44,7 @@ var hierarchy =
     ] ],
     [ "IconDataStr", "union_icon_data_str.html", null ],
     [ "IconFlags", "union_icon_flags.html", null ],
-    [ "Iterator<>", "class_iterator.html", null ],
     [ "KeyPressedBlock", "struct_key_pressed_block.html", null ],
-    [ "LinkedList< T >", "class_linked_list.html", null ],
-    [ "List< T >", "class_list.html", null ],
     [ "MouseClickBlock", "struct_mouse_click_block.html", null ],
     [ "Object", "class_object.html", [
       [ "BitField", "class_bit_field.html", null ],
@@ -82,7 +77,6 @@ var hierarchy =
     [ "sprite_state", "structsprite__state.html", null ],
     [ "SpriteAreaObj::spriteInfo_t", "struct_sprite_area_obj_1_1sprite_info__t.html", null ],
     [ "ToolboxEventObj", "class_toolbox_event_obj.html", null ],
-    [ "Vector< T >", "class_vector.html", null ],
     [ "WimpMask", "union_wimp_mask.html", null ],
     [ "WimpPaletteStr", "struct_wimp_palette_str.html", null ],
     [ "WimpPaletteWord", "union_wimp_palette_word.html", null ],
