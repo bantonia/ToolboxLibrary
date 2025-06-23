@@ -13,6 +13,5 @@ var searchData=
   ['sprite_5fstate_10',['sprite_state',['../structsprite__state.html',1,'']]],
   ['spriteareaobj_11',['SpriteAreaObj',['../class_sprite_area_obj.html',1,'']]],
   ['spriteinfo_5ft_12',['spriteInfo_t',['../struct_sprite_area_obj_1_1sprite_info__t.html',1,'SpriteAreaObj']]],
-  ['spriteobj_13',['SpriteObj',['../class_sprite_obj.html',1,'']]],
-  ['stringobj_14',['StringObj',['../class_string_obj.html',1,'']]]
+  ['spriteobj_13',['SpriteObj',['../class_sprite_obj.html',1,'']]]
 ];

@@ -10,11 +10,7 @@ var searchData=
   ['openwindowstr_7',['OpenWindowStr',['../struct_open_window_str.html',1,'']]],
   ['operator_20delete_8',['operator delete',['../struct_wind_def_str.html#a3d471e3077a46e364aebdfbc1c605438',1,'WindDefStr::operator delete()'],['../struct_wimp_obj_1_1_wind_def_str.html#afa1a550a5544cbbefb2e4d17eba720de',1,'WimpObj::WindDefStr::operator delete()']]],
   ['operator_20new_9',['operator new',['../struct_wind_def_str.html#a6a438fa31884181dc2d297f7449b947e',1,'WindDefStr::operator new(size_t)'],['../struct_wind_def_str.html#a1f7b46f489044a8477f201eaca723166',1,'WindDefStr::operator new(size_t, int)'],['../struct_wind_def_str.html#aad36ebbcf490440ef90e6e285701c28d',1,'WindDefStr::operator new(size_t, int, int)'],['../struct_wimp_obj_1_1_wind_def_str.html#ae243c753bb1ed7cb3e97544caf5fa2c3',1,'WimpObj::WindDefStr::operator new(size_t)'],['../struct_wimp_obj_1_1_wind_def_str.html#a16c4cd3e36b0413eed2cf5baa9a3b210',1,'WimpObj::WindDefStr::operator new(size_t, int)'],['../struct_wimp_obj_1_1_wind_def_str.html#ac88d2d97128de3a4554246f8f8662266',1,'WimpObj::WindDefStr::operator new(size_t, int, int)']]],
-  ['operator_2b_10',['operator+',['../class_string_obj.html#a319431bbe9a22cd33869aa62f6f22346',1,'StringObj']]],
-  ['operator_2b_3d_11',['operator+=',['../class_string_obj.html#ab4a78a28a189af231f39a8c3019c042a',1,'StringObj']]],
-  ['operator_3c_3c_12',['operator&lt;&lt;',['../class_string_obj.html#a017614e189af0f65bb2be8c276bae7e0',1,'StringObj']]],
-  ['operator_3d_13',['operator=',['../class_string_obj.html#ac62b9db26694c7e613956742431b780d',1,'StringObj']]],
-  ['optionbuttonstatechanged_14',['optionButtonStateChanged',['../class_toolbox_core_obj.html#aa8e63eae106ca1543ebdb267b964269e',1,'ToolboxCoreObj']]],
-  ['os_15',['OS',['../class_o_s.html',1,'OS'],['../class_o_s.html#aee121bb510546f335b13791c7c7b4330',1,'OS::OS()']]],
-  ['oserrlist_16',['OSErrList',['../class_o_s_err_list.html',1,'OSErrList'],['../class_o_s_err_list.html#a65306a276acd369c3c270c3836d52e32',1,'OSErrList::OSErrList()'],['../class_o_s_err_list.html#af78fd64faa4cd13e9933c21da6647cff',1,'OSErrList::OSErrList(_kernel_oserror *, unsigned int)']]]
+  ['optionbuttonstatechanged_10',['optionButtonStateChanged',['../class_toolbox_core_obj.html#aa8e63eae106ca1543ebdb267b964269e',1,'ToolboxCoreObj']]],
+  ['os_11',['OS',['../class_o_s.html',1,'OS'],['../class_o_s.html#aee121bb510546f335b13791c7c7b4330',1,'OS::OS()']]],
+  ['oserrlist_12',['OSErrList',['../class_o_s_err_list.html',1,'OSErrList'],['../class_o_s_err_list.html#a65306a276acd369c3c270c3836d52e32',1,'OSErrList::OSErrList()'],['../class_o_s_err_list.html#af78fd64faa4cd13e9933c21da6647cff',1,'OSErrList::OSErrList(_kernel_oserror *, unsigned int)']]]
 ];

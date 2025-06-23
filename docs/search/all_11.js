@@ -45,8 +45,7 @@ var searchData=
   ['returnoppcolournumber_42',['returnOppColourNumber',['../class_colour_trans_obj.html#adf1e427351b096bc3989a66c0fc2be5b',1,'ColourTransObj']]],
   ['returnoppgcol_43',['returnOppGCOL',['../class_colour_trans_obj.html#af1c7cf33b759cd334d729b750f733495',1,'ColourTransObj']]],
   ['returnoppgcolformode_44',['returnOppGCOLForMode',['../class_colour_trans_obj.html#ad62e0354684be7699d6e47dbce57a532',1,'ColourTransObj']]],
-  ['rfind_45',['rfind',['../class_string_obj.html#a1f633c1e4474f77e75eac823e4266cfb',1,'StringObj::rfind(char c)'],['../class_string_obj.html#a3b8f9382361dab2713efb3d3d4cd9d08',1,'StringObj::rfind(char c, int idx)']]],
-  ['rgb_46',['RGB',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bdaa5cd87ecac238d6f44938b835ae1bfe2',1,'ToolboxColourDlogObj']]],
-  ['run_47',['run',['../class_wimp_obj.html#adfd766abe341615b863633e6e8a1eaa4',1,'WimpObj']]],
-  ['runidle_48',['runIdle',['../class_wimp_obj.html#a1d063958e1a8bccca1a4101c1e582e7f',1,'WimpObj']]]
+  ['rgb_45',['RGB',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bdaa5cd87ecac238d6f44938b835ae1bfe2',1,'ToolboxColourDlogObj']]],
+  ['run_46',['run',['../class_wimp_obj.html#adfd766abe341615b863633e6e8a1eaa4',1,'WimpObj']]],
+  ['runidle_47',['runIdle',['../class_wimp_obj.html#a1d063958e1a8bccca1a4101c1e582e7f',1,'WimpObj']]]
 ];

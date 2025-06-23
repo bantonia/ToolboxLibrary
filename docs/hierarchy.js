@@ -52,7 +52,6 @@ var hierarchy =
       [ "OSErrList", "class_o_s_err_list.html", null ],
       [ "SpriteAreaObj", "class_sprite_area_obj.html", null ],
       [ "SpriteObj", "class_sprite_obj.html", null ],
-      [ "StringObj", "class_string_obj.html", null ],
       [ "ToolboxCoreObj", "class_toolbox_core_obj.html", null ],
       [ "ToolboxGadget", "class_toolbox_gadget.html", null ],
       [ "ToolboxObj", "class_toolbox_obj.html", null ],

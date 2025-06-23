@@ -39,7 +39,6 @@ var searchData=
   ['returnoppcolournumber_36',['returnOppColourNumber',['../class_colour_trans_obj.html#adf1e427351b096bc3989a66c0fc2be5b',1,'ColourTransObj']]],
   ['returnoppgcol_37',['returnOppGCOL',['../class_colour_trans_obj.html#af1c7cf33b759cd334d729b750f733495',1,'ColourTransObj']]],
   ['returnoppgcolformode_38',['returnOppGCOLForMode',['../class_colour_trans_obj.html#ad62e0354684be7699d6e47dbce57a532',1,'ColourTransObj']]],
-  ['rfind_39',['rfind',['../class_string_obj.html#a1f633c1e4474f77e75eac823e4266cfb',1,'StringObj::rfind(char c)'],['../class_string_obj.html#a3b8f9382361dab2713efb3d3d4cd9d08',1,'StringObj::rfind(char c, int idx)']]],
-  ['run_40',['run',['../class_wimp_obj.html#adfd766abe341615b863633e6e8a1eaa4',1,'WimpObj']]],
-  ['runidle_41',['runIdle',['../class_wimp_obj.html#a1d063958e1a8bccca1a4101c1e582e7f',1,'WimpObj']]]
+  ['run_39',['run',['../class_wimp_obj.html#adfd766abe341615b863633e6e8a1eaa4',1,'WimpObj']]],
+  ['runidle_40',['runIdle',['../class_wimp_obj.html#a1d063958e1a8bccca1a4101c1e582e7f',1,'WimpObj']]]
 ];
