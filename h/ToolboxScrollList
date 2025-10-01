@@ -1,0 +1,45 @@
+#ifndef __cplusplus
+#error Header file "ToolboxScrollList.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxScrollList_h
+#define __ToolboxScrollList_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+#include "ScrollList.h"
+
+class ToolboxScrollList : public ToolboxGadget {
+  public:
+    ToolboxScrollList();
+    ToolboxScrollList(ObjectId windowId, ComponentId gadgetId);
+    ToolboxScrollList(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+    unsigned int getState();
+    ToolboxScrollList& setState(unsigned int state);
+    ToolboxScrollList& addItem(const char *text, const void *sprite_area, const char *sprite_name, int index);
+    ToolboxScrollList& deleteItems(int start, int end);
+    ToolboxScrollList& selectItem(int index);
+    ToolboxScrollList& deselectItem(int index);
+    ToolboxScrollList& getSelected(int offset, int *new_offset);
+    ToolboxScrollList& makeVisible(int index);
+    ToolboxScrollList& setColour(unsigned int foreground, unsigned int background);
+    ToolboxScrollList& getColour(unsigned int *foreground, unsigned int *background);
+    ToolboxScrollList& setFont(const char *font_name, unsigned int width, unsigned int height);
+    ToolboxScrollList& getItemText(char *buffer, int size, int index, int *nbytes);
+    unsigned int countItems();
+    ToolboxScrollList& setItemText(char *new_text, int index);
+
+typedef struct {
+    ToolboxEventHeader hdr;
+    unsigned int flags;
+    int item;
+} ScrollListSelectionEvent;
+    
+    void showProperties() {};
+    char* getClassName() { return "ToolboxScrollList";};
+    int getClassType() { return ClassType_ToolboxNumberRange;};
+};
+
+#endif

@@ -45,7 +45,9 @@ enum {
   ClassType_WimpObj,
   ClassType_WimpWindowObj,
   ClassType_StringObj,
-  ClassType_ColourTransObj
+  ClassType_ColourTransObj,
+  ClassType_ScrollList,
+  ClassType_ToolboxTreeView
 };
 
 #endif

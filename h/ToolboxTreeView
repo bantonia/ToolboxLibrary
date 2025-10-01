@@ -1,0 +1,53 @@
+#ifndef __cplusplus
+#error Header file "ToolboxTreeView.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxTreeView_h
+#define __ToolboxTreeView_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+#include "treeview.h"
+
+class ToolboxTreeView : public ToolboxGadget {
+  public:
+    ToolboxTreeView();
+    ToolboxTreeView(ObjectId windowId, ComponentId gadgetId);
+    ToolboxTreeView(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+    ToolboxTreeView& addNode(const char *text, int *id);
+    ToolboxTreeView& deleteAll();
+    ToolboxTreeView& deleteNode(int *new_id);
+    ToolboxTreeView& expandNode();
+    int findNode(int x, int y);
+    ObjectId getMenu();
+    unsigned int getState();
+    ObjectId getWindowId();
+    int getNodeId();
+    void * getNodePrivateWord();
+    ToolboxTreeView& getNodeSprite(char *buffer, int buff_size, int *nbytes);
+    unsigned int getNodeState();
+    ToolboxTreeView& getNodeText(char *buffer, int buff_size, int *nbytes);
+    ToolboxTreeView& makeVisible();
+    ToolboxTreeView& moveChild(int *id);
+    ToolboxTreeView& moveFirstSelected(int *new_id);
+    ToolboxTreeView& moveNext(int *id);
+    ToolboxTreeView& moveNextSelected(int *new_id);
+    ToolboxTreeView& moveParent(int *id);
+    ToolboxTreeView& movePrevious(int *id);
+    ToolboxTreeView& moveTo(int id);
+    ToolboxTreeView& selectNode();
+    ToolboxTreeView& setMenu(ObjectId menu);
+    ToolboxTreeView& setState(unsigned int state);
+    ToolboxTreeView& setNodePrivateWord(void *private_word);
+    ToolboxTreeView& setNodeSprite(void *sprite_area, const char *sprite_name, const char *expanded_sprite_name);
+    ToolboxTreeView& setNodeText(const char *text);
+    ToolboxTreeView& updateDisplay();
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxTreeView";};
+    int getClassType() { return ClassType_ToolboxTreeView;};
+};
+
+#endif

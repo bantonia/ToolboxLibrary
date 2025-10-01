@@ -59,6 +59,7 @@ var annotated_dup =
     [ "ToolboxStringSet", "class_toolbox_string_set.html", "class_toolbox_string_set" ],
     [ "ToolboxTabs", "class_toolbox_tabs.html", "class_toolbox_tabs" ],
     [ "ToolboxTask", "class_toolbox_task.html", "class_toolbox_task" ],
+    [ "ToolboxTreeView", "class_toolbox_tree_view.html", "class_toolbox_tree_view" ],
     [ "ToolboxWindowObj", "class_toolbox_window_obj.html", "class_toolbox_window_obj" ],
     [ "ToolboxWritableField", "class_toolbox_writable_field.html", "class_toolbox_writable_field" ],
     [ "WimpMask", "union_wimp_mask.html", "union_wimp_mask" ],

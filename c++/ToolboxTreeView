@@ -1,0 +1,201 @@
+#include "ToolboxTreeView.h"
+
+ToolboxTreeView::ToolboxTreeView() {}
+
+ToolboxTreeView::ToolboxTreeView(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxTreeView::ToolboxTreeView(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
+ToolboxTreeView& ToolboxTreeView::addNode(const char *text, int *id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  regs.r[5] = (int) id;
+  this->gadgetMethod(TreeView_AddNode, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::deleteAll() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_DeleteAll, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::deleteNode(int *new_id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) new_id;
+  this->gadgetMethod(TreeView_DeleteNode, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::expandNode() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_ExpandNode, &regs);
+  return *this;
+}
+
+int ToolboxTreeView::findNode(int x, int y) {
+  _kernel_swi_regs regs;
+  regs.r[4] = x;
+  regs.r[5] = y;
+  this->gadgetMethod(TreeView_FindNode, &regs);
+  return 0;
+}
+
+ObjectId ToolboxTreeView::getMenu() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetMenu, &regs);
+  return (ObjectId) regs.r[0];
+}
+
+unsigned int ToolboxTreeView::getState() {
+    _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetState, &regs);
+  return (unsigned int) regs.r[0];
+}
+
+ObjectId ToolboxTreeView::getWindowId() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetWindowID, &regs);
+  return (ObjectId) regs.r[0];
+}
+
+int ToolboxTreeView::getNodeId() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetNodeID, &regs);
+  return regs.r[0];
+}
+
+void * ToolboxTreeView::getNodePrivateWord() {
+    _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetNodePrivateWord, &regs);
+  return (void *) regs.r[0];
+}
+
+ToolboxTreeView& ToolboxTreeView::getNodeSprite(char *buffer, int buf_size, int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = buf_size;
+  this->gadgetMethod(TreeView_GetNodeSprite, &regs);
+  *nbytes = (int) regs.r[0];
+  return *this;
+}
+
+unsigned int ToolboxTreeView::getNodeState() {
+    _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_GetNodeState, &regs);
+  return (unsigned int) regs.r[0];
+}
+
+ToolboxTreeView& ToolboxTreeView::getNodeText(char *buffer, int buf_size, int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = buf_size;
+  this->gadgetMethod(TreeView_GetNodeText, &regs);
+  *nbytes = (int) regs.r[0];
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::makeVisible() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_MakeVisible, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveChild(int *id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) id;
+  this->gadgetMethod(TreeView_MoveChild, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveFirstSelected(int *new_id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) new_id;
+  this->gadgetMethod(TreeView_MoveFirstSelected, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveNext(int *id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) id;
+  this->gadgetMethod(TreeView_MoveNext, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveNextSelected(int *new_id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) new_id;
+  this->gadgetMethod(TreeView_MoveNextSelected, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveParent(int *id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) id;
+  this->gadgetMethod(TreeView_MoveParent, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::movePrevious(int *id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) id;
+  this->gadgetMethod(TreeView_MovePrevious, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::moveTo(int id) {
+  _kernel_swi_regs regs;
+  regs.r[4] = id;
+  this->gadgetMethod(TreeView_MoveTo, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::selectNode() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_SelectNode, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::setMenu(ObjectId menu) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) menu;
+  this->gadgetMethod(TreeView_SetMenu, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::setState(unsigned int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) state;
+  this->gadgetMethod(TreeView_SetState, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::setNodePrivateWord(void *private_word) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) private_word;
+  this->gadgetMethod(TreeView_SetNodePrivateWord, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::setNodeSprite(void *sprite_area, const char *sprite_name, const char *expanded_sprite_name) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) sprite_area;
+  regs.r[5] = (int) sprite_name;
+  regs.r[6] = (int) expanded_sprite_name;
+  this->gadgetMethod(TreeView_GetNodeSprite, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::setNodeText(const char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  this->gadgetMethod(TreeView_SetNodeText, &regs);
+  return *this;
+}
+
+ToolboxTreeView& ToolboxTreeView::updateDisplay() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TreeView_UpdateDisplay, &regs);
+  return *this;
+}
+

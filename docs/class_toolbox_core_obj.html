@@ -262,7 +262,11 @@ Additional Inherited Members</h2></td></tr>
 , <a class="el" href="class_error_report.html#a8ce273bb4b177794aa5abcfb823ed0aca9eca3cd03fa1303fa7b3454cbca4cbb8">WIMP</a>
  }</td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_toolbox_core_obj.html">ToolboxCoreObj</a></p>
+<p>Library ToolboxC++Lib</p>
+<p>Class which defines a number of static member variables holding important values for a Toolbox/Wimp task. It also defines a number of static methods not linked to any particular Toolbox window type or gadget. All the Toolbox event methods which can be overloaded by a users Toolbox application are defined in this class. This class is extended by <a class="el" href="class_toolbox_task.html">ToolboxTask</a>, it is <a class="el" href="class_toolbox_task.html">ToolboxTask</a> which needs to be exended by users application. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a2d59a69d4825c663fe866548fd95fbbc" name="a2d59a69d4825c663fe866548fd95fbbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d59a69d4825c663fe866548fd95fbbc">&#9670;&#160;</a></span>actionButtonSelected()</h2>
 
@@ -410,7 +414,21 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<p>Event handler colourDboxObjectAutoCreated. Overload in users application to intercept creation of Colour Dialogue box objects to enable modification before they are made visible. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;string.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;ToolboxColourDlogObj.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Change &quot;Application&quot; to the name of your Class, dbox being a pointer member variable of class ToolboxColourDlogObj in your Class.</span></div>
+<div class="line"><span class="comment">// Access the Wimp Handle and Dialogue Handle when the Colour Dialogue box is visible.</span></div>
+<div class="line"><span class="keywordtype">void</span> Application::colourDboxObjectAutoCreated() {</div>
+<div class="line">  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this-&gt;getPollBlock();</div>
+<div class="line">  <span class="keywordflow">if</span> (strcmp(pollEvent-&gt;template_name, <span class="stringliteral">&quot;ColourDbox&quot;</span>) == 0) {</div>
+<div class="line">    dbox = <span class="keyword">new</span> <a class="code hl_class" href="class_toolbox_colour_dlog_obj.html">ToolboxColourDlogObj</a>();</div>
+<div class="line">    dbox-&gt;setFlags(0).setObjectId(<a class="code hl_variable" href="#add90b197a7f3bce37b7b1e2ce49ca4d7">ToolboxCoreObj::idBlock</a>.self_id);</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_toolbox_colour_dlog_obj_html"><div class="ttname"><a href="class_toolbox_colour_dlog_obj.html">ToolboxColourDlogObj</a></div><div class="ttdef"><b>Definition</b> ToolboxColourDlogObj.h:14</div></div>
+<div class="ttc" id="aclass_toolbox_core_obj_html_add90b197a7f3bce37b7b1e2ce49ca4d7"><div class="ttname"><a href="#add90b197a7f3bce37b7b1e2ce49ca4d7">ToolboxCoreObj::idBlock</a></div><div class="ttdeci">static IdBlock idBlock</div><div class="ttdef"><b>Definition</b> ToolboxCoreObj.h:55</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a499fc04d8674014d6efe981200b3563c" name="a499fc04d8674014d6efe981200b3563c"></a>
@@ -485,6 +503,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler colourMenuObjectAutoCreated. Overload in users application to intercept creation of Colour Menu objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -664,6 +683,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler dcsObjectAutoCreated. Overload in users application to intercept creation of Discard/Cancel/Save Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -868,6 +888,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler fileInfoObjectAutoCreated. Overload in users application to intercept creation of File Info Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -968,6 +989,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler fontDboxObjectAutoCreated. Overload in users application to intercept creation of Font Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -1068,6 +1090,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler fontMenuObjectAutoCreated. Overload in users application to intercept creation of Font Menu objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -1592,6 +1615,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler iconbarObjectAutoCreated. Overload in users application to intercept creation of Iconbar icon objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -1741,6 +1765,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler menuObjectAutoCreated. Overload in users application to intercept creation of Menu objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -1941,6 +1966,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler printDboxObjectAutoCreated. Overload in users application to intercept creation of Print Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -2116,6 +2142,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler progInfoObjectAutoCreated. Overload in users application to intercept creation of Prog Info Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -2216,6 +2243,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler quitObjectAutoCreated. Overload in users application to intercept creation of Quit Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -2455,6 +2483,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler saveAsObjectAutoCreated. Overload in users application to intercept creation of SaveAs Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -2605,6 +2634,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler scaleObjectAutoCreated. Overload in users application to intercept creation of Scale Dialogue box objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
@@ -3150,6 +3180,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler unknownClassObjectAutoCreated. Overload in users application to intercept creation of an unknown Toolbox object to enable modification before they are made visible. This could be when new Toolbox objects are created which are unknown to this library. </p>
 
 </div>
 </div>
@@ -3250,6 +3281,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler windowObjectAutoCreated. Overload in users application to intercept creation of Window objects to enable modification before they are made visible. </p>
 
 </div>
 </div>
