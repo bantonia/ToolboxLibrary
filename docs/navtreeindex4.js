@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"class_wimp_window_obj.html#ad7df1be867078994c887835f17d34c33":[0,0,66,23],
 "class_wimp_window_obj.html#adfdb32cb44101cc48eafbdf2f95e9e85":[0,0,66,1],
 "class_wimp_window_obj.html#ae3a3732428ecad7aefbd2b793ef2b31a":[0,0,66,24],
 "classes.html":[0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "union_icon_data_str.html#a2b0b5de5f8159449befe7ca7eea05e87":[0,0,5,1],
 "union_icon_data_str.html#a5383f8abce7285f8c9cb24de8a8287c4":[0,0,5,7],
 "union_icon_data_str.html#a5e216778b133e58a2e5f29be030cfaa0":[0,0,5,9],
-"union_icon_data_str.html#a79fc900baa891cba8dad12f0a46229f2":[0,0,5,8]
+"union_icon_data_str.html#a79fc900baa891cba8dad12f0a46229f2":[0,0,5,8],
+"union_icon_data_str.html#ade616986a7bceda36fbd8dd8d7bafc63":[0,0,5,5]
 };

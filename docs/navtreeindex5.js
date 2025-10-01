@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"union_icon_data_str.html#ade616986a7bceda36fbd8dd8d7bafc63":[0,0,5,5],
 "union_icon_data_str.html#afc3e40687c1aaca4d907e7befd5655dd":[0,0,5,3],
 "union_icon_flags.html":[0,0,6],
 "union_icon_flags.html#a06e71434704c577e500cf60b618ab2aa":[0,0,6,2],

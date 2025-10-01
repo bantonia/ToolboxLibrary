@@ -3,7 +3,6 @@ var class_toolbox_tabs =
     [ "ToolboxTabs", "class_toolbox_tabs.html#a68d0565ec7d7672535a4ed172d2634ae", null ],
     [ "ToolboxTabs", "class_toolbox_tabs.html#a3ee91ae923fc94b0e9b610a0ab778697", null ],
     [ "ToolboxTabs", "class_toolbox_tabs.html#aa7e945b81b6ba83ff4770db0a75886f5", null ],
-    [ "gadgetMethod", "class_toolbox_tabs.html#aabc9366e4c066ec16b8a4cbd410ecdae", null ],
     [ "getClassName", "class_toolbox_tabs.html#a6147481827d04ba988101aa7f68b69ba", null ],
     [ "getClassType", "class_toolbox_tabs.html#a229a4fbab7ed441ea79b3f31e5f12734", null ],
     [ "getLabel", "class_toolbox_tabs.html#afe1988af7eeaaba6e61912b91dc55916", null ],

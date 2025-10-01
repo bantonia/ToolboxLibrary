@@ -81,15 +81,6 @@ ToolboxTabs& ToolboxTabs::hideTab(int index, int hide) {
   return *this;
 }
 
-ToolboxTabs& ToolboxTabs::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  regs->r[0] = (int) getFlags();
-  regs->r[1] = this->getObjectId();
-  regs->r[2] = methodCode;
-  regs->r[3] = this->getComponentId();
-  ToolboxTabs::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
-  return *this;
-}
-
 ToolboxTabs& ToolboxTabs::setGadgetFlags(unsigned int flags) {
   _kernel_swi_regs regs;
   this->setFlags(0);

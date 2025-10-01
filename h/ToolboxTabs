@@ -25,7 +25,6 @@ class ToolboxTabs : public ToolboxGadget {
     int getLabel(int index);
     int getLabel(int index, char *buffer, int bufSize);
     ToolboxTabs& hideTab(int index, int hide);
-    ToolboxTabs& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
     ToolboxTabs& setFocus();
     ToolboxTabs& setFlags(unsigned int flags);
     ToolboxTabs& setObjectId(ObjectId windowId);
