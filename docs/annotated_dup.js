@@ -55,6 +55,7 @@ var annotated_dup =
     [ "ToolboxRadioButton", "class_toolbox_radio_button.html", "class_toolbox_radio_button" ],
     [ "ToolboxSaveAsObj", "class_toolbox_save_as_obj.html", "class_toolbox_save_as_obj" ],
     [ "ToolboxScaleObj", "class_toolbox_scale_obj.html", "class_toolbox_scale_obj" ],
+    [ "ToolboxScrollList", "class_toolbox_scroll_list.html", "class_toolbox_scroll_list" ],
     [ "ToolboxSlider", "class_toolbox_slider.html", "class_toolbox_slider" ],
     [ "ToolboxStringSet", "class_toolbox_string_set.html", "class_toolbox_string_set" ],
     [ "ToolboxTabs", "class_toolbox_tabs.html", "class_toolbox_tabs" ],

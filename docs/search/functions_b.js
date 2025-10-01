@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['makevisible_0',['makeVisible',['../class_toolbox_tree_view.html#af949f0bba8c8dcd8f3fd8041c6e9a5ce',1,'ToolboxTreeView']]],
+  ['makevisible_0',['makeVisible',['../class_toolbox_scroll_list.html#aeb5e29c928534154b49934f73ebb6795',1,'ToolboxScrollList::makeVisible()'],['../class_toolbox_tree_view.html#af949f0bba8c8dcd8f3fd8041c6e9a5ce',1,'ToolboxTreeView::makeVisible()']]],
   ['menuabouttobeshown_1',['menuAboutToBeShown',['../class_toolbox_core_obj.html#af4c38be2b6ef9613f5e808407cdb8abb',1,'ToolboxCoreObj']]],
   ['menuhasbeenhidden_2',['menuHasBeenHidden',['../class_toolbox_core_obj.html#a4a0689d42b8a9433c4976e1d3036ad62',1,'ToolboxCoreObj']]],
   ['menuobjectautocreated_3',['menuObjectAutoCreated',['../class_toolbox_core_obj.html#a8dbd1b4b9cab555c28d5d29c9b8a3402',1,'ToolboxCoreObj']]],

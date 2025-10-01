@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['makevisible_0',['makeVisible',['../class_toolbox_tree_view.html#af949f0bba8c8dcd8f3fd8041c6e9a5ce',1,'ToolboxTreeView']]],
+  ['makevisible_0',['makeVisible',['../class_toolbox_scroll_list.html#aeb5e29c928534154b49934f73ebb6795',1,'ToolboxScrollList::makeVisible()'],['../class_toolbox_tree_view.html#af949f0bba8c8dcd8f3fd8041c6e9a5ce',1,'ToolboxTreeView::makeVisible()']]],
   ['mask_1',['mask',['../structsprite__header.html#aef88ce8a3ca3450b76def70c98132476',1,'sprite_header::mask'],['../structsprite__info.html#a5dc4e49e125dc4965b01288c64a8cbe0',1,'sprite_info::mask']]],
   ['maskstatus_2',['maskStatus',['../struct_sprite_area_obj_1_1sprite_info__t.html#ae9e19cb55864a8595711801c3b79a4e2',1,'SpriteAreaObj::spriteInfo_t']]],
   ['maxx_3',['maxX',['../struct_box.html#ac10ce511c0bbe232d25b5492a8747a44',1,'Box']]],
