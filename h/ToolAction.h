@@ -1,28 +1,28 @@
 #ifndef __cplusplus
-#error Header file "ToolboxAction.h" may only be used from C++
+#error Header file "ToolboxToolAction.h" may only be used from C++
 #endif
 #pragma force_top_level
 #pragma include_only_once
 
-#ifndef __ToolboxAction_h
-#define __ToolboxAction_h
+#ifndef __ToolboxToolAction_h
+#define __ToolboxToolAction_h
 
 #include "ClassType.h"
 #include "ToolboxGadget.h"
 
-class ToolAction : public ToolboxGadget {
+class ToolboxToolAction : public ToolboxGadget {
   public:
-    ToolAction();
-    ToolAction(ObjectId windowId, ComponentId gadgetId)
-    ToolAction(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
-    ToolAction& setIdent(char *ident);
-    ToolAction& getIdent(char *ident, int size, int *nchar);
-    ToolAction& setAction(unsigned int select, unsigned int adjust);
-    ToolAction& setClickShow(ObjectId selectObj, ObjectId adjustObj);
-    ToolAction& getClickShow(ObjectId *selectObj, ObjectId *adjustObj);
-    ToolAction& setState(unsigned int state);
+    ToolboxToolAction();
+    ToolboxToolAction(ObjectId windowId, ComponentId gadgetId)
+    ToolboxToolAction(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+    ToolboxToolAction& setIdent(char *ident);
+    ToolboxToolAction& getIdent(char *ident, int size, int *nchar);
+    ToolboxToolAction& setAction(unsigned int select, unsigned int adjust);
+    ToolboxToolAction& setClickShow(ObjectId selectObj, ObjectId adjustObj);
+    ToolboxToolAction& getClickShow(ObjectId *selectObj, ObjectId *adjustObj);
+    ToolboxToolAction& setState(unsigned int state);
     unsigned int getState();
-    ToolAction& setPressed(unsigned int pressed);
+    ToolboxToolAction& setPressed(unsigned int pressed);
     unsigned int getPressed();
 };
 #endif
