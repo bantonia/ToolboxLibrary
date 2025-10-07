@@ -1,0 +1,207 @@
+#ifndef __cplusplus
+#error Header file "ToolboxEvents.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxEvents_h
+#define __ToolboxEvents_h
+
+#include "toolbox.h"
+#include "gadgets.h"
+#include "treeview.h"
+#include "ScrollList.h"
+#include "tabs.h"
+
+class ToolboxEvents {
+  public:
+/** Event handler colourDboxObjectAutoCreated.
+* Overload in users application to intercept creation of Colour Dialogue box objects to enable modification
+* before they are made visible.
+* \code{.cpp}
+* #include <string.h>
+* #include "ToolboxColourDlogObj.h"
+*
+* // Change "Application" to the name of your Class, dbox being a pointer member variable of class ToolboxColourDlogObj in your Class.
+* // Access the Wimp Handle and Dialogue Handle when the Colour Dialogue box is visible.
+* void Application::colourDboxObjectAutoCreated() {
+*   ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
+*   if (strcmp(pollEvent->template_name, "ColourDbox") == 0) {
+*     dbox = new ToolboxColourDlogObj();
+*     dbox->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
+*   }
+* }
+* \endcode
+*
+*/
+    virtual void colourDboxObjectAutoCreated(){}
+
+/** Event handler colourMenuObjectAutoCreated.
+* Overload in users application to intercept creation of Colour Menu objects to enable modification
+* before they are made visible.
+*/
+    virtual void colourMenuObjectAutoCreated(){}
+
+/** Event handler dcsObjectAutoCreated.
+* Overload in users application to intercept creation of Discard/Cancel/Save Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void dcsObjectAutoCreated(){}
+
+/** Event handler fileInfoObjectAutoCreated.
+* Overload in users application to intercept creation of File Info Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void fileInfoObjectAutoCreated(){}
+
+/** Event handler fontDboxObjectAutoCreated.
+* Overload in users application to intercept creation of Font Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void fontDboxObjectAutoCreated(){}
+
+/** Event handler fontMenuObjectAutoCreated.
+* Overload in users application to intercept creation of Font Menu objects to enable modification
+* before they are made visible.
+*/
+    virtual void fontMenuObjectAutoCreated(){}
+
+/** Event handler iconbarObjectAutoCreated.
+* Overload in users application to intercept creation of Iconbar icon objects to enable modification
+* before they are made visible.
+*/
+    virtual void iconbarObjectAutoCreated(){}
+
+
+/** Event handler menuObjectAutoCreated.
+* Overload in users application to intercept creation of Menu objects to enable modification
+* before they are made visible.
+*/
+    virtual void menuObjectAutoCreated(){}
+
+/** Event handler printDboxObjectAutoCreated.
+* Overload in users application to intercept creation of Print Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void printDboxObjectAutoCreated(){}
+
+/** Event handler progInfoObjectAutoCreated.
+* Overload in users application to intercept creation of Prog Info Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void progInfoObjectAutoCreated(){}
+
+/** Event handler quitObjectAutoCreated.
+* Overload in users application to intercept creation of Quit Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void quitObjectAutoCreated(){}
+
+/** Event handler saveAsObjectAutoCreated.
+* Overload in users application to intercept creation of SaveAs Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void saveAsObjectAutoCreated(){}
+
+/** Event handler scaleObjectAutoCreated.
+* Overload in users application to intercept creation of Scale Dialogue box objects to enable modification
+* before they are made visible.
+*/
+    virtual void scaleObjectAutoCreated(){}
+
+/** Event handler windowObjectAutoCreated.
+* Overload in users application to intercept creation of Window objects to enable modification
+* before they are made visible.
+*/
+    virtual void windowObjectAutoCreated(){}
+
+/** Event handler unknownClassObjectAutoCreated.
+* Overload in users application to intercept creation of an unknown Toolbox object to enable modification
+* before they are made visible. This could be when new Toolbox objects are created which are unknown to this library.
+*/
+    virtual void unknownClassObjectAutoCreated(){}
+
+
+    virtual void toolboxObjectAutoCreated(){}
+    virtual void toolboxObjectDeleted(){}
+    virtual void toolboxUserEvent(){}
+    virtual void colourDboxAboutToBeShown(){}
+    virtual void colourDboxDialogueCompleted(){}
+    virtual void colourDboxColourSelected(){}
+    virtual void colourMenuAboutToBeShown(){}
+    virtual void colourMenuHasBeenHidden(){}
+    virtual void colourMenuSelection(){}
+    virtual void dcsAboutToBeShown(){}
+    virtual void dcsDiscard(){}
+    virtual void dcsSave(){}
+    virtual void dcsDialogueCompleted(){}
+    virtual void dcsCancel(){}
+    virtual void fileInfoAboutToBeShown(){}
+    virtual void fileInfoDialogueCompleted(){}
+    virtual void fontDboxAboutToBeShown(){}
+    virtual void fontDboxDialogueCompleted(){}
+    virtual void fontDboxApplyFont(){}
+    virtual void fontMenuAboutToBeShown(){}
+    virtual void fontMenuHasBeenHidden(){}
+    virtual void fontMenuFontSelection(){}
+    virtual void iconbarClicked(){}
+    virtual void iconbarSelectAboutToBeShown(){}
+    virtual void iconbarAdjustAboutToBeShown(){}
+    virtual void menuAboutToBeShown(){}
+    virtual void menuHasBeenHidden(){}
+    virtual void menuSubMenu(){}
+    virtual void menuSelection(){}
+    virtual void printDboxAboutToBeShown(){}
+    virtual void printDboxDialogueCompleted(){}
+    virtual void printDboxSetUpAboutToBeShown(){}
+    virtual void printDboxSave(){}
+    virtual void printDboxSetUp(){}
+    virtual void printDboxPrint(){}
+    virtual void progInfoAboutToBeShown(){}
+    virtual void progInfoDialogueCompleted(){}
+    virtual void quitAboutToBeShown(){}
+    virtual void quitQuit(){}
+    virtual void quitDialogueCompleted(){}
+    virtual void quitCancel(){}
+    virtual void saveAsAboutToBeShown(){}
+    virtual void saveAsDialogueCompleted(){}
+    virtual void saveAsSaveToFile(){}
+    virtual void saveAsFillBuffer(){}
+    virtual void saveAsSaveCompleted(){}
+    virtual void scaleAboutToBeShown(){}
+    virtual void scaleDialogueCompleted(){}
+    virtual void scaleApplyFactor(){}
+    virtual void windowAboutToBeShown(){}
+    virtual void windowHasBeenHidden(){}
+    virtual void actionButtonSelected(){}
+    virtual void adjusterClicked(){}
+    virtual void draggableDragStarted(){}
+    virtual void draggableDragEnded(){}
+    virtual void numberRangeValueChanged(){}
+    virtual void optionButtonStateChanged(){}
+    virtual void popUpAboutToBeShown(){}
+    virtual void radioButtonStateChanged(){}
+    virtual void sliderValueChanged(){}
+    virtual void stringSetValueChanged(){}
+    virtual void stringSetAboutToBeShown(){}
+    virtual void writableFieldValueChanged(){}
+
+    virtual void scrollListSelection(){}
+
+    virtual void treeViewNodeSelected(){}
+    virtual void treeViewNodeExpanded(){}
+    virtual void treeViewNodeRenamed(){}
+    virtual void treeViewNodeClicked(){}
+    virtual void treeViewNodeDragged(){}
+    virtual void treeViewScroll(){}
+
+    virtual void tabsSelection(){}
+
+    virtual void toolActionSelection(){}
+
+    virtual void reservedToolboxInterApplicationProtocol(){}
+    virtual void reservedToolboxModuleEvent(){}
+    virtual void unknownToolboxEvent(){}
+};
+
+#endif

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['radiobuttonstatechanged_0',['radioButtonStateChanged',['../class_toolbox_core_obj.html#a736c765445b12bd0e99720697f28e570',1,'ToolboxCoreObj']]],
+  ['radiobuttonstatechanged_0',['radioButtonStateChanged',['../class_toolbox_events.html#a13566b74baaaa7102e87d18c6e2de948',1,'ToolboxEvents']]],
   ['raisetoolboxevent_1',['raiseToolboxEvent',['../class_toolbox_core_obj.html#a3bef42c05b0ad8eca5370e9b5291fced',1,'ToolboxCoreObj::raiseToolboxEvent()'],['../class_toolbox_obj.html#a3ee78efc52ebf8106adae16e222068b5',1,'ToolboxObj::raiseToolboxEvent(ComponentId component, ToolboxEvent *event)']]],
   ['readancestorobjectid_2',['readAncestorObjectId',['../class_toolbox_obj.html#a1e9fed25f725f510bfaa13c4bdf3914b',1,'ToolboxObj']]],
   ['readcalibration_3',['readCalibration',['../class_colour_trans_obj.html#a885962d4e37d76cee3219c5d60641559',1,'ColourTransObj']]],
@@ -28,8 +28,8 @@ var searchData=
   ['removewinddefstr_25',['removeWindDefStr',['../class_wimp_window_obj.html#aa3eedcad33049d265546adca3965c82f',1,'WimpWindowObj']]],
   ['renamesprite_26',['renameSprite',['../class_sprite_area_obj.html#a040eb453b054acd9e6b8fab5c8b5dda7',1,'SpriteAreaObj::renameSprite(SpriteObj &amp;)'],['../class_sprite_area_obj.html#ad0fd0ef10c3181e1c692c75753556f8c',1,'SpriteAreaObj::renameSprite(char *)']]],
   ['reporterrors_27',['reportErrors',['../class_o_s_err_list.html#a4c631bd03a99176163daaef12796557c',1,'OSErrList']]],
-  ['reservedtoolboxinterapplicationprotocol_28',['reservedToolboxInterApplicationProtocol',['../class_toolbox_core_obj.html#ac74fa9aec06b11389f1f7e6ef79d46b5',1,'ToolboxCoreObj']]],
-  ['reservedtoolboxmoduleevent_29',['reservedToolboxModuleEvent',['../class_toolbox_core_obj.html#a96c536d838d81169e0e4c74ec04d4d80',1,'ToolboxCoreObj']]],
+  ['reservedtoolboxinterapplicationprotocol_28',['reservedToolboxInterApplicationProtocol',['../class_toolbox_events.html#a6e8c1c0b411588fdbb3f5131451dc4c5',1,'ToolboxEvents']]],
+  ['reservedtoolboxmoduleevent_29',['reservedToolboxModuleEvent',['../class_toolbox_events.html#ae02a8a9072ea17ccb3747bc8e3638e11',1,'ToolboxEvents']]],
   ['returncolourformode_30',['returnColourForMode',['../class_colour_trans_obj.html#a47598d2573e1516ab77c9e921c6f143f',1,'ColourTransObj']]],
   ['returncolournumber_31',['returnColourNumber',['../class_colour_trans_obj.html#a544a522f63511321eb2302e1411f701a',1,'ColourTransObj']]],
   ['returnfontcolours_32',['returnFontColours',['../class_colour_trans_obj.html#afb1daf7c2eb72a9a1a908661af5069a7',1,'ColourTransObj']]],

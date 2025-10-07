@@ -1,11 +1,11 @@
 var searchData=
 [
   ['makevisible_0',['makeVisible',['../class_toolbox_scroll_list.html#aeb5e29c928534154b49934f73ebb6795',1,'ToolboxScrollList::makeVisible()'],['../class_toolbox_tree_view.html#af949f0bba8c8dcd8f3fd8041c6e9a5ce',1,'ToolboxTreeView::makeVisible()']]],
-  ['menuabouttobeshown_1',['menuAboutToBeShown',['../class_toolbox_core_obj.html#af4c38be2b6ef9613f5e808407cdb8abb',1,'ToolboxCoreObj']]],
-  ['menuhasbeenhidden_2',['menuHasBeenHidden',['../class_toolbox_core_obj.html#a4a0689d42b8a9433c4976e1d3036ad62',1,'ToolboxCoreObj']]],
-  ['menuobjectautocreated_3',['menuObjectAutoCreated',['../class_toolbox_core_obj.html#a8dbd1b4b9cab555c28d5d29c9b8a3402',1,'ToolboxCoreObj']]],
-  ['menuselection_4',['menuSelection',['../class_toolbox_core_obj.html#a8460a1bcad59d033d514ceab7b989773',1,'ToolboxCoreObj::menuSelection()'],['../class_wimp_obj.html#adc43cd17184b531fa8f2dc4bd323992b',1,'WimpObj::menuSelection()']]],
-  ['menusubmenu_5',['menuSubMenu',['../class_toolbox_core_obj.html#a529c4a4369f7e2adfc88d982aa707a84',1,'ToolboxCoreObj']]],
+  ['menuabouttobeshown_1',['menuAboutToBeShown',['../class_toolbox_events.html#a7874f20f8d2432c1eb75bb351d4d1b30',1,'ToolboxEvents']]],
+  ['menuhasbeenhidden_2',['menuHasBeenHidden',['../class_toolbox_events.html#ab45015585aea2656b3df6836aa62226a',1,'ToolboxEvents']]],
+  ['menuobjectautocreated_3',['menuObjectAutoCreated',['../class_toolbox_events.html#a272e0ff818795333e68842f6c3686415',1,'ToolboxEvents']]],
+  ['menuselection_4',['menuSelection',['../class_toolbox_events.html#a19b979f496a6af337ee3f55e611dede7',1,'ToolboxEvents::menuSelection()'],['../class_wimp_obj.html#adc43cd17184b531fa8f2dc4bd323992b',1,'WimpObj::menuSelection()']]],
+  ['menusubmenu_5',['menuSubMenu',['../class_toolbox_events.html#ae5f4fbd3021b6f531b1b004a24b14fc9',1,'ToolboxEvents']]],
   ['mergespritefile_6',['mergeSpriteFile',['../class_sprite_area_obj.html#a57f7257218cd5a7a0a603cc3e45e854d',1,'SpriteAreaObj']]],
   ['mouseclick_7',['mouseClick',['../class_wimp_obj.html#aa4a02d0519588d71e41a7f85a7cc3053',1,'WimpObj']]],
   ['movechild_8',['moveChild',['../class_toolbox_tree_view.html#a73768aaf34a5d24508c2ba97efd7d463',1,'ToolboxTreeView']]],

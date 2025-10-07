@@ -7,6 +7,13 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
+/** Object
+*
+* CommonC++Lib
+*
+* Class to use as a base class to enable passing of objects as a generalised parameter
+*/
+
 class Object {
   public:
     Object();

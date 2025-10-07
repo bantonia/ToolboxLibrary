@@ -2,12 +2,12 @@ var searchData=
 [
   ['dataindirected_0',['dataIndirected',['../union_icon_flags.html#ae7cc2bcc8db4c1f53d3dc8b90a395bad',1,'IconFlags']]],
   ['days_1',['days',['../class_constants.html#a0b7f67a0668793e57cd9cc03f247036b',1,'Constants']]],
-  ['dcsabouttobeshown_2',['dcsAboutToBeShown',['../class_toolbox_core_obj.html#a8de7a38d9b1ca0e07e19d8d55e62ed86',1,'ToolboxCoreObj']]],
-  ['dcscancel_3',['dcsCancel',['../class_toolbox_core_obj.html#ae9e87e16b5fe967e5ee5b086720a526b',1,'ToolboxCoreObj']]],
-  ['dcsdialoguecompleted_4',['dcsDialogueCompleted',['../class_toolbox_core_obj.html#af4e964bbab41bdf79133fb3a79d72f3a',1,'ToolboxCoreObj']]],
-  ['dcsdiscard_5',['dcsDiscard',['../class_toolbox_core_obj.html#a6e25a6b37ead3697dbf55d59b80ba0aa',1,'ToolboxCoreObj']]],
-  ['dcsobjectautocreated_6',['dcsObjectAutoCreated',['../class_toolbox_core_obj.html#a85ef89ffd403d8b1ce8ce5f212b61ff4',1,'ToolboxCoreObj']]],
-  ['dcssave_7',['dcsSave',['../class_toolbox_core_obj.html#add9aae283085cc262b73cffd4d006715',1,'ToolboxCoreObj']]],
+  ['dcsabouttobeshown_2',['dcsAboutToBeShown',['../class_toolbox_events.html#a16d2022d442347ecf0b9788822a8587a',1,'ToolboxEvents']]],
+  ['dcscancel_3',['dcsCancel',['../class_toolbox_events.html#afafff59de0a66ffd3d8a360a190c47ae',1,'ToolboxEvents']]],
+  ['dcsdialoguecompleted_4',['dcsDialogueCompleted',['../class_toolbox_events.html#a3cf0a2e73aa621a9942b243ca032b3b2',1,'ToolboxEvents']]],
+  ['dcsdiscard_5',['dcsDiscard',['../class_toolbox_events.html#a0df9b58894e74ab994c29de1fb343891',1,'ToolboxEvents']]],
+  ['dcsobjectautocreated_6',['dcsObjectAutoCreated',['../class_toolbox_events.html#a34b0ef8fdb689c28fa659755f880d0ea',1,'ToolboxEvents']]],
+  ['dcssave_7',['dcsSave',['../class_toolbox_events.html#ad694b5661a2152f2c185b07928589255',1,'ToolboxEvents']]],
   ['deleteall_8',['deleteAll',['../class_toolbox_tree_view.html#a45b08cc602ab9b0d0f3b2a1a67e0ad87',1,'ToolboxTreeView']]],
   ['deleted_9',['deleted',['../union_icon_flags.html#af20e0e101e792aaaa237b46d68d34283',1,'IconFlags']]],
   ['deleteitems_10',['deleteItems',['../class_toolbox_scroll_list.html#a416d7f9f0de7693092f9122f413d487f',1,'ToolboxScrollList']]],
@@ -21,7 +21,7 @@ var searchData=
   ['detachpointer_18',['detachPointer',['../class_toolbox_window_obj.html#a366ac8a8879d15845e11035ee8669fbb',1,'ToolboxWindowObj']]],
   ['displaysprithalfsize_19',['displaySpritHalfSize',['../union_icon_flags.html#a1087bf8d8978ddb8669d76b2aa3e0ae7',1,'IconFlags']]],
   ['dontcancelwithadjust_20',['dontCancelWithAdjust',['../union_icon_flags.html#a8a680ba39aac9a8523749af6154023e4',1,'IconFlags']]],
-  ['draggabledragended_21',['draggableDragEnded',['../class_toolbox_core_obj.html#a84289c4e32ae669ecf9845afdee9c0de',1,'ToolboxCoreObj']]],
-  ['draggabledragstarted_22',['draggableDragStarted',['../class_toolbox_core_obj.html#a124cd6e525006ef457082b41b152d3a6',1,'ToolboxCoreObj']]],
+  ['draggabledragended_21',['draggableDragEnded',['../class_toolbox_events.html#a948122fdad42afc2933c136a237e536c',1,'ToolboxEvents']]],
+  ['draggabledragstarted_22',['draggableDragStarted',['../class_toolbox_events.html#a2898dbe5e259dcdb15f20e48e8513bd4',1,'ToolboxEvents']]],
   ['dragoutside_23',['dragOutside',['../union_window_flags.html#a3cd0ff39762e8d58c49066934f7f621f',1,'WindowFlags']]]
 ];

@@ -18,6 +18,17 @@
 //#include "ToolboxCoreObj.h"
 //#include "WimpWindowObj.h"
 
+
+/** WimpObj
+*
+* RiscOSC++Lib
+*
+* Class which underlays all Wimp applications which uses this library.
+* Has all the member functions which can be overloaded to handle Wimp events.
+* The class also has within it member functions which call WimpPoll from which events
+* are dispatched to the overloaded event member functions.
+*/
+
 class WimpObj : public Object, public ErrorReport {
   public:
 
@@ -33,14 +44,43 @@ class WimpObj : public Object, public ErrorReport {
 
     WimpObj();
     ~WimpObj();
+
+/** Used to initialise the Wimp, returns the task handle.
+* The returned task handle is also stored in a private member variable of an object of WimpObj.
+* Not needed to be called if the application uses the Toolbox.
+*/
     unsigned int init();
+
+/** Call to remove the Wimp task, the handle to use is taken from the private member variable.
+*/
     void closeDown();
+
+/** Enters a Wimp Poll routine, returning an event number on an idle poll, no dispatch to any overloaded event handlers being made. 
+*/
     unsigned int pollIdle();
+
+/** Enters a Wimp Poll routine, returning an event number, no dispatch to any overloaded event handlers being made. 
+*/
     unsigned int poll();
+
+/** Enters a Wimp Poll routine, returning an event number on an idle poll, dispatches to overloaded event handlers are made. 
+*/
     int runIdle();
+
+/** Enters a Wimp Poll routine, returning an event number on an poll, dispatches to overloaded event handlers are made. 
+*/
     int run();
-    void setTaskname(char *);
-    void setMask(unsigned int);
+
+/** Sets the tasks name.
+* @param[in] *taskname pointer to a zero terminated array of characters holding the name of the task. 
+*/
+    void setTaskname(char *taskname);
+
+
+/** Sets the tasks poll mask.
+* @param[in] mask Used. 
+*/
+    void setMask(unsigned int mask);
     void addMessages(int *);
     void removeMessages(int *);
     virtual void nullReason(){};

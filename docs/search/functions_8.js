@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['iconbaradjustabouttobeshown_0',['iconbarAdjustAboutToBeShown',['../class_toolbox_core_obj.html#af9c9442bb0d17fb8bdedf997385d56cb',1,'ToolboxCoreObj']]],
-  ['iconbarclicked_1',['iconbarClicked',['../class_toolbox_core_obj.html#ad4ba35be969a8c1539bfe08096939c78',1,'ToolboxCoreObj']]],
-  ['iconbarobjectautocreated_2',['iconbarObjectAutoCreated',['../class_toolbox_core_obj.html#aa8a66f44e7fafbb505316d4454c9349f',1,'ToolboxCoreObj']]],
-  ['iconbarselectabouttobeshown_3',['iconbarSelectAboutToBeShown',['../class_toolbox_core_obj.html#a8eccd1af31796dd04130ad2dc57b5edc',1,'ToolboxCoreObj']]],
+  ['iconbaradjustabouttobeshown_0',['iconbarAdjustAboutToBeShown',['../class_toolbox_events.html#a96b23d79b2c2e57f4661bab409bb26cb',1,'ToolboxEvents']]],
+  ['iconbarclicked_1',['iconbarClicked',['../class_toolbox_events.html#a570c3c4525b77baf908382ba403033e0',1,'ToolboxEvents']]],
+  ['iconbarobjectautocreated_2',['iconbarObjectAutoCreated',['../class_toolbox_events.html#ad9923441287831049b03886109ee2e95',1,'ToolboxEvents']]],
+  ['iconbarselectabouttobeshown_3',['iconbarSelectAboutToBeShown',['../class_toolbox_events.html#ae574a4663daad60fdcc333e2c2cc180a',1,'ToolboxEvents']]],
   ['init_4',['init',['../class_toolbox_core_obj.html#ade61f4eeec52eb981a144a026c50580d',1,'ToolboxCoreObj::init()'],['../class_wimp_obj.html#af234930b427da97daa07fe24c0a372f7',1,'WimpObj::init()']]],
   ['initevents_5',['initEvents',['../class_toolbox_event_obj.html#a4e229ef92213b9de397f424e41bb0d41',1,'ToolboxEventObj']]],
   ['inittask_6',['initTask',['../class_toolbox_task.html#a47f6fa9d9a24d4acc718ac46ae11f9b6',1,'ToolboxTask']]],

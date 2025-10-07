@@ -21,6 +21,7 @@ var hierarchy =
         [ "ToolboxSlider", "class_toolbox_slider.html", null ],
         [ "ToolboxStringSet", "class_toolbox_string_set.html", null ],
         [ "ToolboxTabs", "class_toolbox_tabs.html", null ],
+        [ "ToolboxToolAction", "class_toolbox_tool_action.html", null ],
         [ "ToolboxTreeView", "class_toolbox_tree_view.html", null ],
         [ "ToolboxWritableField", "class_toolbox_writable_field.html", null ]
       ] ],
@@ -78,7 +79,11 @@ var hierarchy =
     [ "sprite_pgm", "structsprite__pgm.html", null ],
     [ "sprite_state", "structsprite__state.html", null ],
     [ "SpriteAreaObj::spriteInfo_t", "struct_sprite_area_obj_1_1sprite_info__t.html", null ],
+    [ "ToolActionSelectionEvent", "struct_tool_action_selection_event.html", null ],
     [ "ToolboxEventObj", "class_toolbox_event_obj.html", null ],
+    [ "ToolboxEvents", "class_toolbox_events.html", [
+      [ "ToolboxCoreObj", "class_toolbox_core_obj.html", null ]
+    ] ],
     [ "WimpMask", "union_wimp_mask.html", null ],
     [ "WimpPaletteStr", "struct_wimp_palette_str.html", null ],
     [ "WimpPaletteWord", "union_wimp_palette_word.html", null ],

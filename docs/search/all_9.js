@@ -1,10 +1,10 @@
 var searchData=
 [
   ['i_0',['i',['../struct_mouse_click_block.html#ad3001d65c8482cfa05b06e7737f42640',1,'MouseClickBlock::i'],['../struct_key_pressed_block.html#a15d88be91682af5121cf32a4dd8007e7',1,'KeyPressedBlock::i']]],
-  ['iconbaradjustabouttobeshown_1',['iconbarAdjustAboutToBeShown',['../class_toolbox_core_obj.html#af9c9442bb0d17fb8bdedf997385d56cb',1,'ToolboxCoreObj']]],
-  ['iconbarclicked_2',['iconbarClicked',['../class_toolbox_core_obj.html#ad4ba35be969a8c1539bfe08096939c78',1,'ToolboxCoreObj']]],
-  ['iconbarobjectautocreated_3',['iconbarObjectAutoCreated',['../class_toolbox_core_obj.html#aa8a66f44e7fafbb505316d4454c9349f',1,'ToolboxCoreObj']]],
-  ['iconbarselectabouttobeshown_4',['iconbarSelectAboutToBeShown',['../class_toolbox_core_obj.html#a8eccd1af31796dd04130ad2dc57b5edc',1,'ToolboxCoreObj']]],
+  ['iconbaradjustabouttobeshown_1',['iconbarAdjustAboutToBeShown',['../class_toolbox_events.html#a96b23d79b2c2e57f4661bab409bb26cb',1,'ToolboxEvents']]],
+  ['iconbarclicked_2',['iconbarClicked',['../class_toolbox_events.html#a570c3c4525b77baf908382ba403033e0',1,'ToolboxEvents']]],
+  ['iconbarobjectautocreated_3',['iconbarObjectAutoCreated',['../class_toolbox_events.html#ad9923441287831049b03886109ee2e95',1,'ToolboxEvents']]],
+  ['iconbarselectabouttobeshown_4',['iconbarSelectAboutToBeShown',['../class_toolbox_events.html#ae574a4663daad60fdcc333e2c2cc180a',1,'ToolboxEvents']]],
   ['icondatastr_5',['IconDataStr',['../union_icon_data_str.html',1,'']]],
   ['iconflags_6',['IconFlags',['../union_icon_flags.html',1,'']]],
   ['idblock_7',['idBlock',['../class_toolbox_core_obj.html#add90b197a7f3bce37b7b1e2ce49ca4d7',1,'ToolboxCoreObj']]],

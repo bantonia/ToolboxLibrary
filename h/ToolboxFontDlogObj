@@ -32,9 +32,9 @@ class ToolboxFontDlogObj : public ToolboxObj {
     ToolboxFontDlogObj& setFlags(unsigned int flags);
     ToolboxFontDlogObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxFontDlogObj";};
-    int getClassType() { return ClassType_ToolboxFontDlogObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxFontDlogObj";}
+    int getClassType() { return ClassType_ToolboxFontDlogObj;}
 };
 
 #endif

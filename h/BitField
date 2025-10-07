@@ -6,21 +6,84 @@
 
 #include "Object.h"
 
+/** Bitfield
+*
+* CommonC++Lib
+*
+* Class to create objects containing a single or multiple bytes which can be manipulated
+* or tested at the bit level. Passing an integer value to the constructor will create an
+* object with enough bytes to store the number of bits required as passed to the constructor.
+*/
+
 class BitField : public Object {
   public:
+
+/** BitField constructor
+* Creates an object with 8 available bits
+*/
     BitField(void);
+
     ~BitField(void);
-    BitField(int);
-    void setBit(int);
-    void clearBit(int);
-    int isSet(int);
-    int isClear(int);
+
+/** BitField constructor
+* @param[in] bits Number of bits to store in the object
+*/
+    BitField(int bits);
+
+/** Sets an individual bit in a BitField object
+* @param[in] bit Offset to the bit to set
+*/
+    void setBit(int bit);
+
+/** Clears an individual bit in a BitField object
+* @param[in] bit Offset to the bit to clear
+*/
+    void clearBit(int bit);
+
+/** Tests an individual bit in a BitField object
+* @param[in] bit Offset to the bit to test
+* Returns an integer representing True or False
+* True  - the bit is set
+* False - the bit is clear
+*/
+    int isSet(int bit);
+
+/** Tests an individual bit in a BitField object
+* @param[in] bit Offset to the bit to test
+* Returns an integer representing True or False
+* True  - the bit is clear
+* False - the bit is set
+*/
+    int isClear(int bit);
+
+/** Inverts all the bits in a BitField object
+*/
     void invert(void);
+
+/** Clears all the bits in a BitField object
+*/
     void clear(void);
+
+/** Sets all the bits in a BitField object
+*/
     void set(void);
+
+/** Returns the number bits in a BitField object
+*/
     unsigned int numBits(void);
+
+/** Currently unused
+*/
     void showProperties(){};
-    char* getClassName() { return "BitField";};
+
+/** Returns the classname of the object
+* Returns a pointer to a zero terminated character field containing "BitField"
+*/
+    char *getClassName() { return "BitField";};
+
+/** Returns an integer representing a value for an object of class BitField
+* Value returned is 0
+*/
     int getClassType(){return 0;};
   private:
     unsigned int bits;

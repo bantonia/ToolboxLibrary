@@ -47,7 +47,8 @@ enum {
   ClassType_StringObj,
   ClassType_ColourTransObj,
   ClassType_ScrollList,
-  ClassType_ToolboxTreeView
+  ClassType_ToolboxTreeView,
+  ClassType_ToolboxToolAction
 };
 
 #endif

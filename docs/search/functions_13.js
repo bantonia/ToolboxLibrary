@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['unknownclassobjectautocreated_0',['unknownClassObjectAutoCreated',['../class_toolbox_core_obj.html#aafd02cc72b4fd987260fab1ef5071595',1,'ToolboxCoreObj']]],
-  ['unknowntoolboxevent_1',['unknownToolboxEvent',['../class_toolbox_core_obj.html#ae0837c518d02def25421cc5bb4bb3b09',1,'ToolboxCoreObj']]],
+  ['unknownclassobjectautocreated_0',['unknownClassObjectAutoCreated',['../class_toolbox_events.html#a3293d28ebf73862754a8934b4fa6d04d',1,'ToolboxEvents']]],
+  ['unknowntoolboxevent_1',['unknownToolboxEvent',['../class_toolbox_events.html#a9c3bd6e7f05d1ad9f01fbfc6434bd0f5',1,'ToolboxEvents']]],
   ['unknownwimpevent_2',['unknownWimpEvent',['../class_wimp_obj.html#a0eb7e1604ab4b908a7a6b53e1dd621f2',1,'WimpObj']]],
   ['updatedisplay_3',['updateDisplay',['../class_toolbox_tree_view.html#abe56604c17125cd535a135912bd2a9d4',1,'ToolboxTreeView']]],
   ['updatetitle_4',['updateTitle',['../class_wimp_window_obj.html#ad1572bd406b654951bd7b4665f7567fa',1,'WimpWindowObj']]],

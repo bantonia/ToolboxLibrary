@@ -10,6 +10,7 @@
 
 #include "Object.h"
 #include "toolbox.h"
+#include "ToolboxEvents.h"
 #include "ErrorReport.h"
 #include "ClassType.h"
 
@@ -17,7 +18,18 @@
 #define UNUSED(x) ((x)=(x))
 #endif
 
-class ToolboxCoreObj : public Object, public ErrorReport {
+
+/** ToolboxCoreObj
+*
+* Library ToolboxC++Lib
+*
+* Class which defines a number of static member variables holding important values for a Toolbox/Wimp task.
+* It also defines a number of static methods not linked to any particular Toolbox window type or gadget.
+* All the Toolbox event methods which can be overloaded by a users Toolbox application are defined in this class.
+* This class is extended by ToolboxTask, it is ToolboxTask which needs to be exended by users application.
+*/
+
+class ToolboxCoreObj : public ToolboxEvents, public Object, public ErrorReport {
   public:
     static void getSysInfo(unsigned int reason_code, _kernel_swi_regs *regs);
     static ObjectId createObject(unsigned int flags, void *name_or_template);
@@ -50,99 +62,10 @@ class ToolboxCoreObj : public Object, public ErrorReport {
 
         // Toolbox Events
     virtual void eToolboxEventHandler(void *pollBlock);
-    virtual void toolboxError(){};
-    //virtual void toolboxObjectAutoCreated();
-    virtual void colourDboxObjectAutoCreated(){};
-    virtual void colourMenuObjectAutoCreated(){};
-    virtual void dcsObjectAutoCreated(){};
-    virtual void fileInfoObjectAutoCreated(){};
-    virtual void fontDboxObjectAutoCreated(){};
-    virtual void fontMenuObjectAutoCreated(){};
-    virtual void iconbarObjectAutoCreated(){};
-    virtual void menuObjectAutoCreated(){};
-    virtual void printDboxObjectAutoCreated(){};
-    virtual void progInfoObjectAutoCreated(){};
-    virtual void quitObjectAutoCreated(){};
-    virtual void saveAsObjectAutoCreated(){};
-    virtual void scaleObjectAutoCreated(){};
-    virtual void windowObjectAutoCreated(){};
-    virtual void unknownClassObjectAutoCreated(){};
-    virtual void toolboxObjectDeleted(){};
-    virtual void toolboxUserEvent(){};
-    virtual void colourDboxAboutToBeShown(){};
-    virtual void colourDboxDialogueCompleted(){};
-    virtual void colourDboxColourSelected(){};
-    virtual void colourMenuAboutToBeShown(){};
-    virtual void colourMenuHasBeenHidden(){};
-    virtual void colourMenuSelection(){};
-    virtual void dcsAboutToBeShown(){};
-    virtual void dcsDiscard(){};
-    virtual void dcsSave(){};
-    virtual void dcsDialogueCompleted(){};
-    virtual void dcsCancel(){};
-    virtual void fileInfoAboutToBeShown(){};
-    virtual void fileInfoDialogueCompleted(){};
-    virtual void fontDboxAboutToBeShown(){};
-    virtual void fontDboxDialogueCompleted(){};
-    virtual void fontDboxApplyFont(){};
-    virtual void fontMenuAboutToBeShown(){};
-    virtual void fontMenuHasBeenHidden(){};
-    virtual void fontMenuFontSelection(){};
-    virtual void iconbarClicked(){};
-    virtual void iconbarSelectAboutToBeShown(){};
-    virtual void iconbarAdjustAboutToBeShown(){};
-    virtual void menuAboutToBeShown(){};
-    virtual void menuHasBeenHidden(){};
-    virtual void menuSubMenu(){};
-    virtual void menuSelection(){};
-    virtual void printDboxAboutToBeShown(){};
-    virtual void printDboxDialogueCompleted(){};
-    virtual void printDboxSetUpAboutToBeShown(){};
-    virtual void printDboxSave(){};
-    virtual void printDboxSetUp(){};
-    virtual void printDboxPrint(){};
-    virtual void progInfoAboutToBeShown(){};
-    virtual void progInfoDialogueCompleted(){};
-    virtual void quitAboutToBeShown(){};
-    virtual void quitQuit(){};
-    virtual void quitDialogueCompleted(){};
-    virtual void quitCancel(){};
-    virtual void saveAsAboutToBeShown(){};
-    virtual void saveAsDialogueCompleted(){};
-    virtual void saveAsSaveToFile(){};
-    virtual void saveAsFillBuffer(){};
-    virtual void saveAsSaveCompleted(){};
-    virtual void scaleAboutToBeShown(){};
-    virtual void scaleDialogueCompleted(){};
-    virtual void scaleApplyFactor(){};
-    virtual void windowAboutToBeShown(){};
-    virtual void windowHasBeenHidden(){};
-    virtual void actionButtonSelected(){};
-    virtual void adjusterClicked(){};
-    virtual void draggableDragStarted(){};
-    virtual void draggableDragEnded(){};
-    virtual void numberRangeValueChanged(){};
-    virtual void optionButtonStateChanged(){};
-    virtual void popUpAboutToBeShown(){};
-    virtual void radioButtonStateChanged(){};
-    virtual void sliderValueChanged(){};
-    virtual void stringSetValueChanged(){};
-    virtual void stringSetAboutToBeShown(){};
-    virtual void writableFieldValueChanged(){};
-    virtual void tabsSelection(){};
-    virtual void treeViewNodeSelected(){};
-    virtual void treeViewNodeExpanded(){};
-    virtual void treeViewNodeRenamed(){};
-    virtual void treeViewNodeClicked(){};
-    virtual void treeViewNodeDragged(){};
-    virtual void treeViewScroll(){};
-    virtual void reservedToolboxInterApplicationProtocol(){};
-    virtual void reservedToolboxModuleEvent(){};
-    virtual void unknownToolboxEvent(){};
-
-    void showProperties() {};
-    char* getClassName() { return "ToolboxCoreObj";};
-    int getClassType() { return ClassType_ToolboxCoreObj;};
+    virtual void toolboxError(){}
+    
+    char* getClassName() { return "ToolboxCoreObj";}
+    int getClassType() { return ClassType_ToolboxCoreObj;}
   private:
     static int wimpVersion;
     static int taskHandle;

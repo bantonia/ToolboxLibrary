@@ -11,15 +11,38 @@
 #include "ToolboxCoreObj.h"
 #include "WimpObj.h"
 
+/** ToolboxTask
+*
+* Library ToolboxC++Lib
+*
+* Class which to needs to be extended when creating a Toolbox application. By extending this class
+* Wimp and Toolbox events which are inherited from WimpObj and ToolboxCoreObj may be overloaded and
+* handled by the overloaded member functions.
+*/
+
 class ToolboxTask : public WimpObj, public ToolboxCoreObj {
   public:
     ToolboxTask () {};
     ~ToolboxTask() {};
     void eToolboxEvent();
+
+/** Initialisation of where the applications resources are stored
+* @param[in] *resourcePath pointer to a character string with the name of a directory where resources are stored.
+*/
     int initTask(char *resourcePath);
 
+/** Currently unused
+*/
     void showProperties() {};
+
+/** Returns the classname of the object
+* Returns a pointer to a zero terminated character field containing "ToolboxTask"
+*/
     char* getClassName() { return "ToolboxTask";};
+
+/** Returns an integer representing a value for an object of class BitField
+* Value returned is ClassType_ToolboxTask
+*/
     int getClassType() { return ClassType_ToolboxTask;};
 };
 
