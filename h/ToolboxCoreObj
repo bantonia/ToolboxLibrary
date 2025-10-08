@@ -63,6 +63,8 @@ class ToolboxCoreObj : public ToolboxEvents, public Object, public ErrorReport {
         // Toolbox Events
     virtual void eToolboxEventHandler(void *pollBlock);
     virtual void toolboxError(){}
+
+    //void toolboxObjectAutoCreated(int objClass);
     
     char* getClassName() { return "ToolboxCoreObj";}
     int getClassType() { return ClassType_ToolboxCoreObj;}

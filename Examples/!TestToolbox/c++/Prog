@@ -1,87 +1,134 @@
 #include "Prog.h"
 
 Prog::Prog() {
-  this->mainWindow = NULL;
-  this->w = NULL;
-};
+  mainWindow = NULL;
+  w = NULL;
+}
 
 Prog::~Prog() {
-  if (this->mainWindow != NULL) delete this->mainWindow;
-  if (this->w != NULL) delete this->w;
+  if (mainWindow != NULL) delete mainWindow;
+  if (w != NULL) delete w;
+}
+
+void Prog::toolboxEventHandler(int event) {
+  switch(event) {
+    case ToolboxEvents::AdjusterClicked:
+      adjusterClicked();
+      break;
+    case ToolboxEvents::SliderValueChanged:
+      sliderValueChanged();
+      break;
+    case ToolboxEvents::RadioButtonStateChanged:
+      radioButtonStateChanged();
+      break;
+    case ToolboxEvents::ScrollListSelection:
+      scrollListSelection();
+      break;
+    case ToolboxEvents::ToolActionSelection:
+      toolActionSelection();
+      break;
+  }
+}
+
+void Prog::toolboxObjectAutoCreated(int object_class) {
+  switch(object_class) {
+    case ToolboxEvents::WindowObjectClass:
+      windowObjectAutoCreated();
+      break;
+    case ToolboxEvents::IconbarObjectClass:
+      iconbarObjectAutoCreated();
+      break;
+  }
+}
+
+void Prog::toolActionSelection() {
+  ToolActionSelectionEvent *pollEvent = (ToolActionSelectionEvent *) this->getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  mainWindow->setToolActionIdent("Hello");
+}
+
+void Prog::unknownToolboxEvent() {
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void Prog::scrollListSelection() {
+  ScrollListSelectionEvent *pollEvent = (ScrollListSelectionEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
 }
 
 void Prog::menuAboutToBeShown() {
-  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) this->getPollBlock();
+  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) getPollBlock();
   IdBlock *idBlock = &ToolboxCoreObj::idBlock; 
 }
 
 void Prog::windowObjectAutoCreated() {
-  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
-  ToolboxWindowObj *w = new ToolboxWindowObj();
-  w->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
-  if (w->isTemplate("Window")) {
-    this->mainWindow = new MainWindow(w);
-    this->mainWindow->w->setTitle("w2");
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  ToolboxWindowObj *window = new ToolboxWindowObj();
+  window->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id);
+  if (window->isTemplate("Window")) {
+    mainWindow = new MainWindow(window);
+    mainWindow->w->setTitle("w2");
     mainWindow->df3->setValue(mainWindow->rb1->getOnButton());
-    this->mainWindow->storeValues();
+    mainWindow->storeValues();
   }
-  if (w->isTemplate("Window_1")) {
-    this->w = w;
-    this->w->setTitle("w1");
+  if (window->isTemplate("Window_1")) {
+    w = window;
+    w->setTitle("w1");
   }
 }
 
 void Prog::adjusterClicked() {
-  AdjusterClickedEvent *pollEvent = (AdjusterClickedEvent *) this->getPollBlock();
-  if (ToolboxCoreObj::idBlock.self_id == this->mainWindow->w->readObjectId() && (ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterRight || ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterLeft)) {
+  AdjusterClickedEvent *pollEvent = (AdjusterClickedEvent *) getPollBlock();
+  if (ToolboxCoreObj::idBlock.self_id == mainWindow->w->readObjectId() && (ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterRight || ToolboxCoreObj::idBlock.self_component == MainWindow::MWAdjusterLeft)) {
     int id = ToolboxCoreObj::idBlock.self_component;
     switch(pollEvent->direction) {
       case Adjuster_Decrement: {
-          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() - 1);
+          mainWindow->slider->setValue(mainWindow->slider->getValue() - 1);
         }
         break;
       case Adjuster_Increment: {
-          this->mainWindow->slider->setValue(this->mainWindow->slider->getValue() + 1);
+          mainWindow->slider->setValue(mainWindow->slider->getValue() + 1);
         }
         break;
       default:
         break;
     }
-    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+    mainWindow->df2->setValue(mainWindow->slider->getValue());
   }
 }
 
 void Prog::sliderValueChanged() {
-  if (ToolboxCoreObj::idBlock.self_id == this->mainWindow->w->readObjectId()) {
-    this->mainWindow->df2->setValue(this->mainWindow->slider->getValue());
+  if (ToolboxCoreObj::idBlock.self_id == mainWindow->w->readObjectId()) {
+    mainWindow->df2->setValue(mainWindow->slider->getValue());
   }
 }
 
 void Prog::iconbarObjectAutoCreated() {
-  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this->getPollBlock();
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
   iconbar = new ToolboxIconbarObj();
   iconbar->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id).setText("Worked");
 }
 
 void Prog::toolboxUserEvent() {
-  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
+  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) getPollBlock();
   switch(tboxHdr->event_code) {
     case Quit: {
-        this->closeDown();
+        closeDown();
       }
       break;
     case ButtonAction1: {
-        w->setTitle("Rhubarb");
         mainWindow->w->setTitle("Hello");
-        mainWindow->df1->setValue(this->mainWindow->df1->getType());
+        mainWindow->df1->setValue(mainWindow->df1->getType());
         iconbar->setText("AB1");
+        mainWindow->setToolActionIdent("ToolAction");
+        w->setTitle("Rhubarb");
       }
       break;
     case ButtonAction2: {
-        w->setTitle("Hello");
         mainWindow->w->setTitle("Rhubarb");
-        mainWindow->df1->setValue(this->mainWindow->ab2->getType());
+        mainWindow->df1->setValue(mainWindow->ab2->getType());
         iconbar->setText("AB2");
+        w->setTitle("Hello");
       }
       break;
     case PopupMenuReset: {

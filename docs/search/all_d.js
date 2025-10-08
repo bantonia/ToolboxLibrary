@@ -9,7 +9,8 @@ var searchData=
   ['nullreason_6',['nullReason',['../class_wimp_obj.html#a9c3034e495e0b32102afec03c3f70e30',1,'WimpObj']]],
   ['nullreasoncode_7',['nullReasonCode',['../union_wimp_mask.html#aab096a2341eed1227b53eabc405110ab',1,'WimpMask']]],
   ['number_8',['number',['../structsprite__area.html#a8f318b429d10cf4ca30b075f44189200',1,'sprite_area']]],
-  ['numberrangevaluechanged_9',['numberRangeValueChanged',['../class_toolbox_events.html#a202f0e2246c563c0adff0a10eb08df11',1,'ToolboxEvents']]],
-  ['numbits_10',['numBits',['../class_bit_field.html#ac6bf8b8b3ca4ade272c894f59d43e148',1,'BitField']]],
-  ['numicons_11',['numIcons',['../struct_wind_def_str.html#a62dff20e0701a941d9a8bf7c1c4d4513',1,'WindDefStr']]]
+  ['numberrangevaluechanged_9',['NumberRangeValueChanged',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aad13ed8b22a1886789469fba0875454fb',1,'ToolboxEvents']]],
+  ['numberrangevaluechanged_10',['numberRangeValueChanged',['../class_toolbox_events.html#a202f0e2246c563c0adff0a10eb08df11',1,'ToolboxEvents']]],
+  ['numbits_11',['numBits',['../class_bit_field.html#ac6bf8b8b3ca4ade272c894f59d43e148',1,'BitField']]],
+  ['numicons_12',['numIcons',['../struct_wind_def_str.html#a62dff20e0701a941d9a8bf7c1c4d4513',1,'WindDefStr']]]
 ];

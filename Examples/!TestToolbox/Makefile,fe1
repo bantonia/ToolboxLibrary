@@ -1,0 +1,230 @@
+# Project:   TestToolbo
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c +g -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -d -o $@ 
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!Runimage:   @.o.main @.o.MainWindow @.o.Prog \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib 
+        Link $(Linkflags) @.o.main @.o.MainWindow @.o.Prog \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib 
+
+
+# User-editable dependencies:
+
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.MainWindow:   @.c++.MainWindow
+        c++ $(c++flags) -o @.o.MainWindow @.c++.MainWindow 
+@.o.Prog:   @.c++.Prog
+        c++ $(c++flags) -o @.o.Prog @.c++.Prog 
+
+
+# Dynamic dependencies:
+o.MainWindow:	c++.MainWindow
+o.MainWindow:	h.MainWindow
+o.MainWindow:	C:h.ToolboxWindowObj
+o.MainWindow:	C:h.window
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.wimp
+o.MainWindow:	C:h.gadgets
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxObj
+o.MainWindow:	C:h.Object
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.ErrorReport
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxDisplayField
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.ErrorReport
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.gadgets
+o.MainWindow:	C:h.Object
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxActionButton
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.ToolboxIconbarObj
+o.MainWindow:	C:h.iconbar
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxObj
+o.MainWindow:	C:h.ToolboxSlider
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.ToolboxScrollList
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.ScrollList
+o.MainWindow:	C:h.ToolboxRadioButton
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.ToolboxPopUp
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.ToolboxToolAction
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.toolbox
+o.main:	c++.main
+o.main:	h.Prog
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	h.MainWindow
+o.main:	C:h.ToolboxWindowObj
+o.main:	C:h.window
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxDisplayField
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.Object
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxActionButton
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.ToolboxIconbarObj
+o.main:	C:h.iconbar
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.ToolboxSlider
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.ToolboxScrollList
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.ScrollList
+o.main:	C:h.ToolboxRadioButton
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.ToolboxPopUp
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.ToolboxToolAction
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.toolbox
+o.main:	C:h.menu
+o.main:	C:h.ScrollList
+o.main:	C:h.ToolboxToolAction
+o.Prog:	c++.Prog
+o.Prog:	h.Prog
+o.Prog:	C:h.ToolboxTask
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxCoreObj
+o.Prog:	C:h.Object
+o.Prog:	C:h.toolbox
+o.Prog:	C:h.kernel
+o.Prog:	C:h.wimp
+o.Prog:	C:h.ToolboxEvents
+o.Prog:	C:h.toolbox
+o.Prog:	C:h.gadgets
+o.Prog:	C:h.treeview
+o.Prog:	C:h.window
+o.Prog:	C:h.ScrollList
+o.Prog:	C:h.tabs
+o.Prog:	C:h.ErrorReport
+o.Prog:	C:h.kernel
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.WimpObj
+o.Prog:	C:h.kernel
+o.Prog:	C:h.ErrorReport
+o.Prog:	C:h.libc
+o.Prog:	C:h.kernel
+o.Prog:	C:h.Object
+o.Prog:	C:h.wimp
+o.Prog:	C:h.ClassType
+o.Prog:	h.MainWindow
+o.Prog:	C:h.ToolboxWindowObj
+o.Prog:	C:h.window
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxObj
+o.Prog:	C:h.Object
+o.Prog:	C:h.toolbox
+o.Prog:	C:h.ErrorReport
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxDisplayField
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.kernel
+o.Prog:	C:h.ErrorReport
+o.Prog:	C:h.toolbox
+o.Prog:	C:h.gadgets
+o.Prog:	C:h.Object
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxActionButton
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.ToolboxIconbarObj
+o.Prog:	C:h.iconbar
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxObj
+o.Prog:	C:h.ToolboxSlider
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.ToolboxScrollList
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.ScrollList
+o.Prog:	C:h.ToolboxRadioButton
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.ToolboxPopUp
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.ToolboxToolAction
+o.Prog:	C:h.ClassType
+o.Prog:	C:h.ToolboxGadget
+o.Prog:	C:h.toolbox
+o.Prog:	C:h.menu
+o.Prog:	C:h.ScrollList
+o.Prog:	C:h.ToolboxToolAction

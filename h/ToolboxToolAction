@@ -19,7 +19,7 @@ typedef struct {
 class ToolboxToolAction : public ToolboxGadget {
   public:
 
-    enum {
+    enum ToolActionMethods {
       ToolAction_SetIdent      =  0x140140,
       ToolAction_GetIdent,     // 0x140141
       ToolAction_SetAction,    // 0x140142
@@ -30,11 +30,11 @@ class ToolboxToolAction : public ToolboxGadget {
       ToolAction_GetState,     // 0x140147
       ToolAction_SetPressed,   // 0x140148
       ToolAction_GetPressed    // 0x140149
-    } ToolActionMethods;
+    };
 
-    enum {
+    enum ToolActionEvents {
       ToolAction_SelectEvent = 0x140140
-    } ToolActionEvents;
+    };
 
 
     ToolboxToolAction();

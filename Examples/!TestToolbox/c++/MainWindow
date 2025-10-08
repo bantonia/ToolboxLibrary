@@ -10,6 +10,7 @@ MainWindow::MainWindow() {
   rb1 = NULL;
   rb2 = NULL;
   rb3 = NULL;
+  scl = NULL;
 }
 
 MainWindow::MainWindow(ToolboxWindowObj *windowObj) {
@@ -25,6 +26,9 @@ MainWindow::MainWindow(ToolboxWindowObj *windowObj) {
   rb1 = new ToolboxRadioButton(id, MWRadioButton1);
   rb2 = new ToolboxRadioButton(id, MWRadioButton2);
   rb3 = new ToolboxRadioButton(id, MWRadioButton3);
+  scl = new ToolboxScrollList(id, MWScrollList);
+  ta = new ToolboxToolAction(id, MWToolAction);
+  scl->addItem("Hello", NULL, NULL, 0);
   title = NULL;
 }
 
@@ -64,5 +68,12 @@ MainWindow::~MainWindow() {
   if (rb1 != NULL) delete rb1;
   if (rb2 != NULL) delete rb2;
   if (rb3 != NULL) delete rb3;
+  if (scl != NULL) delete scl;
+  if (ta != NULL) delete ta;
 }
+
+void MainWindow::setToolActionIdent(char *name) {
+  ta->setIdent(name);
+}
+
 

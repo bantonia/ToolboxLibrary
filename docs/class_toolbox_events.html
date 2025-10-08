@@ -89,7 +89,7 @@ $(function(){initNavTree('class_toolbox_events.html','','class_toolbox_events-me
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ToolboxEvents Class Reference</div></div>
+  <div class="headertitle"><div class="title">ToolboxEvents Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,6 +105,121 @@ Inheritance diagram for ToolboxEvents:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a6f76eaa7ac0f5e0dde071574270f3f1a" id="r_a6f76eaa7ac0f5e0dde071574270f3f1a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1a">Toolbox_Event</a> { <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b">Error</a> = 0x44ec0
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa4d12ca4d49c94a31ef1e0351ef4e225e">ObjectAutoCreated</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa9be6ccc53a894d2ce39ae68f0d42f7b2">ObjectDeleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaa6c4b87080eb4406d4338bcbf4946de7">WindowAboutToBeShown</a> = 0x82880
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa083aabfa135803bdcf5399b057b2c724">ActionButtonSelected</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaef125966e9180688885e8674fd1c5c00">OptionButtonStateChanged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aab5aac5600747cb521a9dab750dc5cb3d">RadioButtonStateChanged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa608fd70383cf345d3ef61c85c2f1614e">WritableFieldValueChanged</a> = 0x82885
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa5f617ea7837e6f661711226f6a5ff961">SliderValueChanged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa6e6a132a03f7d40158521794ed0bc35d">DraggableDragStarted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa27d58cca44713dc25b910cebdb4310a9">DraggableDragEnded</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa318c07b0f4b08d8d6b075f8c6f48eee4">PopUpAboutToBeShown</a> = 0x8288b
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaecefe788fc87bb763959aef216e3186f">AdjusterClicked</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aad13ed8b22a1886789469fba0875454fb">NumberRangeValueChanged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa7452116d4de5967819957684698d2aa0">StringSetValueChanged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa4c1c6de474dffaefaffb3eaa5194a25e">StringSetAboutToBeShown</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa00e4f63af60b5e44ac6e88fab43864f3">WindowHasBeenHidden</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaa6759bfc41d9d1600d7e4fb03a436ef6">MenuAboutToBeShown</a> = 0x828c0
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa6d347686142c78b40f9a9cf1a2aa3938">MenuHasBeenHidden</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaaf127ae5448d52a515ae1aadfc73b61d">MenuSubMenu</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa51b28a16350fc8625301eb6b29f32629">MenuSelection</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa654feb4c1403408287949f09ed15c751">IconbarClicked</a> = 0x82900
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa05a22552d294623098f2e435cba31bc1">IconbarSelectAboutToBeShown</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa7084803dd217b77ee88c13347d98c54e">IconbarAdjustAboutToBeShown</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa1907034bccefeebc6369fd45885df00e">ColourMenuAboutToBeShown</a> = 0x82980
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa56c822692dd81eb52e7b7484bee13676">ColourMenuHasBeenHidden</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa370569d16ded439aed941aa755373550">ColourMenuSelection</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aab642dd38bed66f95391262e0ff367c1a">ColourDboxAboutToBeShown</a> = 0x829c0
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aae38267396135046d2d2ac1799a6195cc">ColourDboxDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa7160e4239dc3772606130acd21f2d8cb">ColourDboxColourSelected</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa10bb0a677c339ec6f3d3bb0fadac44fb">FontDboxAboutToBeShown</a> = 0x82a00
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa2e1e89921d827f1ca6ee8c181c809d35">FontDboxDialogueCompleted</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaa6da736904c7604636473a981658a856">FontDboxApplyFont</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa727ff289d254505583e9f46add526cc8">FontMenuAboutToBeShown</a> = 0x82a40
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa51a06fdc5f8c7b8fba2e75ebe86c2668">FontMenuHasBeenHidden</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aab82101fa2d0638437f2f4975a2414202">FontMenuFontSelection</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa2a886b74024ed50e3093a712af0e9e72">DCSAboutToBeShown</a> = 0x82a80
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa78320b532753142c5d74519297a1237e">DCSDiscard</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa9965f8b93c358e5e65630dbb4a5246e6">DCSSave</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa0864769a62b1e638ded93cedb319e0a8">DCSDialogueCompleted</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa450f95a71f73dfe86116be28120393a1">DCSCancel</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa0d251507df184a9d23c0b4aa8aaf68f9">QuitAboutToBeShown</a> = 0x82a90
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa264f6aac8cf2858707e4dc374635a67b">QuitQuit</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa3bf77047675b2ea0c73fe47003e61226">QuitDialogueCompleted</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa4d79334a476be391b7200432ed532d69">QuitCancel</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa1a4816f3bca6ba5231201778912e40e9">FileInfoAboutToBeShown</a> = 0x82ac0
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aafe52f0fd58db2b96764a36e8a2bf8211">FileInfoDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aad8e3ec7df8b8578b5ad697516c09c221">PrintDboxAboutToBeShown</a> = 0x82b00
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaef01a15568674b1f9803514b30fb7d7c">PrintDboxDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aab240941e71f1aba23a60df119126059d">PrintDboxSetUpAboutToBeShown</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa5a89983b2cd27180271099526b8af8de">PrintDboxSave</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa3a3cd619179ea49a1ab2cc86ad023486">PrintDboxSetUp</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa9812ec02d0bb42504a3a7f6049dd10f1">PrintDboxPrint</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa695f73ecde8e187db86095875143b281">ProgInfoAboutToBeShown</a> = 0x82b40
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa7bd565aab77a45683f57548a069ca09e">ProgInfoDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aae67397dd5aeb3d77a0efbf8ce93832e3">SaveAsAboutToBeShown</a> = 0x82bc0
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aae8e11e725021b5cce0e45db277c93792">SaveAsDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaef614b62551af8d96adbc14e44b0ad02">SaveAsSaveToFile</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aab3b36d9848a4253a5a40d2cda9bdd24e">SaveAsFillBuffer</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aae35556f12be49772d0789fd88b6d314e">SaveAsSaveCompleted</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa34b02168c696abfc199ad1601eb04fd6">ScaleAboutToBeShown</a> = 0x82c00
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaf77b2895ade85bed8ab5caaba85ff590">ScaleDialogueCompleted</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa6584ae78ba2b2f2eeca5932225cc6ca4">ScaleApplyFactor</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa6765464b571f1a7dc132e6ec772934d2">ToolActionSelection</a> = 0x140140
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa04ef117781c7c49812f7a2db95b5227c">ScrollListSelection</a> = 0x140181
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaf1e9039b15c59fea3e36cc05f55f55f9">TreeViewNodeSelected</a> = 0x140280
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa845764a733421a17b2625567736b0816">TreeViewNodeExpanded</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa943613710104558db5053882d230e655">TreeViewNodeRenamed</a>
+, <br />
+&#160;&#160;<a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa72fbace503abcdda6a833d493f88af1c">TreeViewNodeClicked</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aae34dd1311bfc2cb4adc1bb0f14960261">TreeViewNodeDragged</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aa76caf9f1cd907848bac3629f13172add">TreeViewScroll</a>
+, <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1aaab359fe5d8cbbcaa0f9ae95ad42b1b13">TabsSelection</a> = 0x1402c0
+<br />
+ }</td></tr>
+<tr class="memitem:a74b9ee04b6ec4e60318fae499af37431" id="r_a74b9ee04b6ec4e60318fae499af37431"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74b9ee04b6ec4e60318fae499af37431">Toolbox_ObjectClass</a> { <br />
+&#160;&#160;<a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d">WindowObjectClass</a> = 0x82880
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a9d35fcb120e086f5e202f22fe6e01e10">MenuObjectClass</a> = 0x828c0
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431affb4bdff004ebc22fbf1aa1ef212d7a6">IconbarObjectClass</a> = 0x82900
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431aa66279305c4aa4819aa3eff0102460d6">ColourMenuObjectClass</a> = 0x82980
+, <br />
+&#160;&#160;<a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a63a11612037015d5f52442c4388850a7">ColourDboxObjectClass</a> = 0x829c0
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a3934c55730abc3ff49a82747e5d3c7fe">FontDboxObjectClass</a> = 0x82a00
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a1cb1aa5c41a9a46aba27906bee071fa1">FontMenuObjectClass</a> = 0x82a40
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a9d258baab3349dee1fa0fabc58c4f17f">DCSObjectClass</a> = 0x82a80
+, <br />
+&#160;&#160;<a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a5eedcc49e6d95e35adec5cbdb9297937">QuitObjectClass</a> = 0x82a90
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431ab67082dad728927965cd8d35dfd4e17a">FileInfoObjectClass</a> = 0x82ac0
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a9b19065a69ff3e7b9c43e2c2be09daa9">PrintDboxObjectClass</a> = 0x82b00
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150">ProgInfoObjectClass</a> = 0x82b40
+, <br />
+&#160;&#160;<a class="el" href="#a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5">SaveAsObjectClass</a> = 0x82bc0
+, <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431a5a1aed89642f9a112d4be443cfdf891d">ScaleObjectClass</a> = 0x82c00
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8befc7d1ea84c53de2f26449949982c1" id="r_a8befc7d1ea84c53de2f26449949982c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8befc7d1ea84c53de2f26449949982c1">colourDboxObjectAutoCreated</a> ()</td></tr>
@@ -122,7 +237,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a9522b1e9a7d2ea0bb874f3ad0787f4" id="r_a6a9522b1e9a7d2ea0bb874f3ad0787f4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9522b1e9a7d2ea0bb874f3ad0787f4">scaleObjectAutoCreated</a> ()</td></tr>
 <tr class="memitem:a0133376c8c16b426aa72bded9a0223a2" id="r_a0133376c8c16b426aa72bded9a0223a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0133376c8c16b426aa72bded9a0223a2">windowObjectAutoCreated</a> ()</td></tr>
 <tr class="memitem:a3293d28ebf73862754a8934b4fa6d04d" id="r_a3293d28ebf73862754a8934b4fa6d04d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3293d28ebf73862754a8934b4fa6d04d">unknownClassObjectAutoCreated</a> ()</td></tr>
-<tr class="memitem:a11b2e08c171dbd68353d28136457419a" id="r_a11b2e08c171dbd68353d28136457419a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b2e08c171dbd68353d28136457419a">toolboxObjectAutoCreated</a> ()</td></tr>
+<tr class="memitem:a5ea68f035ee45463c9707f732eae292e" id="r_a5ea68f035ee45463c9707f732eae292e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ea68f035ee45463c9707f732eae292e">toolboxObjectAutoCreated</a> (int objClass)</td></tr>
 <tr class="memitem:a063d73e8e8f892c2142ca2417a295744" id="r_a063d73e8e8f892c2142ca2417a295744"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a063d73e8e8f892c2142ca2417a295744">toolboxObjectDeleted</a> ()</td></tr>
 <tr class="memitem:a124520eea049838d9508aa45632ce402" id="r_a124520eea049838d9508aa45632ce402"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a124520eea049838d9508aa45632ce402">toolboxUserEvent</a> ()</td></tr>
 <tr class="memitem:ab07a897a78b28e51277a82c10180d828" id="r_ab07a897a78b28e51277a82c10180d828"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab07a897a78b28e51277a82c10180d828">colourDboxAboutToBeShown</a> ()</td></tr>
@@ -197,7 +312,127 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e8c1c0b411588fdbb3f5131451dc4c5" id="r_a6e8c1c0b411588fdbb3f5131451dc4c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e8c1c0b411588fdbb3f5131451dc4c5">reservedToolboxInterApplicationProtocol</a> ()</td></tr>
 <tr class="memitem:ae02a8a9072ea17ccb3747bc8e3638e11" id="r_ae02a8a9072ea17ccb3747bc8e3638e11"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae02a8a9072ea17ccb3747bc8e3638e11">reservedToolboxModuleEvent</a> ()</td></tr>
 <tr class="memitem:a9c3bd6e7f05d1ad9f01fbfc6434bd0f5" id="r_a9c3bd6e7f05d1ad9f01fbfc6434bd0f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3bd6e7f05d1ad9f01fbfc6434bd0f5">unknownToolboxEvent</a> ()</td></tr>
+<tr class="memitem:a1922a9373c5982c884a7e9c59b839121" id="r_a1922a9373c5982c884a7e9c59b839121"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1922a9373c5982c884a7e9c59b839121">toolboxEventHandler</a> (int event)=0</td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a6f76eaa7ac0f5e0dde071574270f3f1a" name="a6f76eaa7ac0f5e0dde071574270f3f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f76eaa7ac0f5e0dde071574270f3f1a">&#9670;&#160;</a></span>Toolbox_Event</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a6f76eaa7ac0f5e0dde071574270f3f1a">ToolboxEvents::Toolbox_Event</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b" name="a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa4d12ca4d49c94a31ef1e0351ef4e225e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa4d12ca4d49c94a31ef1e0351ef4e225e"></a>ObjectAutoCreated&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa9be6ccc53a894d2ce39ae68f0d42f7b2" name="a6f76eaa7ac0f5e0dde071574270f3f1aa9be6ccc53a894d2ce39ae68f0d42f7b2"></a>ObjectDeleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaa6c4b87080eb4406d4338bcbf4946de7" name="a6f76eaa7ac0f5e0dde071574270f3f1aaa6c4b87080eb4406d4338bcbf4946de7"></a>WindowAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa083aabfa135803bdcf5399b057b2c724" name="a6f76eaa7ac0f5e0dde071574270f3f1aa083aabfa135803bdcf5399b057b2c724"></a>ActionButtonSelected&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaef125966e9180688885e8674fd1c5c00" name="a6f76eaa7ac0f5e0dde071574270f3f1aaef125966e9180688885e8674fd1c5c00"></a>OptionButtonStateChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aab5aac5600747cb521a9dab750dc5cb3d" name="a6f76eaa7ac0f5e0dde071574270f3f1aab5aac5600747cb521a9dab750dc5cb3d"></a>RadioButtonStateChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa608fd70383cf345d3ef61c85c2f1614e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa608fd70383cf345d3ef61c85c2f1614e"></a>WritableFieldValueChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa5f617ea7837e6f661711226f6a5ff961" name="a6f76eaa7ac0f5e0dde071574270f3f1aa5f617ea7837e6f661711226f6a5ff961"></a>SliderValueChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa6e6a132a03f7d40158521794ed0bc35d" name="a6f76eaa7ac0f5e0dde071574270f3f1aa6e6a132a03f7d40158521794ed0bc35d"></a>DraggableDragStarted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa27d58cca44713dc25b910cebdb4310a9" name="a6f76eaa7ac0f5e0dde071574270f3f1aa27d58cca44713dc25b910cebdb4310a9"></a>DraggableDragEnded&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa318c07b0f4b08d8d6b075f8c6f48eee4" name="a6f76eaa7ac0f5e0dde071574270f3f1aa318c07b0f4b08d8d6b075f8c6f48eee4"></a>PopUpAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaecefe788fc87bb763959aef216e3186f" name="a6f76eaa7ac0f5e0dde071574270f3f1aaecefe788fc87bb763959aef216e3186f"></a>AdjusterClicked&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aad13ed8b22a1886789469fba0875454fb" name="a6f76eaa7ac0f5e0dde071574270f3f1aad13ed8b22a1886789469fba0875454fb"></a>NumberRangeValueChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa7452116d4de5967819957684698d2aa0" name="a6f76eaa7ac0f5e0dde071574270f3f1aa7452116d4de5967819957684698d2aa0"></a>StringSetValueChanged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa4c1c6de474dffaefaffb3eaa5194a25e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa4c1c6de474dffaefaffb3eaa5194a25e"></a>StringSetAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa00e4f63af60b5e44ac6e88fab43864f3" name="a6f76eaa7ac0f5e0dde071574270f3f1aa00e4f63af60b5e44ac6e88fab43864f3"></a>WindowHasBeenHidden&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaa6759bfc41d9d1600d7e4fb03a436ef6" name="a6f76eaa7ac0f5e0dde071574270f3f1aaa6759bfc41d9d1600d7e4fb03a436ef6"></a>MenuAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa6d347686142c78b40f9a9cf1a2aa3938" name="a6f76eaa7ac0f5e0dde071574270f3f1aa6d347686142c78b40f9a9cf1a2aa3938"></a>MenuHasBeenHidden&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaaf127ae5448d52a515ae1aadfc73b61d" name="a6f76eaa7ac0f5e0dde071574270f3f1aaaf127ae5448d52a515ae1aadfc73b61d"></a>MenuSubMenu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa51b28a16350fc8625301eb6b29f32629" name="a6f76eaa7ac0f5e0dde071574270f3f1aa51b28a16350fc8625301eb6b29f32629"></a>MenuSelection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa654feb4c1403408287949f09ed15c751" name="a6f76eaa7ac0f5e0dde071574270f3f1aa654feb4c1403408287949f09ed15c751"></a>IconbarClicked&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa05a22552d294623098f2e435cba31bc1" name="a6f76eaa7ac0f5e0dde071574270f3f1aa05a22552d294623098f2e435cba31bc1"></a>IconbarSelectAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa7084803dd217b77ee88c13347d98c54e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa7084803dd217b77ee88c13347d98c54e"></a>IconbarAdjustAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa1907034bccefeebc6369fd45885df00e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa1907034bccefeebc6369fd45885df00e"></a>ColourMenuAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa56c822692dd81eb52e7b7484bee13676" name="a6f76eaa7ac0f5e0dde071574270f3f1aa56c822692dd81eb52e7b7484bee13676"></a>ColourMenuHasBeenHidden&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa370569d16ded439aed941aa755373550" name="a6f76eaa7ac0f5e0dde071574270f3f1aa370569d16ded439aed941aa755373550"></a>ColourMenuSelection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aab642dd38bed66f95391262e0ff367c1a" name="a6f76eaa7ac0f5e0dde071574270f3f1aab642dd38bed66f95391262e0ff367c1a"></a>ColourDboxAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aae38267396135046d2d2ac1799a6195cc" name="a6f76eaa7ac0f5e0dde071574270f3f1aae38267396135046d2d2ac1799a6195cc"></a>ColourDboxDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa7160e4239dc3772606130acd21f2d8cb" name="a6f76eaa7ac0f5e0dde071574270f3f1aa7160e4239dc3772606130acd21f2d8cb"></a>ColourDboxColourSelected&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa10bb0a677c339ec6f3d3bb0fadac44fb" name="a6f76eaa7ac0f5e0dde071574270f3f1aa10bb0a677c339ec6f3d3bb0fadac44fb"></a>FontDboxAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa2e1e89921d827f1ca6ee8c181c809d35" name="a6f76eaa7ac0f5e0dde071574270f3f1aa2e1e89921d827f1ca6ee8c181c809d35"></a>FontDboxDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaa6da736904c7604636473a981658a856" name="a6f76eaa7ac0f5e0dde071574270f3f1aaa6da736904c7604636473a981658a856"></a>FontDboxApplyFont&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa727ff289d254505583e9f46add526cc8" name="a6f76eaa7ac0f5e0dde071574270f3f1aa727ff289d254505583e9f46add526cc8"></a>FontMenuAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa51a06fdc5f8c7b8fba2e75ebe86c2668" name="a6f76eaa7ac0f5e0dde071574270f3f1aa51a06fdc5f8c7b8fba2e75ebe86c2668"></a>FontMenuHasBeenHidden&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aab82101fa2d0638437f2f4975a2414202" name="a6f76eaa7ac0f5e0dde071574270f3f1aab82101fa2d0638437f2f4975a2414202"></a>FontMenuFontSelection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa2a886b74024ed50e3093a712af0e9e72" name="a6f76eaa7ac0f5e0dde071574270f3f1aa2a886b74024ed50e3093a712af0e9e72"></a>DCSAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa78320b532753142c5d74519297a1237e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa78320b532753142c5d74519297a1237e"></a>DCSDiscard&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa9965f8b93c358e5e65630dbb4a5246e6" name="a6f76eaa7ac0f5e0dde071574270f3f1aa9965f8b93c358e5e65630dbb4a5246e6"></a>DCSSave&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa0864769a62b1e638ded93cedb319e0a8" name="a6f76eaa7ac0f5e0dde071574270f3f1aa0864769a62b1e638ded93cedb319e0a8"></a>DCSDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa450f95a71f73dfe86116be28120393a1" name="a6f76eaa7ac0f5e0dde071574270f3f1aa450f95a71f73dfe86116be28120393a1"></a>DCSCancel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa0d251507df184a9d23c0b4aa8aaf68f9" name="a6f76eaa7ac0f5e0dde071574270f3f1aa0d251507df184a9d23c0b4aa8aaf68f9"></a>QuitAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa264f6aac8cf2858707e4dc374635a67b" name="a6f76eaa7ac0f5e0dde071574270f3f1aa264f6aac8cf2858707e4dc374635a67b"></a>QuitQuit&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa3bf77047675b2ea0c73fe47003e61226" name="a6f76eaa7ac0f5e0dde071574270f3f1aa3bf77047675b2ea0c73fe47003e61226"></a>QuitDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa4d79334a476be391b7200432ed532d69" name="a6f76eaa7ac0f5e0dde071574270f3f1aa4d79334a476be391b7200432ed532d69"></a>QuitCancel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa1a4816f3bca6ba5231201778912e40e9" name="a6f76eaa7ac0f5e0dde071574270f3f1aa1a4816f3bca6ba5231201778912e40e9"></a>FileInfoAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aafe52f0fd58db2b96764a36e8a2bf8211" name="a6f76eaa7ac0f5e0dde071574270f3f1aafe52f0fd58db2b96764a36e8a2bf8211"></a>FileInfoDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aad8e3ec7df8b8578b5ad697516c09c221" name="a6f76eaa7ac0f5e0dde071574270f3f1aad8e3ec7df8b8578b5ad697516c09c221"></a>PrintDboxAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaef01a15568674b1f9803514b30fb7d7c" name="a6f76eaa7ac0f5e0dde071574270f3f1aaef01a15568674b1f9803514b30fb7d7c"></a>PrintDboxDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aab240941e71f1aba23a60df119126059d" name="a6f76eaa7ac0f5e0dde071574270f3f1aab240941e71f1aba23a60df119126059d"></a>PrintDboxSetUpAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa5a89983b2cd27180271099526b8af8de" name="a6f76eaa7ac0f5e0dde071574270f3f1aa5a89983b2cd27180271099526b8af8de"></a>PrintDboxSave&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa3a3cd619179ea49a1ab2cc86ad023486" name="a6f76eaa7ac0f5e0dde071574270f3f1aa3a3cd619179ea49a1ab2cc86ad023486"></a>PrintDboxSetUp&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa9812ec02d0bb42504a3a7f6049dd10f1" name="a6f76eaa7ac0f5e0dde071574270f3f1aa9812ec02d0bb42504a3a7f6049dd10f1"></a>PrintDboxPrint&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa695f73ecde8e187db86095875143b281" name="a6f76eaa7ac0f5e0dde071574270f3f1aa695f73ecde8e187db86095875143b281"></a>ProgInfoAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa7bd565aab77a45683f57548a069ca09e" name="a6f76eaa7ac0f5e0dde071574270f3f1aa7bd565aab77a45683f57548a069ca09e"></a>ProgInfoDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aae67397dd5aeb3d77a0efbf8ce93832e3" name="a6f76eaa7ac0f5e0dde071574270f3f1aae67397dd5aeb3d77a0efbf8ce93832e3"></a>SaveAsAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aae8e11e725021b5cce0e45db277c93792" name="a6f76eaa7ac0f5e0dde071574270f3f1aae8e11e725021b5cce0e45db277c93792"></a>SaveAsDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaef614b62551af8d96adbc14e44b0ad02" name="a6f76eaa7ac0f5e0dde071574270f3f1aaef614b62551af8d96adbc14e44b0ad02"></a>SaveAsSaveToFile&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aab3b36d9848a4253a5a40d2cda9bdd24e" name="a6f76eaa7ac0f5e0dde071574270f3f1aab3b36d9848a4253a5a40d2cda9bdd24e"></a>SaveAsFillBuffer&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aae35556f12be49772d0789fd88b6d314e" name="a6f76eaa7ac0f5e0dde071574270f3f1aae35556f12be49772d0789fd88b6d314e"></a>SaveAsSaveCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa34b02168c696abfc199ad1601eb04fd6" name="a6f76eaa7ac0f5e0dde071574270f3f1aa34b02168c696abfc199ad1601eb04fd6"></a>ScaleAboutToBeShown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaf77b2895ade85bed8ab5caaba85ff590" name="a6f76eaa7ac0f5e0dde071574270f3f1aaf77b2895ade85bed8ab5caaba85ff590"></a>ScaleDialogueCompleted&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa6584ae78ba2b2f2eeca5932225cc6ca4" name="a6f76eaa7ac0f5e0dde071574270f3f1aa6584ae78ba2b2f2eeca5932225cc6ca4"></a>ScaleApplyFactor&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa6765464b571f1a7dc132e6ec772934d2" name="a6f76eaa7ac0f5e0dde071574270f3f1aa6765464b571f1a7dc132e6ec772934d2"></a>ToolActionSelection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa04ef117781c7c49812f7a2db95b5227c" name="a6f76eaa7ac0f5e0dde071574270f3f1aa04ef117781c7c49812f7a2db95b5227c"></a>ScrollListSelection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaf1e9039b15c59fea3e36cc05f55f55f9" name="a6f76eaa7ac0f5e0dde071574270f3f1aaf1e9039b15c59fea3e36cc05f55f55f9"></a>TreeViewNodeSelected&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa845764a733421a17b2625567736b0816" name="a6f76eaa7ac0f5e0dde071574270f3f1aa845764a733421a17b2625567736b0816"></a>TreeViewNodeExpanded&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa943613710104558db5053882d230e655" name="a6f76eaa7ac0f5e0dde071574270f3f1aa943613710104558db5053882d230e655"></a>TreeViewNodeRenamed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa72fbace503abcdda6a833d493f88af1c" name="a6f76eaa7ac0f5e0dde071574270f3f1aa72fbace503abcdda6a833d493f88af1c"></a>TreeViewNodeClicked&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aae34dd1311bfc2cb4adc1bb0f14960261" name="a6f76eaa7ac0f5e0dde071574270f3f1aae34dd1311bfc2cb4adc1bb0f14960261"></a>TreeViewNodeDragged&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aa76caf9f1cd907848bac3629f13172add" name="a6f76eaa7ac0f5e0dde071574270f3f1aa76caf9f1cd907848bac3629f13172add"></a>TreeViewScroll&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6f76eaa7ac0f5e0dde071574270f3f1aaab359fe5d8cbbcaa0f9ae95ad42b1b13" name="a6f76eaa7ac0f5e0dde071574270f3f1aaab359fe5d8cbbcaa0f9ae95ad42b1b13"></a>TabsSelection&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a74b9ee04b6ec4e60318fae499af37431" name="a74b9ee04b6ec4e60318fae499af37431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b9ee04b6ec4e60318fae499af37431">&#9670;&#160;</a></span>Toolbox_ObjectClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a74b9ee04b6ec4e60318fae499af37431">ToolboxEvents::Toolbox_ObjectClass</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d" name="a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d"></a>WindowObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a9d35fcb120e086f5e202f22fe6e01e10" name="a74b9ee04b6ec4e60318fae499af37431a9d35fcb120e086f5e202f22fe6e01e10"></a>MenuObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431affb4bdff004ebc22fbf1aa1ef212d7a6" name="a74b9ee04b6ec4e60318fae499af37431affb4bdff004ebc22fbf1aa1ef212d7a6"></a>IconbarObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431aa66279305c4aa4819aa3eff0102460d6" name="a74b9ee04b6ec4e60318fae499af37431aa66279305c4aa4819aa3eff0102460d6"></a>ColourMenuObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a63a11612037015d5f52442c4388850a7" name="a74b9ee04b6ec4e60318fae499af37431a63a11612037015d5f52442c4388850a7"></a>ColourDboxObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a3934c55730abc3ff49a82747e5d3c7fe" name="a74b9ee04b6ec4e60318fae499af37431a3934c55730abc3ff49a82747e5d3c7fe"></a>FontDboxObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a1cb1aa5c41a9a46aba27906bee071fa1" name="a74b9ee04b6ec4e60318fae499af37431a1cb1aa5c41a9a46aba27906bee071fa1"></a>FontMenuObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a9d258baab3349dee1fa0fabc58c4f17f" name="a74b9ee04b6ec4e60318fae499af37431a9d258baab3349dee1fa0fabc58c4f17f"></a>DCSObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a5eedcc49e6d95e35adec5cbdb9297937" name="a74b9ee04b6ec4e60318fae499af37431a5eedcc49e6d95e35adec5cbdb9297937"></a>QuitObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431ab67082dad728927965cd8d35dfd4e17a" name="a74b9ee04b6ec4e60318fae499af37431ab67082dad728927965cd8d35dfd4e17a"></a>FileInfoObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a9b19065a69ff3e7b9c43e2c2be09daa9" name="a74b9ee04b6ec4e60318fae499af37431a9b19065a69ff3e7b9c43e2c2be09daa9"></a>PrintDboxObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150" name="a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150"></a>ProgInfoObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5" name="a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5"></a>SaveAsObjectClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a74b9ee04b6ec4e60318fae499af37431a5a1aed89642f9a112d4be443cfdf891d" name="a74b9ee04b6ec4e60318fae499af37431a5a1aed89642f9a112d4be443cfdf891d"></a>ScaleObjectClass&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="acb4eaf84ea48b80e1aba9951d9d9dabd" name="acb4eaf84ea48b80e1aba9951d9d9dabd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb4eaf84ea48b80e1aba9951d9d9dabd">&#9670;&#160;</a></span>actionButtonSelected()</h2>
@@ -2100,8 +2335,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a11b2e08c171dbd68353d28136457419a" name="a11b2e08c171dbd68353d28136457419a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11b2e08c171dbd68353d28136457419a">&#9670;&#160;</a></span>toolboxObjectAutoCreated()</h2>
+<a id="a1922a9373c5982c884a7e9c59b839121" name="a1922a9373c5982c884a7e9c59b839121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1922a9373c5982c884a7e9c59b839121">&#9670;&#160;</a></span>toolboxEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ToolboxEvents::toolboxEventHandler </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ea68f035ee45463c9707f732eae292e" name="a5ea68f035ee45463c9707f732eae292e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea68f035ee45463c9707f732eae292e">&#9670;&#160;</a></span>toolboxObjectAutoCreated()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2112,7 +2372,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void ToolboxEvents::toolboxObjectAutoCreated </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>objClass</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

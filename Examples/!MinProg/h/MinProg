@@ -7,6 +7,9 @@ class MinProg : public ToolboxTask {
       Quit         = 0x01
     } userEvents;
 
-    void showProperties() {};
+    void toolboxEventHandler(int event);
     void toolboxUserEvent();
+    void toolboxObjectAutoCreated(int object_class);
+
+    void showProperties() {}
 };

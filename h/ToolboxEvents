@@ -15,6 +15,121 @@
 
 class ToolboxEvents {
   public:
+
+    enum Toolbox_Event {
+    
+      Error                        =  0x44ec0,
+      ObjectAutoCreated,           // 0x44ec1
+      ObjectDeleted,               // 0x44ec2
+
+      WindowAboutToBeShown         =  0x82880,
+      ActionButtonSelected,        // 0x82881
+      OptionButtonStateChanged,    // 0x82882
+      RadioButtonStateChanged,     // 0x82883
+
+      WritableFieldValueChanged    =  0x82885,
+      SliderValueChanged,          // 0x82886
+      DraggableDragStarted,        // 0x82887
+      DraggableDragEnded,          // 0x82888
+
+      PopUpAboutToBeShown          =  0x8288b,
+      AdjusterClicked,             // 0x8288c
+      NumberRangeValueChanged,     // 0x8288d
+      StringSetValueChanged,       // 0x8288e
+      StringSetAboutToBeShown,     // 0x8288f
+      WindowHasBeenHidden,         // 0x82890
+
+      MenuAboutToBeShown           =  0x828c0,
+      MenuHasBeenHidden,           // 0x828c1
+      MenuSubMenu,                 // 0x828c2
+      MenuSelection,               // 0x828c3
+
+      IconbarClicked               =  0x82900,
+      IconbarSelectAboutToBeShown, // 0x82901
+      IconbarAdjustAboutToBeShown, // 0x82902
+
+      ColourMenuAboutToBeShown     =  0x82980,
+      ColourMenuHasBeenHidden,     // 0x82981
+      ColourMenuSelection,         // 0x82982
+
+      ColourDboxAboutToBeShown     =  0x829c0,
+      ColourDboxDialogueCompleted, // 0x829c1
+      ColourDboxColourSelected,    // 0x829c2
+
+      FontDboxAboutToBeShown       =  0x82a00,
+      FontDboxDialogueCompleted,   // 0x82a01
+      FontDboxApplyFont,           // 0x82a02
+
+      FontMenuAboutToBeShown       =  0x82a40,
+      FontMenuHasBeenHidden,       // 0x82a41
+      FontMenuFontSelection,       // 0x82a42
+
+      DCSAboutToBeShown            =  0x82a80,
+      DCSDiscard,                  // 0x82a81
+      DCSSave,                     // 0x82a82
+      DCSDialogueCompleted,        // 0x82a83
+      DCSCancel,                   // 0x82a84
+
+      QuitAboutToBeShown           =  0x82a90,
+      QuitQuit,                    // 0x82a91
+      QuitDialogueCompleted,       // 0x82a92
+      QuitCancel,                  // 0x82a93
+
+      FileInfoAboutToBeShown       =  0x82ac0,
+      FileInfoDialogueCompleted,   // 0x82ac1
+  
+      PrintDboxAboutToBeShown      =  0x82b00,
+      PrintDboxDialogueCompleted,  // 0x82b01
+      PrintDboxSetUpAboutToBeShown,// 0x82b02
+      PrintDboxSave,               // 0x82b03
+      PrintDboxSetUp,              // 0x82b04
+      PrintDboxPrint,              // 0x82b05
+
+      ProgInfoAboutToBeShown       =  0x82b40,
+      ProgInfoDialogueCompleted,   // 0x82b41
+
+
+      SaveAsAboutToBeShown         =  0x82bc0,
+      SaveAsDialogueCompleted,     // 0x82bc1
+      SaveAsSaveToFile,            // 0x82bc2
+      SaveAsFillBuffer,            // 0x82bc3
+      SaveAsSaveCompleted,         // 0x82bc4
+
+      ScaleAboutToBeShown          =  0x82c00,
+      ScaleDialogueCompleted,      // 0x82c01
+      ScaleApplyFactor,            // 0x82c02
+
+      ToolActionSelection          =  0x140140,
+
+      ScrollListSelection          =  0x140181,
+
+      TreeViewNodeSelected         =  0x140280,
+      TreeViewNodeExpanded,        // 0x140281
+      TreeViewNodeRenamed,         // 0x140282
+      TreeViewNodeClicked,         // 0x140283
+      TreeViewNodeDragged,         // 0x140284
+      TreeViewScroll,              // 0x140285
+
+      TabsSelection                =  0x1402c0
+    };
+
+    enum Toolbox_ObjectClass {
+      WindowObjectClass     = 0x82880,
+      MenuObjectClass       = 0x828c0,
+      IconbarObjectClass    = 0x82900,
+      ColourMenuObjectClass = 0x82980,
+      ColourDboxObjectClass = 0x829c0,
+      FontDboxObjectClass   = 0x82a00,
+      FontMenuObjectClass   = 0x82a40,
+      DCSObjectClass        = 0x82a80,
+      QuitObjectClass       = 0x82a90,
+      FileInfoObjectClass   = 0x82ac0,
+      PrintDboxObjectClass  = 0x82b00,
+      ProgInfoObjectClass   = 0x82b40,
+      SaveAsObjectClass     = 0x82bc0,
+      ScaleObjectClass      = 0x82c00,
+    };
+
 /** Event handler colourDboxObjectAutoCreated.
 * Overload in users application to intercept creation of Colour Dialogue box objects to enable modification
 * before they are made visible.
@@ -122,7 +237,7 @@ class ToolboxEvents {
     virtual void unknownClassObjectAutoCreated(){}
 
 
-    virtual void toolboxObjectAutoCreated(){}
+    virtual void toolboxObjectAutoCreated(int objClass){ objClass = objClass;}
     virtual void toolboxObjectDeleted(){}
     virtual void toolboxUserEvent(){}
     virtual void colourDboxAboutToBeShown(){}
@@ -202,6 +317,8 @@ class ToolboxEvents {
     virtual void reservedToolboxInterApplicationProtocol(){}
     virtual void reservedToolboxModuleEvent(){}
     virtual void unknownToolboxEvent(){}
+
+    virtual void toolboxEventHandler(int event) = 0;
 };
 
 #endif

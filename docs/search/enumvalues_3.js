@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setbackground_0',['SetBackground',['../class_colour_trans_obj.html#aa90180501612b668c2ac0797a5205574afcfc54a50c187d20d78449422a729119',1,'ColourTransObj']]],
-  ['setforeground_1',['SetForeground',['../class_colour_trans_obj.html#aa90180501612b668c2ac0797a5205574a9a70996fc678bdc807d94d08e404248b',1,'ColourTransObj']]]
+  ['error_0',['Error',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b',1,'ToolboxEvents']]]
 ];

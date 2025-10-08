@@ -1,0 +1,90 @@
+# Project:   MinProg
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.MinProg \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.MinProg \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.MinProg:   @.c++.MinProg
+        c++ $(c++flags) -o @.o.MinProg @.c++.MinProg 
+
+
+# Dynamic dependencies:
+o.main:	c++.main
+o.main:	h.MinProg
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.MinProg:	c++.MinProg
+o.MinProg:	h.MinProg
+o.MinProg:	C:h.ToolboxTask
+o.MinProg:	C:h.ClassType
+o.MinProg:	C:h.ToolboxCoreObj
+o.MinProg:	C:h.Object
+o.MinProg:	C:h.toolbox
+o.MinProg:	C:h.kernel
+o.MinProg:	C:h.wimp
+o.MinProg:	C:h.ToolboxEvents
+o.MinProg:	C:h.toolbox
+o.MinProg:	C:h.gadgets
+o.MinProg:	C:h.treeview
+o.MinProg:	C:h.window
+o.MinProg:	C:h.ScrollList
+o.MinProg:	C:h.tabs
+o.MinProg:	C:h.ErrorReport
+o.MinProg:	C:h.kernel
+o.MinProg:	C:h.ClassType
+o.MinProg:	C:h.WimpObj
+o.MinProg:	C:h.kernel
+o.MinProg:	C:h.ErrorReport
+o.MinProg:	C:h.libc
+o.MinProg:	C:h.kernel
+o.MinProg:	C:h.Object
+o.MinProg:	C:h.wimp
+o.MinProg:	C:h.ClassType

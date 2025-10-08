@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['toolaction_5fgetaction_0',['ToolAction_GetAction',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79cac6ddf0e87e56bd3bf771bf6db7c69a5e',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetclickshow_1',['ToolAction_GetClickShow',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79cad118778c3674ff55b2c6537a5440bcd6',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetident_2',['ToolAction_GetIdent',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79cad67fc537a8ee2088e4de7a8343fbdb25',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetpressed_3',['ToolAction_GetPressed',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca3c328205e548f4089b2f033c4f908ded',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetstate_4',['ToolAction_GetState',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca7e9beaf7b3f4102903d5c3fbbdb6ab80',1,'ToolboxToolAction']]],
-  ['toolaction_5fselectevent_5',['ToolAction_SelectEvent',['../class_toolbox_tool_action.html#a6f610f6337b8f4f95fdd068869964b8aa88b8f0d8dab87a815036a4a2b86b90ad',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetaction_6',['ToolAction_SetAction',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca1fc442e4687492b8fe41d55c11ecd7ad',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetclickshow_7',['ToolAction_SetClickShow',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca02dfbb900f972011919b71b8c2eb95f3',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetident_8',['ToolAction_SetIdent',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca49ecaf794ead410018baff39e9b32543',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetpressed_9',['ToolAction_SetPressed',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79ca9393ad3b88af387ea014dd49c7f45fa6',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetstate_10',['ToolAction_SetState',['../class_toolbox_tool_action.html#a697bbedf2d40663d090b3c51a011f79cac256a3da17512f68213f3ee629fefddf',1,'ToolboxToolAction']]]
+  ['fileinfoabouttobeshown_0',['FileInfoAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa1a4816f3bca6ba5231201778912e40e9',1,'ToolboxEvents']]],
+  ['fileinfodialoguecompleted_1',['FileInfoDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aafe52f0fd58db2b96764a36e8a2bf8211',1,'ToolboxEvents']]],
+  ['fileinfoobjectclass_2',['FileInfoObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431ab67082dad728927965cd8d35dfd4e17a',1,'ToolboxEvents']]],
+  ['fontdboxabouttobeshown_3',['FontDboxAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa10bb0a677c339ec6f3d3bb0fadac44fb',1,'ToolboxEvents']]],
+  ['fontdboxapplyfont_4',['FontDboxApplyFont',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa6da736904c7604636473a981658a856',1,'ToolboxEvents']]],
+  ['fontdboxdialoguecompleted_5',['FontDboxDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa2e1e89921d827f1ca6ee8c181c809d35',1,'ToolboxEvents']]],
+  ['fontdboxobjectclass_6',['FontDboxObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a3934c55730abc3ff49a82747e5d3c7fe',1,'ToolboxEvents']]],
+  ['fontmenuabouttobeshown_7',['FontMenuAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa727ff289d254505583e9f46add526cc8',1,'ToolboxEvents']]],
+  ['fontmenufontselection_8',['FontMenuFontSelection',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aab82101fa2d0638437f2f4975a2414202',1,'ToolboxEvents']]],
+  ['fontmenuhasbeenhidden_9',['FontMenuHasBeenHidden',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa51a06fdc5f8c7b8fba2e75ebe86c2668',1,'ToolboxEvents']]],
+  ['fontmenuobjectclass_10',['FontMenuObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a1cb1aa5c41a9a46aba27906bee071fa1',1,'ToolboxEvents']]]
 ];

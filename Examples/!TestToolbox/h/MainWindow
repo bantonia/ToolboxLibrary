@@ -3,8 +3,10 @@
 #include "ToolboxActionButton.h"
 #include "ToolboxIconbarObj.h"
 #include "ToolboxSlider.h"
+#include "ToolboxScrollList.h"
 #include "ToolboxRadioButton.h"
 #include "ToolboxPopUp.h"
+#include "ToolboxToolAction.h"
 
 class MainWindow {
   public:
@@ -22,7 +24,9 @@ class MainWindow {
       MWDisplayField2,
       MWPopUp,
       MWDisplayField3,
-      MWRadioButton3
+      MWRadioButton3,
+      MWScrollList = 0x0e,
+      MWToolAction = 0x10
     } MWComponents;
 
     MainWindow();
@@ -41,6 +45,10 @@ class MainWindow {
     ToolboxRadioButton *rb1;
     ToolboxRadioButton *rb2;
     ToolboxRadioButton *rb3;
+    ToolboxScrollList *scl;
+    ToolboxToolAction *ta;
+
+    void setToolActionIdent(char *);
   private:
     char *title;
     int df1s;

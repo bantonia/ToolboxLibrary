@@ -1,5 +1,20 @@
 var class_toolbox_tool_action =
 [
+    [ "ToolActionEvents", "class_toolbox_tool_action.html#ae4a66071a7958e7febd39959b1e1479a", [
+      [ "ToolAction_SelectEvent", "class_toolbox_tool_action.html#ae4a66071a7958e7febd39959b1e1479aa88b8f0d8dab87a815036a4a2b86b90ad", null ]
+    ] ],
+    [ "ToolActionMethods", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78", [
+      [ "ToolAction_SetIdent", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a49ecaf794ead410018baff39e9b32543", null ],
+      [ "ToolAction_GetIdent", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ad67fc537a8ee2088e4de7a8343fbdb25", null ],
+      [ "ToolAction_SetAction", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a1fc442e4687492b8fe41d55c11ecd7ad", null ],
+      [ "ToolAction_GetAction", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ac6ddf0e87e56bd3bf771bf6db7c69a5e", null ],
+      [ "ToolAction_SetClickShow", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a02dfbb900f972011919b71b8c2eb95f3", null ],
+      [ "ToolAction_GetClickShow", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ad118778c3674ff55b2c6537a5440bcd6", null ],
+      [ "ToolAction_SetState", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ac256a3da17512f68213f3ee629fefddf", null ],
+      [ "ToolAction_GetState", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a7e9beaf7b3f4102903d5c3fbbdb6ab80", null ],
+      [ "ToolAction_SetPressed", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a9393ad3b88af387ea014dd49c7f45fa6", null ],
+      [ "ToolAction_GetPressed", "class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a3c328205e548f4089b2f033c4f908ded", null ]
+    ] ],
     [ "ToolboxToolAction", "class_toolbox_tool_action.html#ad34ef43fa6694e08f38dda301d1462e6", null ],
     [ "ToolboxToolAction", "class_toolbox_tool_action.html#aeb4f03d340e6c7fa63b3db9a47c92f09", null ],
     [ "ToolboxToolAction", "class_toolbox_tool_action.html#aff79226b70ac11a3ee6a7498ab61ee9c", null ],
@@ -14,7 +29,5 @@ var class_toolbox_tool_action =
     [ "setIdent", "class_toolbox_tool_action.html#af22d2ee1b2f273443d3756fad7bb5add", null ],
     [ "setPressed", "class_toolbox_tool_action.html#a2f87de3a1e2ca01446a2b7703593b096", null ],
     [ "setState", "class_toolbox_tool_action.html#ac9741448e50271c3b75ad5397f60af8b", null ],
-    [ "showProperties", "class_toolbox_tool_action.html#a7e740aaacbe7ef4795db0b0c630c4261", null ],
-    [ "ToolActionEvents", "class_toolbox_tool_action.html#a34de72c482b64cf6fa293e1ed880f953", null ],
-    [ "ToolActionMethods", "class_toolbox_tool_action.html#ae1b12eddfc85b8a675f5a365b349fb0c", null ]
+    [ "showProperties", "class_toolbox_tool_action.html#a7e740aaacbe7ef4795db0b0c630c4261", null ]
 ];

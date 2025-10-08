@@ -1,6 +1,8 @@
 #include "ToolboxTask.h"
 #include "MainWindow.h"
 #include "menu.h"
+#include "ScrollList.h"
+#include "ToolboxToolAction.h"
 
 class Prog : public ToolboxTask {
   public:
@@ -14,15 +16,22 @@ class Prog : public ToolboxTask {
 
     Prog();
     ~Prog();
-    void showProperties() {};
-    void windowObjectAutoCreated();
+    void toolboxEventHandler(int event);
+    void toolboxObjectAutoCreated(int object_class);
     void toolboxUserEvent();
+
+    void windowObjectAutoCreated();
     void adjusterClicked();
     void sliderValueChanged();
     void iconbarObjectAutoCreated();
     void menuAboutToBeShown();
     void radioButtonStateChanged();
+    void scrollListSelection();
+    void toolActionSelection();
+    void unknownToolboxEvent();
     MainWindow *mainWindow;
     ToolboxWindowObj *w;
     ToolboxIconbarObj *iconbar;
+
+    void showProperties() {}
 };

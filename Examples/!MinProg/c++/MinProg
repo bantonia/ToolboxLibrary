@@ -1,5 +1,9 @@
 #include "MinProg.h"
 
+void MinProg::toolboxEventHandler(int event) {
+  event = event;
+}
+
 void MinProg::toolboxUserEvent() {
   ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
   switch(tboxHdr->event_code) {
@@ -10,4 +14,8 @@ void MinProg::toolboxUserEvent() {
     default:
       break;
   }
+}
+ 
+void MinProg::toolboxObjectAutoCreated(int object_class) {
+  object_class = object_class;
 }
