@@ -1,20 +1,6 @@
 #include "kernel.h"
 #include "ToolboxCoreObj.h"
-//#include "ToolboxWindowObj.h"
 
-/*#include "colourdbox.h"
-#include "colourmenu.h"
-#include "dcs.h"
-#include "fileinfo.h"
-#include "fontdbox.h"
-#include "fontmenu.h"
-#include "iconbar.h"
-#include "menu.h"
-#include "printdbox.h"
-#include "proginfo.h"
-#include "quit.h"
-#include "saveas.h"
-#include "scale.h"*/
 #include "window.h"
 
 int ToolboxCoreObj::wimpVersion = 310;
@@ -252,7 +238,7 @@ void ToolboxCoreObj::eToolboxEventHandler(void *pollBlock) {
         if (tboxHdr->event_code >= 0x10000 && tboxHdr->event_code < 0x40000) {
           reservedToolboxInterApplicationProtocol();
         } else {
-          if ((tboxHdr->event_code >= 0x40000 && tboxHdr->event_code < 0xa0000) || (tboxHdr->event_code >= 0x140140 && tboxHdr->event_code <= 0x1402c0)) {
+          if (tboxHdr->event_code >= 0x40000 && tboxHdr->event_code < 0x1000000) {
             toolboxEventHandler(tboxHdr->event_code);
             //reservedToolboxModuleEvent();
           } else {
