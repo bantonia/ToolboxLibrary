@@ -168,7 +168,7 @@ var class_toolbox_events =
     [ "toolboxEventHandler", "class_toolbox_events.html#a1922a9373c5982c884a7e9c59b839121", null ],
     [ "toolboxObjectAutoCreated", "class_toolbox_events.html#a5ea68f035ee45463c9707f732eae292e", null ],
     [ "toolboxObjectDeleted", "class_toolbox_events.html#a063d73e8e8f892c2142ca2417a295744", null ],
-    [ "toolboxUserEvent", "class_toolbox_events.html#a124520eea049838d9508aa45632ce402", null ],
+    [ "toolboxUserEvent", "class_toolbox_events.html#a4fd84db3d4f6122fb4e6e578bb92f91a", null ],
     [ "treeViewNodeClicked", "class_toolbox_events.html#a6a8fdbcb329494a68ca88d8d47eab505", null ],
     [ "treeViewNodeDragged", "class_toolbox_events.html#a0c4122bfb251d931556bc16acf07115a", null ],
     [ "treeViewNodeExpanded", "class_toolbox_events.html#a2fb9ec1c74412cc775d719c4c3c31dca", null ],

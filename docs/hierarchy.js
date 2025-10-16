@@ -21,6 +21,7 @@ var hierarchy =
         [ "ToolboxSlider", "class_toolbox_slider.html", null ],
         [ "ToolboxStringSet", "class_toolbox_string_set.html", null ],
         [ "ToolboxTabs", "class_toolbox_tabs.html", null ],
+        [ "ToolboxTextArea", "class_toolbox_text_area.html", null ],
         [ "ToolboxToolAction", "class_toolbox_tool_action.html", null ],
         [ "ToolboxTreeView", "class_toolbox_tree_view.html", null ],
         [ "ToolboxWritableField", "class_toolbox_writable_field.html", null ]

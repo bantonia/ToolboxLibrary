@@ -1,0 +1,116 @@
+#include "ToolboxTextArea.h"
+
+ToolboxTextArea::ToolboxTextArea() {};
+ToolboxTextArea::ToolboxTextArea(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+ToolboxTextArea::ToolboxTextArea(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
+unsigned int ToolboxTextArea::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TextArea_GetState, &regs);
+  return regs.r[1];
+}
+
+ToolboxTextArea& ToolboxTextArea::setState(unsigned int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) state;
+  this->gadgetMethod(TextArea_SetState, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::setText(const char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) text;
+  this->gadgetMethod(TextArea_SetText, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::getText(char *buffer, int buff_size, int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = (int) buff_size;
+  this->gadgetMethod(TextArea_GetText, &regs);
+  *nbytes = regs.r[5];
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::insertText(unsigned int index, const char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) index;
+  regs.r[5] = (int) text;
+  this->gadgetMethod(TextArea_InsertText, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::replaceText(unsigned int index_start, unsigned int index_end, const char *text) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) index_start;
+  regs.r[5] = (int) index_end;
+  regs.r[6] = (int) text;
+  this->gadgetMethod(TextArea_ReplaceText, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::getSelection(char *buffer, int size, unsigned int *nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = (int) size;
+  this->gadgetMethod(TextArea_GetSelection, &regs);
+  *nbytes = regs.r[5];
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::setSelection(unsigned int index_start, unsigned int index_end) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) index_start;
+  regs.r[5] = (int) index_end;
+  this->gadgetMethod(TextArea_SetSelection, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::getSelectionPoints(unsigned int *index_start, unsigned int *index_end ) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TextArea_GetSelection, &regs);
+  *index_start = regs.r[5];
+  *index_end = regs.r[5];
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::setFont(const char *font_name, unsigned int width, unsigned int height)  {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) font_name;
+  regs.r[5] = (int) width;
+  regs.r[6] = (int) height;
+  this->gadgetMethod(TextArea_SetFont, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::setColour(unsigned int foreground, unsigned int background) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) foreground;
+  regs.r[5] = (int) background;
+  this->gadgetMethod(TextArea_SetColour, &regs);
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::getColour(unsigned int *foreground, unsigned int *background) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TextArea_GetColour, &regs);
+  *foreground = regs.r[0];
+  *background = regs.r[1];
+  return *this;
+}
+
+ToolboxTextArea& ToolboxTextArea::setCursorPosition(unsigned int index, unsigned int *old_index) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) index;
+  this->gadgetMethod(TextArea_SetCursorPosition, &regs);
+  *old_index = regs.r[4];
+  return *this;
+}
+
+unsigned int ToolboxTextArea::getCursorPosition() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(TextArea_GetCursorPosition, &regs);
+  return regs.r[4];
+}
+

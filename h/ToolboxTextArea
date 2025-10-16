@@ -1,0 +1,41 @@
+#ifndef __cplusplus
+#error Header file "ToolboxTextArea.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxTextArea_h
+#define __ToolboxTextArea_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+#include "TextArea.h"
+
+class ToolboxTextArea : public ToolboxGadget {
+  public:
+    ToolboxTextArea();
+    ToolboxTextArea(ObjectId windowId, ComponentId gadgetId);
+    ToolboxTextArea(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+
+    unsigned int getState();
+    ToolboxTextArea& setState(unsigned int state);
+    ToolboxTextArea& setText(const char *text);
+    ToolboxTextArea& getText(char *buffer, int buff_size, int *nbytes);
+    ToolboxTextArea& insertText(unsigned int index, const char *text);
+    ToolboxTextArea& replaceText(unsigned int index_start, unsigned int index_end, const char *text);
+    ToolboxTextArea& getSelection(char *buffer, int size, unsigned int *nbytes);
+    ToolboxTextArea& setSelection(unsigned int index_start, unsigned int index_end);
+    ToolboxTextArea& getSelectionPoints(unsigned int *index_start, unsigned int *index_end );
+    ToolboxTextArea& setFont(const char *font_name, unsigned int width, unsigned int height);
+    ToolboxTextArea& setColour(unsigned int foreground, unsigned int background);
+    ToolboxTextArea& getColour(unsigned int *foreground, unsigned int *background);
+    ToolboxTextArea& setCursorPosition(unsigned int index, unsigned int *old_index);
+    unsigned int getCursorPosition();
+
+
+    void showProperties() {};
+    char* getClassName() { return "ToolboxTextArea";}
+    int getClassType() { return ClassType_ToolboxTextArea;}
+};
+
+#endif

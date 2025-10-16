@@ -32,8 +32,9 @@ var searchData=
   ['toolboxstringset_29',['ToolboxStringSet',['../class_toolbox_string_set.html',1,'']]],
   ['toolboxtabs_30',['ToolboxTabs',['../class_toolbox_tabs.html',1,'']]],
   ['toolboxtask_31',['ToolboxTask',['../class_toolbox_task.html',1,'']]],
-  ['toolboxtoolaction_32',['ToolboxToolAction',['../class_toolbox_tool_action.html',1,'']]],
-  ['toolboxtreeview_33',['ToolboxTreeView',['../class_toolbox_tree_view.html',1,'']]],
-  ['toolboxwindowobj_34',['ToolboxWindowObj',['../class_toolbox_window_obj.html',1,'']]],
-  ['toolboxwritablefield_35',['ToolboxWritableField',['../class_toolbox_writable_field.html',1,'']]]
+  ['toolboxtextarea_32',['ToolboxTextArea',['../class_toolbox_text_area.html',1,'']]],
+  ['toolboxtoolaction_33',['ToolboxToolAction',['../class_toolbox_tool_action.html',1,'']]],
+  ['toolboxtreeview_34',['ToolboxTreeView',['../class_toolbox_tree_view.html',1,'']]],
+  ['toolboxwindowobj_35',['ToolboxWindowObj',['../class_toolbox_window_obj.html',1,'']]],
+  ['toolboxwritablefield_36',['ToolboxWritableField',['../class_toolbox_writable_field.html',1,'']]]
 ];

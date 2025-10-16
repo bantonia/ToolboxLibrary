@@ -1,0 +1,23 @@
+var class_toolbox_text_area =
+[
+    [ "ToolboxTextArea", "class_toolbox_text_area.html#a7797c0af8316ececed13474f6af7a745", null ],
+    [ "ToolboxTextArea", "class_toolbox_text_area.html#adfd27f6bc4861961fccaf2d4e3bc313e", null ],
+    [ "ToolboxTextArea", "class_toolbox_text_area.html#a127c3fa35e445ad0ed4b857c21970f7e", null ],
+    [ "getClassName", "class_toolbox_text_area.html#af79f80cf00c0b2f7ac65fab4dfefbe96", null ],
+    [ "getClassType", "class_toolbox_text_area.html#aa933c5ece7f92485565a9c4703f77dc4", null ],
+    [ "getColour", "class_toolbox_text_area.html#aa3a1c508711f06c22564ffa0695c9309", null ],
+    [ "getCursorPosition", "class_toolbox_text_area.html#aa69caf202e1f26ade9e8343f098b12c8", null ],
+    [ "getSelection", "class_toolbox_text_area.html#a4c4171473983e008d8f2678fa2b2c871", null ],
+    [ "getSelectionPoints", "class_toolbox_text_area.html#acee4be334c9581165e085dee9dc04e0c", null ],
+    [ "getState", "class_toolbox_text_area.html#a459081ad945ae0c754be9144d0784fb8", null ],
+    [ "getText", "class_toolbox_text_area.html#a3d6a9f7fb4abfea69861f0ab9aa0d4d3", null ],
+    [ "insertText", "class_toolbox_text_area.html#a4478daa4db3a5f94bce5fd89ff7d720a", null ],
+    [ "replaceText", "class_toolbox_text_area.html#a02562bd35a56b91b0785179f6f42712a", null ],
+    [ "setColour", "class_toolbox_text_area.html#a76efcbc6b7640a947376c771d1eeabbe", null ],
+    [ "setCursorPosition", "class_toolbox_text_area.html#a4172c74e62712dafa30c241cabfc7175", null ],
+    [ "setFont", "class_toolbox_text_area.html#aa7f82870cfedb0d485e0a883ec6d01dd", null ],
+    [ "setSelection", "class_toolbox_text_area.html#af13b0ef669fb39525eaf7edebd8e40b8", null ],
+    [ "setState", "class_toolbox_text_area.html#ac9ebc6ec392ca6ac08d9b14efa5db233", null ],
+    [ "setText", "class_toolbox_text_area.html#ae9f1e1d56aef03f23f110e027648e60d", null ],
+    [ "showProperties", "class_toolbox_text_area.html#a3f16e7c9568db218be052336cb575c27", null ]
+];

@@ -62,6 +62,7 @@ var annotated_dup =
     [ "ToolboxStringSet", "class_toolbox_string_set.html", "class_toolbox_string_set" ],
     [ "ToolboxTabs", "class_toolbox_tabs.html", "class_toolbox_tabs" ],
     [ "ToolboxTask", "class_toolbox_task.html", "class_toolbox_task" ],
+    [ "ToolboxTextArea", "class_toolbox_text_area.html", "class_toolbox_text_area" ],
     [ "ToolboxToolAction", "class_toolbox_tool_action.html", "class_toolbox_tool_action" ],
     [ "ToolboxTreeView", "class_toolbox_tree_view.html", "class_toolbox_tree_view" ],
     [ "ToolboxWindowObj", "class_toolbox_window_obj.html", "class_toolbox_window_obj" ],

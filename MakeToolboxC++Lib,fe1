@@ -4,7 +4,7 @@
 # Toolflags:
 CCflags = -c -depend !Depend -IC: -throwback
 C++flags = -c -depend !Depend -IC: -throwback
-Linkflags = -aif -c++ -o $@
+Linkflags = -aif -c++ -d -o $@
 ObjAsmflags = -throwback -NoCache -depend !Depend
 CMHGflags = 
 LibFileflags = -c -o $@
@@ -21,7 +21,7 @@ ModSqzflags = -o $@
         @.o.ToolboxPopUp @.o.ToolboxPrintDlogObj @.o.ToolboxProgInfoObj @.o.ToolboxQuitObj \
         @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj @.o.ToolboxSlider \
         @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask @.o.ToolboxWindowObj @.o.ToolboxWritableField \
-        @.o.ToolboxScrollList @.o.ToolboxTreeView 
+        @.o.ToolboxScrollList @.o.ToolboxTreeView @.o.ToolboxToolAction @.o.ToolboxTextArea 
         LibFile $(LibFileflags) @.o.ToolboxActionButton @.o.ToolboxButton \
         @.o.ToolboxColourDlogObj @.o.ToolboxColourMenuObj @.o.ToolboxCoreObj @.o.ToolboxDCSObj \
         @.o.ToolboxDisplayField @.o.ToolboxDraggable @.o.ToolboxEventObj @.o.ToolboxFileInfoDlogObj \
@@ -30,7 +30,7 @@ ModSqzflags = -o $@
         @.o.ToolboxPopUp @.o.ToolboxPrintDlogObj @.o.ToolboxProgInfoObj @.o.ToolboxQuitObj \
         @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj @.o.ToolboxSlider \
         @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask @.o.ToolboxWindowObj @.o.ToolboxWritableField \
-        @.o.ToolboxScrollList @.o.ToolboxTreeView 
+        @.o.ToolboxScrollList @.o.ToolboxTreeView @.o.ToolboxToolAction @.o.ToolboxTextArea 
 
 
 # User-editable dependencies:
@@ -103,6 +103,10 @@ ModSqzflags = -o $@
         c++ $(c++flags) -o @.o.ToolboxScrollList @.c++.ToolboxScrollList 
 @.o.ToolboxTreeView:   @.c++.ToolboxTreeView
         c++ $(c++flags) -o @.o.ToolboxTreeView @.c++.ToolboxTreeView 
+@.o.ToolboxToolAction:   @.c++.ToolboxToolAction
+        c++ $(c++flags) -o @.o.ToolboxToolAction @.c++.ToolboxToolAction 
+@.o.ToolboxTextArea:   @.c++.ToolboxTextArea
+        c++ $(c++flags) -o @.o.ToolboxTextArea @.c++.ToolboxTextArea 
 
 
 # Dynamic dependencies:
@@ -166,11 +170,17 @@ o.ToolboxCoreObj:	h.ToolboxCoreObj
 o.ToolboxCoreObj:	h.Object
 o.ToolboxCoreObj:	C:h.toolbox
 o.ToolboxCoreObj:	C:h.wimp
+o.ToolboxCoreObj:	h.ToolboxEvents
+o.ToolboxCoreObj:	C:h.toolbox
+o.ToolboxCoreObj:	C:h.gadgets
+o.ToolboxCoreObj:	C:h.treeview
+o.ToolboxCoreObj:	C:h.window
+o.ToolboxCoreObj:	C:h.ScrollList
+o.ToolboxCoreObj:	C:h.tabs
 o.ToolboxCoreObj:	h.ErrorReport
 o.ToolboxCoreObj:	C:h.kernel
 o.ToolboxCoreObj:	h.ClassType
 o.ToolboxCoreObj:	C:h.window
-o.ToolboxCoreObj:	C:h.gadgets
 o.ToolboxDCSObj:	c++.ToolboxDCSObj
 o.ToolboxDCSObj:	C:h.kernel
 o.ToolboxDCSObj:	h.ToolboxDCSObj
@@ -218,6 +228,13 @@ o.ToolboxEventObj:	h.Object
 o.ToolboxEventObj:	C:h.toolbox
 o.ToolboxEventObj:	C:h.kernel
 o.ToolboxEventObj:	C:h.wimp
+o.ToolboxEventObj:	h.ToolboxEvents
+o.ToolboxEventObj:	C:h.toolbox
+o.ToolboxEventObj:	C:h.gadgets
+o.ToolboxEventObj:	C:h.treeview
+o.ToolboxEventObj:	C:h.window
+o.ToolboxEventObj:	C:h.ScrollList
+o.ToolboxEventObj:	C:h.tabs
 o.ToolboxEventObj:	h.ErrorReport
 o.ToolboxEventObj:	C:h.kernel
 o.ToolboxEventObj:	h.ClassType
@@ -456,6 +473,20 @@ o.ToolboxStringSet:	C:h.wimp
 o.ToolboxStringSet:	C:h.gadgets
 o.ToolboxStringSet:	h.Object
 o.ToolboxStringSet:	h.ClassType
+o.ToolboxTabs:	c++.ToolboxTabs
+o.ToolboxTabs:	h.ToolboxTabs
+o.ToolboxTabs:	h.ClassType
+o.ToolboxTabs:	h.ToolboxGadget
+o.ToolboxTabs:	C:h.kernel
+o.ToolboxTabs:	h.ErrorReport
+o.ToolboxTabs:	C:h.kernel
+o.ToolboxTabs:	C:h.toolbox
+o.ToolboxTabs:	C:h.wimp
+o.ToolboxTabs:	C:h.gadgets
+o.ToolboxTabs:	h.Object
+o.ToolboxTabs:	h.ClassType
+o.ToolboxTabs:	C:h.tabs
+o.ToolboxTabs:	C:h.window
 o.ToolboxTask:	c++.ToolboxTask
 o.ToolboxTask:	h.ToolboxTask
 o.ToolboxTask:	h.ClassType
@@ -464,6 +495,13 @@ o.ToolboxTask:	h.Object
 o.ToolboxTask:	C:h.toolbox
 o.ToolboxTask:	C:h.kernel
 o.ToolboxTask:	C:h.wimp
+o.ToolboxTask:	h.ToolboxEvents
+o.ToolboxTask:	C:h.toolbox
+o.ToolboxTask:	C:h.gadgets
+o.ToolboxTask:	C:h.treeview
+o.ToolboxTask:	C:h.window
+o.ToolboxTask:	C:h.ScrollList
+o.ToolboxTask:	C:h.tabs
 o.ToolboxTask:	h.ErrorReport
 o.ToolboxTask:	C:h.kernel
 o.ToolboxTask:	h.ClassType
@@ -501,17 +539,44 @@ o.ToolboxWritableField:	C:h.wimp
 o.ToolboxWritableField:	C:h.gadgets
 o.ToolboxWritableField:	h.Object
 o.ToolboxWritableField:	h.ClassType
-o.ToolboxTabs:	c++.ToolboxTabs
-o.ToolboxTabs:	h.ToolboxTabs
-o.ToolboxTabs:	h.ClassType
-o.ToolboxTabs:	h.ToolboxGadget
-o.ToolboxTabs:	C:h.kernel
-o.ToolboxTabs:	h.ErrorReport
-o.ToolboxTabs:	C:h.kernel
-o.ToolboxTabs:	C:h.toolbox
-o.ToolboxTabs:	C:h.wimp
-o.ToolboxTabs:	C:h.gadgets
-o.ToolboxTabs:	h.Object
-o.ToolboxTabs:	h.ClassType
-o.ToolboxTabs:	C:h.tabs
-o.ToolboxTabs:	C:h.window
+o.ToolboxScrollList:	c++.ToolboxScrollList
+o.ToolboxScrollList:	h.ToolboxScrollList
+o.ToolboxScrollList:	h.ClassType
+o.ToolboxScrollList:	h.ToolboxGadget
+o.ToolboxScrollList:	C:h.kernel
+o.ToolboxScrollList:	h.ErrorReport
+o.ToolboxScrollList:	C:h.kernel
+o.ToolboxScrollList:	C:h.toolbox
+o.ToolboxScrollList:	C:h.wimp
+o.ToolboxScrollList:	C:h.gadgets
+o.ToolboxScrollList:	h.Object
+o.ToolboxScrollList:	h.ClassType
+o.ToolboxScrollList:	C:h.ScrollList
+o.ToolboxScrollList:	C:h.window
+o.ToolboxTreeView:	c++.ToolboxTreeView
+o.ToolboxTreeView:	h.ToolboxTreeView
+o.ToolboxTreeView:	h.ClassType
+o.ToolboxTreeView:	h.ToolboxGadget
+o.ToolboxTreeView:	C:h.kernel
+o.ToolboxTreeView:	h.ErrorReport
+o.ToolboxTreeView:	C:h.kernel
+o.ToolboxTreeView:	C:h.toolbox
+o.ToolboxTreeView:	C:h.wimp
+o.ToolboxTreeView:	C:h.gadgets
+o.ToolboxTreeView:	h.Object
+o.ToolboxTreeView:	h.ClassType
+o.ToolboxTreeView:	C:h.treeview
+o.ToolboxTreeView:	C:h.window
+o.ToolboxToolAction:	c++.ToolboxToolAction
+o.ToolboxToolAction:	h.ToolboxToolAction
+o.ToolboxToolAction:	h.ClassType
+o.ToolboxToolAction:	h.ToolboxGadget
+o.ToolboxToolAction:	C:h.kernel
+o.ToolboxToolAction:	h.ErrorReport
+o.ToolboxToolAction:	C:h.kernel
+o.ToolboxToolAction:	C:h.toolbox
+o.ToolboxToolAction:	C:h.wimp
+o.ToolboxToolAction:	C:h.gadgets
+o.ToolboxToolAction:	h.Object
+o.ToolboxToolAction:	h.ClassType
+o.ToolboxToolAction:	C:h.toolbox
