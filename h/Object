@@ -17,10 +17,12 @@
 class Object {
   public:
     Object();
-    ~Object();
     virtual void showProperties() = 0;
     virtual char* getClassName() = 0;
     virtual int getClassType() = 0;
+  protected:
+    ~Object();
+
 };
 
 #endif

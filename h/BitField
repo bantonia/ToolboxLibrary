@@ -74,17 +74,17 @@ class BitField : public Object {
 
 /** Currently unused
 */
-    void showProperties(){};
+    void showProperties(){}
 
 /** Returns the classname of the object
 * Returns a pointer to a zero terminated character field containing "BitField"
 */
-    char *getClassName() { return "BitField";};
+    char *getClassName() { return "BitField";}
 
 /** Returns an integer representing a value for an object of class BitField
 * Value returned is 0
 */
-    int getClassType(){return 0;};
+    int getClassType(){return 0;}
   private:
     unsigned int bits;
     unsigned char *data;
