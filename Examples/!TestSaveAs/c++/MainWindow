@@ -1,0 +1,21 @@
+#include "MainWindow.h"
+
+MainWindow::MainWindow() : ToolboxWindowObj() {
+  td = NULL;
+}
+
+MainWindow::MainWindow(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {
+  td = new TextDisplay(idBlock->self_id, MWTextArea);
+}
+
+MainWindow::~MainWindow() {
+  if (td != NULL) delete td;
+}
+
+void MainWindow::getText(char *buffer, int bufSize, int *nChars) {
+  td->getText(buffer, bufSize, nChars);
+}
+
+int MainWindow::getTextCount() {
+  return td->getTextCount();
+}

@@ -2,6 +2,7 @@ var class_toolbox_scale_obj =
 [
     [ "ToolboxScaleObj", "class_toolbox_scale_obj.html#ab4aa2d2b0703151a68637edf564d7777", null ],
     [ "ToolboxScaleObj", "class_toolbox_scale_obj.html#a2204a92a3c6e065cc184d53895263903", null ],
+    [ "ToolboxScaleObj", "class_toolbox_scale_obj.html#a798d4fe0cbf6f780bc190b8ffc72b78c", null ],
     [ "clearFlags", "class_toolbox_scale_obj.html#aabb499c6a3bc81d4bbda86161cabc937", null ],
     [ "getBounds", "class_toolbox_scale_obj.html#a7e3107449ef3e68c4a9ecb4e0837e765", null ],
     [ "getClassName", "class_toolbox_scale_obj.html#adadb59999e8aa3d4f595910f2ed59163", null ],

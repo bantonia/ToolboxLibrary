@@ -15,6 +15,7 @@ class ToolboxSaveAsObj : public ToolboxObj {
   public:
     ToolboxSaveAsObj(){};
     ToolboxSaveAsObj(ObjectId objectId);
+    ToolboxSaveAsObj(IdBlock *);
     ObjectId getWindowId();
     ToolboxSaveAsObj& setTitle(char *title);
     int getTitle();
@@ -34,9 +35,9 @@ class ToolboxSaveAsObj : public ToolboxObj {
     ToolboxSaveAsObj& setFlags(unsigned int flags);
     ToolboxSaveAsObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxSaveAsObj";};
-    int getClassType() { return ClassType_ToolboxSaveAsObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxSaveAsObj";}
+    int getClassType() { return ClassType_ToolboxSaveAsObj;}
 };
 
 #endif

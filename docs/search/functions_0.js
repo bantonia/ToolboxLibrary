@@ -8,5 +8,6 @@ var searchData=
   ['addkeyboardshortcuts_5',['addKeyboardShortcuts',['../class_toolbox_window_obj.html#ac69e3cc197585d145c597ad284ee6f6a',1,'ToolboxWindowObj']]],
   ['addmessages_6',['addMessages',['../class_wimp_obj.html#a8f968f2f76f83da6738323d02bc60da1',1,'WimpObj']]],
   ['addnode_7',['addNode',['../class_toolbox_tree_view.html#a4602dc01b89aa16f254c1b6b46e35608',1,'ToolboxTreeView']]],
-  ['adjusterclicked_8',['adjusterClicked',['../class_toolbox_events.html#ad827be0e41f29ca47977db1829f1b76a',1,'ToolboxEvents']]]
+  ['adjusterclicked_8',['adjusterClicked',['../class_toolbox_events.html#ad827be0e41f29ca47977db1829f1b76a',1,'ToolboxEvents']]],
+  ['append_9',['append',['../class_toolbox_text_area.html#ac8ff1678f8148d377e95170c75efb987',1,'ToolboxTextArea']]]
 ];

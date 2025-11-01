@@ -21,7 +21,7 @@ var searchData=
   ['minx_18',['minX',['../struct_box.html#a4220bf6a9af7fa2c160dcb7d3dccfa9c',1,'Box']]],
   ['miny_19',['minY',['../struct_box.html#a5be2c6dad21175dfea0083c6858d225b',1,'Box']]],
   ['mode_20',['mode',['../structsprite__header.html#a4a8c3f0a1193281743853bbc021d41af',1,'sprite_header::mode'],['../structsprite__info.html#a4c667bedc95df5d3f2541977cffda585',1,'sprite_info::mode'],['../struct_sprite_area_obj_1_1sprite_info__t.html#a08b480162ce5fc3ed08ec3a9b09b5230',1,'SpriteAreaObj::spriteInfo_t::mode']]],
-  ['model_21',['model',['../struct_toolbox_colour_dlog_obj_1_1colour_block_hdr.html#aee7f08edf4b0573cc38ca8e21cb65d82',1,'ToolboxColourDlogObj::colourBlockHdr']]],
+  ['model_21',['model',['../struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr.html#a4b8c69cf3d3606c33c31f8a3bb2f9d53',1,'ToolboxColourDlogObj::ColourBlockHdr']]],
   ['months_22',['months',['../class_constants.html#ae9911559edb5df331350a39b591bdac9',1,'Constants']]],
   ['mouse1_23',['mouse1',['../struct_wimp_palette_str.html#a98a096ab5c149d3968d436f14b5ed90a',1,'WimpPaletteStr']]],
   ['mouse2_24',['mouse2',['../struct_wimp_palette_str.html#a0dc58ca17edca40d6d1d768fe37e5885',1,'WimpPaletteStr']]],

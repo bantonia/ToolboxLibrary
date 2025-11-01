@@ -2,6 +2,7 @@ var class_toolbox_menu_obj =
 [
     [ "ToolboxMenuObj", "class_toolbox_menu_obj.html#a1f6c7a5c0bbf1e4f9b3e703cf4550da9", null ],
     [ "ToolboxMenuObj", "class_toolbox_menu_obj.html#a87f8f513b0c9f8dad406acae16023536", null ],
+    [ "ToolboxMenuObj", "class_toolbox_menu_obj.html#a625084191da6bd69644e06149c6ced0a", null ],
     [ "addEntry", "class_toolbox_menu_obj.html#af34fd5a99d1f20829770b2a683594cb7", null ],
     [ "clearFlags", "class_toolbox_menu_obj.html#a3c83b600bda39909ad34e08bd49ce8a3", null ],
     [ "getClassName", "class_toolbox_menu_obj.html#ad1068cb3a7f7cd5d47f781e39647f076", null ],

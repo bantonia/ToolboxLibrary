@@ -1,6 +1,6 @@
 #include "ToolboxOptionButton.h"
 
-ToolboxOptionButton::ToolboxOptionButton() {};
+ToolboxOptionButton::ToolboxOptionButton() : ToolboxGadget() {}
 
 ToolboxOptionButton::ToolboxOptionButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 ToolboxOptionButton::ToolboxOptionButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}

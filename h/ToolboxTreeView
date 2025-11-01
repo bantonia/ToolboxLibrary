@@ -45,9 +45,9 @@ class ToolboxTreeView : public ToolboxGadget {
     ToolboxTreeView& setNodeText(const char *text);
     ToolboxTreeView& updateDisplay();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxTreeView";};
-    int getClassType() { return ClassType_ToolboxTreeView;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxTreeView";}
+    int getClassType() { return ClassType_ToolboxTreeView;}
 };
 
 #endif

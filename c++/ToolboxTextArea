@@ -1,6 +1,6 @@
 #include "ToolboxTextArea.h"
 
-ToolboxTextArea::ToolboxTextArea() {};
+ToolboxTextArea::ToolboxTextArea() : ToolboxGadget() {}
 ToolboxTextArea::ToolboxTextArea(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 ToolboxTextArea::ToolboxTextArea(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
 
@@ -112,5 +112,19 @@ unsigned int ToolboxTextArea::getCursorPosition() {
   _kernel_swi_regs regs;
   this->gadgetMethod(TextArea_GetCursorPosition, &regs);
   return regs.r[4];
+}
+
+int ToolboxTextArea::getTextCount() {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int)NULL;
+  regs.r[5] = 0;
+  this->gadgetMethod(TextArea_GetText, &regs);
+  return regs.r[5];
+}
+
+ToolboxTextArea& ToolboxTextArea::append(const char *text) {
+  int nChars = getTextCount();
+  insertText(nChars, text);
+  return *this;
 }
 

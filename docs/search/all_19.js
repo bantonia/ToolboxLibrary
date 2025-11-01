@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7ebitfield_0',['~BitField',['../class_bit_field.html#aaf8ddaddd217678e1b460bf4ccfa6355',1,'BitField']]],
+  ['_7ebitfield_0',['~BitField',['../class_bit_field.html#ace6c4b4b88b610b8b960dca27ce0e327',1,'BitField']]],
   ['_7ecolourtransobj_1',['~ColourTransObj',['../class_colour_trans_obj.html#a4cd5fc61c6de73e4075f8df432833521',1,'ColourTransObj']]],
   ['_7eerrorreport_2',['~ErrorReport',['../class_error_report.html#a6ec853c4b91e7cf38aa67e269131f06d',1,'ErrorReport']]],
   ['_7eobject_3',['~Object',['../class_object.html#ae8f5483f459e46687bd01e6f9977afd3',1,'Object']]],

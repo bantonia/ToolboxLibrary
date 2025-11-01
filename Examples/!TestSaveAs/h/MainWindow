@@ -1,0 +1,31 @@
+#ifndef __cplusplus
+#error Header file "MainWindow.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __MainWindow_h
+#define __MainWindow_h
+
+#include "ToolboxWindowObj.h"
+#include "TextDisplay.h"
+#include <string.h>
+
+class MainWindow : public ToolboxWindowObj {
+  public:
+
+    enum MWComponents {
+      MWTextArea
+    };
+
+    MainWindow();
+    ~MainWindow();
+    MainWindow(IdBlock *);
+    int getTextCount();
+    void getText(char *, int, int *);
+
+  private:
+    TextDisplay *td;
+};
+
+#endif

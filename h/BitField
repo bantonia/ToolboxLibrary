@@ -21,9 +21,9 @@ class BitField : public Object {
 /** BitField constructor
 * Creates an object with 8 available bits
 */
-    BitField(void);
+    BitField();
 
-    ~BitField(void);
+    ~BitField();
 
 /** BitField constructor
 * @param[in] bits Number of bits to store in the object

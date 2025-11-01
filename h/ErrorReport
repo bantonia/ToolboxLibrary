@@ -27,8 +27,8 @@ class ErrorReport {
       CONSOLE,
       WIMP
     };
-    ErrorReport(){};
-    ~ErrorReport(){};
+    ErrorReport(){}
+    ~ErrorReport(){}
     static void setLastError(_kernel_oserror *, unsigned int);
     static void setLastError(_kernel_oserror *, unsigned int, char *location);
     static _kernel_oserror *getLastError();

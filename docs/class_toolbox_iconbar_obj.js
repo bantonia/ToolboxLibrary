@@ -1,6 +1,8 @@
 var class_toolbox_iconbar_obj =
 [
     [ "ToolboxIconbarObj", "class_toolbox_iconbar_obj.html#a6fd3fff0789ad181b86ad77713570900", null ],
+    [ "ToolboxIconbarObj", "class_toolbox_iconbar_obj.html#aeb0a15e01345af0c024554a4366e9d36", null ],
+    [ "ToolboxIconbarObj", "class_toolbox_iconbar_obj.html#a4dead958bd2eb6bfba004b6dce80d3f3", null ],
     [ "~ToolboxIconbarObj", "class_toolbox_iconbar_obj.html#af51a86b9a673627ccda04fd789584e62", null ],
     [ "clearFlags", "class_toolbox_iconbar_obj.html#a026fbefcd6b5b30286f5084fde814c36", null ],
     [ "detachHelpMessage", "class_toolbox_iconbar_obj.html#a65602000e08553f9168a1849cc4cce70", null ],

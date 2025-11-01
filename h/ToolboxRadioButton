@@ -14,7 +14,7 @@ class ToolboxRadioButton : public ToolboxGadget {
   public:
     ToolboxRadioButton();
     ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId);
-    ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+    ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId, unsigned int Flags);
     ToolboxRadioButton& setLabel(char *label);
     int getLabel();
     int getLabel(char *buffer, int bufSize);
@@ -33,9 +33,9 @@ class ToolboxRadioButton : public ToolboxGadget {
     ToolboxRadioButton& setHelpMessage(char *message);
     ToolboxRadioButton& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxRadioButton";};
-    int getClassType() { return ClassType_ToolboxRadioButton;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxRadioButton";}
+    int getClassType() { return ClassType_ToolboxRadioButton;}
 };
 
 #endif

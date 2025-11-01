@@ -33,9 +33,9 @@ class ToolboxTabs : public ToolboxGadget {
     ToolboxTabs& setHelpMessage(char *message);
     ToolboxTabs& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxTabs";};
-    int getClassType() { return ClassType_ToolboxTabs;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxTabs";}
+    int getClassType() { return ClassType_ToolboxTabs;}
 };
 
 #endif

@@ -13,8 +13,9 @@
 
 class ToolboxFontMenuObj : public ToolboxObj {
   public:
-    ToolboxFontMenuObj(){};
+    ToolboxFontMenuObj();
     ToolboxFontMenuObj(ObjectId objectId);
+    ToolboxFontMenuObj(IdBlock *idBlock);
     ToolboxFontMenuObj& setFont(char *fontId);
     int getFont();
     int getFont(char *buffer, int bufSize);
@@ -22,9 +23,9 @@ class ToolboxFontMenuObj : public ToolboxObj {
     ToolboxFontMenuObj& setFlags(unsigned int flags);
     ToolboxFontMenuObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxFontMenuObj";};
-    int getClassType() { return ClassType_ToolboxFontMenuObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxFontMenuObj";}
+    int getClassType() { return ClassType_ToolboxFontMenuObj;}
 };
 
 #endif

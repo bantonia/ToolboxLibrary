@@ -1,0 +1,205 @@
+# Project:   TestSaveAs
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.TestSaveAs @.o.MainWindow @.o.TextDisplay \
+        @.o.SaveAsDialogue @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.TestSaveAs @.o.MainWindow \
+        @.o.TextDisplay @.o.SaveAsDialogue @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.TestSaveAs:   @.c++.TestSaveAs
+        c++ $(c++flags) -o @.o.TestSaveAs @.c++.TestSaveAs 
+@.o.MainWindow:   @.c++.MainWindow
+        c++ $(c++flags) -o @.o.MainWindow @.c++.MainWindow 
+@.o.TextDisplay:   @.c++.TextDisplay
+        c++ $(c++flags) -o @.o.TextDisplay @.c++.TextDisplay 
+@.o.SaveAsDialogue:   @.c++.SaveAsDialogue
+        c++ $(c++flags) -o @.o.SaveAsDialogue @.c++.SaveAsDialogue 
+
+
+# Dynamic dependencies:
+o.SaveAsDialogue:	c++.SaveAsDialogue
+o.SaveAsDialogue:	h.SaveAsDialogue
+o.SaveAsDialogue:	C:h.ToolboxSaveAsObj
+o.SaveAsDialogue:	C:h.ClassType
+o.SaveAsDialogue:	C:h.ToolboxObj
+o.SaveAsDialogue:	C:h.Object
+o.SaveAsDialogue:	C:h.toolbox
+o.SaveAsDialogue:	C:h.kernel
+o.SaveAsDialogue:	C:h.wimp
+o.SaveAsDialogue:	C:h.ErrorReport
+o.SaveAsDialogue:	C:h.kernel
+o.SaveAsDialogue:	C:h.ClassType
+o.SaveAsDialogue:	C:h.saveas
+o.SaveAsDialogue:	C:h.window
+o.SaveAsDialogue:	C:h.gadgets
+o.main:	c++.main
+o.main:	h.TestSaveAs
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	h.MainWindow
+o.main:	C:h.ToolboxWindowObj
+o.main:	C:h.window
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	h.TextDisplay
+o.main:	C:h.ToolboxTextArea
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.Object
+o.main:	C:h.ClassType
+o.main:	C:h.TextArea
+o.main:	h.SaveAsDialogue
+o.main:	C:h.ToolboxSaveAsObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.saveas
+o.main:	C:h.wimplib
+o.TestSaveAs:	c++.TestSaveAs
+o.TestSaveAs:	h.TestSaveAs
+o.TestSaveAs:	C:h.ToolboxTask
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.ToolboxCoreObj
+o.TestSaveAs:	C:h.Object
+o.TestSaveAs:	C:h.toolbox
+o.TestSaveAs:	C:h.kernel
+o.TestSaveAs:	C:h.wimp
+o.TestSaveAs:	C:h.ToolboxEvents
+o.TestSaveAs:	C:h.toolbox
+o.TestSaveAs:	C:h.gadgets
+o.TestSaveAs:	C:h.treeview
+o.TestSaveAs:	C:h.window
+o.TestSaveAs:	C:h.ScrollList
+o.TestSaveAs:	C:h.tabs
+o.TestSaveAs:	C:h.ErrorReport
+o.TestSaveAs:	C:h.kernel
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.WimpObj
+o.TestSaveAs:	C:h.kernel
+o.TestSaveAs:	C:h.ErrorReport
+o.TestSaveAs:	C:h.libc
+o.TestSaveAs:	C:h.kernel
+o.TestSaveAs:	C:h.Object
+o.TestSaveAs:	C:h.wimp
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	h.MainWindow
+o.TestSaveAs:	C:h.ToolboxWindowObj
+o.TestSaveAs:	C:h.window
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.ToolboxObj
+o.TestSaveAs:	C:h.Object
+o.TestSaveAs:	C:h.toolbox
+o.TestSaveAs:	C:h.ErrorReport
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	h.TextDisplay
+o.TestSaveAs:	C:h.ToolboxTextArea
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.ToolboxGadget
+o.TestSaveAs:	C:h.kernel
+o.TestSaveAs:	C:h.ErrorReport
+o.TestSaveAs:	C:h.toolbox
+o.TestSaveAs:	C:h.gadgets
+o.TestSaveAs:	C:h.Object
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.TextArea
+o.TestSaveAs:	h.SaveAsDialogue
+o.TestSaveAs:	C:h.ToolboxSaveAsObj
+o.TestSaveAs:	C:h.ClassType
+o.TestSaveAs:	C:h.ToolboxObj
+o.TestSaveAs:	C:h.saveas
+o.TestSaveAs:	C:h.wimplib
+o.MainWindow:	c++.MainWindow
+o.MainWindow:	h.MainWindow
+o.MainWindow:	C:h.ToolboxWindowObj
+o.MainWindow:	C:h.window
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.wimp
+o.MainWindow:	C:h.gadgets
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxObj
+o.MainWindow:	C:h.Object
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.ErrorReport
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	h.TextDisplay
+o.MainWindow:	C:h.ToolboxTextArea
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.ToolboxGadget
+o.MainWindow:	C:h.kernel
+o.MainWindow:	C:h.ErrorReport
+o.MainWindow:	C:h.toolbox
+o.MainWindow:	C:h.gadgets
+o.MainWindow:	C:h.Object
+o.MainWindow:	C:h.ClassType
+o.MainWindow:	C:h.TextArea
+o.TextDisplay:	c++.TextDisplay
+o.TextDisplay:	h.TextDisplay
+o.TextDisplay:	C:h.ToolboxTextArea
+o.TextDisplay:	C:h.ClassType
+o.TextDisplay:	C:h.ToolboxGadget
+o.TextDisplay:	C:h.kernel
+o.TextDisplay:	C:h.ErrorReport
+o.TextDisplay:	C:h.kernel
+o.TextDisplay:	C:h.toolbox
+o.TextDisplay:	C:h.wimp
+o.TextDisplay:	C:h.gadgets
+o.TextDisplay:	C:h.Object
+o.TextDisplay:	C:h.ClassType
+o.TextDisplay:	C:h.TextArea
+o.TextDisplay:	C:h.window

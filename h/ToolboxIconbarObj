@@ -14,9 +14,13 @@
 class ToolboxIconbarObj : public ToolboxObj {
   public:
     ToolboxIconbarObj();
+    ToolboxIconbarObj(ObjectId);
+    ToolboxIconbarObj(IdBlock *);
+
     ~ToolboxIconbarObj();
     int getIconHandle();
     ToolboxIconbarObj& setMenu(ObjectId menuId);
+
     ObjectId getMenu();
     ToolboxIconbarObj& setEvent(int selectEvent, int adjustEvent);
     ToolboxIconbarObj& setSelectEvent(int selectEvent);
@@ -44,9 +48,9 @@ class ToolboxIconbarObj : public ToolboxObj {
     ToolboxIconbarObj& setFlags(unsigned int flags);
     ToolboxIconbarObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxIconbarObj";};
-    int getClassType() { return ClassType_ToolboxIconbarObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxIconbarObj";}
+    int getClassType() { return ClassType_ToolboxIconbarObj;}
 };
 
 #endif

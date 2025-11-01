@@ -1,0 +1,3 @@
+Set TestSaveAs$Dir <Obey$Dir>
+wimpslot -min 1024K -max 1024K
+Run <TestSaveAs$Dir>.!RunImage

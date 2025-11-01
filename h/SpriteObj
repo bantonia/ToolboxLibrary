@@ -17,9 +17,9 @@ class SpriteObj : public Object {
     SpriteObj& setScaleFactors(int, int, int, int);
     sprite_factors *getScaleFactors();
 
-    void showProperties() {};
-    char* getClassName() { return "SpriteObj";};
-    int getClassType() { return ClassType_SpriteObj;};
+    void showProperties() {}
+    char* getClassName() { return "SpriteObj";}
+    int getClassType() { return ClassType_SpriteObj;}
 
   private:
        SpritePtr_t *spritePtr;

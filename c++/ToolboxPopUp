@@ -1,6 +1,6 @@
 #include "ToolboxPopUp.h"
 
-ToolboxPopUp::ToolboxPopUp() {};
+ToolboxPopUp::ToolboxPopUp() : ToolboxGadget() {}
 
 ToolboxPopUp::ToolboxPopUp(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

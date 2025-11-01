@@ -1,6 +1,6 @@
 #include "ToolboxSlider.h"
 
-ToolboxSlider::ToolboxSlider() {};
+ToolboxSlider::ToolboxSlider() : ToolboxGadget() {}
 
 ToolboxSlider::ToolboxSlider(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

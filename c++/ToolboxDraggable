@@ -1,6 +1,6 @@
 #include "ToolboxDraggable.h"
 
-ToolboxDraggable::ToolboxDraggable() {};
+ToolboxDraggable::ToolboxDraggable() : ToolboxGadget() {}
 
 ToolboxDraggable::ToolboxDraggable(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

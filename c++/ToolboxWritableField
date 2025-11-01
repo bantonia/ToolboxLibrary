@@ -1,6 +1,6 @@
 #include "ToolboxWritableField.h"
 
-ToolboxWritableField::ToolboxWritableField() {};
+ToolboxWritableField::ToolboxWritableField() : ToolboxGadget() {}
 
 ToolboxWritableField::ToolboxWritableField(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

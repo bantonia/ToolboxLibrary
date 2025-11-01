@@ -1,6 +1,10 @@
 #include "ToolboxIconbarObj.h"
 
-ToolboxIconbarObj::ToolboxIconbarObj() {}
+ToolboxIconbarObj::ToolboxIconbarObj() : ToolboxObj() {}
+
+ToolboxIconbarObj::ToolboxIconbarObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxIconbarObj::ToolboxIconbarObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ToolboxIconbarObj::~ToolboxIconbarObj() {}
 

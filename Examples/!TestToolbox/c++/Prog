@@ -109,9 +109,9 @@ void Prog::iconbarObjectAutoCreated() {
   iconbar->setFlags(0).setObjectId(ToolboxCoreObj::idBlock.self_id).setText("Worked");
 }
 
-void Prog::toolboxUserEvent() {
-  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) getPollBlock();
-  switch(tboxHdr->event_code) {
+void Prog::toolboxUserEvent(int event) {
+  //ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) getPollBlock();
+  switch(event /*tboxHdr->event_code*/) {
     case Quit: {
         closeDown();
       }
@@ -139,7 +139,6 @@ void Prog::toolboxUserEvent() {
       break;
   }
 }
-
 
 void Prog::radioButtonStateChanged() {
   mainWindow->df3->setValue(mainWindow->rb1->getOnButton());

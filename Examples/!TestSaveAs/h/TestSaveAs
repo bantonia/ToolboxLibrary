@@ -1,0 +1,39 @@
+#ifndef __cplusplus
+#error Header file "TestSaveAs.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __TestSaveAs_h
+#define __TestSaveAs_h
+
+#include "ToolboxTask.h"
+#include "MainWindow.h"
+#include "SaveAsDialogue.h"
+#include "wimplib.h"
+
+class TestSaveAs : public ToolboxTask {
+  public:
+
+    enum UserEvents {
+      IMQuit = 2
+    };
+
+    TestSaveAs();
+    ~TestSaveAs();
+
+    void toolboxObjectAutoCreated(int object_class);
+    void toolboxUserEvent(int event);
+    void toolboxEventHandler(int event);
+
+    void windowObjectAutoCreated();
+    void saveAsObjectAutoCreated();
+    void saveAsAboutToBeShown();
+
+  private:
+    char *buffer;
+    MainWindow *mainWindow;
+    SaveAsDialogue *saveAs;
+};
+
+#endif

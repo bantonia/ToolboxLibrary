@@ -1,0 +1,20 @@
+#ifndef __cplusplus
+#error Header file "SaveAsDialogue.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __SaveAsDialogue_h
+#define __SaveAsDialogue_h
+
+#include "ToolboxSaveAsObj.h"
+
+class SaveAsDialogue : public ToolboxSaveAsObj {
+  public:
+    SaveAsDialogue() {}
+    ~SaveAsDialogue() {}
+    SaveAsDialogue(IdBlock *);
+};
+
+#endif
+

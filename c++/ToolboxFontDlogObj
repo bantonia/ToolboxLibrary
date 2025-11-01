@@ -1,6 +1,10 @@
 #include "ToolboxFontDlogObj.h"
 
-ToolboxFontDlogObj::ToolboxFontDlogObj() {}
+ToolboxFontDlogObj::ToolboxFontDlogObj(): ToolboxObj() {}
+
+ToolboxFontDlogObj::ToolboxFontDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxFontDlogObj::ToolboxFontDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ToolboxFontDlogObj::~ToolboxFontDlogObj() {}
 

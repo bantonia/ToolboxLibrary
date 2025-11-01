@@ -14,6 +14,8 @@
 class ToolboxFileInfoDlogObj : public ToolboxObj {
   public:
     ToolboxFileInfoDlogObj();
+    ToolboxFileInfoDlogObj(ObjectId objectId);
+    ToolboxFileInfoDlogObj(IdBlock *idBlock);
     ~ToolboxFileInfoDlogObj();
     int getWindowId();
     ToolboxFileInfoDlogObj& setModified();
@@ -36,9 +38,9 @@ class ToolboxFileInfoDlogObj : public ToolboxObj {
     ToolboxFileInfoDlogObj& setFlags(unsigned int flags);
     ToolboxFileInfoDlogObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxFileInfoDlogObj";};
-    int getClassType() { return ClassType_ToolboxFileInfoDlogObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxFileInfoDlogObj";}
+    int getClassType() { return ClassType_ToolboxFileInfoDlogObj;}
 };
 
 #endif

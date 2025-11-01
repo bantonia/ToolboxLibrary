@@ -37,9 +37,9 @@ typedef struct {
     int item;
 } ScrollListSelectionEvent;
     
-    void showProperties() {};
-    char* getClassName() { return "ToolboxScrollList";};
-    int getClassType() { return ClassType_ToolboxNumberRange;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxScrollList";}
+    int getClassType() { return ClassType_ToolboxNumberRange;}
 };
 
 #endif

@@ -22,8 +22,8 @@
 
 class ToolboxTask : public WimpObj, public ToolboxCoreObj {
   public:
-    ToolboxTask () {};
-    ~ToolboxTask() {};
+    ToolboxTask () {}
+    ~ToolboxTask() {}
     void eToolboxEvent();
 
 /** Initialisation of where the applications resources are stored
@@ -33,17 +33,17 @@ class ToolboxTask : public WimpObj, public ToolboxCoreObj {
 
 /** Currently unused
 */
-    void showProperties() {};
+    void showProperties() {}
 
 /** Returns the classname of the object
 * Returns a pointer to a zero terminated character field containing "ToolboxTask"
 */
-    char* getClassName() { return "ToolboxTask";};
+    char* getClassName() { return "ToolboxTask";}
 
 /** Returns an integer representing a value for an object of class BitField
 * Value returned is ClassType_ToolboxTask
 */
-    int getClassType() { return ClassType_ToolboxTask;};
+    int getClassType() { return ClassType_ToolboxTask;}
 };
 
 #endif

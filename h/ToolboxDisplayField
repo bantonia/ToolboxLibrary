@@ -30,9 +30,9 @@ class ToolboxDisplayField : public ToolboxGadget {
     ToolboxDisplayField& setHelpMessage(char *message);
     ToolboxDisplayField& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxDisplayField";};
-    int getClassType() { return ClassType_ToolboxDisplayField;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxDisplayField";}
+    int getClassType() { return ClassType_ToolboxDisplayField;}
 };
 
 #endif

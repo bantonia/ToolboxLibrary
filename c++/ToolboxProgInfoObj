@@ -2,9 +2,9 @@
 
 ToolboxProgInfoObj::ToolboxProgInfoObj(){}
 
-ToolboxProgInfoObj::ToolboxProgInfoObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxProgInfoObj::ToolboxProgInfoObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxProgInfoObj::ToolboxProgInfoObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ObjectId ToolboxProgInfoObj::getWindowId() {
   _kernel_swi_regs regs;

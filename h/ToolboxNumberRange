@@ -29,9 +29,9 @@ class ToolboxNumberRange : public ToolboxGadget {
     ToolboxNumberRange& setHelpMessage(char *message);
     ToolboxNumberRange& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxNumberRange";};
-    int getClassType() { return ClassType_ToolboxNumberRange;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxNumberRange";}
+    int getClassType() { return ClassType_ToolboxNumberRange;}
 };
 
 #endif

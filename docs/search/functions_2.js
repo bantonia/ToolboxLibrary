@@ -23,10 +23,16 @@ var searchData=
   ['colourtransobj_20',['ColourTransObj',['../class_colour_trans_obj.html#a543d8491879556d67145ccb02329c7b6',1,'ColourTransObj']]],
   ['convertdevicecolour_21',['convertDeviceColour',['../class_colour_trans_obj.html#a4f22eeb8674f5a05e8703918185c75d8',1,'ColourTransObj']]],
   ['convertdevicepalette_22',['convertDevicePalette',['../class_colour_trans_obj.html#a99e50e5193ac2dd0db3c3ebf8c565bd7',1,'ColourTransObj']]],
-  ['copysprite_23',['copySprite',['../class_sprite_area_obj.html#a5d9b788bbd51bfde437ae79b3576a1b1',1,'SpriteAreaObj::copySprite(SpriteObj *, char *)'],['../class_sprite_area_obj.html#a96d54d93008bef20b1859a13a5996ad3',1,'SpriteAreaObj::copySprite(char *, char *)']]],
-  ['countitems_24',['countItems',['../class_toolbox_scroll_list.html#a7df0bc11ad787345eb439672110d6781',1,'ToolboxScrollList']]],
-  ['createmask_25',['createMask',['../class_sprite_area_obj.html#aa952113b3b3dd5f6e28e44036747c492',1,'SpriteAreaObj::createMask(SpriteObj *)'],['../class_sprite_area_obj.html#afec7640f4f5642e3e326f0129db5f1c9',1,'SpriteAreaObj::createMask(char *)']]],
-  ['createobject_26',['createObject',['../class_toolbox_core_obj.html#a3803e0adc38e5e13c60dd91cb43aeb72',1,'ToolboxCoreObj::createObject()'],['../class_toolbox_obj.html#a27b13ed61eefe30372978d9b1ef87029',1,'ToolboxObj::createObject()']]],
-  ['createsprite_27',['createSprite',['../class_sprite_area_obj.html#ab46822ef59bbcf81a8a4c4f187315d38',1,'SpriteAreaObj']]],
-  ['createwindow_28',['createWindow',['../class_wimp_window_obj.html#a2e77e69db146298efb805e14dd2f4bf3',1,'WimpWindowObj']]]
+  ['converthex_23',['convertHex',['../class_o_s.html#a0688ecd0fa8d0bc2cb7dc6a04799b574',1,'OS']]],
+  ['converthex1_24',['convertHex1',['../class_o_s.html#acb42808fde8b8966fc4810682a293e44',1,'OS']]],
+  ['converthex2_25',['convertHex2',['../class_o_s.html#a0034139193694003963375cbaea90747',1,'OS']]],
+  ['converthex4_26',['convertHex4',['../class_o_s.html#ac324fc30b76eca6344b0ae885ce16d59',1,'OS']]],
+  ['converthex6_27',['convertHex6',['../class_o_s.html#a34a7e499f835f5a5e7ea28f3fee29a12',1,'OS']]],
+  ['converthex8_28',['convertHex8',['../class_o_s.html#aa6363a316c0455cce1817cfee72ee221',1,'OS']]],
+  ['copysprite_29',['copySprite',['../class_sprite_area_obj.html#a5d9b788bbd51bfde437ae79b3576a1b1',1,'SpriteAreaObj::copySprite(SpriteObj *, char *)'],['../class_sprite_area_obj.html#a96d54d93008bef20b1859a13a5996ad3',1,'SpriteAreaObj::copySprite(char *, char *)']]],
+  ['countitems_30',['countItems',['../class_toolbox_scroll_list.html#a7df0bc11ad787345eb439672110d6781',1,'ToolboxScrollList']]],
+  ['createmask_31',['createMask',['../class_sprite_area_obj.html#aa952113b3b3dd5f6e28e44036747c492',1,'SpriteAreaObj::createMask(SpriteObj *)'],['../class_sprite_area_obj.html#afec7640f4f5642e3e326f0129db5f1c9',1,'SpriteAreaObj::createMask(char *)']]],
+  ['createobject_32',['createObject',['../class_toolbox_core_obj.html#a3803e0adc38e5e13c60dd91cb43aeb72',1,'ToolboxCoreObj::createObject()'],['../class_toolbox_obj.html#a27b13ed61eefe30372978d9b1ef87029',1,'ToolboxObj::createObject()']]],
+  ['createsprite_33',['createSprite',['../class_sprite_area_obj.html#ab46822ef59bbcf81a8a4c4f187315d38',1,'SpriteAreaObj']]],
+  ['createwindow_34',['createWindow',['../class_wimp_window_obj.html#a2e77e69db146298efb805e14dd2f4bf3',1,'WimpWindowObj']]]
 ];

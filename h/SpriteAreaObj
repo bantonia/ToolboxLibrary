@@ -94,9 +94,9 @@ class SpriteAreaObj : public Object {
 
     SpriteAreaObj&  putSpriteScaled(char *, int, int, int, sprite_factors *, sprite_pixtrans *);
 
-    void showProperties() {};
-    char* getClassName() { return "SpriteAreaObj";};
-    int getClassType() { return ClassType_SpriteAreaObj;};
+    void showProperties() {}
+    char* getClassName() { return "SpriteAreaObj";}
+    int getClassType() { return ClassType_SpriteAreaObj;}
 
   private:
 

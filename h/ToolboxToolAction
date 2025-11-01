@@ -50,7 +50,7 @@ class ToolboxToolAction : public ToolboxGadget {
     ToolboxToolAction& setPressed(unsigned int pressed);
     unsigned int getPressed();
 
-    void showProperties() {};
+    void showProperties() {}
     char* getClassName() { return "ToolboxToolAction";}
     int getClassType() { return ClassType_ToolboxToolAction;}
 };

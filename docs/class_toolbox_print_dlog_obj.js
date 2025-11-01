@@ -2,6 +2,7 @@ var class_toolbox_print_dlog_obj =
 [
     [ "ToolboxPrintDlogObj", "class_toolbox_print_dlog_obj.html#ab9b78c605abdf0f091d86e9f9e5e58b8", null ],
     [ "ToolboxPrintDlogObj", "class_toolbox_print_dlog_obj.html#a10ce99d707fb5a496f4563fb4c7aaade", null ],
+    [ "ToolboxPrintDlogObj", "class_toolbox_print_dlog_obj.html#ad51b89ace5518cfc9f962aac81706abe", null ],
     [ "clearFlags", "class_toolbox_print_dlog_obj.html#a014137e243a4958fb32168965bb726f3", null ],
     [ "getClassName", "class_toolbox_print_dlog_obj.html#a3bae271463afc500e1052af7e6b15289", null ],
     [ "getClassType", "class_toolbox_print_dlog_obj.html#a5a6031d46f353218653681e7b4f0b72a", null ],

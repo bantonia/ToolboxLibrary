@@ -2,16 +2,13 @@
 #include <string.h>
 #include "ToolboxWindowObj.h"
 
-ToolboxWindowObj::ToolboxWindowObj() {
-}
+ToolboxWindowObj::ToolboxWindowObj() {}
 
-ToolboxWindowObj::ToolboxWindowObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxWindowObj::ToolboxWindowObj(ObjectId objectId) : ToolboxObj(objectId) {}
 
-ToolboxWindowObj::~ToolboxWindowObj() {
-  
-}
+ToolboxWindowObj::ToolboxWindowObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
+
+ToolboxWindowObj::~ToolboxWindowObj() {}
 
 int ToolboxWindowObj::getWimpHandle() {
   _kernel_swi_regs regs;

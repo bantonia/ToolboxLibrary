@@ -1,7 +1,7 @@
 #include "ToolboxTabs.h"
 #include "tabs.h"
 
-ToolboxTabs::ToolboxTabs() {};
+ToolboxTabs::ToolboxTabs() : ToolboxGadget() {}
 
 ToolboxTabs::ToolboxTabs(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

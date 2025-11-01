@@ -1,6 +1,6 @@
 var class_toolbox_colour_dlog_obj =
 [
-    [ "colourBlockHdr", "struct_toolbox_colour_dlog_obj_1_1colour_block_hdr.html", "struct_toolbox_colour_dlog_obj_1_1colour_block_hdr" ],
+    [ "ColourBlockHdr", "struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr.html", "struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr" ],
     [ "ColourModel", "class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bd", [
       [ "RGB", "class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bdaa5cd87ecac238d6f44938b835ae1bfe2", null ],
       [ "CMYK", "class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bda90dfdc56e85a4d15f4b1bc73d6b58e15", null ],
@@ -8,6 +8,7 @@ var class_toolbox_colour_dlog_obj =
     ] ],
     [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html#a2ed10bb5bba623498f9143114fd187eb", null ],
     [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html#a7e344a24fdc9dc12e864ef48cd52e699", null ],
+    [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html#afbb5976ce8bf152dd970d58c6c579c8f", null ],
     [ "~ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html#ae77c9eee698dc77be35d41ab95886854", null ],
     [ "clearFlags", "class_toolbox_colour_dlog_obj.html#a39033190647d4da0a9b839760277e418", null ],
     [ "getClassName", "class_toolbox_colour_dlog_obj.html#a8cce0f8e10371d391214af6ae54ee267", null ],

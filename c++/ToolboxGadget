@@ -1,7 +1,7 @@
 #include "ToolboxGadget.h"
 
 ToolboxGadget& ToolboxGadget::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  regs->r[0] = (int) getFlags();
+  regs->r[0] = (int) flags;
   regs->r[1] = windowId;
   regs->r[2] = methodCode;
   regs->r[3] = gadgetId;
@@ -16,29 +16,31 @@ ToolboxGadget::ToolboxGadget() {
 }
 
 ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId) {
-  setObjectId(windowId);
-  setComponentId(gadgetId);
+  this->windowId = windowId;
+  this->gadgetId = gadgetId;
   flags = 0;
 }
 
 ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId, unsigned int flags) {
-  setObjectId(windowId);
-  setComponentId(gadgetId);
-  setFlags(flags);
+  this->windowId = windowId;
+  this->gadgetId = gadgetId;
+  this->flags = flags;
 }
 
 int ToolboxGadget::getGadgetFlags() {
   _kernel_swi_regs regs;
-  this->setFlags(0);
+  flags = 0;
   this->gadgetMethod(Gadget_GetFlags, &regs);
+  flags = regs.r[0];
   return regs.r[0];
 }
 
 ToolboxGadget& ToolboxGadget::setGadgetFlags(unsigned int flags) {
   _kernel_swi_regs regs;
-  this->setFlags(0);
+  this->flags = 0;
   regs.r[4] = (int) flags;
   this->gadgetMethod(Gadget_SetFlags, &regs);
+  this->flags = flags;
   return *this;
 }
 

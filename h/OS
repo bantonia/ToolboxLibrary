@@ -11,12 +11,18 @@
 
 class OS : public ErrorReport {
   public:
-    OS(){};
-    ~OS(){};
+    OS(){}
+    ~OS(){}
     static unsigned int readMonotonicTime();
     static unsigned int readModeVariable(int, int);
     static char *binaryToDecimal(int, char *, int *);
     static int evaluateExpression(char *, char *, int *);
+    static char *convertHex1(int, char *, int *);
+    static char *convertHex2(int, char *, int *);
+    static char *convertHex4(int, char *, int *);
+    static char *convertHex6(int, char *, int *);
+    static char *convertHex8(int, char *, int *);
+    static char *convertHex(int, char *, int *);
   private:
 };
 

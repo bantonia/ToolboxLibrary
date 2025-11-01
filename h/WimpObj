@@ -83,27 +83,30 @@ class WimpObj : public Object, public ErrorReport {
     void setMask(unsigned int mask);
     void addMessages(int *);
     void removeMessages(int *);
-    virtual void nullReason(){};
-    virtual void redrawWindowRequest(){};
-    virtual void openWindowRequest(){ openWindow();};
-    virtual void closeWindowRequest(){ closeWindow();};
-    virtual void pointerLeavingWindow(){};
-    virtual void pointerEnteringWindow(){};
-    virtual void mouseClick(){};
-    virtual void userDragBox(){};
-    virtual void keyPressed(){};
-    virtual void menuSelection(){};
-    virtual void scrollRequest(){};
-    virtual void loseCaret(){};
-    virtual void gainCaret(){};
-    virtual void pollWordNonZero(){};
-    virtual void userMessage(){};
-    virtual void userMessageRecorded(){};
-    virtual void userMessageAcknowledge(){};
-    virtual void eToolboxEvent(){};
-    virtual void preCloseDown(){};
-    virtual void unknownWimpEvent(){};
+
+    virtual void nullReason(){}
+    virtual void redrawWindowRequest(){}
+    virtual void openWindowRequest(){ openWindow();}
+    virtual void closeWindowRequest(){ closeWindow();}
+    virtual void pointerLeavingWindow(){}
+    virtual void pointerEnteringWindow(){}
+    virtual void mouseClick(){}
+    virtual void userDragBox(){}
+    virtual void keyPressed(){}
+    virtual void menuSelection(){}
+    virtual void scrollRequest(){}
+    virtual void loseCaret(){}
+    virtual void gainCaret(){}
+    virtual void pollWordNonZero(){}
+    virtual void userMessage(){}
+    virtual void userMessageRecorded(){}
+    virtual void userMessageAcknowledge(){}
+    virtual void eToolboxEvent(){}
+    virtual void preCloseDown(){}
+    virtual void unknownWimpEvent(){}
+
     virtual int errorHandler();
+
     static unsigned int *getPollBlock();
     static void setHandle(unsigned int);
     static unsigned int getHandle();
@@ -124,9 +127,10 @@ class WimpObj : public Object, public ErrorReport {
     //static void loadTemplate(char *);
     static int quit;
 
-    void showProperties() {};
-    char* getClassName() { return "WimpObj";};
-    int getClassType() { return ClassType_WimpObj;};
+    void showProperties() {}
+    char* getClassName() { return "WimpObj";}
+    int getClassType() { return ClassType_WimpObj;}
+
   private:
     static int handle;
     static unsigned int *messages;

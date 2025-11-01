@@ -7,7 +7,7 @@ var searchData=
   ['scrolloutercolour_4',['scrollOuterColour',['../struct_wind_def_str.html#a39395d93cba794b75b56b9ef038244a4',1,'WindDefStr']]],
   ['scrollx_5',['scrollX',['../struct_scroll_request_block.html#aa6204cffcea7968a5e68ee977195c31e',1,'ScrollRequestBlock']]],
   ['scrolly_6',['scrollY',['../struct_scroll_request_block.html#aa45a58ffaf215ed5f8dc8e175089d510',1,'ScrollRequestBlock']]],
-  ['size_7',['size',['../structsprite__area.html#a94ff08caab43bc8bde2b791b1d9c6e52',1,'sprite_area::size'],['../struct_toolbox_colour_dlog_obj_1_1colour_block_hdr.html#a22d3849db6d765a02c26fe7c4b755635',1,'ToolboxColourDlogObj::colourBlockHdr::size']]],
+  ['size_7',['size',['../structsprite__area.html#a94ff08caab43bc8bde2b791b1d9c6e52',1,'sprite_area::size'],['../struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr.html#abbdc494b5c49c6126c62f955d0aa4cb1',1,'ToolboxColourDlogObj::ColourBlockHdr::size']]],
   ['sprite_5fname_8',['sprite_name',['../union_icon_data_str.html#a17e9f8f31ef5b4608d4c55d4e2816b82',1,'IconDataStr']]],
   ['spritearea_9',['spriteArea',['../struct_wind_def_str.html#ac699ce1e9885a8970689c84122754f27',1,'WindDefStr']]],
   ['spritearea_10',['spritearea',['../union_icon_data_str.html#a5383f8abce7285f8c9cb24de8a8287c4',1,'IconDataStr']]],

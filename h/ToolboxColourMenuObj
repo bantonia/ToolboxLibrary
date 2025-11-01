@@ -14,6 +14,8 @@
 class ToolboxColourMenuObj : public ToolboxObj {
   public:
     ToolboxColourMenuObj();
+    ToolboxColourMenuObj(ObjectId objectId);
+    ToolboxColourMenuObj(IdBlock *idBlock);
     ~ ToolboxColourMenuObj();
     ToolboxColourMenuObj& setColour(int colour);
     int getColour();
@@ -26,9 +28,9 @@ class ToolboxColourMenuObj : public ToolboxObj {
     ToolboxColourMenuObj& setFlags(unsigned int flags);
     ToolboxColourMenuObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxColourMenuObj";};
-    int getClassType() { return ClassType_ToolboxColourMenuObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxColourMenuObj";}
+    int getClassType() { return ClassType_ToolboxColourMenuObj;}
 };
 
 #endif

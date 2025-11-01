@@ -3,6 +3,10 @@
 
 ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj() {}
 
+ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
+
 ToolboxFileInfoDlogObj::~ToolboxFileInfoDlogObj() {}
 
 int ToolboxFileInfoDlogObj::getWindowId() {

@@ -56,9 +56,9 @@ class WimpWindowObj : public Object {
     void redrawTitle();
     void wimpToToolbox(int icon_handle, int *toolbox_window_handle, int *toolbox_component_id);
 
-    void showProperties() {};
-    char* getClassName() { return "WimpWindowObj";};
-    int getClassType() { return ClassType_WimpWindowObj;};
+    void showProperties() {}
+    char* getClassName() { return "WimpWindowObj";}
+    int getClassType() { return ClassType_WimpWindowObj;}
   private:
     int handle;
     WimpObj::WindDefStr *windDefStr;

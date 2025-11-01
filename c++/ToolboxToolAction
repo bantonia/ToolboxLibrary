@@ -1,6 +1,6 @@
 #include "ToolboxToolAction.h"
 
-ToolboxToolAction::ToolboxToolAction() {}
+ToolboxToolAction::ToolboxToolAction() : ToolboxGadget() {}
 
 ToolboxToolAction::ToolboxToolAction(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId)  {}
 

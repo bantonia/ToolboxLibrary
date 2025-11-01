@@ -1,13 +1,13 @@
 #include "Object.h"
 #include "BitField.h"
 
-BitField::BitField(void) {
+BitField::BitField() {
   bits = 8;
   data = new unsigned char[1];
   data[0] = 0;
 }
 
-BitField::~BitField(void) {
+BitField::~BitField() {
   delete data;
 }
 

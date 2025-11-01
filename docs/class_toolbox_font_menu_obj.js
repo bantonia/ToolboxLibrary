@@ -2,6 +2,7 @@ var class_toolbox_font_menu_obj =
 [
     [ "ToolboxFontMenuObj", "class_toolbox_font_menu_obj.html#a794645f68b87f68135a6b14f939b3fc5", null ],
     [ "ToolboxFontMenuObj", "class_toolbox_font_menu_obj.html#ae525d9939a963013e164e4848d88a94b", null ],
+    [ "ToolboxFontMenuObj", "class_toolbox_font_menu_obj.html#afcdbbb1174da22cff9119a76e7dc192c", null ],
     [ "clearFlags", "class_toolbox_font_menu_obj.html#ac14c22d17d37a485e32a04c58c4201d7", null ],
     [ "getClassName", "class_toolbox_font_menu_obj.html#a21522bca3f21add04309d5cae67a432b", null ],
     [ "getClassType", "class_toolbox_font_menu_obj.html#aa5ea0965d2bf26ffc0debb0074257f74", null ],

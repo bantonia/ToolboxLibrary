@@ -1,8 +1,10 @@
 #include "ToolboxFontMenuObj.h"
 
-ToolboxFontMenuObj::ToolboxFontMenuObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxFontMenuObj::ToolboxFontMenuObj() : ToolboxObj() {}
+
+ToolboxFontMenuObj::ToolboxFontMenuObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxFontMenuObj::ToolboxFontMenuObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ToolboxFontMenuObj& ToolboxFontMenuObj::setFont(char *fontId) {
   _kernel_swi_regs regs;

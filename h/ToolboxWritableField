@@ -30,9 +30,9 @@ class ToolboxWritableField : public ToolboxGadget {
     ToolboxWritableField& setHelpMessage(char *message);
     ToolboxWritableField& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxWritableField";};
-    int getClassType() { return ClassType_ToolboxWritableField;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxWritableField";}
+    int getClassType() { return ClassType_ToolboxWritableField;}
 };
 
 #endif

@@ -1,0 +1,23 @@
+#ifndef __cplusplus
+#error Header file "TextDisplay.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __TextDisplay_h
+#define __TextDisplay_h
+
+#pragma force_top_level
+#pragma include_only_once
+
+#include "ToolboxTextArea.h"
+#include <string.h>
+
+class TextDisplay : public ToolboxTextArea {
+  public:
+    TextDisplay(ObjectId, ComponentId);
+    ~TextDisplay();
+    TextDisplay& reset();
+};
+
+#endif

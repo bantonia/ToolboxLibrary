@@ -37,3 +37,86 @@ int OS::evaluateExpression(char *str, char *buf, int *bufSize) {
   //buffer[*bufSize] = 0;
   return out.r[2];
 }
+
+char *OS::convertHex1(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex1, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}
+
+char *OS::convertHex2(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex2, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}
+
+char *OS::convertHex4(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex4, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}
+
+char *OS::convertHex6(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex6, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}
+
+
+char *OS::convertHex8(int n, char *buffer, int *bufSize) {
+   _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex8, &in, &out), __LINE__);
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}
+
+char *OS::convertHex(int n, char *buffer, int *bufSize) {
+     _kernel_swi_regs in, out;
+  in.r[0] = n;
+  in.r[1] = (int) buffer;
+  in.r[2] = *bufSize;
+  if ((n >> 4) == 0) {
+    ErrorReport::setLastError(_kernel_swi(OS_ConvertHex1, &in, &out), __LINE__);
+  } else {
+    if ((n >> 8) == 0) {
+      ErrorReport::setLastError(_kernel_swi(OS_ConvertHex2, &in, &out), __LINE__);
+    } else {
+      if ((n >> 16) == 0) {
+        ErrorReport::setLastError(_kernel_swi(OS_ConvertHex4, &in, &out), __LINE__);
+      } else {
+        if ((n >> 24) == 0) {
+          ErrorReport::setLastError(_kernel_swi(OS_ConvertHex6, &in, &out), __LINE__);
+        } else {
+          ErrorReport::setLastError(_kernel_swi(OS_ConvertHex8, &in, &out), __LINE__);
+        }
+      }
+    }
+  }
+  *bufSize = out.r[2];
+  buffer[*bufSize] = 0;
+  return buffer;
+}

@@ -20,6 +20,8 @@ class ToolboxObj : public Object, public ErrorReport {
   public:
     ToolboxObj();
     ToolboxObj(ObjectId id);
+    ToolboxObj(IdBlock *);
+    ToolboxObj(unsigned int, IdBlock *);
     ToolboxObj(unsigned int flags, void *name_or_template);
     ~ToolboxObj();
     int getTemplateName();
@@ -47,14 +49,15 @@ class ToolboxObj : public Object, public ErrorReport {
     static _kernel_oserror ToolboxObjectIdNotSet;
     virtual ObjectId createObject(void *name_or_template);
     
-    void showProperties(){};
-    char* getClassName() { return "ToolboxObj";};
-    int getClassType() { return ClassType_ToolboxObj;};
+    void showProperties(){}
+    char* getClassName() { return "ToolboxObj";}
+    int getClassType() { return ClassType_ToolboxObj;}
 
   private:
     //virtual ObjectId createObject(void *name_or_template);
     
     ObjectId id;
+    ComponentId selfComponent;
     ObjectId parent;
     ComponentId parentComponent;
     ObjectId ancestor;

@@ -13,5 +13,6 @@ var searchData=
   ['adjusterclicked_10',['AdjusterClicked',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaecefe788fc87bb763959aef216e3186f',1,'ToolboxEvents']]],
   ['adjusterclicked_11',['adjusterClicked',['../class_toolbox_events.html#ad827be0e41f29ca47977db1829f1b76a',1,'ToolboxEvents']]],
   ['allowscrollrequest_12',['allowScrollRequest',['../union_window_flags.html#a47acb003c935ac042fe16735deba39b7',1,'WindowFlags']]],
-  ['alwaysbelow_13',['alwaysBelow',['../union_window_flags.html#a18116d41552fead042d26c8798d2a678',1,'WindowFlags']]]
+  ['alwaysbelow_13',['alwaysBelow',['../union_window_flags.html#a18116d41552fead042d26c8798d2a678',1,'WindowFlags']]],
+  ['append_14',['append',['../class_toolbox_text_area.html#ac8ff1678f8148d377e95170c75efb987',1,'ToolboxTextArea']]]
 ];

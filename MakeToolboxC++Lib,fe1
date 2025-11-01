@@ -580,3 +580,17 @@ o.ToolboxToolAction:	C:h.gadgets
 o.ToolboxToolAction:	h.Object
 o.ToolboxToolAction:	h.ClassType
 o.ToolboxToolAction:	C:h.toolbox
+o.ToolboxTextArea:	c++.ToolboxTextArea
+o.ToolboxTextArea:	h.ToolboxTextArea
+o.ToolboxTextArea:	h.ClassType
+o.ToolboxTextArea:	h.ToolboxGadget
+o.ToolboxTextArea:	C:h.kernel
+o.ToolboxTextArea:	h.ErrorReport
+o.ToolboxTextArea:	C:h.kernel
+o.ToolboxTextArea:	C:h.toolbox
+o.ToolboxTextArea:	C:h.wimp
+o.ToolboxTextArea:	C:h.gadgets
+o.ToolboxTextArea:	h.Object
+o.ToolboxTextArea:	h.ClassType
+o.ToolboxTextArea:	C:h.TextArea
+o.ToolboxTextArea:	C:h.window

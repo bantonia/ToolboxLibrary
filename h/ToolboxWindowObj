@@ -15,6 +15,7 @@ class ToolboxWindowObj : public ToolboxObj {
   public:
     ToolboxWindowObj();
     ToolboxWindowObj(ObjectId objectId);
+    ToolboxWindowObj(IdBlock *);
     ~ToolboxWindowObj();
     int getWimpHandle();
     int readWimpHandle();
@@ -56,9 +57,9 @@ class ToolboxWindowObj : public ToolboxObj {
     ToolboxWindowObj& setFlags(unsigned int flags);
     ToolboxWindowObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxWindowObj";};
-    int getClassType() { return ClassType_ToolboxWindowObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxWindowObj";}
+    int getClassType() { return ClassType_ToolboxWindowObj;}
   private:
     int wimpHandle;
 };

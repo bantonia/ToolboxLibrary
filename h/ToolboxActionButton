@@ -32,9 +32,9 @@ class ToolboxActionButton : public ToolboxGadget {
     ToolboxActionButton& setHelpMessage(char *message);
     ToolboxActionButton& moveGadget(BBox *newBbox);
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxActionButton";};
-    int getClassType() { return ClassType_ToolboxActionButton;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxActionButton";}
+    int getClassType() { return ClassType_ToolboxActionButton;}
 };
 
 #endif

@@ -1,0 +1,14 @@
+#include "TestSaveAs.h"
+
+TestSaveAs *task;
+
+int main() {
+  task = new TestSaveAs();
+  task->initTask("<TestSaveAs$Dir>");
+  task->setMask(256 + 1);
+  while (!task->quit) {
+    task->run();
+  }
+  return 0;
+}
+

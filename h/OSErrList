@@ -19,9 +19,9 @@ class OSErrList : public Object {
     //WimpErrList *getNext();
     OSErrList *getNext();
     void reportErrors();
-    void showProperties(){};
-    char* getClassName() { return "";};
-    int getClassType() { return 0;};
+    void showProperties(){}
+    char* getClassName() { return "";}
+    int getClassType() { return 0;}
   private:
     OSErrList *next;
     _kernel_oserror *err;

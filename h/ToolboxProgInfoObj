@@ -15,6 +15,7 @@ class ToolboxProgInfoObj : public ToolboxObj {
   public:
     ToolboxProgInfoObj();
     ToolboxProgInfoObj(ObjectId objectId);
+    ToolboxProgInfoObj(IdBlock *);
     ObjectId getWindowId();
     ToolboxProgInfoObj& setVersion(char *versionString);
     int getVersion();
@@ -33,9 +34,9 @@ class ToolboxProgInfoObj : public ToolboxObj {
     ToolboxProgInfoObj& setFlags(unsigned int flags);
     ToolboxProgInfoObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxProgInfoObj";};
-    int getClassType() { return ClassType_ToolboxProgInfoObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxProgInfoObj";}
+    int getClassType() { return ClassType_ToolboxProgInfoObj;}
 };
 
 #endif

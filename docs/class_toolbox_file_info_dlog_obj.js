@@ -1,6 +1,8 @@
 var class_toolbox_file_info_dlog_obj =
 [
     [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a051345bb59dfc9b89521bf7f254e494f", null ],
+    [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a4f6ea29610a23c3dc9c5d90eaf966ec3", null ],
+    [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a9878abe1b397a3878b1a890545470f3d", null ],
     [ "~ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html#a0a0b85c36ff026ddbafc895b7fbc1217", null ],
     [ "clearFlags", "class_toolbox_file_info_dlog_obj.html#a15e1faf809dce7aedc80c49150993497", null ],
     [ "getClassName", "class_toolbox_file_info_dlog_obj.html#a487d7e11c8d067e02254dbf340cd4c5d", null ],

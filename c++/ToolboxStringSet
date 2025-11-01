@@ -1,7 +1,7 @@
 #include "ToolboxStringSet.h"
 
 
-ToolboxStringSet::ToolboxStringSet() {};
+ToolboxStringSet::ToolboxStringSet() : ToolboxGadget() {}
 
 ToolboxStringSet::ToolboxStringSet(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

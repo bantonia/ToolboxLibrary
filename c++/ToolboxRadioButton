@@ -1,6 +1,6 @@
 #include "ToolboxRadioButton.h"
 
-ToolboxRadioButton::ToolboxRadioButton() {};
+ToolboxRadioButton::ToolboxRadioButton() : ToolboxGadget() {}
 
 ToolboxRadioButton::ToolboxRadioButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

@@ -32,8 +32,10 @@ class ToolboxTextArea : public ToolboxGadget {
     ToolboxTextArea& setCursorPosition(unsigned int index, unsigned int *old_index);
     unsigned int getCursorPosition();
 
+    int getTextCount();
+    ToolboxTextArea& append(const char *text);
 
-    void showProperties() {};
+    void showProperties() {}
     char* getClassName() { return "ToolboxTextArea";}
     int getClassType() { return ClassType_ToolboxTextArea;}
 };

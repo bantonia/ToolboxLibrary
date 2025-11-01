@@ -1,7 +1,7 @@
 var class_bit_field =
 [
-    [ "BitField", "class_bit_field.html#a292bd380cbf3fb6c5a1a53552894227d", null ],
-    [ "~BitField", "class_bit_field.html#aaf8ddaddd217678e1b460bf4ccfa6355", null ],
+    [ "BitField", "class_bit_field.html#a662517a9f8ed4b91d6e55ca6d31ba8cc", null ],
+    [ "~BitField", "class_bit_field.html#ace6c4b4b88b610b8b960dca27ce0e327", null ],
     [ "BitField", "class_bit_field.html#afb1be5c67bc755f7760c2abcc345cda0", null ],
     [ "clear", "class_bit_field.html#a035371f3e0fb3773e18664bceb3ec9de", null ],
     [ "clearBit", "class_bit_field.html#a6beb2aaa95d9398ece7df496a30a06fa", null ],

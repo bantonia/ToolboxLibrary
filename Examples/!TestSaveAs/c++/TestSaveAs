@@ -1,0 +1,77 @@
+#include "TestSaveAs.h"
+
+TestSaveAs::TestSaveAs() : ToolboxTask() {
+  buffer = NULL;
+  mainWindow = NULL;
+  saveAs = NULL;
+}
+
+TestSaveAs::~TestSaveAs() {
+  delete buffer;
+  delete mainWindow;
+  delete saveAs;
+}
+
+void TestSaveAs::toolboxObjectAutoCreated(int object_class) {
+  switch(object_class) {
+    case ToolboxEvents::WindowObjectClass:
+      windowObjectAutoCreated();
+      break;
+    case ToolboxEvents::SaveAsObjectClass:
+      saveAsObjectAutoCreated();
+      break;
+  }
+}
+
+void TestSaveAs::windowObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Window") == 0) {
+    mainWindow = new MainWindow(idBlock);
+    mainWindow->setFlags(pollEvent->hdr.flags);
+  }
+}
+
+void TestSaveAs::saveAsObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  saveAs = new SaveAsDialogue(idBlock);
+  saveAs->setFlags(pollEvent->hdr.flags);
+}
+
+void TestSaveAs::toolboxUserEvent(int event) {
+  switch(event) {
+    case IMQuit:
+      quit = 1;
+      break;
+    default:
+      break;
+  }
+}
+
+void TestSaveAs::toolboxEventHandler(int event) {
+  switch(event) {
+    case SaveAsAboutToBeShown:
+      saveAsAboutToBeShown();
+      break;
+    case SaveAsSaveCompleted:
+      delete buffer;
+      break;
+    case Error:
+      toolboxError();
+      break;
+    default:
+      break;
+  }
+}
+
+void TestSaveAs::saveAsAboutToBeShown() {
+  SaveAsAboutToBeShownEvent *pollEvent = (SaveAsAboutToBeShownEvent *) getPollBlock();
+  int nChar;
+  int textAreaCount = mainWindow->getTextCount();
+  buffer = new char[textAreaCount];
+  mainWindow->getText(buffer, textAreaCount, &nChar);
+  saveAs->setFlags(pollEvent->hdr.flags);
+  saveAs->setFileSize(nChar);
+  saveAs->setDataAddress(buffer, nChar, NULL, 0);
+}

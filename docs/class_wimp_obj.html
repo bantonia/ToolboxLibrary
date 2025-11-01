@@ -128,8 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a37f010ec6b70eeb22c030a46562fbc9d" id="r_a37f010ec6b70eeb22c030a46562fbc9d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f010ec6b70eeb22c030a46562fbc9d">poll</a> ()</td></tr>
 <tr class="memitem:a1d063958e1a8bccca1a4101c1e582e7f" id="r_a1d063958e1a8bccca1a4101c1e582e7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d063958e1a8bccca1a4101c1e582e7f">runIdle</a> ()</td></tr>
 <tr class="memitem:adfd766abe341615b863633e6e8a1eaa4" id="r_adfd766abe341615b863633e6e8a1eaa4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfd766abe341615b863633e6e8a1eaa4">run</a> ()</td></tr>
-<tr class="memitem:a726cf2b3643a2201d21f084734b7accc" id="r_a726cf2b3643a2201d21f084734b7accc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a726cf2b3643a2201d21f084734b7accc">setTaskname</a> (char *)</td></tr>
-<tr class="memitem:a1cae4f6721c95c8b07b0d1a9e3d89a4a" id="r_a1cae4f6721c95c8b07b0d1a9e3d89a4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cae4f6721c95c8b07b0d1a9e3d89a4a">setMask</a> (unsigned int)</td></tr>
+<tr class="memitem:adc9dc4eda712941bc33831ab473e75ba" id="r_adc9dc4eda712941bc33831ab473e75ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9dc4eda712941bc33831ab473e75ba">setTaskname</a> (char *taskname)</td></tr>
+<tr class="memitem:a13fb935f44a0d2e8c504fecfcb08bd12" id="r_a13fb935f44a0d2e8c504fecfcb08bd12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13fb935f44a0d2e8c504fecfcb08bd12">setMask</a> (unsigned int mask)</td></tr>
 <tr class="memitem:a8f968f2f76f83da6738323d02bc60da1" id="r_a8f968f2f76f83da6738323d02bc60da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f968f2f76f83da6738323d02bc60da1">addMessages</a> (int *)</td></tr>
 <tr class="memitem:ae1e8c5b56afa6e95987f4897b299414b" id="r_ae1e8c5b56afa6e95987f4897b299414b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e8c5b56afa6e95987f4897b299414b">removeMessages</a> (int *)</td></tr>
 <tr class="memitem:a9c3034e495e0b32102afec03c3f70e30" id="r_a9c3034e495e0b32102afec03c3f70e30"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3034e495e0b32102afec03c3f70e30">nullReason</a> ()</td></tr>
@@ -206,7 +206,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_object')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_object.html">Object</a></td></tr>
 <tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3 inherit pro_methods_class_object" id="r_ae8f5483f459e46687bd01e6f9977afd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
 </table>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_wimp_obj.html">WimpObj</a></p>
+<p>RiscOSC++Lib</p>
+<p>Class which underlays all Wimp applications which uses this library. Has all the member functions which can be overloaded to handle Wimp events. The class also has within it member functions which call WimpPoll from which events are dispatched to the overloaded event member functions. </p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a4e784376e8f1ea97bdc62802903cfbcc" name="a4e784376e8f1ea97bdc62802903cfbcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e784376e8f1ea97bdc62802903cfbcc">&#9670;&#160;</a></span>WindDefStr</h2>
 
@@ -288,6 +292,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Call to remove the Wimp task, the handle to use is taken from the private member variable. </p>
 
 </div>
 </div>
@@ -686,6 +691,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Used to initialise the Wimp, returns the task handle. The returned task handle is also stored in a private member variable of an object of <a class="el" href="class_wimp_obj.html">WimpObj</a>. Not needed to be called if the application uses the Toolbox. </p>
 
 </div>
 </div>
@@ -953,6 +959,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enters a Wimp Poll routine, returning an event number, no dispatch to any overloaded event handlers being made. </p>
 
 </div>
 </div>
@@ -970,6 +977,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enters a Wimp Poll routine, returning an event number on an idle poll, no dispatch to any overloaded event handlers being made. </p>
 
 </div>
 </div>
@@ -1129,6 +1137,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enters a Wimp Poll routine, returning an event number on an poll, dispatches to overloaded event handlers are made. </p>
 
 </div>
 </div>
@@ -1146,6 +1155,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Enters a Wimp Poll routine, returning an event number on an idle poll, dispatches to overloaded event handlers are made. </p>
 
 </div>
 </div>
@@ -1199,8 +1209,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1cae4f6721c95c8b07b0d1a9e3d89a4a" name="a1cae4f6721c95c8b07b0d1a9e3d89a4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cae4f6721c95c8b07b0d1a9e3d89a4a">&#9670;&#160;</a></span>setMask()</h2>
+<a id="a13fb935f44a0d2e8c504fecfcb08bd12" name="a13fb935f44a0d2e8c504fecfcb08bd12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13fb935f44a0d2e8c504fecfcb08bd12">&#9670;&#160;</a></span>setMask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1213,6 +1223,12 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the tasks poll mask. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Used. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1266,8 +1282,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a726cf2b3643a2201d21f084734b7accc" name="a726cf2b3643a2201d21f084734b7accc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a726cf2b3643a2201d21f084734b7accc">&#9670;&#160;</a></span>setTaskname()</h2>
+<a id="adc9dc4eda712941bc33831ab473e75ba" name="adc9dc4eda712941bc33831ab473e75ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9dc4eda712941bc33831ab473e75ba">&#9670;&#160;</a></span>setTaskname()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1280,6 +1296,12 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the tasks name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*taskname</td><td>pointer to a zero terminated array of characters holding the name of the task. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -11,17 +11,37 @@ ToolboxObj::ToolboxObj() {
 }
 
 ToolboxObj::ToolboxObj(ObjectId id) {
-  setFlags(0);
+  flags = 0;
   this->id = id;
   deleteFlag = 0;
-  objClass = setFlags(0).getObjectClass();
+  objClass = getObjectClass();
+}
+
+ToolboxObj::ToolboxObj(IdBlock *idBlock) {
+  flags = 0;
+  id = idBlock->self_id;
+  parent = idBlock->parent_id;
+  ancestor = idBlock->ancestor_id;
+  selfComponent = idBlock->self_component;
+  parentComponent = idBlock->parent_component;
+  ancestorComponent = idBlock->ancestor_component;
+}
+
+ToolboxObj::ToolboxObj(unsigned int flags, IdBlock *idBlock) {
+  this->flags = flags;
+  id = idBlock->self_id;
+  parent = idBlock->parent_id;
+  ancestor = idBlock->ancestor_id;
+  selfComponent = idBlock->self_component;
+  parentComponent = idBlock->parent_component;
+  ancestorComponent = idBlock->ancestor_component;
 }
 
 ToolboxObj::ToolboxObj(unsigned int flags, void *name_or_template) {
-  setFlags(flags);
+  flags = 0;
   id = ToolboxObj::createObject(name_or_template);
   deleteFlag = 0;
-  objClass = setFlags(0).getObjectClass();
+  objClass = getObjectClass();
 }
 
 ToolboxObj::~ToolboxObj() {
@@ -30,7 +50,7 @@ ToolboxObj::~ToolboxObj() {
 
 int ToolboxObj::getTemplateName() {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int) flags; //getFlags();
   in.r[1] = id;
   in.r[2] = 0;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetTemplateName, &in, &out), __LINE__);
@@ -39,7 +59,7 @@ int ToolboxObj::getTemplateName() {
 
 void ToolboxObj::getTemplateName(char *buffer, int  buff_size, int *nbytes) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   in.r[2] = (int) buffer;
   in.r[3] = buff_size;
@@ -49,7 +69,7 @@ void ToolboxObj::getTemplateName(char *buffer, int  buff_size, int *nbytes) {
 
 ObjectId ToolboxObj::createObject(void *name_or_template) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = (int) name_or_template;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_CreateObject, &in, &out), __LINE__);
   id = out.r[0];
@@ -65,7 +85,7 @@ void ToolboxObj::deleteObject() {
 
 ToolboxObj& ToolboxObj::showObject(int show_type, void *type, ObjectId parent, ComponentId parent_component) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   in.r[2] = show_type;
   in.r[3] = (int) type;
@@ -77,7 +97,7 @@ ToolboxObj& ToolboxObj::showObject(int show_type, void *type, ObjectId parent, C
 
 ToolboxObj& ToolboxObj::hideObject() {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_HideObject, &in, &out), __LINE__);
   return *this;
@@ -85,7 +105,7 @@ ToolboxObj& ToolboxObj::hideObject() {
 
 unsigned int ToolboxObj::getObjectState(unsigned int *state) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetObjectState, &in, &out), __LINE__);
   *state = (unsigned int) out.r[0];
@@ -95,7 +115,7 @@ unsigned int ToolboxObj::getObjectState(unsigned int *state) {
 ToolboxObj& ToolboxObj::setClientHandle(void *client_handle) {
   //unsigned int *p = (unsigned int *) client_handle;
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id; 
   in.r[2] = (int) *((unsigned int *) client_handle);
   ToolboxObj::setLastError(_kernel_swi(Toolbox_SetClientHandle, &in, &out), __LINE__);
@@ -104,7 +124,7 @@ ToolboxObj& ToolboxObj::setClientHandle(void *client_handle) {
 
 unsigned int ToolboxObj::getClientHandle(void *client_handle) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetClientHandle, &in, &out), __LINE__);
   *((unsigned int *)client_handle) = (unsigned int) out.r[0];
@@ -113,7 +133,7 @@ unsigned int ToolboxObj::getClientHandle(void *client_handle) {
 
 ObjectClass ToolboxObj::getObjectClass() {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetObjectClass, &in, &out), __LINE__);
   objClass = out.r[0];
@@ -126,7 +146,7 @@ ObjectClass ToolboxObj::readObjectClass() {
 
 ObjectId ToolboxObj::getParent() {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetParent, &in, &out), __LINE__);
   parent = out.r[0];
@@ -136,7 +156,7 @@ ObjectId ToolboxObj::getParent() {
 
 ObjectId ToolboxObj::getAncestor() {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   ToolboxObj::setLastError(_kernel_swi(Toolbox_GetAncestor, &in, &out), __LINE__);
   ancestor = out.r[0];
@@ -146,7 +166,7 @@ ObjectId ToolboxObj::getAncestor() {
 
 ToolboxObj& ToolboxObj::raiseToolboxEvent(ComponentId component, ToolboxEvent *event) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   in.r[2] = component;
   in.r[3] = (int) event;
@@ -156,7 +176,7 @@ ToolboxObj& ToolboxObj::raiseToolboxEvent(ComponentId component, ToolboxEvent *e
 
 ToolboxObj& ToolboxObj::objectMiscOp(_kernel_swi_regs *regs) {
   _kernel_swi_regs in, out;
-  in.r[0] = (int) getFlags();
+  in.r[0] = (int)  flags; //getFlags();
   in.r[1] = id;
   in.r[2] = regs->r[2];
   in.r[3] = regs->r[3];
@@ -193,7 +213,7 @@ ObjectId ToolboxObj::readAncestorObjectId() {
 }
 
 ToolboxObj& ToolboxObj::setFlags(unsigned int flags) {
-  ToolboxObj::flags = flags;
+  this->flags = flags;
   return *this;
 }
 
@@ -210,7 +230,7 @@ unsigned int ToolboxObj::getFlags() {
 ToolboxObj& ToolboxObj::setObjectId(ObjectId id) {
   if (this->id == 0) {
     this->id = id;
-    objClass = setFlags(0).getObjectClass();
+    objClass = /*setFlags(0).*/getObjectClass();
   }
   return *this;
 }

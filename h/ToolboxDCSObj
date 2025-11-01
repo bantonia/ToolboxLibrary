@@ -15,9 +15,10 @@
 class ToolboxDCSObj : public ToolboxObj {
   public:
     ToolboxDCSObj();
+    ToolboxDCSObj(ObjectId objectId);
+    ToolboxDCSObj(IdBlock *idBlock);
     ~ToolboxDCSObj();
     int getWindowId();
-    int readWindowId();
     ToolboxDCSObj& setMessage(char *message);
     int getMessage();
     int getMessage(char *messageBuffer, int bufSize);
@@ -28,12 +29,9 @@ class ToolboxDCSObj : public ToolboxObj {
     ToolboxDCSObj& setFlags(unsigned int flags);
     ToolboxDCSObj& clearFlags();
 
-    void showProperties(){};
-    char* getClassName() { return "ToolboxDCSObj";};
-    int getClassType() { return ClassType_ToolboxDCSObj;};
-
-  private:
-    int windowId;
+    void showProperties(){}
+    char* getClassName() { return "ToolboxDCSObj";}
+    int getClassType() { return ClassType_ToolboxDCSObj;}
 };
 
 #endif

@@ -233,7 +233,7 @@ void ToolboxCoreObj::eToolboxEventHandler(void *pollBlock) {
       break;
     default:
       if (tboxHdr->event_code > 0 && tboxHdr->event_code < 0x10000) {
-        toolboxUserEvent();
+        toolboxUserEvent(tboxHdr->event_code);
       } else {
         if (tboxHdr->event_code >= 0x10000 && tboxHdr->event_code < 0x40000) {
           reservedToolboxInterApplicationProtocol();

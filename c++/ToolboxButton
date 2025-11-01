@@ -1,7 +1,7 @@
 #include "ToolboxButton.h"
 #include "OS.h"
 
-ToolboxButton::ToolboxButton() {};
+ToolboxButton::ToolboxButton() : ToolboxGadget() {}
 
 ToolboxButton::ToolboxButton(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

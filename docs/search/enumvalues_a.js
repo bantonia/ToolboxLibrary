@@ -10,5 +10,6 @@ var searchData=
   ['printdboxsetupabouttobeshown_7',['PrintDboxSetUpAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aab240941e71f1aba23a60df119126059d',1,'ToolboxEvents']]],
   ['proginfoabouttobeshown_8',['ProgInfoAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa695f73ecde8e187db86095875143b281',1,'ToolboxEvents']]],
   ['proginfodialoguecompleted_9',['ProgInfoDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa7bd565aab77a45683f57548a069ca09e',1,'ToolboxEvents']]],
-  ['proginfoobjectclass_10',['ProgInfoObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150',1,'ToolboxEvents']]]
+  ['proginfolaunchwebpage_10',['ProgInfoLaunchWebPage',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaccff98656c2fac15ec3101de00bffe38',1,'ToolboxEvents']]],
+  ['proginfoobjectclass_11',['ProgInfoObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150',1,'ToolboxEvents']]]
 ];

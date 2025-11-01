@@ -1,6 +1,6 @@
 #include "ToolboxNumberRange.h"
 
-ToolboxNumberRange::ToolboxNumberRange() {};
+ToolboxNumberRange::ToolboxNumberRange() : ToolboxGadget() {}
 
 ToolboxNumberRange::ToolboxNumberRange(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

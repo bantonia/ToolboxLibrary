@@ -2,6 +2,7 @@ var class_toolbox_window_obj =
 [
     [ "ToolboxWindowObj", "class_toolbox_window_obj.html#a00e28bc049eac86a65e8c80748e791de", null ],
     [ "ToolboxWindowObj", "class_toolbox_window_obj.html#a605c9962fb3dae69f4a682777783ede3", null ],
+    [ "ToolboxWindowObj", "class_toolbox_window_obj.html#a080743692f90c5d7b33f799e01b3cab4", null ],
     [ "~ToolboxWindowObj", "class_toolbox_window_obj.html#ad9669a5589876bc36b55f5f4825ca5f7", null ],
     [ "addGadget", "class_toolbox_window_obj.html#ad1ba0473ebdc4a8a18206dd33d52a23c", null ],
     [ "addKeyboardShortcuts", "class_toolbox_window_obj.html#ac69e3cc197585d145c597ad284ee6f6a", null ],

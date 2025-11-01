@@ -1,0 +1,10 @@
+#include "TextDisplay.h"
+
+TextDisplay::TextDisplay(ObjectId windowId, ComponentId gadgetId) : ToolboxTextArea(windowId, gadgetId) {}
+
+TextDisplay::~TextDisplay() {}
+
+TextDisplay& TextDisplay::reset() {
+  this->setText("");
+  return *this;
+}

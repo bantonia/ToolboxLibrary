@@ -1,9 +1,11 @@
 #include "kernel.h"
 #include "ToolboxDCSObj.h"
 
-ToolboxDCSObj::ToolboxDCSObj() {
-  windowId = -1;
-}
+ToolboxDCSObj::ToolboxDCSObj() : ToolboxObj() {}
+
+ToolboxDCSObj::ToolboxDCSObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxDCSObj::ToolboxDCSObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ToolboxDCSObj::~ToolboxDCSObj() {}
 
@@ -11,15 +13,7 @@ int ToolboxDCSObj::getWindowId() {
   _kernel_swi_regs regs;
   regs.r[2] = DCS_GetWindowId;
   this->objectMiscOp(&regs);
-  windowId = regs.r[0];
   return regs.r[0];
-}
-
-int ToolboxDCSObj::readWindowId() {
-  if (windowId == -1) {
-    return this->getWindowId();
-  }
-  return windowId;
 }
 
 ToolboxDCSObj& ToolboxDCSObj::setMessage(char *message) {

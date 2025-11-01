@@ -1,8 +1,8 @@
 #include "ToolboxMenuObj.h"
 
-ToolboxMenuObj::ToolboxMenuObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxMenuObj::ToolboxMenuObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxMenuObj::ToolboxMenuObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ToolboxMenuObj& ToolboxMenuObj::setTick(ComponentId entry) {
   _kernel_swi_regs regs;

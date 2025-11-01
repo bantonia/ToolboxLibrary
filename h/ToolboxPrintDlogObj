@@ -15,6 +15,7 @@ class ToolboxPrintDlogObj : public ToolboxObj {
   public:
     ToolboxPrintDlogObj(){};
     ToolboxPrintDlogObj(ObjectId objectId);
+    ToolboxPrintDlogObj(IdBlock *idBlock);
     ObjectId getWindowId();
     ToolboxPrintDlogObj& setPageRange(int start, int end);
     void getPageRange(int *start, int *end);
@@ -34,9 +35,9 @@ class ToolboxPrintDlogObj : public ToolboxObj {
     ToolboxPrintDlogObj& setFlags(unsigned int flags);
     ToolboxPrintDlogObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxPrintDlogObj";};
-    int getClassType() { return ClassType_ToolboxPrintDlogObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxPrintDlogObj";}
+    int getClassType() { return ClassType_ToolboxPrintDlogObj;}
 };
 
 #endif

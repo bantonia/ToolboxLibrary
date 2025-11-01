@@ -2,6 +2,7 @@ var class_toolbox_quit_obj =
 [
     [ "ToolboxQuitObj", "class_toolbox_quit_obj.html#a22e0e2aeb5340ad46c0336df352a3dc2", null ],
     [ "ToolboxQuitObj", "class_toolbox_quit_obj.html#abf16538c3816fda56da30b79cbd1c049", null ],
+    [ "ToolboxQuitObj", "class_toolbox_quit_obj.html#aa2059210c877fc8d2839abdbb68455d2", null ],
     [ "clearFlags", "class_toolbox_quit_obj.html#a11ec9c03d213de5440dcfa7fec5250fd", null ],
     [ "getClassName", "class_toolbox_quit_obj.html#a22b6e381c1ad4463de40f9309bf0d8c2", null ],
     [ "getClassType", "class_toolbox_quit_obj.html#a1fc39792f07da248622c8d6ad9e7dc28", null ],

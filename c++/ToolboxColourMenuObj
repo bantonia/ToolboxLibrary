@@ -3,6 +3,10 @@
 
 ToolboxColourMenuObj::ToolboxColourMenuObj() {}
 
+ToolboxColourMenuObj::ToolboxColourMenuObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxColourMenuObj::ToolboxColourMenuObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
+
 ToolboxColourMenuObj::~ ToolboxColourMenuObj() {}
 
 ToolboxColourMenuObj& ToolboxColourMenuObj::setColour(int colour) {

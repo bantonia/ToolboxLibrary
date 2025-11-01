@@ -2,6 +2,7 @@ var class_toolbox_prog_info_obj =
 [
     [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html#add9d8b1ce39fef2b0a7172d9bf25905c", null ],
     [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html#ab7b26b307e46ae6847fd87d2204dee57", null ],
+    [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html#a0361ad392f9eb9f65e6b8807b4b3c066", null ],
     [ "clearFlags", "class_toolbox_prog_info_obj.html#a2bc6dff87b0253822e82c0ff85b2cbe1", null ],
     [ "getClassName", "class_toolbox_prog_info_obj.html#a5a547c3bdb39e0b40e7ba9bd6ccfffab", null ],
     [ "getClassType", "class_toolbox_prog_info_obj.html#ae015d6328ab162c41ad1e088d534a90a", null ],

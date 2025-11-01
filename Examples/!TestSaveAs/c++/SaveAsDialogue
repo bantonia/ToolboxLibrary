@@ -1,0 +1,3 @@
+#include "SaveAsDialogue.h"
+
+SaveAsDialogue::SaveAsDialogue(IdBlock *idBlock) : ToolboxSaveAsObj(idBlock) {}

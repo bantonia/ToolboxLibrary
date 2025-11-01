@@ -1,6 +1,6 @@
 #include "ToolboxTreeView.h"
 
-ToolboxTreeView::ToolboxTreeView() {}
+ToolboxTreeView::ToolboxTreeView() : ToolboxGadget() {}
 
 ToolboxTreeView::ToolboxTreeView(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

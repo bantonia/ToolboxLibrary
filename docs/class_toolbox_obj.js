@@ -2,6 +2,8 @@ var class_toolbox_obj =
 [
     [ "ToolboxObj", "class_toolbox_obj.html#a9718168c330191a94e881278126b6149", null ],
     [ "ToolboxObj", "class_toolbox_obj.html#a7853d4cc661479412df133cb2b4981bc", null ],
+    [ "ToolboxObj", "class_toolbox_obj.html#a5706e53b5409d87f85b63d7e87822715", null ],
+    [ "ToolboxObj", "class_toolbox_obj.html#ae3cdf79e93eef48ff22d0973423de504", null ],
     [ "ToolboxObj", "class_toolbox_obj.html#a752044ca3f5e24e8db65d27dfc9d2f58", null ],
     [ "~ToolboxObj", "class_toolbox_obj.html#ac5eecbc464d07abb8fb700ab96bd5763", null ],
     [ "clearFlags", "class_toolbox_obj.html#a7b4a24c58b1a89ad2273f8d52e7cf08e", null ],

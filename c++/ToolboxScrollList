@@ -1,6 +1,6 @@
 #include "ToolboxScrollList.h"
 
-ToolboxScrollList::ToolboxScrollList() {};
+ToolboxScrollList::ToolboxScrollList() : ToolboxGadget() {}
 
 ToolboxScrollList::ToolboxScrollList(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
 

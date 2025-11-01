@@ -1,8 +1,9 @@
 #include "ToolboxQuitObj.h"
 
-ToolboxQuitObj::ToolboxQuitObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxQuitObj::ToolboxQuitObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+
+ToolboxQuitObj::ToolboxQuitObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ObjectId ToolboxQuitObj::getWindowId() {
   _kernel_swi_regs regs;

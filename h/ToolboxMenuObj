@@ -15,6 +15,7 @@ class ToolboxMenuObj : public ToolboxObj {
   public:
     ToolboxMenuObj(){};
     ToolboxMenuObj(ObjectId objectId);
+    ToolboxMenuObj(IdBlock *);
     ToolboxMenuObj& setTick(ComponentId entry);
     int getTick(ComponentId entry);
     ToolboxMenuObj& setFade(ComponentId entry, int fade);
@@ -51,9 +52,9 @@ class ToolboxMenuObj : public ToolboxObj {
     ToolboxMenuObj& setFlags(unsigned int flags);
     ToolboxMenuObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxMenuObj";};
-    int getClassType() { return ClassType_ToolboxMenuObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxMenuObj";}
+    int getClassType() { return ClassType_ToolboxMenuObj;}
 };
 
 #endif

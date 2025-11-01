@@ -34,8 +34,9 @@ class ToolboxColourDlogObj : public ToolboxObj {
       HSV
     } ColourModel;
 
-    ToolboxColourDlogObj(){};
+    ToolboxColourDlogObj();
     ToolboxColourDlogObj(ObjectId id);
+    ToolboxColourDlogObj(IdBlock *idBlock);
     ~ToolboxColourDlogObj(){};
     int getWimpHandle();
     int readWimpHandle();
@@ -56,9 +57,9 @@ class ToolboxColourDlogObj : public ToolboxObj {
     ToolboxColourDlogObj& setFlags(unsigned int flags);
     ToolboxColourDlogObj& clearFlags();
 
-    void showProperties(){};
-    char* getClassName() { return "ToolboxColourDlogObj";};
-    int getClassType() { return ClassType_ToolboxColourDlogObj;};
+    void showProperties(){}
+    char* getClassName() { return "ToolboxColourDlogObj";}
+    int getClassType() { return ClassType_ToolboxColourDlogObj;}
 };
 
 #endif

@@ -87,6 +87,7 @@ class ToolboxEvents {
 
       ProgInfoAboutToBeShown       =  0x82b40,
       ProgInfoDialogueCompleted,   // 0x82b41
+      ProgInfoLaunchWebPage,       // 0x82b42
 
 
       SaveAsAboutToBeShown         =  0x82bc0,
@@ -239,13 +240,21 @@ class ToolboxEvents {
 
     virtual void toolboxObjectAutoCreated(int objClass){ objClass = objClass;}
     virtual void toolboxObjectDeleted(){}
-    virtual void toolboxUserEvent(){}
-    virtual void colourDboxAboutToBeShown(){}
-    virtual void colourDboxDialogueCompleted(){}
-    virtual void colourDboxColourSelected(){}
-    virtual void colourMenuAboutToBeShown(){}
-    virtual void colourMenuHasBeenHidden(){}
-    virtual void colourMenuSelection(){}
+    //virtual void toolboxUserEvent(){}
+    virtual void toolboxUserEvent(int){}
+
+/** Event handler colourDboxAboutToBeShown.
+* Overload colourDboxAboutToBeShown() to handle the event and use something like the following to access event parametes
+* ColourDboxAboutToBeShownEvent *pollEvent = (ColourDboxAboutToBeShownEvent *) getPollBlock();
+* IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+*/
+    virtual void colourDboxAboutToBeShown(){}      // ColourDboxAboutToBeShownEvent
+
+    virtual void colourDboxDialogueCompleted(){}   // ColourDboxDialogueCompletedEvent
+    virtual void colourDboxColourSelected(){}      // ColourDboxColourSelectedEvent
+    virtual void colourMenuAboutToBeShown(){}      // ColourMenuAboutToBeShownEvent
+    virtual void colourMenuHasBeenHidden(){}       // ColourMenuHasBeenHiddenEvent
+    virtual void colourMenuSelection(){}           // ColourMenuSelectionEvent
     virtual void dcsAboutToBeShown(){}
     virtual void dcsDiscard(){}
     virtual void dcsSave(){}
@@ -274,6 +283,7 @@ class ToolboxEvents {
     virtual void printDboxPrint(){}
     virtual void progInfoAboutToBeShown(){}
     virtual void progInfoDialogueCompleted(){}
+    virtual void progInfoLaunchWebPage(){}
     virtual void quitAboutToBeShown(){}
     virtual void quitQuit(){}
     virtual void quitDialogueCompleted(){}

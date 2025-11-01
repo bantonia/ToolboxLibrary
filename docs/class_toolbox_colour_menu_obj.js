@@ -1,6 +1,8 @@
 var class_toolbox_colour_menu_obj =
 [
     [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html#a38203296c24b61c30c7edb8263335167", null ],
+    [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html#abd2bf52816cba4d8e245973c5bb81dfd", null ],
+    [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html#a9dcabc4132eac9e946a2b5bd96eaa90f", null ],
     [ "~ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html#a8ffd1f1c9357b0fe0f5988b2840596ed", null ],
     [ "clearFlags", "class_toolbox_colour_menu_obj.html#a80d71fdda80eb6df7078261cfb51d8d9", null ],
     [ "getClassName", "class_toolbox_colour_menu_obj.html#a8ec55a7bc4f452d6e11c6b07f2374357", null ],

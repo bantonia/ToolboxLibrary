@@ -1,8 +1,8 @@
 #include "ToolboxPrintDlogObj.h"
 
-ToolboxPrintDlogObj::ToolboxPrintDlogObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxPrintDlogObj::ToolboxPrintDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxPrintDlogObj::ToolboxPrintDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ObjectId ToolboxPrintDlogObj::getWindowId() {
   _kernel_swi_regs regs;

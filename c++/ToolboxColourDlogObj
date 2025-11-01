@@ -1,8 +1,10 @@
 #include "ToolboxColourDlogObj.h"
 
-ToolboxColourDlogObj::ToolboxColourDlogObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxColourDlogObj::ToolboxColourDlogObj() : ToolboxObj() {}
+
+ToolboxColourDlogObj::ToolboxColourDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxColourDlogObj::ToolboxColourDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 int ToolboxColourDlogObj::getWimpHandle() {
   _kernel_swi_regs regs;

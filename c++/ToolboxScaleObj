@@ -1,8 +1,10 @@
 #include "ToolboxScaleObj.h"
 
-ToolboxScaleObj::ToolboxScaleObj(ObjectId objectId) {
-  this->setObjectId(objectId);
-}
+ToolboxScaleObj::ToolboxScaleObj() : ToolboxObj() {}
+
+ToolboxScaleObj::ToolboxScaleObj(ObjectId objectId) : ToolboxObj(objectId) {}
+
+ToolboxScaleObj::ToolboxScaleObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
 ObjectId ToolboxScaleObj::getWindowId() {
   _kernel_swi_regs regs;

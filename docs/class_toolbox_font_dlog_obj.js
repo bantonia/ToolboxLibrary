@@ -1,6 +1,8 @@
 var class_toolbox_font_dlog_obj =
 [
     [ "ToolboxFontDlogObj", "class_toolbox_font_dlog_obj.html#a1fb2b353a0bbf8f379d1496163651e6d", null ],
+    [ "ToolboxFontDlogObj", "class_toolbox_font_dlog_obj.html#a72bdf6a9707c583e30dbc49ded764271", null ],
+    [ "ToolboxFontDlogObj", "class_toolbox_font_dlog_obj.html#abea31abc9ea10a961687aec0eedbe9a1", null ],
     [ "~ToolboxFontDlogObj", "class_toolbox_font_dlog_obj.html#a9ff28e9737e171c419fabd6e05759088", null ],
     [ "clearFlags", "class_toolbox_font_dlog_obj.html#af7147298d05664ddf4d5e01e6ae86de4", null ],
     [ "clearFont", "class_toolbox_font_dlog_obj.html#a0dd83c01283ebb0d7f0b75bd0f08aed7", null ],

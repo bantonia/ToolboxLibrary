@@ -118,6 +118,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a88650092bf1306ba20e5a22c20abd316" id="r_a88650092bf1306ba20e5a22c20abd316"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88650092bf1306ba20e5a22c20abd316">readModeVariable</a> (int, int)</td></tr>
 <tr class="memitem:a78521b9b87446e69662c39908b654b9d" id="r_a78521b9b87446e69662c39908b654b9d"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78521b9b87446e69662c39908b654b9d">binaryToDecimal</a> (int, char *, int *)</td></tr>
 <tr class="memitem:a5e07e6b5ec6488aead64935f758526cb" id="r_a5e07e6b5ec6488aead64935f758526cb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e07e6b5ec6488aead64935f758526cb">evaluateExpression</a> (char *, char *, int *)</td></tr>
+<tr class="memitem:acb42808fde8b8966fc4810682a293e44" id="r_acb42808fde8b8966fc4810682a293e44"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb42808fde8b8966fc4810682a293e44">convertHex1</a> (int, char *, int *)</td></tr>
+<tr class="memitem:a0034139193694003963375cbaea90747" id="r_a0034139193694003963375cbaea90747"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0034139193694003963375cbaea90747">convertHex2</a> (int, char *, int *)</td></tr>
+<tr class="memitem:ac324fc30b76eca6344b0ae885ce16d59" id="r_ac324fc30b76eca6344b0ae885ce16d59"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac324fc30b76eca6344b0ae885ce16d59">convertHex4</a> (int, char *, int *)</td></tr>
+<tr class="memitem:a34a7e499f835f5a5e7ea28f3fee29a12" id="r_a34a7e499f835f5a5e7ea28f3fee29a12"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34a7e499f835f5a5e7ea28f3fee29a12">convertHex6</a> (int, char *, int *)</td></tr>
+<tr class="memitem:aa6363a316c0455cce1817cfee72ee221" id="r_aa6363a316c0455cce1817cfee72ee221"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6363a316c0455cce1817cfee72ee221">convertHex8</a> (int, char *, int *)</td></tr>
+<tr class="memitem:a0688ecd0fa8d0bc2cb7dc6a04799b574" id="r_a0688ecd0fa8d0bc2cb7dc6a04799b574"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0688ecd0fa8d0bc2cb7dc6a04799b574">convertHex</a> (int, char *, int *)</td></tr>
 <tr class="inherit_header pub_static_methods_class_error_report"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_error_report')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="class_error_report.html">ErrorReport</a></td></tr>
 <tr class="memitem:a469f387085165c0f6df06525725ab878 inherit pub_static_methods_class_error_report" id="r_a469f387085165c0f6df06525725ab878"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a469f387085165c0f6df06525725ab878">setLastError</a> (_kernel_oserror *, unsigned int)</td></tr>
 <tr class="memitem:a94c78d09c659bf5ba73f8d1383009be1 inherit pub_static_methods_class_error_report" id="r_a94c78d09c659bf5ba73f8d1383009be1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_report.html#a94c78d09c659bf5ba73f8d1383009be1">setLastError</a> (_kernel_oserror *, unsigned int, char *location)</td></tr>
@@ -204,6 +210,210 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">char * OS::binaryToDecimal </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0688ecd0fa8d0bc2cb7dc6a04799b574" name="a0688ecd0fa8d0bc2cb7dc6a04799b574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0688ecd0fa8d0bc2cb7dc6a04799b574">&#9670;&#160;</a></span>convertHex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb42808fde8b8966fc4810682a293e44" name="acb42808fde8b8966fc4810682a293e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb42808fde8b8966fc4810682a293e44">&#9670;&#160;</a></span>convertHex1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex1 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0034139193694003963375cbaea90747" name="a0034139193694003963375cbaea90747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0034139193694003963375cbaea90747">&#9670;&#160;</a></span>convertHex2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex2 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac324fc30b76eca6344b0ae885ce16d59" name="ac324fc30b76eca6344b0ae885ce16d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac324fc30b76eca6344b0ae885ce16d59">&#9670;&#160;</a></span>convertHex4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex4 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34a7e499f835f5a5e7ea28f3fee29a12" name="a34a7e499f835f5a5e7ea28f3fee29a12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34a7e499f835f5a5e7ea28f3fee29a12">&#9670;&#160;</a></span>convertHex6()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex6 </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>bufSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6363a316c0455cce1817cfee72ee221" name="aa6363a316c0455cce1817cfee72ee221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6363a316c0455cce1817cfee72ee221">&#9670;&#160;</a></span>convertHex8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * OS::convertHex8 </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
         </tr>

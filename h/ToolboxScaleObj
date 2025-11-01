@@ -13,8 +13,9 @@
 
 class ToolboxScaleObj : public ToolboxObj {
   public:
-    ToolboxScaleObj(){};
+    ToolboxScaleObj();
     ToolboxScaleObj(ObjectId objectId);
+    ToolboxScaleObj(IdBlock *idBlock);
     ObjectId getWindowId();
     ToolboxScaleObj& setValue(int value);
     int getValue();
@@ -30,9 +31,9 @@ class ToolboxScaleObj : public ToolboxObj {
     ToolboxScaleObj& setFlags(unsigned int flags);
     ToolboxScaleObj& clearFlags();
 
-    void showProperties() {};
-    char* getClassName() { return "ToolboxScaleObj";};
-    int getClassType() { return ClassType_ToolboxScaleObj;};
+    void showProperties() {}
+    char* getClassName() { return "ToolboxScaleObj";}
+    int getClassType() { return ClassType_ToolboxScaleObj;}
 };
 
 #endif
