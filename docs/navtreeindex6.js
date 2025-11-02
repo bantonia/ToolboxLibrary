@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"union_wimp_palette_word.html#aef50c57414d2756040d5e60a2e068a52":[0,0,70,6],
 "union_window_flags.html":[0,0,73],
 "union_window_flags.html#a0440abdb341e02264cfb395ebd3c1c38":[0,0,73,27],
 "union_window_flags.html#a06c28bc9803fac162fbcf8556791bb1d":[0,0,73,12],

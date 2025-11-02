@@ -265,9 +265,9 @@ Static Public Attributes</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_toolbox_events"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_class_toolbox_events')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="class_toolbox_events.html">ToolboxEvents</a></td></tr>
 <tr class="memitem:a6f76eaa7ac0f5e0dde071574270f3f1a inherit pub_types_class_toolbox_events" id="r_a6f76eaa7ac0f5e0dde071574270f3f1a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1a">Toolbox_Event</a> { <br />
-&#160;&#160;<a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b">Error</a> = 0x44ec0
-, <a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa4d12ca4d49c94a31ef1e0351ef4e225e">ObjectAutoCreated</a>
-, <a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa9be6ccc53a894d2ce39ae68f0d42f7b2">ObjectDeleted</a>
+&#160;&#160;<a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaaa67db33fe8a8a3017f6d290c6d90dc7">ToolboxError</a> = 0x44ec0
+, <a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa7ac867395f4ef33a964e2c55ddeef4e1">ToolboxObjectAutoCreated</a>
+, <a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa779c1fc22d2f216457c0af399edcb03b">ToolboxObjectDeleted</a>
 , <a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa6c4b87080eb4406d4338bcbf4946de7">WindowAboutToBeShown</a> = 0x82880
 , <br />
 &#160;&#160;<a class="el" href="class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa083aabfa135803bdcf5399b057b2c724">ActionButtonSelected</a>
@@ -359,22 +359,23 @@ Additional Inherited Members</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memitem:a74b9ee04b6ec4e60318fae499af37431 inherit pub_types_class_toolbox_events" id="r_a74b9ee04b6ec4e60318fae499af37431"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431">Toolbox_ObjectClass</a> { <br />
-&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d">WindowObjectClass</a> = 0x82880
+&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a3f7b9c77109c28a1151f831ba91bfb5a">UnknownClass</a>
+, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d">WindowObjectClass</a> = 0x82880
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9d35fcb120e086f5e202f22fe6e01e10">MenuObjectClass</a> = 0x828c0
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431affb4bdff004ebc22fbf1aa1ef212d7a6">IconbarObjectClass</a> = 0x82900
-, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431aa66279305c4aa4819aa3eff0102460d6">ColourMenuObjectClass</a> = 0x82980
 , <br />
-&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a63a11612037015d5f52442c4388850a7">ColourDboxObjectClass</a> = 0x829c0
+&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431aa66279305c4aa4819aa3eff0102460d6">ColourMenuObjectClass</a> = 0x82980
+, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a63a11612037015d5f52442c4388850a7">ColourDboxObjectClass</a> = 0x829c0
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a3934c55730abc3ff49a82747e5d3c7fe">FontDboxObjectClass</a> = 0x82a00
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a1cb1aa5c41a9a46aba27906bee071fa1">FontMenuObjectClass</a> = 0x82a40
-, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9d258baab3349dee1fa0fabc58c4f17f">DCSObjectClass</a> = 0x82a80
 , <br />
-&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a5eedcc49e6d95e35adec5cbdb9297937">QuitObjectClass</a> = 0x82a90
+&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9d258baab3349dee1fa0fabc58c4f17f">DCSObjectClass</a> = 0x82a80
+, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a5eedcc49e6d95e35adec5cbdb9297937">QuitObjectClass</a> = 0x82a90
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431ab67082dad728927965cd8d35dfd4e17a">FileInfoObjectClass</a> = 0x82ac0
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9b19065a69ff3e7b9c43e2c2be09daa9">PrintDboxObjectClass</a> = 0x82b00
-, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150">ProgInfoObjectClass</a> = 0x82b40
 , <br />
-&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5">SaveAsObjectClass</a> = 0x82bc0
+&#160;&#160;<a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a290fb8648e508a5934540f7a66e56150">ProgInfoObjectClass</a> = 0x82b40
+, <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5">SaveAsObjectClass</a> = 0x82bc0
 , <a class="el" href="class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a5a1aed89642f9a112d4be443cfdf891d">ScaleObjectClass</a> = 0x82c00
 <br />
  }</td></tr>

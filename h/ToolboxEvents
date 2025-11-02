@@ -18,9 +18,9 @@ class ToolboxEvents {
 
     enum Toolbox_Event {
     
-      Error                        =  0x44ec0,
-      ObjectAutoCreated,           // 0x44ec1
-      ObjectDeleted,               // 0x44ec2
+      ToolboxError                 =  0x44ec0,
+      ToolboxObjectAutoCreated,    // 0x44ec1
+      ToolboxObjectDeleted,        // 0x44ec2
 
       WindowAboutToBeShown         =  0x82880,
       ActionButtonSelected,        // 0x82881
@@ -115,6 +115,7 @@ class ToolboxEvents {
     };
 
     enum Toolbox_ObjectClass {
+      UnknownClass,
       WindowObjectClass     = 0x82880,
       MenuObjectClass       = 0x828c0,
       IconbarObjectClass    = 0x82900,
@@ -240,7 +241,6 @@ class ToolboxEvents {
 
     virtual void toolboxObjectAutoCreated(int objClass){ objClass = objClass;}
     virtual void toolboxObjectDeleted(){}
-    //virtual void toolboxUserEvent(){}
     virtual void toolboxUserEvent(int){}
 
 /** Event handler colourDboxAboutToBeShown.

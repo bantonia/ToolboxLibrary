@@ -225,10 +225,10 @@ void ToolboxCoreObj::getPointerInfo(unsigned int flags, int& x_pos, int& y_pos, 
 void ToolboxCoreObj::eToolboxEventHandler(void *pollBlock) {
   ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *)pollBlock;
   switch(tboxHdr->event_code) {
-    case ToolboxEvents::Error:
+    case ToolboxEvents::ToolboxError:
       toolboxError();
       break;
-    case ToolboxEvents::ObjectAutoCreated:
+    case ToolboxEvents::ToolboxObjectAutoCreated:
       toolboxObjectAutoCreated(ToolboxCoreObj::getObjectClass(0, ToolboxCoreObj::idBlock.self_id));
       break;
     default:

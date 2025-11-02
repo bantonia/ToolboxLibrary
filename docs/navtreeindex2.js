@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"class_toolbox_file_info_dlog_obj.html#af7b7976672d3cbd900a330ed74610afc":[0,0,41,7],
 "class_toolbox_font_dlog_obj.html":[0,0,42],
 "class_toolbox_font_dlog_obj.html#a00b488e528ca3932410ea3532d63e3ce":[0,0,42,16],
 "class_toolbox_font_dlog_obj.html#a03c86790abf14018d2c16631d7f20e1d":[0,0,42,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "class_toolbox_print_dlog_obj.html#a62d47c8b04cdb8bcc730d4e068d49f32":[0,0,51,14],
 "class_toolbox_print_dlog_obj.html#a658452c2a0a931a0e2e91645d60ad994":[0,0,51,21],
 "class_toolbox_print_dlog_obj.html#a6c27ac3a61e577fc23994d6281eae170":[0,0,51,18],
-"class_toolbox_print_dlog_obj.html#ab9b78c605abdf0f091d86e9f9e5e58b8":[0,0,51,0],
-"class_toolbox_print_dlog_obj.html#abc41c33d159bb5d63bfdb153b129174b":[0,0,51,9]
+"class_toolbox_print_dlog_obj.html#ab9b78c605abdf0f091d86e9f9e5e58b8":[0,0,51,0]
 };

@@ -1,9 +1,9 @@
 var class_toolbox_events =
 [
     [ "Toolbox_Event", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1a", [
-      [ "Error", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa9c8e2db8fac2a6db9fad26c17851c4b", null ],
-      [ "ObjectAutoCreated", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa4d12ca4d49c94a31ef1e0351ef4e225e", null ],
-      [ "ObjectDeleted", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa9be6ccc53a894d2ce39ae68f0d42f7b2", null ],
+      [ "ToolboxError", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaaa67db33fe8a8a3017f6d290c6d90dc7", null ],
+      [ "ToolboxObjectAutoCreated", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa7ac867395f4ef33a964e2c55ddeef4e1", null ],
+      [ "ToolboxObjectDeleted", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa779c1fc22d2f216457c0af399edcb03b", null ],
       [ "WindowAboutToBeShown", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaa6c4b87080eb4406d4338bcbf4946de7", null ],
       [ "ActionButtonSelected", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa083aabfa135803bdcf5399b057b2c724", null ],
       [ "OptionButtonStateChanged", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaef125966e9180688885e8674fd1c5c00", null ],
@@ -76,6 +76,7 @@ var class_toolbox_events =
       [ "TabsSelection", "class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaab359fe5d8cbbcaa0f9ae95ad42b1b13", null ]
     ] ],
     [ "Toolbox_ObjectClass", "class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431", [
+      [ "UnknownClass", "class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a3f7b9c77109c28a1151f831ba91bfb5a", null ],
       [ "WindowObjectClass", "class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9c28d90024d1a4688d9802355995261d", null ],
       [ "MenuObjectClass", "class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a9d35fcb120e086f5e202f22fe6e01e10", null ],
       [ "IconbarObjectClass", "class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431affb4bdff004ebc22fbf1aa1ef212d7a6", null ],

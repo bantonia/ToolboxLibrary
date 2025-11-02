@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['radiobuttonstatechanged_0',['RadioButtonStateChanged',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aab5aac5600747cb521a9dab750dc5cb3d',1,'ToolboxEvents']]],
-  ['rgb_1',['RGB',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bdaa5cd87ecac238d6f44938b835ae1bfe2',1,'ToolboxColourDlogObj']]]
+  ['saveasabouttobeshown_0',['SaveAsAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aae67397dd5aeb3d77a0efbf8ce93832e3',1,'ToolboxEvents']]],
+  ['saveasdialoguecompleted_1',['SaveAsDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aae8e11e725021b5cce0e45db277c93792',1,'ToolboxEvents']]],
+  ['saveasfillbuffer_2',['SaveAsFillBuffer',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aab3b36d9848a4253a5a40d2cda9bdd24e',1,'ToolboxEvents']]],
+  ['saveasobjectclass_3',['SaveAsObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431aa03b6089cc61127594b0faf7c6e7b0b5',1,'ToolboxEvents']]],
+  ['saveassavecompleted_4',['SaveAsSaveCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aae35556f12be49772d0789fd88b6d314e',1,'ToolboxEvents']]],
+  ['saveassavetofile_5',['SaveAsSaveToFile',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaef614b62551af8d96adbc14e44b0ad02',1,'ToolboxEvents']]],
+  ['scaleabouttobeshown_6',['ScaleAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa34b02168c696abfc199ad1601eb04fd6',1,'ToolboxEvents']]],
+  ['scaleapplyfactor_7',['ScaleApplyFactor',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa6584ae78ba2b2f2eeca5932225cc6ca4',1,'ToolboxEvents']]],
+  ['scaledialoguecompleted_8',['ScaleDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaf77b2895ade85bed8ab5caaba85ff590',1,'ToolboxEvents']]],
+  ['scaleobjectclass_9',['ScaleObjectClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a5a1aed89642f9a112d4be443cfdf891d',1,'ToolboxEvents']]],
+  ['scrolllistselection_10',['ScrollListSelection',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa04ef117781c7c49812f7a2db95b5227c',1,'ToolboxEvents']]],
+  ['setbackground_11',['SetBackground',['../class_colour_trans_obj.html#aa90180501612b668c2ac0797a5205574afcfc54a50c187d20d78449422a729119',1,'ColourTransObj']]],
+  ['setforeground_12',['SetForeground',['../class_colour_trans_obj.html#aa90180501612b668c2ac0797a5205574a9a70996fc678bdc807d94d08e404248b',1,'ColourTransObj']]],
+  ['slidervaluechanged_13',['SliderValueChanged',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa5f617ea7837e6f661711226f6a5ff961',1,'ToolboxEvents']]],
+  ['stringsetabouttobeshown_14',['StringSetAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa4c1c6de474dffaefaffb3eaa5194a25e',1,'ToolboxEvents']]],
+  ['stringsetvaluechanged_15',['StringSetValueChanged',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa7452116d4de5967819957684698d2aa0',1,'ToolboxEvents']]]
 ];

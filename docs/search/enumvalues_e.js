@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['tabsselection_0',['TabsSelection',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaab359fe5d8cbbcaa0f9ae95ad42b1b13',1,'ToolboxEvents']]],
-  ['toolaction_5fgetaction_1',['ToolAction_GetAction',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ac6ddf0e87e56bd3bf771bf6db7c69a5e',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetclickshow_2',['ToolAction_GetClickShow',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ad118778c3674ff55b2c6537a5440bcd6',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetident_3',['ToolAction_GetIdent',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ad67fc537a8ee2088e4de7a8343fbdb25',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetpressed_4',['ToolAction_GetPressed',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a3c328205e548f4089b2f033c4f908ded',1,'ToolboxToolAction']]],
-  ['toolaction_5fgetstate_5',['ToolAction_GetState',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a7e9beaf7b3f4102903d5c3fbbdb6ab80',1,'ToolboxToolAction']]],
-  ['toolaction_5fselectevent_6',['ToolAction_SelectEvent',['../class_toolbox_tool_action.html#ae4a66071a7958e7febd39959b1e1479aa88b8f0d8dab87a815036a4a2b86b90ad',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetaction_7',['ToolAction_SetAction',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a1fc442e4687492b8fe41d55c11ecd7ad',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetclickshow_8',['ToolAction_SetClickShow',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a02dfbb900f972011919b71b8c2eb95f3',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetident_9',['ToolAction_SetIdent',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a49ecaf794ead410018baff39e9b32543',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetpressed_10',['ToolAction_SetPressed',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78a9393ad3b88af387ea014dd49c7f45fa6',1,'ToolboxToolAction']]],
-  ['toolaction_5fsetstate_11',['ToolAction_SetState',['../class_toolbox_tool_action.html#a419978161f18b656ab925ed05196ac78ac256a3da17512f68213f3ee629fefddf',1,'ToolboxToolAction']]],
-  ['toolactionselection_12',['ToolActionSelection',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa6765464b571f1a7dc132e6ec772934d2',1,'ToolboxEvents']]],
-  ['treeviewnodeclicked_13',['TreeViewNodeClicked',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa72fbace503abcdda6a833d493f88af1c',1,'ToolboxEvents']]],
-  ['treeviewnodedragged_14',['TreeViewNodeDragged',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aae34dd1311bfc2cb4adc1bb0f14960261',1,'ToolboxEvents']]],
-  ['treeviewnodeexpanded_15',['TreeViewNodeExpanded',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa845764a733421a17b2625567736b0816',1,'ToolboxEvents']]],
-  ['treeviewnoderenamed_16',['TreeViewNodeRenamed',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa943613710104558db5053882d230e655',1,'ToolboxEvents']]],
-  ['treeviewnodeselected_17',['TreeViewNodeSelected',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aaf1e9039b15c59fea3e36cc05f55f55f9',1,'ToolboxEvents']]],
-  ['treeviewscroll_18',['TreeViewScroll',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa76caf9f1cd907848bac3629f13172add',1,'ToolboxEvents']]]
+  ['unknownclass_0',['UnknownClass',['../class_toolbox_events.html#a74b9ee04b6ec4e60318fae499af37431a3f7b9c77109c28a1151f831ba91bfb5a',1,'ToolboxEvents']]],
+  ['useecf_1',['UseECF',['../class_colour_trans_obj.html#aa90180501612b668c2ac0797a5205574ab591e564d44dfdb4e4dc01cf635bb17f',1,'ColourTransObj']]]
 ];
