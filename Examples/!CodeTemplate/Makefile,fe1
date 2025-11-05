@@ -1,0 +1,105 @@
+# Project:   CodeTemp
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.CodeTemplate \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.CodeTemplate \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.CodeTemplate:   @.c++.CodeTemplate
+        c++ $(c++flags) -o @.o.CodeTemplate @.c++.CodeTemplate 
+
+
+# Dynamic dependencies:
+o.main:	c++.main
+o.main:	h.CodeTemplate
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxQuitObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	C:h.quit
+o.CodeTemplate:	c++.CodeTemplate
+o.CodeTemplate:	h.CodeTemplate
+o.CodeTemplate:	C:h.ToolboxTask
+o.CodeTemplate:	C:h.ClassType
+o.CodeTemplate:	C:h.ToolboxCoreObj
+o.CodeTemplate:	C:h.Object
+o.CodeTemplate:	C:h.toolbox
+o.CodeTemplate:	C:h.kernel
+o.CodeTemplate:	C:h.wimp
+o.CodeTemplate:	C:h.ToolboxEvents
+o.CodeTemplate:	C:h.toolbox
+o.CodeTemplate:	C:h.gadgets
+o.CodeTemplate:	C:h.treeview
+o.CodeTemplate:	C:h.window
+o.CodeTemplate:	C:h.ScrollList
+o.CodeTemplate:	C:h.tabs
+o.CodeTemplate:	C:h.ErrorReport
+o.CodeTemplate:	C:h.kernel
+o.CodeTemplate:	C:h.ClassType
+o.CodeTemplate:	C:h.WimpObj
+o.CodeTemplate:	C:h.kernel
+o.CodeTemplate:	C:h.ErrorReport
+o.CodeTemplate:	C:h.libc
+o.CodeTemplate:	C:h.kernel
+o.CodeTemplate:	C:h.Object
+o.CodeTemplate:	C:h.wimp
+o.CodeTemplate:	C:h.ClassType
+o.CodeTemplate:	C:h.ToolboxQuitObj
+o.CodeTemplate:	C:h.ClassType
+o.CodeTemplate:	C:h.ToolboxObj
+o.CodeTemplate:	C:h.Object
+o.CodeTemplate:	C:h.toolbox
+o.CodeTemplate:	C:h.ErrorReport
+o.CodeTemplate:	C:h.ClassType
+o.CodeTemplate:	C:h.quit

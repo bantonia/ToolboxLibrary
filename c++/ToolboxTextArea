@@ -127,4 +127,3 @@ ToolboxTextArea& ToolboxTextArea::append(const char *text) {
   insertText(nChars, text);
   return *this;
 }
-

@@ -1,0 +1,22 @@
+#ifndef __cplusplus
+#error Header file "CodeTemplate.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __CodeTemplate_h
+#define __CodeTemplate_h
+
+#include "ToolboxTask.h"
+#include "ToolboxQuitObj.h"
+
+class CodeTemplate : public ToolboxTask {
+  public:
+    CodeTemplate();
+    ~CodeTemplate();
+    void toolboxEventHandler(int);
+    void toolboxObjectAutoCreated(int);
+    void quitQuit();
+};
+
+#endif

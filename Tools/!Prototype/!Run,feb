@@ -1,0 +1,3 @@
+Set Prototype$Dir <Obey$Dir>
+wimpslot -min 4040K -max 4040K
+Run <Prototype$Dir>.!RunImage

@@ -10,6 +10,7 @@ var hierarchy =
       ] ],
       [ "ToolboxGadget", "class_toolbox_gadget.html", [
         [ "ToolboxActionButton", "class_toolbox_action_button.html", null ],
+        [ "ToolboxAdjuster", "class_toolbox_adjuster.html", null ],
         [ "ToolboxButton", "class_toolbox_button.html", null ],
         [ "ToolboxDisplayField", "class_toolbox_display_field.html", null ],
         [ "ToolboxDraggable", "class_toolbox_draggable.html", null ],

@@ -1,0 +1,24 @@
+#ifndef __cplusplus
+#error Header file "ToolboxAdjuster.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxAdjuster_h
+#define __ToolboxAdjuster_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+
+class ToolboxAdjuster : public ToolboxGadget {
+  public:
+    ToolboxAdjuster() : ToolboxGadget() {}
+    ToolboxAdjuster(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+    ToolboxAdjuster(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
+    void showProperties() {}
+    char* getClassName() { return "ToolboxAdjuster";}
+    int getClassType() { return ClassType_ToolboxAdjuster;}
+};
+
+#endif

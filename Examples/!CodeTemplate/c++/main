@@ -1,0 +1,13 @@
+#include "CodeTemplate.h"
+
+CodeTemplate *task;
+
+int main() {
+  task = new CodeTemplate();
+  task->initTask("<CodeTemplate$Dir>");
+  task->setMask(256 + 1);
+  while (!task->quit) {
+    task->run();
+  }
+  return 0;
+}

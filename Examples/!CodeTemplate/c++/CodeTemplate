@@ -1,0 +1,31 @@
+#include "CodeTemplate.h"
+
+CodeTemplate::CodeTemplate() : ToolboxTask() {}
+
+CodeTemplate::~CodeTemplate() {}
+
+void CodeTemplate::toolboxEventHandler(int event) {
+  switch(event) {
+    case QuitQuit:
+      quitQuit();
+      break;
+    default:
+      break;
+  }
+}
+
+void CodeTemplate::toolboxObjectAutoCreated(int object_class) {
+  switch(object_class) {
+    default:
+      break;
+  }
+}
+
+void CodeTemplate::quitQuit() {
+  QuitQuitEvent *pollEvent = (QuitQuitEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  pollEvent = pollEvent;
+  idBlock = idBlock;
+  quit = 1;
+}
+

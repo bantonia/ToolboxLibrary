@@ -10,6 +10,7 @@
 #include "ClassType.h"
 #include "ToolboxGadget.h"
 #include "TextArea.h"
+#include "string.h"
 
 class ToolboxTextArea : public ToolboxGadget {
   public:
@@ -33,7 +34,7 @@ class ToolboxTextArea : public ToolboxGadget {
     unsigned int getCursorPosition();
 
     int getTextCount();
-    ToolboxTextArea& append(const char *text);
+    ToolboxTextArea& append(const char *);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxTextArea";}

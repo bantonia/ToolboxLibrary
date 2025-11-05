@@ -32,6 +32,7 @@ var annotated_dup =
     [ "SpriteObj", "class_sprite_obj.html", "class_sprite_obj" ],
     [ "ToolActionSelectionEvent", "struct_tool_action_selection_event.html", "struct_tool_action_selection_event" ],
     [ "ToolboxActionButton", "class_toolbox_action_button.html", "class_toolbox_action_button" ],
+    [ "ToolboxAdjuster", "class_toolbox_adjuster.html", "class_toolbox_adjuster" ],
     [ "ToolboxButton", "class_toolbox_button.html", "class_toolbox_button" ],
     [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html", "class_toolbox_colour_dlog_obj" ],
     [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html", "class_toolbox_colour_menu_obj" ],
