@@ -38,7 +38,7 @@ var class_toolbox_menu_obj =
     [ "setObjectId", "class_toolbox_menu_obj.html#ad87de063fd48cbb8a14a8c2bb587b272", null ],
     [ "setSubMenuEvent", "class_toolbox_menu_obj.html#aa979c88a35c908459081b853a3ff9718", null ],
     [ "setSubMenuShow", "class_toolbox_menu_obj.html#abde29c41bb3b1d13fb44c98e7a4db636", null ],
-    [ "setTick", "class_toolbox_menu_obj.html#aff8a7227ecd71b66d29523d4bb3f3ccb", null ],
+    [ "setTick", "class_toolbox_menu_obj.html#ae4cf10c86d0bfaaf0dc7c9a0a1487d3a", null ],
     [ "setTitle", "class_toolbox_menu_obj.html#a2af56e6913a5b12e05682caa81a5c58f", null ],
     [ "showProperties", "class_toolbox_menu_obj.html#a34334ddd6e9229f00515ffe12834228c", null ]
 ];

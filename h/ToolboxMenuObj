@@ -16,7 +16,7 @@ class ToolboxMenuObj : public ToolboxObj {
     ToolboxMenuObj(){};
     ToolboxMenuObj(ObjectId objectId);
     ToolboxMenuObj(IdBlock *);
-    ToolboxMenuObj& setTick(ComponentId entry);
+    ToolboxMenuObj& setTick(ComponentId entry, int value);
     int getTick(ComponentId entry);
     ToolboxMenuObj& setFade(ComponentId entry, int fade);
     int getFade(ComponentId entry);

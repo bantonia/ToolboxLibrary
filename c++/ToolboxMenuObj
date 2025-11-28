@@ -4,10 +4,11 @@ ToolboxMenuObj::ToolboxMenuObj(ObjectId objectId) : ToolboxObj(objectId) {}
 
 ToolboxMenuObj::ToolboxMenuObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
-ToolboxMenuObj& ToolboxMenuObj::setTick(ComponentId entry) {
+ToolboxMenuObj& ToolboxMenuObj::setTick(ComponentId entry, int value) {
   _kernel_swi_regs regs;
   regs.r[2] = Menu_SetTick;
   regs.r[3] = entry;
+  regs.r[4] = value;
   this->objectMiscOp(&regs);
   return *this;
 }
