@@ -1,0 +1,7 @@
+#include "Res_ProgInfo.h"
+
+Res_ProgInfo::Res_ProgInfo() : ToolboxProgInfoObj() {}
+
+Res_ProgInfo::Res_ProgInfo(IdBlock *idBlock) : ToolboxProgInfoObj(idBlock) {}
+
+Res_ProgInfo::~Res_ProgInfo() {}

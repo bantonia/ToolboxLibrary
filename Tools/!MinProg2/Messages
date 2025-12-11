@@ -1,0 +1,24 @@
+_TaskName:MinProg2
+
+# Messages exported from Resource File version 101
+
+# Messages for object ProgInfo (class ProgInfo)
+
+ProgInfo|1:Minimum C++ ToolBox ToolboxLib Application
+ProgInfo|2:© Bill Antonia 2025
+ProgInfo|3:0.01 (12-Dec-25)
+
+# Messages for object Iconbar (class Iconbar)
+
+Iconbar|0:MinProg2
+
+# Messages for object Menu (class Menu)
+
+Menu|0:MinProg2
+Menu|2:Prog Info
+Menu|4:Show Window
+Menu|6:Quit
+
+# Messages for object Window (class Window)
+
+Window|1:Window

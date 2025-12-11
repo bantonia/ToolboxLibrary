@@ -1,0 +1,38 @@
+#ifndef __cplusplus
+#error Header file "MinProg2.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __MinProg2_h
+#define __MinProg2_h
+
+#include <string.h>
+#include "ToolboxTask.h"
+#include "Res_ProgInfo.h"
+#include "Res_Iconbar.h"
+#include "Res_Menu.h"
+#include "Res_Window.h"
+#include "ToolboxQuitObj.h"
+
+
+class MinProg2 : public ToolboxTask {
+  public:
+    MinProg2();
+    ~MinProg2();
+    void toolboxObjectAutoCreated(int objectClass);
+    void toolboxUserEvent(int event);
+    void toolboxEventHandler(int event);
+    void progInfoObjectAutoCreated();
+    void iconbarObjectAutoCreated();
+    void menuObjectAutoCreated();
+    void windowObjectAutoCreated();
+    void quitQuit();
+  private:
+    Res_ProgInfo *res_ProgInfo;
+    Res_Iconbar *res_Iconbar;
+    Res_Menu *res_Menu;
+    Res_Window *res_Window;
+};
+
+#endif

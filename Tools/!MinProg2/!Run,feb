@@ -1,0 +1,3 @@
+Set MinProg2$Dir <Obey$Dir>
+wimpslot -min 512K -max 512K
+Run <MinProg2$Dir>.!RunImage

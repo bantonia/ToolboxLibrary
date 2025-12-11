@@ -1,0 +1,213 @@
+# Project:   MinProg2
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.MinProg2 @.o.Res_Iconbar @.o.Res_Menu \
+        @.o.Res_ProgInfo @.o.Res_Window @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.MinProg2 @.o.Res_Iconbar @.o.Res_Menu \
+        @.o.Res_ProgInfo @.o.Res_Window @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.MinProg2:   @.c++.MinProg2
+        c++ $(c++flags) -o @.o.MinProg2 @.c++.MinProg2 
+@.o.Res_Iconbar:   @.c++.Res_Iconbar
+        c++ $(c++flags) -o @.o.Res_Iconbar @.c++.Res_Iconbar 
+@.o.Res_Menu:   @.c++.Res_Menu
+        c++ $(c++flags) -o @.o.Res_Menu @.c++.Res_Menu 
+@.o.Res_ProgInfo:   @.c++.Res_ProgInfo
+        c++ $(c++flags) -o @.o.Res_ProgInfo @.c++.Res_ProgInfo 
+@.o.Res_Window:   @.c++.Res_Window
+        c++ $(c++flags) -o @.o.Res_Window @.c++.Res_Window 
+
+
+# Dynamic dependencies:
+o.main:	c++.main
+o.main:	h.MinProg2
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	h.Res_ProgInfo
+o.main:	C:h.ToolboxProgInfoObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	C:h.proginfo
+o.main:	h.Res_Iconbar
+o.main:	C:h.ToolboxIconbarObj
+o.main:	C:h.iconbar
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	h.Res_Menu
+o.main:	C:h.ToolboxMenuObj
+o.main:	C:h.menu
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	h.Res_Window
+o.main:	C:h.ToolboxWindowObj
+o.main:	C:h.window
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.ToolboxQuitObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.quit
+o.MinProg2:	c++.MinProg2
+o.MinProg2:	h.MinProg2
+o.MinProg2:	C:h.ToolboxTask
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxCoreObj
+o.MinProg2:	C:h.Object
+o.MinProg2:	C:h.toolbox
+o.MinProg2:	C:h.kernel
+o.MinProg2:	C:h.wimp
+o.MinProg2:	C:h.ToolboxEvents
+o.MinProg2:	C:h.toolbox
+o.MinProg2:	C:h.gadgets
+o.MinProg2:	C:h.treeview
+o.MinProg2:	C:h.window
+o.MinProg2:	C:h.ScrollList
+o.MinProg2:	C:h.tabs
+o.MinProg2:	C:h.ErrorReport
+o.MinProg2:	C:h.kernel
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.WimpObj
+o.MinProg2:	C:h.kernel
+o.MinProg2:	C:h.ErrorReport
+o.MinProg2:	C:h.libc
+o.MinProg2:	C:h.kernel
+o.MinProg2:	C:h.Object
+o.MinProg2:	C:h.wimp
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	h.Res_ProgInfo
+o.MinProg2:	C:h.ToolboxProgInfoObj
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxObj
+o.MinProg2:	C:h.Object
+o.MinProg2:	C:h.toolbox
+o.MinProg2:	C:h.ErrorReport
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.proginfo
+o.MinProg2:	h.Res_Iconbar
+o.MinProg2:	C:h.ToolboxIconbarObj
+o.MinProg2:	C:h.iconbar
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxObj
+o.MinProg2:	h.Res_Menu
+o.MinProg2:	C:h.ToolboxMenuObj
+o.MinProg2:	C:h.menu
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxObj
+o.MinProg2:	h.Res_Window
+o.MinProg2:	C:h.ToolboxWindowObj
+o.MinProg2:	C:h.window
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxObj
+o.MinProg2:	C:h.ToolboxQuitObj
+o.MinProg2:	C:h.ClassType
+o.MinProg2:	C:h.ToolboxObj
+o.MinProg2:	C:h.quit
+o.Res_Iconbar:	c++.Res_Iconbar
+o.Res_Iconbar:	h.Res_Iconbar
+o.Res_Iconbar:	C:h.ToolboxIconbarObj
+o.Res_Iconbar:	C:h.iconbar
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.wimp
+o.Res_Iconbar:	C:h.ClassType
+o.Res_Iconbar:	C:h.ToolboxObj
+o.Res_Iconbar:	C:h.Object
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.ErrorReport
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.ClassType
+o.Res_Menu:	c++.Res_Menu
+o.Res_Menu:	h.Res_Menu
+o.Res_Menu:	C:h.ToolboxMenuObj
+o.Res_Menu:	C:h.menu
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
+o.Res_Menu:	C:h.ToolboxObj
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ClassType
+o.Res_ProgInfo:	c++.Res_ProgInfo
+o.Res_ProgInfo:	h.Res_ProgInfo
+o.Res_ProgInfo:	C:h.ToolboxProgInfoObj
+o.Res_ProgInfo:	C:h.ClassType
+o.Res_ProgInfo:	C:h.ToolboxObj
+o.Res_ProgInfo:	C:h.Object
+o.Res_ProgInfo:	C:h.toolbox
+o.Res_ProgInfo:	C:h.kernel
+o.Res_ProgInfo:	C:h.wimp
+o.Res_ProgInfo:	C:h.ErrorReport
+o.Res_ProgInfo:	C:h.kernel
+o.Res_ProgInfo:	C:h.ClassType
+o.Res_ProgInfo:	C:h.proginfo
+o.Res_ProgInfo:	C:h.window
+o.Res_ProgInfo:	C:h.gadgets
+o.Res_Window:	c++.Res_Window
+o.Res_Window:	h.Res_Window
+o.Res_Window:	C:h.ToolboxWindowObj
+o.Res_Window:	C:h.window
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.wimp
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.ToolboxObj
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.ClassType

@@ -1,0 +1,7 @@
+#include "Res_Window.h"
+
+Res_Window::Res_Window() : ToolboxWindowObj() {}
+
+Res_Window::Res_Window(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {}
+
+Res_Window::~Res_Window() {}

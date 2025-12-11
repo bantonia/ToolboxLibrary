@@ -1,0 +1,13 @@
+#include "MinProg2.h"
+
+MinProg2 *task;
+
+int main() {
+  task = new MinProg2();
+  task->initTask("<MinProg2$Dir>");
+  task->setMask(256 + 1);
+  while (!task->quit) {
+    task->run();
+  }
+  return 0;
+}

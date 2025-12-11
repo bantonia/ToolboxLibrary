@@ -1,0 +1,94 @@
+#include "MinProg2.h"
+
+MinProg2::MinProg2() : ToolboxTask(),
+  res_ProgInfo(NULL),
+  res_Iconbar(NULL),
+  res_Menu(NULL),
+  res_Window(NULL) {}
+
+MinProg2::~MinProg2() {
+  if (res_ProgInfo != NULL) delete res_ProgInfo;
+  if (res_Iconbar != NULL) delete res_Iconbar;
+  if (res_Menu != NULL) delete res_Menu;
+  if (res_Window != NULL) delete res_Window;
+}
+
+void MinProg2::toolboxObjectAutoCreated(int objectClass) {
+  switch(objectClass) {
+    case ToolboxEvents::ProgInfoObjectClass: {
+        progInfoObjectAutoCreated();
+      }
+      break;
+    case ToolboxEvents::IconbarObjectClass: {
+        iconbarObjectAutoCreated();
+      }
+      break;
+    case ToolboxEvents::MenuObjectClass: {
+        menuObjectAutoCreated();
+      }
+      break;
+    case ToolboxEvents::WindowObjectClass: {
+        windowObjectAutoCreated();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void MinProg2::windowObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Window") == 0) {
+    res_Window = new Res_Window(idBlock);
+  }
+}
+
+void MinProg2::menuObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Menu") == 0) {
+    res_Menu = new Res_Menu(idBlock);
+  }
+}
+
+void MinProg2::iconbarObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Iconbar") == 0) {
+    res_Iconbar = new Res_Iconbar(idBlock);
+  }
+}
+
+void MinProg2::progInfoObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "ProgInfo") == 0) {
+    res_ProgInfo = new Res_ProgInfo(idBlock);
+  }
+}
+
+void MinProg2::toolboxEventHandler(int event) {
+  switch(event) {
+    case ToolboxEvents::QuitQuit: {
+        quitQuit();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void MinProg2::toolboxUserEvent(int event) {
+  switch(event) {
+    default:
+      break;
+  }
+}
+
+void MinProg2::quitQuit() {
+  QuitQuitEvent *pollEvent = (QuitQuitEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  quit = 1;
+}
+

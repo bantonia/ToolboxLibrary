@@ -1,0 +1,115 @@
+# Lines beginning with a # are considered as comments.
+#
+# Event entry components are separated by a comma and must not contain spaces.
+#
+# No lines can be left empty.
+#
+# End of file must not end on an empty line.
+#
+# UnknownToolboxEvent is a catch-all for new Toolbox events not known by the ToolboxC++Lib library
+# and does not catch events already listed below but have not been chosen.
+#
+# The list of events can be rearranged to suit your style of programming, ie you can bring those used most nearer to the
+# beginning if the list 
+#
+# Format: Option button text, Event number (exclude 0, not a Toolbox event number), Event handler, Cast, Header file to include
+#
+# General Toolbox events
+ToolboxError,0x44ec0,toolboxError,ToolboxErrorEvent,
+#
+# The following two events are included by default, do not remove the leading #
+#ToolboxObjectAutoCreated,0x44ec1,toolboxObjectAutoCreated,ObjectAutoCreatedEvent,
+#ToolboxUserEvent,0,toolboxUserEvent,,
+#
+ToolboxObjectDeleted,0x44ec2,toolboxObjectDeleted,ToolboxObjectDeletedEvent,
+UnknownToolboxEvent,0,unknownToolboxEvent,,
+#
+# Object events
+#
+# Window
+WindowAboutToBeShown,0x82880,windowAboutToBeShown,WindowAboutToBeShownEvent,ToolboxWindowObj.h
+WindowHasBeenHidden,0x82890,windowHasBeenHidden,WindowHasBeenHiddenEvent,ToolboxWindowObj.h
+# Menu
+MenuAboutToBeShown,0x828c0,menuAboutToBeShown,MenuAboutToBeShownEvent,ToolboxMenuObj.h
+MenuHasBeenHidden,0x828c1,menuHasBeenHidden,MenuHasBeenHiddenEvent,ToolboxMenuObj.h
+MenuSubMenu,0x828c2,menuSubMenu,MenuSubMenuEvent,ToolboxMenuObj.h
+MenuSelection,0x828c3,menuSelection,MenuSelectionEvent,ToolboxMenuObj.h
+# Iconbar
+IconbarClicked,0x82900,iconbarClicked,IconbarClickedEvent,ToolboxIconbarObj.h
+IconbarSelectAboutToBeShown,0x82901,iconbarSelectAboutToBeShown,IconbarAboutToBeShownEvent,ToolboxIconbarObj.h
+IconbarAdjustAboutToBeShown,0x82902,iconbarAdjustAboutToBeShown,IconbarAboutToBeShownEvent,ToolboxIconbarObj.h
+# ColourMenu
+ColourMenuAboutToBeShown,0x82980,colourMenuAboutToBeShown,ColourMenuAboutToBeShownEvent,ToolboxColourMenuObj.h
+ColourMenuHasBeenHidden,0x82981,colourMenuHasBeenHidden,ColourMenuHasBeenHiddenEvent,ToolboxColourMenuObj.h
+ColourMenuSelection,0x82982,colourMenuSelection,ColourMenuSelectionEvent,ToolboxColourMenuObj.h
+# ColourDbox
+ColourDboxAboutToBeShown,0x829c0,colourDboxAboutToBeShown,ColourDboxAboutToBeShownEvent,ToolboxColourDlogObj.h
+ColourDboxDialogueCompleted,0x829c1,colourDboxDialogueCompleted,ColourDboxDialogueCompletedEvent,ToolboxColourDlogObj.h
+ColourDboxColourSelected,0x829c2,colourDboxColourSelected,ColourDboxColourSelectedEvent,ToolboxColourDlogObj.h
+# FontDbox
+FontDboxAboutToBeShown,0x82a00,fontDboxAboutToBeShown,FontDboxAboutToBeShownEvent,ToolboxFontDlogObj.h
+FontDboxDialogueCompleted,0x82a01,fontDboxDialogueCompleted,FontDboxDialogueCompletedEvent,ToolboxFontDlogObj.h
+FontDboxApplyFont,0x82a02,fontDboxApplyFont,FontDboxApplyFontEvent,ToolboxFontDlogObj.h
+# FontMenu
+FontMenuAboutToBeShown,0x82a40,fontMenuAboutToBeShown,FontMenuAboutToBeShownEvent,ToolboxFontMenuObj.h
+FontMenuHasBeenHidden,0x82a41,fontMenuHasBeenHidden,FontMenuHasBeenHiddenEvent,ToolboxFontMenuObj.h
+FontMenuFontSelection,0x82a42,fontMenuFontSelection,FontMenuSelectionEvent,ToolboxFontMenuObj.h
+# DCS
+DCSAboutToBeShown,0x82a80,dcsAboutToBeShown,DCSAboutToBeShownEvent,ToolboxDCSObj.h
+DCSDiscard,0x82a81,dcsDiscard,DCSDiscard,DCSDiscardEvent,ToolboxDCSObj.h
+DCSSave,0x82a82,dcsSave,DCSSaveEvent,DCSSaveEvent,ToolboxDCSObj.h
+DCSDialogueCompleted,0x82a83,dcsDialogueCompleted,DCSDialogueCompletedEvent,ToolboxDCSObj.h
+DCSCancel,0x82a84,dcsCancel,DCSCancelEvent,ToolboxDCSObj.h
+# Quit
+QuitAboutToBeShown,0x82a90,quitAboutToBeShown,QuitAboutToBeShownEvent,ToolboxQuitObj.h
+QuitQuit,0x82a91,quitQuit,QuitQuitEvent,ToolboxQuitObj.h
+QuitDialogueCompleted,0x82a92,quitDialogueCompleted,QuitDialogueCompletedEvent,ToolboxQuitObj.h
+QuitCancel,0x82a93,quitCancel,QuitCancelEvent,ToolboxQuitObj.h
+# FileInfo
+FileInfoAboutToBeShown,0x82ac0,fileInfoAboutToBeShown,FileInfoAboutToBeShownEvent,ToolboxFileInfoDlogObj.h
+FileInfoDialogueCompleted,0x82ac1,fileInfoDialogueCompleted,FileInfoDialogueCompletedEvent,ToolboxFileInfoDlogObj.h
+# PrintDbox
+PrintDboxAboutToBeShown,0x82b00,printDboxAboutToBeShown,PrintDboxAboutToBeShownEvent,ToolboxPrintDlogObj.h
+PrintDboxDialogueCompleted,0x82b01,printDboxDialogueCompleted,PrintDboxDialogueCompletedEvent,ToolboxPrintDlogObj.h
+PrintDboxSetUpAboutToBeShown,0x82b02,printDboxSetUpAboutToBeShown,PrintDboxSetUpAboutToBeShownEvent,ToolboxPrintDlogObj.h
+PrintDboxSave,0x82b03,printDboxSave,PrintDboxSaveEvent,ToolboxPrintDlogObj.h
+PrintDboxSetUp,0x82b04,printDboxSetUp,PrintDboxSetUpEvent,ToolboxPrintDlogObj.h
+PrintDboxPrint,0x82b05,printDboxPrint,PrintDboxPrintEvent,ToolboxPrintDlogObj.h
+# ProgInfo
+ProgInfoAboutToBeShown,0x82b40,progInfoAboutToBeShown,ProgInfoAboutToBeShownEvent,ToolboxProgInfoObj.h
+ProgInfoDialogueCompleted,0x82b41,progInfoDialogueCompleted,ProgInfoDialogueCompletedEvent,ToolboxProgInfoObj.h
+ProgInfoLaunchWebPage,0x82b42,progInfoLaunchWebPage,ProgInfoLaunchWebPageEvent,ToolboxProgInfoObj.h
+# SaveAs
+SaveAsAboutToBeShown,0x82bc0,saveAsAboutToBeShown,SaveAsAboutToBeShownEvent,ToolboxSaveAsObj.h
+SaveAsDialogueCompleted,0x82bc1,saveAsDialogueCompleted,SaveAsDialogueCompletedEvent,ToolboxSaveAsObj.h
+SaveAsSaveToFile,0x82bc2,saveAsSaveToFile,SaveAsSaveToFileEvent,ToolboxSaveAsObj.h
+SaveAsFillBuffer,0x82bc3,saveAsFillBuffer,SaveAsFillBufferEvent,ToolboxSaveAsObj.h
+SaveAsSaveCompleted,0x82bc4,saveAsSaveCompleted,SaveAsSaveCompletedEvent,ToolboxSaveAsObj.h
+# Scale
+ScaleAboutToBeShown,0x82c00,scaleAboutToBeShown,ScaleAboutToBeShownEvent,ToolboxScaleObj.h
+ScaleDialogueCompleted,0x82c01,scaleDialogueCompleted,ScaleDialogueCompletedEvent,ToolboxScaleObj.h
+ScaleApplyFactor,0x82c02,scaleApplyFactor,ScaleApplyFactorEvent,ToolboxScaleObj.h
+#
+# Gadgets
+ActionButtonSelected,0x82881,actionButtonSelected,ActionButtonSelectedEvent,ToolboxActionButton.h
+OptionButtonStateChanged,0x82882,optionButtonStateChanged,OptionButtonStateChangedEvent,ToolboxOptionButton.h
+RadioButtonStateChanged,0x82883,radioButtonStateChanged,RadioButtonStateChangedEvent,ToolboxRadioButton.h
+WritableFieldValueChanged,0x82885,writableFieldValueChanged,WritableFieldValueChangedEvent,ToolboxWritableField.h
+SliderValueChanged,0x82886,sliderValueChanged,SliderValueChangedEvent,ToolboxSlider.h
+DraggableDragStarted,0x82887,draggableDragStarted,DraggableDragStartedEvent,ToolboxDraggable.h
+DraggableDragEnded,0x82888,draggableDragEnded,DraggableDragEndedEvent,ToolboxDraggable.h
+PopUpAboutToBeShown,0x8288b,popUpAboutToBeShown,PopUpAboutToBeShownEvent,ToolboxPopUp.h
+AdjusterClicked,0x8288c,adjusterClicked,AdjusterClickedEvent,ToolboxAdjuster.h
+NumberRangeValueChanged,0x8288d,numberRangeValueChanged,NumberRangeValueChangedEvent,ToolboxNumberRange.h
+StringSetValueChanged,0x8288e,stringSetValueChanged,StringSetValueChangedEvent,ToolboxStringSet.h
+StringSetAboutToBeShown,0x8288f,stringSetAboutToBeShown,StringSetAboutToBeShownEvent,ToolboxStringSet.h
+ToolActionSelection,0x140140,toolActionSelection,ToolActionSelectionEvent,ToolboxToolAction.h
+ScrollListSelection,0x140181,scrollListSelection,ScrollListSelectionEvent,ToolboxScrollList.h
+TreeViewNodeSelected,0x140280,treeViewNodeSelected,TreeViewNodeSelectedEvent,ToolboxTreeView.h
+TreeViewNodeExpanded,0x140281,treeViewNodeExpanded,TreeViewNodeExpandedEvent,ToolboxTreeView.h
+TreeViewNodeRenamed,0x140282,treeViewNodeRenamed,TreeViewNodeRenamedEvent,ToolboxTreeView.h
+TreeViewNodeClicked,0x140283,treeViewNodeClicked,TreeViewNodeClickedEvent,ToolboxTreeView.h
+TreeViewNodeDragged,0x140284,treeViewNodeDragged,TreeViewNodeDraggedEvent,ToolboxTreeView.h
+TreeViewScroll,0x140285,treeViewScroll,TreeViewScrollEvent,ToolboxTreeView.h
+TabsSelection,0x1402c0,tabsSelection,TabsSelectionEvent,ToolboxTabs.h
+#

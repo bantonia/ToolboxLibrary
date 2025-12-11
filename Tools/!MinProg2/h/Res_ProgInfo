@@ -1,0 +1,19 @@
+#ifndef __cplusplus
+#error Header file "Res_ProgInfo.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Res_ProgInfo_h
+#define __Res_ProgInfo_h
+
+#include "ToolboxProgInfoObj.h"
+
+class Res_ProgInfo : public ToolboxProgInfoObj {
+  public:
+    Res_ProgInfo();
+    Res_ProgInfo(IdBlock *);
+    ~Res_ProgInfo();
+};
+
+#endif
