@@ -1,0 +1,88 @@
+#include "ThreadExample.h"
+
+ThreadExample::ThreadExample() : ToolboxTask(),
+  res_Iconbar(NULL),
+  res_Window(NULL),
+  res_Menu(NULL) {}
+
+ThreadExample::~ThreadExample() {
+  if (res_Window != NULL) delete res_Window;
+  if (res_Menu != NULL) delete res_Menu;
+  if (res_Iconbar != NULL) delete res_Iconbar;
+}
+
+void ThreadExample::toolboxObjectAutoCreated(int objectClass) {
+  switch(objectClass) {
+    case ToolboxEvents::IconbarObjectClass: {
+        iconbarObjectAutoCreated();
+      }
+      break;
+    case ToolboxEvents::WindowObjectClass: {
+        windowObjectAutoCreated();
+      }
+      break;
+    case ToolboxEvents::MenuObjectClass: {
+        menuObjectAutoCreated();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void ThreadExample::windowObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Window") == 0) {
+    res_Window = new Res_Window(idBlock);
+  }
+}
+
+void ThreadExample::menuObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Menu") == 0) {
+    res_Menu = new Res_Menu(idBlock);
+  }
+}
+
+void ThreadExample::iconbarObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Iconbar") == 0) {
+    res_Iconbar = new Res_Iconbar(idBlock);
+  }
+}
+
+void ThreadExample::toolboxEventHandler(int event) {
+  switch(event) {
+    case ToolboxEvents::QuitQuit: {
+        quitQuit();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void ThreadExample::toolboxUserEvent(int event) {
+  switch(event) {
+    case 2: {
+        res_Window->updateDisplay0();
+      }
+      break;
+    case 3: {
+        res_Window->updateDisplay1();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+void ThreadExample::quitQuit() {
+  QuitCancelEvent *pollEvent = (QuitCancelEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  quit = 1;
+}
+

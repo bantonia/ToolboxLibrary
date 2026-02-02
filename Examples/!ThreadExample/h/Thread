@@ -1,0 +1,37 @@
+#ifndef __cplusplus
+#error Header file "Thread.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Thread_h
+#define __Thread_h
+
+#include "toolbox.h"
+#include "ToolboxCoreObj.h"
+#include "kernel.h"
+
+class Thread {
+  public:
+
+typedef struct ThreadData {
+  int objectId;
+  int componentId;
+  int eventNumber;
+  int delay;
+  int delayCount;
+} ThreadData;
+
+    Thread(int, int, int, int);
+    ~Thread();
+    void startThread();
+    void stopThread();
+  private:
+    int objectId;
+    int componentId;
+    int eventCode;
+    int delay;
+    ThreadData *handle;
+};
+
+#endif

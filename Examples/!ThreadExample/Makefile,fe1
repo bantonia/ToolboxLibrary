@@ -1,0 +1,319 @@
+# Project:   TaskExampl
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c +g -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.Display @.o.Res_Menu @.o.ThreadExample \
+        @.o.Res_Window @.o.Res_Iconbar @.o.Thread \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.Display @.o.Res_Menu @.o.ThreadExample \
+        @.o.Res_Window @.o.Res_Iconbar @.o.Thread \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.Display:   @.c++.Display
+        c++ $(c++flags) -o @.o.Display @.c++.Display 
+@.o.Res_Menu:   @.c++.Res_Menu
+        c++ $(c++flags) -o @.o.Res_Menu @.c++.Res_Menu 
+@.o.ThreadExample:   @.c++.ThreadExample
+        c++ $(c++flags) -o @.o.ThreadExample @.c++.ThreadExample 
+@.o.Res_Window:   @.c++.Res_Window
+        c++ $(c++flags) -o @.o.Res_Window @.c++.Res_Window 
+@.o.Res_Iconbar:   @.c++.Res_Iconbar
+        c++ $(c++flags) -o @.o.Res_Iconbar @.c++.Res_Iconbar 
+@.o.Thread:   @.c++.Thread
+        c++ $(c++flags) -o @.o.Thread @.c++.Thread 
+
+
+# Dynamic dependencies:
+o.Res_Menu:	c++.Res_Menu
+o.Res_Menu:	h.Res_Menu
+o.Res_Menu:	C:h.ToolboxMenuObj
+o.Res_Menu:	C:h.menu
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
+o.Res_Menu:	C:h.ToolboxObj
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ClassType
+o.Res_Iconbar:	c++.Res_Iconbar
+o.Res_Iconbar:	h.Res_Iconbar
+o.Res_Iconbar:	C:h.ToolboxIconbarObj
+o.Res_Iconbar:	C:h.iconbar
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.wimp
+o.Res_Iconbar:	C:h.ClassType
+o.Res_Iconbar:	C:h.ToolboxObj
+o.Res_Iconbar:	C:h.Object
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.ErrorReport
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.ClassType
+o.main:	c++.main
+o.main:	h.ThreadExample
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.ScrollList
+o.main:	C:h.window
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	h.Res_Iconbar
+o.main:	C:h.ToolboxIconbarObj
+o.main:	C:h.iconbar
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	h.Res_Window
+o.main:	C:h.ToolboxWindowObj
+o.main:	C:h.window
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	h.Display
+o.main:	C:h.ToolboxDisplayField
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.Scrollbar
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.treeview
+o.main:	C:h.TextArea
+o.main:	C:h.Object
+o.main:	C:h.ClassType
+o.main:	h.Thread
+o.main:	C:h.toolbox
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.kernel
+o.main:	h.Res_Menu
+o.main:	C:h.ToolboxMenuObj
+o.main:	C:h.menu
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.ToolboxQuitObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.quit
+o.Display:	c++.Display
+o.Display:	h.Display
+o.Display:	C:h.ToolboxDisplayField
+o.Display:	C:h.ClassType
+o.Display:	C:h.ToolboxGadget
+o.Display:	C:h.kernel
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.kernel
+o.Display:	C:h.toolbox
+o.Display:	C:h.wimp
+o.Display:	C:h.gadgets
+o.Display:	C:h.Scrollbar
+o.Display:	C:h.window
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.treeview
+o.Display:	C:h.TextArea
+o.Display:	C:h.Object
+o.Display:	C:h.ClassType
+o.Display:	h.Thread
+o.Display:	C:h.toolbox
+o.Display:	C:h.ToolboxCoreObj
+o.Display:	C:h.Object
+o.Display:	C:h.toolbox
+o.Display:	C:h.ToolboxEvents
+o.Display:	C:h.toolbox
+o.Display:	C:h.gadgets
+o.Display:	C:h.treeview
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.ClassType
+o.Display:	C:h.kernel
+o.ThreadExample:	c++.ThreadExample
+o.ThreadExample:	h.ThreadExample
+o.ThreadExample:	C:h.ToolboxTask
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxCoreObj
+o.ThreadExample:	C:h.Object
+o.ThreadExample:	C:h.toolbox
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	C:h.wimp
+o.ThreadExample:	C:h.ToolboxEvents
+o.ThreadExample:	C:h.toolbox
+o.ThreadExample:	C:h.gadgets
+o.ThreadExample:	C:h.treeview
+o.ThreadExample:	C:h.ScrollList
+o.ThreadExample:	C:h.window
+o.ThreadExample:	C:h.tabs
+o.ThreadExample:	C:h.ErrorReport
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.WimpObj
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	C:h.ErrorReport
+o.ThreadExample:	C:h.libc
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	C:h.Object
+o.ThreadExample:	C:h.wimp
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	h.Res_Iconbar
+o.ThreadExample:	C:h.ToolboxIconbarObj
+o.ThreadExample:	C:h.iconbar
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxObj
+o.ThreadExample:	C:h.Object
+o.ThreadExample:	C:h.toolbox
+o.ThreadExample:	C:h.ErrorReport
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	h.Res_Window
+o.ThreadExample:	C:h.ToolboxWindowObj
+o.ThreadExample:	C:h.window
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxObj
+o.ThreadExample:	h.Display
+o.ThreadExample:	C:h.ToolboxDisplayField
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxGadget
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	C:h.ErrorReport
+o.ThreadExample:	C:h.toolbox
+o.ThreadExample:	C:h.gadgets
+o.ThreadExample:	C:h.Scrollbar
+o.ThreadExample:	C:h.ScrollList
+o.ThreadExample:	C:h.tabs
+o.ThreadExample:	C:h.treeview
+o.ThreadExample:	C:h.TextArea
+o.ThreadExample:	C:h.Object
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	h.Thread
+o.ThreadExample:	C:h.toolbox
+o.ThreadExample:	C:h.ToolboxCoreObj
+o.ThreadExample:	C:h.kernel
+o.ThreadExample:	h.Res_Menu
+o.ThreadExample:	C:h.ToolboxMenuObj
+o.ThreadExample:	C:h.menu
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxObj
+o.ThreadExample:	C:h.ToolboxQuitObj
+o.ThreadExample:	C:h.ClassType
+o.ThreadExample:	C:h.ToolboxObj
+o.ThreadExample:	C:h.quit
+o.Res_Window:	c++.Res_Window
+o.Res_Window:	h.Res_Window
+o.Res_Window:	C:h.ToolboxWindowObj
+o.Res_Window:	C:h.window
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.wimp
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.ToolboxObj
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	h.Display
+o.Res_Window:	C:h.ToolboxDisplayField
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.ToolboxGadget
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.Scrollbar
+o.Res_Window:	C:h.ScrollList
+o.Res_Window:	C:h.tabs
+o.Res_Window:	C:h.treeview
+o.Res_Window:	C:h.TextArea
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	h.Thread
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ToolboxCoreObj
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ToolboxEvents
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.treeview
+o.Res_Window:	C:h.ScrollList
+o.Res_Window:	C:h.tabs
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.OS
+o.Res_Window:	C:h.ErrorReport
+o.Thread:	c++.Thread
+o.Thread:	h.Thread
+o.Thread:	C:h.toolbox
+o.Thread:	C:h.kernel
+o.Thread:	C:h.wimp
+o.Thread:	C:h.ToolboxCoreObj
+o.Thread:	C:h.Object
+o.Thread:	C:h.toolbox
+o.Thread:	C:h.ToolboxEvents
+o.Thread:	C:h.toolbox
+o.Thread:	C:h.gadgets
+o.Thread:	C:h.treeview
+o.Thread:	C:h.ScrollList
+o.Thread:	C:h.window
+o.Thread:	C:h.tabs
+o.Thread:	C:h.ErrorReport
+o.Thread:	C:h.kernel
+o.Thread:	C:h.ClassType
+o.Thread:	C:h.kernel
+o.Thread:	C:h.WimpObj
+o.Thread:	C:h.kernel
+o.Thread:	C:h.ErrorReport
+o.Thread:	C:h.libc
+o.Thread:	C:h.kernel
+o.Thread:	C:h.Object
+o.Thread:	C:h.wimp
+o.Thread:	C:h.ClassType

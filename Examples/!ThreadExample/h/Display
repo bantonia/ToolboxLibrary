@@ -1,0 +1,19 @@
+#ifndef __cplusplus
+#error Header file "Display.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Display_h
+#define __Display_h
+
+#include "ToolboxDisplayField.h"
+#include "Thread.h"
+
+class Display : public ToolboxDisplayField, public Thread {
+  public:
+    Display(int, int, int, int, int);
+    void updateDisplay();
+};
+
+#endif

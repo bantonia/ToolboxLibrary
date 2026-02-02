@@ -1,0 +1,18 @@
+_TaskName:ThreadExample
+
+# Messages exported from Resource File version 101
+
+# Messages for object Iconbar (class Iconbar)
+
+Iconbar|0:Thread Example
+
+# Messages for object Window (class Window)
+
+Window|1:Window object
+Window|3:Display
+Window|5:Display
+
+# Messages for object Menu (class Menu)
+
+Menu|0:Thread Example
+Menu|2:Quit

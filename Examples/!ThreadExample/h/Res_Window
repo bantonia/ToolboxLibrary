@@ -1,0 +1,35 @@
+#ifndef __cplusplus
+#error Header file "Res_Window.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Res_Window_h
+#define __Res_Window_h
+
+#include "ToolboxWindowObj.h"
+#include "Display.h"
+
+class Res_Window : public ToolboxWindowObj {
+  public:
+
+    enum Res_WindowConstants {
+      Res_WindowNumGadgets = 2
+    };
+
+    enum Res_WindowGadgets {
+      DisplayField0,
+      DisplayField1
+    };
+
+    Res_Window();
+    Res_Window(IdBlock *);
+    ~Res_Window();
+    void updateDisplay0();
+    void updateDisplay1();
+  private:
+    Display *displayField0;
+    Display *displayField1;
+};
+
+#endif
