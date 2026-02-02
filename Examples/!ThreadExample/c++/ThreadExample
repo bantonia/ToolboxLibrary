@@ -81,7 +81,7 @@ void ThreadExample::toolboxUserEvent(int event) {
 }
 
 void ThreadExample::quitQuit() {
-  QuitCancelEvent *pollEvent = (QuitCancelEvent *) getPollBlock();
+  QuitQuitEvent *pollEvent = (QuitQuitEvent *) getPollBlock();
   IdBlock *idBlock = &ToolboxCoreObj::idBlock;
   quit = 1;
 }
