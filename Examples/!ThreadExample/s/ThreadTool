@@ -1,3 +1,13 @@
+; ToDo:
+; Change the memory model to separate code and data to be able to remove the relative adr addressing
+; Modify the handle returned so that is an offset from the start of data memory so if relocation
+; takes place the handles still make sense
+; Add getter and setter SWI's for various fields
+; Add SWI's to Inc and Dec the delay of the Toolbox_RaiseToolboxEvents
+; ADD code and SWI's to do OS_CallAfter
+; RE-WRITE THE MODULE IN C!
+
+
 ; SWIs
 ; XOS_Module                 EQU 0x02001E
 XOS_CallEvery              EQU 0x02003C
@@ -23,7 +33,6 @@ SVC_mode         * 3
 
 ; Module constants
 SWI_Block             EQU         0x5AB40
-;SWI_Block             EQU         0x88000
 ErrorBlock            EQU         0x822900
 
 ; ThreadData offsets
