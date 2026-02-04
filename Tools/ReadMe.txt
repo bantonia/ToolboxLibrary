@@ -11,4 +11,4 @@ Drag and drop your res file to !Prototype, select your options from the Iconbar 
 By default directories c++, h and o will be created and source code will populate the c++ and h directories.
 Create a Makefile to generate a !RunImage from the c++ sources and link with ToolboxC++Lib, RiscOSC++Lib, CommonC++Lib, wimplib, c++lib and stubs
 
-Currently !Prototype does not generate code to take into account of Gadgets, this is something to be developed.
+!Prototype now generates code to take into account of Gadgets.
