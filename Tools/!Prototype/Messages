@@ -19,107 +19,6 @@ IconbarMenu|4:Options
 IconbarMenu|6:Generate Code
 IconbarMenu|8:Quit
 
-# Messages for object ToolEvents (class Window)
-
-ToolEvents|1:Toolbox Events
-ToolEvents|3:ToolboxError
-ToolEvents|5:ToolboxObjectAutoCreated
-ToolEvents|7:ToolboxObjectDeleted
-ToolEvents|9:WindowAboutToBeShown
-ToolEvents|11:ActionButtonSelected
-ToolEvents|13:OptionButtonStateChanged
-ToolEvents|15:RadioButtonStateChanged
-ToolEvents|17:WritableFieldValueChanged
-ToolEvents|19:SliderValueChanged
-ToolEvents|21:DraggableDragStarted
-ToolEvents|23:DraggableDragEnded
-ToolEvents|25:PopUpAboutToBeShown
-ToolEvents|27:AdjusterClicked
-ToolEvents|29:NumberRangeValueChanged
-ToolEvents|31:StringSetValueChanged
-ToolEvents|33:StringSetAboutToBeShown
-ToolEvents|35:WindowHasBeenHidden
-ToolEvents|37:MenuAboutToBeShown
-ToolEvents|39:MenuHasBeenHidden
-ToolEvents|41:MenuSubMenu
-ToolEvents|43:MenuSelection
-ToolEvents|45:IconbarClicked
-ToolEvents|47:IconbarSelectAboutToBeShown
-ToolEvents|49:IconbarAdjustAboutToBeShown
-ToolEvents|51:ColourMenuAboutToBeShown
-ToolEvents|53:ColourMenuHasBeenHidden
-ToolEvents|55:ColourMenuSelection
-ToolEvents|57:ColourDboxAboutToBeShown
-ToolEvents|59:ColourDboxDialogueCompleted
-ToolEvents|61:ColourDboxColourSelected
-ToolEvents|63:FontDboxAboutToBeShown
-ToolEvents|65:FontDboxDialogueCompleted
-ToolEvents|67:FontDboxApplyFont
-ToolEvents|69:FontMenuAboutToBeShown
-ToolEvents|71:FontMenuHasBeenHidden
-ToolEvents|73:FontMenuFontSelection
-ToolEvents|75:DCSAboutToBeShown
-ToolEvents|77:DCSDiscard
-ToolEvents|79:DCSSave
-ToolEvents|81:DCSDialogueCompleted
-ToolEvents|83:DCSCancel
-ToolEvents|85:QuitAboutToBeShown
-ToolEvents|87:QuitQuit
-ToolEvents|89:QuitDialogueCompleted
-ToolEvents|91:QuitCancel
-ToolEvents|93:FileInfoAboutToBeShown
-ToolEvents|95:FileInfoDialogueCompleted
-ToolEvents|97:PrintDboxAboutToBeShown
-ToolEvents|99:PrintDboxDialogueCompleted
-ToolEvents|101:PrintDboxSetUpAboutToBeShown
-ToolEvents|103:PrintDboxSave
-ToolEvents|105:PrintDboxSetUp
-ToolEvents|107:PrintDboxPrint
-ToolEvents|109:ProgInfoAboutToBeShown
-ToolEvents|111:ProgInfoDialogueCompleted
-ToolEvents|113:SaveAsAboutToBeShown
-ToolEvents|115:SaveAsDialogueCompleted
-ToolEvents|117:SaveAsSaveToFile
-ToolEvents|119:SaveAsFillBuffer
-ToolEvents|121:SaveAsSaveCompleted
-ToolEvents|123:ScaleAboutToBeShown
-ToolEvents|125:ScaleDialogueCompleted
-ToolEvents|127:ScaleApplyFactor
-ToolEvents|129:ToolActionSelection
-ToolEvents|131:ScrollListSelection
-ToolEvents|133:TreeViewNodeSelected
-ToolEvents|135:TreeViewNodeExpanded
-ToolEvents|137:TreeViewNodeRenamed
-ToolEvents|139:TreeViewNodeClicked
-ToolEvents|141:TreeViewNodeDragged
-ToolEvents|143:TreeViewScroll
-ToolEvents|145:TabsSelection
-ToolEvents|147:ToolboxUserEvent
-ToolEvents|149:ProgInfoLaunchWebPage
-
-# Messages for object WimpEvents (class Window)
-
-WimpEvents|1:Wimp Events
-WimpEvents|3:Wimp_ENull
-WimpEvents|5:Wimp_ERedrawWindow
-WimpEvents|7:Wimp_EOpenWindow
-WimpEvents|9:Wimp_ECloseWindow
-WimpEvents|11:Wimp_EPointerLeavingWindow
-WimpEvents|13:Wimp_EPointerEnteringWindow
-WimpEvents|15:Wimp_EMouseClick
-WimpEvents|17:Wimp_EUserDrag
-WimpEvents|19:Wimp_EKeyPressed
-WimpEvents|21:Wimp_EMenuSelection
-WimpEvents|23:Wimp_EScrollRequest
-WimpEvents|25:Wimp_ELoseCaret
-WimpEvents|27:Wimp_EGainCaret
-WimpEvents|29:Wimp_EPollWordNonZero
-WimpEvents|31:Wimp_EUserMessage
-WimpEvents|33:Wimp_EUserMessageRecorded
-WimpEvents|35:Wimp_EUserMessageAcknowledge
-WimpEvents|37:Wimp_PreCloseDown
-WimpEvents|39:Wimp_CloseDown
-
 # Messages for object OptionsMenu (class Menu)
 
 OptionsMenu|0:Options
@@ -135,17 +34,22 @@ OptionsMenu|16:Generate Res Classes
 # Messages for object Directories (class Window)
 
 Directories|2:Comma separated list of directories to create in the same path as the resource file
-Directories|3:c++, h, o
 Directories|6:Action
 
 # Messages for object ResPrefix (class Window)
 
-ResPrefix|2:Prefix to append to resource class names
-ResPrefix|3:Res_
+ResPrefix|2:Comma separated list of directories to create in the same path as the resource file
 ResPrefix|6:Action
 
-# Messages for object BraceStyle (class Menu)
+# Messages for object BraceStyle (class Window)
 
-BraceStyle|0:BraceStyle
-BraceStyle|2:Staggered
-BraceStyle|4:Matched
+BraceStyle|3:Staggered (K&R)
+BraceStyle|5:Matched (Allman)
+
+# Messages for object WimpEMenu (class Menu)
+
+WimpEMenu|0:Wimp Events
+
+# Messages for object ToolEMenu (class Menu)
+
+ToolEMenu|0:Toolbox Events
