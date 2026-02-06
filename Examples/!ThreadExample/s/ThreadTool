@@ -1,18 +1,21 @@
 ; ToDo:
-; Change the memory model to separate code and data to be able to remove the relative adr addressing
-; Modify the handle returned so that is an offset from the start of data memory so if relocation
-; takes place the handles still make sense
-; Add getter and setter SWI's for various fields
+; Done: Change the memory model to separate code and data to be able to remove the relative adr addressing
+; Done: Modify the handle returned so that is an offset from the start of data memory so if relocation
+;       takes place the handles still make sense
+; Done: Add getter and setter SWI's for various fields
 ; Add SWI's to Inc and Dec the delay of the Toolbox_RaiseToolboxEvents
 ; ADD code and SWI's to do OS_CallAfter
 ; RE-WRITE THE MODULE IN C!
 
 
 ; SWIs
-; XOS_Module                 EQU 0x02001E
+XOS_Module                 EQU 0x02001E
 XOS_CallEvery              EQU 0x02003C
 XOS_RemoveTickerEvent      EQU 0x02003D
 XToolbox_RaiseToolboxEvent EQU 0x064ECD
+
+Claim_RMA_Memory           EQU 6
+Free_RMA_Memory            EQU 7
 
 ; Service calls
 Service_WimpCloseDown      EQU 0x53
@@ -32,30 +35,37 @@ IRQ_mode         * 2
 SVC_mode         * 3
 
 ; Module constants
-SWI_Block             EQU         0x5AB40
-ErrorBlock            EQU         0x822900
+SWI_Block                           EQU  0x5AB40
+ErrorBlock                          EQU  0x822900
 
-; ThreadData offsets
-ThreadData_ObjectId              EQU  0
-ThreadData_ComponentId           EQU  4
-ThreadData_EventValue            EQU  8
-ThreadData_Delay                 EQU  12
-ThreadData_DelayCount            EQU  16
-ThreadData_TaskId                EQU  20
+ThreadData_num_blocks               EQU  10
 
-ThreadData_block_size            EQU  24
+; Data Offsets
 
-ThreadData_num_blocks            EQU  10
+ActiveCount                         EQU  0
 
-; ToolboxEventHeader offsets
-ToolboxEventHeader_size             EQU  0
-ToolboxEventHeader_reference_number EQU  4
-ToolboxEventHeader_event_code       EQU  8
-ToolboxEventHeader_flags            EQU  12
+; ToolboxEventHeader Offsets in memory
+ToolboxEventHeader_size             EQU  4
+ToolboxEventHeader_reference_number EQU  8
+ToolboxEventHeader_event_code       EQU  12
+ToolboxEventHeader_flags            EQU  16
 
 ToolboxEventHeader_block_size       EQU  16
 
-DelayPeriod EQU 2
+; Offset in memory to where the ThreadData starts
+ThreadData                          EQU  20
+
+; ThreadData offsets
+ThreadData_ObjectId                 EQU  0
+ThreadData_ComponentId              EQU  4
+ThreadData_EventValue               EQU  8
+ThreadData_Delay                    EQU  12
+ThreadData_DelayCount               EQU  16
+ThreadData_TaskId                   EQU  20
+
+ThreadData_block_size               EQU  24
+
+DelayPeriod EQU 1
 
 ; Register names
 swi_number            RN          11
@@ -67,7 +77,6 @@ Module_BaseAddr       DCD         0                                   ; Start co
                       DCD         init_code          -Module_BaseAddr ; Initialization code
                       DCD         final_code         -Module_BaseAddr ; Finalization code
                       DCD         service_call       -Module_BaseAddr ; Service call handler
-;                      DCD         0
                       DCD         title_string       -Module_BaseAddr ; Title string
                       DCD         help_string        -Module_BaseAddr ; Help string
                       DCD         0                                   ; Help and Command keyword table
@@ -79,21 +88,27 @@ Module_BaseAddr       DCD         0                                   ; Start co
                       DCD         module_flags       -Module_BaseAddr ; Module flags offset
 
 title_string          DCB         "ThreadTool",0
-help_string           DCB         "ThreadTool \t0.01 (27 Jan 2026) © Bill Antonia",0
+help_string           DCB         "ThreadTool \t0.02 (05 Feb 2026) © Bill Antonia",0
                       ALIGN
 
 module_flags          DCB         1
                       ALIGN
 
+; ************************ Initialisation code **************************
 init_code             stmfd       sp!,{a1-v3,lr}
-; ************************ Initialisation code here **************************
+                      mov         a1,#Claim_RMA_Memory
+                      mov         a4,#(ToolboxEventHeader_block_size + 4 + (ThreadData_num_blocks * ThreadData_block_size))
+                      swi         XOS_Module
+                      str         a3,[pw]
                       mov         a1,#16
-                      adr         a2,ToolboxEventHeader
-                      str         a1,[a2,#ToolboxEventHeader_size]
+                      str         a1,[a3,#ToolboxEventHeader_size]
                       mov         a1,#0
-                      str         a1,[a2,#ToolboxEventHeader_flags]
-                      adr         a2,ThreadData
-                      mov         a3,#0
+                      str         a1,[a3,#ActiveCount]
+                      str         a1,[a3,#ToolboxEventHeader_reference_number]
+                      str         a1,[a3,#ToolboxEventHeader_event_code]
+                      str         a1,[a3,#ToolboxEventHeader_flags]
+                      add         a2,a3,#ThreadData                  ; Offset to first ThreadData
+                      mov         a4,#0
 init_ThreadDataLoop   mov         a1,#-1
                       str         a1,[a2,#ThreadData_ObjectId]
                       mov         a1,#0
@@ -103,12 +118,12 @@ init_ThreadDataLoop   mov         a1,#-1
                       str         a1,[a2,#ThreadData_DelayCount]
                       str         a1,[a2,#ThreadData_TaskId]
                       add         a2,a2,#ThreadData_block_size
-                      add         a3,a3,#1
-                      cmp         a3,#ThreadData_num_blocks
+                      add         a4,a4,#1
+                      cmp         a4,#ThreadData_num_blocks
                       bne         init_ThreadDataLoop
                       mov         a1,#DelayPeriod
                       adr         a2,CallEveryHandler
-                      mov         a3,#0
+                      mov         a3,pw
                       swi         XOS_CallEvery
                       ldmfd       sp!,{a1-v3,lr}
 __exit_normal         teq         r0,r0
@@ -117,16 +132,22 @@ __exit_normal         teq         r0,r0
                       mov         pc,lr
 __init_exit_26        movs        pc,lr
 
+
+; *********************** Finalisation code *****************************
 final_code            stmfd       sp!,{a1-a4,v1,lr}
-; *********************** Finalisation code here *****************************
                       adr         a1,CallEveryHandler
-                      mov         a2,#0
+                      mov         a2,pw
                       swi         XOS_RemoveTickerEvent
+                      mov         a1,#Free_RMA_Memory
+                      ldr         a3,[pw]
+                      swi         XOS_Module
                       ldmfd       sp!,{a1-a4,v1,pc}
 
+; *********************** Call Every Handler *********************************
 CallEveryHandler      stmfd       sp!,{a1-a4,v1-v4,lr}
+                      ldr         v2,[pw]
                       mov         v1,#0
-                      adr         v2,ThreadData
+                      add         v2,v2,#ThreadData                ; Offset to first ThreadData
 call_handler_loop     ldr         a2,[v2,#ThreadData_ObjectId]
                       cmp         a2,#-1
                       bne         raise_event
@@ -147,7 +168,7 @@ raise_event           ldr         a2,[v2,#ThreadData_DelayCount]
                       bne         raise_complete
 continue_raise        ldr         a2,[v2,#ThreadData_Delay]
                       str         a2,[v2,#ThreadData_DelayCount]
-                      adr         a4,ToolboxEventHeader
+                      ldr         a4,[pw]                                  ; Offset to data
                       mov         a1,#ToolboxEventHeader_block_size
                       str         a1,[a4,#ToolboxEventHeader_size]
                       ldr         a3,[v2,#ThreadData_EventValue]
@@ -155,16 +176,20 @@ continue_raise        ldr         a2,[v2,#ThreadData_Delay]
                       mov         a1,#0
                       str         a1,[a4,#ToolboxEventHeader_reference_number]
                       str         a1,[a4,#ToolboxEventHeader_flags]
+                      ldr         a2,[v2,#ThreadData_ObjectId]
                       ldr         a3,[v2,#ThreadData_ComponentId]
+                      ldr         a4,[pw]
+                      add         a4,a4,#ToolboxEventHeader_size
                       swi         XToolbox_RaiseToolboxEvent
                       b           raise_complete
 
-; ****************** Stuff to do here *******************************
+; ****************** Service Call *******************************
 service_call          cmp         a2,#Service_WimpCloseDown
                       beq         __do_service
                       b           __exit_normal
-__do_service          stmfd       sp!,{a1-v1,lr}
-                      adr         a2,ThreadData
+__do_service          stmfd       sp!,{a1-v2,lr}
+                      ldr         pw,[pw]
+                      add         a2,pw,#ThreadData        ; Offset to first ThreadData
                       mov         a1,#0
 wimpCloseDown_Loop    ldr         a4,[a2,#ThreadData_TaskId]
                       cmp         a3,a4
@@ -173,7 +198,7 @@ stop_thread_return    add         a1,a1,#1
                       add         a2,a2,#ThreadData_block_size
                       cmp         a1,#ThreadData_num_blocks
                       bne         wimpCloseDown_Loop
-                      ldmfd       sp!,{a1-v1,lr}
+                      ldmfd       sp!,{a1-v2,lr}
                       b           __exit_normal
 
 stop_thread           mov         v1,#-1
@@ -184,23 +209,24 @@ stop_thread           mov         v1,#-1
                       str         v1,[a2,#ThreadData_Delay ]
                       str         v1,[a2,#ThreadData_DelayCount]
                       str         v1,[a2,#ThreadData_TaskId]
+                      ldr         v2,[pw]           ; Read the active count
+                      sub         v2,v2,#1
+                      str         v2,[pw]           ; Update the active count
                       b           stop_thread_return
 
+; ****************** SWI Dispatch *******************************
 
-; ****************** Stuff to do here *******************************
-
-SWI_handler           ldr         pw,[pw]
-                      cmp         swi_number,#(endofjumptable-jumptable)/4
+SWI_handler           cmp         swi_number,#(endofjumptable-jumptable)/4
                       addcc       pc,pc,swi_number,lsl #2
                       b           unknownSWIerror
 jumptable             b           threadTool_startThread
                       b           threadTool_stopThread
                       b           threadTool_stopAll
-                      b           reserved
-                      b           reserved
-                      b           reserved
-                      b           reserved
-                      b           reserved
+                      b           threadTool_changeDelay
+                      b           threadTool_changeEvent
+                      b           threadTool_getBaseAddress
+                      b           threadTool_getMaxThreads
+                      b           threadTool_getThreadsUsed
                       b           reserved
                       b           reserved
                       b           reserved
@@ -280,25 +306,31 @@ errmessg              DCD         ErrorBlock+0
 SWI_decoding_table    DCB         "ThreadTool",0
                       DCB         "StartThread",0
                       DCB         "StopThread",0
-                      DCB         "StopAll",0,0
+                      DCB         "StopAll",0
+                      DCB         "ChangeDelay",0
+                      DCB         "ChangeToolboxEvent",0
+                      DCB         "GetBaseAddress",0
+                      DCB         "GetMaxThreads",0
+                      DCB         "GetThreadsUsed",0,0
                       ALIGN
 
+; **************** Start Thread SWI *********************************
 threadTool_startThread stmfd      sp!,{a2-v4,lr}
-                      adr         v3,ActiveCount
-                      ldr         v4,[v3]
+                      ldr         v3,[pw]                  ; Get the memory address which has been allocated for the data
+                      ldr         v4,[v3]                  ; Get the number of blocks already allocated
                       cmp         v4,#ThreadData_num_blocks
-                      beq         skipActivate
-                      add         v4,v4,#1
+                      beq         skipActivate             ; If reached the maximum, return an error
+                      add         v4,v4,#1                 ; Increase the active count
                       str         v4,[v3]
-                      adr         v3,ThreadData
-                      mov         v2,#0
-assign_loop           ldr         v4,[v3]
+                      add         v3,v3,#ThreadData        ; Offset to first ThreadData
+                      mov         v2,#0                    ; Initialise the count loop
+assign_loop           ldr         v4,[v3]                  ; Get the ThreadData_ObjectId field
                       cmp         v4,#-1
-                      beq         assign_block
-                      add         v3,v3,#ThreadData_block_size
-                      add         v2,v2,#1
+                      beq         assign_block             ; If the field is -1, allocate the block
+                      add         v3,v3,#ThreadData_block_size ; Otherwise move on to next block
+                      add         v2,v2,#1                 ; Increase the loop counter
                       cmp         v2,#ThreadData_block_size
-                      beq         activated
+                      beq         activated                ; If the counter reaches the maximum jump out of the loop, shouldn't do this
                       b           assign_loop
 
 assign_block          str         a1,[v3,#ThreadData_ObjectId]
@@ -307,7 +339,8 @@ assign_block          str         a1,[v3,#ThreadData_ObjectId]
                       str         a4,[v3,#ThreadData_Delay]
                       str         a4,[v3,#ThreadData_DelayCount]
                       str         v1,[v3,#ThreadData_TaskId]
-                      mov         a1,v3
+                      ldr         a2,[pw]
+                      sub         a1,v3,a2        ; Return an offset from the beginning of the data to the memory used as a handle
 activated             ldmfd       sp!,{a2-v4,lr}
                       b           __exit_normal
 
@@ -319,8 +352,31 @@ errmessg2             DCD         ErrorBlock+1
                       DCB         "ThreadBlock not allocated",0
                       ALIGN
 
-threadTool_stopAll   stmfd       sp!,{a1-a4,lr}
-                      adr         a1,ThreadData
+; ******************* Stop Thread SWI **************************************
+threadTool_stopThread stmfd       sp!,{a2-a4,lr}
+                      ldr         a3,[pw]
+                      add         a1,a3,a1     ; Calculate the location of memory used from the handle provided
+                      mov         a2,#-1
+                      mov         a4,#0
+                      str         a2,[a1,#ThreadData_ObjectId]
+                      str         a4,[a1,#ThreadData_ComponentId]
+                      str         a4,[a1,#ThreadData_EventValue]
+                      str         a4,[a1,#ThreadData_Delay]
+                      str         a4,[a1,#ThreadData_DelayCount]
+                      str         a4,[a1,#ThreadData_TaskId]
+                      ldr         a2,[pw]
+                      ldr         a3,[a2]
+                      cmp         a3,#0
+                      beq         skip_decrement
+                      sub         a3,a3,#1
+                      str         a3,[a2]
+skip_decrement        ldmfd       sp!,{a2-a4,lr}
+                      b           __exit_normal
+
+; ******************************** Stop All SWI **************************************
+threadTool_stopAll    stmfd       sp!,{a1-a4,lr}
+                      ldr         a1,[pw]
+                      add         a1,a1,#ThreadData        ; Offset to first ThreadData
                       mov         a2,#0
                       mov         a3,#-1
                       mov         a4,#0
@@ -335,38 +391,40 @@ stop_all_loop         str         a3,[a1,#ThreadData_ObjectId]
                       cmp         a2,#ThreadData_num_blocks
                       bne         stop_all_loop
                       ldmfd       sp!,{a1-a4,lr}
-
-threadTool_stopThread stmfd       sp!,{a2-a4,lr}
-                      mov         a2,#-1
-                      mov         a4,#0
-                      str         a2,[a1,#ThreadData_ObjectId]
-                      str         a4,[a1,#ThreadData_ComponentId]
-                      str         a4,[a1,#ThreadData_EventValue]
-                      str         a4,[a1,#ThreadData_Delay]
-                      str         a4,[a1,#ThreadData_DelayCount]
-                      str         a4,[a1,#ThreadData_TaskId]
-                      adr         a2,ActiveCount
-                      ldr         a3,[a2]
-                      cmp         a3,#0
-                      beq         skip_decrement
-                      sub         a3,a3,#1
-                      str         a3,[a2]
-skip_decrement        ldmfd       sp!,{a2-a4,lr}
                       b           __exit_normal
 
+; ******************************* Change the delay value for a thread ********************
+threadTool_changeDelay stmfd       sp!,{a1-a4,lr}
+                      ldr         a3,[pw]
+                      add         a1,a3,a1     ; Calculate the location of memory used from the handle provided
+                      str         a2,[a1,#ThreadData_Delay]
+                      str         a2,[a1,#ThreadData_DelayCount]
+                      ldmfd       sp!,{a1-a4,lr}
+                      b           __exit_normal
 
-                      
+; ******************************* Change the Toolbox event value to be generated **************
+threadTool_changeEvent stmfd       sp!,{a1-a4,lr}
+                      ldr         a3,[pw]
+                      add         a1,a3,a1     ; Calculate the location of memory used from the handle provided
+                      str         a2,[a1,#ThreadData_EventValue]
+                      ldmfd       sp!,{a1-a4,lr}
+                      b           __exit_normal
 
+; ******************************* Get the base memory address of the data block from which handles are offsets ************ 
+threadTool_getBaseAddress
+                      ldr         a1,[pw]
+                      b           __exit_normal
 
- AREA |Module$$data|, DATA
+; ******************************* Get the maximum number of threads this module is set to allow *********************
+threadTool_getMaxThreads
+                      mov         a1,#ThreadData_num_blocks
+                      b           __exit_normal
 
-ToolboxEventHeader    FILL ToolboxEventHeader_block_size, 0, 4
-
-ThreadData            FILL ThreadData_block_size*ThreadData_num_blocks, 0, 4
-
-ActiveCount           DCD         0
-
-     
+; ******************************* Get the number of threads which have already been registered **************************
+threadTool_getThreadsUsed
+                      ldr         pw,[pw]
+                      ldr         a1,[pw]
+                      b           __exit_normal
 
                       END
 
