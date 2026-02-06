@@ -1,0 +1,5 @@
+The standard RISCOS currently runs on a single processor, this module does not achieve multi-threading for RISCOS, but it does allow Toolbox
+applications to call Toolbox user events via a timer as single threads giving the illusion of multiple processes taking place.
+
+Long running processes could use this facility to slice their processing into smaller chunks, loading and saving their state
+upon entry and exit. 
