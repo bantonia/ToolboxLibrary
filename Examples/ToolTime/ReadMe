@@ -1,0 +1,23 @@
+ToolTime, if that is the name it will end as, is a module which dispatches regular Toolbox user events on a timer measured in centiseconds.
+It hooks a handler into TickerV, from which a callback is generated if a Toolbox event has been registered.
+The callback updates countdowns for any registered Toolbox events, any which reach 0 will trigger a Toolbox event message to the application which registered the event.
+Multiple events can be registered from multiple applications. Each Toolbox event registration has its own delay timer and can be different from others, even from within the same application.
+There is no requirement for Wimp_PollIdle handling, but can be implemented if there is a need for other purposes.
+
+SWIs
+ToolTime_Register 0x05ab40
+Entry
+r0    Toolbox ObjectId
+r1    Toolbox ComponentId
+r2    Toolbox Event
+r3    Delay in centiseconds
+Exit
+r0    Handle for the registration
+
+ToolTime_UnRegister 0x05ab41
+Entry
+r0    Handle (which was returned on registration)
+Exit
+No change
+
+This module is experimental and is subject to change.
