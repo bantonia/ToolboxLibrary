@@ -1,7 +1,0 @@
-#include "Res_Iconbar.h"
-
-Res_Iconbar::Res_Iconbar() : ToolboxIconbarObj() {}
-
-Res_Iconbar::Res_Iconbar(IdBlock *idBlock) : ToolboxIconbarObj(idBlock) {}
-
-Res_Iconbar::~Res_Iconbar() {}

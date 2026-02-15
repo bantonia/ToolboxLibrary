@@ -1,3 +1,0 @@
-Set ThreadExample$Dir <Obey$Dir>
-wimpslot -min 1024K -max 1024K
-Run <ThreadExample$Dir>.!RunImage
