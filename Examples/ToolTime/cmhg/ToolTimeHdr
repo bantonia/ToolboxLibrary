@@ -1,0 +1,22 @@
+help-string:  ToolTime 0.01
+
+title-string: ToolTime
+
+initialisation-code: tt_init
+
+finalisation-code: tt_final
+
+swi-chunk-base-number: 0x5AB40
+
+swi-handler-code: tt_swi
+
+swi-decoding-table: ToolTime,
+                    Register UnRegister GetHeadAddress GetRegistrations
+
+;service-call-handler: tt_service 4 6 8
+
+vector-handlers: ticker_entry/ticker_handler
+
+generic-veneers: ticker_callback/ticker_callback_handler
+
+

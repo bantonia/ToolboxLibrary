@@ -1,0 +1,179 @@
+#include "ToolTimeHdr.h"
+#include "kernel.h"
+#include "swis.h"
+#include "stdlib.h"
+#include "wimp.h"
+#include "toolbox.h"
+
+
+#define wimp_MTOOLBOX_EVENT Toolbox_SWIChunkBase
+
+#define wimp_ESEND 17
+
+#define TickerV 0x1C
+
+typedef struct ToolTimeEventNode *ToolTimeEventPtr;
+
+typedef struct ToolTimeEventNode {
+  int task;
+  int objectId;
+  int componentId;
+  int event;
+  int delay;
+  int delay_count;
+  int handle;
+  ToolTimeEventPtr next;
+} ToolTimeEvent;
+
+typedef struct {
+  struct  {
+    int    size;
+    int    sender;
+    int    my_ref;
+    int    your_ref;
+    int    action_code;
+  } hdr;
+  union {
+    int                       words[59];
+    char                      bytes[236];
+    ToolboxMsgEvent           toolbox_event_msg;
+  } data;
+} WimpToolboxEventMessage;
+
+int registrations = 0;
+int callback_in_use = FALSE;
+ToolTimeEventPtr head = NULL;
+WimpToolboxEventMessage *message = NULL;
+
+_kernel_oserror *tt_init(const char *cmd_tail, int podule_base, void *pw) {
+  _kernel_oserror *err = NULL;
+  _kernel_swi_regs regs;
+  regs.r[0] = TickerV;
+  regs.r[1] = (int) ticker_entry;
+  regs.r[2] = (int) pw;
+  _kernel_swi(OS_Claim, &regs, &regs);
+  message = malloc(sizeof(WimpToolboxEventMessage));
+  return err;
+}
+
+_kernel_oserror *tt_final(int fatal, int podule, void *pw) {
+  _kernel_oserror *err = NULL;
+  _kernel_swi_regs regs;
+  free(message);
+  free(head);
+  regs.r[0] = TickerV;
+  regs.r[1] = (int) ticker_entry;
+  regs.r[2] = (int) pw;
+  _kernel_swi(OS_Release, &regs, &regs);
+  while (head != NULL) {
+    ToolTimeEventPtr p = head->next;
+    free(head);
+    head = p;
+  }
+  return err;
+}
+
+_kernel_oserror *tt_swi(int swi_offset, _kernel_swi_regs *regs, void *pw) {
+  _kernel_oserror *err = NULL;
+  switch(swi_offset + ToolTime_00) {
+    case ToolTime_Register: {
+        ToolTimeEventPtr p = (ToolTimeEventPtr) malloc(sizeof(ToolTimeEvent));
+        p->next = head;
+        head = p;
+        //************* Save data here to structure *****************
+        head->objectId    = regs->r[0];
+        head->componentId = regs->r[1];
+        head->event       = regs->r[2];
+        head->delay       = regs->r[3];
+        head->delay_count = regs->r[3];
+        regs->r[0] = 5; //******* Read current task handle, should be the one that called this swi ************
+        _kernel_swi(Wimp_ReadSysInfo, regs, regs);
+        head->task = regs->r[0];
+        //*************** Allocate a handle here but does not mean anything, don't use this as a pointer ******************
+        head->handle = (int) head;
+        regs->r[0] = head->handle;
+        registrations++;
+      }
+      break;
+    case ToolTime_UnRegister: {
+        if (head != NULL) {
+          if (head->handle == regs->r[0]) {
+            ToolTimeEventPtr p = head->next;
+            free(head);
+            head = p;
+          } else {
+            ToolTimeEventPtr p = head;
+            while (p->next != NULL) {
+              if (p->next->handle == regs->r[0]) {
+                ToolTimeEventPtr t = p->next;
+                p->next = p->next->next;
+                free(t);
+                registrations--;
+                break;
+              }
+              p = p->next;
+            }
+          }
+        }
+      }
+      break;
+    case ToolTime_GetHeadAddress: {
+        regs->r[0] = (int) &head;
+      }
+      break;
+    case ToolTime_GetRegistrations: {
+        regs->r[0] = registrations;
+      }
+      break;
+    default:
+      break;
+  }
+  return err;
+}
+
+_kernel_oserror * generateToolboxEvent(ToolTimeEventPtr p) {
+  _kernel_oserror *err = NULL;
+  _kernel_swi_regs regs;
+  message->hdr.size = sizeof(WimpToolboxEventMessage);
+  message->hdr.sender = 0;
+  message->hdr.your_ref = 0;
+  message->hdr.action_code = wimp_MTOOLBOX_EVENT;
+  message->data.toolbox_event_msg.self = p->objectId;
+  message->data.toolbox_event_msg.component = p->componentId;
+  message->data.toolbox_event_msg.event.hdr.size = 16;
+  message->data.toolbox_event_msg.event.hdr.reference_number = 0;
+  message->data.toolbox_event_msg.event.hdr.event_code = p->event;
+  message->data.toolbox_event_msg.event.hdr.flags = 0;
+  regs.r[0] = wimp_ESEND;
+  regs.r[1] = (int) message;
+  regs.r[2] = p->task;
+  err = _kernel_swi(Wimp_SendMessage, &regs, &regs);
+  return err;
+}
+
+_kernel_oserror *ticker_callback_handler(_kernel_swi_regs *regs, void *pw) {
+  _kernel_oserror *err = NULL;
+  if (!callback_in_use) {
+    callback_in_use = TRUE;
+    ToolTimeEventPtr p = head;
+    while (p != NULL) {
+      if (--(p->delay_count) == 0) {
+        //*************** Generate Toolbox Event ************
+        err = generateToolboxEvent(p);
+        p->delay_count = p->delay;
+      }
+      p = p->next;
+    }
+    callback_in_use = FALSE;
+  }
+  return err;
+}
+
+int ticker_handler(_kernel_swi_regs *regs, void *pw) {
+  if (registrations != 0) {
+    regs->r[0] = (int) ticker_callback;
+    regs->r[1] = (int) pw;
+    _kernel_swi(OS_AddCallBack, regs, regs);
+  }
+  return VECTOR_PASSON;
+}
