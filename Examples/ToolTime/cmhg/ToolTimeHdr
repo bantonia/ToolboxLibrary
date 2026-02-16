@@ -13,7 +13,7 @@ swi-handler-code: tt_swi
 swi-decoding-table: ToolTime,
                     Register UnRegister GetHeadAddress GetRegistrations
 
-;service-call-handler: tt_service 4 6 8
+service-call-handler: tt_service 0x53
 
 vector-handlers: ticker_entry/ticker_handler
 

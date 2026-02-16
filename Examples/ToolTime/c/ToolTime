@@ -12,6 +12,8 @@
 
 #define TickerV 0x1C
 
+#define Service_WimpCloseDown 0x53
+
 typedef struct ToolTimeEventNode *ToolTimeEventPtr;
 
 typedef struct ToolTimeEventNode {
@@ -71,6 +73,35 @@ _kernel_oserror *tt_final(int fatal, int podule, void *pw) {
     head = p;
   }
   return err;
+}
+
+void tt_service(int service_number, _kernel_swi_regs *regs, void *pw) {
+  switch(service_number) {
+    case Service_WimpCloseDown: {
+      if (head != NULL) {
+          if (head->task == regs->r[2]) {
+            ToolTimeEventPtr p = head->next;
+            free(head);
+            head = p;
+          } else {
+            ToolTimeEventPtr p = head;
+            while (p->next != NULL) {
+              if (p->next->task == regs->r[2]) {
+                ToolTimeEventPtr t = p->next;
+                p->next = p->next->next;
+                free(t);
+                registrations--;
+                break;
+              }
+              p = p->next;
+            }
+          }
+        }
+      }
+      break;
+    default:
+      break;
+  }
 }
 
 _kernel_oserror *tt_swi(int swi_offset, _kernel_swi_regs *regs, void *pw) {
