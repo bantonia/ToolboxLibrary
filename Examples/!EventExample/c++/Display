@@ -1,0 +1,13 @@
+#include "Display.h"
+
+Display::Display(int objectId, int componentId, int flags, int event, int delay) : ToolboxDisplayField(objectId, componentId, flags), Event(objectId, componentId, event, delay) {}
+
+void Display::updateDisplay() {
+  int value = this->getIntValue();
+  value++;
+  if (value == 1000) {
+    this->setValue(0);
+  } else {
+    this->setValue(value);
+  }
+}

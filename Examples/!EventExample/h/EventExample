@@ -1,0 +1,34 @@
+#ifndef __cplusplus
+#error Header file "EventExample.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __EventExample_h
+#define __EventExample_h
+
+#include <string.h>
+#include "ToolboxTask.h"
+#include "Res_Iconbar.h"
+#include "Res_Window.h"
+#include "Res_Menu.h"
+#include "ToolboxQuitObj.h"
+
+class EventExample : public ToolboxTask {
+  public:
+    EventExample();
+    ~EventExample();
+    void toolboxObjectAutoCreated(int objectClass);
+    void toolboxUserEvent(int event);
+    void toolboxEventHandler(int event);
+    void iconbarObjectAutoCreated();
+    void windowObjectAutoCreated();
+    void menuObjectAutoCreated();
+    void quitQuit();
+  private:
+    Res_Iconbar *res_Iconbar;
+    Res_Window *res_Window;
+    Res_Menu *res_Menu;
+};
+
+#endif

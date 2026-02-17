@@ -1,0 +1,14 @@
+#include "EventExample.h"
+
+EventExample *task;
+
+int main() {
+  task = new EventExample();
+  task->initTask("<EventExample$Dir>");
+  task->setMask(256 + 1);
+  while (!task->quit) {
+    task->run();
+  }
+  delete task;
+  return 0;
+}

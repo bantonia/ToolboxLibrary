@@ -1,0 +1,4 @@
+Set EventExample$Dir <Obey$Dir>
+wimpslot -min 640K -max 640K
+RMEnsure ToolTime 0.01 RMLoad <EventExample$Dir>.ToolTime
+Run <EventExample$Dir>.!RunImage

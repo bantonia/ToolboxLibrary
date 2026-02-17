@@ -1,0 +1,49 @@
+#include "Res_Window.h"
+#include "OS.h"
+#include "kernel.h"
+#include "string.h"
+
+Res_Window::Res_Window() : ToolboxWindowObj() {}
+
+Res_Window::Res_Window(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {
+  char workspace[32];
+  char number[16];
+  int c;
+  int objectId = idBlock->self_id;
+  displayField0 = new Display(objectId, 0, 0, 2, 1);
+  displayField1 = new Display(objectId, 1, 0, 3, 100);
+  handle0 = new ToolboxDisplayField(objectId, 2, 0);
+  handle1 = new ToolboxDisplayField(objectId, 3, 0);
+  OS::convertHex(displayField0->getHandle(), number, &c);
+  strcpy(workspace, "0x");
+  strcat(workspace, number);
+  handle0->setValue(workspace);
+  OS::convertHex(displayField1->getHandle(), number, &c);
+  strcpy(workspace, "0x");
+  strcat(workspace, number);
+  handle1->setValue(workspace);
+  head = new ToolboxDisplayField(objectId, 4, 0);
+  _kernel_swi_regs regs;
+  _kernel_swi(0x05ab42, &regs, &regs);
+  OS::convertHex(regs.r[0], number, &c);
+  strcpy(workspace, "0x");
+   strcat(workspace, number);
+  head->setValue(workspace);
+}
+
+Res_Window::~Res_Window() {
+  delete displayField0;
+  delete displayField1;
+  delete handle0;
+  delete handle1;
+  delete head;
+}
+
+void Res_Window::updateDisplay0() {
+  displayField0->updateDisplay();
+}
+
+void Res_Window::updateDisplay1() {
+  displayField1->updateDisplay();
+}
+
