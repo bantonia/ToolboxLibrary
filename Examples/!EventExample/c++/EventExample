@@ -68,12 +68,9 @@ void EventExample::toolboxEventHandler(int event) {
 void EventExample::toolboxUserEvent(int event) {
   IdBlock *idBlock = &ToolboxCoreObj::idBlock;
   switch(event) {
-    case 2: {
-        res_Window->updateDisplay0();
-      }
-      break;
+    case 2:
     case 3: {
-        res_Window->updateDisplay1();
+        res_Window->updateDisplay(event);
       }
       break;
     default:

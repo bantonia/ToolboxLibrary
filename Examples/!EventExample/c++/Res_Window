@@ -39,11 +39,17 @@ Res_Window::~Res_Window() {
   delete head;
 }
 
-void Res_Window::updateDisplay0() {
-  displayField0->updateDisplay();
+void Res_Window::updateDisplay(int event) {
+  switch(event) {
+    case 2: {
+      displayField0->updateDisplay();
+      }
+      break;
+    case 3: {
+        displayField1->updateDisplay();
+      }
+      break;
+  }
 }
 
-void Res_Window::updateDisplay1() {
-  displayField1->updateDisplay();
-}
 

@@ -26,8 +26,7 @@ class Res_Window : public ToolboxWindowObj {
     Res_Window();
     Res_Window(IdBlock *);
     ~Res_Window();
-    void updateDisplay0();
-    void updateDisplay1();
+    void updateDisplay(int);
   private:
     Display *displayField0;
     Display *displayField1;
