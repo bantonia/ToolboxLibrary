@@ -10,7 +10,7 @@ Res_Window::Res_Window(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {
   char number[16];
   int c;
   int objectId = idBlock->self_id;
-  displayField0 = new Display(objectId, 0, 0, 2, 1);
+  displayField0 = new Display(objectId, 0, 0, 2, 10);
   displayField1 = new Display(objectId, 1, 0, 3, 100);
   handle0 = new ToolboxDisplayField(objectId, 2, 0);
   handle1 = new ToolboxDisplayField(objectId, 3, 0);
