@@ -13,6 +13,7 @@
 #include "ToolboxEvents.h"
 #include "ErrorReport.h"
 #include "ClassType.h"
+#include "string.h"
 
 #ifndef UNUSED
 #define UNUSED(x) ((x)=(x))
@@ -31,6 +32,8 @@
 
 class ToolboxCoreObj : public ToolboxEvents, public Object, public ErrorReport {
   public:
+    ToolboxCoreObj();
+    ~ToolboxCoreObj();
     static void getSysInfo(unsigned int reason_code, _kernel_swi_regs *regs);
     static ObjectId createObject(unsigned int flags, void *name_or_template);
     static void deleteObject(unsigned int flags, ObjectId id);
@@ -59,6 +62,7 @@ class ToolboxCoreObj : public ToolboxEvents, public Object, public ErrorReport {
     static MessagesFD mfd;
     static WimpPollBlock pollBlock;
     static int eventCode;
+    static char *path;
 
         // Toolbox Events
     virtual void eToolboxEventHandler(void *pollBlock);
