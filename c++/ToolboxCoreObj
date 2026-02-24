@@ -13,6 +13,16 @@ int ToolboxCoreObj::toolboxEvents = 0;
 MessagesFD ToolboxCoreObj::mfd;
 WimpPollBlock ToolboxCoreObj::pollBlock;
 int ToolboxCoreObj::eventCode;
+char *ToolboxCoreObj::path;
+
+ToolboxCoreObj::ToolboxCoreObj() {
+  ToolboxCoreObj::path = new char[256];
+}
+
+
+ToolboxCoreObj::~ToolboxCoreObj() {
+  delete ToolboxCoreObj::path;
+}
 
 void ToolboxCoreObj::getSysInfo(unsigned int reason_code, _kernel_swi_regs *in) {
   _kernel_swi_regs out;
@@ -192,6 +202,7 @@ int ToolboxCoreObj::init(unsigned int flags, int *wimpMessages, int *toolboxEven
   wimpVersion = out.r[0];
   taskHandle = out.r[1];
   spriteAreaPtr = (void *) out.r[2];
+  ToolboxCoreObj::path = strcpy(ToolboxCoreObj::path, directory);
   return taskHandle;
 }
 

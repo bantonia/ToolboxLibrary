@@ -109,7 +109,7 @@ int WimpObj::runIdle() {
     switch(WimpObj::event) {
       case Wimp_ENull:
         nullReason();
-        /*if (idleInterval != 0) {
+        if (idleInterval != 0) {
             WimpObj::newTime = OS::readMonotonicTime();
             if (newTime < oldTime) {
             // MonotonicTime has been wrapped
@@ -119,7 +119,7 @@ int WimpObj::runIdle() {
               WimpObj::oldTime += WimpObj::idleInterval;
             }
             WimpObj::earliest = WimpObj::oldTime;
-          }*/
+          }
         break;
       case Wimp_ERedrawWindow:
         redrawWindowRequest();
