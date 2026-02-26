@@ -4,79 +4,110 @@
 
 unsigned int OS::readMonotonicTime() {
   _kernel_swi_regs in, out;
-  ErrorReport::setLastError(_kernel_swi(OS_ReadMonotonicTime, &in, &out), __LINE__);
+  _kernel_oserror *err = _kernel_swi(OS_ReadMonotonicTime, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   return out.r[0];
 }
 
 unsigned int OS::readModeVariable(int mode, int var) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = mode;
   in.r[1] = var;
-  ErrorReport::setLastError(_kernel_swi(OS_ReadModeVariable, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ReadModeVariable, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   return out.r[2];
 }
 
 char *OS::binaryToDecimal(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_BinaryToDecimal, &in, &out), __LINE__);
+  err = _kernel_swi(OS_BinaryToDecimal, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
 }
 
 int OS::evaluateExpression(char *str, char *buf, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = (int) str;
   in.r[1] = (int) buf;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_EvaluateExpression, &in, &out), __LINE__);
+  err = _kernel_swi(OS_EvaluateExpression, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   //buffer[*bufSize] = 0;
   return out.r[2];
 }
 
 char *OS::convertHex1(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex1, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ConvertHex1, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
 }
 
 char *OS::convertHex2(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex2, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ConvertHex2, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
 }
 
 char *OS::convertHex4(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex4, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ConvertHex4, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
 }
 
 char *OS::convertHex6(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex6, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ConvertHex6, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
@@ -84,34 +115,54 @@ char *OS::convertHex6(int n, char *buffer, int *bufSize) {
 
 
 char *OS::convertHex8(int n, char *buffer, int *bufSize) {
+  _kernel_oserror *err = 0;
    _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
-  ErrorReport::setLastError(_kernel_swi(OS_ConvertHex8, &in, &out), __LINE__);
+  err = _kernel_swi(OS_ConvertHex8, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
 }
 
 char *OS::convertHex(int n, char *buffer, int *bufSize) {
-     _kernel_swi_regs in, out;
+  _kernel_oserror *err = 0;
+  _kernel_swi_regs in, out;
   in.r[0] = n;
   in.r[1] = (int) buffer;
   in.r[2] = *bufSize;
   if ((n >> 4) == 0) {
-    ErrorReport::setLastError(_kernel_swi(OS_ConvertHex1, &in, &out), __LINE__);
+    err = _kernel_swi(OS_ConvertHex1, &in, &out);
+    if (err != 0) {
+      ErrorReport::setLastError(err, __LINE__ -2);
+    }
   } else {
     if ((n >> 8) == 0) {
-      ErrorReport::setLastError(_kernel_swi(OS_ConvertHex2, &in, &out), __LINE__);
+      err = _kernel_swi(OS_ConvertHex2, &in, &out);
+      if (err != 0) {
+        ErrorReport::setLastError(err, __LINE__ -2);
+      }
     } else {
       if ((n >> 16) == 0) {
-        ErrorReport::setLastError(_kernel_swi(OS_ConvertHex4, &in, &out), __LINE__);
+        err = _kernel_swi(OS_ConvertHex4, &in, &out);
+        if (err != 0) {
+          ErrorReport::setLastError(err, __LINE__ -2);
+        }
       } else {
         if ((n >> 24) == 0) {
-          ErrorReport::setLastError(_kernel_swi(OS_ConvertHex6, &in, &out), __LINE__);
+          err = _kernel_swi(OS_ConvertHex6, &in, &out);
+          if (err != 0) {
+            ErrorReport::setLastError(err, __LINE__ -2);
+          }
         } else {
-          ErrorReport::setLastError(_kernel_swi(OS_ConvertHex8, &in, &out), __LINE__);
+          err = _kernel_swi(OS_ConvertHex8, &in, &out);
+          if (err != 0) {
+            ErrorReport::setLastError(err, __LINE__ -2);
+          }
         }
       }
     }
@@ -119,4 +170,29 @@ char *OS::convertHex(int n, char *buffer, int *bufSize) {
   *bufSize = out.r[2];
   buffer[*bufSize] = 0;
   return buffer;
+}
+
+void OS::createDirectory(char *directoryName) {
+  _kernel_oserror *err = 0;
+  _kernel_swi_regs in, out;
+  in.r[0] = 8;
+  in.r[1] = (int) directoryName;
+  in.r[4] = 0;
+  err = _kernel_swi(OS_File, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
+}
+
+unsigned int OS::readUnsigned(int base, char *value, unsigned int maximum) {
+  _kernel_oserror *err = 0;
+  _kernel_swi_regs in, out;
+  in.r[0] = base;
+  in.r[1] = (int) value;
+  in.r[2] = maximum;
+  err = _kernel_swi(OS_ReadUnsigned, &in, &out);
+  if (err != 0) {
+    ErrorReport::setLastError(err, __LINE__ -2);
+  }
+  return out.r[2];
 }

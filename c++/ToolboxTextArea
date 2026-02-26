@@ -121,9 +121,3 @@ int ToolboxTextArea::getTextCount() {
   this->gadgetMethod(TextArea_GetText, &regs);
   return regs.r[5];
 }
-
-ToolboxTextArea& ToolboxTextArea::append(const char *text) {
-  int nChars = getTextCount();
-  insertText(nChars, text);
-  return *this;
-}

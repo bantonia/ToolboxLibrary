@@ -65,16 +65,19 @@ WimpObj::~WimpObj() {
 }*/
 
 unsigned int WimpObj::init() {
-  //WimpObj::setLastError(&err, __LINE__);
-  WimpObj::setLastError(wimp_initialise(WimpObj::version, WimpObj::taskname, (int *)WimpObj::messages, (int *)&WimpObj::version, &WimpObj::handle), __LINE__);
-  //WimpObj::setLastError(wimpInitialise(int *)WimpObj::messages), __LINE__);
+  _kernel_oserror *err = wimp_initialise(WimpObj::version, WimpObj::taskname, (int *)WimpObj::messages, (int *)&WimpObj::version, &WimpObj::handle);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
   WimpObj::setAsWimpTask(WimpObj::taskname);
-  //WimpObj::setLastError(&err, __LINE__);
   return WimpObj::handle;
 }
 
 void WimpObj::closeDown() {
-  WimpObj::setLastError(wimp_close_down(WimpObj::handle), __LINE__);
+  _kernel_oserror *err = wimp_close_down(WimpObj::handle);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
   WimpObj::quit = 1;
 }
 
@@ -99,7 +102,11 @@ int WimpObj::errorHandler() {
 }
 
 unsigned int WimpObj::pollIdle() {
-  WimpObj::setLastError(wimp_pollidle(WimpObj::mask, (WimpPollBlock *) WimpObj::pollBlock, WimpObj::earliest, WimpObj::pollWord, &WimpObj::event), __LINE__);
+  _kernel_oserror *err = 0;
+  err = wimp_pollidle(WimpObj::mask, (WimpPollBlock *) WimpObj::pollBlock, WimpObj::earliest, WimpObj::pollWord, &WimpObj::event);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
   return WimpObj::event;
 }
 
@@ -195,9 +202,11 @@ int WimpObj::runIdle() {
 }
 
 unsigned int WimpObj::poll() {
-  int event;
-  WimpObj::setLastError(wimp_poll(WimpObj::mask, (WimpPollBlock *)WimpObj::pollBlock, (int *)WimpObj::pollWord, (int *)&WimpObj::event), __LINE__);
-  event = WimpObj::event;
+  _kernel_oserror *err = 0;
+  err = wimp_poll(WimpObj::mask, (WimpPollBlock *) WimpObj::pollBlock, WimpObj::pollWord, &WimpObj::event);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
   return WimpObj::event;
 }
 
@@ -306,11 +315,17 @@ unsigned int WimpObj::getEvent() {
 }
 
 void WimpObj::addMessages(int *messages) {
-  WimpObj::setLastError(wimp_add_messages(messages), __LINE__);
+  _kernel_oserror *err = wimp_add_messages(messages);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::removeMessages(int *messages) {
-  WimpObj::setLastError(wimp_remove_messages(messages), __LINE__);
+  _kernel_oserror *err = wimp_remove_messages(messages);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::setPollIdleInterval(unsigned int idleInterval) {
@@ -381,48 +396,76 @@ unsigned int *WimpObj::getWorkspace() {
 }
 
 void WimpObj::redrawIconBar() {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = -2;
-  WimpObj::setLastError(_kernel_swi(Wimp_ForceRedraw, &in, &out), __LINE__);
+  err = _kernel_swi(Wimp_ForceRedraw, &in, &out);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::redrawScreen() {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = -1;
   in.r[1] = 0;
   in.r[2] = 0;
   in.r[3] = OS::readModeVariable(-1, 11);
   in.r[4] = OS::readModeVariable(-1, 12);
-  WimpObj::setLastError(_kernel_swi(Wimp_ForceRedraw, &in, &out), __LINE__);
+  err = _kernel_swi(Wimp_ForceRedraw, &in, &out);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::openWindow() {
-  WimpObj::setLastError(wimp_open_window((WimpOpenWindowBlock *)pollBlock), __LINE__);
+  _kernel_oserror *err = wimp_open_window((WimpOpenWindowBlock *)pollBlock);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::closeWindow() {
-  WimpObj::setLastError(wimp_close_window((int *)pollBlock), __LINE__);
+  _kernel_oserror *err = wimp_close_window((int *)pollBlock);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::closeWindow(int handle) {
-  WimpObj::setLastError(wimp_close_window(&handle), __LINE__);
+  _kernel_oserror *err = wimp_close_window(&handle);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::openTemplate(char *filename) {
-  WimpObj::setLastError(wimp_open_template(filename), __LINE__);
+  _kernel_oserror *err = wimp_open_template(filename);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void WimpObj::closeTemplate() {
-  WimpObj::setLastError(wimp_close_template(), __LINE__);
+  _kernel_oserror *err = wimp_close_template();
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 WimpRedrawWindowBlock *WimpObj::updateWindow(WimpRedrawWindowBlock *block) {
+  _kernel_oserror *err = 0;
   int more;
-  WimpObj::setLastError(wimp_update_window(block, &more), __LINE__);
+  err = wimp_update_window(block, &more);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  }
   return (WimpRedrawWindowBlock *) more;
 }
 
 /*WimpObj::loadTemplate(char *template) {
+  _kernel_oserror *err = 0;
   int bufferRequired = 0;
   int workspaceRequired = 0;
   char *actualName = NULL;
@@ -434,7 +477,10 @@ WimpRedrawWindowBlock *WimpObj::updateWindow(WimpRedrawWindowBlock *block) {
   regs.r[4] = -1;
   regs.r[5] = (int) template;
   regs.r[6] = searchPos;
-  WimpObj::setLastError(wimp_load_template(&regs), __LINE__);
+  err = wimp_load_template(&regs);
+  if (err != 0) {
+    WimpObj::setLastError(err, __LINE__ -2);
+  )
   bufferRequired = regs.r[1];
   workspaceRequired = regs.r[2];
   actualName = (char *) regs.r[5];

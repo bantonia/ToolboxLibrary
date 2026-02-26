@@ -25,10 +25,14 @@ ToolboxCoreObj::~ToolboxCoreObj() {
 }
 
 void ToolboxCoreObj::getSysInfo(unsigned int reason_code, _kernel_swi_regs *in) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs out;
   in->r[0] = reason_code;
   int r1 = in->r[1];
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetSysInfo, in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetSysInfo, in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   switch(reason_code) {
     case 0:
     case 2:
@@ -53,31 +57,44 @@ void ToolboxCoreObj::getSysInfo(unsigned int reason_code, _kernel_swi_regs *in) 
 }
 
 /*void ToolboxCoreObj::getTemplateName(int flags, ObjectId id, char *buffer, int  buff_size, int *nbytes) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
   in.r[2] = (int) buffer;
   in.r[3] = buff_size;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetTemplateName, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetTemplateName, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *nbytes = out.r[3];
 }*/
 
 ObjectId ToolboxCoreObj::createObject(unsigned int flags, void *name_or_template) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = (int) name_or_template;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_CreateObject, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_CreateObject, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   return out.r[0];
 }
 
 void ToolboxCoreObj::deleteObject(unsigned int flags, ObjectId id) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_DeleteObject, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_DeleteObject, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void ToolboxCoreObj::showObject(unsigned int flags, ObjectId id, int show_type, void *type, ObjectId parent, ComponentId parent_component) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
@@ -85,93 +102,136 @@ void ToolboxCoreObj::showObject(unsigned int flags, ObjectId id, int show_type, 
   in.r[3] = (int) type;
   in.r[4] = parent;
   in.r[5] = parent_component;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_ShowObject, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_ShowObject, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void ToolboxCoreObj::hideObject(unsigned int flags, ObjectId id) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_HideObject, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_HideObject, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 unsigned int ToolboxCoreObj::getObjectState(unsigned int flags, ObjectId id, unsigned int *state) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetObjectState, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetObjectState, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *state = (unsigned int) out.r[0];
   return (unsigned int) out.r[0];
 }
 
 void ToolboxCoreObj::setClientHandle(unsigned int flags, ObjectId id, void *client_handle) {
+  _kernel_oserror *err = 0;
   //unsigned int *p = (unsigned int *) client_handle;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id; 
   in.r[2] = (int) *((unsigned int *) client_handle);
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_SetClientHandle, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_SetClientHandle, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 unsigned int ToolboxCoreObj::getClientHandle(unsigned int flags, ObjectId id, void *client_handle) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetClientHandle, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetClientHandle, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *((unsigned int *)client_handle) = (unsigned int) out.r[0];
   return (unsigned int) out.r[0];
 }
 
 ObjectClass ToolboxCoreObj::getObjectClass(unsigned int flags, ObjectId id) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetObjectClass, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetObjectClass, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   return out.r[0];
 }
 
 ObjectClass ToolboxCoreObj::getObjectClass(unsigned int flags, ObjectId id, ObjectClass *object_class) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetObjectClass, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetObjectClass, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *object_class = out.r[0];
   return out.r[0];
 }
 
 void ToolboxCoreObj::getParent(unsigned int flags, ObjectId id, ObjectId *parent, ComponentId *parent_component) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetParent, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetParent, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *parent = out.r[0];
   *parent_component = out.r[1];
 }
 
 
 void ToolboxCoreObj::getAncestor(unsigned int flags, ObjectId id, ObjectId *parent, ComponentId *ancestor_component) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_GetAncestor, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_GetAncestor, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   *parent = out.r[0];
   *ancestor_component = out.r[1];
 }
 
 void ToolboxCoreObj::raiseToolboxEvent(unsigned int flags, ObjectId id, ComponentId component, ToolboxEvent *event) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = id;
   in.r[2] = component;
   in.r[3] = (int) event;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_RaiseToolboxEvent, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_RaiseToolboxEvent, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 void ToolboxCoreObj::toolboxLoadResources(unsigned int flags, char *resources) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = (int) resources;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_LoadResources, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_LoadResources, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
 }
 
 /* void *ToolboxCoreObj::templateLookup(unsigned int flags, char *name)  *
@@ -179,10 +239,14 @@ void ToolboxCoreObj::toolboxLoadResources(unsigned int flags, char *resources) {
  * or Window_ExtractGadget                                             */
 
 void *ToolboxCoreObj::templateLookup(unsigned int flags, char *name) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = (int) name;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_TemplateLookUp, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_TemplateLookUp, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   return (unsigned int *)in.r[0];
 }
 
@@ -190,6 +254,7 @@ void *ToolboxCoreObj::templateLookup(unsigned int flags, char *name) {
  * Returns the task handle */
 
 int ToolboxCoreObj::init(unsigned int flags, int *wimpMessages, int *toolboxEvents, char *directory, MessagesFD *mfd, IdBlock *idb) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
   in.r[1] = wimpVersion;
@@ -198,7 +263,10 @@ int ToolboxCoreObj::init(unsigned int flags, int *wimpMessages, int *toolboxEven
   in.r[4] = (int) directory;
   in.r[5] = (int) mfd;
   in.r[6] = (int) idb;
-  ToolboxCoreObj::setLastError(_kernel_swi(Toolbox_Initialise, &in, &out), __LINE__);
+  err = _kernel_swi(Toolbox_Initialise, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   wimpVersion = out.r[0];
   taskHandle = out.r[1];
   spriteAreaPtr = (void *) out.r[2];
@@ -223,9 +291,13 @@ void *ToolboxCoreObj::getSpriteAreaPtr() {
 }
 
 void ToolboxCoreObj::getPointerInfo(unsigned int flags, int& x_pos, int& y_pos, int& buttons, ObjectId& window, ComponentId& component) {
+  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[0] = (int) flags;
-  ToolboxCoreObj::setLastError(_kernel_swi(Window_GetPointerInfo, &in, &out), __LINE__);
+  err = _kernel_swi(Window_GetPointerInfo, &in, &out);
+  if (err != 0) {
+    ToolboxCoreObj::setLastError(err, __LINE__ -2);
+  }
   x_pos = out.r[0];
   y_pos = out.r[1];
   buttons = out.r[2];

@@ -1,35 +1,35 @@
 #include "ToolboxGadget.h"
 
 ToolboxGadget& ToolboxGadget::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  regs->r[0] = (int) flags;
+  _kernel_oserror *err = 0;
+  regs->r[0] = flags;
   regs->r[1] = windowId;
   regs->r[2] = methodCode;
   regs->r[3] = gadgetId;
-  ToolboxGadget::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
+  if (err != 0 ) {
+    ToolboxGadget::setLastError(err, __LINE__ -2);
+  }
   return *this;
 }
 
-ToolboxGadget::ToolboxGadget() {
-  windowId = 0;
-  gadgetId = 0;
-  flags = 0;
-}
+ToolboxGadget::ToolboxGadget() : windowId(0), gadgetId(0), flags(0) {}
 
-ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId) {
-  this->windowId = windowId;
-  this->gadgetId = gadgetId;
-  flags = 0;
+ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId) : flags(0) {
+ this->windowId = windowId;
+ this->gadgetId = gadgetId;
+ flags = getGadgetFlags();
 }
 
 ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId, unsigned int flags) {
   this->windowId = windowId;
   this->gadgetId = gadgetId;
   this->flags = flags;
+  setGadgetFlags(flags);
 }
 
 int ToolboxGadget::getGadgetFlags() {
   _kernel_swi_regs regs;
-  flags = 0;
   this->gadgetMethod(Gadget_GetFlags, &regs);
   flags = regs.r[0];
   return regs.r[0];
@@ -37,10 +37,10 @@ int ToolboxGadget::getGadgetFlags() {
 
 ToolboxGadget& ToolboxGadget::setGadgetFlags(unsigned int flags) {
   _kernel_swi_regs regs;
-  this->flags = 0;
+  //this->flags = 0;
   regs.r[4] = (int) flags;
   this->gadgetMethod(Gadget_SetFlags, &regs);
-  this->flags = flags;
+  flags = flags;
   return *this;
 }
 
@@ -133,3 +133,12 @@ int ToolboxGadget::getComponentId() {
   return gadgetId;
 }
 
+ToolboxGadget& ToolboxGadget::fade() {
+  this->setGadgetFlags(this->getGadgetFlags() | (1 << 31));
+  return *this;
+}
+
+ToolboxGadget& ToolboxGadget::unfade() {
+  this->setGadgetFlags(this->getGadgetFlags() & ~(1 << 31));
+  return *this;
+}

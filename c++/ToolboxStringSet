@@ -85,11 +85,15 @@ ToolboxStringSet& ToolboxStringSet::setFont(char *fontName, int width, int heigh
 }
 
 ToolboxStringSet& ToolboxStringSet::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  _kernel_oserror *err = 0;
   regs->r[0] = (int) getFlags();
   regs->r[1] = this->getObjectId();
   regs->r[2] = methodCode;
   regs->r[3] = this->getComponentId();
-  ToolboxStringSet::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
+  if (err != 0) {
+    ToolboxStringSet::setLastError(err, __LINE__ -2);
+  }
   return *this;
 }
 

@@ -32,11 +32,11 @@ int ToolboxDisplayField::getValue() {
 }
 
 int ToolboxDisplayField::getIntValue() {
-  char *buffer;
+  char buffer[32]; //****** Set a fixed size foe the buffer *******
   int size = this->getValue();
-  buffer = new char[size];
+  //buffer = new char[size]; /* There was a memory leak here!!!!!!!!! There was no delete! But to stop fragmentation a fixed size chosen */
   this->getValue(buffer, size);
-  return OS::evaluateExpression(buffer, 0, 0);
+  return OS::evaluateExpression((char *)buffer, 0, 0);
 }
 
 int ToolboxDisplayField::getValue(char *buffer, int bufSize) {
@@ -57,11 +57,15 @@ ToolboxDisplayField& ToolboxDisplayField::setFont(char *fontName, int width, int
 }
 
 ToolboxDisplayField& ToolboxDisplayField::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
+  _kernel_oserror *err = 0;
   regs->r[0] = (int) getFlags();
   regs->r[1] = this->getObjectId();
   regs->r[2] = methodCode;
   regs->r[3] = this->getComponentId();
-  ToolboxDisplayField::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
+  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
+  if (err != 0) {
+    ToolboxDisplayField::setLastError(err, __LINE__ -2);
+  }
   return *this;
 }
 
