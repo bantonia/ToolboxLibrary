@@ -7,3 +7,8 @@ ToolTime hooks into TickerV and the handler creates a callback if there is anyth
 Using !Usage there appears to be very little impact on the efficiency of processing mulltiple applications, Wimp_PollIdle events indicated by !Usage show 100%, still whilst the events are updating the two display fields.
 Issues:
 High frequency event configurations on soak testing will generate an 'Unknown operand' error.
+
+!PollIdle an example using the ToolboxC++Lib, this time calling <TaskName>::runIdle()
+Requires overloading <TaskName>::nullReason() which will call a routine to generate Toolbox_RaiseToolboxEvent events, a dispatcher.
+In this case to generate two Toolbox user events, both which will update the contents of ToolboxDisplayField objects.
+The information for the updates is held in a linked list in an Event object, also containing a dispatcher of the events themselves. As there is no external method of generating the events, something similar to this would need to be added to every program which required this functionality.
