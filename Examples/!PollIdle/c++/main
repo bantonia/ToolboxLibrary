@@ -1,0 +1,13 @@
+#include "PollIdleExample.h"
+
+int main() {
+  PollIdleExample *task = new PollIdleExample();
+  task->initTask("<PollIdle$Dir>");
+  task->setMask(256);
+  task->setPollIdleInterval(1);
+  while (!task->quit) {
+    task->runIdle();
+  }
+  delete task;
+  return 0;
+}

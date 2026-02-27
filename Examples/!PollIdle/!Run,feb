@@ -1,0 +1,3 @@
+Set PollIdle$Dir <Obey$Dir>
+wimpslot -min 640K -max 640K
+Run <PollIdle$Dir>.!RunImage

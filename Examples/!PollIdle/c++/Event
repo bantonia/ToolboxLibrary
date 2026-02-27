@@ -1,0 +1,54 @@
+#include "Event.h"
+
+Event::ToolboxEventPtr Event::head = NULL;
+
+Event::Event(int objectId, int componentId, int event, int delay) {
+  ToolboxEventBlock *p = (ToolboxEventBlock *) new ToolboxEventBlock;
+  p->objectId = objectId;
+  p->componentId = componentId;
+  p->event = event;
+  p->delay = delay;
+  p->delay_count = delay;
+  p->next = head;
+  head = (ToolboxEventPtr) p;
+  handle = head;
+}
+
+Event::~Event() {
+  ToolboxEventBlock *p = (ToolboxEventBlock *)head;
+  while(p != NULL) {
+    if (handle == (ToolboxEventPtr) p) {
+      //***** head == handle *********
+      head = (ToolboxEventPtr) p->next;
+      delete ((ToolboxEventBlock *) handle);
+      break;
+    } else {
+      if (handle == (ToolboxEventPtr) p->next) {
+        p = (ToolboxEventBlock *) ((ToolboxEventBlock *)p->next)->next;
+        delete ((ToolboxEventBlock *) handle);
+        break;
+      }
+    }
+    p = (ToolboxEventBlock *) p->next;
+  }
+}
+
+void Event::eventDispatcher() {
+  if (head != NULL) {
+    ToolboxEventBlock *p = (ToolboxEventBlock *)head;
+    while(p != NULL) {
+      if (--(p->delay_count) == 0) {
+        p->delay_count = p->delay;
+        //***** call Toolbox_RaiseToolboxEvent here ******
+        ToolboxEvent event;
+        event.hdr.size = 16;
+        event.hdr.reference_number = 0;
+        event.hdr.event_code = p->event;
+        event.hdr.flags = 0;
+        ToolboxCoreObj::raiseToolboxEvent(0, p->objectId, p->componentId, &event);
+      }
+      p = (ToolboxEventBlock *)(p->next);
+    }
+  }
+}
+

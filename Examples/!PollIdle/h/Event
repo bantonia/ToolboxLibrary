@@ -1,0 +1,36 @@
+#ifndef __cplusplus
+#error Header file "Event.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Event_h
+#define __Event_h
+
+#include "ToolboxCoreObj.h"
+
+class Event {
+  public:
+
+    typedef struct ToolboxEventNode *ToolboxEventPtr;
+
+    typedef struct ToolboxEventNode {
+      int objectId;
+      int componentId;
+      int event;
+      int delay;
+      int delay_count;
+      int handle;
+      ToolboxEventPtr next;
+    } ToolboxEventBlock;
+
+    Event(int, int, int, int);
+    ~Event();
+    static void eventDispatcher();
+
+  private:
+    static ToolboxEventPtr head;
+    ToolboxEventPtr handle;
+};
+
+#endif

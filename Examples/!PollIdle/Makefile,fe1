@@ -1,0 +1,304 @@
+# Project:   EventExamp
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.!RunImage:   @.o.main @.o.PollIdleExample @.o.Res_Window @.o.Res_Iconbar \
+        @.o.Res_Menu @.o.Display @.o.Event \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        Link $(Linkflags) @.o.main @.o.PollIdleExample @.o.Res_Window \
+        @.o.Res_Iconbar @.o.Res_Menu @.o.Display @.o.Event \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+
+
+# User-editable dependencies:
+
+# Static dependencies:
+@.o.main:   @.c++.main
+        c++ $(c++flags) -o @.o.main @.c++.main 
+@.o.PollIdleExample:   @.c++.PollIdleExample
+        c++ $(c++flags) -o @.o.PollIdleExample @.c++.PollIdleExample 
+@.o.Res_Window:   @.c++.Res_Window
+        c++ $(c++flags) -o @.o.Res_Window @.c++.Res_Window 
+@.o.Res_Iconbar:   @.c++.Res_Iconbar
+        c++ $(c++flags) -o @.o.Res_Iconbar @.c++.Res_Iconbar 
+@.o.Res_Menu:   @.c++.Res_Menu
+        c++ $(c++flags) -o @.o.Res_Menu @.c++.Res_Menu 
+@.o.Display:   @.c++.Display
+        c++ $(c++flags) -o @.o.Display @.c++.Display 
+@.o.Event:   @.c++.Event
+        c++ $(c++flags) -o @.o.Event @.c++.Event 
+
+
+# Dynamic dependencies:
+o.PollIdleExample:	c++.PollIdleExample
+o.PollIdleExample:	h.PollIdleExample
+o.PollIdleExample:	C:h.ToolboxTask
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxCoreObj
+o.PollIdleExample:	C:h.Object
+o.PollIdleExample:	C:h.toolbox
+o.PollIdleExample:	C:h.kernel
+o.PollIdleExample:	C:h.wimp
+o.PollIdleExample:	C:h.ToolboxEvents
+o.PollIdleExample:	C:h.toolbox
+o.PollIdleExample:	C:h.gadgets
+o.PollIdleExample:	C:h.treeview
+o.PollIdleExample:	C:h.window
+o.PollIdleExample:	C:h.ScrollList
+o.PollIdleExample:	C:h.tabs
+o.PollIdleExample:	C:h.ErrorReport
+o.PollIdleExample:	C:h.kernel
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.string
+o.PollIdleExample:	C:h.WimpObj
+o.PollIdleExample:	C:h.kernel
+o.PollIdleExample:	C:h.ErrorReport
+o.PollIdleExample:	C:h.libc
+o.PollIdleExample:	C:h.kernel
+o.PollIdleExample:	C:h.Object
+o.PollIdleExample:	C:h.wimp
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	h.Res_Iconbar
+o.PollIdleExample:	C:h.ToolboxIconbarObj
+o.PollIdleExample:	C:h.iconbar
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxObj
+o.PollIdleExample:	C:h.Object
+o.PollIdleExample:	C:h.toolbox
+o.PollIdleExample:	C:h.ErrorReport
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	h.Res_Window
+o.PollIdleExample:	C:h.ToolboxWindowObj
+o.PollIdleExample:	C:h.window
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxObj
+o.PollIdleExample:	h.Display
+o.PollIdleExample:	C:h.ToolboxDisplayField
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxGadget
+o.PollIdleExample:	C:h.kernel
+o.PollIdleExample:	C:h.ErrorReport
+o.PollIdleExample:	C:h.toolbox
+o.PollIdleExample:	C:h.gadgets
+o.PollIdleExample:	C:h.Scrollbar
+o.PollIdleExample:	C:h.ScrollList
+o.PollIdleExample:	C:h.tabs
+o.PollIdleExample:	C:h.treeview
+o.PollIdleExample:	C:h.TextArea
+o.PollIdleExample:	C:h.Object
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	h.Event
+o.PollIdleExample:	C:h.ToolboxCoreObj
+o.PollIdleExample:	h.Res_Menu
+o.PollIdleExample:	C:h.ToolboxMenuObj
+o.PollIdleExample:	C:h.menu
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxObj
+o.PollIdleExample:	C:h.ToolboxQuitObj
+o.PollIdleExample:	C:h.ClassType
+o.PollIdleExample:	C:h.ToolboxObj
+o.PollIdleExample:	C:h.quit
+o.Res_Window:	c++.Res_Window
+o.Res_Window:	h.Res_Window
+o.Res_Window:	C:h.ToolboxWindowObj
+o.Res_Window:	C:h.window
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.wimp
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.ToolboxObj
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	h.Display
+o.Res_Window:	C:h.ToolboxDisplayField
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.ToolboxGadget
+o.Res_Window:	C:h.kernel
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.Scrollbar
+o.Res_Window:	C:h.ScrollList
+o.Res_Window:	C:h.tabs
+o.Res_Window:	C:h.treeview
+o.Res_Window:	C:h.TextArea
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	h.Event
+o.Res_Window:	C:h.ToolboxCoreObj
+o.Res_Window:	C:h.Object
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.ToolboxEvents
+o.Res_Window:	C:h.toolbox
+o.Res_Window:	C:h.gadgets
+o.Res_Window:	C:h.treeview
+o.Res_Window:	C:h.ScrollList
+o.Res_Window:	C:h.tabs
+o.Res_Window:	C:h.ErrorReport
+o.Res_Window:	C:h.ClassType
+o.Res_Window:	C:h.string
+o.Event:	c++.Event
+o.Event:	h.Event
+o.Event:	C:h.ToolboxCoreObj
+o.Event:	C:h.Object
+o.Event:	C:h.toolbox
+o.Event:	C:h.kernel
+o.Event:	C:h.wimp
+o.Event:	C:h.ToolboxEvents
+o.Event:	C:h.toolbox
+o.Event:	C:h.gadgets
+o.Event:	C:h.treeview
+o.Event:	C:h.window
+o.Event:	C:h.ScrollList
+o.Event:	C:h.tabs
+o.Event:	C:h.ErrorReport
+o.Event:	C:h.kernel
+o.Event:	C:h.ClassType
+o.Event:	C:h.string
+o.Res_Iconbar:	c++.Res_Iconbar
+o.Res_Iconbar:	h.Res_Iconbar
+o.Res_Iconbar:	C:h.ToolboxIconbarObj
+o.Res_Iconbar:	C:h.iconbar
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.wimp
+o.Res_Iconbar:	C:h.ClassType
+o.Res_Iconbar:	C:h.ToolboxObj
+o.Res_Iconbar:	C:h.Object
+o.Res_Iconbar:	C:h.toolbox
+o.Res_Iconbar:	C:h.ErrorReport
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.ClassType
+o.Res_Menu:	c++.Res_Menu
+o.Res_Menu:	h.Res_Menu
+o.Res_Menu:	C:h.ToolboxMenuObj
+o.Res_Menu:	C:h.menu
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
+o.Res_Menu:	C:h.ToolboxObj
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ClassType
+o.Display:	c++.Display
+o.Display:	h.Display
+o.Display:	C:h.ToolboxDisplayField
+o.Display:	C:h.ClassType
+o.Display:	C:h.ToolboxGadget
+o.Display:	C:h.kernel
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.kernel
+o.Display:	C:h.toolbox
+o.Display:	C:h.wimp
+o.Display:	C:h.gadgets
+o.Display:	C:h.Scrollbar
+o.Display:	C:h.window
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.treeview
+o.Display:	C:h.TextArea
+o.Display:	C:h.Object
+o.Display:	C:h.ClassType
+o.Display:	h.Event
+o.Display:	C:h.ToolboxCoreObj
+o.Display:	C:h.Object
+o.Display:	C:h.toolbox
+o.Display:	C:h.ToolboxEvents
+o.Display:	C:h.toolbox
+o.Display:	C:h.gadgets
+o.Display:	C:h.treeview
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.ClassType
+o.Display:	C:h.string
+o.main:	c++.main
+o.main:	h.PollIdleExample
+o.main:	C:h.ToolboxTask
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxCoreObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.kernel
+o.main:	C:h.wimp
+o.main:	C:h.ToolboxEvents
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.treeview
+o.main:	C:h.window
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.ErrorReport
+o.main:	C:h.kernel
+o.main:	C:h.ClassType
+o.main:	C:h.string
+o.main:	C:h.WimpObj
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.libc
+o.main:	C:h.kernel
+o.main:	C:h.Object
+o.main:	C:h.wimp
+o.main:	C:h.ClassType
+o.main:	h.Res_Iconbar
+o.main:	C:h.ToolboxIconbarObj
+o.main:	C:h.iconbar
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	h.Res_Window
+o.main:	C:h.ToolboxWindowObj
+o.main:	C:h.window
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	h.Display
+o.main:	C:h.ToolboxDisplayField
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxGadget
+o.main:	C:h.kernel
+o.main:	C:h.ErrorReport
+o.main:	C:h.toolbox
+o.main:	C:h.gadgets
+o.main:	C:h.Scrollbar
+o.main:	C:h.ScrollList
+o.main:	C:h.tabs
+o.main:	C:h.treeview
+o.main:	C:h.TextArea
+o.main:	C:h.Object
+o.main:	C:h.ClassType
+o.main:	h.Event
+o.main:	C:h.ToolboxCoreObj
+o.main:	h.Res_Menu
+o.main:	C:h.ToolboxMenuObj
+o.main:	C:h.menu
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.ToolboxQuitObj
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.quit

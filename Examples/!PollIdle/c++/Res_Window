@@ -1,0 +1,29 @@
+#include "Res_Window.h"
+
+Res_Window::Res_Window() : ToolboxWindowObj() {}
+
+Res_Window::Res_Window(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {
+  int objectId = idBlock->self_id;
+  displayField0 = new Display(objectId, 0, 0, 2, 1);
+  displayField1 = new Display(objectId, 1, 0, 3, 100);
+}
+
+Res_Window::~Res_Window() {
+  delete displayField0;
+  delete displayField1;
+}
+
+void Res_Window::updateDisplay(int event) {
+  switch(event) {
+    case 2: {
+      displayField0->updateDisplay();
+      }
+      break;
+    case 3: {
+        displayField1->updateDisplay();
+      }
+      break;
+  }
+}
+
+

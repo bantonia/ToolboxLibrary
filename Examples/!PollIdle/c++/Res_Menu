@@ -1,0 +1,7 @@
+#include "Res_Menu.h"
+
+Res_Menu::Res_Menu() : ToolboxMenuObj() {}
+
+Res_Menu::Res_Menu(IdBlock *idBlock) : ToolboxMenuObj(idBlock) {}
+
+Res_Menu::~Res_Menu() {}

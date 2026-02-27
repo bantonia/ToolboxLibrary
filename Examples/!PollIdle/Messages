@@ -1,0 +1,17 @@
+_TaskName:PollIdleExample
+# Messages exported from Resource File version 101
+
+# Messages for object Iconbar (class Iconbar)
+
+Iconbar|0:PollIdle Example
+
+# Messages for object Window (class Window)
+
+Window|1:PollIdle Example
+Window|3:0
+Window|5:0
+
+# Messages for object Menu (class Menu)
+
+Menu|0:PollIdle Example
+Menu|2:Quit
