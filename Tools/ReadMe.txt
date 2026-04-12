@@ -12,3 +12,4 @@ By default directories c++, h and o will be created and source code will populat
 Create a Makefile to generate a !RunImage from the c++ sources and link with ToolboxC++Lib, RiscOSC++Lib, CommonC++Lib, wimplib, c++lib and stubs
 
 !Prototype now generates code to take into account of Gadgets.
+As of version 0.03, !Prototype will generate code taking into account of Null Events. Also optionally will generate code without the need to extend the Toolbox base classes of the resource file objects.
