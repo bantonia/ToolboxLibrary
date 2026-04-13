@@ -45,7 +45,7 @@ ToolboxObj::ToolboxObj(unsigned int flags, void *name_or_template) {
 }
 
 ToolboxObj::~ToolboxObj() {
-  deleteObject();
+  //deleteObject();
 }
 
 int ToolboxObj::getTemplateName() {
