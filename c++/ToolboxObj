@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include "ToolboxObj.h"
+#include "WimpObj.h"
 #include <string.h>
 
 _kernel_oserror ToolboxObj::ToolboxObjectIdNotSet = {0x8888,"Toolbox ObjectId not set"};
@@ -45,7 +46,9 @@ ToolboxObj::ToolboxObj(unsigned int flags, void *name_or_template) {
 }
 
 ToolboxObj::~ToolboxObj() {
-  //deleteObject();
+  if (!WimpObj::quit) {
+    deleteObject();
+  }
 }
 
 int ToolboxObj::getTemplateName() {
