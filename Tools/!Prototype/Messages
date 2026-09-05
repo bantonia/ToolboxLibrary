@@ -10,7 +10,7 @@ Iconbar|0:Prototype
 
 ProgInfo|1:Generate source C++ from a resource file
 ProgInfo|2:© Bill Antonia
-ProgInfo|3:0.04 (13-Apr-26)
+ProgInfo|3:0.05 (22-Jun-26)
 
 # Messages for object IconbarMenu (class Menu)
 
@@ -18,7 +18,9 @@ IconbarMenu|0:Prototype
 IconbarMenu|2:ProgInfo
 IconbarMenu|4:Options
 IconbarMenu|6:Generate Code
-IconbarMenu|8:Quit
+IconbarMenu|8:Reset
+IconbarMenu|9:Resets the configuration to the initial settings
+IconbarMenu|10:Quit
 
 # Messages for object OptionsMenu (class Menu)
 
@@ -31,6 +33,7 @@ OptionsMenu|10:Resource Class Prefix
 OptionsMenu|12:Generate main
 OptionsMenu|14:GenerateTask Class
 OptionsMenu|16:Generate Res Classes
+OptionsMenu|18:Res Classes
 
 # Messages for object Directories (class Window)
 
@@ -54,3 +57,7 @@ WimpEMenu|0:Wimp Events
 # Messages for object ToolEMenu (class Menu)
 
 ToolEMenu|0:Toolbox Events
+
+# Messages for object ResClasses (class Menu)
+
+ResClasses|0:Res Classes

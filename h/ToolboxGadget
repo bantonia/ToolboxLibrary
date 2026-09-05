@@ -14,6 +14,29 @@
 #include "Object.h"
 #include "ClassType.h"
 
+enum GadgetType {
+      ActionButtonGadgetType  = ActionButton_Type,
+      OptionButtonGadgetType  = OptionButton_Type,
+      LabelledBoxGadgetType   = LabelledBox_Type,
+      LabelGadgetType         = (sizeof(Label) + sizeof(GadgetHeader)) << 16 | Label_Base,
+      RadioButtonGadgetType   = RadioButton_Type,
+      DisplayFieldGadgetType  = DisplayField_Type,
+      WritableFieldGadgetType = WritableField_Type,
+      SliderGadgetType        = Slider_Type,
+      DraggableGadgetType     = Draggable_Type,
+      PopUpGadgetType         = PopUp_Type,
+      AdjusterArrowGadgetType = AdjusterArrow_Type,
+      NumberRangeGadgetType   = NumberRange_Type,
+      StringSetGadgetType     = StringSet_Type,
+      ButtonGadgetType        = Button_Type,
+      ScrollbarGadgetType     = Scrollbar_Type,
+      ScrollListGadgetType    = ScrollList_Type,
+      TabsGadgetType          = Tabs_Type,
+      TreeViewGadgetType      = TreeView_Type,
+      TextAreaGadgetType      = TextArea_Type,
+      ToolActionGadgetType    = 0x4C4014
+    };
+
 class ToolboxGadget : public ErrorReport, public Object {
   public:
     ToolboxGadget();
