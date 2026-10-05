@@ -14,4 +14,4 @@ Create a Makefile to generate a !RunImage from the c++ sources and link with Too
 !Prototype now generates code to take into account of Gadgets.
 Version 0.03, !Prototype will generate code taking into account of Null Events. Also optionally will generate code without the need to extend the Toolbox base classes of the resource file objects.
 Version 0.04, !Prototype generates the Wimp Mask according to the Wimp Event menu entries which have not been selected.
-
+Version 0.06, !Prototype can now select which resource support sources to not include in the final code, default is to generate all resource support code.
