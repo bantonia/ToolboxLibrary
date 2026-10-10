@@ -50,7 +50,8 @@ enum {
   ClassType_ToolboxTreeView,
   ClassType_ToolboxToolAction,
   ClassType_ToolboxTextArea,
-  ClassType_ToolboxAdjuster
+  ClassType_ToolboxAdjuster,
+  ClassType_ToolboxLabel
 };
 
 #endif

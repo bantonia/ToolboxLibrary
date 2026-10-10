@@ -126,6 +126,8 @@ class WimpObj : public Object, public ErrorReport {
     static void closeTemplate();
     //static void loadTemplate(char *);
     static int quit;
+    static unsigned int sendMessage(int eventCode, void *messageBlock, unsigned int handle);
+    static unsigned int sendMessage(int eventCode, void *messageBlock, unsigned int handle, unsigned int iconHandle);
 
     void showProperties() {}
     char* getClassName() { return "WimpObj";}

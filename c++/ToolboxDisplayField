@@ -32,11 +32,10 @@ int ToolboxDisplayField::getValue() {
 }
 
 int ToolboxDisplayField::getIntValue() {
-  char buffer[32]; //****** Set a fixed size foe the buffer *******
+  char buffer[32];
   int size = this->getValue();
-  //buffer = new char[size]; /* There was a memory leak here!!!!!!!!! There was no delete! But to stop fragmentation a fixed size chosen */
   this->getValue(buffer, size);
-  return OS::evaluateExpression((char *)buffer, 0, 0);
+  return OS::evaluateExpression(buffer, 0, 0);
 }
 
 int ToolboxDisplayField::getValue(char *buffer, int bufSize) {
@@ -53,61 +52,5 @@ ToolboxDisplayField& ToolboxDisplayField::setFont(char *fontName, int width, int
   regs.r[5] = width;
   regs.r[6] = height;
   this->gadgetMethod(DisplayField_SetFont, &regs);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  _kernel_oserror *err = 0;
-  regs->r[0] = (int) getFlags();
-  regs->r[1] = this->getObjectId();
-  regs->r[2] = methodCode;
-  regs->r[3] = this->getComponentId();
-  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
-  if (err != 0) {
-    ToolboxDisplayField::setLastError(err, __LINE__ -2);
-  }
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setGadgetFlags(unsigned int flags) {
-  _kernel_swi_regs regs;
-  this->setFlags(0);
-  regs.r[4] = (int) flags;
-  this->gadgetMethod(Gadget_SetFlags, &regs);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setHelpMessage(char *message) {
-  _kernel_swi_regs regs;
-  regs.r[4] = (int) message;
-  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setFocus() {
-  _kernel_swi_regs regs;
-  this->gadgetMethod(Gadget_SetFocus, &regs);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::moveGadget(BBox *newBbox) {
-  _kernel_swi_regs regs;
-  regs.r[4] = (int) newBbox;
-  this->gadgetMethod(Gadget_MoveGadget, &regs);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setComponentId(ComponentId gadgetId) {
-  this->ToolboxGadget::setComponentId(gadgetId);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setFlags(unsigned int flags) {
-  this->ToolboxGadget::setFlags(flags);
-  return *this;
-}
-
-ToolboxDisplayField& ToolboxDisplayField::setObjectId(ObjectId windowId) {
-  this->ToolboxGadget::setObjectId(windowId);
   return *this;
 }

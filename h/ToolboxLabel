@@ -1,0 +1,21 @@
+#ifndef __cplusplus
+#error Header file "ToolboxLabel.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxLabel_h
+#define __ToolboxLabel_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+
+class ToolboxLabel : public ToolboxGadget {
+  public:
+    ToolboxLabel(ObjectId, ComponentId, unsigned int) {}
+    void showProperties() {}
+    char* getClassName() { return "ToolboxLabel";}
+    int getClassType() { return ClassType_ToolboxLabel;}
+};
+
+#endif

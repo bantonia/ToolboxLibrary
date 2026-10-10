@@ -12,6 +12,7 @@
 
 class ToolboxAdjuster : public ToolboxGadget {
   public:
+
     ToolboxAdjuster() : ToolboxGadget() {}
     ToolboxAdjuster(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
     ToolboxAdjuster(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}

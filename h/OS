@@ -23,6 +23,9 @@ class OS : public ErrorReport {
     static char *convertHex6(int, char *, int *);
     static char *convertHex8(int, char *, int *);
     static char *convertHex(int, char *, int *);
+    static void createDirectory(char *directoryName);
+    static unsigned int readUnsigned(int base, char *value, unsigned int maximum = 0);
+ 
   private:
 };
 

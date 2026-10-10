@@ -66,10 +66,7 @@ WimpObj::WindDefStr *WimpWindowObj::getWindDefStr() {
 }
 
 int WimpWindowObj::createWindow() {
-  _kernel_oserror *err = wimp_create_window((WimpWindow *) windDefStr, &handle);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_create_window((WimpWindow *) windDefStr, &handle), __LINE__);
   #if 0
   delete windDefStr;
   #endif
@@ -77,60 +74,39 @@ int WimpWindowObj::createWindow() {
 }
 
 void WimpWindowObj::openWindow() {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   getWindowState();
   in.r[1] = (int) workspace;
-  err = _kernel_swi(Wimp_OpenWindow, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_OpenWindow, &in, &out), __LINE__);
 }
 
 void WimpWindowObj::openWindow(WimpOpenWindowBlock *openWindStr) {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[1] = (int) openWindStr;
-  err = _kernel_swi(Wimp_OpenWindow, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_OpenWindow, &in, &out), __LINE__);
 }
 
 void WimpWindowObj::closeWindow() {
-  _kernel_oserror *err = wimp_close_window((int *) &handle);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_close_window((int *) &handle), __LINE__);
 }
 
 void WimpWindowObj::closeWindow(WimpCloseWindowBlock *block) {
-  _kernel_oserror *err = wimp_close_window((int *) block);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_close_window((int *) block), __LINE__);
 }
 
 unsigned WimpWindowObj::redrawWindow() {
   int more;
-  _kernel_oserror *err = wimp_redraw_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_redraw_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more), __LINE__);
   return (unsigned) more;
 }
 
 unsigned WimpWindowObj::updateWindow() {
   int more;
-  _kernel_oserror *err = wimp_update_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_update_window((WimpRedrawWindowBlock *) WimpObj::getPollBlock(), &more), __LINE__);
   return (unsigned) more;
 }
 
 unsigned WimpWindowObj::updateWindow(int minX, int minY, int maxX, int maxY) {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   unsigned *block = WimpObj::getPollBlock();
   block[0] = (unsigned) handle;
@@ -139,42 +115,27 @@ unsigned WimpWindowObj::updateWindow(int minX, int minY, int maxX, int maxY) {
   block[3] = maxX;
   block[4] = maxY;
   in.r[1] = (int) block;
-  err = _kernel_swi(Wimp_UpdateWindow, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_UpdateWindow, &in, &out), __LINE__);
   return out.r[0];
 }
 
 unsigned WimpWindowObj::getRectangle() {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[1] = (int) WimpObj::getPollBlock();
-  err = _kernel_swi(Wimp_GetRectangle, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_GetRectangle, &in, &out), __LINE__);
   return out.r[0];
 }
 
 void WimpWindowObj::deleteWindow() {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[1] = (int) &handle;
-  err = _kernel_swi(Wimp_DeleteWindow, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_DeleteWindow, &in, &out), __LINE__);
 }
 
 void WimpWindowObj::deleteWindow(void *block) {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   in.r[1] = (int) block;
-  err = _kernel_swi(Wimp_DeleteWindow, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_DeleteWindow, &in, &out), __LINE__);
 }
 
 int WimpWindowObj::getWindowHandle() {
@@ -186,15 +147,11 @@ void WimpWindowObj::setWindowHandle(int handle) {
 }
 
 void WimpWindowObj::getWindowState() {
-  _kernel_oserror *err = 0;
   WimpOpenWindowBlock *openWindStr = (WimpOpenWindowBlock *) workspace;
   openWindStr->window_handle = handle;
   _kernel_swi_regs in, out;
   in.r[1] = (int) openWindStr;
-  err = _kernel_swi(Wimp_GetWindowState, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Wimp_GetWindowState, &in, &out), __LINE__);
 }
 
 void WimpWindowObj::setRedirectTitle(char *title, int titleBufLen) {
@@ -235,53 +192,36 @@ char *WimpWindowObj::getTitle() {
 }
 
 void WimpWindowObj::forceRedraw() {
-  _kernel_oserror *err = 0;
   WimpGetWindowOutlineBlock *windBox = getWindowOutline();
-  err = wimp_force_redraw(windBox->window_handle, windBox->outline.xmin, windBox->outline.ymin, windBox->outline.xmax, windBox->outline.ymax);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_force_redraw(windBox->window_handle, windBox->outline.xmin, windBox->outline.ymin, windBox->outline.xmax, windBox->outline.ymax), __LINE__);
 }
 
 void WimpWindowObj::forceRedraw(int xmin, int ymin, int xmax, int ymax) {
-  _kernel_oserror *err = wimp_force_redraw(handle, xmin, ymin, xmax, ymax);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_force_redraw(handle, xmin, ymin, xmax, ymax), __LINE__);
 }
 
 WimpGetWindowOutlineBlock *WimpWindowObj::getWindowOutline() {
-  _kernel_oserror *err = 0;
   workspace[0] = handle;
-  err = wimp_get_window_outline((WimpGetWindowOutlineBlock *) workspace);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_get_window_outline((WimpGetWindowOutlineBlock *) workspace), __LINE__);
   return (WimpGetWindowOutlineBlock *) workspace;
 }
 
 unsigned int *WimpWindowObj::getWorkspace() {
+  int line = __LINE__;
   return workspace;
 }
 
 void WimpWindowObj::redrawTitle() {
-  _kernel_oserror *err = wimp_force_title_redraw(handle);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(wimp_force_title_redraw(handle), __LINE__);
 }
 
 void WimpWindowObj::wimpToToolbox(int icon_handle, int *toolbox_window_handle, int *toolbox_component_id) {
-  _kernel_oserror *err = 0;
   _kernel_swi_regs in, out;
   unsigned int flags = 0;
   in.r[0] = flags;
   in.r[1] = handle;
   in.r[2] = icon_handle;
-  err = _kernel_swi(Window_WimpToToolbox, &in, &out);
-  if (err != 0) {
-    WimpObj::setLastError(err, __LINE__ -2);
-  }
+  WimpObj::setLastError(_kernel_swi(Window_WimpToToolbox, &in, &out), __LINE__);
   *toolbox_window_handle = out.r[0];
   *toolbox_component_id = out.r[1];
 }

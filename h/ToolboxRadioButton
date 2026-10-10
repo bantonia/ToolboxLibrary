@@ -24,14 +24,6 @@ class ToolboxRadioButton : public ToolboxGadget {
     int getState();
     ComponentId getOnButton();
     ToolboxRadioButton& setFont(char *fontName, int width, int height);
-    ToolboxRadioButton& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
-    ToolboxRadioButton& setFocus();
-    ToolboxRadioButton& setFlags(unsigned int flags);
-    ToolboxRadioButton& setObjectId(ObjectId windowId);
-    ToolboxRadioButton& setComponentId(ComponentId gadgetId);
-    ToolboxRadioButton& setGadgetFlags(unsigned int flags);
-    ToolboxRadioButton& setHelpMessage(char *message);
-    ToolboxRadioButton& moveGadget(BBox *newBbox);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxRadioButton";}

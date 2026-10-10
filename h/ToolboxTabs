@@ -25,13 +25,6 @@ class ToolboxTabs : public ToolboxGadget {
     int getLabel(int index);
     int getLabel(int index, char *buffer, int bufSize);
     ToolboxTabs& hideTab(int index, int hide);
-    ToolboxTabs& setFocus();
-    ToolboxTabs& setFlags(unsigned int flags);
-    ToolboxTabs& setObjectId(ObjectId windowId);
-    ToolboxTabs& setComponentId(ComponentId gadgetId);
-    ToolboxTabs& setGadgetFlags(unsigned int flags);
-    ToolboxTabs& setHelpMessage(char *message);
-    ToolboxTabs& moveGadget(BBox *newBbox);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxTabs";}

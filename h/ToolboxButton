@@ -12,6 +12,7 @@
 
 class ToolboxButton : public ToolboxGadget {
   public:
+
     ToolboxButton();
     ToolboxButton(ObjectId windowId, ComponentId gadgetId);
     ToolboxButton(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
@@ -25,14 +26,6 @@ class ToolboxButton : public ToolboxGadget {
     int getValidation();
     int getValidation(char *buffer, int bufSize);
     ToolboxButton& setFont(char *fontName, int width, int height);
-    ToolboxButton& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
-    ToolboxButton& setFocus();
-    ToolboxButton& setFlags(unsigned int flags);
-    ToolboxButton& setObjectId(ObjectId windowId);
-    ToolboxButton& setComponentId(ComponentId gadgetId);
-    ToolboxButton& setGadgetFlags(unsigned int flags);
-    ToolboxButton& setHelpMessage(char *message);
-    ToolboxButton& moveGadget(BBox *newBbox);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxButton";}

@@ -1,46 +1,38 @@
 #include "ToolboxGadget.h"
 
 ToolboxGadget& ToolboxGadget::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  _kernel_oserror *err = 0;
-  regs->r[0] = flags;
+  regs->r[0] = (int) methodFlags;
   regs->r[1] = windowId;
   regs->r[2] = methodCode;
   regs->r[3] = gadgetId;
-  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
-  if (err != 0 ) {
-    ToolboxGadget::setLastError(err, __LINE__ -2);
-  }
+  ToolboxGadget::setLastError(_kernel_swi(Toolbox_ObjectMiscOp, regs, regs), __LINE__);
   return *this;
 }
 
-ToolboxGadget::ToolboxGadget() : windowId(0), gadgetId(0), flags(0) {}
+ToolboxGadget::ToolboxGadget() : windowId(0), gadgetId(0), methodFlags(0) {}
 
-ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId) : flags(0) {
+ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId){
  this->windowId = windowId;
  this->gadgetId = gadgetId;
- flags = getGadgetFlags();
+ this->methodFlags = 0;
 }
 
 ToolboxGadget::ToolboxGadget(ObjectId windowId, ComponentId gadgetId, unsigned int flags) {
   this->windowId = windowId;
   this->gadgetId = gadgetId;
-  this->flags = flags;
-  setGadgetFlags(flags);
+  this->methodFlags = flags;
 }
 
 int ToolboxGadget::getGadgetFlags() {
   _kernel_swi_regs regs;
   this->gadgetMethod(Gadget_GetFlags, &regs);
-  flags = regs.r[0];
   return regs.r[0];
 }
 
 ToolboxGadget& ToolboxGadget::setGadgetFlags(unsigned int flags) {
   _kernel_swi_regs regs;
-  //this->flags = 0;
   regs.r[4] = (int) flags;
   this->gadgetMethod(Gadget_SetFlags, &regs);
-  flags = flags;
   return *this;
 }
 
@@ -107,7 +99,7 @@ void ToolboxGadget::getBbox(BBox *box) {
 }
 
 ToolboxGadget& ToolboxGadget::setFlags(unsigned int flags) {
-  this->flags = flags;
+  this->methodFlags = flags;
   return *this;
 }
 
@@ -122,7 +114,12 @@ ToolboxGadget& ToolboxGadget::setComponentId(ComponentId gadgetId) {
 }
 
 unsigned int ToolboxGadget::getFlags() {
-  return flags;
+  return methodFlags;
+}
+
+unsigned int ToolboxGadget::getMethodFlags() {
+  int q = methodFlags;
+  return methodFlags;
 }
 
 int ToolboxGadget::getObjectId() {

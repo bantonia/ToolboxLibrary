@@ -11,10 +11,18 @@
 #include "ErrorReport.h"
 #include "toolbox.h"
 #include "gadgets.h"
+#include "Scrollbar.h"
+#include "ScrollList.h"
+#include "tabs.h"
+#include "treeview.h"
+#include "TextArea.h"
 #include "Object.h"
 #include "ClassType.h"
 
-enum GadgetType {
+class ToolboxGadget : public ErrorReport, public Object {
+  public:
+
+    enum GadgetType {
       ActionButtonGadgetType  = ActionButton_Type,
       OptionButtonGadgetType  = OptionButton_Type,
       LabelledBoxGadgetType   = LabelledBox_Type,
@@ -35,10 +43,8 @@ enum GadgetType {
       TreeViewGadgetType      = TreeView_Type,
       TextAreaGadgetType      = TextArea_Type,
       ToolActionGadgetType    = 0x4C4014
-    };
+    }; 
 
-class ToolboxGadget : public ErrorReport, public Object {
-  public:
     ToolboxGadget();
     ToolboxGadget(ObjectId windowId, ComponentId gadgetId);
     ToolboxGadget(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
@@ -51,6 +57,7 @@ class ToolboxGadget : public ErrorReport, public Object {
     int getType();
     void getBbox(BBox *box);
     unsigned int getFlags();
+    unsigned int getMethodFlags();
     int getObjectId();
     int getComponentId();
 
@@ -62,6 +69,8 @@ class ToolboxGadget : public ErrorReport, public Object {
     ToolboxGadget& setGadgetFlags(unsigned int flags);
     ToolboxGadget& setHelpMessage(char *message);
     ToolboxGadget& moveGadget(BBox *newBbox);
+    ToolboxGadget& fade();
+    ToolboxGadget& unfade();
 
     void showProperties() {}
     char* getClassName() { return "ToolboxGadget";}
@@ -70,8 +79,7 @@ class ToolboxGadget : public ErrorReport, public Object {
   private:
     ObjectId windowId;
     ComponentId gadgetId;
-    unsigned int flags;
+    unsigned int methodFlags;
 };
 
 #endif
-

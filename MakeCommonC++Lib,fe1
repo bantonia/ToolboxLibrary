@@ -48,7 +48,6 @@ o.ErrorReport:	C:h.kernel
 o.ErrorReport:	C:h.libc
 o.ErrorReport:	C:h.iostream
 o.ErrorReport:	C:h.memory
-o.err_jmp_buf:	c.err_jmp_buf
 o.List:	c++.List
 o.StringObj:	c++.StringObj
 o.StringObj:	h.StringObj
@@ -57,11 +56,12 @@ o.StringObj:	C:h.memory
 o.StringObj:	h.ClassType
 o.StringObj:	h.Object
 o.StringObj:	h.Object
-o.Constants:	c++.Constants
-o.Constants:	h.Constants
 o.Object:	c++.Object
 o.Object:	h.Object
+o.err_jmp_buf:	c.err_jmp_buf
 o.BitField:	c++.BitField
 o.BitField:	h.Object
 o.BitField:	h.BitField
 o.BitField:	h.Object
+o.Constants:	c++.Constants
+o.Constants:	h.Constants

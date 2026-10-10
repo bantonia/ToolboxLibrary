@@ -39,13 +39,6 @@ ModSqzflags = -o $@
 
 
 # Dynamic dependencies:
-o.ErrorReport:	c++.ErrorReport
-o.ErrorReport:	h.ErrorReport
-o.ErrorReport:	C:h.kernel
-o.ErrorReport:	C:h.kernel
-o.ErrorReport:	C:h.libc
-o.ErrorReport:	C:h.iostream
-o.ErrorReport:	C:h.memory
 o.OS:	c++.OS
 o.OS:	C:h.kernel
 o.OS:	C:h.swis
@@ -120,3 +113,9 @@ o.WimpWindowObj:	C:h.kernel
 o.WimpWindowObj:	C:h.swis
 o.WimpWindowObj:	C:h.libc
 o.WimpWindowObj:	C:h.wimplib
+o.ErrorReport:	c++.ErrorReport
+o.ErrorReport:	h.ErrorReport
+o.ErrorReport:	C:h.kernel
+o.ErrorReport:	C:h.kernel
+o.ErrorReport:	C:h.libc
+

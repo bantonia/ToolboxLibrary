@@ -34,7 +34,6 @@ class ToolboxTextArea : public ToolboxGadget {
     unsigned int getCursorPosition();
 
     int getTextCount();
-    ToolboxTextArea& append(const char *);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxTextArea";}

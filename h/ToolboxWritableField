@@ -21,14 +21,6 @@ class ToolboxWritableField : public ToolboxGadget {
     int getValue(char *buffer, int bufSize);
     ToolboxWritableField& setAllowable(char *allowed);
     ToolboxWritableField& setFont(char *fontName, int width, int height);
-    ToolboxWritableField& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
-    ToolboxWritableField& setFocus();
-    ToolboxWritableField& setFlags(unsigned int flags);
-    ToolboxWritableField& setObjectId(ObjectId windowId);
-    ToolboxWritableField& setComponentId(ComponentId gadgetId);
-    ToolboxWritableField& setGadgetFlags(unsigned int flags);
-    ToolboxWritableField& setHelpMessage(char *message);
-    ToolboxWritableField& moveGadget(BBox *newBbox);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxWritableField";}

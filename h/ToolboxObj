@@ -11,6 +11,7 @@
 #include "toolbox.h"
 #include "ErrorReport.h"
 #include "ClassType.h"
+#include "WimpObj.h"
 
 #ifndef UNUSED
 #define UNUSED(x) (void)(x)

@@ -11,7 +11,9 @@
 #include "ToolboxGadget.h"
 
 class ToolboxDisplayField : public ToolboxGadget {
+
   public:
+
     ToolboxDisplayField();
     ToolboxDisplayField(ObjectId windowId, ComponentId gadgetId);
     ToolboxDisplayField(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
@@ -21,14 +23,6 @@ class ToolboxDisplayField : public ToolboxGadget {
     int getIntValue();
     int getValue(char *buffer, int bufSize);
     ToolboxDisplayField& setFont(char *fontName, int width, int height);
-    ToolboxDisplayField& gadgetMethod(int methodCode, _kernel_swi_regs *regs);
-    ToolboxDisplayField& setFocus();
-    ToolboxDisplayField& setFlags(unsigned int flags);
-    ToolboxDisplayField& setObjectId(ObjectId windowId);
-    ToolboxDisplayField& setComponentId(ComponentId gadgetId);
-    ToolboxDisplayField& setGadgetFlags(unsigned int flags);
-    ToolboxDisplayField& setHelpMessage(char *message);
-    ToolboxDisplayField& moveGadget(BBox *newBbox);
 
     void showProperties() {}
     char* getClassName() { return "ToolboxDisplayField";}

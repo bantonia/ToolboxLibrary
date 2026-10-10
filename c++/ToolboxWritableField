@@ -6,60 +6,25 @@ ToolboxWritableField::ToolboxWritableField(ObjectId windowId, ComponentId gadget
 
 ToolboxWritableField::ToolboxWritableField(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
 
-/*ToolboxWritableField& ToolboxWritableField::setValue(char *value) {
+ToolboxWritableField& ToolboxWritableField::setValue(char *value) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) value;
   this->gadgetMethod(WritableField_SetValue, &regs);
   return *this;
-}*/
-
-ToolboxWritableField& ToolboxWritableField::setValue(char *value) {
-  _kernel_swi_regs regs;
-  regs.r[0] = 0; //getFlags(); //flags
-  regs.r[1] = getObjectId(); //windowId;
-  regs.r[2] = WritableField_SetValue;
-  regs.r[3] = getComponentId(); //gadgetId;
-  regs.r[4] = (int) value;
-  _kernel_swi(Toolbox_ObjectMiscOp, &regs, &regs);
-  return *this;
 }
-
-/*int ToolboxWritableField::getValue() {
-  _kernel_swi_regs regs;
-  regs.r[4] = 0;
-  this->gadgetMethod(WritableField_GetValue, &regs);
-  return regs.r[5];
-}*/
 
 int ToolboxWritableField::getValue() {
   _kernel_swi_regs regs;
-  regs.r[0] = 0; // getFlags(); //flags
-  regs.r[1] = getObjectId(); //windowId;
-  regs.r[2] = WritableField_GetValue;
-  regs.r[3] = getComponentId(); //gadgetId;
   regs.r[4] = 0;
-  _kernel_swi(Toolbox_ObjectMiscOp, &regs, &regs);
+  this->gadgetMethod(WritableField_GetValue, &regs);
   return regs.r[5];
 }
 
-
-/*int ToolboxWritableField::getValue(char *buffer, int bufSize) {
+int ToolboxWritableField::getValue(char *buffer, int bufSize) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) buffer;
   regs.r[5] = bufSize;
   this->gadgetMethod(WritableField_GetValue, &regs);
-  return regs.r[5];
-}*/
-
-int ToolboxWritableField::getValue(char *buffer, int bufSize) {
-  _kernel_swi_regs regs;
-  regs.r[0] = 0; //getFlags(); //flags
-  regs.r[1] = getObjectId(); //windowId;
-  regs.r[2] = WritableField_GetValue;
-  regs.r[3] = getComponentId(); //gadgetId;
-  regs.r[4] = (int) buffer;
-  regs.r[5] = bufSize;
-  _kernel_swi(Toolbox_ObjectMiscOp, &regs, &regs);
   return regs.r[5];
 }
 
@@ -79,60 +44,4 @@ ToolboxWritableField& ToolboxWritableField::setFont(char *fontName, int width, i
   return *this;
 }
 
-ToolboxWritableField& ToolboxWritableField::gadgetMethod(int methodCode, _kernel_swi_regs *regs) {
-  _kernel_oserror *err = 0;
-//***********************
-  regs->r[0] = (int) getFlags();
-//***********************
-  regs->r[1] = this->getObjectId();
-  regs->r[2] = methodCode;
-  regs->r[3] = this->getComponentId();
-  err = _kernel_swi(Toolbox_ObjectMiscOp, regs, regs);
-  if (err != 0) {
-    ToolboxWritableField::setLastError(err, __LINE__ -2);
-  }
-  return *this;
-}
 
-ToolboxWritableField& ToolboxWritableField::setGadgetFlags(unsigned int flags) {
-  _kernel_swi_regs regs;
-  this->setFlags(0);
-  regs.r[4] = (int) flags;
-  this->gadgetMethod(Gadget_SetFlags, &regs);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::setHelpMessage(char *message) {
-  _kernel_swi_regs regs;
-  regs.r[4] = (int) message;
-  this->gadgetMethod(Gadget_SetHelpMessage, &regs);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::setFocus() {
-  _kernel_swi_regs regs;
-  this->gadgetMethod(Gadget_SetFocus, &regs);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::moveGadget(BBox *newBbox) {
-  _kernel_swi_regs regs;
-  regs.r[4] = (int) newBbox;
-  this->gadgetMethod(Gadget_MoveGadget, &regs);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::setComponentId(ComponentId gadgetId) {
-  this->ToolboxGadget::setComponentId(gadgetId);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::setFlags(unsigned int flags) {
-  this->ToolboxGadget::setFlags(flags);
-  return *this;
-}
-
-ToolboxWritableField& ToolboxWritableField::setObjectId(ObjectId windowId) {
-  this->ToolboxGadget::setObjectId(windowId);
-  return *this;
-}
