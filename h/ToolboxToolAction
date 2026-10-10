@@ -16,6 +16,19 @@ typedef struct {
   int                new_state;
 } ToolActionSelectionEvent;
 
+typedef struct {
+  char *off_text;
+  int off_text_limit;
+  char *on_text;
+  int on_text_limit;
+  int click_action;
+  char *select_show;
+  int adjust_action;
+  char *adjust_show;
+  char *fade_text;
+  int fade_text_limit;
+} ToolAction;
+
 class ToolboxToolAction : public ToolboxGadget {
   public:
 
