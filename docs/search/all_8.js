@@ -13,8 +13,8 @@ var searchData=
   ['hasvscrollbar_10',['hasVScrollBar',['../union_window_flags.html#a5452aa7b2efb62698dddfa1551bc0b5a',1,'WindowFlags']]],
   ['hdr_11',['hdr',['../struct_toolbox_scroll_list_1_1_scroll_list_selection_event.html#ae4d2bfa89cca3b7a9a05b322f0a2006c',1,'ToolboxScrollList::ScrollListSelectionEvent::hdr'],['../struct_tool_action_selection_event.html#a31518aa68d56629ce8897e1d5970c440',1,'ToolActionSelectionEvent::hdr']]],
   ['height_12',['height',['../structsprite__header.html#a4d72ca35b7a4c8daf8c977beb6ef2b8e',1,'sprite_header::height'],['../structsprite__info.html#a2083da83c773b4986949000f7741922b',1,'sprite_info::height'],['../struct_sprite_area_obj_1_1sprite_info__t.html#adb518f049809b72b34563f25533cb121',1,'SpriteAreaObj::spriteInfo_t::height'],['../struct_wind_def_str.html#a08e63ceae4f54104b3e327fc8f999f77',1,'WindDefStr::height']]],
-  ['hidenoneavailable_13',['hideNoneAvailable',['../class_toolbox_colour_dlog_obj.html#a6eecd53a69e1fadaf435dffb3c098484',1,'ToolboxColourDlogObj']]],
+  ['hidenoneavailable_13',['hideNoneAvailable',['../class_toolbox_colour_dbox_obj.html#aa1249e64b95578bb9a8a840b017471c8',1,'ToolboxColourDboxObj']]],
   ['hideobject_14',['hideObject',['../class_toolbox_core_obj.html#a0e112af0b641cc72f052bb2b3ba2685d',1,'ToolboxCoreObj::hideObject()'],['../class_toolbox_obj.html#a3be39b30aa9a184b534fbad3f4bf9555',1,'ToolboxObj::hideObject()']]],
   ['hidetab_15',['hideTab',['../class_toolbox_tabs.html#a7d3f874066b78e41e3899d06977d1e47',1,'ToolboxTabs']]],
-  ['hsv_16',['HSV',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bda0c0450e4a68317ea3ceec3d347e426f2',1,'ToolboxColourDlogObj']]]
+  ['hsv_16',['HSV',['../class_toolbox_colour_dbox_obj.html#ab36790221aa808e3c7bed8ffb1c7ce49a5ecbc904f2804efff1add9cc06ad270f',1,'ToolboxColourDboxObj']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hsv_0',['HSV',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bda0c0450e4a68317ea3ceec3d347e426f2',1,'ToolboxColourDlogObj']]]
+  ['hsv_0',['HSV',['../class_toolbox_colour_dbox_obj.html#ab36790221aa808e3c7bed8ffb1c7ce49a5ecbc904f2804efff1add9cc06ad270f',1,'ToolboxColourDboxObj']]]
 ];

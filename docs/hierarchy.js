@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "Box", "struct_box.html", null ],
-    [ "ToolboxColourDlogObj::ColourBlockHdr", "struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr.html", null ],
+    [ "ToolboxColourDboxObj::ColourBlockHdr", "struct_toolbox_colour_dbox_obj_1_1_colour_block_hdr.html", null ],
     [ "Constants", "class_constants.html", null ],
     [ "ErrorReport", "class_error_report.html", [
       [ "OS", "class_o_s.html", null ],
@@ -28,15 +28,15 @@ var hierarchy =
         [ "ToolboxWritableField", "class_toolbox_writable_field.html", null ]
       ] ],
       [ "ToolboxObj", "class_toolbox_obj.html", [
-        [ "ToolboxColourDlogObj", "class_toolbox_colour_dlog_obj.html", null ],
+        [ "ToolboxColourDboxObj", "class_toolbox_colour_dbox_obj.html", null ],
         [ "ToolboxColourMenuObj", "class_toolbox_colour_menu_obj.html", null ],
         [ "ToolboxDCSObj", "class_toolbox_d_c_s_obj.html", null ],
-        [ "ToolboxFileInfoDlogObj", "class_toolbox_file_info_dlog_obj.html", null ],
-        [ "ToolboxFontDlogObj", "class_toolbox_font_dlog_obj.html", null ],
+        [ "ToolboxFileInfoObj", "class_toolbox_file_info_obj.html", null ],
+        [ "ToolboxFontDboxObj", "class_toolbox_font_dbox_obj.html", null ],
         [ "ToolboxFontMenuObj", "class_toolbox_font_menu_obj.html", null ],
         [ "ToolboxIconbarObj", "class_toolbox_iconbar_obj.html", null ],
         [ "ToolboxMenuObj", "class_toolbox_menu_obj.html", null ],
-        [ "ToolboxPrintDlogObj", "class_toolbox_print_dlog_obj.html", null ],
+        [ "ToolboxPrintDboxObj", "class_toolbox_print_dbox_obj.html", null ],
         [ "ToolboxProgInfoObj", "class_toolbox_prog_info_obj.html", null ],
         [ "ToolboxQuitObj", "class_toolbox_quit_obj.html", null ],
         [ "ToolboxSaveAsObj", "class_toolbox_save_as_obj.html", null ],

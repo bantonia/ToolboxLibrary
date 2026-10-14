@@ -1,0 +1,27 @@
+var class_toolbox_print_dbox_obj =
+[
+    [ "ToolboxPrintDboxObj", "class_toolbox_print_dbox_obj.html#a7a2da49ed6074f8720beb331b18fab42", null ],
+    [ "ToolboxPrintDboxObj", "class_toolbox_print_dbox_obj.html#aba0c3e5ee1d643b31367b8545624792a", null ],
+    [ "ToolboxPrintDboxObj", "class_toolbox_print_dbox_obj.html#a61b626025acc4a27acf033c22b1e5efb", null ],
+    [ "clearFlags", "class_toolbox_print_dbox_obj.html#abc3f38e03a5e88e8fb863b9d65d24b12", null ],
+    [ "getClassName", "class_toolbox_print_dbox_obj.html#ab59f1a9400a7d80d5541678f033af94f", null ],
+    [ "getClassType", "class_toolbox_print_dbox_obj.html#a6020693d55b83c82a476f21c9677e57d", null ],
+    [ "getCopies", "class_toolbox_print_dbox_obj.html#aef2bfad9d1006b74a6eee4481f7df47b", null ],
+    [ "getDraft", "class_toolbox_print_dbox_obj.html#a546bc7467f8d73605f1c4d4ca6f30890", null ],
+    [ "getOrientation", "class_toolbox_print_dbox_obj.html#a48cd2badb75537f1e3ecacc358ac62ec", null ],
+    [ "getPageRange", "class_toolbox_print_dbox_obj.html#aa505fd958d95ed72f25b00044373614b", null ],
+    [ "getPageRangeEnd", "class_toolbox_print_dbox_obj.html#a79506b5ac1b3380a5dc2593f8f84e524", null ],
+    [ "getPageRangeStart", "class_toolbox_print_dbox_obj.html#a1560a0a116f046ecec9f3a8db55b35f7", null ],
+    [ "getScale", "class_toolbox_print_dbox_obj.html#afc5a6ed3aefa6c6c23b7e257b77c34d7", null ],
+    [ "getTitle", "class_toolbox_print_dbox_obj.html#a5a543826f1aba29e9bd1cd4f84e11f1d", null ],
+    [ "getTitle", "class_toolbox_print_dbox_obj.html#a3430ecb4215e0033a5d4c83c75bd08d8", null ],
+    [ "getWindowId", "class_toolbox_print_dbox_obj.html#a2db7c78ae25dd9794f219b3d33e0f0f1", null ],
+    [ "setCopies", "class_toolbox_print_dbox_obj.html#a2af766168438edb2b7e425d701d732df", null ],
+    [ "setDraft", "class_toolbox_print_dbox_obj.html#a18efa4bdd40832e21647f6f75f0cb216", null ],
+    [ "setFlags", "class_toolbox_print_dbox_obj.html#a7a11c7c9982d862b1f1ec4738a835e8e", null ],
+    [ "setObjectId", "class_toolbox_print_dbox_obj.html#a178cca57566a0dbf99f06023aa574482", null ],
+    [ "setOrientation", "class_toolbox_print_dbox_obj.html#aa0efbb91664bfa4f7a029dd704476d9c", null ],
+    [ "setPageRange", "class_toolbox_print_dbox_obj.html#a1cd838e98aca4388f76049e92a703676", null ],
+    [ "setScale", "class_toolbox_print_dbox_obj.html#ac6901039139bf042a5d9a8a20e99dbf9", null ],
+    [ "showProperties", "class_toolbox_print_dbox_obj.html#a02e6554f7f95aa0139e3b23357aeb9eb", null ]
+];

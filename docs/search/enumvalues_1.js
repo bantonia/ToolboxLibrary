@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cmyk_0',['CMYK',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bda90dfdc56e85a4d15f4b1bc73d6b58e15',1,'ToolboxColourDlogObj']]],
+  ['cmyk_0',['CMYK',['../class_toolbox_colour_dbox_obj.html#ab36790221aa808e3c7bed8ffb1c7ce49adc972d09a4d364386acb29f5b59b6368',1,'ToolboxColourDboxObj']]],
   ['colourdboxabouttobeshown_1',['ColourDboxAboutToBeShown',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aab642dd38bed66f95391262e0ff367c1a',1,'ToolboxEvents']]],
   ['colourdboxcolourselected_2',['ColourDboxColourSelected',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aa7160e4239dc3772606130acd21f2d8cb',1,'ToolboxEvents']]],
   ['colourdboxdialoguecompleted_3',['ColourDboxDialogueCompleted',['../class_toolbox_events.html#a6f76eaa7ac0f5e0dde071574270f3f1aae38267396135046d2d2ac1799a6195cc',1,'ToolboxEvents']]],

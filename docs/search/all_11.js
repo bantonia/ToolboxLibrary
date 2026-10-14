@@ -13,8 +13,8 @@ var searchData=
   ['readobjectid_10',['readObjectId',['../class_toolbox_obj.html#a6d44d00c3d60458bc2c85967b2e11e65',1,'ToolboxObj']]],
   ['readpalette_11',['readPalette',['../class_colour_trans_obj.html#a7dcd0d5918ae151e1af73cbc693bcd7e',1,'ColourTransObj::readPalette(int, void *, void *, int &amp;, int)'],['../class_colour_trans_obj.html#a42b3e287eea8afdc91257c7e79c3a035',1,'ColourTransObj::readPalette(sprite_area *, char *, void *, int &amp;, int)']]],
   ['readparentobjectid_12',['readParentObjectId',['../class_toolbox_obj.html#a78b11e2bfba37301ab50910117beb364',1,'ToolboxObj']]],
-  ['readwimphandle_13',['readWimpHandle',['../class_toolbox_colour_dlog_obj.html#ac31b05e8a8f1414c5913a20a88d19330',1,'ToolboxColourDlogObj::readWimpHandle()'],['../class_toolbox_window_obj.html#a2eac52a9ad1a5b5f87b1e94720178af4',1,'ToolboxWindowObj::readWimpHandle()']]],
-  ['red_14',['red',['../union_wimp_palette_word.html#aa39ef484af37a344c50c5564665c5bcb',1,'WimpPaletteWord::red'],['../struct_toolbox_colour_dlog_obj_1_1_colour_block_hdr.html#a496a28ae140a6e34fc8329df4eab4a60',1,'ToolboxColourDlogObj::ColourBlockHdr::red']]],
+  ['readwimphandle_13',['readWimpHandle',['../class_toolbox_colour_dbox_obj.html#a5c768d24b47ad7fea68c1bfc6b503e9b',1,'ToolboxColourDboxObj::readWimpHandle()'],['../class_toolbox_window_obj.html#a2eac52a9ad1a5b5f87b1e94720178af4',1,'ToolboxWindowObj::readWimpHandle()']]],
+  ['red_14',['red',['../union_wimp_palette_word.html#aa39ef484af37a344c50c5564665c5bcb',1,'WimpPaletteWord::red'],['../struct_toolbox_colour_dbox_obj_1_1_colour_block_hdr.html#ab659632a5324c4f8954de8b7c5059dcd',1,'ToolboxColourDboxObj::ColourBlockHdr::red']]],
   ['redrawiconbar_15',['redrawIconBar',['../class_wimp_obj.html#a6232cc8a58aae879ce351c29ea8ef473',1,'WimpObj']]],
   ['redrawscreen_16',['redrawScreen',['../class_wimp_obj.html#a4f21fd4f35e3c5a7a5ae8d5c5ba3bc87',1,'WimpObj']]],
   ['redrawtitle_17',['redrawTitle',['../class_wimp_window_obj.html#a5ca6be61cf26620900d9b6ced347b17a',1,'WimpWindowObj']]],
@@ -46,7 +46,7 @@ var searchData=
   ['returnoppcolournumber_43',['returnOppColourNumber',['../class_colour_trans_obj.html#adf1e427351b096bc3989a66c0fc2be5b',1,'ColourTransObj']]],
   ['returnoppgcol_44',['returnOppGCOL',['../class_colour_trans_obj.html#af1c7cf33b759cd334d729b750f733495',1,'ColourTransObj']]],
   ['returnoppgcolformode_45',['returnOppGCOLForMode',['../class_colour_trans_obj.html#ad62e0354684be7699d6e47dbce57a532',1,'ColourTransObj']]],
-  ['rgb_46',['RGB',['../class_toolbox_colour_dlog_obj.html#a9f2eae24b797a12eaf359a62957e92bdaa5cd87ecac238d6f44938b835ae1bfe2',1,'ToolboxColourDlogObj']]],
+  ['rgb_46',['RGB',['../class_toolbox_colour_dbox_obj.html#ab36790221aa808e3c7bed8ffb1c7ce49a4e6d9df81e338e73f8c5644e53ba8fb8',1,'ToolboxColourDboxObj']]],
   ['run_47',['run',['../class_wimp_obj.html#adfd766abe341615b863633e6e8a1eaa4',1,'WimpObj']]],
   ['runidle_48',['runIdle',['../class_wimp_obj.html#a1d063958e1a8bccca1a4101c1e582e7f',1,'WimpObj']]]
 ];

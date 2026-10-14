@@ -596,11 +596,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> Application::colourDboxObjectAutoCreated() {</div>
 <div class="line">  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) this-&gt;getPollBlock();</div>
 <div class="line">  <span class="keywordflow">if</span> (strcmp(pollEvent-&gt;template_name, <span class="stringliteral">&quot;ColourDbox&quot;</span>) == 0) {</div>
-<div class="line">    dbox = <span class="keyword">new</span> <a class="code hl_class" href="class_toolbox_colour_dlog_obj.html">ToolboxColourDlogObj</a>();</div>
+<div class="line">    dbox = <span class="keyword">new</span> ToolboxColourDlogObj();</div>
 <div class="line">    dbox-&gt;setFlags(0).setObjectId(<a class="code hl_variable" href="class_toolbox_core_obj.html#add90b197a7f3bce37b7b1e2ce49ca4d7">ToolboxCoreObj::idBlock</a>.self_id);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_toolbox_colour_dlog_obj_html"><div class="ttname"><a href="class_toolbox_colour_dlog_obj.html">ToolboxColourDlogObj</a></div><div class="ttdef"><b>Definition</b> ToolboxColourDlogObj.h:14</div></div>
 <div class="ttc" id="aclass_toolbox_core_obj_html_add90b197a7f3bce37b7b1e2ce49ca4d7"><div class="ttname"><a href="class_toolbox_core_obj.html#add90b197a7f3bce37b7b1e2ce49ca4d7">ToolboxCoreObj::idBlock</a></div><div class="ttdeci">static IdBlock idBlock</div><div class="ttdef"><b>Definition</b> ToolboxCoreObj.h:56</div></div>
 </div><!-- fragment --> 
 </div>

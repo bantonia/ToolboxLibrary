@@ -45,8 +45,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_toolbox_display_field.html#a451a9fc3fb4e082338961ef6e06c30e8",
-"class_toolbox_file_info_dlog_obj.html#a998ce24cd7976091db966808889b6a23",
-"class_toolbox_print_dlog_obj.html#a584d9e9197c98ef0f930e1a7828dcb06",
+"class_toolbox_file_info_obj.html#adcb3092745f5e1eafb2ec7b4b5080041",
+"class_toolbox_print_dbox_obj.html#a48cd2badb75537f1e3ecacc358ac62ec",
 "class_toolbox_tool_action.html#a1a2756cb3971f990efac2322489204e2",
 "functions_vars_b.html",
 "union_wimp_palette_word.html"
