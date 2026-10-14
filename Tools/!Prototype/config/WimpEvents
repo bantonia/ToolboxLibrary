@@ -6,7 +6,7 @@
 #
 # End of file must not end on an empty line.
 #
-# Format: Option button text, Event number (exclude 0, except Wimp_ENull), Event handler, Cast, Header file to include, Ticked, Faded
+# Format: Menu text, Event number (exclude 0, except Wimp_ENull), Event handler, Cast, Header file to include, Ticked, Faded
 #
 Wimp_ENull,0,nullReason,,,0,0
 Wimp_ERedrawWindow,1,redrawWindowRequest,WimpRedrawWindowRequestEvent,,0,0

@@ -12,7 +12,7 @@
 # The list of events can be rearranged to suit your style of programming, ie you can bring those used most nearer to the
 # beginning if the list 
 #
-# Format: Display text, Event number (exclude 0, not a Toolbox event number), Event handler, Cast, Header file to include, Ticked, Faded
+# Format: Menu text, Event number (exclude 0, not a Toolbox event number), Event handler, Cast, Header file to include, Ticked, Faded
 #
 # General Toolbox events
 ToolboxError,0x44ec0,toolboxError,ToolboxErrorEvent,,0,0
@@ -43,13 +43,13 @@ ColourMenuAboutToBeShown,0x82980,colourMenuAboutToBeShown,ColourMenuAboutToBeSho
 ColourMenuHasBeenHidden,0x82981,colourMenuHasBeenHidden,ColourMenuHasBeenHiddenEvent,ToolboxColourMenuObj.h,0,0
 ColourMenuSelection,0x82982,colourMenuSelection,ColourMenuSelectionEvent,ToolboxColourMenuObj.h,0,0
 # ColourDbox
-ColourDboxAboutToBeShown,0x829c0,colourDboxAboutToBeShown,ColourDboxAboutToBeShownEvent,ToolboxColourDlogObj.h,0,0
-ColourDboxDialogueCompleted,0x829c1,colourDboxDialogueCompleted,ColourDboxDialogueCompletedEvent,ToolboxColourDlogObj.h,0,0
-ColourDboxColourSelected,0x829c2,colourDboxColourSelected,ColourDboxColourSelectedEvent,ToolboxColourDlogObj.h,0,0
+ColourDboxAboutToBeShown,0x829c0,colourDboxAboutToBeShown,ColourDboxAboutToBeShownEvent,ToolboxColourDboxObj.h,0,0
+ColourDboxDialogueCompleted,0x829c1,colourDboxDialogueCompleted,ColourDboxDialogueCompletedEvent,ToolboxColourDboxObj.h,0,0
+ColourDboxColourSelected,0x829c2,colourDboxColourSelected,ColourDboxColourSelectedEvent,ToolboxColourDboxObj.h,0,0
 # FontDbox
-FontDboxAboutToBeShown,0x82a00,fontDboxAboutToBeShown,FontDboxAboutToBeShownEvent,ToolboxFontDlogObj.h,0,0
-FontDboxDialogueCompleted,0x82a01,fontDboxDialogueCompleted,FontDboxDialogueCompletedEvent,ToolboxFontDlogObj.h,0,0
-FontDboxApplyFont,0x82a02,fontDboxApplyFont,FontDboxApplyFontEvent,ToolboxFontDlogObj.h,0,0
+FontDboxAboutToBeShown,0x82a00,fontDboxAboutToBeShown,FontDboxAboutToBeShownEvent,ToolboxFontDboxObj.h,0,0
+FontDboxDialogueCompleted,0x82a01,fontDboxDialogueCompleted,FontDboxDialogueCompletedEvent,ToolboxFontDboxObj.h,0,0
+FontDboxApplyFont,0x82a02,fontDboxApplyFont,FontDboxApplyFontEvent,ToolboxFontDboxObj.h,0,0
 # FontMenu
 FontMenuAboutToBeShown,0x82a40,fontMenuAboutToBeShown,FontMenuAboutToBeShownEvent,ToolboxFontMenuObj.h,0,0
 FontMenuHasBeenHidden,0x82a41,fontMenuHasBeenHidden,FontMenuHasBeenHiddenEvent,ToolboxFontMenuObj.h,0,0
@@ -66,15 +66,15 @@ QuitQuit,0x82a91,quitQuit,QuitQuitEvent,ToolboxQuitObj.h,0,0
 QuitDialogueCompleted,0x82a92,quitDialogueCompleted,QuitDialogueCompletedEvent,ToolboxQuitObj.h,0,0
 QuitCancel,0x82a93,quitCancel,QuitCancelEvent,ToolboxQuitObj.h,0,0
 # FileInfo
-FileInfoAboutToBeShown,0x82ac0,fileInfoAboutToBeShown,FileInfoAboutToBeShownEvent,ToolboxFileInfoDlogObj.h,0,0
-FileInfoDialogueCompleted,0x82ac1,fileInfoDialogueCompleted,FileInfoDialogueCompletedEvent,ToolboxFileInfoDlogObj.h,0,0
+FileInfoAboutToBeShown,0x82ac0,fileInfoAboutToBeShown,FileInfoAboutToBeShownEvent,ToolboxFileInfoObj.h,0,0
+FileInfoDialogueCompleted,0x82ac1,fileInfoDialogueCompleted,FileInfoDialogueCompletedEvent,ToolboxFileInfoObj.h,0,0
 # PrintDbox
-PrintDboxAboutToBeShown,0x82b00,printDboxAboutToBeShown,PrintDboxAboutToBeShownEvent,ToolboxPrintDlogObj.h,0,0
-PrintDboxDialogueCompleted,0x82b01,printDboxDialogueCompleted,PrintDboxDialogueCompletedEvent,ToolboxPrintDlogObj.h,0,0
-PrintDboxSetUpAboutToBeShown,0x82b02,printDboxSetUpAboutToBeShown,PrintDboxSetUpAboutToBeShownEvent,ToolboxPrintDlogObj.h,0,0
-PrintDboxSave,0x82b03,printDboxSave,PrintDboxSaveEvent,ToolboxPrintDlogObj.h,0,0
-PrintDboxSetUp,0x82b04,printDboxSetUp,PrintDboxSetUpEvent,ToolboxPrintDlogObj.h,0,0
-PrintDboxPrint,0x82b05,printDboxPrint,PrintDboxPrintEvent,ToolboxPrintDlogObj.h,0,0
+PrintDboxAboutToBeShown,0x82b00,printDboxAboutToBeShown,PrintDboxAboutToBeShownEvent,ToolboxPrintDboxObj.h,0,0
+PrintDboxDialogueCompleted,0x82b01,printDboxDialogueCompleted,PrintDboxDialogueCompletedEvent,ToolboxPrintDboxObj.h,0,0
+PrintDboxSetUpAboutToBeShown,0x82b02,printDboxSetUpAboutToBeShown,PrintDboxSetUpAboutToBeShownEvent,ToolboxPrintDboxObj.h,0,0
+PrintDboxSave,0x82b03,printDboxSave,PrintDboxSaveEvent,ToolboxPrintDboxObj.h,0,0
+PrintDboxSetUp,0x82b04,printDboxSetUp,PrintDboxSetUpEvent,ToolboxPrintDboxObj.h,0,0
+PrintDboxPrint,0x82b05,printDboxPrint,PrintDboxPrintEvent,ToolboxPrintDboxObj.h,0,0
 # ProgInfo
 ProgInfoAboutToBeShown,0x82b40,progInfoAboutToBeShown,ProgInfoAboutToBeShownEvent,ToolboxProgInfoObj.h,0,0
 ProgInfoDialogueCompleted,0x82b41,progInfoDialogueCompleted,ProgInfoDialogueCompletedEvent,ToolboxProgInfoObj.h,0,0
