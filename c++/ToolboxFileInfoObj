@@ -1,22 +1,22 @@
 #include "kernel.h"
-#include "ToolboxFileInfoDlogObj.h"
+#include "ToolboxFileInfoObj.h"
 
-ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj() {}
+ToolboxFileInfoObj::ToolboxFileInfoObj() {}
 
-ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+ToolboxFileInfoObj::ToolboxFileInfoObj(ObjectId objectId) : ToolboxObj(objectId) {}
 
-ToolboxFileInfoDlogObj::ToolboxFileInfoDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
+ToolboxFileInfoObj::ToolboxFileInfoObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
-ToolboxFileInfoDlogObj::~ToolboxFileInfoDlogObj() {}
+ToolboxFileInfoObj::~ToolboxFileInfoObj() {}
 
-int ToolboxFileInfoDlogObj::getWindowId() {
+int ToolboxFileInfoObj::getWindowId() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetWindowId;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setModified() {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setModified() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetModified;
   regs.r[3] = 1;
@@ -24,7 +24,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setModified() {
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setModified(int modified) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setModified(int modified) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetModified;
   regs.r[3] = modified;
@@ -32,7 +32,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setModified(int modified) {
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setNotModified() {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setNotModified() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetModified;
   regs.r[3] = 0;
@@ -40,14 +40,14 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setNotModified() {
   return *this;
 }
 
-int ToolboxFileInfoDlogObj::isModified() {
+int ToolboxFileInfoObj::isModified() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetModified;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileType(int fileType) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileType(int fileType) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetFileType;
   regs.r[3] = fileType;
@@ -55,14 +55,14 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileType(int fileType) {
   return *this;
 }
 
-int ToolboxFileInfoDlogObj::getFileType() {
+int ToolboxFileInfoObj::getFileType() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetFileType;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileName(char *fileName) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileName(char *fileName) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetFileName;
   regs.r[3] = (int) fileName;
@@ -70,7 +70,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileName(char *fileName) {
   return *this;
 }
 
-int ToolboxFileInfoDlogObj::getFileName() {
+int ToolboxFileInfoObj::getFileName() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetFileName;
   regs.r[3] = 0;
@@ -78,7 +78,7 @@ int ToolboxFileInfoDlogObj::getFileName() {
   return regs.r[4];
 }
 
-int ToolboxFileInfoDlogObj::getFileName(char *fileNameBuffer, int bufSize) {
+int ToolboxFileInfoObj::getFileName(char *fileNameBuffer, int bufSize) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetFileName;
   regs.r[3] = (int) fileNameBuffer;
@@ -87,7 +87,7 @@ int ToolboxFileInfoDlogObj::getFileName(char *fileNameBuffer, int bufSize) {
   return regs.r[4];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileSize(int fileSize) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFileSize(int fileSize) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetFileSize;
   regs.r[3] = fileSize;
@@ -95,14 +95,14 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFileSize(int fileSize) {
   return *this;
 }
 
-int ToolboxFileInfoDlogObj::getFileSize() {
+int ToolboxFileInfoObj::getFileSize() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetFileSize;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setDate(int *UTC) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setDate(int *UTC) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetDate;
   regs.r[3] = (int) UTC;
@@ -110,7 +110,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setDate(int *UTC) {
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::getDate(int *UTC) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::getDate(int *UTC) {
  _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetDate;
   regs.r[3] = (int) UTC;
@@ -118,7 +118,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::getDate(int *UTC) {
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setTitle(char *title) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setTitle(char *title) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_SetTitle;
   regs.r[3] = (int) title;
@@ -126,7 +126,7 @@ ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setTitle(char *title) {
   return *this;
 }
 
-int ToolboxFileInfoDlogObj::getTitleSize() {
+int ToolboxFileInfoObj::getTitleSize() {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetTitle;
   regs.r[3] = 0;
@@ -134,7 +134,7 @@ int ToolboxFileInfoDlogObj::getTitleSize() {
   return regs.r[4];
 }
 
-int ToolboxFileInfoDlogObj::getTitle(char *titleBuffer, int bufSize) {
+int ToolboxFileInfoObj::getTitle(char *titleBuffer, int bufSize) {
   _kernel_swi_regs regs;
   regs.r[2] = FileInfo_GetTitle;
   regs.r[3] = (int) titleBuffer;
@@ -143,17 +143,17 @@ int ToolboxFileInfoDlogObj::getTitle(char *titleBuffer, int bufSize) {
   return regs.r[4];
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setObjectId(ObjectId objectId) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setObjectId(ObjectId objectId) {
   this->ToolboxObj::setObjectId(objectId);
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::setFlags(unsigned int flags) {
+ToolboxFileInfoObj& ToolboxFileInfoObj::setFlags(unsigned int flags) {
   this->ToolboxObj::setFlags(flags);
   return *this;
 }
 
-ToolboxFileInfoDlogObj& ToolboxFileInfoDlogObj::clearFlags() {
+ToolboxFileInfoObj& ToolboxFileInfoObj::clearFlags() {
   this->ToolboxObj::clearFlags();
   return *this;
 }

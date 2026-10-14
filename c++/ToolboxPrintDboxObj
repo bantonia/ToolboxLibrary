@@ -1,17 +1,17 @@
-#include "ToolboxPrintDlogObj.h"
+#include "ToolboxPrintDboxObj.h"
 
-ToolboxPrintDlogObj::ToolboxPrintDlogObj(ObjectId objectId) : ToolboxObj(objectId) {}
+ToolboxPrintDboxObj::ToolboxPrintDboxObj(ObjectId objectId) : ToolboxObj(objectId) {}
 
-ToolboxPrintDlogObj::ToolboxPrintDlogObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
+ToolboxPrintDboxObj::ToolboxPrintDboxObj(IdBlock *idBlock) : ToolboxObj(idBlock) {}
 
-ObjectId ToolboxPrintDlogObj::getWindowId() {
+ObjectId ToolboxPrintDboxObj::getWindowId() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetWindowId;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setPageRange(int start, int end) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setPageRange(int start, int end) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_SetPageRange;
   regs.r[3] = start;
@@ -20,7 +20,7 @@ ToolboxPrintDlogObj& ToolboxPrintDlogObj::setPageRange(int start, int end) {
   return *this;
 }
 
-void ToolboxPrintDlogObj::getPageRange(int *start, int *end) {
+void ToolboxPrintDboxObj::getPageRange(int *start, int *end) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetPageRange;
   this->objectMiscOp(&regs);
@@ -28,19 +28,19 @@ void ToolboxPrintDlogObj::getPageRange(int *start, int *end) {
   *end = regs.r[1];
 }
 
-int ToolboxPrintDlogObj::getPageRangeStart() {
+int ToolboxPrintDboxObj::getPageRangeStart() {
   int start, end;
   getPageRange(&start, &end);
   return start;
 }
 
-int ToolboxPrintDlogObj::getPageRangeEnd() {
+int ToolboxPrintDboxObj::getPageRangeEnd() {
   int start, end;
   getPageRange(&start, &end);
   return end;
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setCopies(int copies) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setCopies(int copies) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_SetCopies;
   regs.r[3] = copies;
@@ -48,14 +48,14 @@ ToolboxPrintDlogObj& ToolboxPrintDlogObj::setCopies(int copies) {
   return *this;
 }
 
-int ToolboxPrintDlogObj::getCopies() {
+int ToolboxPrintDboxObj::getCopies() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetCopies;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setScale(int scaleFactor) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setScale(int scaleFactor) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_SetScale;
   regs.r[3] = scaleFactor;
@@ -63,14 +63,14 @@ ToolboxPrintDlogObj& ToolboxPrintDlogObj::setScale(int scaleFactor) {
   return *this;
 }
 
-int ToolboxPrintDlogObj::getScale() {
+int ToolboxPrintDboxObj::getScale() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetScale;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setOrientation(int orientation) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setOrientation(int orientation) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_SetOrientation;
   regs.r[3] = orientation;
@@ -78,14 +78,14 @@ ToolboxPrintDlogObj& ToolboxPrintDlogObj::setOrientation(int orientation) {
   return *this;
 }
 
-int ToolboxPrintDlogObj::getOrientation() {
+int ToolboxPrintDboxObj::getOrientation() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetOrientation;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-int ToolboxPrintDlogObj::getTitle() {
+int ToolboxPrintDboxObj::getTitle() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetTitle;
   regs.r[3] = 0;
@@ -93,7 +93,7 @@ int ToolboxPrintDlogObj::getTitle() {
   return regs.r[4];
 }
 
-int ToolboxPrintDlogObj::getTitle(char *buffer, int bufSize) {
+int ToolboxPrintDboxObj::getTitle(char *buffer, int bufSize) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetTitle;
   regs.r[3] = (int) buffer;
@@ -102,7 +102,7 @@ int ToolboxPrintDlogObj::getTitle(char *buffer, int bufSize) {
   return regs.r[4];
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setDraft(int draft) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setDraft(int draft) {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_SetDraft;
   regs.r[3] = draft;
@@ -110,24 +110,24 @@ ToolboxPrintDlogObj& ToolboxPrintDlogObj::setDraft(int draft) {
   return *this;
 }
 
-int ToolboxPrintDlogObj::getDraft() {
+int ToolboxPrintDboxObj::getDraft() {
   _kernel_swi_regs regs;
   regs.r[2] = PrintDbox_GetDraft;
   this->objectMiscOp(&regs);
   return regs.r[0];
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setObjectId(ObjectId objectId) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setObjectId(ObjectId objectId) {
   this->ToolboxObj::setObjectId(objectId);
   return *this;
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::setFlags(unsigned int flags) {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::setFlags(unsigned int flags) {
   this->ToolboxObj::setFlags(flags);
   return *this;
 }
 
-ToolboxPrintDlogObj& ToolboxPrintDlogObj::clearFlags() {
+ToolboxPrintDboxObj& ToolboxPrintDboxObj::clearFlags() {
   this->ToolboxObj::clearFlags();
   return *this;
 }

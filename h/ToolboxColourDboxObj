@@ -1,0 +1,65 @@
+#ifndef __cplusplus
+#error Header file "ToolboxColourDboxObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxColourDboxObj_h
+#define __ToolboxColourDboxObj_h
+
+#include "colourdbox.h"
+#include "ClassType.h"
+#include "ToolboxObj.h"
+
+class ToolboxColourDboxObj : public ToolboxObj {
+  public:
+
+    typedef struct {
+      union {
+        unsigned int w;
+        struct {
+          unsigned : 8;
+          unsigned blue : 8;
+          unsigned green : 8;
+          unsigned red : 8;
+        } b; 
+      } colour;
+      unsigned size;
+      unsigned model;
+    } ColourBlockHdr;
+
+    typedef enum {
+      RGB = 1,
+      CMYK,
+      HSV
+    } ColourModel;
+
+    ToolboxColourDboxObj();
+    ToolboxColourDboxObj(ObjectId id);
+    ToolboxColourDboxObj(IdBlock *idBlock);
+    ~ToolboxColourDboxObj(){};
+    int getWimpHandle();
+    int readWimpHandle();
+    int getDialogueHandle();
+    ToolboxColourDboxObj& setColour(int *colourBlock);
+    int getColourBlock();
+    int getColourBlock(int *colourBlock, int bufsize);
+    ToolboxColourDboxObj& setColourModel(int model);
+    ToolboxColourDboxObj& setColourModel(ToolboxColourDboxObj::ColourModel model);
+    ToolboxColourDboxObj& setColourModel(int *colourModelBlock);
+    int getColourModel();
+    int getColourModel(int *colourBlockModel, int bufSize);
+    ToolboxColourDboxObj& setNoneAvailable(int none);
+    ToolboxColourDboxObj& hideNoneAvailable();
+    ToolboxColourDboxObj& showNoneAvailable();
+    int isNoneAvailable();
+    ToolboxColourDboxObj& setObjectId(ObjectId objectId);
+    ToolboxColourDboxObj& setFlags(unsigned int flags);
+    ToolboxColourDboxObj& clearFlags();
+
+    void showProperties(){}
+    char* getClassName() { return "ToolboxColourDboxObj";}
+    int getClassType() { return ClassType_ToolboxColourDboxObj;}
+};
+
+#endif

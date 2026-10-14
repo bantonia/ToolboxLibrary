@@ -1,0 +1,42 @@
+#ifndef __cplusplus
+#error Header file "ToolboxFontDboxObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxFontDboxObj_h
+#define __ToolboxFontDboxObj_h
+
+#include "fontdbox.h"
+#include "ClassType.h"
+#include "ToolboxObj.h"
+
+class ToolboxFontDboxObj : public ToolboxObj {
+  public:
+    ToolboxFontDboxObj();
+    ToolboxFontDboxObj(ObjectId objectId);
+    ToolboxFontDboxObj(IdBlock *idBlock);
+    ~ToolboxFontDboxObj();
+    int getWindowId();
+    ToolboxFontDboxObj& clearFont();
+    ToolboxFontDboxObj& setFont(char *fontId);
+    int getFont();
+    int getFont(char *buffer, int bufSize);
+    ToolboxFontDboxObj& setSize(int height, int aspectRatio);
+    ToolboxFontDboxObj& getSize(int *height, int *aspectRatio);
+    ToolboxFontDboxObj& setTryString(char *tryString);
+    int getTryString();
+    int getTryString(char *tryStringBuffer, int bufSize);
+    ToolboxFontDboxObj& setTitle(char *title);
+    int getTitle();
+    int getTitle(char *titleBuffer, int bufSize);
+    ToolboxFontDboxObj& setObjectId(ObjectId objectId);
+    ToolboxFontDboxObj& setFlags(unsigned int flags);
+    ToolboxFontDboxObj& clearFlags();
+
+    void showProperties() {}
+    char* getClassName() { return "ToolboxFontDboxObj";}
+    int getClassType() { return ClassType_ToolboxFontDboxObj;}
+};
+
+#endif

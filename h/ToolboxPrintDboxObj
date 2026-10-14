@@ -1,0 +1,43 @@
+#ifndef __cplusplus
+#error Header file "ToolboxPrintDboxObj.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxPrintDboxObj_h
+#define __ToolboxPrintDboxObj_h
+
+#include "printdbox.h"
+#include "ClassType.h"
+#include "ToolboxObj.h"
+
+class ToolboxPrintDboxObj : public ToolboxObj {
+  public:
+    ToolboxPrintDboxObj(){};
+    ToolboxPrintDboxObj(ObjectId objectId);
+    ToolboxPrintDboxObj(IdBlock *idBlock);
+    ObjectId getWindowId();
+    ToolboxPrintDboxObj& setPageRange(int start, int end);
+    void getPageRange(int *start, int *end);
+    int getPageRangeStart();
+    int getPageRangeEnd();
+    ToolboxPrintDboxObj& setCopies(int copies);
+    int getCopies();
+    ToolboxPrintDboxObj& setScale(int scaleFactor);
+    int getScale();
+    ToolboxPrintDboxObj& setOrientation(int orientation);
+    int getOrientation();
+    int getTitle();
+    int getTitle(char *buffer, int bufSize);
+    ToolboxPrintDboxObj& setDraft(int draft);
+    int getDraft();
+    ToolboxPrintDboxObj& setObjectId(ObjectId objectId);
+    ToolboxPrintDboxObj& setFlags(unsigned int flags);
+    ToolboxPrintDboxObj& clearFlags();
+
+    void showProperties() {}
+    char* getClassName() { return "ToolboxPrintDboxObj";}
+    int getClassType() { return ClassType_ToolboxPrintDboxObj;}
+};
+
+#endif
