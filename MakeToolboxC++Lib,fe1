@@ -22,7 +22,7 @@ ModSqzflags = -o $@
         @.o.ToolboxQuitObj @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj \
         @.o.ToolboxScrollList @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask \
         @.o.ToolboxTextArea @.o.ToolboxToolAction @.o.ToolboxTreeView @.o.ToolboxWindowObj \
-        @.o.ToolboxWritableField 
+        @.o.ToolboxWritableField @.o.ToolboxLabelledBox 
         LibFile $(LibFileflags) @.o.ToolboxActionButton @.o.ToolboxAdjuster \
         @.o.ToolboxColourMenuObj @.o.ToolboxColourDboxObj @.o.ToolboxCoreObj @.o.ToolboxDCSObj \
         @.o.ToolboxDisplayField @.o.ToolboxDraggable @.o.ToolboxEventObj @.o.ToolboxFileInfoObj \
@@ -32,10 +32,11 @@ ModSqzflags = -o $@
         @.o.ToolboxQuitObj @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj \
         @.o.ToolboxScrollList @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask \
         @.o.ToolboxTextArea @.o.ToolboxToolAction @.o.ToolboxTreeView @.o.ToolboxWindowObj \
-        @.o.ToolboxWritableField 
+        @.o.ToolboxWritableField @.o.ToolboxLabelledBox 
 
 
 # User-editable dependencies:
+
 
 # Static dependencies:
 @.o.ToolboxActionButton:   @.c++.ToolboxActionButton
@@ -68,6 +69,8 @@ ModSqzflags = -o $@
         c++ $(c++flags) -o @.o.ToolboxIconbarObj @.c++.ToolboxIconbarObj 
 @.o.ToolboxLabel:   @.c++.ToolboxLabel
         c++ $(c++flags) -o @.o.ToolboxLabel @.c++.ToolboxLabel 
+@.o.ToolboxLabelledBox:   @.c++.ToolboxLabelledBox
+        c++ $(c++flags) -o @.o.ToolboxLabelledBox @.c++.ToolboxLabelledBox 
 @.o.ToolboxMenuObj:   @.c++.ToolboxMenuObj
         c++ $(c++flags) -o @.o.ToolboxMenuObj @.c++.ToolboxMenuObj 
 @.o.ToolboxNumberRange:   @.c++.ToolboxNumberRange
