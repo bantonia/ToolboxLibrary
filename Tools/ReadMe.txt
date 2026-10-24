@@ -17,3 +17,4 @@ Version 0.04, !Prototype generates the Wimp Mask according to the Wimp Event men
 Version 0.06, !Prototype can now select which resource support sources to not include in the final code, default is to generate all resource support code.
 Version 0.07, !Prototype now generates User Event entries in a case statement from the res file, an enum of entries have been added to the tasks header file. ToolAction gadgets are still not supported yet.
 Version 0.08, !Prototype now generates code to include ToolAction user events. Also a small fix to make sure a particular variable is initialised to zero.
+Version 0.09 !Prototype selects the Toolbox events associated with the objects in the resource file which has been dragged to the iconbar.
