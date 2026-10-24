@@ -13,8 +13,15 @@
 #include "Res_Iconbar.h"
 #include "Res_Menu.h"
 #include "Res_Window.h"
+#include "ToolboxWindowObj.h"
+#include "ToolboxMenuObj.h"
+#include "ToolboxIconbarObj.h"
 #include "ToolboxQuitObj.h"
+#include "ToolboxProgInfoObj.h"
 
+enum UserEvents {
+  Res_WindowShowEvent = 0x2
+};
 
 class MinProg2 : public ToolboxTask {
   public:
@@ -23,11 +30,24 @@ class MinProg2 : public ToolboxTask {
     void toolboxObjectAutoCreated(int objectClass);
     void toolboxUserEvent(int event);
     void toolboxEventHandler(int event);
-    void progInfoObjectAutoCreated();
-    void iconbarObjectAutoCreated();
-    void menuObjectAutoCreated();
     void windowObjectAutoCreated();
+    void menuObjectAutoCreated();
+    void iconbarObjectAutoCreated();
+    void progInfoObjectAutoCreated();
+    void windowAboutToBeShown();
+    void windowHasBeenHidden();
+    void menuAboutToBeShown();
+    void menuHasBeenHidden();
+    void menuSubMenu();
+    void menuSelection();
+    void iconbarClicked();
+    void iconbarSelectAboutToBeShown();
+    void iconbarAdjustAboutToBeShown();
     void quitQuit();
+    void progInfoAboutToBeShown();
+    void progInfoDialogueCompleted();
+    void progInfoLaunchWebPage();
+
   private:
     Res_ProgInfo *res_ProgInfo;
     Res_Iconbar *res_Iconbar;

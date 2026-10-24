@@ -70,8 +70,56 @@ void MinProg2::progInfoObjectAutoCreated() {
 
 void MinProg2::toolboxEventHandler(int event) {
   switch(event) {
+    case ToolboxEvents::WindowAboutToBeShown: {
+        windowAboutToBeShown();
+      }
+      break;
+    case ToolboxEvents::WindowHasBeenHidden: {
+        windowHasBeenHidden();
+      }
+      break;
+    case ToolboxEvents::MenuAboutToBeShown: {
+        menuAboutToBeShown();
+      }
+      break;
+    case ToolboxEvents::MenuHasBeenHidden: {
+        menuHasBeenHidden();
+      }
+      break;
+    case ToolboxEvents::MenuSubMenu: {
+        menuSubMenu();
+      }
+      break;
+    case ToolboxEvents::MenuSelection: {
+        menuSelection();
+      }
+      break;
+    case ToolboxEvents::IconbarClicked: {
+        iconbarClicked();
+      }
+      break;
+    case ToolboxEvents::IconbarSelectAboutToBeShown: {
+        iconbarSelectAboutToBeShown();
+      }
+      break;
+    case ToolboxEvents::IconbarAdjustAboutToBeShown: {
+        iconbarAdjustAboutToBeShown();
+      }
+      break;
     case ToolboxEvents::QuitQuit: {
         quitQuit();
+      }
+      break;
+    case ToolboxEvents::ProgInfoAboutToBeShown: {
+        progInfoAboutToBeShown();
+      }
+      break;
+    case ToolboxEvents::ProgInfoDialogueCompleted: {
+        progInfoDialogueCompleted();
+      }
+      break;
+    case ToolboxEvents::ProgInfoLaunchWebPage: {
+        progInfoLaunchWebPage();
       }
       break;
     default:
@@ -81,14 +129,77 @@ void MinProg2::toolboxEventHandler(int event) {
 
 void MinProg2::toolboxUserEvent(int event) {
   switch(event) {
+    case Res_WindowShowEvent:
+      //*****  Add your own code here
+      break;
     default:
       break;
   }
+}
+
+void MinProg2::windowAboutToBeShown() {
+  WindowAboutToBeShownEvent *pollEvent = (WindowAboutToBeShownEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::windowHasBeenHidden() {
+  WindowHasBeenHiddenEvent *pollEvent = (WindowHasBeenHiddenEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::menuAboutToBeShown() {
+  MenuAboutToBeShownEvent *pollEvent = (MenuAboutToBeShownEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::menuHasBeenHidden() {
+  MenuHasBeenHiddenEvent *pollEvent = (MenuHasBeenHiddenEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::menuSubMenu() {
+  MenuSubMenuEvent *pollEvent = (MenuSubMenuEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::menuSelection() {
+  MenuSelectionEvent *pollEvent = (MenuSelectionEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::iconbarClicked() {
+  IconbarClickedEvent *pollEvent = (IconbarClickedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::iconbarSelectAboutToBeShown() {
+  IconbarAboutToBeShownEvent *pollEvent = (IconbarAboutToBeShownEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::iconbarAdjustAboutToBeShown() {
+  IconbarAboutToBeShownEvent *pollEvent = (IconbarAboutToBeShownEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
 }
 
 void MinProg2::quitQuit() {
   QuitQuitEvent *pollEvent = (QuitQuitEvent *) getPollBlock();
   IdBlock *idBlock = &ToolboxCoreObj::idBlock;
   quit = 1;
+}
+
+void MinProg2::progInfoAboutToBeShown() {
+  ProgInfoAboutToBeShownEvent *pollEvent = (ProgInfoAboutToBeShownEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::progInfoDialogueCompleted() {
+  ProgInfoDialogueCompletedEvent *pollEvent = (ProgInfoDialogueCompletedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+}
+
+void MinProg2::progInfoLaunchWebPage() {
+  ProgInfoLaunchWebPageEvent *pollEvent = (ProgInfoLaunchWebPageEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
 }
 
