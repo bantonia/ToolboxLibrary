@@ -1,15 +1,31 @@
+#ifndef __cplusplus
+#error Header file "MinProg.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __MinProg_h
+#define __MinProg_h
+
+#include <string.h>
 #include "ToolboxTask.h"
+#include "Res_Menu.h"
+
+enum UserEvents {
+  Res_MenuMenuClick_1 = 0x1
+};
 
 class MinProg : public ToolboxTask {
   public:
-
-    typedef enum {
-      Quit         = 0x01
-    } userEvents;
-
+    MinProg();
+    ~MinProg();
+    void toolboxObjectAutoCreated(int objectClass);
+    void toolboxUserEvent(int event);
     void toolboxEventHandler(int event);
-    void toolboxUserEvent();
-    void toolboxObjectAutoCreated(int object_class);
+    void menuObjectAutoCreated();
 
-    void showProperties() {}
+  private:
+    Res_Menu *res_Menu;
 };
+
+#endif

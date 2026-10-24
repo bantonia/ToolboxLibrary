@@ -3,7 +3,7 @@
 
 # Toolflags:
 CCflags = -c -depend !Depend -IC: -throwback
-C++flags = -c -depend !Depend -IC: -throwback
+C++flags = -c +g -depend !Depend -IC: -throwback
 Linkflags = -aif -c++ -o $@
 ObjAsmflags = -throwback -NoCache -depend !Depend
 CMHGflags = 
@@ -16,21 +16,22 @@ ModSqzflags = -o $@
 @.!RunImage:   @.o.main @.o.MinProg \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs @.o.Res_Menu 
         Link $(Linkflags) @.o.main @.o.MinProg \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs @.o.Res_Menu 
 
 
 # User-editable dependencies:
-
 
 # Static dependencies:
 @.o.main:   @.c++.main
         c++ $(c++flags) -o @.o.main @.c++.main 
 @.o.MinProg:   @.c++.MinProg
         c++ $(c++flags) -o @.o.MinProg @.c++.MinProg 
+@.o.Res_Menu:   @.c++.Res_Menu
+        c++ $(c++flags) -o @.o.Res_Menu @.c++.Res_Menu 
 
 
 # Dynamic dependencies:
@@ -61,6 +62,38 @@ o.main:	C:h.kernel
 o.main:	C:h.Object
 o.main:	C:h.wimp
 o.main:	C:h.ClassType
+o.main:	h.Res_Menu
+o.main:	C:h.ToolboxMenuObj
+o.main:	C:h.menu
+o.main:	C:h.ClassType
+o.main:	C:h.ToolboxObj
+o.main:	C:h.Object
+o.main:	C:h.toolbox
+o.main:	C:h.ErrorReport
+o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
+o.Res_Menu:	c++.Res_Menu
+o.Res_Menu:	h.Res_Menu
+o.Res_Menu:	C:h.ToolboxMenuObj
+o.Res_Menu:	C:h.menu
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
+o.Res_Menu:	C:h.ToolboxObj
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.toolbox
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ClassType
+o.Res_Menu:	C:h.WimpObj
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.libc
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
 o.MinProg:	c++.MinProg
 o.MinProg:	h.MinProg
 o.MinProg:	C:h.ToolboxTask
@@ -88,3 +121,13 @@ o.MinProg:	C:h.kernel
 o.MinProg:	C:h.Object
 o.MinProg:	C:h.wimp
 o.MinProg:	C:h.ClassType
+o.MinProg:	h.Res_Menu
+o.MinProg:	C:h.ToolboxMenuObj
+o.MinProg:	C:h.menu
+o.MinProg:	C:h.ClassType
+o.MinProg:	C:h.ToolboxObj
+o.MinProg:	C:h.Object
+o.MinProg:	C:h.toolbox
+o.MinProg:	C:h.ErrorReport
+o.MinProg:	C:h.ClassType
+o.MinProg:	C:h.WimpObj

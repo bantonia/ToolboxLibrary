@@ -1,12 +1,23 @@
 #include "MinProg.h"
 
 int main() {
-  MinProg *tools = new MinProg();
-  tools->initTask("<MinProg$Dir>");
-  tools->setMask(256+1);
-  while (!tools->quit) {
-    tools->run();
+  MinProg *task = new MinProg();
+  task->initTask("<MinProg$Dir>");
+  task->setMask(Wimp_Poll_NullMask
+    | Wimp_Poll_RedrawWindowRequestMask
+    | Wimp_Poll_PointerLeavingWindowMask
+    | Wimp_Poll_PointerEnteringWindowMask
+    | Wimp_Poll_MouseClickMask
+    | Wimp_Poll_KeyPressedMask
+    | Wimp_Poll_LoseCaretMask
+    | Wimp_Poll_GainCaretMask
+    | Wimp_Poll_PollWordNonZeroMask
+    | Wimp_Poll_UserMessageMask
+    | Wimp_Poll_UserMessageRecordedMask
+    | Wimp_Poll_UserMessageAcknowledgeMask);
+  while (!task->quit)  {
+    task->run();
   }
+  delete task;
   return 0;
 }
-

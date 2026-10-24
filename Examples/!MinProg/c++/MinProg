@@ -1,21 +1,46 @@
 #include "MinProg.h"
 
-void MinProg::toolboxEventHandler(int event) {
-  event = event;
+MinProg::MinProg() : ToolboxTask(),
+  res_Menu(NULL) {}
+
+MinProg::~MinProg() {
+  if (res_Menu != NULL) delete res_Menu;
 }
 
-void MinProg::toolboxUserEvent() {
-  ToolboxEventHeader *tboxHdr = (ToolboxEventHeader *) this->getPollBlock();
-  switch(tboxHdr->event_code) {
-    case Quit: {
-        this->closeDown();
+void MinProg::toolboxObjectAutoCreated(int objectClass) {
+  switch(objectClass) {
+    case ToolboxEvents::MenuObjectClass: {
+        menuObjectAutoCreated();
       }
       break;
     default:
       break;
   }
 }
- 
-void MinProg::toolboxObjectAutoCreated(int object_class) {
-  object_class = object_class;
+
+void MinProg::menuObjectAutoCreated() {
+  ToolboxObjectAutoCreatedEvent *pollEvent = (ToolboxObjectAutoCreatedEvent *) getPollBlock();
+  IdBlock *idBlock = &ToolboxCoreObj::idBlock;
+  if (strcmp(pollEvent->template_name, "Menu") == 0) {
+    res_Menu = new Res_Menu(idBlock);
+  }
 }
+
+void MinProg::toolboxEventHandler(int event) {
+  switch(event) {
+    default:
+      break;
+  }
+}
+
+void MinProg::toolboxUserEvent(int event) {
+  switch(event) {
+    case Res_MenuMenuClick_1:
+      //*****  Add your own code here
+      quit = 1;
+      break;
+    default:
+      break;
+  }
+}
+
