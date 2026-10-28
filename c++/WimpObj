@@ -109,7 +109,8 @@ int WimpObj::runIdle() {
     switch(WimpObj::event) {
       case Wimp_ENull:
         nullReason();
-        /*if (idleInterval != 0) {
+#if 0
+        if (idleInterval != 0) {
             WimpObj::newTime = OS::readMonotonicTime();
             if (newTime < oldTime) {
             // MonotonicTime has been wrapped
@@ -119,7 +120,8 @@ int WimpObj::runIdle() {
               WimpObj::oldTime += WimpObj::idleInterval;
             }
             WimpObj::earliest = WimpObj::oldTime;
-          }*/
+          }
+#endif
         break;
       case Wimp_ERedrawWindow:
         redrawWindowRequest();
@@ -422,7 +424,8 @@ WimpRedrawWindowBlock *WimpObj::updateWindow(WimpRedrawWindowBlock *block) {
   return (WimpRedrawWindowBlock *) more;
 }
 
-/*WimpObj::loadTemplate(char *template) {
+#if 0
+WimpObj::loadTemplate(char *template) {
   int bufferRequired = 0;
   int workspaceRequired = 0;
   char *actualName = NULL;
@@ -441,7 +444,8 @@ WimpRedrawWindowBlock *WimpObj::updateWindow(WimpRedrawWindowBlock *block) {
   //searchPos = regs.r[6];
 
   // 
-}*/
+}
+#endif
 
 unsigned int WimpObj::sendMessage(int eventCode, void *messageBlock, unsigned int handle) {
   _kernel_swi_regs regs;
