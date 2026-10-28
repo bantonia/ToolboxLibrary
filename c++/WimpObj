@@ -51,7 +51,9 @@ WimpObj::~WimpObj() {
 }
 
 //_kernel_oserror *WimpObj::wimpInitialise(WimpObj::version, WimpObj::taskname, (int *)WimpObj::messages, (int *)&WimpObj::version, &WimpObj::handle) {
-/*_kernel_oserror *WimpObj::wimpInitialise(wimp_msgaction *messages) {
+
+#if 0
+_kernel_oserror *WimpObj::wimpInitialise(wimp_msgaction *messages) {
   _kernel_regs in,out;
   _kernel_oserror *err = NULL;
   in.r[0] = WimpObj::version;
@@ -62,7 +64,8 @@ WimpObj::~WimpObj() {
   WimpObj::version = out.r[0];
   WimpObj::handle = out.r[1];
   return err;
-}*/
+}
+#endif
 
 unsigned int WimpObj::init() {
   //WimpObj::setLastError(&err, __LINE__);
