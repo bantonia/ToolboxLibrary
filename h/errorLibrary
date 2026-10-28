@@ -1,5 +1,5 @@
 #ifndef __cplusplus
-#error Header file "SpriteAreaObj.h" may only be used from C++
+#error Header file "errorLibrary.h" may only be used from C++
 #endif
 #pragma force_top_level
 #pragma include_only_once
