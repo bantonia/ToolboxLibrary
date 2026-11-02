@@ -1,0 +1,47 @@
+# Project:   CommonLib
+
+
+# Toolflags:
+CCflags = -c -depend !Depend -IC: -throwback
+C++flags = -c -depend !Depend -IC: -throwback
+Linkflags = -aif -c++ -o $@
+ObjAsmflags = -throwback -NoCache -depend !Depend
+CMHGflags = 
+LibFileflags = -c -o $@
+Squeezeflags = -o $@
+ModSqzflags = -o $@
+
+
+# Final targets:
+@.CommonC++Lib:   @.o.Object @.o.err_jmp_buf @.o.BitField @.o.Constants 
+        LibFile $(LibFileflags) @.o.Object @.o.err_jmp_buf @.o.BitField \
+        @.o.Constants 
+
+
+# User-editable dependencies:
+
+
+# Static dependencies:
+@.o.Object:   @.c++.Object
+        c++ $(c++flags) -o @.o.Object @.c++.Object 
+@.o.err_jmp_buf:   @.c.err_jmp_buf
+        cc $(ccflags) -o @.o.err_jmp_buf @.c.err_jmp_buf 
+@.o.OSErrList:   @.c++.OSErrList
+        c++ $(c++flags) -o @.o.OSErrList @.c++.OSErrList 
+@.o.BitField:   @.c++.BitField
+        c++ $(c++flags) -o @.o.BitField @.c++.BitField 
+@.o.Constants:   @.c++.Constants
+        c++ $(c++flags) -o @.o.Constants @.c++.Constants 
+
+
+# Dynamic dependencies:
+
+o.Object:	c++.Object
+o.Object:	h.Object
+o.err_jmp_buf:	c.err_jmp_buf
+o.BitField:	c++.BitField
+o.BitField:	h.Object
+o.BitField:	h.BitField
+o.BitField:	h.Object
+o.Constants:	c++.Constants
+o.Constants:	h.Constants

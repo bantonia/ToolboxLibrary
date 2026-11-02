@@ -1,0 +1,15 @@
+0x82880,Window,window,ToolboxWindowObj
+0x828c0,Menu,menu,ToolboxMenuObj
+0x82900,Iconbar,iconbar,ToolboxIconbarObj
+0x82980,ColourMenu,colourMenu,ToolboxColourMenuObj
+0x829c0,ColourDbox,colourDbox,ToolboxColourDboxObj
+0x82a00,FontDbox,fontDbox,ToolboxFontDboxObj
+0x82a40,FontMenu,fontMenu,ToolboxFontMenuObj
+0x82a80,DCS,dcs,ToolboxDCSObj
+0x82a90,Quit,quit,ToolboxQuitObj
+0x82ac0,FileInfo,fileInfo,ToolboxFileInfoObj
+0x82b00,PrintDbox,printDbox,ToolboxPrintDboxObj
+0x82b40,ProgInfo,progInfo,ToolboxProgInfoObj
+0x82bc0,SaveAs,saveAs,ToolboxSaveAsObj
+0x82c00,Scale,scale,ToolboxScaleObj
+#0x100340,Date,date,ToolboxDateObj

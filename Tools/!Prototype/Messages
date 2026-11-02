@@ -10,7 +10,7 @@ Iconbar|0:Prototype
 
 ProgInfo|1:Generate source C++ from a resource file
 ProgInfo|2:© Bill Antonia
-ProgInfo|3:0.09 (14-Oct-26)
+ProgInfo|3:0.11 (2-Nov-26)
 
 # Messages for object IconbarMenu (class Menu)
 
@@ -30,10 +30,13 @@ OptionsMenu|4:Wimp Events
 OptionsMenu|6:Brace Style
 OptionsMenu|8:Generate Directories
 OptionsMenu|10:Resource Class Prefix
-OptionsMenu|12:Generate main
-OptionsMenu|14:GenerateTask Class
-OptionsMenu|16:Generate Res Classes
-OptionsMenu|18:Res Classes
+OptionsMenu|12:Indentation
+OptionsMenu|14:Generate main
+OptionsMenu|16:GenerateTask Class
+OptionsMenu|18:Generate Res Classes
+OptionsMenu|20:Res Classes
+OptionsMenu|22:Include Header Text
+OptionsMenu|24:Include Comments
 
 # Messages for object Directories (class Window)
 
@@ -61,3 +64,12 @@ ToolEMenu|0:Toolbox Events
 # Messages for object ResClasses (class Menu)
 
 ResClasses|0:Res Classes
+
+# Messages for object Indent (class Menu)
+
+Indent|0:Indent
+Indent|2:0
+Indent|4:1
+Indent|6:2
+Indent|8:3
+Indent|10:4

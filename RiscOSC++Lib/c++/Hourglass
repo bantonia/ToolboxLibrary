@@ -1,0 +1,48 @@
+#include "Hourglass.h"
+
+#include "kernel.h"
+#include "swis.h"
+
+void Hourglass::on() {
+  _kernel_swi_regs in, out;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_On, &in, &out), __LINE__);
+}
+
+void Hourglass::off() {
+  _kernel_swi_regs in, out;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_Off, &in, &out), __LINE__);
+}
+
+void Hourglass::smash() {
+  _kernel_swi_regs in, out;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_Smash, &in, &out), __LINE__);
+}
+
+void Hourglass::start(int delay) {
+  _kernel_swi_regs in, out;
+  in.r[0] = delay;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_Start, &in, &out), __LINE__);
+}
+
+void Hourglass::percentage(int percent) {
+  _kernel_swi_regs in, out;
+  in.r[0] = percent;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_Percentage, &in, &out), __LINE__);
+}
+
+void Hourglass::leds(int& led0, int led1) {
+  _kernel_swi_regs in, out;
+  in.r[0] = led0;
+  in.r[1] = led1;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_LEDs, &in, &out), __LINE__);
+  led0 = out.r[0];
+}
+
+void Hourglass::colours(int& colour0, int& colour1) {
+  _kernel_swi_regs in, out;
+  in.r[0] = colour0;
+  in.r[1] = colour1;
+  ErrorReport::setLastError(_kernel_swi(Hourglass_Colours, &in, &out), __LINE__);
+  colour0 = out.r[0];
+  colour1 = out.r[1];
+}

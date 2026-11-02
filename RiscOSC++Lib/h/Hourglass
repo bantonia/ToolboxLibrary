@@ -1,0 +1,23 @@
+#ifndef __cplusplus
+#error Header file "Hourglass.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Hourglass_h
+#define __Hourglass_h
+
+#include "ErrorReport.h"
+
+class Hourglass : public ErrorReport {
+  public:
+    static void on();
+    static void off();
+    static void smash();
+    static void start(int delay);
+    static void percentage(int percent);
+    static void leds(int& led0, int led1);
+    static void colours(int& colour0, int& colour1);
+};
+
+#endif

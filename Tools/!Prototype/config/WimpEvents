@@ -4,7 +4,7 @@
 #
 # No lines can be left empty.
 #
-# End of file must not end on an empty line.
+# No spaces except in lines beginning with #
 #
 # Format: Menu text, Event number (exclude 0, except Wimp_ENull), Event handler, Cast, Header file to include, Ticked, Faded
 #

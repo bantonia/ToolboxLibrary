@@ -2,15 +2,21 @@
 #
 # No lines can be left empty.
 #
-# Menu directives end with a colon and the line must not contain spaces.
+# Directives end with a colon and the line must not contain spaces.
 #
 # End of file must not end on an empty line.
 #
+# Directories to be created
 Directories:c++,h,o
+#
+# Prefix to be appended to resource file object names
 ResPrefix:Res_
 #
 # BraceStyle can be either staggered or matched
-BraceStyle:staggered
+BraceStyle:matched
+#
+# Indentation, accepted values 0-4
+Indentation:4
 #
 # Options menu choices 
 # To be ticked set as ticked, Unticked leave clear and end the line with a colon.
@@ -19,4 +25,6 @@ ResourceClassPrefix:ticked
 GenerateMain:ticked
 GenerateTaskClass:ticked
 GenerateResClasses:ticked
+IncludeHeaderText:ticked
+IncludeComments:ticked
 #
