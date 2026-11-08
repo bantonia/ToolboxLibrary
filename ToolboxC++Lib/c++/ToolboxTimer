@@ -1,0 +1,64 @@
+#include "ToolboxTimer.h"
+
+ToolboxTimer::ToolboxTimer(int windowId, int componentId) {
+  this->windowId = windowId;
+  this->componentId = componentId;
+  this->privateWord = 0;
+}
+
+ToolboxTimer::ToolboxTimer(int windowId, int componentId, int privateWord) {
+  this->windowId = windowId;
+  this->componentId = componentId;
+  this->privateWord = privateWord;
+}
+
+ToolboxTimer::ToolboxTimer(int windowId, int componentId, void *privateWord) {
+  this->windowId = windowId;
+  this->componentId = componentId;
+  this->privateWord = (int)privateWord;
+}
+
+ToolboxTimer::~ToolboxTimer() {
+  remove();
+}
+
+void ToolboxTimer::setPrivateWord(int privateWord) {
+  this->privateWord = privateWord;
+}
+
+void ToolboxTimer::setPrivateWord(void *privateWord) {
+  this->privateWord = (int)privateWord;
+}
+
+int ToolboxTimer::getPrivateWord() {
+  return privateWord;
+}
+
+void ToolboxTimer::after(int delay) {
+  _kernel_swi_regs in, out;
+  in.r[0] = TimerOp_After;
+  in.r[1] = windowId;
+  in.r[2] = componentId;
+  in.r[3] = privateWord;
+  in.r[4] = delay;
+  ErrorReport::setLastError(_kernel_swi(Toolbox_TimerOp, &in, &out), __LINE__);
+  timer = out.r[0];
+}
+
+void ToolboxTimer::every(int delay) {
+  _kernel_swi_regs in, out;
+  in.r[0] = TimerOp_After;
+  in.r[1] = windowId;
+  in.r[2] = componentId;
+  in.r[3] = privateWord;
+  in.r[4] = delay;
+  ErrorReport::setLastError(_kernel_swi(Toolbox_TimerOp, &in, &out), __LINE__);
+  timer = out.r[0];
+}
+
+void ToolboxTimer::remove() {
+  _kernel_swi_regs in, out;
+  in.r[0] = TimerOp_Remove;
+  in.r[1] = timer;
+  ErrorReport::setLastError(_kernel_swi(Toolbox_TimerOp, &in, &out), __LINE__);
+}

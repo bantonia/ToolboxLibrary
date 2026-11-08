@@ -1,0 +1,6 @@
+set MyC++Lib$Dir <Obey$Dir>
+set ToolboxC++Lib$Path <MyC++Lib$Dir>.ToolboxC++Lib.
+set RiscOSC++Lib$Path <MyC++Lib$Dir>.RiscOSC++Lib.
+set CommonC++Lib$Path <MyC++Lib$Dir>.CommonC++Lib.
+set C$Path <ToolboxC++Lib$Path>,<RiscOSC++Lib$Path>,<CommonC++Lib$Path>,<C$Path>
+

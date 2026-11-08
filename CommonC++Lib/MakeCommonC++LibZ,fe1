@@ -36,9 +36,9 @@ ModSqzflags = -o $@
 
 # Dynamic dependencies:
 
+o.err_jmp_buf:	c.err_jmp_buf
 o.Object:	c++.Object
 o.Object:	h.Object
-o.err_jmp_buf:	c.err_jmp_buf
 o.BitField:	c++.BitField
 o.BitField:	h.Object
 o.BitField:	h.BitField

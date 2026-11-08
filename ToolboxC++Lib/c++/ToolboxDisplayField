@@ -1,5 +1,5 @@
 #include "ToolboxDisplayField.h"
-#include "OS.h"
+#include "<MyC++Lib$Dir>.RiscOSC++Lib.OS.h"
 
 ToolboxDisplayField::ToolboxDisplayField() {};
 

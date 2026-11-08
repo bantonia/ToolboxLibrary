@@ -1,0 +1,55 @@
+#ifndef __cplusplus
+#error Header file "ToolboxTimer.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxTimer_h
+#define __ToolboxTimer_h
+
+#include "toolbox.h"
+#include "kernel.h"
+#include "ErrorReport.h"
+
+// swi
+#undef Toolbox_TimerOp
+#define Toolbox_TimerOp 0x44ef8
+
+// Event
+#undef Toolbox_Timer
+#define Toolbox_Timer 0x44ec3
+
+// Misc op
+enum {
+  TimerOp_After,
+  TimerOp_Every,
+  TimerOp_Remove
+} ;
+ 
+typedef struct {
+  ToolboxEventHeader hdr;
+  int timer;
+  int private_word;
+} ToolboxTimerEvent;
+
+class ToolboxTimer {
+  public:
+    ToolboxTimer(int windowId, int componentId);
+    ToolboxTimer(int windowId, int componentId, int privateWord);
+    ToolboxTimer(int windowId, int componentId, void *privateWord);
+    ~ToolboxTimer();
+    void setPrivateWord(int privateWord);
+    void setPrivateWord(void *privateWord);
+    int getPrivateWord();
+    void after(int delay);
+    void every(int delay);
+    void remove();
+
+  private:
+    int windowId;
+    int componentId;
+    int privateWord;
+    int delay;
+    int timer;
+};
+#endif

@@ -255,8 +255,9 @@ o.ToolboxDisplayField:	C:h.treeview
 o.ToolboxDisplayField:	C:h.TextArea
 o.ToolboxDisplayField:	C:h.Object
 o.ToolboxDisplayField:	C:h.ClassType
-o.ToolboxDisplayField:	C:h.OS
-o.ToolboxDisplayField:	C:h.ErrorReport
+o.ToolboxDisplayField:	<MyC++Lib$Dir>.RiscOSC++Lib.h.OS
+o.ToolboxDisplayField:	<MyC++Lib$Dir>.RiscOSC++Lib.h.ErrorReport
+o.ToolboxDisplayField:	C:h.kernel
 o.ToolboxDraggable:	c++.ToolboxDraggable
 o.ToolboxDraggable:	h.ToolboxDraggable
 o.ToolboxDraggable:	C:h.ClassType
@@ -872,5 +873,6 @@ o.ToolboxButton:	C:h.treeview
 o.ToolboxButton:	C:h.TextArea
 o.ToolboxButton:	C:h.Object
 o.ToolboxButton:	C:h.ClassType
-o.ToolboxButton:	C:h.OS
-o.ToolboxButton:	C:h.ErrorReport
+o.ToolboxButton:	<MyC++Lib$Dir>.RiscOSC++Lib.h.OS
+o.ToolboxButton:	<MyC++Lib$Dir>.RiscOSC++Lib.h.ErrorReport
+o.ToolboxButton:	C:h.kernel
