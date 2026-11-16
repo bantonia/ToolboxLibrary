@@ -7,10 +7,28 @@
 #ifndef __OS_h
 #define __OS_h
 
+#include "kernel.h"
+#include "swis.h"
 #include "ErrorReport.h"
 
 class OS : public ErrorReport {
   public:
+
+    enum {
+      GBPB_WriteBytesSpecifiedPointer = 1,
+      GBPB_WriteBytesCurrentPointer,
+      GBPB_ReadBytesSpecifiedPointer,
+      GBPB_ReadBytesCurrentPointer,
+      GBPB_ReadNameAndBootOption,
+      GBPB_ReadCurrentDir,
+      GBPB_ReadLibName,
+      GBPB_ReadEntriesFromCurrentDir,
+      GBPB_ReadEntriesFromSpecifiedDir,
+      GBPB_ReadEntriesAndFileInfoFromDir,
+      GBPB_ReadEntriesAndFullFileInfoFromDir,
+      GBPB_ReadEntriesAndFileTypeInfoFromDir
+    } GBPB_Actions;
+
     OS(){}
     ~OS(){}
     static unsigned int readMonotonicTime();
@@ -25,8 +43,19 @@ class OS : public ErrorReport {
     static char *convertHex(int, char *, int *);
     static void createDirectory(char *directoryName);
     static unsigned int readUnsigned(int base, char *value, unsigned int maximum = 0);
+    static void writeBytesToFile(int, _kernel_osgbpb_block *, int);
+    static void readDirFileNames(_kernel_osgbpb_block *block);
+    static void readBytesFromFile(int, _kernel_osgbpb_block *, int);
+
+/** Call OS_GBPB with R0 = 9,10,11 or 12
+* @param[in] Pointer to directory path
+* @param[in] Pointer to _kernel_osgbpb_block
+* @param[in] OS_GBPB action
+*/
+    static void readDirEntries(char *, _kernel_osgbpb_block *, int);
  
   private:
+    static void gbpb(_kernel_swi_regs *, _kernel_swi_regs *);
 };
 
 #endif

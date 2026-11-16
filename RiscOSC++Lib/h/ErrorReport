@@ -39,6 +39,7 @@ class ErrorReport {
     static void setLocation(char *);
     static char *getLocation();
     static char *getTaskName();
+    static setTaskName(char *);
     static void clearError();
     static int getEnvironment();
     static void setTrap(int, int *);

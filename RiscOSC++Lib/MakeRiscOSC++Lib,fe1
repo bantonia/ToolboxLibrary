@@ -44,10 +44,10 @@ ModSqzflags = -o $@
 # Dynamic dependencies:
 o.OS:	c++.OS
 o.OS:	h.OS
-o.OS:	h.ErrorReport
-o.OS:	C:h.kernel
 o.OS:	C:h.kernel
 o.OS:	C:h.swis
+o.OS:	h.ErrorReport
+o.OS:	C:h.kernel
 o.SpriteAreaObj:	c++.SpriteAreaObj
 o.SpriteAreaObj:	h.SpriteAreaObj
 o.SpriteAreaObj:	C:h.iostream
@@ -92,6 +92,8 @@ o.WimpObj:	C:h.wimp
 o.WimpObj:	h.ClassType
 o.WimpObj:	C:h.swis
 o.WimpObj:	h.OS
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.swis
 o.WimpObj:	h.ErrorReport
 o.WimpObj:	C:h.wimp
 o.WimpObj:	C:h.wimplib

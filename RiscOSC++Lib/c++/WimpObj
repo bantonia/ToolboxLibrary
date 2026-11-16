@@ -85,11 +85,11 @@ int WimpObj::errorHandler() {
   int response = 0;
   switch(WimpObj::getEnvironment()) {
     case ErrorReport::CONSOLE:
-      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), WimpObj::getTaskName());
+      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), ErrorReport::getTaskName());
       WimpObj::clearError();
       break;
     case ErrorReport::WIMP:
-      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), WimpObj::getTaskName());
+      response = wimp_report_error(WimpObj::getLastError(), WimpObj::getErrFlags(), ErrorReport::getTaskName());
       WimpObj::clearError();
 /*
  * On 3.50 onwards we can have additional parameters:

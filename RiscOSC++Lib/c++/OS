@@ -1,8 +1,5 @@
 #include "OS.h"
 
-#include "kernel.h"
-#include "swis.h"
-
 unsigned int OS::readMonotonicTime() {
   _kernel_swi_regs in, out;
   ErrorReport::setLastError(_kernel_swi(OS_ReadMonotonicTime, &in, &out), __LINE__);
@@ -137,4 +134,69 @@ unsigned int OS::readUnsigned(int base, char *value, unsigned int maximum) {
   in.r[2] = maximum;
   ErrorReport::setLastError(_kernel_swi(OS_ReadUnsigned, &in, &out), __LINE__);
   return out.r[2];
+}
+
+void OS::gbpb(_kernel_swi_regs *in, _kernel_swi_regs *out) {
+  ErrorReport::setLastError(_kernel_swi(OS_GBPB, in, out), __LINE__);
+}
+
+void OS::writeBytesToFile(int handle, _kernel_osgbpb_block *block, int pointerType) {
+  _kernel_swi_regs in, out;
+  if ((pointerType == GBPB_WriteBytesSpecifiedPointer) || (pointerType == GBPB_WriteBytesCurrentPointer)) {
+    in.r[0] = pointerType;
+    in.r[1] = handle;
+    in.r[2] = (int) block->dataptr;
+    in.r[3] = block->nbytes;
+    in.r[4] = block->fileptr;
+    gbpb(&in, &out);
+    block->dataptr = (void *) out.r[2];
+    block->nbytes = out.r[3];
+    block->fileptr = out.r[4];
+  }
+}
+
+
+void OS::readBytesFromFile(int handle, _kernel_osgbpb_block *block, int pointerType) {
+  _kernel_swi_regs in, out;
+  if ((pointerType == GBPB_ReadBytesSpecifiedPointer) || (pointerType == GBPB_ReadBytesCurrentPointer)) {
+    in.r[0] = pointerType;
+    in.r[1] = handle;
+    in.r[2] = (int) block->dataptr;
+    in.r[3] = block->nbytes;
+    in.r[4] = block->fileptr;
+    gbpb(&in, &out);
+    block->dataptr = (void *) out.r[2];
+    block->nbytes = out.r[3];
+    block->fileptr = out.r[4];
+  }
+}
+
+void OS::readDirFileNames(_kernel_osgbpb_block *block) {
+  _kernel_swi_regs in, out;
+  in.r[0] = GBPB_ReadEntriesFromCurrentDir;
+  in.r[2] = (int) block->dataptr;
+  in.r[3] = block->nbytes;
+  in.r[4] = block->fileptr;
+  gbpb(&in, &out);
+  block->nbytes = out.r[3];
+  block->fileptr = out.r[4];
+}
+
+void OS::readDirEntries(char *path, _kernel_osgbpb_block *block, int readType) {
+  _kernel_swi_regs in, out;
+  if ((readType == GBPB_ReadEntriesFromSpecifiedDir)
+       || (readType == GBPB_ReadEntriesAndFileInfoFromDir)
+       || (readType == GBPB_ReadEntriesAndFullFileInfoFromDir)
+       || (readType == GBPB_ReadEntriesAndFileTypeInfoFromDir)) {
+    in.r[0] = readType;
+    in.r[1] = (int) path;
+    in.r[2] = (int) block->dataptr;
+    in.r[3] = block->nbytes;
+    in.r[4] = block->fileptr;
+    in.r[5] = block->buf_len;
+    in.r[6] = (int) block->wild_fld;
+    gbpb(&in, &out);
+    block->nbytes = out.r[3];
+    block->fileptr = out.r[4];
+  }
 }
