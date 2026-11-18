@@ -28,3 +28,6 @@ GenerateResClasses:ticked
 IncludeHeaderText:ticked
 IncludeComments:ticked
 #
+# Licencing, choose the default licencing you wish to have, pre-configured files can be found in the directory Licences.
+# Elements surrounded by <...> will be replaced. Current options are <program_name>, <description>, <year> and <copyright_holder>.
+Licence:Unlicenced
