@@ -18,3 +18,4 @@
 0x344028,TreeView,ToolboxTreeView.h
 0x384018,TextArea,ToolboxTextArea.h
 0x4C4014,ToolAction,ToolboxToolAction.h
+0x304F10,ProgressBar,ToolboxProgressBar.h

@@ -18,6 +18,7 @@
 #include "TextArea.h"
 #include "Object.h"
 #include "ClassType.h"
+#include "progressbar.h"
 
 typedef int WimpIconHandle;
 
@@ -44,7 +45,8 @@ class ToolboxGadget : public ErrorReport, public Object {
       TabsGadgetType          = Tabs_Type,
       TreeViewGadgetType      = TreeView_Type,
       TextAreaGadgetType      = TextArea_Type,
-      ToolActionGadgetType    = 0x4C4014
+      ToolActionGadgetType    = 0x4C4014,
+      ProgressBarType         = (sizeof(ProgressBar)) << 16 | ProgressBar_Base
     }; 
 
     ToolboxGadget();

@@ -1,0 +1,37 @@
+#ifndef __cplusplus
+#error Header file "ToolboxProgressBar.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxProgressBar_h
+#define __ToolboxProgressBar_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+
+class ToolboxProgressBar : public ToolboxGadget {
+  public:
+    ToolboxProgressBar();
+    ToolboxProgressBar(ObjectId windowId, ComponentId gadgetId);
+    ToolboxProgressBar(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+
+    int getState();
+    ToolboxProgressBar& setState(int);
+    ToolboxProgressBar& setValue(int);
+    int getValue();
+    ToolboxProgressBar& setMax(int);
+    int getMax();
+    int getPercent();
+    ToolboxProgressBar& step();
+    ToolboxProgressBar& setEvent(int);
+    int getEvent();
+    ToolboxProgressBar& setColour(int);
+    int getColour();
+
+    void showProperties() {}
+    char* getClassName() { return "ToolboxProgressBar";}
+    int getClassType() { return ClassType_ToolboxProgressBar;}
+};
+
+#endif

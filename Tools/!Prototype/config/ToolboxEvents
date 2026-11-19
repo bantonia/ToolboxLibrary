@@ -113,3 +113,6 @@ TreeViewNodeDragged,0x140284,treeViewNodeDragged,TreeViewNodeDraggedEvent,Toolbo
 TreeViewScroll,0x140285,treeViewScroll,TreeViewScrollEvent,ToolboxTreeView.h,0,0
 TabsSelection,0x1402c0,tabsSelection,TabsSelectionEvent,ToolboxTabs.h,0,0
 #
+# Unified Toolbox Events
+ProgressBarComplete,0x14F100,progressBarComplete,ProgressBarCompleteEvent,ToolboxProgressBar.h,0,0
+#

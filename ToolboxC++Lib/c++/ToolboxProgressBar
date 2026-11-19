@@ -1,0 +1,84 @@
+#include "ToolboxProgressBar.h"
+
+ToolboxProgressBar::ToolboxProgressBar() : ToolboxGadget() {}
+
+ToolboxProgressBar::ToolboxProgressBar(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxProgressBar::ToolboxProgressBar(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
+int ToolboxProgressBar::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetState, &regs);
+  return regs.r[0];
+}
+
+ToolboxProgressBar& ToolboxProgressBar::setState(int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(ProgressBar_SetState, &regs);
+  return *this;
+}
+
+ToolboxProgressBar& ToolboxProgressBar::setValue(int value) {
+  _kernel_swi_regs regs;
+  regs.r[4] = value;
+  this->gadgetMethod(ProgressBar_SetValue, &regs);
+  return *this;
+}
+
+int ToolboxProgressBar::getValue() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetValue, &regs);
+  return regs.r[0];
+}
+
+ToolboxProgressBar& ToolboxProgressBar::setMax(int max) {
+  _kernel_swi_regs regs;
+  regs.r[4] = max;
+  this->gadgetMethod(ProgressBar_SetMax, &regs);
+  return *this;
+}
+
+int ToolboxProgressBar::getMax() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetMax, &regs);
+  return regs.r[0];
+}
+
+int ToolboxProgressBar::getPercent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetPercent, &regs);
+  return regs.r[0];
+}
+
+ToolboxProgressBar& ToolboxProgressBar::step() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_Step, &regs);
+  return *this;
+}
+
+ToolboxProgressBar& ToolboxProgressBar::setEvent(int event) {
+  _kernel_swi_regs regs;
+  regs.r[4] = event;
+  this->gadgetMethod(ProgressBar_SetEvent, &regs);
+  return *this;
+}
+
+int ToolboxProgressBar::getEvent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetEvent, &regs);
+  return regs.r[0];
+}
+
+ToolboxProgressBar& ToolboxProgressBar::setColour(int colour) {
+  _kernel_swi_regs regs;
+  regs.r[4] = colour;
+  this->gadgetMethod(ProgressBar_SetColour, &regs);
+  return *this;
+}
+
+int ToolboxProgressBar::getColour() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(ProgressBar_GetColour, &regs);
+  return regs.r[0];
+}
