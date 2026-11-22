@@ -47,7 +47,7 @@ void ToolboxTimer::after(int delay) {
 
 void ToolboxTimer::every(int delay) {
   _kernel_swi_regs in, out;
-  in.r[0] = TimerOp_After;
+  in.r[0] = TimerOp_Every;
   in.r[1] = windowId;
   in.r[2] = componentId;
   in.r[3] = privateWord;
