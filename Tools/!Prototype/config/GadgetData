@@ -19,3 +19,5 @@
 0x384018,TextArea,ToolboxTextArea.h
 0x4C4014,ToolAction,ToolboxToolAction.h
 0x304F10,ProgressBar,ToolboxProgressBar.h
+0x304F40,PartitionBar,ToolboxPartitionBar.h
+0x484F20,SpriteGrid,ToolboxSpriteGrid.h

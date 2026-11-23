@@ -115,4 +115,6 @@ TabsSelection,0x1402c0,tabsSelection,TabsSelectionEvent,ToolboxTabs.h,0,0
 #
 # Unified Toolbox Events
 ProgressBarComplete,0x14F100,progressBarComplete,ProgressBarCompleteEvent,ToolboxProgressBar.h,0,0
+SpriteGridClicked,0x14F200,spriteGridClicked,SpriteGridClickedEvent,ToolboxSpriteGrid.h,0,0
+PartitionBarSelection,0x14F400,partitionBarSelection,PartitionBarSelectionEvent,ToolboxPartitionBar.h,0,0
 #
