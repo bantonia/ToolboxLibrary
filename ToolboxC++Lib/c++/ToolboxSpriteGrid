@@ -1,5 +1,11 @@
 #include "ToolboxSpriteGrid.h"
 
+ToolboxSpriteGrid::ToolboxSpriteGrid() : ToolboxGadget() {}
+
+ToolboxSpriteGrid::ToolboxSpriteGrid(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxSpriteGrid::ToolboxSpriteGrid(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
 ToolboxSpriteGrid& ToolboxSpriteGrid::setSprites(char *names) {
   _kernel_swi_regs regs;
   regs.r[4] = (int) names;
