@@ -22,7 +22,8 @@ ModSqzflags = -o $@
         @.o.ToolboxQuitObj @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj \
         @.o.ToolboxScrollList @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask \
         @.o.ToolboxTextArea @.o.ToolboxToolAction @.o.ToolboxTreeView @.o.ToolboxWindowObj \
-        @.o.ToolboxWritableField @.o.ToolboxLabelledBox @.o.ToolboxButton 
+        @.o.ToolboxWritableField @.o.ToolboxLabelledBox @.o.ToolboxButton @.o.ToolboxProgressBar \
+        @.o.ToolboxPartitionBar @.o.ToolboxSpriteGrid 
         LibFile $(LibFileflags) @.o.ToolboxActionButton @.o.ToolboxAdjuster \
         @.o.ToolboxColourMenuObj @.o.ToolboxColourDboxObj @.o.ToolboxCoreObj @.o.ToolboxDCSObj \
         @.o.ToolboxDisplayField @.o.ToolboxDraggable @.o.ToolboxEventObj @.o.ToolboxFileInfoObj \
@@ -32,10 +33,12 @@ ModSqzflags = -o $@
         @.o.ToolboxQuitObj @.o.ToolboxRadioButton @.o.ToolboxSaveAsObj @.o.ToolboxScaleObj \
         @.o.ToolboxScrollList @.o.ToolboxSlider @.o.ToolboxStringSet @.o.ToolboxTabs @.o.ToolboxTask \
         @.o.ToolboxTextArea @.o.ToolboxToolAction @.o.ToolboxTreeView @.o.ToolboxWindowObj \
-        @.o.ToolboxWritableField @.o.ToolboxLabelledBox @.o.ToolboxButton 
+        @.o.ToolboxWritableField @.o.ToolboxLabelledBox @.o.ToolboxButton @.o.ToolboxProgressBar \
+        @.o.ToolboxPartitionBar @.o.ToolboxSpriteGrid 
 
 
 # User-editable dependencies:
+
 
 # Static dependencies:
 @.o.ToolboxActionButton:   @.c++.ToolboxActionButton
@@ -114,6 +117,12 @@ ModSqzflags = -o $@
         c++ $(c++flags) -o @.o.ToolboxWritableField @.c++.ToolboxWritableField 
 @.o.ToolboxButton:   @.c++.ToolboxButton
         c++ $(c++flags) -o @.o.ToolboxButton @.c++.ToolboxButton 
+@.o.ToolboxProgressBar:   @.c++.ToolboxProgressBar
+        c++ $(c++flags) -o @.o.ToolboxProgressBar @.c++.ToolboxProgressBar 
+@.o.ToolboxPartitionBar:   @.c++.ToolboxPartitionBar
+        c++ $(c++flags) -o @.o.ToolboxPartitionBar @.c++.ToolboxPartitionBar 
+@.o.ToolboxSpriteGrid:   @.c++.ToolboxSpriteGrid
+        c++ $(c++flags) -o @.o.ToolboxSpriteGrid @.c++.ToolboxSpriteGrid 
 
 
 # Dynamic dependencies:
@@ -135,6 +144,7 @@ o.ToolboxActionButton:	C:h.treeview
 o.ToolboxActionButton:	C:h.TextArea
 o.ToolboxActionButton:	C:h.Object
 o.ToolboxActionButton:	C:h.ClassType
+o.ToolboxActionButton:	C:h.progressbar
 o.ToolboxAdjuster:	c++.ToolboxAdjuster
 o.ToolboxAdjuster:	h.ToolboxAdjuster
 o.ToolboxAdjuster:	C:h.ClassType
@@ -153,6 +163,7 @@ o.ToolboxAdjuster:	C:h.treeview
 o.ToolboxAdjuster:	C:h.TextArea
 o.ToolboxAdjuster:	C:h.Object
 o.ToolboxAdjuster:	C:h.ClassType
+o.ToolboxAdjuster:	C:h.progressbar
 o.ToolboxColourMenuObj:	c++.ToolboxColourMenuObj
 o.ToolboxColourMenuObj:	C:h.kernel
 o.ToolboxColourMenuObj:	h.ToolboxColourMenuObj
@@ -210,6 +221,8 @@ o.ToolboxCoreObj:	C:h.treeview
 o.ToolboxCoreObj:	C:h.ScrollList
 o.ToolboxCoreObj:	C:h.window
 o.ToolboxCoreObj:	C:h.tabs
+o.ToolboxCoreObj:	C:h.progressbar
+o.ToolboxCoreObj:	C:h.partitionbar
 o.ToolboxCoreObj:	C:h.ErrorReport
 o.ToolboxCoreObj:	C:h.kernel
 o.ToolboxCoreObj:	C:h.ClassType
@@ -255,9 +268,11 @@ o.ToolboxDisplayField:	C:h.treeview
 o.ToolboxDisplayField:	C:h.TextArea
 o.ToolboxDisplayField:	C:h.Object
 o.ToolboxDisplayField:	C:h.ClassType
-o.ToolboxDisplayField:	<MyC++Lib$Dir>.RiscOSC++Lib.h.OS
-o.ToolboxDisplayField:	<MyC++Lib$Dir>.RiscOSC++Lib.h.ErrorReport
+o.ToolboxDisplayField:	C:h.progressbar
+o.ToolboxDisplayField:	C:h.OS
 o.ToolboxDisplayField:	C:h.kernel
+o.ToolboxDisplayField:	C:h.swis
+o.ToolboxDisplayField:	C:h.ErrorReport
 o.ToolboxDraggable:	c++.ToolboxDraggable
 o.ToolboxDraggable:	h.ToolboxDraggable
 o.ToolboxDraggable:	C:h.ClassType
@@ -276,6 +291,7 @@ o.ToolboxDraggable:	C:h.treeview
 o.ToolboxDraggable:	C:h.TextArea
 o.ToolboxDraggable:	C:h.Object
 o.ToolboxDraggable:	C:h.ClassType
+o.ToolboxDraggable:	C:h.progressbar
 o.ToolboxEventObj:	c++.ToolboxEventObj
 o.ToolboxEventObj:	h.ToolboxCoreObj
 o.ToolboxEventObj:	C:h.Object
@@ -289,6 +305,8 @@ o.ToolboxEventObj:	C:h.treeview
 o.ToolboxEventObj:	C:h.ScrollList
 o.ToolboxEventObj:	C:h.window
 o.ToolboxEventObj:	C:h.tabs
+o.ToolboxEventObj:	C:h.progressbar
+o.ToolboxEventObj:	C:h.partitionbar
 o.ToolboxEventObj:	C:h.ErrorReport
 o.ToolboxEventObj:	C:h.kernel
 o.ToolboxEventObj:	C:h.ClassType
@@ -379,6 +397,7 @@ o.ToolboxGadget:	C:h.treeview
 o.ToolboxGadget:	C:h.TextArea
 o.ToolboxGadget:	C:h.Object
 o.ToolboxGadget:	C:h.ClassType
+o.ToolboxGadget:	C:h.progressbar
 o.ToolboxIconbarObj:	c++.ToolboxIconbarObj
 o.ToolboxIconbarObj:	h.ToolboxIconbarObj
 o.ToolboxIconbarObj:	C:h.iconbar
@@ -418,6 +437,7 @@ o.ToolboxLabel:	C:h.treeview
 o.ToolboxLabel:	C:h.TextArea
 o.ToolboxLabel:	C:h.Object
 o.ToolboxLabel:	C:h.ClassType
+o.ToolboxLabel:	C:h.progressbar
 o.ToolboxMenuObj:	c++.ToolboxMenuObj
 o.ToolboxMenuObj:	h.ToolboxMenuObj
 o.ToolboxMenuObj:	C:h.menu
@@ -457,6 +477,7 @@ o.ToolboxNumberRange:	C:h.treeview
 o.ToolboxNumberRange:	C:h.TextArea
 o.ToolboxNumberRange:	C:h.Object
 o.ToolboxNumberRange:	C:h.ClassType
+o.ToolboxNumberRange:	C:h.progressbar
 o.ToolboxObj:	c++.ToolboxObj
 o.ToolboxObj:	C:h.kernel
 o.ToolboxObj:	h.ToolboxObj
@@ -492,6 +513,7 @@ o.ToolboxOptionButton:	C:h.treeview
 o.ToolboxOptionButton:	C:h.TextArea
 o.ToolboxOptionButton:	C:h.Object
 o.ToolboxOptionButton:	C:h.ClassType
+o.ToolboxOptionButton:	C:h.progressbar
 o.ToolboxPopUp:	c++.ToolboxPopUp
 o.ToolboxPopUp:	h.ToolboxPopUp
 o.ToolboxPopUp:	C:h.ClassType
@@ -510,6 +532,7 @@ o.ToolboxPopUp:	C:h.treeview
 o.ToolboxPopUp:	C:h.TextArea
 o.ToolboxPopUp:	C:h.Object
 o.ToolboxPopUp:	C:h.ClassType
+o.ToolboxPopUp:	C:h.progressbar
 o.ToolboxPrintDboxObj:	c++.ToolboxPrintDboxObj
 o.ToolboxPrintDboxObj:	h.ToolboxPrintDboxObj
 o.ToolboxPrintDboxObj:	C:h.printdbox
@@ -595,6 +618,7 @@ o.ToolboxRadioButton:	C:h.treeview
 o.ToolboxRadioButton:	C:h.TextArea
 o.ToolboxRadioButton:	C:h.Object
 o.ToolboxRadioButton:	C:h.ClassType
+o.ToolboxRadioButton:	C:h.progressbar
 o.ToolboxSaveAsObj:	c++.ToolboxSaveAsObj
 o.ToolboxSaveAsObj:	h.ToolboxSaveAsObj
 o.ToolboxSaveAsObj:	C:h.ClassType
@@ -657,6 +681,7 @@ o.ToolboxScrollList:	C:h.treeview
 o.ToolboxScrollList:	C:h.TextArea
 o.ToolboxScrollList:	C:h.Object
 o.ToolboxScrollList:	C:h.ClassType
+o.ToolboxScrollList:	C:h.progressbar
 o.ToolboxScrollList:	C:h.ScrollList
 o.ToolboxSlider:	c++.ToolboxSlider
 o.ToolboxSlider:	h.ToolboxSlider
@@ -676,6 +701,7 @@ o.ToolboxSlider:	C:h.treeview
 o.ToolboxSlider:	C:h.TextArea
 o.ToolboxSlider:	C:h.Object
 o.ToolboxSlider:	C:h.ClassType
+o.ToolboxSlider:	C:h.progressbar
 o.ToolboxStringSet:	c++.ToolboxStringSet
 o.ToolboxStringSet:	h.ToolboxStringSet
 o.ToolboxStringSet:	C:h.ClassType
@@ -694,6 +720,7 @@ o.ToolboxStringSet:	C:h.treeview
 o.ToolboxStringSet:	C:h.TextArea
 o.ToolboxStringSet:	C:h.Object
 o.ToolboxStringSet:	C:h.ClassType
+o.ToolboxStringSet:	C:h.progressbar
 o.ToolboxTabs:	c++.ToolboxTabs
 o.ToolboxTabs:	h.ToolboxTabs
 o.ToolboxTabs:	C:h.ClassType
@@ -712,6 +739,7 @@ o.ToolboxTabs:	C:h.treeview
 o.ToolboxTabs:	C:h.TextArea
 o.ToolboxTabs:	C:h.Object
 o.ToolboxTabs:	C:h.ClassType
+o.ToolboxTabs:	C:h.progressbar
 o.ToolboxTabs:	C:h.tabs
 o.ToolboxTask:	c++.ToolboxTask
 o.ToolboxTask:	h.ToolboxTask
@@ -728,6 +756,8 @@ o.ToolboxTask:	C:h.treeview
 o.ToolboxTask:	C:h.ScrollList
 o.ToolboxTask:	C:h.window
 o.ToolboxTask:	C:h.tabs
+o.ToolboxTask:	C:h.progressbar
+o.ToolboxTask:	C:h.partitionbar
 o.ToolboxTask:	C:h.ErrorReport
 o.ToolboxTask:	C:h.kernel
 o.ToolboxTask:	C:h.ClassType
@@ -757,6 +787,7 @@ o.ToolboxTextArea:	C:h.treeview
 o.ToolboxTextArea:	C:h.TextArea
 o.ToolboxTextArea:	C:h.Object
 o.ToolboxTextArea:	C:h.ClassType
+o.ToolboxTextArea:	C:h.progressbar
 o.ToolboxTextArea:	C:h.TextArea
 o.ToolboxTextArea:	C:h.string
 o.ToolboxToolAction:	c++.ToolboxToolAction
@@ -777,6 +808,7 @@ o.ToolboxToolAction:	C:h.treeview
 o.ToolboxToolAction:	C:h.TextArea
 o.ToolboxToolAction:	C:h.Object
 o.ToolboxToolAction:	C:h.ClassType
+o.ToolboxToolAction:	C:h.progressbar
 o.ToolboxToolAction:	C:h.toolbox
 o.ToolboxTreeView:	c++.ToolboxTreeView
 o.ToolboxTreeView:	h.ToolboxTreeView
@@ -796,6 +828,7 @@ o.ToolboxTreeView:	C:h.treeview
 o.ToolboxTreeView:	C:h.TextArea
 o.ToolboxTreeView:	C:h.Object
 o.ToolboxTreeView:	C:h.ClassType
+o.ToolboxTreeView:	C:h.progressbar
 o.ToolboxTreeView:	C:h.treeview
 o.ToolboxWindowObj:	c++.ToolboxWindowObj
 o.ToolboxWindowObj:	C:h.kernel
@@ -837,6 +870,7 @@ o.ToolboxWritableField:	C:h.treeview
 o.ToolboxWritableField:	C:h.TextArea
 o.ToolboxWritableField:	C:h.Object
 o.ToolboxWritableField:	C:h.ClassType
+o.ToolboxWritableField:	C:h.progressbar
 o.ToolboxLabelledBox:	c++.ToolboxLabelledBox
 o.ToolboxLabelledBox:	h.ToolboxLabelledBox
 o.ToolboxLabelledBox:	C:h.ClassType
@@ -855,6 +889,7 @@ o.ToolboxLabelledBox:	C:h.treeview
 o.ToolboxLabelledBox:	C:h.TextArea
 o.ToolboxLabelledBox:	C:h.Object
 o.ToolboxLabelledBox:	C:h.ClassType
+o.ToolboxLabelledBox:	C:h.progressbar
 o.ToolboxButton:	c++.ToolboxButton
 o.ToolboxButton:	h.ToolboxButton
 o.ToolboxButton:	C:h.ClassType
@@ -873,6 +908,69 @@ o.ToolboxButton:	C:h.treeview
 o.ToolboxButton:	C:h.TextArea
 o.ToolboxButton:	C:h.Object
 o.ToolboxButton:	C:h.ClassType
-o.ToolboxButton:	<MyC++Lib$Dir>.RiscOSC++Lib.h.OS
-o.ToolboxButton:	<MyC++Lib$Dir>.RiscOSC++Lib.h.ErrorReport
+o.ToolboxButton:	C:h.progressbar
+o.ToolboxButton:	C:h.OS
 o.ToolboxButton:	C:h.kernel
+o.ToolboxButton:	C:h.swis
+o.ToolboxButton:	C:h.ErrorReport
+o.ToolboxProgressBar:	c++.ToolboxProgressBar
+o.ToolboxProgressBar:	h.ToolboxProgressBar
+o.ToolboxProgressBar:	C:h.ClassType
+o.ToolboxProgressBar:	h.ToolboxGadget
+o.ToolboxProgressBar:	C:h.kernel
+o.ToolboxProgressBar:	C:h.ErrorReport
+o.ToolboxProgressBar:	C:h.kernel
+o.ToolboxProgressBar:	C:h.toolbox
+o.ToolboxProgressBar:	C:h.wimp
+o.ToolboxProgressBar:	C:h.gadgets
+o.ToolboxProgressBar:	C:h.Scrollbar
+o.ToolboxProgressBar:	C:h.window
+o.ToolboxProgressBar:	C:h.ScrollList
+o.ToolboxProgressBar:	C:h.tabs
+o.ToolboxProgressBar:	C:h.treeview
+o.ToolboxProgressBar:	C:h.TextArea
+o.ToolboxProgressBar:	C:h.Object
+o.ToolboxProgressBar:	C:h.ClassType
+o.ToolboxProgressBar:	C:h.progressbar
+o.ToolboxPartitionBar:	c++.ToolboxPartitionBar
+o.ToolboxPartitionBar:	h.ToolboxPartitionBar
+o.ToolboxPartitionBar:	C:h.ClassType
+o.ToolboxPartitionBar:	h.ToolboxGadget
+o.ToolboxPartitionBar:	C:h.kernel
+o.ToolboxPartitionBar:	C:h.ErrorReport
+o.ToolboxPartitionBar:	C:h.kernel
+o.ToolboxPartitionBar:	C:h.toolbox
+o.ToolboxPartitionBar:	C:h.wimp
+o.ToolboxPartitionBar:	C:h.gadgets
+o.ToolboxPartitionBar:	C:h.Scrollbar
+o.ToolboxPartitionBar:	C:h.window
+o.ToolboxPartitionBar:	C:h.ScrollList
+o.ToolboxPartitionBar:	C:h.tabs
+o.ToolboxPartitionBar:	C:h.treeview
+o.ToolboxPartitionBar:	C:h.TextArea
+o.ToolboxPartitionBar:	C:h.Object
+o.ToolboxPartitionBar:	C:h.ClassType
+o.ToolboxPartitionBar:	C:h.progressbar
+o.ToolboxPartitionBar:	C:h.partitionbar
+o.ToolboxPartitionBar:	C:h.wimp
+o.ToolboxSpriteGrid:	c++.ToolboxSpriteGrid
+o.ToolboxSpriteGrid:	h.ToolboxSpriteGrid
+o.ToolboxSpriteGrid:	C:h.ClassType
+o.ToolboxSpriteGrid:	h.ToolboxGadget
+o.ToolboxSpriteGrid:	C:h.kernel
+o.ToolboxSpriteGrid:	C:h.ErrorReport
+o.ToolboxSpriteGrid:	C:h.kernel
+o.ToolboxSpriteGrid:	C:h.toolbox
+o.ToolboxSpriteGrid:	C:h.wimp
+o.ToolboxSpriteGrid:	C:h.gadgets
+o.ToolboxSpriteGrid:	C:h.Scrollbar
+o.ToolboxSpriteGrid:	C:h.window
+o.ToolboxSpriteGrid:	C:h.ScrollList
+o.ToolboxSpriteGrid:	C:h.tabs
+o.ToolboxSpriteGrid:	C:h.treeview
+o.ToolboxSpriteGrid:	C:h.TextArea
+o.ToolboxSpriteGrid:	C:h.Object
+o.ToolboxSpriteGrid:	C:h.ClassType
+o.ToolboxSpriteGrid:	C:h.progressbar
+o.ToolboxSpriteGrid:	C:h.spritegrid
+o.ToolboxSpriteGrid:	C:h.wimp

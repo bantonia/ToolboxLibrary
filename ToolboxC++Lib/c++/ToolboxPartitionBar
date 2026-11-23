@@ -1,0 +1,85 @@
+#include "ToolboxPartitionBar.h"
+
+ToolboxPartitionBar::ToolboxPartitionBar() : ToolboxGadget() {}
+
+ToolboxPartitionBar::ToolboxPartitionBar(ObjectId windowId, ComponentId gadgetId) : ToolboxGadget(windowId, gadgetId) {}
+
+ToolboxPartitionBar::ToolboxPartitionBar(ObjectId windowId, ComponentId gadgetId, unsigned int flags) : ToolboxGadget(windowId, gadgetId, flags) {}
+
+int ToolboxPartitionBar::getState() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetState, &regs);
+  return regs.r[0];
+}
+
+ToolboxPartitionBar& ToolboxPartitionBar::setState(int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = state;
+  this->gadgetMethod(PartitionBar_SetState, &regs);
+  return *this;
+}
+
+ToolboxPartitionBar& ToolboxPartitionBar::setSegments(PartitionBarSegment *segment) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int)segment;
+  this->gadgetMethod(PartitionBar_SetSelected, &regs);
+  return *this;
+}
+
+int ToolboxPartitionBar::getCount() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetCount, &regs);
+  return regs.r[0];
+}
+
+ToolboxPartitionBar& ToolboxPartitionBar::setSelected(int selected) {
+  _kernel_swi_regs regs;
+  regs.r[4] = selected;
+  this->gadgetMethod(PartitionBar_SetSelected, &regs);
+  return *this;
+}
+
+int ToolboxPartitionBar::getSelected() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetSelected, &regs);
+  return regs.r[0];
+}
+
+ToolboxPartitionBar& ToolboxPartitionBar::setLeast(int least) {
+  _kernel_swi_regs regs;
+  regs.r[4] = least;
+  this->gadgetMethod(PartitionBar_SetState, &regs);
+  return *this;
+}
+
+int ToolboxPartitionBar::getLeast() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetLeast, &regs);
+  return regs.r[0];
+}
+
+PartitionBarSegment *ToolboxPartitionBar::segmentAt() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_SegmentAt, &regs);
+  return (PartitionBarSegment *)regs.r[0];
+}
+
+BBox *ToolboxPartitionBar::getSegmentBBox() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetSegmentBBox, &regs);
+  return (BBox *)regs.r[0];
+}
+
+ToolboxPartitionBar& ToolboxPartitionBar::setEvent(int event) {
+  _kernel_swi_regs regs;
+  regs.r[4] = event;
+  this->gadgetMethod(PartitionBar_SetEvent, &regs);
+  return *this;
+}
+
+int ToolboxPartitionBar::getEvent() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(PartitionBar_GetEvent, &regs);
+  return regs.r[0];
+}
+

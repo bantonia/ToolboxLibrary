@@ -1,0 +1,135 @@
+#include "ToolboxSpriteGrid.h"
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setSprites(char *names) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) names;
+  this->gadgetMethod(SpriteGrid_SetSprites, &regs);
+  return *this;
+}
+
+void ToolboxSpriteGrid::getSprites(char& buffer, int size, int& nbytes) {
+  _kernel_swi_regs regs;
+  regs.r[4] = (int) buffer;
+  regs.r[5] = size;
+  this->gadgetMethod(SpriteGrid_GetSprites, &regs);
+  nbytes = regs.r[5];
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setCellSize(int width, int height) {
+  _kernel_swi_regs regs;
+  regs.r[4] = width;
+  regs.r[5] = height;
+  this->gadgetMethod(SpriteGrid_SetCellSize, &regs);
+  return *this;
+}
+
+void ToolboxSpriteGrid::getCellSize(int& width, int& height) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetCellSize, &regs);
+  width = regs.r[0];
+  height = regs.r[1];
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setColumns(int columns) {
+  _kernel_swi_regs regs;
+  regs.r[4] = columns;
+  this->gadgetMethod(SpriteGrid_SetColumns, &regs);
+  return *this;
+}
+
+int ToolboxSpriteGrid::getColumns() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetColumns, &regs);
+  return regs.r[0];
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setGap(int gap) {
+  _kernel_swi_regs regs;
+  regs.r[4] = gap;
+  this->gadgetMethod(SpriteGrid_SetGap, &regs);
+  return *this;
+}
+
+int ToolboxSpriteGrid::getGap() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetGap, &regs);
+  return regs.r[0];
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setCellState(int index, int state) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  regs.r[5] = state;
+  this->gadgetMethod(SpriteGrid_SetCellState, &regs);
+  return *this;
+}
+
+int ToolboxSpriteGrid::getCellState(int index) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  this->gadgetMethod(SpriteGrid_GetCellState, &regs);
+  return regs.r[0];
+}
+
+int ToolboxSpriteGrid::getCount() {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetCount, &regs);
+  return regs.r[0];
+}
+
+void ToolboxSpriteGrid::getVisible(int& columns, int& rows) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetVisible, &regs);
+  columns = regs.r[0];
+  rows = regs.r[1];
+}
+
+void ToolboxSpriteGrid::getCellBBox(int index, BBox& bbox) {
+  _kernel_swi_regs regs;
+  regs.r[4] = index;
+  this->gadgetMethod(SpriteGrid_GetCellBBox, &regs);
+  bbox.xmin = regs.r[0];
+  bbox.ymin = regs.r[1];
+  bbox.xmax = regs.r[2];
+  bbox.ymax = regs.r[3];
+
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setEvents(int select, int adjust) {
+  _kernel_swi_regs regs;
+  regs.r[4] = select;
+  regs.r[5] = adjust;
+  this->gadgetMethod(SpriteGrid_SetEvents, &regs);
+  return *this;
+}
+
+void ToolboxSpriteGrid::getEvents(int& select, int& adjust) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetEvents, &regs);
+  select = regs.r[0];
+  adjust = regs.r[1];
+}
+
+int ToolboxSpriteGrid::cellAt(int x, int y) {
+  _kernel_swi_regs regs;
+  regs.r[4] = x;
+  regs.r[5] = y;
+  this->gadgetMethod(SpriteGrid_CellAt, &regs);
+  return regs.r[0];
+}
+
+ToolboxSpriteGrid& ToolboxSpriteGrid::setStyle(int inset, int borderStyle) {
+  _kernel_swi_regs regs;
+  regs.r[4] = inset;
+  regs.r[5] = borderStyle;
+  this->gadgetMethod(SpriteGrid_SetStyle, &regs);
+  return *this;
+}
+
+void ToolboxSpriteGrid::getStyle(int& inset, int& borderStyle) {
+  _kernel_swi_regs regs;
+  this->gadgetMethod(SpriteGrid_GetStyle, &regs);
+  inset = regs.r[0];
+  borderStyle = regs.r[1];
+}
+

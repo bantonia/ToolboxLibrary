@@ -1,0 +1,37 @@
+#ifndef __cplusplus
+#error Header file "ToolboxSpriteGrid.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxSpriteGrid_h
+#define __ToolboxSpriteGrid_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+#include "spritegrid.h"
+#include "wimp.h"
+
+class ToolboxSpriteGrid : public ToolboxGadget {
+  public:
+    ToolboxSpriteGrid& setSprites(char *);
+    void getSprites(char&, int, int&);
+    ToolboxSpriteGrid& setCellSize(int , int);
+    void getCellSize(int&, int&);
+    ToolboxSpriteGrid& setColumns(int);
+    int getColumns();
+    ToolboxSpriteGrid& setGap(int);
+    int getGap();
+    ToolboxSpriteGrid& setCellState(int, int);
+    int getCellState(int);
+    int getCount();
+    void getVisible(int&, int&);
+    void getCellBBox(int, BBox&);
+    ToolboxSpriteGrid& setEvents(int, int);
+    void getEvents(int&, int&);
+    int cellAt(int, int);
+    ToolboxSpriteGrid& setStyle(int, int);
+    void getStyle(int&, int&);
+};
+
+#endif

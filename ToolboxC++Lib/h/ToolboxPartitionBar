@@ -1,0 +1,36 @@
+#ifndef __cplusplus
+#error Header file "ToolboxPartitionBar.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __ToolboxPartitionBar_h
+#define __ToolboxPartitionBar_h
+
+#include "ClassType.h"
+#include "ToolboxGadget.h"
+#include "partitionbar.h"
+#include "wimp.h"
+
+class ToolboxPartitionBar : public ToolboxGadget {
+  public:
+
+    ToolboxPartitionBar();
+    ToolboxPartitionBar(ObjectId windowId, ComponentId gadgetId);
+    ToolboxPartitionBar(ObjectId windowId, ComponentId gadgetId, unsigned int flags);
+
+    int getState();
+    ToolboxPartitionBar& setState(int);
+    ToolboxPartitionBar& setSegments(PartitionBarSegment *);
+    int getCount();
+    ToolboxPartitionBar& setSelected(int);
+    int getSelected();
+    ToolboxPartitionBar& setLeast(int);
+    int getLeast();
+    PartitionBarSegment *segmentAt();
+    BBox *getSegmentBBox();
+    ToolboxPartitionBar& setEvent(int);
+    int getEvent();
+};
+
+#endif

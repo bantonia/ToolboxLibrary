@@ -1,5 +1,5 @@
 #include "ToolboxButton.h"
-#include "<MyC++Lib$Dir>.RiscOSC++Lib.OS.h"
+#include "OS.h"
 
 ToolboxButton::ToolboxButton() : ToolboxGadget() {}
 
