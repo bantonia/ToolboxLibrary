@@ -1,0 +1,18 @@
+#include "Display.h"
+
+Display::Display(ObjectId objectId, ComponentId componentId, int flags, int event, int delay) : ToolboxDisplayField(objectId, componentId, flags), ToolboxEventTrigger(objectId, componentId, event, delay) {}
+
+/*****************************************
+* The event handler which could do more  *
+* than just updating the Display object. *                     *
+*****************************************/
+void Display::updateDisplay() {
+  int value = this->getIntValue();
+  value++;
+  this->setValue(value);
+  if (value == 1000) {
+    this->setValue(0);
+  } else {
+    this->setValue(value);
+  }
+}

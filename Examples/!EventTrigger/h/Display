@@ -1,0 +1,29 @@
+#ifndef __cplusplus
+#error Header file "Display.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Display_h
+#define __Display_h
+
+#include "ToolboxDisplayField.h"
+#include "ToolboxEventTrigger.h"
+
+class Display : public ToolboxDisplayField, public ToolboxEventTrigger {
+  public:
+/******************************************************************************
+* Constructor for class Display using ToolboxDisplayField                     *
+* and ToolboxEventTrigger as base classes                                     *
+* Params:                                                                     *
+*  ObjectId     Toolbox Window Object Id                                      *
+*  ComponentId  Toolbox DisplayField Id                                       *
+*  int          Flags                                                         *
+*  int          Event                                                         *
+*  int          Delay in centiseconds (don't rely on this, under construction *
+******************************************************************************/
+    Display(ObjectId, ComponentId, int, int, int);
+    void updateDisplay();
+};
+
+#endif

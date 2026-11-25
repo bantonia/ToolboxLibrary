@@ -1,0 +1,44 @@
+#ifndef __cplusplus
+#error Header file "EventTrigger.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __EventTrigger_h
+#define __EventTrigger_h
+
+#include <string.h>
+#include "ToolboxTask.h"
+#include "Res_Iconbar.h"
+#include "Res_Window.h"
+#include "Res_Menu.h"
+#include "ToolboxQuitObj.h"
+#include "ToolboxEventTrigger.h"
+
+class EventTrigger : public ToolboxTask {
+  public:
+    EventTrigger();
+    ~EventTrigger();
+    void toolboxObjectAutoCreated(int objectClass);
+    void toolboxUserEvent(int event);
+    void toolboxEventHandler(int event);
+    void iconbarObjectAutoCreated();
+    void windowObjectAutoCreated();
+    void menuObjectAutoCreated();
+    void quitQuit();
+/*************************************************************************
+* nullReason() is the method to to handle Wimp_ENULL events, into which  *
+* the method ToolboxEventTrigger::eventDispatcher() is placed.           *
+* eventDispatcher() is a ToolboxEventTrigger library method which        *
+* scans the registered ToolboxEventTrigger entries to see if any are     *
+* ready to be triggered. If ready then ToolboxCoreObj::raiseToolboxEvent *
+* is called and the associated Toolbox event is put into the poll queue. *
+*************************************************************************/
+    void nullReason();
+  private:
+    Res_Iconbar *res_Iconbar;
+    Res_Window *res_Window;
+    Res_Menu *res_Menu;
+};
+
+#endif
