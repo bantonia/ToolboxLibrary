@@ -37,6 +37,7 @@ void ToolboxEventTrigger::eventDispatcher() {
   if (head != NULL) {
     ToolboxEventBlock *p = (ToolboxEventBlock *)head;
     while(p != NULL) {
+// Need to modify how the countdown is calculated. Could read OS_ReadMonotomicTime to be more accurate
       if (--(p->delay_count) == 0) {
         p->delay_count = p->delay;
         //***** call Toolbox_RaiseToolboxEvent here ******
