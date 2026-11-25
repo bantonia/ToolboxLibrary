@@ -13,6 +13,7 @@
 #include "Res_Window.h"
 #include "Res_Menu.h"
 #include "ToolboxQuitObj.h"
+#include "ToolboxEventTrigger.h"
 
 class EventExample : public ToolboxTask {
   public:
@@ -25,6 +26,7 @@ class EventExample : public ToolboxTask {
     void windowObjectAutoCreated();
     void menuObjectAutoCreated();
     void quitQuit();
+    void nullReason();
   private:
     Res_Iconbar *res_Iconbar;
     Res_Window *res_Window;

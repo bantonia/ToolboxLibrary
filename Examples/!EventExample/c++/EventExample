@@ -81,3 +81,7 @@ void EventExample::toolboxUserEvent(int event) {
 void EventExample::quitQuit() {
   quit = 1;
 }
+
+void EventExample::nullReason() {
+  ToolboxEventTrigger::eventDispatcher();
+}

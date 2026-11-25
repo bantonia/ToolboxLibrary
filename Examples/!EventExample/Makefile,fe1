@@ -1,6 +1,5 @@
 # Project:   EventExamp
 
-
 # Toolflags:
 CCflags = -c -depend !Depend -IC: -throwback
 C++flags = -c -depend !Depend -IC: -throwback
@@ -13,15 +12,15 @@ ModSqzflags = -o $@
 
 
 # Final targets:
-@.!RunImage:   @.o.main @.o.EventExample @.o.Res_Window @.o.Res_Iconbar \
-        @.o.Res_Menu @.o.Display @.o.Event \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+@.!RunImage:   @.o.main @.o.Display @.o.Res_Iconbar @.o.Res_Menu \
+        @.o.EventExample @.o.Res_Window \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
-        Link $(Linkflags) @.o.main @.o.EventExample @.o.Res_Window \
-        @.o.Res_Iconbar @.o.Res_Menu @.o.Display @.o.Event \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib \
-        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
+        Link $(Linkflags) @.o.main @.o.Display @.o.Res_Iconbar @.o.Res_Menu \
+        @.o.EventExample @.o.Res_Window \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.ToolboxC++Lib.ToolboxC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.RiscOSC++Lib.RiscOSC++Lib \
+        @.^.^.AcornC/C++.Export.APCS-32.Lib.MyC++Lib.CommonC++Lib.CommonC++Lib @.^.^.AcornC/C++.Export.APCS-32.Lib.tboxlibs.o.wimplib \
         @.^.^.AcornC/C++.Export.APCS-32.Lib.c++lib.o.c++lib @.^.^.AcornC/C++.Export.APCS-32.Lib.CLib.o.stubs 
 
 
@@ -30,18 +29,16 @@ ModSqzflags = -o $@
 # Static dependencies:
 @.o.main:   @.c++.main
         c++ $(c++flags) -o @.o.main @.c++.main 
-@.o.EventExample:   @.c++.EventExample
-        c++ $(c++flags) -o @.o.EventExample @.c++.EventExample 
-@.o.Res_Window:   @.c++.Res_Window
-        c++ $(c++flags) -o @.o.Res_Window @.c++.Res_Window 
+@.o.Display:   @.c++.Display
+        c++ $(c++flags) -o @.o.Display @.c++.Display 
 @.o.Res_Iconbar:   @.c++.Res_Iconbar
         c++ $(c++flags) -o @.o.Res_Iconbar @.c++.Res_Iconbar 
 @.o.Res_Menu:   @.c++.Res_Menu
         c++ $(c++flags) -o @.o.Res_Menu @.c++.Res_Menu 
-@.o.Display:   @.c++.Display
-        c++ $(c++flags) -o @.o.Display @.c++.Display 
-@.o.Event:   @.c++.Event
-        c++ $(c++flags) -o @.o.Event @.c++.Event 
+@.o.EventExample:   @.c++.EventExample
+        c++ $(c++flags) -o @.o.EventExample @.c++.EventExample 
+@.o.Res_Window:   @.c++.Res_Window
+        c++ $(c++flags) -o @.o.Res_Window @.c++.Res_Window 
 
 
 # Dynamic dependencies:
@@ -59,6 +56,14 @@ o.Res_Iconbar:	C:h.toolbox
 o.Res_Iconbar:	C:h.ErrorReport
 o.Res_Iconbar:	C:h.kernel
 o.Res_Iconbar:	C:h.ClassType
+o.Res_Iconbar:	C:h.WimpObj
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.ErrorReport
+o.Res_Iconbar:	C:h.libc
+o.Res_Iconbar:	C:h.kernel
+o.Res_Iconbar:	C:h.Object
+o.Res_Iconbar:	C:h.wimp
+o.Res_Iconbar:	C:h.ClassType
 o.Res_Menu:	c++.Res_Menu
 o.Res_Menu:	h.Res_Menu
 o.Res_Menu:	C:h.ToolboxMenuObj
@@ -73,67 +78,14 @@ o.Res_Menu:	C:h.toolbox
 o.Res_Menu:	C:h.ErrorReport
 o.Res_Menu:	C:h.kernel
 o.Res_Menu:	C:h.ClassType
-o.Display:	c++.Display
-o.Display:	h.Display
-o.Display:	C:h.ToolboxDisplayField
-o.Display:	C:h.ClassType
-o.Display:	C:h.ToolboxGadget
-o.Display:	C:h.kernel
-o.Display:	C:h.ErrorReport
-o.Display:	C:h.kernel
-o.Display:	C:h.toolbox
-o.Display:	C:h.wimp
-o.Display:	C:h.gadgets
-o.Display:	C:h.Scrollbar
-o.Display:	C:h.window
-o.Display:	C:h.ScrollList
-o.Display:	C:h.tabs
-o.Display:	C:h.treeview
-o.Display:	C:h.TextArea
-o.Display:	C:h.Object
-o.Display:	C:h.ClassType
-o.Display:	h.Event
-o.Display:	C:h.kernel
-o.Event:	c++.Event
-o.Event:	h.Event
-o.Event:	C:h.kernel
-o.Res_Window:	c++.Res_Window
-o.Res_Window:	h.Res_Window
-o.Res_Window:	C:h.ToolboxWindowObj
-o.Res_Window:	C:h.window
-o.Res_Window:	C:h.kernel
-o.Res_Window:	C:h.toolbox
-o.Res_Window:	C:h.wimp
-o.Res_Window:	C:h.gadgets
-o.Res_Window:	C:h.ClassType
-o.Res_Window:	C:h.ToolboxObj
-o.Res_Window:	C:h.Object
-o.Res_Window:	C:h.toolbox
-o.Res_Window:	C:h.ErrorReport
-o.Res_Window:	C:h.kernel
-o.Res_Window:	C:h.ClassType
-o.Res_Window:	h.Display
-o.Res_Window:	C:h.ToolboxDisplayField
-o.Res_Window:	C:h.ClassType
-o.Res_Window:	C:h.ToolboxGadget
-o.Res_Window:	C:h.kernel
-o.Res_Window:	C:h.ErrorReport
-o.Res_Window:	C:h.toolbox
-o.Res_Window:	C:h.gadgets
-o.Res_Window:	C:h.Scrollbar
-o.Res_Window:	C:h.ScrollList
-o.Res_Window:	C:h.tabs
-o.Res_Window:	C:h.treeview
-o.Res_Window:	C:h.TextArea
-o.Res_Window:	C:h.Object
-o.Res_Window:	C:h.ClassType
-o.Res_Window:	h.Event
-o.Res_Window:	C:h.kernel
-o.Res_Window:	C:h.ToolboxDisplayField
-o.Res_Window:	C:h.OS
-o.Res_Window:	C:h.ErrorReport
-o.Res_Window:	C:h.kernel
-o.Res_Window:	C:h.string
+o.Res_Menu:	C:h.WimpObj
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.ErrorReport
+o.Res_Menu:	C:h.libc
+o.Res_Menu:	C:h.kernel
+o.Res_Menu:	C:h.Object
+o.Res_Menu:	C:h.wimp
+o.Res_Menu:	C:h.ClassType
 o.main:	c++.main
 o.main:	h.EventExample
 o.main:	C:h.ToolboxTask
@@ -147,13 +99,15 @@ o.main:	C:h.ToolboxEvents
 o.main:	C:h.toolbox
 o.main:	C:h.gadgets
 o.main:	C:h.treeview
-o.main:	C:h.window
 o.main:	C:h.ScrollList
+o.main:	C:h.window
 o.main:	C:h.tabs
+o.main:	C:h.progressbar
+o.main:	C:h.partitionbar
+o.main:	C:h.spritegrid
 o.main:	C:h.ErrorReport
 o.main:	C:h.kernel
 o.main:	C:h.ClassType
-o.main:	C:h.string
 o.main:	C:h.WimpObj
 o.main:	C:h.kernel
 o.main:	C:h.ErrorReport
@@ -171,6 +125,7 @@ o.main:	C:h.Object
 o.main:	C:h.toolbox
 o.main:	C:h.ErrorReport
 o.main:	C:h.ClassType
+o.main:	C:h.WimpObj
 o.main:	h.Res_Window
 o.main:	C:h.ToolboxWindowObj
 o.main:	C:h.window
@@ -191,9 +146,9 @@ o.main:	C:h.treeview
 o.main:	C:h.TextArea
 o.main:	C:h.Object
 o.main:	C:h.ClassType
-o.main:	h.Event
-o.main:	C:h.kernel
-o.main:	C:h.ToolboxDisplayField
+o.main:	C:h.progressbar
+o.main:	C:h.ToolboxEventTrigger
+o.main:	C:h.ToolboxCoreObj
 o.main:	h.Res_Menu
 o.main:	C:h.ToolboxMenuObj
 o.main:	C:h.menu
@@ -203,6 +158,42 @@ o.main:	C:h.ToolboxQuitObj
 o.main:	C:h.ClassType
 o.main:	C:h.ToolboxObj
 o.main:	C:h.quit
+o.main:	C:h.ToolboxEventTrigger
+o.Display:	c++.Display
+o.Display:	h.Display
+o.Display:	C:h.ToolboxDisplayField
+o.Display:	C:h.ClassType
+o.Display:	C:h.ToolboxGadget
+o.Display:	C:h.kernel
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.kernel
+o.Display:	C:h.toolbox
+o.Display:	C:h.wimp
+o.Display:	C:h.gadgets
+o.Display:	C:h.Scrollbar
+o.Display:	C:h.window
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.treeview
+o.Display:	C:h.TextArea
+o.Display:	C:h.Object
+o.Display:	C:h.ClassType
+o.Display:	C:h.progressbar
+o.Display:	C:h.ToolboxEventTrigger
+o.Display:	C:h.ToolboxCoreObj
+o.Display:	C:h.Object
+o.Display:	C:h.toolbox
+o.Display:	C:h.ToolboxEvents
+o.Display:	C:h.toolbox
+o.Display:	C:h.gadgets
+o.Display:	C:h.treeview
+o.Display:	C:h.ScrollList
+o.Display:	C:h.tabs
+o.Display:	C:h.progressbar
+o.Display:	C:h.partitionbar
+o.Display:	C:h.spritegrid
+o.Display:	C:h.ErrorReport
+o.Display:	C:h.ClassType
 o.EventExample:	c++.EventExample
 o.EventExample:	h.EventExample
 o.EventExample:	C:h.ToolboxTask
@@ -216,13 +207,15 @@ o.EventExample:	C:h.ToolboxEvents
 o.EventExample:	C:h.toolbox
 o.EventExample:	C:h.gadgets
 o.EventExample:	C:h.treeview
-o.EventExample:	C:h.window
 o.EventExample:	C:h.ScrollList
+o.EventExample:	C:h.window
 o.EventExample:	C:h.tabs
+o.EventExample:	C:h.progressbar
+o.EventExample:	C:h.partitionbar
+o.EventExample:	C:h.spritegrid
 o.EventExample:	C:h.ErrorReport
 o.EventExample:	C:h.kernel
 o.EventExample:	C:h.ClassType
-o.EventExample:	C:h.string
 o.EventExample:	C:h.WimpObj
 o.EventExample:	C:h.kernel
 o.EventExample:	C:h.ErrorReport
@@ -240,6 +233,7 @@ o.EventExample:	C:h.Object
 o.EventExample:	C:h.toolbox
 o.EventExample:	C:h.ErrorReport
 o.EventExample:	C:h.ClassType
+o.EventExample:	C:h.WimpObj
 o.EventExample:	h.Res_Window
 o.EventExample:	C:h.ToolboxWindowObj
 o.EventExample:	C:h.window
@@ -260,9 +254,9 @@ o.EventExample:	C:h.treeview
 o.EventExample:	C:h.TextArea
 o.EventExample:	C:h.Object
 o.EventExample:	C:h.ClassType
-o.EventExample:	h.Event
-o.EventExample:	C:h.kernel
-o.EventExample:	C:h.ToolboxDisplayField
+o.EventExample:	C:h.progressbar
+o.EventExample:	C:h.ToolboxEventTrigger
+o.EventExample:	C:h.ToolboxCoreObj
 o.EventExample:	h.Res_Menu
 o.EventExample:	C:h.ToolboxMenuObj
 o.EventExample:	C:h.menu
@@ -272,3 +266,4 @@ o.EventExample:	C:h.ToolboxQuitObj
 o.EventExample:	C:h.ClassType
 o.EventExample:	C:h.ToolboxObj
 o.EventExample:	C:h.quit
+o.EventExample:	C:h.ToolboxEventTrigger

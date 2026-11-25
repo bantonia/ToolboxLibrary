@@ -21,3 +21,4 @@
 0x304F10,ProgressBar,ToolboxProgressBar.h
 0x304F40,PartitionBar,ToolboxPartitionBar.h
 0x484F20,SpriteGrid,ToolboxSpriteGrid.h
+0x244058,GDivider,ToolboxGDivider.h

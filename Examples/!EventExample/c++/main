@@ -1,13 +1,12 @@
 #include "EventExample.h"
 
-EventExample *task;
-
 int main() {
-  task = new EventExample();
+  EventExample *task = new EventExample();
   task->initTask("<EventExample$Dir>");
-  task->setMask(256 + 1);
+  task->setMask(256);
+  task->setPollIdleInterval(1);
   while (!task->quit) {
-    task->run();
+    task->runIdle();
   }
   delete task;
   return 0;

@@ -11,12 +11,6 @@ Iconbar|0:Event Example
 Window|1:Event Example
 Window|3:0
 Window|5:0
-Window|7:Display
-Window|9:Display
-Window|11:Display
-Window|13:head adr
-Window|15:data adr
-Window|17:data adr
 
 # Messages for object Menu (class Menu)
 
