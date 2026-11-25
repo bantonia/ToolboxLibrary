@@ -65,12 +65,6 @@ void EventExample::toolboxEventHandler(int event) {
   }
 }
 
-/*********************************************************
-* In this example values for the two user events 2 and 3 *
-* were registered through the constructors for the two   *
-* Display objects. Here res_Window->updateDisplay(event) *
-* method is used to pass on the Toolbox events.          *
-*********************************************************/
 void EventExample::toolboxUserEvent(int event) {
   IdBlock *idBlock = &ToolboxCoreObj::idBlock;
   switch(event) {

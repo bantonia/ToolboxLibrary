@@ -26,14 +26,6 @@ class EventExample : public ToolboxTask {
     void windowObjectAutoCreated();
     void menuObjectAutoCreated();
     void quitQuit();
-/*************************************************************************
-* nullReason() is the method to to handle Wimp_ENULL events, into which  *
-* the method ToolboxEventTrigger::eventDispatcher() is placed.           *
-* eventDispatcher() is a ToolboxEventTrigger library method which        *
-* scans the registered ToolboxEventTrigger entries to see if any are     *
-* ready to be triggered. If ready then ToolboxCoreObj::raiseToolboxEvent *
-* is called and the associated Toolbox event is put into the poll queue. *
-*************************************************************************/
     void nullReason();
   private:
     Res_Iconbar *res_Iconbar;
