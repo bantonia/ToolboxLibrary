@@ -52,10 +52,7 @@ enum {
   ClassType_ToolboxTextArea,
   ClassType_ToolboxAdjuster,
   ClassType_ToolboxLabel,
-  ClassType_ToolboxLabelledBox,
-  ClassType_ToolboxProgressBar,
-  ClassType_ToolboxPartitionBar,
-  ClassType_ToolboxGDivider
+  ClassType_ToolboxLabelledBox
 };
 
 #endif

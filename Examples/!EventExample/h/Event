@@ -1,0 +1,30 @@
+#ifndef __cplusplus
+#error Header file "Event.h" may only be used from C++
+#endif
+#pragma force_top_level
+#pragma include_only_once
+
+#ifndef __Event_h
+#define __Event_h
+
+#include "kernel.h"
+
+#define ToolTime_Register               0x05ab40
+#define ToolTime_UnRegister             0x05ab41
+
+class Event {
+  public:
+    Event(int, int, int, int);
+    ~Event();
+    void startEvent();
+    void stopEvent();
+    int getHandle();
+  private:
+    int handle;
+    int objectId;
+    int componentId;
+    int eventCode;
+    int delay;
+};
+
+#endif

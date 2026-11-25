@@ -8,11 +8,11 @@
 #define __Display_h
 
 #include "ToolboxDisplayField.h"
-#include "ToolboxEventTrigger.h"
+#include "Event.h"
 
-class Display : public ToolboxDisplayField, public ToolboxEventTrigger {
+class Display : public ToolboxDisplayField, public Event {
   public:
-    Display(ObjectId, ComponentId, int, int, int);
+    Display(int, int, int, int, int);
     void updateDisplay();
 };
 

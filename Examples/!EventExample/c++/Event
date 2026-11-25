@@ -1,0 +1,34 @@
+#include "Event.h"
+
+Event::Event(int objectId, int componentId, int eventCode, int delay) {
+  this->objectId = objectId;
+  this->componentId = componentId;
+  this->eventCode = eventCode;
+  this->delay = delay;
+  handle = 0;
+  startEvent();
+}
+
+Event::~Event() {
+  stopEvent();
+}
+
+void Event::startEvent() {
+  _kernel_swi_regs r;
+  r.r[0] = objectId;
+  r.r[1] = componentId;
+  r.r[2] = eventCode;
+  r.r[3] = delay;
+  _kernel_swi(ToolTime_Register, &r, &r);
+  handle = r.r[0];
+}
+
+void Event::stopEvent() {
+  _kernel_swi_regs r;
+  r.r[0] = handle;
+  _kernel_swi(ToolTime_UnRegister, &r, &r);
+}
+
+int Event::getHandle() {
+  return handle;
+}

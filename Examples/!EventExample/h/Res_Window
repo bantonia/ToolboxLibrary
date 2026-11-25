@@ -9,6 +9,7 @@
 
 #include "ToolboxWindowObj.h"
 #include "Display.h"
+#include "ToolboxDisplayField.h"
 
 class Res_Window : public ToolboxWindowObj {
   public:
@@ -29,6 +30,9 @@ class Res_Window : public ToolboxWindowObj {
   private:
     Display *displayField0;
     Display *displayField1;
+    ToolboxDisplayField *handle0;
+    ToolboxDisplayField *handle1;
+    ToolboxDisplayField *head;
 };
 
 #endif
