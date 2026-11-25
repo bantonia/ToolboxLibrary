@@ -13,6 +13,10 @@ Res_Window::~Res_Window() {
   delete displayField1;
 }
 
+/*************************************************
+* Now to call the individual Display methods for *
+* handling the events.                           *
+*************************************************/
 void Res_Window::updateDisplay(int event) {
   switch(event) {
     case 2: {

@@ -12,6 +12,16 @@
 
 class Display : public ToolboxDisplayField, public ToolboxEventTrigger {
   public:
+/******************************************************************************
+* Constructor for class Display using ToolboxDisplayField                     *
+* and ToolboxEventTrigger as base classes                                     *
+* Params:                                                                     *
+*  ObjectId     Toolbox Window Object Id                                      *
+*  ComponentId  Toolbox DisplayField Id                                       *
+*  int          Flags                                                         *
+*  int          Event                                                         *
+*  int          Delay in centiseconds (don't rely on this, under construction *
+******************************************************************************/
     Display(ObjectId, ComponentId, int, int, int);
     void updateDisplay();
 };
