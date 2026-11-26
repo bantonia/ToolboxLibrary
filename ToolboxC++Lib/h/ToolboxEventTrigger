@@ -8,6 +8,7 @@
 #define __ToolboxEventTrigger_h
 
 #include "ToolboxCoreObj.h"
+#include "OS.h"
 
 class ToolboxEventTrigger {
   public:
@@ -41,6 +42,7 @@ class ToolboxEventTrigger {
   private:
     static ToolboxEventPtr head;
     ToolboxEventPtr handle;
+    static unsigned int lastTime;
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "ToolboxEventTrigger.h"
 
 ToolboxEventTrigger::ToolboxEventPtr ToolboxEventTrigger::head = NULL;
+unsigned int ToolboxEventTrigger::lastTime = 0;
 
 ToolboxEventTrigger::ToolboxEventTrigger(int objectId, int componentId, int event, int delay) {
   ToolboxEventBlock *p = (ToolboxEventBlock *) new ToolboxEventBlock;
@@ -12,6 +13,9 @@ ToolboxEventTrigger::ToolboxEventTrigger(int objectId, int componentId, int even
   p->next = head;
   head = (ToolboxEventPtr) p;
   handle = head;
+  if (lastTime == 0) {
+    lastTime = OS::readMonotonicTime();
+  }
 }
 
 ToolboxEventTrigger::~ToolboxEventTrigger() {
@@ -36,9 +40,10 @@ ToolboxEventTrigger::~ToolboxEventTrigger() {
 void ToolboxEventTrigger::eventDispatcher() {
   if (head != NULL) {
     ToolboxEventBlock *p = (ToolboxEventBlock *)head;
+    unsigned int nowTime = OS::readMonotonicTime();
     while(p != NULL) {
-// Need to modify how the countdown is calculated. Could read OS_ReadMonotomicTime to be more accurate
-      if (--(p->delay_count) == 0) {
+// Note: Rollover of OS::readMonotonicTime() not taken into consideration
+      if((p->delay_count - ((int)(nowTime - lastTime))) <= 0) {
         p->delay_count = p->delay;
         //***** call Toolbox_RaiseToolboxEvent here ******
         ToolboxEvent event;
@@ -47,9 +52,12 @@ void ToolboxEventTrigger::eventDispatcher() {
         event.hdr.event_code = p->event;
         event.hdr.flags = 0;
         ToolboxCoreObj::raiseToolboxEvent(0, p->objectId, p->componentId, &event);
+      } else {
+        p->delay_count -= (nowTime - lastTime);
       }
       p = (ToolboxEventBlock *)(p->next);
     }
+    lastTime = nowTime;
   }
 }
 
