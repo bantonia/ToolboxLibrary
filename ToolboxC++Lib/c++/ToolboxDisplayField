@@ -32,10 +32,10 @@ int ToolboxDisplayField::getValue() {
 }
 
 int ToolboxDisplayField::getIntValue() {
-  char buffer[32];
+  char s[32];
   int size = this->getValue();
-  this->getValue(buffer, size);
-  return OS::evaluateExpression(buffer, 0, 0);
+  this->getValue(s, size);
+  return atoi(s);
 }
 
 int ToolboxDisplayField::getValue(char *buffer, int bufSize) {

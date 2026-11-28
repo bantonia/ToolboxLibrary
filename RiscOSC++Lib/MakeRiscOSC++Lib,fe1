@@ -42,12 +42,6 @@ ModSqzflags = -o $@
 
 
 # Dynamic dependencies:
-o.OS:	c++.OS
-o.OS:	h.OS
-o.OS:	C:h.kernel
-o.OS:	C:h.swis
-o.OS:	h.ErrorReport
-o.OS:	C:h.kernel
 o.ErrorReport:	c++.ErrorReport
 o.ErrorReport:	h.ErrorReport
 o.ErrorReport:	C:h.kernel
@@ -93,24 +87,6 @@ o.ColourTransObj:	h.ErrorReport
 o.ColourTransObj:	C:h.kernel
 o.ColourTransObj:	C:h.kernel
 o.ColourTransObj:	h.sprite
-o.WimpObj:	c++.WimpObj
-o.WimpObj:	h.WimpObj
-o.WimpObj:	C:h.kernel
-o.WimpObj:	h.ErrorReport
-o.WimpObj:	C:h.kernel
-o.WimpObj:	C:h.libc
-o.WimpObj:	C:h.kernel
-o.WimpObj:	C:h.Object
-o.WimpObj:	C:h.wimp
-o.WimpObj:	h.ClassType
-o.WimpObj:	C:h.swis
-o.WimpObj:	h.OS
-o.WimpObj:	C:h.kernel
-o.WimpObj:	C:h.swis
-o.WimpObj:	h.ErrorReport
-o.WimpObj:	C:h.wimp
-o.WimpObj:	C:h.wimplib
-o.WimpObj:	h.ErrorReport
 o.WimpWindowObj:	c++.WimpWindowObj
 o.WimpWindowObj:	h.WimpWindowObj
 o.WimpWindowObj:	C:h.Object
@@ -131,3 +107,29 @@ o.WimpWindowObj:	C:h.kernel
 o.WimpWindowObj:	C:h.swis
 o.WimpWindowObj:	C:h.libc
 o.WimpWindowObj:	C:h.wimplib
+o.WimpObj:	c++.WimpObj
+o.WimpObj:	h.WimpObj
+o.WimpObj:	C:h.kernel
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.libc
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.Object
+o.WimpObj:	C:h.wimp
+o.WimpObj:	h.ClassType
+o.WimpObj:	C:h.swis
+o.WimpObj:	h.OS
+o.WimpObj:	C:h.kernel
+o.WimpObj:	C:h.swis
+o.WimpObj:	h.ErrorReport
+o.WimpObj:	C:h.stdlib
+o.WimpObj:	C:h.wimp
+o.WimpObj:	C:h.wimplib
+o.WimpObj:	h.ErrorReport
+o.OS:	c++.OS
+o.OS:	h.OS
+o.OS:	C:h.kernel
+o.OS:	C:h.swis
+o.OS:	h.ErrorReport
+o.OS:	C:h.kernel
+o.OS:	C:h.stdlib

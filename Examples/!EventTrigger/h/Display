@@ -23,7 +23,7 @@ class Display : public ToolboxDisplayField, public ToolboxEventTrigger {
 *  int          Delay in centiseconds (don't rely on this, under construction *
 ******************************************************************************/
     Display(ObjectId, ComponentId, int, int, int);
-    void updateDisplay();
+    void updateDisplay(int);
 };
 
 #endif

@@ -1,4 +1,3 @@
-| To run this on startup add this Obey file to the !Boot Run sequence following the DDE setPaths.
 set MyC++Lib$Dir <Obey$Dir>
 set ToolboxC++Lib$Path <MyC++Lib$Dir>.ToolboxC++Lib.
 set RiscOSC++Lib$Path <MyC++Lib$Dir>.RiscOSC++Lib.

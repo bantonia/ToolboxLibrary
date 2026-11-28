@@ -4,13 +4,13 @@ Display::Display(ObjectId objectId, ComponentId componentId, int flags, int even
 
 /*****************************************
 * The event handler which could do more  *
-* than just updating the Display object. *                     *
+* than just updating the Display object. *
 *****************************************/
-void Display::updateDisplay() {
+void Display::updateDisplay(int limit) {
   int value = this->getIntValue();
   value++;
   this->setValue(value);
-  if (value == 1000) {
+  if (value == limit) {
     this->setValue(0);
   } else {
     this->setValue(value);

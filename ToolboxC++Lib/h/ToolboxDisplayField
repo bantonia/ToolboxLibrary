@@ -9,6 +9,7 @@
 
 #include "ClassType.h"
 #include "ToolboxGadget.h"
+#include "stdlib.h"
 
 class ToolboxDisplayField : public ToolboxGadget {
 

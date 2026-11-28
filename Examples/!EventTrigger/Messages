@@ -11,6 +11,12 @@ Iconbar|0:Event Trigger
 Window|1:Event Trigger
 Window|3:0
 Window|5:0
+Window|7:0
+Window|9:0
+Window|11:H
+Window|13:M
+Window|15:S
+Window|17:C
 
 # Messages for object Menu (class Menu)
 

@@ -14,12 +14,14 @@ class Res_Window : public ToolboxWindowObj {
   public:
 
     enum Res_WindowConstants {
-      Res_WindowNumGadgets = 2
+      Res_WindowNumGadgets = 4
     };
 
     enum Res_WindowGadgets {
       DisplayField0,
-      DisplayField1
+      DisplayField1,
+      DisplayField2,
+      DisplayField3
     };
 
     Res_Window();
@@ -29,6 +31,8 @@ class Res_Window : public ToolboxWindowObj {
   private:
     Display *displayField0;
     Display *displayField1;
+    Display *displayField2;
+    Display *displayField3;
 };
 
 #endif

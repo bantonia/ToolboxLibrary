@@ -2,31 +2,51 @@
 
 Res_Window::Res_Window() : ToolboxWindowObj() {}
 
+/******************************************************
+* Create the Display objects, the last two parameters *
+* in each constructor are the event number and the    *
+* delay in centiseconds associated with each display  *
+* field.                                              *
+******************************************************/
 Res_Window::Res_Window(IdBlock *idBlock) : ToolboxWindowObj(idBlock) {
   int objectId = idBlock->self_id;
-  displayField0 = new Display(objectId, 0, 0, 2, 1);
-  displayField1 = new Display(objectId, 1, 0, 3, 100);
+  displayField0 = new Display(objectId, DisplayField0, 0, 2, 1);
+  displayField1 = new Display(objectId, DisplayField1, 0, 3, 100);
+  displayField2 = new Display(objectId, DisplayField2, 0, 4, 6000);
+  displayField3 = new Display(objectId, DisplayField3, 0, 5, 360000);
 }
 
 Res_Window::~Res_Window() {
   delete displayField0;
   delete displayField1;
+  delete displayField2;
+  delete displayField3;
 }
 
 /*************************************************
-* Now to call the individual Display methods for *
-* handling the events.                           *
+* Now to call the Display method for handling    *
+* the events. The parameter is the count limit   *
+* for each display field to cycle to from 0.     *
 *************************************************/
 void Res_Window::updateDisplay(int event) {
   switch(event) {
     case 2: {
-      displayField0->updateDisplay();
-      }
-      break;
+      displayField0->updateDisplay(100);
+    }
+    break;
     case 3: {
-        displayField1->updateDisplay();
-      }
-      break;
+      displayField1->updateDisplay(60);
+    }
+    break;
+    case 4: {
+      displayField2->updateDisplay(60);
+    }
+    break;
+    case 5: {
+      displayField3->updateDisplay(24);
+    }
+    break;
+    default: break;
   }
 }
 

@@ -3,14 +3,17 @@
 int main() {
   EventTrigger *task = new EventTrigger();
   task->initTask("<EventTrigger$Dir>");
+
 /***********************************
 * Don't mask out Wimp_ENULL events *
 ***********************************/
   task->setMask(256);
+
 /*****************************************
 * Set the poll interval to a small value *
 *****************************************/
   task->setPollIdleInterval(1);
+
   while (!task->quit) {
 /*******************************************
 * Use the tasks runIdle() method instead   *
